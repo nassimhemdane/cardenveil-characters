@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cardenveil-core"
+version = "0.1.0"
+description = "Canonical, format-independent domain model for Cardenveil"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Proprietary"}
+authors = [{name = "Cardenveil contributors"}]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pydantic>=2.10", "pytest>=8", "ruff>=0.9"]
+pdf = ["pydantic>=2.10"]
+pdf-assets = ["pillow>=11", "pymupdf>=1.25"]
+pdf-gemini = [
+    "google-genai>=1.0",
+    "pillow>=11",
+    "pydantic>=2.10",
+    "pymupdf>=1.25",
+    "python-dotenv>=1.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cardenveil"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "--basetemp=tests/.pytest-tmp"
+markers = ["integration: tests requiring external services and credentials"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+extend-exclude = ["tests/Personaltest.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

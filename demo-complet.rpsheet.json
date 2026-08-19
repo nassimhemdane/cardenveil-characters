@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "id": "demo-complet",
+  "templateId": "cardenveil-standard",
+  "createdAt": "2026-08-18T12:00:00+02:00",
+  "updatedAt": "2026-08-18T12:00:00+02:00",
+  "identity": {
+    "nom": "Personnage Démonstration",
+    "joueur": "Joueur",
+    "niveau": 1,
+    "race": "Humain",
+    "alignement": "Neutre Bon",
+    "age": "30",
+    "taille": "1m75",
+    "poids": "70kg",
+    "yeux": "Verts",
+    "peau": "Mate",
+    "cheveux": "Noirs"
+  },
+  "portrait": "/assets/demo/portrait.png",
+  "stats": {
+    "force": 14,
+    "agilite": 12,
+    "esprit": 16,
+    "social": 10
+  },
+  "progression": {
+    "xpDepenses": 0,
+    "xpDisponibles": 0
+  },
+  "derived": {
+    "pvMax": 100,
+    "bonusPv": "",
+    "pvActuels": 100,
+    "pvTemporaires": 0,
+    "mouvement": 11,
+    "initiative": 2,
+    "perceptionPassive": 13,
+    "seuilSauvegarde": "",
+    "seuilMiss": 1,
+    "canalisation": 3,
+    "bonusAttaque": "",
+    "inspiration": "",
+    "fatigue": "",
+    "mort": "",
+    "volonte": 1
+  },
+  "defense": {
+    "parade": "7",
+    "armure": "2",
+    "deflexion": 1,
+    "gardeBonus": "2",
+    "bonus": "1"
+  },
+  "resources": {
+    "or": "100",
+    "rations": "3",
+    "cartesEtTokens": "",
+    "tokens": {
+      "force": 3,
+      "agilite": 2,
+      "esprit": 4,
+      "social": 1
+    }
+  },
+  "skills": {
+    "athletisme": {
+      "trained": true,
+      "bonus": 2
+    },
+    "resilience": {
+      "trained": false,
+      "bonus": 0
+    },
+    "acrobaties": {
+      "trained": true,
+      "bonus": 1
+    },
+    "discretion": {
+      "trained": false,
+      "bonus": 0
+    },
+    "escamotage": {
+      "trained": false,
+      "bonus": 0
+    },
+    "arcanes": {
+      "trained": true,
+      "bonus": 3
+    },
+    "investigation": {
+      "trained": false,
+      "bonus": 0
+    },
+    "perception": {
+      "trained": true,
+      "bonus": 3
+    },
+    "culture": {
+      "trained": false,
+      "bonus": 0
+    },
+    "survie": {
+      "trained": false,
+      "bonus": 0
+    },
+    "persuasion": {
+      "trained": false,
+      "bonus": 0
+    },
+    "tromperie": {
+      "trained": false,
+      "bonus": 0
+    },
+    "intimidation": {
+      "trained": false,
+      "bonus": 0
+    },
+    "representation": {
+      "trained": false,
+      "bonus": 0
+    },
+    "perspicacite": {
+      "trained": false,
+      "bonus": 0
+    },
+    "dressage": {
+      "trained": false,
+      "bonus": 0
+    }
+  },
+  "weapons": [
+    {
+      "nom": "Épée longue",
+      "de": "1d8",
+      "forceAgi": "2",
+      "critique": "0",
+      "avantage": "0",
+      "bonus": "",
+      "perfection": "",
+      "notes": "Garde"
+    }
+  ],
+  "inventory": {
+    "equipement": "Plastron",
+    "inventaire": "Corde et torches",
+    "totem": "Description du totem"
+  },
+  "totem": {
+    "nom": "Totem solaire",
+    "description": "Effet du totem.",
+    "image": "/assets/demo/totem.png"
+  },
+  "narrative": {
+    "background": "Archiviste itinérant.",
+    "objectif": "Préserver un savoir perdu.",
+    "liens": "Son ancienne académie.",
+    "traitsSpeciaux": [
+      "Résistance radiante."
+    ],
+    "personnalite": "Méthodique.",
+    "reputation": "Savant fiable.",
+    "education": "Académie.",
+    "croyances": "Le savoir doit circuler.",
+    "cicatrices": "Une expédition perdue.",
+    "pulsion": "Tout documenter.",
+    "maniesEtTics": "Classe ses notes.",
+    "instinct": "Observer."
+  },
+  "actions": [],
+  "reactions": [],
+  "tokens": [],
+  "capacities": [
+    {
+      "name": "Trait de lumière",
+      "prepared": true,
+      "image": "/assets/demo/capacity-1.png",
+      "description": "Projette un trait lumineux.",
+      "value": {
+        "main": "2d8 radiant",
+        "bonus": ""
+      },
+      "cost": {
+        "color": "heart",
+        "base": 12,
+        "incantationReduction": 6,
+        "colorReduction": 1,
+        "awakeningReduction": 0,
+        "weaponMasteryReduction": 0,
+        "total": 5
+      },
+      "incantation": "Esprit",
+      "save": "Acrobaties (moitié dégâts)",
+      "usage": "Action"
+    }
+  ],
+  "notes": "Personnage créé par l'exemple CLI.",
+  "abilityControls": {
+    "cardMin": "",
+    "cardMax": "",
+    "knownAbilities": "1",
+    "maxPreparedAbilities": "1",
+    "colorReductions": {
+      "spade": 0,
+      "heart": 1,
+      "diamond": 0,
+      "club": 0
+    }
+  },
+  "weaponMasteries": [
+    {
+      "family": "Épées droites",
+      "perfection": 1
+    }
+  ],
+  "elementalMasteries": [
+    {
+      "element": "Radiant",
+      "level": 1
+    }
+  ],
+  "equipment": {
+    "casque": {
+      "nom": "",
+      "raretePrix": "",
+      "deflexion": "",
+      "volonte": "",
+      "enchantement": "",
+      "description": ""
+    },
+    "plastron": {
+      "nom": "",
+      "raretePrix": "",
+      "deflexion": "",
+      "armure": "",
+      "enchantement": "",
+      "description": ""
+    },
+    "gantelets": {
+      "nom": "",
+      "raretePrix": "",
+      "deflexion": "",
+      "initiative": "",
+      "enchantement": "",
+      "description": ""
+    },
+    "bottes": {
+      "nom": "",
+      "raretePrix": "",
+      "deflexion": "",
+      "vitesse": "",
+      "enchantement": "",
+      "description": ""
+    },
+    "anneau": {
+      "nom": "",
+      "raretePrix": "",
+      "enchantement": "",
+      "description": ""
+    },
+    "amulette": {
+      "nom": "",
+      "raretePrix": "",
+      "enchantement": "",
+      "description": ""
+    },
+    "cape": {
+      "nom": "",
+      "raretePrix": "",
+      "enchantement": "",
+      "description": ""
+    }
+  },
+  "inventoryItems": [
+    {
+      "type": "Arme",
+      "slot": "main",
+      "family": "Épées droites",
+      "weaponName": "Épée longue",
+      "name": "Épée longue",
+      "raretePrix": "Commune",
+      "description": "",
+      "degats": "1d8",
+      "parade": "4",
+      "attributs": "Polyvalente (1d10), Garde",
+      "familySummary": "Parade versatile.",
+      "catalystColor": "",
+      "equipmentData": {
+        "nom": "",
+        "raretePrix": "",
+        "deflexion": "",
+        "enchantement": "",
+        "description": ""
+      }
+    }
+  ],
+  "feats": [
+    {
+      "title": "Lecteur assidu",
+      "description": "Retient les informations importantes."
+    }
+  ]
+}

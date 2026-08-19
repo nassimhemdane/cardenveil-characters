@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 1,
+  "classVocabulary": [
+    "Barbare",
+    "Barde",
+    "Druide",
+    "Guerrier",
+    "Mage",
+    "Moine",
+    "Paladin",
+    "Prêtre",
+    "Rôdeur",
+    "Roublard",
+    "Sorcier",
+    "Invocateur",
+    "Artificier",
+    "Autre"
+  ],
+  "characters": {
+    "afreaux-shaufeois": {
+      "loreSummary": "Afreaux Shaufeois est un Haut Elfe chercheur en linguistique magique, marqué par des cicatrices dues à l'étude de savoirs interdits et perçu comme un expert intimidant.",
+      "gameplaySummary": "Ce personnage utilise des runes de zone et des capacités arcaniques élémentaires pour manipuler le champ de bataille, infliger des dégâts et appliquer des malédictions.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Mage"
+      ]
+    },
+    "agaric": {
+      "loreSummary": "Agaric est un hybride halflin-sporelin de 25 ans, chaotique neutre, immunisé au poison et aux effets de saignement.",
+      "gameplaySummary": "Ce personnage utilise des capacités basées sur l'invocation de champignons et la propagation de mycoses pour contrôler le terrain et infliger des dégâts de zone.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Druide"
+      ]
+    },
+    "aiden-grim": {
+      "loreSummary": "Aiden Grim est un érudit Tiffelin curieux qui parcourt les bibliothèques et les ruines pour percer les secrets oubliés de la magie élémentaire.",
+      "gameplaySummary": "Ce lanceur de sorts utilise un bâton arcanique et des capacités élémentaires variées pour soigner, contrôler le champ de bataille et invoquer des entités.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Mage"
+      ]
+    },
+    "aldric": {
+      "loreSummary": "Aldric est un humain cynique et brillant qui méprise les gnomes et les gobelins depuis que ses recherches sur les armes biologiques ont été détournées.",
+      "gameplaySummary": "Ce personnage utilise des fioles alchimiques et un homonculus-totem pour infliger des dégâts, buffer ses alliés et manipuler les jets de dés adverses.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Artificier"
+      ]
+    },
+    "amethyste": {
+      "loreSummary": "Amethyste est une Haut Elfe de 250 ans au tempérament neutre bon, dotée d'une apparence aux cheveux longs noirs et à la peau blanche.",
+      "gameplaySummary": "Ce personnage utilise des capacités de manipulation gravitationnelle et des portails pour contrôler le champ de bataille, infliger des dégâts de force et protéger ses alliés.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Mage"
+      ]
+    },
+    "anain-proviste": {
+      "loreSummary": "Anain Proviste est un nain guerrier de la confrérie des nains puissants, hanté par la perte de ses proches et accompagné par des fantômes.",
+      "gameplaySummary": "Ce personnage est un combattant au corps à corps utilisant des lancers de hache, des capacités de zone et des imprégnations élémentaires pour contrôler le champ de bataille.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Guerrier"
+      ]
+    },
+    "arthurion": {
+      "loreSummary": "Arthurion est un Halfelin loyal neutre qui collectionne les armes légendaires oubliées avec passion, bien qu'il soit socialement maladroit et enclin aux confusions.",
+      "gameplaySummary": "Ce personnage utilise un système de cartes pour invoquer et manipuler des armes magiques flottantes ou liées afin d'attaquer ses ennemis à distance ou en zone.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Autre"
+      ]
+    },
+    "azella": {
+      "loreSummary": "Azella est une Tiffeline saltimbanque qui survit dans la rue en performant des spectacles avec sa tortue magique, Pedro Carpax l'Ancien.",
+      "gameplaySummary": "Ce personnage utilise des capacités de contrôle, de mobilité et de soutien basées sur des interactions tactiques avec sa tortue et des effets de confusion.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Barde"
+      ]
+    },
+    "aziel": {
+      "loreSummary": "Aziel est un demi-orque lié à une entité spectrale nommée The Watcher qui l'assiste au combat.",
+      "gameplaySummary": "Ce personnage utilise des capacités basées sur l'Esprit pour manipuler des nécroflammes, contrôler le champ de bataille et coordonner ses attaques avec son gardien spectral.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Mage"
+      ]
+    },
+    "bigo": {
+      "loreSummary": "Bigo est un troll ermite solitaire vivant dans les marécages, dévoué à la préservation de la nature sauvage.",
+      "gameplaySummary": "Ce combattant agile utilise un fouet, des capacités de camouflage et des effets de poison ou de contrôle pour manipuler le champ de bataille.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Druide"
+      ]
+    },
+    "brah-him": {
+      "loreSummary": "Brah'him est un mort-vivant maudit par l'immortalité qui erre sans but dans l'espoir de mettre fin à son existence.",
+      "gameplaySummary": "Ce personnage utilise des capacités basées sur l'esprit pour manipuler, tromper et contrôler ses ennemis tout en gérant des mécaniques de mort-vivant.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Autre"
+      ]
+    },
+    "caspian": {
+      "loreSummary": "Caspian est un pirate humain chaotique neutre de 29 ans, hanté par la vision de sa femme et cherchant à assouvir son avidité insatiable.",
+      "gameplaySummary": "Ce personnage utilise un totem pour invoquer des mirages tactiques permettant de manipuler le champ de bataille, d'infliger des dégâts et de contrôler ses adversaires.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Autre"
+      ]
+    },
+    "chillisy": {
+      "loreSummary": "Chillisy est une alchimiste guérisseuse haut elfe qui parcourt le monde pour trouver un remède à la maladie incurable de sa fille.",
+      "gameplaySummary": "Ce personnage utilise des sorts élémentaires basés sur l'Esprit et des mécaniques de totem pour manipuler le champ de bataille et soutenir ses alliés.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Mage"
+      ]
+    },
+    "chud": {
+      "loreSummary": "Chud est un haleflin chaotique neutre, chevalier pourfondeur de dragons et mage illustre, qui cherche à acquérir du pouvoir et à contrôler le monde tout en protégeant les innocents.",
+      "gameplaySummary": "Ce personnage utilise un totem pour entrer en état de combat renforcé, manipulant ses alliés et ses ennemis via des capacités basées sur ses statistiques sociales et son esprit.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Mage"
+      ]
+    },
+    "claclown": {
+      "loreSummary": "Claclown est un barde halflin troubadour qui cherche à éveiller l'âme d'enfant de ceux qu'il rencontre.",
+      "gameplaySummary": "Ce personnage utilise des capacités basées sur l'Esprit pour jongler, invoquer des objets et altérer la taille des cibles tout en gérant des effets de zone.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Barde"
+      ]
+    },
+    "craps": {
+      "loreSummary": "Craps est un Haleflin solitaire et protecteur des animaux qui cherche à rendre le monde vegan et à protéger la nature contre la chasse.",
+      "gameplaySummary": "Ce personnage est un invocateur spécialisé dans l'appel d'animaux blessés et l'utilisation de catalyseurs élémentaires pour contrôler le champ de bataille.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Invocateur"
+      ]
+    },
+    "darion-blaris": {
+      "loreSummary": "Darion Blaris est un nain chaotique neutre de 40 ans, guerrier mélomane utilisant un marteau-guitare pour influencer le champ de bataille.",
+      "gameplaySummary": "Ce personnage de mêlée utilise des capacités basées sur la Force et le Social pour infliger des dégâts de zone, dévier des attaques et manipuler les effets de combat via un système de cartes et de totem.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Guerrier",
+        "Barde"
+      ]
+    },
+    "edmound": {
+      "loreSummary": "Edmound est un chevalier goliath maudit par un bouquet de roses assoiffé de sang, errant pour accomplir une mission dont il a oublié les détails.",
+      "gameplaySummary": "Ce combattant hybride alterne entre des attaques au corps à corps et des capacités magiques basées sur l'Esprit pour infliger l'état Roncé, se soigner et contrôler le champ de bataille.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Guerrier",
+        "Mage"
+      ]
+    },
+    "einhar": {
+      "loreSummary": "Einhar est un guerrier tribal demi-orc devenu mercenaire, maniant un bouclier sacré chargé de rituels anciens pour combattre avec honneur.",
+      "gameplaySummary": "Ce personnage tank et soutien utilise des rituels basés sur son bouclier pour protéger ses alliés, contrôler le champ de bataille et infliger des dégâts de zone.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Guerrier"
+      ]
+    },
+    "entrope": {
+      "loreSummary": "Entrope est un demi-elfe mort de 360 ans qui, après avoir été invoqué trop tard, occupe son éternité à compléter un bingo personnel tout en manipulant le métal.",
+      "gameplaySummary": "Ce personnage utilise la manipulation magnétique de métal pour contrôler des armes, renforcer ses alliés et entraver ses ennemis via des capacités basées sur l'Esprit.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Mage"
+      ]
+    },
+    "esterelle": {
+      "loreSummary": "Esterelle est une elfe des bois chaotique bonne qui utilise la magie des pétales et des insectes pour interagir avec le monde.",
+      "gameplaySummary": "Ce personnage est un lanceur de sorts tactique axé sur le contrôle de zone, la mobilité et l'invocation d'insectes et de plantes pour manipuler le champ de bataille.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Druide"
+      ]
+    },
+    "felix": {
+      "loreSummary": "Felix est un halfelin herboriste autodidacte, intuitif et fidèle, qui a appris à concocter des médicaments tout seul.",
+      "gameplaySummary": "Ce personnage utilise des capacités basées sur l'Esprit pour infliger des dégâts psychiques, invoquer un loup et manipuler le champ de bataille en effrayant ses ennemis.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Invocateur"
+      ]
+    },
+    "foist": {
+      "loreSummary": "Foist est un Cochon Nain chaotique neutre âgé de 147 ans, doté d'une force physique imposante et d'une personnalité marquée par ses liens avec ses alliés.",
+      "gameplaySummary": "Ce personnage est un combattant de mêlée tactique utilisant des capacités de contrôle de zone, de protection des alliés et de projection d'ennemis pour influencer le champ de bataille.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Guerrier",
+        "Paladin"
+      ]
+    },
+    "frimellade": {
+      "loreSummary": "Frimellade est un humain de 27 ans au comportement étrange qui utilise des performances et des insultes pour manipuler la réalité et le moral de ses ennemis.",
+      "gameplaySummary": "Ce personnage de soutien utilise des capacités basées sur le social et l'esprit pour contrôler le champ de bataille, infliger des dégâts psychiques et protéger ses alliés.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Barde"
+      ]
+    },
+    "gadolia": {
+      "loreSummary": "Gadolia est une elfe noire nécromancienne marquée par un tatouage vivant qui progresse et menace de la consumer pour laisser place à une créature.",
+      "gameplaySummary": "Ce personnage est un invocateur tactique qui manipule des sbires réanimés, utilise des capacités basées sur l'esprit pour contrôler le champ de bataille et se téléporte pour infliger des dégâts.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Invocateur"
+      ]
+    },
+    "gaelfire": {
+      "loreSummary": "Gaelfire est une orque mercenaire tueuse de monstres qui cherche à rendre le monde plus sûr tout en protégeant son entourage au péril de sa propre vie.",
+      "gameplaySummary": "Ce personnage est un combattant au corps à corps utilisant une hache de guerre et des capacités de contrôle de zone basées sur la force et la gestion de cartes.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Guerrier"
+      ]
+    },
+    "gawain": {
+      "loreSummary": "Gawain est un humain de 29 ans possédé par un esprit démoniaque qui profite de sa rage pour prendre le contrôle de son corps.",
+      "gameplaySummary": "Ce personnage utilise un système de rage et de possession pour infliger des dégâts au corps à corps tout en gérant des risques de perte de contrôle.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Autre"
+      ]
+    },
+    "gerard": {
+      "loreSummary": "Gerard est un ancien soldat mort-vivant cherchant à comprendre les raisons de sa propre création.",
+      "gameplaySummary": "Ce personnage tactique manipule son corps et sa tête détachée pour alterner entre des postures offensives et défensives tout en gérant des ressources de cartes.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Autre"
+      ]
+    },
+    "gordock": {
+      "loreSummary": "Gordock est un demi-orque tourmenté par la perte de son fils, cherchant à combler le vide de son existence par la violence du combat.",
+      "gameplaySummary": "Gordock est un combattant de mêlée agressif qui utilise des provocations, des capacités de contrôle de zone et des réactions pour punir ses adversaires.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Guerrier"
+      ]
+    },
+    "haykel-the-bone-eater": {
+      "loreSummary": "Haykel est un mercenaire ermite corrompu par des crânes impies qui le poussent à commettre des actes meurtriers et à dévorer des os.",
+      "gameplaySummary": "Ce combattant au corps à corps utilise des mécaniques de fractures osseuses pour affaiblir ses ennemis et se soigner tout en manipulant des crânes comme catalyseurs.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Autre"
+      ]
+    },
+    "jean-louis": {
+      "loreSummary": "Jean-Louis est un gobelin chaotique neutre, profondément attaché à sa mère, qui a grandi dans la rue en multipliant les délits jusqu'à être recherché.",
+      "gameplaySummary": "Ce personnage utilise des invocations de Houmists pour contrôler le champ de bataille, voler des objets, entraver ses ennemis et soutenir ses alliés via des capacités sociales et d'agilité.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Barde",
+        "Roublard"
+      ]
+    },
+    "jeek-rin": {
+      "loreSummary": "Jeek'Rin est une Khajiit orpheline et escroc notoire, hédoniste et solitaire, qui utilise son instinct pour manipuler les gens.",
+      "gameplaySummary": "Ce personnage combine des attaques naturelles au corps à corps avec des capacités de contrôle social et psychologique basées sur un système de cartes.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Roublard"
+      ]
+    },
+    "joh-nathan": {
+      "loreSummary": "Joh'nathan est un Khajiit marchand apothicaire de 41 ans qui a quitté sa boutique et sa famille pour explorer le monde.",
+      "gameplaySummary": "Ce personnage agile utilise des potions improvisées, des capacités de mobilité et des attaques rapides pour contrôler le champ de bataille.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Autre"
+      ]
+    },
+    "kazehira": {
+      "loreSummary": "Kazehira est un maître d'art du sabre retiré, maudit par la fumée, qui cherche à rompre sa malédiction tout en luttant pour ne pas se dissoudre.",
+      "gameplaySummary": "Ce personnage utilise des capacités basées sur la manipulation de la fumée, des postures de combat et des clones pour contrôler le champ de bataille et infliger des dégâts.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Autre"
+      ]
+    },
+    "lilith": {
+      "loreSummary": "Lilith est une tiffelin vagabonde et chasseuse solitaire marquée par la perte de son père, cherchant à devenir assez forte pour survivre dans un monde hostile.",
+      "gameplaySummary": "Ce personnage utilise un totem pour invoquer diverses armes et se déplace avec agilité sur le champ de bataille pour enchaîner des attaques acrobatiques et tactiques.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Rôdeur",
+        "Guerrier"
+      ]
+    },
+    "linraj": {
+      "loreSummary": "Linraj est un Khajiit au tempérament chaotique bon, doté d'une agilité féline et d'une nature sauvage.",
+      "gameplaySummary": "Ce personnage est un combattant agile axé sur la mobilité, les attaques en bonus action et des capacités tactiques basées sur l'observation et l'imprégnation élémentaire.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Rôdeur"
+      ]
+    },
+    "ma-skira": {
+      "loreSummary": "Ma'Skira est une Khajiit chaotique bon qui gère un restaurant communautaire avec pour objectif de réformer les structures politiques et de solidariser le monde par la nourriture.",
+      "gameplaySummary": "Ce personnage utilise un système de masques et de cartes pour modifier ses compétences sociales et lancer des capacités psychiques ou utilitaires en combat.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Autre"
+      ]
+    },
+    "mimyr": {
+      "loreSummary": "Mimyr est un Aasimar chaotique bon, ancien déserteur traumatisé par la guerre qui cherche à établir une religion ambiguë.",
+      "gameplaySummary": "Ce personnage utilise des capacités basées sur la lumière et le contrôle de zone pour soigner ses alliés, entraver ses ennemis et se protéger.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Paladin"
+      ]
+    },
+    "mors-inferorum": {
+      "loreSummary": "Mors Inferorum est un ancien soldat mort-vivant créé par une liche aujourd'hui scellée, dont il cherche désespérément à obtenir la libération.",
+      "gameplaySummary": "Ce personnage est un invocateur nécromancien qui utilise ses points d'esprit pour animer des morts-vivants, manipuler le champ de bataille et infliger des dégâts nécrotiques.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Invocateur"
+      ]
+    },
+    "n-akhmoc": {
+      "loreSummary": "N'akhmoc est un Illithid venu d'un monde inconnu qui cherche à expérimenter la vie mortelle tout en rétablissant l'équilibre absolu dans l'univers.",
+      "gameplaySummary": "Ce personnage utilise ses capacités basées sur l'Esprit pour manipuler le temps, la gravité et les illusions afin de soutenir ses alliés ou contrôler le champ de bataille.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Mage"
+      ]
+    },
+    "nickolaj": {
+      "loreSummary": "Nickolaj est un Tiffelin vagabond et metteur en scène cherchant à démontrer que le monde est un chaos artistique dont chacun est l'auteur.",
+      "gameplaySummary": "Ce personnage utilise des mécaniques de mise en scène arcanique basées sur des cartes pour contrôler le champ de bataille, manipuler les ennemis et soutenir ses alliés.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Barde"
+      ]
+    },
+    "noegwang-ryong": {
+      "loreSummary": "Noegwang Ryong est un ancien héritier d'un groupe marchand, responsable de la faillite de sa famille, qui cherche à se faire respecter dans le monde des arts martiaux.",
+      "gameplaySummary": "Ce combattant au corps à corps utilise un totem de foudre pour infliger des dégâts élémentaires, appliquer des altérations d'état et contrôler le champ de bataille par des projections et des téléportations.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Moine"
+      ]
+    },
+    "nyx": {
+      "loreSummary": "Nyx est une elfe des bois de 38 ans au tempérament loyal mauvais, utilisant une cape mystique pour manipuler l'obscurité et traquer ses cibles.",
+      "gameplaySummary": "Ce personnage agile excelle dans le combat tactique et la mobilité, utilisant des capacités basées sur l'agilité pour infliger des dégâts de zone, marquer ses proies et esquiver les attaques.",
+      "difficulty": 3.0,
+      "creator": "",
+      "class": [
+        "Roublard"
+      ]
+    },
+    "pipo": {
+      "loreSummary": "Pipo est un halfelin prestidigitateur renommé qui dirige un cirque magique avec l'ambition d'en faire la référence absolue.",
+      "gameplaySummary": "Ce personnage utilise des capacités de contrôle de zone, d'invocation et d'altération basées sur l'Esprit pour manipuler le champ de bataille et ses adversaires.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Mage"
+      ]
+    },
+    "quota": {
+      "loreSummary": "Quota est un demi-elfe gigolo et adepte d'une religion ambiguë qui se prend pour une divinité après une illumination mystique.",
+      "gameplaySummary": "Ce personnage utilise des mécaniques de persuasion et de gestion de partisans pour diriger ses alliés et ennemis sur le champ de bataille.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Autre"
+      ]
+    },
+    "rousse": {
+      "loreSummary": "Rousse est une Khajiit scribe déçue par sa profession qui explore le monde en croyant que les oiseaux transmettent des messages.",
+      "gameplaySummary": "Ce personnage utilise des capacités basées sur le sifflement pour contrôler les ennemis, soigner ses alliés et manipuler le champ de bataille via des effets psychiques.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Barde"
+      ]
+    },
+    "sanjkul-the-black-tentacle": {
+      "loreSummary": "Sanj'kul the Black Tentacle is an Illithid monk who isolates himself to meditate on the fundamental laws of the universe.",
+      "gameplaySummary": "This character utilizes a spectral ghost companion to deal psychic damage, provide defensive utility, and manipulate the battlefield through various magical abilities.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Moine"
+      ]
+    },
+    "shin": {
+      "loreSummary": "Shin est un elfe noir exilé des Montagnes de Brumes pour un crime qu'il n'a pas commis, cherchant désormais la justice par des moyens discutables.",
+      "gameplaySummary": "Ce personnage utilise des capacités basées sur l'ombre pour se téléporter, se cacher, infliger des dégâts de zone et manipuler ses ennemis en combat.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Autre"
+      ]
+    },
+    "thelonius": {
+      "loreSummary": "Thelonius est un Illithid bon vivant, rejeté par sa société pour son manque de machiavélisme, qui parcourt le monde en quête de découvertes culturelles et musicales.",
+      "gameplaySummary": "Ce personnage utilise un totem de trompette pour animer des cadavres et manipuler le champ de bataille via des capacités musicales de soutien, de soin et de contrôle.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Barde"
+      ]
+    },
+    "tikoun": {
+      "loreSummary": "Tikoun est une humaine scribe recopieuse déçue par sa profession qui explore le monde avec la conviction que les oiseaux transmettent des messages.",
+      "gameplaySummary": "Ce personnage utilise un totem pour démanteler des mécanismes et déploie divers modules technologiques et magiques pour contrôler le champ de bataille.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Artificier"
+      ]
+    },
+    "waldemar": {
+      "loreSummary": "Waldemar est un humain de 26 ans cherchant à compléter un rituel pour invoquer un grand démon bienfaiteur.",
+      "gameplaySummary": "Ce personnage utilise des invocations magiques basées sur des cartes et sa statistique d'Esprit pour contrôler le champ de bataille et soutenir ses alliés.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Invocateur"
+      ]
+    },
+    "willow": {
+      "loreSummary": "Willow est un Tiffelin de 42 ans cherchant à se venger d'une personne ayant usurpé sa voix.",
+      "gameplaySummary": "Ce personnage utilise un totem pour invoquer et manipuler des spectres afin de contrôler le champ de bataille, infliger des dégâts arcaniques et soutenir ses alliés.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Mage"
+      ]
+    },
+    "yoru": {
+      "loreSummary": "Yoru est un elfe noir assassin et loup solitaire cherchant à se venger de l'organisation responsable de son entraînement traumatisant.",
+      "gameplaySummary": "Ce combattant agile utilise un totem pour manipuler des fils, créant des points de contrôle sur le champ de bataille pour entraver ses ennemis et se déplacer tactiquement.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Roublard"
+      ]
+    },
+    "zahaar": {
+      "loreSummary": "Zahaar est un Haut Elfe de 207 ans, d'alignement Neutre Bon, qui utilise son totem Reality Canvas pour manipuler la réalité.",
+      "gameplaySummary": "Ce personnage utilise des capacités basées sur l'Esprit pour créer des distorsions spatiales, invoquer des clones et manipuler les éléments du champ de bataille.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Autre"
+      ]
+    },
+    "zotarh": {
+      "loreSummary": "Zotarh est un Drakéide de feu âgé de 30 ans, d'alignement neutre bon.",
+      "gameplaySummary": "Ce personnage utilise des capacités basées sur la force et l'esprit pour manipuler le champ de bataille, infliger des dégâts de zone et gérer les points de vie via une mécanique de totem de surcharge.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Guerrier"
+      ]
+    },
+    "zotaru": {
+      "loreSummary": "Zotaru est un Haut Elfe sage et conseiller dans un royaume humain, cherchant à transmettre son savoir et à refonder sa lignée.",
+      "gameplaySummary": "Ce guerrier-mage alterne entre des capacités de combat au corps à corps et des sorts de contrôle gravitationnel en manipulant ses caractéristiques de Force et d'Esprit.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Guerrier",
+        "Mage"
+      ]
+    }
+  }
+}

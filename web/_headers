@@ -1,0 +1,13 @@
+/downloads/*
+  Content-Disposition: attachment
+  X-Content-Type-Options: nosniff
+
+/data/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
