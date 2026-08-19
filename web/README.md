@@ -4,8 +4,8 @@ Le site est statique. Ses données sont générées depuis les archives canoniqu
 le parseur officiel de `cardenveil-core`.
 
 ```powershell
-.\web\site.ps1 build
-.\web\site.ps1 preview
+web\site.cmd build
+web\site.cmd preview
 ```
 
 Ouvrir ensuite `http://localhost:8000/`.
@@ -42,10 +42,10 @@ explicite `metadata.py sync` modifie les archives pour y inclure leur copie de `
 ## Routine de mise à jour
 
 1. Ajouter, remplacer ou retirer les archives dans `Final/`.
-2. Exécuter `.\web\site.ps1 build` pour créer les nouvelles entrées de métadonnées et reconstruire
+2. Exécuter `web\site.cmd build` pour créer les nouvelles entrées de métadonnées et reconstruire
    le site.
 3. Modifier les champs éditoriaux dans `web/catalog-metadata.json`.
-4. Relancer `.\web\site.ps1 check`.
+4. Relancer `web\site.cmd check`.
 5. Commit et push : Cloudflare Pages redéploie automatiquement le site.
 
 La commande `preview` lance également une prévisualisation sur `http://127.0.0.1:8000`.
