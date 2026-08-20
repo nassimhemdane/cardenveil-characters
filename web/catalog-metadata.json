@@ -376,7 +376,7 @@
     "n-akhmoc": {
       "loreSummary": "N'akhmoc est un Illithid venu d'un monde inconnu qui cherche à expérimenter la vie mortelle tout en rétablissant l'équilibre absolu dans l'univers.",
       "gameplaySummary": "Ce personnage utilise ses capacités basées sur l'Esprit pour manipuler le temps, la gravité et les illusions afin de soutenir ses alliés ou contrôler le champ de bataille.",
-      "difficulty": 4.5,
+      "difficulty": 4,
       "creator": "",
       "class": [
         "Mage"
@@ -403,7 +403,7 @@
     "nyx": {
       "loreSummary": "Nyx est une elfe des bois de 38 ans au tempérament loyal mauvais, utilisant une cape mystique pour manipuler l'obscurité et traquer ses cibles.",
       "gameplaySummary": "Ce personnage agile excelle dans le combat tactique et la mobilité, utilisant des capacités basées sur l'agilité pour infliger des dégâts de zone, marquer ses proies et esquiver les attaques.",
-      "difficulty": 1.5,
+      "difficulty": 2.5,
       "creator": "",
       "class": [
         "Roublard"
@@ -502,7 +502,7 @@
     "zahaar": {
       "loreSummary": "Zahaar est un Haut Elfe de 207 ans, d'alignement Neutre Bon, qui utilise son totem Reality Canvas pour manipuler la réalité.",
       "gameplaySummary": "Ce personnage utilise des capacités basées sur l'Esprit pour créer des distorsions spatiales, invoquer des clones et manipuler les éléments du champ de bataille.",
-      "difficulty": 4,
+      "difficulty": 4.5,
       "creator": "",
       "class": [
         "Autre"
@@ -511,7 +511,7 @@
     "zotarh": {
       "loreSummary": "Zotarh est un Drakéide de feu âgé de 30 ans, d'alignement neutre bon.",
       "gameplaySummary": "Ce personnage utilise des capacités basées sur la force et l'esprit pour manipuler le champ de bataille, infliger des dégâts de zone et gérer les points de vie via une mécanique de totem de surcharge.",
-      "difficulty": 2.5,
+      "difficulty": 3,
       "creator": "",
       "class": [
         "Guerrier"

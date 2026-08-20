@@ -35,4 +35,4 @@ def test_real_gemini_imports_reference_pdf() -> None:
     pdf = Path(__file__).parents[1] / "References" / "Pdf" / "Aurore.pdf"
     sheet = CharacterPDFImporter(GeminiCharacterDocumentExtractor.from_env()).load(pdf)
     assert isinstance(sheet, CharacterSheet)
-    assert sheet.identity.nom
+    assert sheet. identity.nom
