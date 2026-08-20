@@ -164,7 +164,7 @@
     "darion-blaris": {
       "loreSummary": "Darion Blaris est un nain chaotique neutre de 40 ans, guerrier mélomane utilisant un marteau-guitare pour influencer le champ de bataille.",
       "gameplaySummary": "Ce personnage de mêlée utilise des capacités basées sur la Force et le Social pour infliger des dégâts de zone, dévier des attaques et manipuler les effets de combat via un système de cartes et de totem.",
-      "difficulty":3,
+      "difficulty": 3,
       "creator": "",
       "class": [
         "Guerrier",
