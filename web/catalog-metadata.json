@@ -83,7 +83,7 @@
     "azella": {
       "loreSummary": "Azella est une Tiffeline saltimbanque qui survit dans la rue en performant des spectacles avec sa tortue magique, Pedro Carpax l'Ancien.",
       "gameplaySummary": "Ce personnage utilise des capacités de contrôle, de mobilité et de soutien basées sur des interactions tactiques avec sa tortue et des effets de confusion.",
-      "difficulty": 3.5,
+      "difficulty": 4,
       "creator": "",
       "class": [
         "Barde"
@@ -101,7 +101,7 @@
     "bigo": {
       "loreSummary": "Bigo est un troll ermite solitaire vivant dans les marécages, dévoué à la préservation de la nature sauvage.",
       "gameplaySummary": "Ce combattant agile utilise un fouet, des capacités de camouflage et des effets de poison ou de contrôle pour manipuler le champ de bataille.",
-      "difficulty": 3,
+      "difficulty": 3.5,
       "creator": "",
       "class": [
         "Druide"
@@ -164,7 +164,7 @@
     "darion-blaris": {
       "loreSummary": "Darion Blaris est un nain chaotique neutre de 40 ans, guerrier mélomane utilisant un marteau-guitare pour influencer le champ de bataille.",
       "gameplaySummary": "Ce personnage de mêlée utilise des capacités basées sur la Force et le Social pour infliger des dégâts de zone, dévier des attaques et manipuler les effets de combat via un système de cartes et de totem.",
-      "difficulty": 2.5,
+      "difficulty":3,
       "creator": "",
       "class": [
         "Guerrier",
@@ -266,7 +266,7 @@
     "gerard": {
       "loreSummary": "Gerard est un ancien soldat mort-vivant cherchant à comprendre les raisons de sa propre création.",
       "gameplaySummary": "Ce personnage tactique manipule son corps et sa tête détachée pour alterner entre des postures offensives et défensives tout en gérant des ressources de cartes.",
-      "difficulty": 4.5,
+      "difficulty": 4,
       "creator": "",
       "class": [
         "Autre"
