@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import base64
+import binascii
 import json
 import shutil
 import zipfile
@@ -18,8 +20,26 @@ ASSETS = PUBLIC / "assets"
 DOWNLOADS = PUBLIC / "downloads"
 
 
-def _copy_asset(archive: zipfile.ZipFile, reference: str) -> str:
-    if not reference or not reference.startswith("/assets/"):
+def _copy_asset(
+    archive: zipfile.ZipFile,
+    reference: str,
+    fallback_member: str,
+) -> str:
+    if not reference:
+        return ""
+    if reference.startswith("data:"):
+        header, separator, payload = reference.partition(",")
+        if not separator or ";base64" not in header:
+            raise ValueError(f"Image data URI non prise en charge: {header!r}")
+        try:
+            content = base64.b64decode(payload, validate=True)
+        except (ValueError, binascii.Error) as error:
+            raise ValueError("Image base64 invalide dans une archive") from error
+        target = PUBLIC / fallback_member
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(content)
+        return "/" + fallback_member.replace("\\", "/")
+    if not reference.startswith("/assets/"):
         return ""
     member = reference.lstrip("/")
     actual = {name.casefold(): name for name in archive.namelist()}.get(member.casefold())
@@ -45,10 +65,20 @@ def build() -> None:
         character = character_from_archive(source)
         payload = character_to_dict(character)
         with zipfile.ZipFile(source) as archive:
-            payload["portrait"] = _copy_asset(archive, character.portrait)
-            payload["totem"]["image"] = _copy_asset(archive, character.totem.image)
-            for capacity, original in zip(payload["capacities"], character.capacities, strict=True):
-                capacity["image"] = _copy_asset(archive, original.image)
+            payload["portrait"] = _copy_asset(
+                archive, character.portrait, f"assets/{character.id}/portrait.png"
+            )
+            payload["totem"]["image"] = _copy_asset(
+                archive, character.totem.image, f"assets/{character.id}/totem.png"
+            )
+            for index, (capacity, original) in enumerate(
+                zip(payload["capacities"], character.capacities, strict=True), start=1
+            ):
+                capacity["image"] = _copy_asset(
+                    archive,
+                    original.image,
+                    f"assets/{character.id}/capacity-{index}.png",
+                )
         catalog = metadata.get(character.id, {})
         character_classes = catalog.get("class", [])
         if isinstance(character_classes, str):
