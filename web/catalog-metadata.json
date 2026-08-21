@@ -526,6 +526,15 @@
         "Guerrier",
         "Mage"
       ]
+    },
+    "arios-von-nosferatus": {
+      "loreSummary": "Arios Von Nosferatus est un dhampire mercenaire et chasseur de primes d'origine noble, en quête de sa place dans le monde tout en luttant contre ses pulsions vampiriques.",
+      "gameplaySummary": "Ce combattant agile utilise des armes de sang invoquées et des capacités de manipulation sanguine pour infliger des dégâts, se régénérer et contrôler le champ de bataille.",
+      "difficulty": 3.0,
+      "creator": "",
+      "class": [
+        "Autre"
+      ]
     }
   }
 }
