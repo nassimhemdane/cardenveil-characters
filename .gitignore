@@ -1,34 +1,64 @@
+# Secrets et configuration locale
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Python
 __pycache__/
 *.py[cod]
+*.egg-info/
+.venv/
+venv/
 .pytest_cache/
+.test-*/
 tests/.pytest-tmp/
 pytest-cache-files-*/
 .ruff_cache/
+.mypy_cache/
 .coverage
+.coverage.*
 htmlcov/
-.venv/
-.env
-debug/
-gemini-output/
-dist/
+
+# Construction, journaux et fichiers temporaires
 build/
-*.egg-info/
+dist/
+debug/
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+~$*
+
+# IDE et système d'exploitation
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
 
 # Sources de travail lourdes, inutiles au site public
 Toconvert/
 References/
 RulesCardenveil/
+gemini-output/
 
-# Archives de travail : seules les fiches Final/*.zip à la racine sont publiées
+# Archives de travail : seuls les Final/*.zip à la racine sont publiés
 Final/Backups/
 Final/Candidates/
 Final/Problematiques/
 
-# Sorties régénérées par web/build.py sur la machine ou dans Cloudflare Pages
+# Sorties régénérées par web/build.py (local et Cloudflare Pages)
 web/public/assets/
 web/public/downloads/
 web/public/data/
 web/public/_headers
 
-# Captures et fichiers temporaires de validation visuelle
+# Captures et validations visuelles temporaires
 web/*-check.png
