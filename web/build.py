@@ -9,6 +9,7 @@ import shutil
 import zipfile
 from pathlib import Path
 
+from cardenveil.exporters import character_archive_to_pdf
 from cardenveil.serialization import character_from_archive, character_to_dict
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,6 +19,7 @@ PUBLIC = WEB / "public"
 DATA = PUBLIC / "data"
 ASSETS = PUBLIC / "assets"
 DOWNLOADS = PUBLIC / "downloads"
+PDFS = PUBLIC / "pdfs"
 
 
 def _copy_asset(
@@ -59,6 +61,7 @@ def build() -> None:
     DATA.mkdir(parents=True, exist_ok=True)
     ASSETS.mkdir(parents=True, exist_ok=True)
     DOWNLOADS.mkdir(parents=True, exist_ok=True)
+    PDFS.mkdir(parents=True, exist_ok=True)
     characters: list[dict[str, object]] = []
 
     for source in sorted(FINAL.glob("*.zip")):
@@ -91,6 +94,9 @@ def build() -> None:
             )
         payload["catalog"] = catalog
         payload["download"] = f"/downloads/{source.name}"
+        pdf_name = f"{character.id}.pdf"
+        character_archive_to_pdf(source, PDFS / pdf_name)
+        payload["pdfDownload"] = f"/pdfs/{pdf_name}"
         characters.append(payload)
         shutil.copy2(source, DOWNLOADS / source.name)
 

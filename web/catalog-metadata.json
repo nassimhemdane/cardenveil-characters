@@ -535,6 +535,15 @@
       "class": [
         "Autre"
       ]
+    },
+    "biwa": {
+      "loreSummary": "Biwa est un musicien itinérant mort-vivant et arrogant qui cherche à permettre aux autres créatures isolées de faire de l'art.",
+      "gameplaySummary": "Il combat en maniant une rapière et en utilisant ses capacités musicales et sociales pour influencer, soigner ou perturber ses cibles.",
+      "difficulty": 4,
+      "creator": "",
+      "class": [
+        "Barde"
+      ]
     }
   }
 }

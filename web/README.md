@@ -62,3 +62,16 @@ Répertoire racine : laisser vide
 
 Le site est entièrement statique : les archives et images sont intégrées au déploiement. Aucun
 serveur applicatif ni secret n'est nécessaire pour cette première version.
+
+## Fiches PDF imprimables
+
+Chaque build génère aussi `web/public/pdfs/<identifiant>.pdf` depuis l'archive canonique. Le PDF
+contient exactement deux pages A4 portrait sur fond blanc, sans les métadonnées éditoriales du
+catalogue. Les images sont redimensionnées et recompressées à leur taille d'impression. Le bouton
+« Télécharger le PDF » apparaît dans les actions de chaque personnage.
+
+La génération nécessite l'extra PDF :
+
+```powershell
+py -m pip install -e ".[pdf-assets]"
+```
