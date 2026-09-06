@@ -551,6 +551,15 @@
       "difficulty": 5,
       "creator": "",
       "class": []
+    },
+    "luna": {
+      "loreSummary": "Luna est une tiffelin chasseuse de monstre cherchant à accumuler de la puissance pour briser le pacte qu'elle a fait avec un démon.",
+      "gameplaySummary": "Elle combat à l'aide de serpes et de transformations monstrueuses invoquant des créatures pour attaquer, se déplacer et se défendre.",
+      "difficulty": 4,
+      "creator": "",
+      "class": [
+        "Invocateur"
+      ]
     }
   }
 }
