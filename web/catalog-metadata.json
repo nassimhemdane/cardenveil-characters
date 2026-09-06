@@ -544,6 +544,13 @@
       "class": [
         "Barde"
       ]
+    },
+    "kal-sgeil": {
+      "loreSummary": "Kal'sgeil est un Haut Elfe aux dualités émotionnelles complexes guidé par des états d'esprit changeants.",
+      "gameplaySummary": "Il utilise des capacités basées sur l'Esprit et la Force ainsi que des états émotionnels pour contrôler le champ de bataille, se téléporter et manipuler les dégâts.",
+      "difficulty": 5,
+      "creator": "",
+      "class": []
     }
   }
 }
