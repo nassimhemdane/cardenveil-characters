@@ -560,6 +560,22 @@
       "class": [
         "Invocateur"
       ]
+    },
+    "toupou": {
+      "loreSummary": "Toupou est un jeune gnome de treize ans capable d'invoquer un grizzly protecteur à partir de son doudou.",
+      "gameplaySummary": "Ce personnage utilise des capacités de contrôle de terrain et de soutien basées sur la terre tout en commandant son grizzly au combat.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Invocateur"
+      ]
+    },
+    "goldomus": {
+      "loreSummary": "Goldomus est un nain de 55 ans dont la barbe sert d'espace de stockage improbable pour divers objets accumulés.",
+      "gameplaySummary": "Ce personnage utilise sa barbe pour invoquer des objets, se soigner, se protéger et infliger des dégâts de zone tout en gérant des états d'ivresse.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": []
     }
   }
 }

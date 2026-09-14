@@ -1,0 +1,35 @@
+:root{font-family:Arial,Helvetica,sans-serif;color:#151515;background:#dededb;--body-size:9pt}
+*{box-sizing:border-box}
+body{margin:0}
+.print-toolbar{padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:#202222;color:white;position:sticky;top:0;z-index:2}
+.print-toolbar a{color:inherit}.print-toolbar button{padding:10px 15px;font:inherit;cursor:pointer}.print-toolbar small{flex-basis:100%}
+#sheets{padding:18px 0;overflow-x:auto}
+.a4{width:210mm;height:297mm;padding:9mm 9mm 12mm;margin:0 auto 18px;background:white;box-shadow:0 3px 15px #0003;position:relative;font-size:var(--body-size);line-height:1.24}
+.page-content{height:276mm;display:flex;flex-direction:column;gap:2mm}
+.page-content>*{flex-shrink:0}
+.page-footer{position:absolute;bottom:5mm;left:9mm;right:9mm;display:flex;justify-content:space-between;font-size:7pt;border-top:1px solid #bbb;padding-top:1.5mm}
+h1,h2,h3,p{margin:0}h1{font-family:Georgia,serif;font-size:22pt;overflow-wrap:anywhere}h2{font-size:12pt}h3{font-size:9.5pt}
+.sheet-heading{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid #222;padding-bottom:2mm;gap:3mm}
+.sheet-heading small{font-size:8pt;white-space:nowrap}
+.overview{display:grid;grid-template-columns:1fr 1.1fr 1.25fr;gap:2mm;align-items:start}
+.stack{display:flex;flex-direction:column;gap:2mm;min-width:0}
+.box{border:1px solid #444;border-radius:1.5mm;min-width:0;break-inside:avoid}
+.box>h3{padding:1.2mm 2mm;background:#f1f1ef;border-bottom:1px solid #999;text-transform:uppercase;letter-spacing:.03em}
+.box-body{padding:2mm;overflow-wrap:anywhere;min-width:0}
+.portrait{display:block;width:100%;height:39mm;object-fit:contain}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:1.4mm}
+.field{border-bottom:1px solid #ccc;min-width:0;padding-bottom:1mm}.field small{display:block;font-size:7pt;color:#444}.field .value{white-space:pre-wrap;overflow-wrap:anywhere}
+.stat{display:grid;grid-template-columns:17mm 1fr;gap:1mm;border-bottom:1px solid #bbb;padding:1.5mm 0}.stat:last-child{border:0}.stat-score{text-align:center;border:1.5px solid #333;border-radius:3mm 3mm 0 0;align-self:start;padding:1mm}.stat-score b{display:block;font: bold 19pt Georgia,serif}.stat-score small{font-size:7pt}.skills{font-size:7.5pt;display:grid;gap:.5mm}.skill{display:flex;justify-content:space-between;gap:1mm}.skill i{font-style:normal}
+.rich{white-space:pre-wrap;overflow-wrap:anywhere}.rich p{margin:0 0 1mm}.rich p:last-child{margin:0}.rich ul,.rich ol{padding-left:4mm;margin:1mm 0}.rich strong{font-weight:750}
+.totem .box-body{display:flow-root}.totem img{width:24mm;height:24mm;object-fit:contain;float:left;margin:0 3mm 1mm 0}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:2mm;align-items:start}.cards>.wide{grid-column:1/-1}
+.ability-header{display:flex;align-items:center;justify-content:space-between;gap:2mm;padding:1.5mm 2mm;border-bottom:1px solid #555;background:#f1f1ef}.ability-header h3{text-transform:none;font-size:10pt}.cost{font:bold 12pt Georgia,serif;white-space:nowrap}.red{color:#a42026}
+.ability .box-body{display:flow-root}.ability img{float:left;width:22mm;height:22mm;object-fit:contain;margin:0 2mm 1mm 0}
+.ability-details{border-top:1px solid #aaa;margin-top:1.5mm;padding-top:1mm;font-size:7.5pt;clear:both}.ability-details span+span:before{content:' · '}.formula{font-size:7pt;color:#444;margin-top:1mm}
+.narrative-card{border-bottom:1px solid #bbb;padding-bottom:1.2mm;margin-bottom:1.2mm}.narrative-card:last-child{border:0;margin:0}.narrative-card>b{font-size:7pt;text-transform:uppercase;display:block;margin-bottom:.5mm}
+.continuation{font-size:8pt;font-weight:normal}.page-label{font-size:13pt;border-bottom:2px solid #222;padding-bottom:2mm}
+.pair{display:inline}.pair>p{display:inline}.pair:after{content:' · ';color:#888}.pair:last-child:after{content:''}
+.ability-details{white-space:normal}.ability-details p{display:inline;margin:0}.ability-details br{display:none}.pair{white-space:normal}.field .value p{display:inline;margin:0}
+.combat-fields{display:grid;grid-template-columns:1fr 1fr;gap:.7mm}.combat-fields .field{display:flex;align-items:center;justify-content:space-between;gap:1mm;padding-bottom:.6mm}.combat-fields .value{font-weight:bold;font-size:10pt}.combat-fields small{font-size:7pt}
+@page{size:A4 portrait;margin:0}
+@media print{html,body{background:white}.print-toolbar{display:none!important}#sheets{padding:0;overflow:visible}.a4{margin:0;box-shadow:none;break-after:page}.a4:last-child{break-after:auto}*{print-color-adjust:exact;-webkit-print-color-adjust:exact}}

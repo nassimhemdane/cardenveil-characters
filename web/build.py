@@ -9,7 +9,8 @@ import shutil
 import zipfile
 from pathlib import Path
 
-from cardenveil.exporters import character_archive_to_pdf
+from static_pages import character_url, write_character, write_index
+
 from cardenveil.serialization import character_from_archive, character_to_dict
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,7 +20,6 @@ PUBLIC = WEB / "public"
 DATA = PUBLIC / "data"
 ASSETS = PUBLIC / "assets"
 DOWNLOADS = PUBLIC / "downloads"
-PDFS = PUBLIC / "pdfs"
 
 
 def _copy_asset(
@@ -61,7 +61,6 @@ def build() -> None:
     DATA.mkdir(parents=True, exist_ok=True)
     ASSETS.mkdir(parents=True, exist_ok=True)
     DOWNLOADS.mkdir(parents=True, exist_ok=True)
-    PDFS.mkdir(parents=True, exist_ok=True)
     characters: list[dict[str, object]] = []
 
     for source in sorted(FINAL.glob("*.zip")):
@@ -94,9 +93,9 @@ def build() -> None:
             )
         payload["catalog"] = catalog
         payload["download"] = f"/downloads/{source.name}"
-        pdf_name = f"{character.id}.pdf"
-        character_archive_to_pdf(source, PDFS / pdf_name)
-        payload["pdfDownload"] = f"/pdfs/{pdf_name}"
+        payload["printUrl"] = f"/print.html?character={character.id}"
+        payload["pageUrl"] = character_url(character.id)
+        write_character(PUBLIC, payload)
         characters.append(payload)
         shutil.copy2(source, DOWNLOADS / source.name)
 
@@ -104,6 +103,7 @@ def build() -> None:
         json.dumps(characters, ensure_ascii=False, separators=(",", ":")),
         encoding="utf-8",
     )
+    write_index(PUBLIC, characters)
     headers = WEB / "_headers"
     if headers.is_file():
         shutil.copy2(headers, PUBLIC / "_headers")

@@ -1,0 +1,2 @@
+/* Readable full-sheet fallback; interactive views continue using styles.css. */
+.static-sheet{display:grid;gap:20px}.static-sheet dl{margin:0}.static-sheet dt{font-weight:bold;margin-top:12px}.static-sheet dd{margin:4px 0 10px 16px;white-space:pre-wrap;overflow-wrap:anywhere}.static-sheet li{margin-bottom:12px}.static-image{max-width:220px;max-height:260px;object-fit:contain}.character-link{color:inherit;text-decoration:none;display:block}.character-link:focus-visible{outline:2px solid currentColor;outline-offset:4px}
