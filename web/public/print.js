@@ -82,25 +82,69 @@ function flow(block,content,splitHere=false){
   return content;
 }
 
+/** Keep the reference's empty writing boxes visible without inserting invented values. */
+function referenceFields(c,keys){return keys.map(k=>`<div class="field"><small>${escapeText(label(k))}</small><div class="value">${has(c[k])?rich(c[k]):'&nbsp;'}</div></div>`).join('');}
+/** Compare duplicate legacy totem text without typography or HTML differences. */
+function sameProse(a,b){return plain(a).toLowerCase().replace(/[^\p{L}\p{N}]/gu,'')===plain(b).toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');}
 /** Build the reference-style three-column overview with stored game values. */
 function overview(c){
   const layout=element('<div class="overview"><div class="stack"></div><div class="stack"></div><div class="stack"></div></div>');
   const [left,center,right]=layout.children;
   if(c.portrait)left.append(element(`<div class="box">${picture(c.portrait,'portrait')}</div>`));
   left.append(box('Caractéristiques',Object.entries(groups).map(([stat,keys])=>`<div class="stat"><div class="stat-score"><b>${escapeText(c.stats[stat])}</b><small>${label(stat)}</small>${has(c.statBonuses?.[stat])?`<small>Bonus ${escapeText(c.statBonuses[stat])}</small>`:''}</div><div class="skills">${keys.filter(k=>c.skills[k]).map(k=>`<div class="skill"><span>${c.skills[k].trained?'●':'○'} ${label(k)}</span><i>${escapeText(c.skills[k].bonus)}</i></div>`).join('')}</div></div>`).join('')));
-  center.append(box('Identité',`<div class="fields">${values(Object.fromEntries(['joueur','niveau','race','alignement'].map(k=>[k,c.identity[k]])))}</div>`));
+  center.append(box('Identité',`<div class="fields">${referenceFields(c.identity,['niveau','race','alignement','joueur'])}</div>`));
   center.append(box('Combat',`<div class="combat-fields">${values(c.derived)}${values(c.defense)}</div>`));
   if(c.weapons.some(w=>has(w)))center.append(box('Armes',c.weapons.filter(has).map(w=>`<div class="narrative-card"><b>${escapeText(plain(w.nom))}</b><div>${compact(Object.fromEntries(Object.entries(w).filter(([k])=>k!=='nom')))}</div></div>`).join('')));
-  right.append(box('Physique',`<div class="fields">${values(Object.fromEntries(['age','taille','poids','yeux','peau','cheveux'].map(k=>[k,c.identity[k]])))}</div>`));
+  right.append(box('Physique',`<div class="fields">${referenceFields(c.identity,['age','taille','poids','yeux','peau','cheveux'])}</div>`));
   const narrative=box('Narratif','');
-  for(const [k,v] of Object.entries(c.narrative).filter(([,v])=>has(v)))narrative.lastElementChild.append(element(`<div class="narrative-card"><b>${label(k)}</b><div>${rich(v)}</div></div>`));
+  for(const [k,v] of Object.entries(c.narrative))narrative.lastElementChild.append(element(`<div class="narrative-card"><b>${label(k)}</b><div>${has(v)?rich(v):'<span class="empty-rule"></span>'}</div></div>`));
   if(narrative.lastElementChild.children.length)right.append(narrative);
   return layout;
 }
-/** Compact ability card: illustration, full rich description, values and complete cost. */
+/** Render a non-editable, seven-column ability row based on htmls/verso.html. */
 function ability(a){
   const cost=a.cost||{},color=cost.color||'';
-  return element(`<section class="box ability"><header class="ability-header"><h3>${escapeText(plain(a.name))}</h3><span class="cost ${['heart','diamond'].includes(color)?'red':''}">${escapeText(suits[color]||color)} ${escapeText(cost.total)}</span></header><div class="box-body rich">${picture(a.image)}${rich(a.description)}<div class="ability-details">${[['Valeur',a.value.main],['Bonus',a.value.bonus],['Incantation',a.incantation],['Sauvegarde',a.save],['Utilisation',a.usage],['Préparée',a.prepared?'Oui':'Non']].filter(([,v])=>has(v)).map(([k,v])=>`<span><strong>${k} :</strong> ${rich(v)}</span>`).join('')}<div class="formula">Coût ${escapeText(cost.base)} − ${escapeText(cost.incantationReduction)} incant. − ${escapeText(cost.colorReduction)} couleur − ${escapeText(cost.awakeningReduction)} éveil − ${escapeText(cost.weaponMasteryReduction)} maîtrise = ${escapeText(cost.total)}</div></div></div></section>`);
+  const reductions=[['incantation',cost.incantationReduction],['couleur',cost.colorReduction],['éveil',cost.awakeningReduction],['maîtrise',cost.weaponMasteryReduction]].filter(([,v])=>Number(v));
+  return element(`<section class="box ability ability-row" role="row">
+    <div class="ability-visual" role="cell">${picture(a.image)}</div>
+    <div class="ability-description" role="cell"><h3>${escapeText(plain(a.name))}</h3><div class="box-body rich">${rich(a.description)}</div><small class="prepared">Préparée : ${a.prepared?'Oui':'Non'}</small></div>
+    <div class="ability-value rich" role="cell">${rich(a.value.main)}${has(a.value.bonus)?`<small>Bonus : ${rich(a.value.bonus)}</small>`:''}</div>
+    <div class="ability-cost" role="cell"><span class="cost ${['heart','diamond'].includes(color)?'red':''}">${escapeText(suits[color]||color)} ${escapeText(cost.total)}</span><div class="formula">${escapeText(cost.base)}${reductions.map(([,v])=>` − ${escapeText(v)}`).join('')} = ${escapeText(cost.total)}</div>${reductions.map(([k,v])=>`<small>${escapeText(k)} : −${escapeText(v)}</small>`).join('')}</div>
+    <div class="rich" role="cell">${rich(a.incantation)}</div>
+    <div class="rich" role="cell">${rich(a.save)}</div>
+    <div class="rich" role="cell">${rich(a.usage)}</div>
+  </section>`);
+}
+/** Create a repeated table heading so every printed continuation remains understandable. */
+function abilityTable(content){
+  const table=element('<div class="ability-table" role="table" aria-label="Capacités"></div>');
+  table.append(element('<div class="ability-columns" role="row">'+['Visuel','Description','Valeur','Coût','Incantation','Sauvegarde','Utilisation'].map(t=>`<div role="columnheader">${t}</div>`).join('')+'</div>'));
+  content.append(table);return table;
+}
+/** Keep ordinary rows together; exceptionally long descriptions continue across A4 sheets. */
+function abilityPages(c){
+  let content=page('Capacités — verso');
+  if(has(c.abilityControls.colorReductions))content.append(box('Réduction des capacités',compact(c.abilityControls.colorReductions),'reductions'));
+  let table=abilityTable(content);
+  for(const a of c.capacities){
+    let row=ability(a);table.append(row);
+    if(fits(content))continue;
+    row.remove();
+    if(table.children.length===1)table.remove();
+    content=page('Capacités — suite');table=abilityTable(content);table.append(row);
+    let guard=0;
+    while(!fits(content)){
+      if(++guard>50)throw Error('Capacité trop volumineuse pour la pagination.');
+      const rest=splitBlock(row,content);
+      if(!rest)throw Error('Les propriétés de cette capacité dépassent une feuille A4.');
+      content=page('Capacités — suite');table=abilityTable(content);row=rest;table.append(row);
+    }
+  }
+  if(has(c.notes))content=flow(box('Notes personnelles',rich(c.notes)),content);
+  // Blank ruled space is only decorative: never create a sheet just for empty lines.
+  const notes=box('Notes personnelles','<div class="writing-lines"></div>','blank-notes');
+  content.append(notes);if(!fits(content)||has(c.notes))notes.remove();
+  return content;
 }
 /** Fill a two-column page with unbroken cards; oversize cards use full width then continuation. */
 function cards(blocks,content){
@@ -140,17 +184,14 @@ function layout(c,size){
     const block=stack.lastElementChild;block.remove();deferred.unshift(block);
   }
   if(has(c.totem))content=flow(box(`Totem — ${plain(c.totem.nom)}`,picture(c.totem.image)+rich(c.totem.description),'totem'),content,true);
-  if(has(c.inventory.totem))content=flow(box('Totem — notes',rich(c.inventory.totem)),content,true);
+  if(has(c.inventory.totem)&&!sameProse(c.inventory.totem,c.totem.description))content=flow(box('Totem — notes',rich(c.inventory.totem)),content,true);
   for(const block of deferred)content=flow(block,content,true);
   const mechanics=[];
   for(const [title,obj] of [['Progression',c.progression],['Cartes et capacités',c.abilityControls],['Tokens',c.resources.tokens]])if(has(obj))mechanics.push(`<div class="narrative-card"><b>${title}</b><div>${compact(obj)}</div></div>`);
   for(const [title,items] of [['Maîtrises d’armes',c.weaponMasteries],['Maîtrises élémentaires',c.elementalMasteries],['Dons',c.feats]])if(items.length)mechanics.push(`<div class="narrative-card"><b>${title}</b>${items.map(compact).join('<br>')}</div>`);
-  for(const [title,v] of [['Cartes et tokens',c.resources.cartesEtTokens],['Actions',c.actions],['Réactions',c.reactions],['Tokens libres',c.tokens],['Notes',c.notes]])if(has(v))mechanics.push(`<div class="narrative-card"><b>${title}</b>${rich(v)}</div>`);
+  for(const [title,v] of [['Cartes et tokens',c.resources.cartesEtTokens],['Actions',c.actions],['Réactions',c.reactions],['Tokens libres',c.tokens]])if(has(v))mechanics.push(`<div class="narrative-card"><b>${title}</b>${rich(v)}</div>`);
   if(mechanics.length)content=flow(box('Ressources et maîtrises',`<div class="cards">${mechanics.join('')}</div>`),content,true);
-  // Keep the visual boundary between overview and spells, but reuse continuation pages.
-  if(sheets.children.length===1)content=page('Capacités');
-  else content=flow(box('Capacités',''),content);
-  content=cards(c.capacities.map(ability),content);
+  content=abilityPages(c);
   const inventory=[];
   for(const [slot,item] of Object.entries(c.equipment))if(has(item))inventory.push(box(label(slot),compact(item)));
   for(const item of c.inventoryItems)if(has(item))inventory.push(box(item.name||item.weaponName||'Objet',compact(item)));
@@ -173,7 +214,7 @@ async function loadImages(c){
 async function renderSheet(c){
   await loadImages(c);
   let count=layout(c,9);
-  if(count>3){const smaller=layout(c,8.5);if(smaller>=count)count=layout(c,9);else count=smaller;}
+
   const overflow=[...document.querySelectorAll('.page-content')].some(p=>!fits(p));
   if(overflow)throw Error('Une feuille dépasse le format A4.');
   document.title=`${plain(c.identity.nom)} — Fiche A4`;

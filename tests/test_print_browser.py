@@ -90,6 +90,10 @@ def test_all_printable_sheets_in_browser(tmp_path):
         assert not row["missing"], row
         assert not row["missingImages"], row
         assert row["horizontal"] == 0, row
+        assert row["editable"] == 0, row
+        assert row["invalidTables"] == 0, row
+        assert row["nonA4"] == 0, row
         assert row["inventoryPage"] in (-1, 2), row
         if row["id"] != "continuation-test":
-            assert 2 <= row["pages"] <= 4, row
+            # Table rows may need more sheets; never shrink or crop to force a page count.
+            assert row["pages"] >= 2, row

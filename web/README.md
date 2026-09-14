@@ -78,15 +78,22 @@ serveur applicatif ni secret n'est nécessaire pour cette première version.
 
 Le bouton « Fiche A4 / Imprimer » ouvre `print.html?character=<identifiant>`. Cette vue en lecture
 seule affiche des feuilles blanches de 210 × 297 mm, avec portrait, caractéristiques, combat,
-narratif, totem pleine largeur et capacités illustrées sur deux colonnes. L'équipement et
+narratif et totem pleine largeur. Le recto reprend les cadres des exemples `htmls/recto.html` ;
+le verso reprend le tableau à sept colonnes de `htmls/verso.html` (visuel, description, valeur,
+coût, incantation, sauvegarde, utilisation). Ces exemples sont des captures de Toupou : le rendu
+les reconstruit en vrai HTML, sans réutiliser leur image de fond ni leurs champs modifiables.
+Les cadres d'identité et narratifs vides restent disponibles pour l'annotation sur papier.
+L'équipement et
 l'inventaire, lorsqu'ils sont renseignés, occupent la troisième feuille ; les continuations
 éventuelles suivent. Les métadonnées éditoriales ne sont pas imprimées.
 
 La pagination attend les images et les polices, mesure les blocs et conserve le texte riche
-lors des continuations. La police principale est de 9 pt ; 8,5 pt est utilisé uniquement si cela
-économise une page. Les fiches très chargées peuvent utiliser une quatrième feuille. Aucun texte
-n'est masqué pour imposer cette limite : de futures fiches exceptionnellement longues pourront
-nécessiter davantage de pages.
+lors des continuations. La police principale est de 9 pt, celle du tableau de 8,5 pt. Le nombre
+de lignes et leur hauteur suivent les capacités du personnage, sans limite arbitraire de pages.
+Chaque continuation répète les en-têtes du tableau. Une description trop longue se poursuit sur
+une nouvelle feuille A4 sans être tronquée ; une zone de notes lignées est ajoutée s'il reste de
+la place. Les copies identiques du texte du totem dans l'ancien champ d'inventaire ne sont pas
+imprimées deux fois. Aucune donnée de l'archive n'est modifiée.
 
 Le navigateur assure l'impression et l'enregistrement PDF : sélectionner A4, échelle 100 % et
 désactiver ses en-têtes/pieds de page. Les navigateurs Chromium sont utilisés pour la validation.

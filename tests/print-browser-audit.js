@@ -8,6 +8,7 @@ document.querySelector('iframe').onload=async function(){
   const giant=JSON.parse(JSON.stringify(chars.find(c=>c.id==='luna')));
   giant.id='continuation-test';giant.identity.nom='Continuation test';
   giant.totem.description=Array.from({length:18},(_,i)=>`<p><strong>Repère${i}</strong> : ${'Texte de continuation intégral. '.repeat(12)}</p>`).join('');
+  giant.capacities[0].description=Array.from({length:14},(_,i)=>`<p><strong>Suite${i}</strong> : ${'Description complète de capacité. '.repeat(10)}</p>`).join('');
   for(const c of [...chars,giant]){
     try{
       const pages=await win.renderSheet(c);const doc=win.document;
@@ -17,11 +18,14 @@ document.querySelector('iframe').onload=async function(){
       while((node=walker.nextNode()))texts.push(node.nodeValue);
       const wanted=counts(expected),actual=counts(texts.join(' '));
       const missing=Object.keys(wanted).filter(w=>(actual[w]||0)<wanted[w]);
-      const horizontal=[...doc.querySelectorAll('.box,.field,.ability-header')].filter(e=>e.scrollWidth>e.clientWidth+3).length;
+      const horizontal=[...doc.querySelectorAll('.box,.field,.ability-header,[role=cell]')].filter(e=>e.scrollWidth>e.clientWidth+3).length;
+      const editable=doc.querySelectorAll('#sheets input,#sheets textarea,#sheets [contenteditable]').length;
+      const invalidTables=[...doc.querySelectorAll('.ability-table')].filter(t=>t.querySelectorAll('[role=columnheader]').length!==7||!t.querySelector('.ability-row')).length;
+      const nonA4=[...doc.querySelectorAll('.a4')].filter(p=>Math.abs(p.offsetWidth-210*96/25.4)>1||Math.abs(p.offsetHeight-297*96/25.4)>1).length;
       const images=[c.portrait,c.totem.image,...c.capacities.map(a=>a.image)].filter(Boolean);
       const missingImages=images.filter(src=>![...doc.images].some(img=>img.getAttribute('src')===src));
       const inventoryPage=[...doc.querySelectorAll('.page-content')].findIndex(p=>p.firstElementChild.textContent==='Équipement & inventaire');
-      results.push({id:c.id,pages,horizontal,missing,missingImages,inventoryPage});
+      results.push({id:c.id,pages,horizontal,missing,missingImages,inventoryPage,editable,invalidTables,nonA4});
     }catch(e){results.push({id:c.id,error:e.message});}
   }
   document.querySelector('#result').textContent=JSON.stringify(results);document.title='DONE';
