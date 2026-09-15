@@ -136,7 +136,7 @@ def document(title: str, body: str, extra: str = "") -> str:
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/static-sheet.css"></head><body>
 <header class="site-header"><a class="brand" href="/">CARDENVEIL</a>
-<nav><a href="/">Catalogue</a> <a href="/personnages/">Toutes les fiches</a></nav></header>
+<nav><a href="/">Catalogue</a> <a href="/regles/">Règles & docs</a> <a href="/personnages/">Toutes les fiches</a></nav></header>
 <main id="app">{body}</main>{extra}</body></html>'''
 
 

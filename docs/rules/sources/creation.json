@@ -1,0 +1,564 @@
+{
+  "source": "Cardenveil Personnage.pdf",
+  "pages": [
+    {
+      "number": 1,
+      "blocks": [
+        "Personnage",
+        "📝 Création de Personnage",
+        "1. Identité",
+        "Choisis un nom, une race, un alignement, et une courte description.",
+        "Ajoute quelques traits physiques ou culturels si tu le souhaites.",
+        "2. Caractéristiques",
+        "Tu disposes de 52 points à répartir entre :",
+        "Force (FO)",
+        "Agilité (AGI)",
+        "Esprit (ESP)",
+        "Social (SOC)",
+        "Chaque caractéristique doit être entre 0 et 20.",
+        "Le modificateur = (Score − 10) ÷ 2, arrondi à l’inférieur.",
+        "Si une caractéristique ≤ 5 → elle impose un malus permanent (déterminé\naprès la création, durant la premiere session de chaque avanture).",
+        "3. Statistiques dérivées",
+        "À partir de tes caractéristiques, calcule :",
+        "Points de Vie = 60+ (5 × Force)",
+        "Personnage\n1"
+      ]
+    },
+    {
+      "number": 2,
+      "blocks": [
+        "Mouvement = 5 m + Agilité/2",
+        "Initiative = Agilité − 10",
+        "Perception passive = 10 + mod de Perception",
+        "Tokens = 1 + mod de chaque caractéristique",
+        "4. Compétences",
+        "Tu commences avec  4 compétences.",
+        "Une caractéristique ne peut pas avoir plus de compétences que son\nmodificateur.",
+        "Maîtriser une compétence = bonus doublé dans cette compétence.",
+        "5. Totem",
+        "Chaque personnage possède un Totem de base.",
+        "Le Totem donne un effet mineur ou utilitaire.",
+        "Son apparence et son intention sont définies avec le MJ.",
+        "6. Capacités",
+        "Les capacités sont créées avec le MJ.",
+        "Au départ, tu peux connaître Esprit/2 capacités maximum.",
+        "7. Aspects narratifs",
+        "Choisir un Background : d’où vient ton personnage, ce qui l’a marqué ou\nformé.",
+        "Définir un Objectif : ce qu’il veut accomplir, réparer ou atteindre.",
+        "Décrire ses Liens avec les autres personnages : relations positives, tensions,\nalliances, méfiances.",
+        "Choisir un Aspect libre : un trait marquant, une manière d’agir, une conviction\nou une tendance qui influence son comportement.",
+        "Personnage\n2"
+      ]
+    },
+    {
+      "number": 3,
+      "blocks": [
+        "Caractéristiques et leur rôle",
+        "Les caractéristiques sont le cœur du système, définissant les aptitudes physiques,\nmentales et sociales de chaque personnage. Elles déterminent votre efficacité en\ncombat, vos compétences, ainsi que votre capacité à utiliser des capacités ou\ninteragir avec l'environnement. Chacune des caractéristiques influence des\nmécaniques spécifiques,",
+        "1. Force :",
+        "PV : 60 + 5 * Force.",
+        "Permet de porter une armure et améliore sa capacité de réduction des\ndégâts.",
+        "Tokens de Force : Piocher une carte supplémentaire.",
+        "Tokens de Force : Permettent de répéter une attaque de base.",
+        "Alteration de couts de capacités de force: Coût=Coût initial - (Force -10)",
+        "2. Agilité :",
+        "Mouvement : 5 + Agilité ÷ 2 (arrondi au supérieur).",
+        "Initiative : 2 x modificateur d’agilité.",
+        "Tokens d’Agilité : Permettent de choisir le deck à piocher.",
+        "Tokens d’Agilité : Permet de courber une attaque de base.",
+        "Alteration de couts de capacités d’agilite: Coût=Coût initial - (Agilite-10)",
+        "3. Esprit :",
+        "Nombre de capacités connues : Esprit ÷ 2 (arrondi au supérieur).",
+        "Tokens d’Esprit: Permet d’étendre la taille de sa main et cristaliser des\ncartes.",
+        "Tokens d’Esprit: Permet de faire réverbérer une attaque de base.",
+        "Statistique clé pour les dégâts magiques/élémentaires.",
+        "Alteration de couts de capacités d’esprit: Coût=Coût initial - (Esprit-10)",
+        "4. Social :",
+        "Personnage\n3"
+      ]
+    },
+    {
+      "number": 4,
+      "blocks": [
+        "Tokens de Social : Permettent d’échanger des cartes avec les autres\njoueurs (voir tokens plus tard).",
+        "Tokens de Social: Permet de f",
+        "Jouent un rôle essentiel dans les interactions RP et les tests sociaux.",
+        "Alteration de couts de capacités de social: Coût=Coût initial - (Social-10)",
+        "Attribution des Caractéristiques",
+        "En creant votre personnage, vous avez 52 points à répartir entre Force, \nAgilité, Esprit, et Social.",
+        "Chaque caractéristique doit être comprise entre 0 et 20.",
+        "Valeur\nModificateur",
+        "1-9\n(Valeur - 10) ÷ 2, arrondi à l'entier inférieur (ex. : 8 → -1).",
+        "10-20\n(Valeur - 10) ÷ 2 (ex. : 14 → +2).",
+        "Règles :",
+        "1. Malus :",
+        "Toute caractéristique inférieure à 6 entraîne des malus permanents (voir\nsection Malus des Caractéristiques).",
+        "2. Modificateur d'une caractéristique :",
+        "Le modificateur influence vos jets, comme les dégâts, les compétences, et\nles interactions liées à cette caractéristique.",
+        "COMPÉTENCES",
+        "Les compétences représentent les aptitudes spécifiques de votre personnage et\nsont au centre des interactions roleplay. Elles permettent de résoudre des\nsituations variées, comme persuader un PNJ, décrypter des écrits anciens ou se\nfaufiler discrètement. Chaque compétence est liée à une caractéristique, reflétant\nles points forts de votre personnage dans et hors des combats",
+        "Personnage\n4"
+      ]
+    },
+    {
+      "number": 5,
+      "blocks": [
+        "Force",
+        "1. Athlétisme : Courir, escalader, nager ou soulever des objets lourds.",
+        "➝ Combat : Jet de sauvegarde contre les effets restreignants. Jet pour\npousser un ennemi.",
+        "2. Résilience : Résister à la douleur, au poison et supporter des conditions\nextrêmes.",
+        "➝ Combat : Jet de sauvegarde pour maintenir la concentration. Jet pour se\nrelever de l’inconscience.",
+        "Agilité",
+        "1. Acrobaties : Maintenir l’équilibre, esquiver avec agilité.",
+        "➝ Combat : Jet de sauvegarde contre les capacités à effet de zone.",
+        "2. Discrétion : Se cacher et se déplacer sans être détecté.",
+        "➝ Combat : Jet de compétence pour se cacher en combat.",
+        "3. Escamotage : Voler des objets, crocheter des serrures, manipuler des petits\nobjets.",
+        "➝ Combat : Impliqué dans les mécaniques de consommables.",
+        "Esprit",
+        "1. Arcanes : Comprendre la magie, les rituels et les enchantements.",
+        "➝ Combat : Jet de sauvegarde contre les effets magiques ciblés.",
+        "2. Investigation : Analyser des indices et résoudre des énigmes.",
+        "➝ Combat : Jet de compétence pour analyser une créature.",
+        "3. Perception : Remarquer les détails et détecter les dangers.",
+        "➝ Combat : Permet de percevoir des ennemis invisibles ou des pièges.",
+        "4. Culture : Connaissance des civilisations, mythes et coutumes.",
+        "➝ Combat : Pas d’effet direct, mais peut être utile selon le contexte.",
+        "Personnage\n5"
+      ]
+    },
+    {
+      "number": 6,
+      "blocks": [
+        "5. Survie : Suivre des traces, s’adapter à l’environnement.",
+        "➝ Combat : Pas d’effet direct, mais peut être utile selon le contexte.",
+        "Social",
+        "1. Persuasion : Convaincre avec des arguments logiques ou charmeurs.",
+        "➝ Combat : Permet d’alerter un allié d’une capacité qui le cible.",
+        "2. Tromperie : Mentir, bluffer et manipuler les émotions.",
+        "➝ Combat : Permet de flatter un ennemi et lui faire croire qu’il est plus fort\nqu’il ne l’est.",
+        "3. Intimidation : Faire pression par la menace ou la force de la personnalité.",
+        "➝ Combat : Permet d’intimider en réaction à une attaque adverse pour faire\nhésiter l’adversaire.",
+        "4. Représentation : Captiver par la musique, le théâtre ou la danse.",
+        "➝ Combat : Permet de provoquer un ennemi.",
+        "5. Perspicacité : Lire les intentions et émotions d’autrui.",
+        "➝ Combat : Permet de résister aux effets influençant la pensée.",
+        "6. Dressage : Comprendre et entraîner des animaux.",
+        "➝ Combat : Nécessaire pour avoir un pet/monture.",
+        "Faire un jet de compétence",
+        "1. 🎲 Lancer le dé de base",
+        "Jette 1d20.",
+        "2. ➕ Appliquer les avantages",
+        "Pour chaque avantage, ajoute 1 dé supplémentaire au jet (puisque c’est\nun d20).",
+        "À la fin, garde le meilleur résultat parmi tous les dés lancés.",
+        "Personnage\n6"
+      ]
+    },
+    {
+      "number": 7,
+      "blocks": [
+        "3. 🧮 Ajouter les modificateurs",
+        "Ajoute le modificateur de la caractéristique associée.",
+        "Si tu maîtrises la compétence, ajoute deux fois ton modificateur de\ncaractéristique (au lieu d’une fois).",
+        "4. 🧾 Calculer le total final",
+        "Somme = meilleur d20 + modificateur(s).",
+        "Compare ce total au seuil de difficulté (DC) fixé par le MJ ou le système.",
+        "Résultat ≥ DC → réussite ; sinon échec.",
+        "Attribution des Compétences",
+        "Chaque joueur peut choisir 4 compétences au total.",
+        "Le nombre de compétences correspondant a une caractéristique ne peut pas\ndépasser son modificateur.",
+        "Exemple : Avec un modificateur d’Esprit de +3, le joueur peut choisir jusqu’à 3\ncompétences liées à l’Esprit.",
+        "Maîtriser une compétence double votre bonus dans cette compétence.",
+        "🎭 Système Narratif",
+        "1. Structure du personnage",
+        "Chaque personnage possède plusieurs aspects narratifs représentant sa\npersonnalité et son vécu.",
+        "Ces aspects ne donnent pas de bonus fixes, mais influencent les jets selon la\nsituation.",
+        "Aspects Géneraux",
+        "Background : ton passé, métier ou environnement d’origine.",
+        "Personnage\n7"
+      ]
+    },
+    {
+      "number": 8,
+      "blocks": [
+        "Exemple : ancien soldat, voleur de rue, apprenti mage.",
+        "Goal : ton objectif personnel ou ta motivation principale.",
+        "Exemple : retrouver ma sœur, me racheter, devenir un maître artisan.",
+        "Bonds : tes relations avec les autres personnages, positives ou négatives.",
+        "Exemple : je protège Thalen coûte que coûte ; je me méfie de Lyra.",
+        "Aspects liés aux caractéristiques",
+        "Chaque caractéristique (Force, Agilité, Esprit, Social) possède deux aspects\npossibles.",
+        "Le joueur en choisit un par caractéristique.",
+        "Caractéristique\nAspect\nDescription\nExemple",
+        "Force\nCicatrice de\nvie",
+        "« J’ai survécu à\nl’effondrement de la mine. »",
+        "Une épreuve, blessure\nou souvenir qui t’a\nmarqué.",
+        "Pulsion\nL’énergie ou impulsion\nqui te pousse à agir.",
+        "« Je refuse d’abandonner,\nquoi qu’il en coûte. »",
+        "Agilité\nManies & Tics",
+        "« Je tapote toujours du pied\navant d’agir. »",
+        "Des réflexes ou\nhabitudes corporelles\ninstinctives.",
+        "Instinct",
+        "« Je me jette toujours avant\nde réfléchir. »",
+        "Réaction rapide,\nintuitive, souvent avant\nla réflexion.",
+        "Esprit\nCroyances",
+        "« Je crois que tout a une\nraison cachée. »",
+        "Tes principes, ta foi, ta\nmanière de voir le\nmonde.",
+        "Éducation\nTon savoir appris, ta\nlogique, ta culture.",
+        "« Formé dans l’académie\nd’ingénierie d’Escalune. »",
+        "Social\nPersonnalité\nTon tempérament, ta\nmanière naturelle d’être.",
+        "« Toujours ironique, même\ndans la peur. »",
+        "Réputation\nL’image que les autres\nont de toi.",
+        "« On me prend pour\nquelqu’un de plus\ncourageux que je ne suis. »",
+        "Personnage\n8"
+      ]
+    },
+    {
+      "number": 9,
+      "blocks": [
+        "Les aspects doivent être cohérents avec les caractéristiques du personnage.",
+        "Un personnage faible en Social ne peut pas avoir une réputation parfaite.",
+        "Ce n’est pas une règle chiffrée, mais une contrainte de cohérence.",
+        "Les caractéristiques fortes donnent des aspects maîtrisés.",
+        "Les faibles donnent des aspects instables ou fragiles.",
+        "Races Jouables",
+        "Les joueurs peuvent choisir une race parmi la liste proposée ci-dessus. Pour une \nrace bestiale, les détails sont personnalisables en accord avec le MJ.",
+        "1. Humain",
+        "+2 compétences\nsupplémentaires.",
+        "+2 jeton Social.",
+        "Personnage\n9"
+      ]
+    },
+    {
+      "number": 10,
+      "blocks": [
+        "2. Haut-Elfe",
+        "Vous pouvez tenir 1 carte\nsupplémentaire en main.",
+        "Vous maitrisez 1 capacité\nsupplémentaire.",
+        "Personnage\n10"
+      ]
+    },
+    {
+      "number": 11,
+      "blocks": [
+        "3. Elfe des Bois",
+        "Quand vous utilisez votre réaction\nvous pouvez vous déplacer de 5\nmètres apres (Si utilisé en\nréaction a une capacité non\nciblée, on considereque le\ndéplacement se fait avant le\nl’utilisation de la capacité).",
+        "Avantage au deuxieme jet\nd’initiative du round.",
+        "Personnage\n11"
+      ]
+    },
+    {
+      "number": 12,
+      "blocks": [
+        "4. Elfe Noir",
+        "Si vous n’êtes pas dans le champ\nde vision d’un ennemi, vous\npouvez utiliser 1 réaction\nsupplémentaire par tour.",
+        "Avantage aux jets de discression.",
+        "Personnage\n12"
+      ]
+    },
+    {
+      "number": 13,
+      "blocks": [
+        "5. Demi Elfe",
+        "Canalisation Libre : Lorsque vous\nutilisez une arme (attaque,\nparade, etc.), vous canalisez\nautomatiquement pendant 1\nround, avec une valeur égale à la\nparade de l’arme.",
+        "Canalisation Flexible : Vous\nchoisissez la couleur de\ncanalisation, indépendamment de\nl’arme utilisée.",
+        "Catalyseur Défensif : Vous\npouvez utiliser un catalyseur\npour parer, en utilisant sa valeur\nde canalisation à la place de la\nparade d’une arme.",
+        "Érudition Mixte : +1 compétence.",
+        "Personnage\n13"
+      ]
+    },
+    {
+      "number": 14,
+      "blocks": [
+        "6. Tieffelin",
+        "Peut piocher spécifiquement du \npique 1 fois sur 2.",
+        "Resistance au feu.",
+        "Personnage\n14"
+      ]
+    },
+    {
+      "number": 15,
+      "blocks": [
+        "7. Aasimar",
+        "Chaque fois que vous utilisez un \ntoken (peu importe le type),\ninvoquez en plus une carte\ncristalisée de Cœur.",
+        "Résistance aux dégats radiants.",
+        "Personnage\n15"
+      ]
+    },
+    {
+      "number": 16,
+      "blocks": [
+        "8. Demi-Orque",
+        "Vous pouvez ajouter votre\nmodificateur pour chaque\ncréature qui vous a attaqué\npendant le round a votre prochain\njet d’attaque ou a la prochaine\ncapacité appliquant des dégats.",
+        "Votre armure double quand vous\navez moins de 50% de points de\nvie.",
+        "Personnage\n16"
+      ]
+    },
+    {
+      "number": 17,
+      "blocks": [
+        "9. Nain",
+        "Vous gagnez  Force pvs.",
+        "réduisez vos capacité de trefle de\n1, Pour chaque créature qui vous\na attaqué pendant le round.",
+        "Personnage\n17"
+      ]
+    },
+    {
+      "number": 18,
+      "blocks": [
+        "10. Gobelin",
+        "Réduisez le seuil pour un critique\nde 1 (par ex 5-6 au lieu de 6 sur\n1d6).",
+        "Maximum de 3 critiques cumulés\npar attaque.",
+        "Personnage\n18"
+      ]
+    },
+    {
+      "number": 19,
+      "blocks": [
+        "11. Gnome",
+        "Les malus liés à une Force faible\ns’appliquent seulement à partir de\n4 ou moins.",
+        "Si vous payez un surcoût pour\nune capacité, réduisez d’un\nmontant équivalent le coût de la \nprochaine capacité que vous\nlancez.",
+        "Personnage\n19"
+      ]
+    },
+    {
+      "number": 20,
+      "blocks": [
+        "12. Halflin",
+        "Quand vous piochez, piochez \ndeux cartes, et jetez l’une des\ndeux.",
+        "Une fois par repot court, vous\npouvez relancer un dé.",
+        "12. Goliath",
+        "Personnage\n20"
+      ]
+    },
+    {
+      "number": 21,
+      "blocks": [
+        "Force Colossale : Vous pouvez\nmanier des armes à deux mains\navec une seule main. Vous\npouvez aussi utiliser des armes\npolyvalentes ou des bâtons en\ndual wield. Les épees longues\nsont considérées finesse.",
+        "Endurance des Cimes : Vous\navez avantage contre l'effet \nProne, et résistance a la Glace.",
+        "Personnage\n21"
+      ]
+    },
+    {
+      "number": 22,
+      "blocks": [
+        "14. Drakéide",
+        "Héritage Draconique : Choisissez\nFeu, Foudre, Glace, Acide ou\nPoison. Vous résistez à ce type\nde dégâts et pouvez générer cet\nélément pour interagir avec\nl’environnement.",
+        "Écailles Draconiques : Armure\nnaturelle de 1, cumulable avec\nd'autres sources.",
+        "Souffle Draconique : Bonus\naction, cône de 4,5 m, 1d10\ndégâts élémentaires. À la place,\nvous pouvez retenir ce souffle\nqui vous fait canaliser\nautomatiquement les capacitées\nliées a cet élément (valeur = mod\nEsprit).",
+        "Résonance Élémentaire : Si vous\nentrez en contact avec une \nsource de votre élément (non\ngénérée par vous), vous le \ncanalisez automatiquement.",
+        "Personnage\n22"
+      ]
+    },
+    {
+      "number": 23,
+      "blocks": [
+        "15. Sporelins",
+        "Vous êtes Résistance au poison\net Immunité aux effets de\nsaignement.",
+        "Vous êtes vulnérable aux dégâts\nde glace.",
+        "Si vous ne vous déplacez pas\npendant votre tour, vous activez\nl’état Sporaissance.",
+        "Tant que Sporaissance est actif :",
+        "Vous regagnez un nombre de \npoints de vie égal à votre\ndéplacement.",
+        "Si un ou plusieurs alliés\nrestent pendant un round\ncomplet à moins de 3 mètres\nde vous, vous pouvez \néchanger gratuitement une\ncarte avec chacun d’eux à la\nfin de leur tour.",
+        "Personnage\n23"
+      ]
+    },
+    {
+      "number": 24,
+      "blocks": [
+        "16. Mort vivant",
+        "Insensible et aux dégâts\nnécrotiques.",
+        "Avantage aux jets de sauvegarde\ncontre les effets restraignants.",
+        "Vous êtes insensible aux coups\ncritiques : ils infligent des dégâts\nnormaux.",
+        "Vous ignorez les malus de fatigue\njusqu'au niveau 5.",
+        "Les sorts de soin infligent des\ndégâts au lieu de soigner, vous\nêtes vulnérable aux dégats\nradiants.",
+        "Les individus vous sont hostiles.",
+        "Personnage\n24"
+      ]
+    },
+    {
+      "number": 25,
+      "blocks": [
+        "17. Khajiit",
+        "Griffes félines : Vous possédez\nune attaque naturelle avec vos\ngriffes (1d6, finesse).",
+        "Si l’une de vos mains est libre ou\néquipée d’un catalyseur une\nmain, vous pouvez effectuer une\nattaque avec vos griffes en\nbonus action.",
+        "Souplesse féline : Vous subissez \nmoitié moins de dégâts liés aux\nchutes.",
+        "Esquive instinctive : Vous pouvez\nutiliser l’action Esquiver en bonus\naction",
+        "Personnage\n25"
+      ]
+    },
+    {
+      "number": 26,
+      "blocks": [
+        "18. Troll",
+        "Régénération Totémique :\nChaque fois que vous utilisez un \ntoken, vous regagnez 2 × votre\nmodificateur le plus élevé en \npoints de vie (une fois par token\npar round /30min).",
+        "Membre des Hautes Terres :\nVous ignorez les terrains\ndifficiles.",
+        "Personnage\n26"
+      ]
+    },
+    {
+      "number": 27,
+      "blocks": [
+        "19. Hobgoblin",
+        "Discipline Martiale : Vos \nenchaînements sont considérées\ncomme des attaques\nd’opportunité, et vous avez \navantage pour les effectuer. Vous\npouvez également vous déplacer\nde 5 mètres pour réaliser un\nenchaînement.",
+        "Commandement Tactique : Vous\npouvez donner vos tokens à vos \nalliés.",
+        "Personnage\n27"
+      ]
+    },
+    {
+      "number": 28,
+      "blocks": [
+        "20. Illithid",
+        "Harmonisation Cérébrale :\nharmonisation est passive \nautorus de vous, accentuant\ntoutes les capacités ou attaques\nalliées comme une harmonisation\nclassique.",
+        "Si vous l’activez (réaction), vous\ndéclenchez une Harmonisation\nTotale: la cible obtient avantage à\nses jets d’attaque et de\ncapacités en plus du bonus de\nbase.",
+        "Dévoration Mentale (bonus\naction) : dévore le cerveau d’une\ncréature intelligente (Esprit > 8)\nmorte depuis moins d’1 min pour\nregagner 1 token d’Esprit (max =\nMod. Esprit, min 1). Utilisable 1\nfois/combat ou toutes les 30 min.",
+        "Résonance de Mort : à 0 PV, onde\npsychique de 18 m infligeant Mod.\nEsprit × 1d6 dégâts psychiques à\ntoutes les créatures alliées\nautours de vous.",
+        "Fragilité Physique: désavantage à\ntous les jets de sauvegarde\nd’Athlétisme.",
+        "Personnage\n28"
+      ]
+    },
+    {
+      "number": 29,
+      "blocks": [
+        "21. Race Bestiale\n(Personnalisable)",
+        "À définir avec le MJ, selon\nl’apparence et les traits choisis.",
+        "Malus des Caractéristiques",
+        "Si une caractéristique est inférieure ou égale à 5, vous subissez 1 malus pour\nchaque deux point en dessous de 6 (allant de 0 à 3 malus).",
+        "Les malus sont déterminés aléatoirement en lançant un d6 lors de la fin de la\ncréation du personnage et seront choisi parmis les listes ci dessous.",
+        "Attention :",
+        "Les malus sont permanents : Augmenter la caractéristique par des objets,\ndes niveaux ou d’autres moyens ne supprime pas ces malus.",
+        "Les malus peuvent cependant être supprimés ou atténués via des\névénements ou actions RP, à la discrétion du MJ.",
+        "Personnage\n29"
+      ]
+    },
+    {
+      "number": 30,
+      "blocks": [
+        "Force ≤ 5 :",
+        "1. Ne tient pas debout",
+        "À chaque fois que vous subissez des dégâts, faites un jet de sauvegarde\nde Force (DC 10). En cas d’échec, vous tombez au sol (prone).",
+        "Se relever coûte une action complète au lieu d’une bonus action.",
+        "Vous tombez frequement dans la vie de tout les jours.",
+        "2. Léger comme une plume",
+        "Vous êtes considéré comme léger.",
+        "Subir plus de 5 dégâts d’un seul coup vous projette de 3 mètres.",
+        "Vous pouvez être affecté par des sorts ou effets ciblant des objets\nlégers.",
+        "Vous perdez l’equilibre souvent, notamment quand quelqu’un crie a coté\nde vous.",
+        "3. Ne peut rien porter",
+        "Vous n’avez pas d’inventaire et ne pouvez pas transporter d’objets, y\ncompris votre propre arme.",
+        "Vous devez récupérer votre arme au début du combat (coût : 1 bonus\naction).",
+        "4. Ne peut rien équiper",
+        "Vous ne pouvez pas porter ou équiper une arme, une armure, un \ncatalyseur, ou un bouclier.",
+        "Vous ne portez que des habits tres légers.",
+        "5. Dépendance physique",
+        "Impossible de porter des objets de plus de 5 kg.",
+        "Vous avez besoin d’aide pour actionner des mécanismes lourds, comme\ndes portes ou des leviers.",
+        "6. Vulnérable",
+        "Personnage\n30"
+      ]
+    },
+    {
+      "number": 31,
+      "blocks": [
+        "Si vous tombez inconscient, vous ne pouvez pas vous relever seul.",
+        "Si vous êtes aidé pour vous relever, vous restez inerte (vous passez votre\ntour) et vulnérable (vous pouvez subir des dégâts supplémentaires).",
+        "Vous avez besoin d’une scieste une fois par jour.",
+        "Agilité ≤ 5 :",
+        "1. Désavantage physique :",
+        "Désavantage à tous les jets impliquant une action physique (incluant les\nattaques).",
+        "2. Aucune réaction ni action bonus :",
+        "Vous ne pouvez pas utiliser de réactions ni d’actions bonus.",
+        "Totem des réactions interdit.",
+        "Vous ne pouvez pas reagir rapidement aux evennements autours de vous.",
+        "3. Vulnérabilité totale :",
+        "Vous ne pouvez effectuer aucun jet de sauvegarde contre des attaques\nou effets nécessitant une esquive.",
+        "Les ennemis ne peuvent pas vous rater, même sur un jet de 1 naturel.",
+        "4. Risque de blessure :",
+        "Toute action physique échouée entraîne 1d4 dégâts.",
+        "5. Vision des cartes bloquée :",
+        "Vous ne pouvez pas regarder vos cartes avant de les jouer.",
+        "Vous avez acquerissez un objet, vous avez une chance de le casser.",
+        "6. Mouvement limité :",
+        "Vous ne pouvez vous déplacer que pendant les 2 premiers tours de\ncombat.",
+        "Après cela, vous devez utiliser l’action Dash pour vous déplacer.",
+        "Personnage\n31"
+      ]
+    },
+    {
+      "number": 32,
+      "blocks": [
+        "Vous ne pouvez pas marcher longtemps et avez besoin d’aide pour\nescalader quoique ce soit.",
+        "Esprit ≤ 5 :",
+        "1. Incapacité magique et technique",
+        "Vous ne pouvez pas utiliser de capacités.",
+        "Vous avez besoin d’aide pour comprendre ou utiliser tout mécanisme\ncomplexe (outils, portes verrouillées, puzzles, etc.).",
+        "2. Stupide et imprévisible",
+        "Totem désactivé : L’effet de votre totem est annulé.",
+        "Décisions aléatoires : Lors de décisions critiques, le MJ peut lancer un dé\npour décider à votre place.",
+        "3. Terreur de la magie",
+        "Effroi des sorts puissants :",
+        "À chaque fois qu’un sort de coût supérieur à 16 est lancé à moins de 10\nm, faites un jet d’Esprit (DC 10).",
+        "En cas d’échec, vous êtes frightened pendant 1 tour.",
+        "Risques liés aux objets puissants :",
+        "Si vous interagissez avec un objet divin ou puissant, faites un jet\nd’Esprit (DC 10).",
+        "En cas d’échec, vous subissez une affliction définie par le MJ\n(malédiction, rejet, etc.).",
+        "4. Hostilité à la magie",
+        "Pas d’armes magiques : Vous ne pouvez pas porter ou utiliser d’armes\nmagiques ou d’artefacts.",
+        "Rituels de combat maladroits :",
+        "Vous devez dégainer votre arme au début du combat.",
+        "Personnage\n32"
+      ]
+    },
+    {
+      "number": 33,
+      "blocks": [
+        "Lorsque votre arme est dégainée, vous ne pouvez pas parler, sauf\npour lancer des insultes.",
+        "Incapacité professionnelle : Vous ne maîtrisez aucun métier.",
+        "5. Analphabète et perdu",
+        "Analphabétisme total :",
+        "Vous ne savez ni lire, ni écrire, ni compter.",
+        "Vous ne comprenez pas la notion d’argent : tous les prix sont aléatoires\net souvent plus chers.",
+        "Consommation aléatoire : Vous ne pouvez pas choisir un consommable ;\nvous consommez toujours un objet aléatoire.",
+        "Équipement initial aléatoire : Si vous avez plusieurs armes, vous\ncommencez le combat avec une arme sélectionnée aléatoirement.",
+        "6. Anti-magic passive",
+        "Immunité aux buffs : Vous ne pouvez recevoir aucun effet magique positif\nou buff.",
+        "Incapacité à détecter : Vous ne pouvez pas détecter les ennemis cachés\nou dissimulés, même si un allié vous avertit.",
+        "Social ≤ 5 :",
+        "1. Hostilité Universelle",
+        "Les tentatives de négociation de prix échouent automatiquement pour\nvous et les personnes qui vous accompagnent.",
+        "quand vous vous faites attaquer effectuez un jet de sauvegarde social\n(DC 10), en cas d’echec rengainez votre arme.",
+        "2. Répulsion Sociale et Physique",
+        "Vous avez désavantage aux jets de discression.",
+        "Vous subissez 1d4 dégâts psychiques par personne dans votre zone de\ncontrôle.",
+        "Personnage\n33"
+      ]
+    },
+    {
+      "number": 34,
+      "blocks": [
+        "Les créatures non hostiles (comme les animaux) vous évitent ou\nréagissent de manière agressive.",
+        "3. Silence en Combat",
+        "Toute tentative de persuasion ressemble a de la tromperie, vous avez l’air\nde mentir tout le temps.",
+        "Vous ne pouvez pas mentir ; toute tentative de tromperie échoue\nautomatiquement.",
+        "Vous parlez tellement doucement que personne ne vous entend à plus de \n3 mètres.",
+        "4. Présence Déstabilisante",
+        "Désavantage à tous vos jets si plus de 3 personnes se trouvent à moins\nde 10 mètres de vous.",
+        "Vous donnez désavantage aux jets de Persuasion des personnes qui\nvous accompagnent.",
+        "Les personnes oublient totalement votre existence 2 heures après vous\navoir rencontré.",
+        "5. Syndrome de la Tourette",
+        "À chaque fois que vous parlez, il y a une chance que vous lâchiez une\ninsulte involontairement.",
+        "Vous ne pouvez pas coopérer pour utiliser des jetons sociaux (échange\nde cartes).",
+        "6. Coupable et Maladroit",
+        "Vous ne parlez pas la langue, et il y a 1 chance sur 2 que vos propos\nsoient mal interprétés.",
+        "Vous ne pouvez pas cibler vos alliés avec des capacités ou être ciblé par\neux.",
+        "Personnage\n34"
+      ]
+    },
+    {
+      "number": 35,
+      "blocks": [
+        "Personnage\n35"
+      ]
+    }
+  ]
+}

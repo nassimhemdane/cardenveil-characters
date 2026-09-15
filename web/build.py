@@ -9,6 +9,7 @@ import shutil
 import zipfile
 from pathlib import Path
 
+from rules_pages import build_rules
 from static_pages import character_url, write_character, write_index
 
 from cardenveil.serialization import character_from_archive, character_to_dict
@@ -104,6 +105,7 @@ def build() -> None:
         encoding="utf-8",
     )
     write_index(PUBLIC, characters)
+    build_rules(ROOT, PUBLIC)
     headers = WEB / "_headers"
     if headers.is_file():
         shutil.copy2(headers, PUBLIC / "_headers")

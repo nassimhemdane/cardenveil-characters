@@ -60,6 +60,7 @@ web/public/downloads/
 web/public/data/
 web/public/pdfs/
 web/public/personnages/
+web/public/regles/
 web/public/_headers
 
 # Captures et validations visuelles temporaires

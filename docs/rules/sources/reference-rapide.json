@@ -1,0 +1,80 @@
+{
+  "source": "Cardenveil résumé.pdf",
+  "pages": [
+    {
+      "number": 1,
+      "blocks": [
+        "⚙ CARDENVEIL — RÉFÉRENCE\nRAPIDE",
+        "🧠 Système",
+        "Les d20 servent aux tests et jets de sauvegarde.",
+        "Les dés d4 à d12 servent aux attaques, valeurs et bonus.",
+        "Avantage : ajoutez +2 dés puis gardez les meilleurs résultats.",
+        "Main de cartes :",
+        "Vous avez 3 cartes en main (vous piochez+1 carte par round).",
+        "Les cartes cristallisées (rouges) ne sont pas compté la main (sauf Totem).",
+        "Début de tour :",
+        "défaussez les cartes au-delà de votre limite,",
+        "puis piochez 1 carte.",
+        "Tokens (récupérés lors d’un repos court) :",
+        "💪 Force → piocher \\ enchaîner des actions",
+        "🏃 Agilité → Echanger carte avec couleur spécifique \\  multiplier une AOE ×3",
+        "🔮 Esprit →  cristalliser des cartes \\ reverbération attaque magique",
+        "🎭 Social → Echanger cartes avec alliés\\ Faire attaquer un allié",
+        "✨ Aspects",
+        "Invoquer un aspect permet d’ajouter valeur de la carte consommée au jet,\nselon la narration.",
+        "⚙ CARDENVEIL — RÉFÉRENCE RAPIDE\n1"
+      ]
+    },
+    {
+      "number": 2,
+      "blocks": [
+        "Utiliser un aspect contre soi-même permet de piocher une carte cristalisée,\nmais provoque un contre-coup narratif géré par le MJ.",
+        "⚔️ Combat narratif",
+        "Un round se déroule en deux temps : phase du MJ, puis phase des joueurs.",
+        "Chaque personnage peut effectuer :",
+        "1 Action (jet d’initative)",
+        "1 Bonus action (jet d’initative)",
+        "1 Réaction (pas d’initative)",
+        "Les effets standards durent 1 round, sauf mention contraire.",
+        "🎲 Jets",
+        "Test de compétence",
+        "Lancez d20 + modificateur.",
+        "Le résultat doit être ≥ à la difficulté (DC) fixée par le MJ.",
+        "Une maîtrise double le modificateur appliqué.",
+        "Attaque",
+        "Dé d’arme + modificateur + bonus + contexte.",
+        "Avantage",
+        "Ajoutez +2 dés, puis gardez les meilleurs résultats.",
+        "Les armes Finesse utilisent Agilité.",
+        "Critique",
+        "Si un dé fait son maximum, relancez-le et ajoutez le résultat.",
+        "Les critiques peuvent s’enchaîner si les relances font encore le maximum.",
+        "Échec",
+        "Un 1 naturel correspond à un miss.",
+        "🛡️",
+        "⚙ CARDENVEIL — RÉFÉRENCE RAPIDE\n2"
+      ]
+    },
+    {
+      "number": 3,
+      "blocks": [
+        "🛡️ Défense",
+        "Armure : réduit les dégâts jusqu’à 50 % maximum.",
+        "Parade (Réaction)",
+        "Réduit les dégâts à plat avant l’armure.",
+        "Valeur approximative :",
+        "(dé maximal de l’arme/2 + modificateur Force ou Agilité + deflexion de\nl’armure).",
+        "💀 Effets et conditions",
+        "La durée standard d’un effet est 1 round.",
+        "Jets de sauvegarde:",
+        "💪 Force (Athlétisme) → effets physiques",
+        "🏃 Agilité (Acrobaties) → effets de zone (AOE)",
+        "🔮 Esprit (Arcanes) → effets magiques",
+        "🎭 Social (Perspicacité) → effets mentaux",
+        "Rupture légendaire",
+        "Les boss deviennent libres après 2 tours d’effet.",
+        "⚙ CARDENVEIL — RÉFÉRENCE RAPIDE\n3"
+      ]
+    }
+  ]
+}
