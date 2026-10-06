@@ -26,6 +26,95 @@
         "PV → 2 XP : augmente les points de vie",
         "Feat → 5 XP : donne un passif unique",
         "Système de progression\n1"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Système de progression",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "🎲 Système de progression",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les personnages progressent en gagnant des points d’XP, attribués par le MJ en récompense d’actions marquantes, de combats ou d’avancées narratives."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les XP sont dépensés pour améliorer le personnage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "1 niveau = 5 XP dépensés"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tous les 5 niveaux → +1 caractéristique (Force, Agilité, Esprit ou Social)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le niveau détermine aussi les limites du système :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Il fixe le plafond de progression (cap = ⌈lvl / 2⌉)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Il agit comme un seuil de multiplicativité des effets"
+        },
+        {
+          "kind": "heading",
+          "text": "🎯 Axes de progression",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le personnage évolue en dépensant ses XP dans différents axes d’amélioration, chacun correspondant à un aspect du gameplay (combat, magie, narration, ressources)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Armes (familles) → 2 XP par niveau (1 XP si rattrapage) : améliore l’utilisation d’une famille d’armes"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Armes uniques → 1 XP par niveau : améliore une arme spécifique"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Maîtrise des couleurs → 4 XP : réduit le coût des capacités d’une couleur"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Éveil de capacité → 1 XP : améliore une capacité précise"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Maîtrise élémentaire → 3 XP : renforce un élément"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Apprentissage de capacité → 2 XP : ajoute une nouvelle capacité"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Compétence → 3 XP : ajoute une compétence"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Aspect → 3 XP : ajoute un aspect narratif"
+        },
+        {
+          "kind": "paragraph",
+          "text": "PV → 2 XP : augmente les points de vie"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Feat → 5 XP : donne un passif unique"
+        }
       ]
     },
     {
@@ -54,6 +143,98 @@
         "Contrainte :",
         "Acquisition / utilisation",
         "Système de progression\n2"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Évolution du pool → 3 XP (collectif) : augmente le pool de cartes"
+        },
+        {
+          "kind": "heading",
+          "text": "🗡️ Armes (familles)",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Familles : épées droites, épées courbes, haches, massues, allonge, arcs, arbalètes, catalyseurs, boucliers"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Niveaux :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Non maîtrisé → dégâts + mod, pas de propriétés"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Maîtrisé → accès aux propriétés de la famille et de l’arme"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Perfection +N → +N dégâts et -N coût des capacités carreau liées à l’arme"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coût :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "2 XP par niveau"
+        },
+        {
+          "kind": "paragraph",
+          "text": "1 XP si la famille est en dessous du meilleur palier actuel (rattrapage)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Contrainte :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Entraînement / pratique avec la famille"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Cap :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "niveau / 2"
+        },
+        {
+          "kind": "heading",
+          "text": "🗡️ Armes uniques",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Niveaux :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Débloque la propriété unique"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Perfection +N → scaling identique (+N dégâts, -N coût carreau)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coût :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "1 XP par niveau"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Contrainte :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Acquisition / utilisation"
+        }
       ]
     },
     {
@@ -84,6 +265,106 @@
         "5 utilisations critiques",
         "Cap :",
         "Système de progression\n3"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Cap :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "niveau / 2"
+        },
+        {
+          "kind": "heading",
+          "text": "🃏 Maîtrise des couleurs",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effet :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "-1 coût sur toutes les capacités d’une couleur"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coût :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "4 XP"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Progression :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Cumulable"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Contrainte :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Usage répété"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Validation MJ"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Cap :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "niveau / 2"
+        },
+        {
+          "kind": "heading",
+          "text": "✨ Éveil de capacité",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effet :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "-1 coût sur cette capacité"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coût :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "1 XP"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Progression :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Cumulable sur une même capacité"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Contrainte :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "5 utilisations critiques"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Cap :"
+        }
       ]
     },
     {
@@ -113,6 +394,103 @@
         "+1 compétence maîtrisée",
         "Coût :",
         "Système de progression\n4"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "niveau / 2"
+        },
+        {
+          "kind": "heading",
+          "text": "🔥 Maîtrise élémentaire",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effet :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "+1 au modificateur d’Esprit pour les capacités de cet élément"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coût :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "3 XP"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Progression :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Cumulable"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Contrainte :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Validation MJ (exposition / usage)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Cap :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "niveau / 2"
+        },
+        {
+          "kind": "heading",
+          "text": "📘 Capacités",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effet :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Apprendre une nouvelle capacité"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coût :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "2 XP"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Contrainte :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Justification RP (mentor, découverte, entraînement)"
+        },
+        {
+          "kind": "heading",
+          "text": "📚 Compétences",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effet :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "+1 compétence maîtrisée"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coût :"
+        }
       ]
     },
     {
@@ -142,6 +520,103 @@
         "5 XP",
         "Contrainte :",
         "Système de progression\n5"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "3 XP"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Contrainte :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Apprentissage + pratique (justification RP)"
+        },
+        {
+          "kind": "heading",
+          "text": "🎭 Aspects",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effet :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "+1 aspect narratif"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coût :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "2 XP"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Contrainte :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Validation MJ"
+        },
+        {
+          "kind": "heading",
+          "text": "🛡️ Points de Vie",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effet :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "+5 PV + 0.5 × Force"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coût :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "2 XP"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Contrainte :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Aucune"
+        },
+        {
+          "kind": "heading",
+          "text": "🧩 Feats",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effet :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Passif unique"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coût :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "5 XP"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Contrainte :"
+        }
       ]
     },
     {
@@ -158,6 +633,49 @@
         "Contrainte :",
         "Décision collective",
         "Système de progression\n6"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Acquisition par entraînement / événement (justification)"
+        },
+        {
+          "kind": "heading",
+          "text": "🃏 Pool de cartes",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effet :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Modifier la carte maximale du pool :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "soit ajouter la prochaine carte (ex : 8 → 9 → 10 → … → Roi)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "soit retirer la carte minimale"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coût :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "3 XP (par personne)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Contrainte :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Décision collective"
+        }
       ]
     }
   ]

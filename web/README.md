@@ -63,13 +63,17 @@ Cela facilite la lecture par les robots, sans garantir leur accès ni leur index
 
 ## Bibliothèque des règles
 
-`/regles/` regroupe les documents en trois rubriques : Découvrir, Jouer et Références.
+`/regles/` suit un parcours : comprendre le jeu, créer et faire évoluer un personnage,
+jouer une partie, consulter les aides de jeu puis les références et versions.
 Le menu, les chapitres et leurs sommaires fonctionnent sans JavaScript ; la recherche locale
 utilise un index généré au build. Le contenu public est limité explicitement dans
 `web/rules_pages.py` : les documents techniques internes de `docs/` ne sont pas publiés.
 
 Les huit PDF de `RulesCardenveil/` sont transcrits dans `docs/rules/sources/*.json`, avec leurs
-numéros de page. Pour actualiser ces transcriptions : `py scripts/extract_rule_sources.py`
+numéros de page, titres déduits de leur typographie, paragraphes et tableaux reconstruits.
+La lecture principale suit les sections ; chaque citation renvoie au texte original dans un
+volet dépliable. Les anciennes ancres `#page-N` restent utilisables. La recherche indexe les
+sujets et indique le document et la page. Pour actualiser : `py scripts/extract_rule_sources.py`
 (nécessite PyMuPDF, inclus dans l'extra `pdf-assets`). Le déploiement ne dépend pas des PDF
 locaux : il utilise les transcriptions versionnées et les Markdown existants de `docs/rules/`.
 Les images des PDF ne sont pas incluses ; les transcriptions ne résolvent aucune contradiction.

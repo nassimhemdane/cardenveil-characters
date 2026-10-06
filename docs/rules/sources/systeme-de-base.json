@@ -17,6 +17,60 @@
         "Les dés représentent la part de hasard du système. Ils servent à mesurer la\nréussite, l’échec ou la puissance d’une action.",
         "Usages",
         "Système de Base\n1"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Système de Base",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "Système de Jeu : Dés, Cartes et Tokens",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le système repose sur trois éléments principaux : les dés, les cartes et les tokens."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chacun joue un rôle distinct mais complémentaire dans la résolution des actions, la gestion des ressources et les mécaniques narratives."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les dés servent à déterminer les résultats des actions, des tests ou des effets. Ils introduisent la part de hasard et mesurent la réussite ou l’échec."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les cartes représentent les ressources mentales, physiques ou symboliques du personnage. Elles servent à activer des capacités, interagir avec les totems, ou soutenir certaines mécaniques narratives comme les relations ou les flashbacks."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les tokens traduisent la maîtrise issue des caractéristiques principales (Force, Agilité, Esprit, Social). Ils permettent d’ajuster ou d’influencer les cartes et les dés."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ces trois éléments fonctionnent ensemble : les dés décident du résultat, les cartes encadrent ce que vous pouvez entreprendre, et les tokens offrent les moyens de modifier ou renforcer ces actions."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Leur interaction permet d’équilibrer hasard, stratégie et narration tout au long du jeu."
+        },
+        {
+          "kind": "heading",
+          "text": "🎲 Les dés",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les dés représentent la part de hasard du système. Ils servent à mesurer la réussite, l’échec ou la puissance d’une action."
+        },
+        {
+          "kind": "heading",
+          "text": "Usages",
+          "level": 3
+        }
       ]
     },
     {
@@ -40,6 +94,79 @@
         "Sur tout autre type de dé (d4, d6, d8, d10, d12), un avantage ajoute 2 dés au\njet, puis on garde le nombre de dés de base prévus par l’action.",
         "Un désavantage suit la même logique, mais on garde les pires résultats.",
         "Système de Base\n2"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Le d20 est surtout utilisé pour les tests de compétences et les jets d’initiative."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les autres dés (d4, d6, d8, d10, d12) sont surtout utilisés pour les armes, les capacités ou certains effets spéciaux."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Rien n’empêche le MJ d’utiliser n’importe quel type de dé pour représenter un événement particulier ou un effet narratif."
+        },
+        {
+          "kind": "heading",
+          "text": "Modifications",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les jets de dés sont souvent influencés par les caractéristiques du personnage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : pour un test de Force, on lance 1d20 + la Force du personnage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : une attaque magique peut infliger 1d8 + l’Esprit en dégâts."
+        },
+        {
+          "kind": "heading",
+          "text": "Réussite et échec",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un jet de dé peut être interprété comme un résultat direct (ex. dégâts) ou comme une tentative dont la réussite dépend d’un seuil de difficulté fixé par le MJ ou par la situation."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple de réussite : un personnage saute au-dessus d’un gouffre et fait 18 sur 1d20, le MJ estime que c’est suffisant pour réussir."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple d’échec : un personnage tente d’ouvrir une porte verrouillée et obtient 7 sur 1d20, il échoue et déclenche peut-être un bruit ou un piège."
+        },
+        {
+          "kind": "heading",
+          "text": "🎲 Avantage",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un avantage représente une situation favorable, une préparation, une précision ou une circonstance qui augmente les chances d’obtenir un meilleur résultat sur un jet de dé."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Inversement, un désavantage représente une gêne, une fatigue ou un contexte défavorable."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sur un d20, un avantage ajoute 1 dé au jet, puis on garde le meilleur résultat."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sur tout autre type de dé (d4, d6, d8, d10, d12), un avantage ajoute 2 dés au jet, puis on garde le nombre de dés de base prévus par l’action."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un désavantage suit la même logique, mais on garde les pires résultats."
+        }
       ]
     },
     {
@@ -65,6 +192,89 @@
         "Elles servent à accomplir la plupart des actions importantes du jeu.",
         "Main de cartes",
         "Système de Base\n3"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Cumul",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les avantages et désavantages peuvent se cumuler."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque avantage supplémentaire ajoute les dés correspondants au jet (+1 sur un d20, +2 sur les autres dés)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les désavantages s’annulent avec les avantages et se cummulent aussi."
+        },
+        {
+          "kind": "heading",
+          "text": "Critiques et séquentialité",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Lorsqu’un critique se produit (valeur maximale d’un dé gardé), les avantages peuvent être utilisés de manière séquentielle."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Cela signifie qu’un joueur ayant plusieurs avantages peut :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "en utiliser un pour le jet initial,"
+        },
+        {
+          "kind": "paragraph",
+          "text": "puis conserver les autres pour les appliquer sur la relance du critique, s’il le souhaite."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque avantage utilisé ajoute alors ses dés au moment du jet critique, avant d’en garder les meilleurs résultats."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les avantages ainsi utilisés sont considérés comme consommés."
+        },
+        {
+          "kind": "heading",
+          "text": "Cohérence narrative",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les dés ne servent pas uniquement à résoudre des actions."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ils sont aussi un outil pour le MJ et les joueurs afin de décider du déroulement d’une scène ou d’un événement inattendu."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le résultat d’un dé peut orienter la narration, introduire un risque, ou créer une opportunité — même sans qu’une règle précise ne l’exige."
+        },
+        {
+          "kind": "heading",
+          "text": "🃏 Les cartes",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les cartes représentent les ressources mentales, physiques ou symboliques du personnage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Elles servent à accomplir la plupart des actions importantes du jeu."
+        },
+        {
+          "kind": "heading",
+          "text": "Main de cartes",
+          "level": 3
+        }
       ]
     },
     {
@@ -89,6 +299,85 @@
         "Les tokens sont liés aux caractéristiques du personnage.",
         "Ils permettent de tricher dans le jeu de cartes ou dans les mécaniques de\ncombat.",
         "Système de Base\n4"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Chaque joueur possède une main de 2 cartes +1 carte qu’on pioche."
+        },
+        {
+          "kind": "paragraph",
+          "text": "En combat, on pioche une carte au début de chaque tour."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Hors combat, les pioches se font à intervalles réguliers ou selon le rythme fixé par le MJ."
+        },
+        {
+          "kind": "heading",
+          "text": "Types de cartes",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Cartes normales : cartes de base, piochées et défaussées tout au long du jeu."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Cartes cristallisées : cartes spéciales qui ne comptent pas dans la limite maximale de main et qui n’intergissent aps avec les tokens et totem (voir plus bas) et peuvent être jouées comme des cartes normales."
+        },
+        {
+          "kind": "heading",
+          "text": "Utilisation générale",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les cartes servent à activer des pouvoirs et à interagir avec le totem, la mécanique centrale du personnage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Elles peuvent aussi être utilisées de manière narrative, pour représenter une initiative, une émotion, un souvenir ou une action marquante."
+        },
+        {
+          "kind": "heading",
+          "text": "Gestion",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les cartes se piochent et se défaussent régulièrement selon les situations."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le MJ peut s’en servir comme indicateur de tension, de ressources ou d’opportunités, selon le contexte de la scène."
+        },
+        {
+          "kind": "heading",
+          "text": "🪙 Les tokens",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les tokens représentent la capacité du personnage à influer sur les règles du jeu."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ils servent à modifier, renforcer ou contourner les mécaniques habituelles."
+        },
+        {
+          "kind": "heading",
+          "text": "Rôle général",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les tokens sont liés aux caractéristiques du personnage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ils permettent de tricher dans le jeu de cartes ou dans les mécaniques de combat."
+        }
       ]
     },
     {
@@ -102,6 +391,38 @@
         "Gestion",
         "Les tokens sont une ressource consommable : ils se dépensent au fil du jeu\net se réinitialisent après un repos.",
         "Système de Base\n5"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Ils offrent au joueur un moyen d’ajuster le hasard ou de déclencher des effets spéciaux."
+        },
+        {
+          "kind": "heading",
+          "text": "Utilisation générale",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "En combat, les tokens peuvent modifier la façon dont un personnage attaque ou agit."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Dans le jeu de cartes, ils servent à surpiocher, échanger ou manipuler des cartes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Leur usage exact dépend des capacités, du style du personnage."
+        },
+        {
+          "kind": "heading",
+          "text": "Gestion",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les tokens sont une ressource consommable : ils se dépensent au fil du jeu et se réinitialisent après un repos."
+        }
       ]
     }
   ]

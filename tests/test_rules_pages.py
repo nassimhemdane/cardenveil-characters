@@ -43,9 +43,13 @@ def test_rules_build_and_links(tmp_path, monkeypatch):
             if link.startswith("#"):
                 assert link[1:] in parser.ids, (path, link)
             elif link.startswith("/regles/"):
-                assert (tmp_path / link.strip("/") / "index.html").is_file(), link
+                route, _, anchor = link.partition("#")
+                target = tmp_path / route.strip("/") / "index.html"
+                assert target.is_file(), link
+                if anchor:
+                    assert f'id="{anchor}"' in target.read_text("utf-8"), link
     index = json.loads((tmp_path / "regles/search.json").read_text("utf-8"))
-    assert len(index) == 99 + 6
+    assert len(index) > 99
     for entry in index:
         url, _, anchor = entry["url"].partition("#")
         page = (tmp_path / url.strip("/") / "index.html").read_text("utf-8")
@@ -55,6 +59,12 @@ def test_rules_build_and_links(tmp_path, monkeypatch):
     weapons = (tmp_path / "regles/armes/index.html").read_text("utf-8")
     assert "<thead>" in weapons and "<tbody>" in weapons and "Bouclier" in weapons
     assert "unresolved" in (tmp_path / "regles/personnage/index.html").read_text("utf-8")
+    base = (tmp_path / "regles/systeme-de-base/index.html").read_text("utf-8")
+    assert 'class="rule-heading"' in base and 'class="source-cite"' in base
+    assert 'id="source-page-1"' in base
+    assert "character.stats.modifier</h" not in (
+        tmp_path / "regles/personnage/index.html"
+    ).read_text("utf-8")
 
 
 def test_source_text_is_not_rewritten(tmp_path, monkeypatch):

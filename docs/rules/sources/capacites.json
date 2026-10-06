@@ -16,6 +16,55 @@
         "Le cout d’une capacité est réduit par (Caracteristique associée - 10) (peut aller\nvers le négatif) ainsi un magicien ayant beaucoup d’esprit aura plus de facilité\na lancer une boule de feu qu’un barbare)",
         "Un joueur peut dériver une capacité déja existante pour changer son\nfonctionnement sur le tas, mais elle coutera le ente 1.5 et le Triple du cout qui\nlui aurait été associé (décidé par le MJ).",
         "Totem, Capacités & Cartes\n1"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Totem, Capacités & Cartes",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "Capacités et cartes",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Pour utiliser une capacité, vous devez dépenser des cartes dont la valeur cumulée dépasse le coût de la capacité. Chaque carte jouée doit correspondre au type de capacité (Cœur, Carreau, Trèfle ou Pique). Par exemple, pour utiliser un sort de soin de coût 15, vous devez utiliser des cartes de Cœurs dont la valeur combinée atteint au moins 15. Ce système ajoute une dimension stratégique en vous forçant à gérer vos cartes et à planifier vos actions en fonction de vos ressources."
+        },
+        {
+          "kind": "heading",
+          "text": "Gestion des cartes et capacités",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Nombre de capacités connues = Esprit ÷ 2 (arrondi a l’inferieur)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Cartes en main = 2 (avant de pouvoir passer le tour et repiocher)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous pouvez utiliser des cartes cristalisées comme des cartes normales."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Toutes les cartes peuvent être considérées comme des 1 de n’importe quelle couleur."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Une capacité peut être par example un sort de magicien (dependant de l’esprit) comme une manoeuvre complexe de guerrier (dependant de l’agilite), un coup tres brutal fissurant le sol sous l’adversaire (dependant de la froce) ou encore un chant inspirant d’un barde (dependant du social)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le cout d’une capacité est réduit par (Caracteristique associée - 10) (peut aller vers le négatif) ainsi un magicien ayant beaucoup d’esprit aura plus de facilité a lancer une boule de feu qu’un barbare)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un joueur peut dériver une capacité déja existante pour changer son fonctionnement sur le tas, mais elle coutera le ente 1.5 et le Triple du cout qui lui aurait été associé (décidé par le MJ)."
+        }
       ]
     },
     {
@@ -41,6 +90,87 @@
         "Sauvegarde des capacités",
         "Quand vous êtes la cible d’une capacité, faites un jet de sauvegarde de la\ncaractéristique associée a la capacité (Acrobacies [Agilité] pour les AOE,",
         "Totem, Capacités & Cartes\n2"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Au début de votre tour, d’abord défaussez des cartes jusqu’a avoir votre max cartes en main puis piochez une carte."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Quand vous lancez une capacité a distance (ciblez une creature a plus de 2 metres) et que vous êtes dans la zone de controle d’une créature ennemie, vous lui donnez la possibilité de faire une attaque d’opportunité."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le cartes cristalisées ne peuvent pas être utilisées pour le totem et n’interagissent pas avec les tokens."
+        },
+        {
+          "kind": "heading",
+          "text": "Types de cartes et capacités associées",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Cœurs : Soins, buffs, et protection."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : Bouclier magique (réduction des dégâts)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Carreaux : Dégâts bruts et destruction."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : Boule de feu (2d6 + Mod. Esprit)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Trèfles : Contrôle et manipulation."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : Entrave végétale (immobilisation)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. Piques : Magie particulière, subtilité et mobilité."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : Téléportation, malédictions etc."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous trouverez plus bas des indications pour créer une capacité"
+        },
+        {
+          "kind": "heading",
+          "text": "Seuil de sauvegarde",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le seuil à dépasser pour que les adversaires esquivent vos capacités:"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Seuil de sauvegarde = Caractéristique d’incantation (ex Esprit) + Surcoût"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Surcout= ce que vous payez en plus pour la capcité"
+        },
+        {
+          "kind": "heading",
+          "text": "Sauvegarde des capacités",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Quand vous êtes la cible d’une capacité, faites un jet de sauvegarde de la caractéristique associée a la capacité (Acrobacies [Agilité] pour les AOE,"
+        }
       ]
     },
     {
@@ -62,6 +192,70 @@
         "Effet en cas de sauvegarde : (Ce qui se passe si la cible réussit son jet de\nsauvegarde. Par exemple : \"Moitié des dégâts\", \"Effet esquivé complètement\",\n\"Réduction de 2 tours de durée\", etc.)",
         "Faire un jet de capacité",
         "Totem, Capacités & Cartes\n3"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Athletisme [Force] pour les controls physiques, Arcanes [Esprit] pour les controles magiques et Perspicacité [Social] pour les controles psychiques):"
+        },
+        {
+          "kind": "paragraph",
+          "text": "d20 + compétence associée."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si le résultat ≥ Spell Save DC adverse, vous esquivez."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sinon, vous subissez l’effet."
+        },
+        {
+          "kind": "heading",
+          "text": "Creation d'une capacité",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Nom :  (Le nom de la capacité, par exemple, \"Boule de feu\")"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Description : (Une description narrative et technique de la capacité. Par exemple : \"Une explosion de flammes jaillit, infligeant des dégâts dans une zone de 6 mètres de rayon.\")"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Valeur : (Ce que mesure la capacité, par exemple : \"Dégâts = 4d10\", \"Soin = 2d8\", \"Distance parcourue = 10 mètres\", \"Durée = 2 tours\", etc.)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Caractéristique associée : (La caractéristique utilisée pour le calcul, par exemple : \"Esprit\", \"Force\", \"Agilité\")"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coût global :(Le coût total en cartes pour activer la capacité. Par exemple : 12.)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coût réduit : (Le coût après réduction pour le joueur qui utilise la capacité, en fonction de ses capacités spéciales ou de son totem. Par exemple : 9 si la réduction est de 3.)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Couleur de la capacité: (La couleur des cartes nécessaires pour activer la capacité. Par exemple : \"Carreaux\", \"Piques\", \"Cœurs\", ou \"Trèfles.\")"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Caractéristique de sauvegarde : (La caractéristique utilisée pour résister au capacité. Par exemple : \"Agilité\", \"Esprit\", ou \"Force.\")"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effet en cas de sauvegarde : (Ce qui se passe si la cible réussit son jet de sauvegarde. Par exemple : \"Moitié des dégâts\", \"Effet esquivé complètement\", \"Réduction de 2 tours de durée\", etc.)"
+        },
+        {
+          "kind": "heading",
+          "text": "Faire un jet de capacité",
+          "level": 2
+        }
       ]
     },
     {
@@ -87,6 +281,85 @@
         "3. ➕ Utiliser les avantages (séquentiels)",
         "Après avoir vu les résultats, tu peux dépenser un avantage.",
         "Totem, Capacités & Cartes\n4"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Lorsqu’un personnage utilise une capacité, il s’appuie sur deux valeurs de référence :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Valeur brute : une quantité de dés fixe, égale à Mod contextuel D6 (Force, Agilité, Esprit ou Social selon la capacité). Cette valeur ne dépend pas de l’arme."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Dégâts de base : équivalents à un jet de dégâts d’attaque avec l’arme équipée (dé d’arme, mod, bonus, critiques, avantages)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les capacités appliquent ensuite un multiplicateur à l’une de ces deux valeurs :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Capacité à valeur brute : applique un multiplicateur à la Valeur brute."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : Explosion – inflige 2× Valeur brute."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Capacité à dégâts de base : applique un multiplicateur aux dégâts de base du personnage (ex. 2,5 dégâts de base ou 3 dégâts de base), en suivant les règles d’un jet de dégâts de base (voir section Attaques & dégâts)."
+        },
+        {
+          "kind": "heading",
+          "text": "🔸 Faire un jet de capacité à Valeur Brute",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. 🌀 Identifier la capacité"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vérifie le multiplicateur (K) indiqué."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Détermine le Modificateur contextuel utilisé (Force, Agilité, Esprit ou Social)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "La Valeur Brute est définie comme :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Valeur Brute = Mod × d6"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ce jet ne dépend pas de l’arme et ne peut pas faire de critique."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. 🎲 Lancer la Valeur Brute"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Jette un nombre de d6 égal à ton Mod."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ce jet représente 1 unité d’effet de la capacité."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. ➕ Utiliser les avantages (séquentiels)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Après avoir vu les résultats, tu peux dépenser un avantage."
+        }
       ]
     },
     {
@@ -114,6 +387,94 @@
         "Tokens",
         "Les tokens sont des ressources liées aux caractéristiques, utilisées exclusivement\npour faciliter la gestion des cartes, comme piocher des cartes supplémentaires,\nchoisir leur couleur, ou optimiser leur utilisation lors de vos actions.",
         "Totem, Capacités & Cartes\n5"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Chaque avantage ajoute +2d6 au jet."
+        },
+        {
+          "kind": "paragraph",
+          "text": "À la fin, garde uniquement un nombre de dés égal à ton Mod."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Aucun de ces dés ne peut déclencher de critique."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. 🧮 Calculer la Valeur Brute finale"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Additionne les dés gardés."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tu obtiens la Valeur Brute finale."
+        },
+        {
+          "kind": "paragraph",
+          "text": "5. ✖️ Appliquer le multiplicateur K"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Multiplie la Valeur Brute finale par K."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le résultat représente la valeur finale de la capacité (dégâts, soin, etc.)."
+        },
+        {
+          "kind": "heading",
+          "text": "🔸 Faire un jet de capacité à Dégâts de Base",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. ⚔️ Identifier la capacité"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vérifie le multiplicateur de dégâts de base (K) indiqué."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. 🎲 Faire un jet de dégâts de base"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effectue un jet de dégâts de base normal :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "dé d’arme, modificateur, bonus d’arme, avantages, critiques, etc."
+        },
+        {
+          "kind": "paragraph",
+          "text": "(La procédure complète est décrite dans la section Dégâts de base.)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. ✖️ Appliquer le multiplicateur K"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Multiplie simplement le résultat de ton jet de dégâts de base par K."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le total obtenu représente les dégâts finaux de la capacité."
+        },
+        {
+          "kind": "heading",
+          "text": "Tokens",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les tokens sont des ressources liées aux caractéristiques, utilisées exclusivement pour faciliter la gestion des cartes, comme piocher des cartes supplémentaires, choisir leur couleur, ou optimiser leur utilisation lors de vos actions."
+        }
       ]
     },
     {
@@ -139,6 +500,87 @@
         "Tokens d’Esprit :",
         "Sur une attaque de base magique/émémentaires, applique une Réverbération\n: au début de ton prochain tour, la cible subit 2× tous les dégâts infligés par",
         "Totem, Capacités & Cartes\n6"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Règles générales :",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque joueur dispose d’un certain nombre de tokens par caractéristique."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Nombre de tokens disponibles = Modificateur de la caractéristique associée."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les tokens se réinitialisent après un repos court ou long."
+        },
+        {
+          "kind": "heading",
+          "text": "Types de Tokens et leurs Effets",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens de Force: Piocher une carte."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens d’Agilité: Piocher une carte d’une couleur spécifique au lieu d’une couleur aléatoire."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens de Social: Echangez une de vos cartes avec celle d’un allié."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens d’Esprit:  Etendez artificiellement votre main:"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Au lieu défausser une carte due a votre contrainte de cartes en main, stockez la carte dans votre token."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous pouvez changer les cartes stockée a volenté."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si un token utilisé est vidé, il explose et crée un duplicat de la carte qui était en format cristallisé."
+        },
+        {
+          "kind": "heading",
+          "text": "Tokens pour améliorer les attaques de base",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens de Force :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sur une attaque de base, permet de réaliser une deuxième attaque complète (double frappe)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens d’Agilité :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sur une attaque de base, permet de courber l’attaque pour toucher jusqu’à 3 cibles différentes avec les mêmes dégâts (possible pendant un déplacement non interompu)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens d’Esprit :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sur une attaque de base magique/émémentaires, applique une Réverbération : au début de ton prochain tour, la cible subit 2× tous les dégâts infligés par"
+        }
       ]
     },
     {
@@ -163,6 +605,82 @@
         "Esprit multiplie tout le total par 3 (réverbération).",
         "Totems",
         "Totem, Capacités & Cartes\n7"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "l’attaque."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens de Social :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sur une attaque de base, applique une marque : pour chaque allié qui attaque la cible avant ton prochain tour, la marque réplique tes dégâts initiaux une fois."
+        },
+        {
+          "kind": "paragraph",
+          "text": "⚡ Les tokens peuvent être utilisés après avoir réussi l’attaque de base, pour transformer son effet."
+        },
+        {
+          "kind": "heading",
+          "text": "Multiplicativité des Tokens",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tous les tokens se combinent multiplicativement, chacun ajoutant une dimension qui s’empile avec les autres :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Force + Agilité → deux attaques, chacune pouvant frapper jusqu’à 3 cibles (×6)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Force + Esprit → deux attaques, et chacune est réverbérée (total ×6)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Force + Social → deux attaques, donc deux marques répliquées par les alliés (total doublé puis multiplié par le nombre d’alliés)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Agilité + Esprit → une attaque courbée sur 3 cibles, chacune réverbérée (×9)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Agilité + Social → une attaque sur 3 cibles, chacune marquée (×3 puis multiplié par le nombre d’alliés)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Esprit + Social → une attaque réverbérée où la réverbération inclut aussi les répliques alliées (la réverbération rejoue tout)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "👉 En résumé :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Force multiplie les frappes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Agilité multiplie les cibles."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Social multiplie par le nombre d’alliés qui attaquent."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Esprit multiplie tout le total par 3 (réverbération)."
+        },
+        {
+          "kind": "heading",
+          "text": "Totems",
+          "level": 2
+        }
       ]
     },
     {
@@ -183,6 +701,66 @@
         "Utilisation : Chaque carte défaussée vous octroie une réaction\nsupplémentaire ce round.",
         "Exemple : Vous êtes ciblé par plusieurs attaques. Défaussez 2 cartes pour\neffectuer 2 parades supplémentaires.",
         "Totem, Capacités & Cartes\n8"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Les totems sont des capacités méta uniques qui influencent les règles du jeu, facilitant l’utilisation des cartes ou permettant de consommer celles dont vous n’avez pas besoin. Ils sont souvent personnalisés pour refléter la nature du personnage, jouant un rôle central dans sa \"classe\" et son style de jeu."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Totem unique : Chaque joueur ne peut posséder qu’un seul totem, et il est lié à son personnage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Mécanique META : Les totems influencent les mécaniques de jeu, modifiant les règles standard de manière significative."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Totem et cartes: la mécanique du totem doit toujours être liée a votre gestion des cartes. Les cartes cristalisées ne peuvent pas être utilisées pour le totem."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Totem personalisé:  Un joueur peut demander un totem personalisé mais sinon voici une lsite non exaustive des totems possibles:"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Voici deux examples de totems:"
+        },
+        {
+          "kind": "heading",
+          "text": "Totem des dégâts amplifiés",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effet : Vous pouvez augmenter le résultat de vos jets d’attaque (non magiques) en défaussant des cartes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Utilisation : Défaussez X cartes pour ajouter X au jet. Si le total atteint la valeur maximale du dé, cela déclenche un critique."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : Vous lancez un d8 pour une attaque et obtenez un 5. Défaussez 3 cartes pour porter le total à 8, déclenchant un critique."
+        },
+        {
+          "kind": "heading",
+          "text": "Totem des réactions multiples",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effet : vous pouvez défausser des cartes pour obtenir des réactions supplémentaires."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Utilisation : Chaque carte défaussée vous octroie une réaction supplémentaire ce round."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : Vous êtes ciblé par plusieurs attaques. Défaussez 2 cartes pour effectuer 2 parades supplémentaires."
+        }
       ]
     },
     {
@@ -193,6 +771,25 @@
         "Utilisation : Cette attaque agit comme une attaque normale.",
         "Exemple : Vous êtes un gerrier a portée de votre adversaire, defaussez toutes\nvos cartes pour ajouter une attaque.",
         "Totem, Capacités & Cartes\n9"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Totem d’attaque réflexive",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effet : En utilisant votre réaction, défaussez toutes vos cartes (minimum 1) pour attaquer un ennemi à portée."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Utilisation : Cette attaque agit comme une attaque normale."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : Vous êtes un gerrier a portée de votre adversaire, defaussez toutes vos cartes pour ajouter une attaque."
+        }
       ]
     }
   ]

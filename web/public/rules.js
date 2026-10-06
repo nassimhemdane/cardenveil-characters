@@ -19,8 +19,26 @@ if(search){
         const link=document.createElement('a');link.className='search-result';link.href=entry.url;
         const title=document.createElement('strong');title.textContent=entry.title+' · '+entry.section;
         const excerpt=document.createElement('p');const at=Math.max(0,normalize(entry.text).indexOf(words[0])-70);excerpt.textContent=(at?'…':'')+entry.text.slice(at,at+220).replace(/\s+/g,' ')+'…';
-        link.append(title,excerpt);results.append(link);
+        link.append(title,excerpt);
+        if(entry.source){const citation=document.createElement('small');citation.textContent=entry.source+' · page '+entry.page;link.append(citation)}
+        results.append(link);
       }
     },120)});
   }).catch(()=>{status.textContent='Recherche indisponible. Les chapitres restent accessibles ci-dessous.'});
+}
+/** Open the referenced original page when following a source citation or shared fragment. */
+function revealSource(){
+  let id;try{id=decodeURIComponent(location.hash.slice(1))}catch{return}
+  const target=document.getElementById(id);
+  if(target?.matches('details.original-page'))target.open=true;
+}
+window.addEventListener('hashchange',revealSource);revealSource();
+/** Mark the current topic in the reading contents without changing ordinary anchor links. */
+if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>{
+    for(const entry of entries){if(!entry.isIntersecting)continue;
+      document.querySelectorAll('.docs-toc a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));
+    }
+  },{rootMargin:'-10% 0px -70% 0px'});
+  document.querySelectorAll('.rule-heading').forEach(h=>observer.observe(h));
 }

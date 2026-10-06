@@ -29,6 +29,92 @@
         "pendant ton tour en Phase Joueurs).",
         "🔹 Hiérarchie",
         "Action et Combat\n1"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Action et Combat",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "Action et Combat",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les combats et phases d’actions dans ce système se déroule en rounds, qui représentent une unité de temps où chaque joueur et ennemi agit une fois. Pendant un round, chaque joueur dispose d’un tour pour effectuer ses actions : attaquer, utiliser une capacité, se déplacer, ou utiliser une technique. Une fois que tous les éléments participants ont joué, le round suivant commence."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les capacités sont activées en utilisant un jeu de cartes, qui simule vos ressources et décisions tactiques. Les dégâts infligés, quant à eux, sont déterminés par des jets de dés."
+        },
+        {
+          "kind": "heading",
+          "text": "1. Ressources et types d’actions",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque personnage dispose, par round global, des ressources suivantes :"
+        },
+        {
+          "kind": "heading",
+          "text": "🔹 Action",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Attaquer, utiliser une capacité, interagir, faire une manœuvre importante, etc."
+        },
+        {
+          "kind": "heading",
+          "text": "🔹 Bonus Action",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Actions rapides ou secondaires (consommables, dash, seconde attaque, etc.)."
+        },
+        {
+          "kind": "heading",
+          "text": "🔹 Réaction",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "1 seule fois par round global."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Peut être jouée en réaction à un événement, même hors de ton tour"
+        },
+        {
+          "kind": "paragraph",
+          "text": "(attaque ennemie, déplacement, capacité, ouverture de brèche, etc.)."
+        },
+        {
+          "kind": "heading",
+          "text": "🔹 Mouvement",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Distance : 5 + (Agilité ÷ 2) cases."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Peut être découpé au maximum en 2 utilisations dans le round"
+        },
+        {
+          "kind": "paragraph",
+          "text": "(par exemple : un déplacement pendant une intervention en Phase MJ, puis un autre pendant ton tour en Phase Joueurs)."
+        },
+        {
+          "kind": "heading",
+          "text": "🔹 Hiérarchie",
+          "level": 3
+        }
       ]
     },
     {
@@ -62,6 +148,108 @@
         "Le joueur peut utiliser son Mouvement pendant cette intervention",
         "→ toujours dans la limite de deux mouvements par round.",
         "Action et Combat\n2"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Action ⊃ Bonus Action ⊃ Réaction"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Une Action peut être convertie en Bonus Action ou en Réaction (si la réaction n’a pas de condition particulière)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Une Bonus Action peut être convertie en Réaction (si la réaction n’a pas de condition particulière)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Une Réaction ne peut pas être convertie en autre chose."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Aucune ressource ne peut être convertie “vers le haut”."
+        },
+        {
+          "kind": "heading",
+          "text": "2. Initiative et Déroulement",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un personnage peut utiliser son Mouvement au maximum deux fois par round (Mouvement fractionné)."
+        },
+        {
+          "kind": "heading",
+          "text": "2.1 Phase MJ",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le MJ décrit :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "les actions des PNJ,"
+        },
+        {
+          "kind": "paragraph",
+          "text": "les menaces,"
+        },
+        {
+          "kind": "paragraph",
+          "text": "les effets de l’environnement,"
+        },
+        {
+          "kind": "paragraph",
+          "text": "tout ce qui se déclenche du côté adverse."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Pendant cette phase, les joueurs peuvent intervenir, selon quatre modes différents, avec ou sans jet d’initiative."
+        },
+        {
+          "kind": "heading",
+          "text": "🔹 Réaction (Sans Initiative)",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Utilisable hors de son tour, dès que le déclencheur apparaît."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Aucune initiative n’est nécessaire."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ne permet pas de Mouvement, sauf capacité spécifique."
+        },
+        {
+          "kind": "heading",
+          "text": "🔹 Action ou Bonus Action (Avec Initiative)",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le joueur peut tenter d’agir avant l’action d’un PNJ en faisant un jet d’initiative."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Réussite → son Action ou Bonus Action se résout avant le PNJ."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Échec → l’action du PNJ se résout normalement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le joueur peut utiliser son Mouvement pendant cette intervention"
+        },
+        {
+          "kind": "paragraph",
+          "text": "→ toujours dans la limite de deux mouvements par round."
+        }
       ]
     },
     {
@@ -97,6 +285,119 @@
         "Bonus Action",
         "Mouvement (ou ce qu’il en reste)",
         "Action et Combat\n3"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Un joueur faire un jet d’initiative pour intervenir une seule fois par tour de jeu du PNJ,"
+        },
+        {
+          "kind": "paragraph",
+          "text": "un tour de PNJ comprenant toutes ses actions (Action + Bonus Action)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si les joueurs veulent faire une autre intervention lors d’un autre moment du tour du PNJ, ils doivent refaire un jet d’initiative, mais uniquement une fois par PNJ."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comparaison du jet d’initiative :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "soit à l’initiative du PNJ (celle tirée en début de combat),"
+        },
+        {
+          "kind": "paragraph",
+          "text": "soit à une DC contextuelle fixée par le MJ si l’événement n’est pas lié à un PNJ"
+        },
+        {
+          "kind": "paragraph",
+          "text": "(piège, effondrement, danger environnemental, cri, levier, etc.)."
+        },
+        {
+          "kind": "heading",
+          "text": "🔹 Mouvement (Avec Initiative)",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le joueur peut intervenir pour uniquement se déplacer :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "retrait, prise de hauteur, repositionnement, etc."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Nécessite toujours un jet d’initiative."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le Mouvement se résout avant la menace si l’initiative est réussie."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le Mouvement compte comme une utilisation de Mouvement,"
+        },
+        {
+          "kind": "paragraph",
+          "text": "→ limité à deux utilisations par round, peu importe quand elles ont lieu."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un joueur peut faire une intervention de Mouvement même s’il ne prévoit aucune Action ni Bonus Action dans le round."
+        },
+        {
+          "kind": "heading",
+          "text": "🔹 Précipitation (Réaction)",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Une Réaction spéciale permettant d’agir pendant l’action d’un PNJ."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Jet d’initiative (souvent avec avantage selon les règles de Précipitation)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Réussite → l’Action ou la Bonus Action du joueur se confronte directement à celle du PNJ."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les deux actions sont résolues simultanément, selon le MJ."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Peut inclure du Mouvement,"
+        },
+        {
+          "kind": "paragraph",
+          "text": "→ toujours dans la limite de deux utilisations par round."
+        },
+        {
+          "kind": "heading",
+          "text": "2.2 Phase Joueurs",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ensuite, les joueurs jouent ce qu’il leur reste dans le round :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Action"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Bonus Action"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Mouvement (ou ce qu’il en reste)"
+        }
       ]
     },
     {
@@ -128,6 +429,106 @@
         "round.",
         "Actions principales",
         "Action et Combat\n4"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Réaction (si elle n’a pas été utilisée)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ils peuvent agir dans l’ordre qu’ils veulent."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si plusieurs joueurs souhaitent intervenir simultanément en Phase MJ, ils déterminent librement leur ordre."
+        },
+        {
+          "kind": "heading",
+          "text": "3. Durée des effets",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "3.1 Effets sur une créature",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un effet “1 tour” sur une créature expire uniquement quand :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "• la cible a terminé son prochain tour effectif"
+        },
+        {
+          "kind": "paragraph",
+          "text": "ET"
+        },
+        {
+          "kind": "paragraph",
+          "text": "• le lanceur a commencé son prochain tour."
+        },
+        {
+          "kind": "paragraph",
+          "text": "L’effet dure donc jusqu’au plus tardif des deux événements."
+        },
+        {
+          "kind": "heading",
+          "text": "3.2 Effets environnementaux / zones",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Leur durée se compte en rounds globaux :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "• 1 tour = jusqu’à la fin du prochain round global."
+        },
+        {
+          "kind": "paragraph",
+          "text": "• 2 tours = jusqu’à la fin du round +2, etc."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : un mur de feu posé au round 3 reste actif jusqu’à la fin du round 4 (durée 1 tour)."
+        },
+        {
+          "kind": "heading",
+          "text": "⚙️ Faire un jet d’initiative",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. 🎲 Lancer 1d20."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. ➕ Ajouter ton bonus d’initiative."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. 🎯 Avantage ? Ajoute +1 dé par avantage (garde le meilleur)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. 🧾 Résultat final = meilleur d20 + bonus d’initiative."
+        },
+        {
+          "kind": "heading",
+          "text": "Actions disponibles en Combat",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Dans cette section, nous allons présenter une idée générale des actions possibles pendant un round."
+        },
+        {
+          "kind": "heading",
+          "text": "Actions principales",
+          "level": 3
+        }
       ]
     },
     {
@@ -167,6 +568,74 @@
         "l’allié gagne + Mod. Social aux dégâts de sa prochaine attaque.",
         "Réactions",
         "Action et Combat\n5"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "1. Attaquer : Effectuer une attaque avec votre arme."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Esquiver : Confère désavantage aux attaques ennemies contre vous et avantage aux jets de sauvegarde jusqu’à votre prochain round et vous protege des attaques d’opportunité."
+        },
+        {
+          "kind": "heading",
+          "text": "Actions bonus",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Attaque secondaire : Une seconde attaque en mélée sans modificateur aux dégâts."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Consommable : Boire une potion ou utiliser un parchemin par exemple."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Ruée: Augmantez votre vitesse de déplacement de moitié, vous permet un troisième mouvement durant le round."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. Imprégnation: impregner une arme ou un projectile avec un consommable. Si une source élémentaire est à portée (ex feu, poison etc…) utilisez la pour imprégner votre arme et ajoutez mod survie en dégats élémentaires a votre prochaine attaque."
+        },
+        {
+          "kind": "paragraph",
+          "text": "5. Échange d’Equipement : Alterner entre deux armes ou équipements."
+        },
+        {
+          "kind": "paragraph",
+          "text": "6. Stabilisation : Metez fin à une condition dont la sortie est possible, sur un allié ou sur vous si la condition le permet (ex. À terre, Immobilisé, Endormi, Inconscient). Certaines conditions peuvent exiger un jet contextuel selon la situation."
+        },
+        {
+          "kind": "paragraph",
+          "text": "7. Poussée: Repoussez une créature de 5m, contestation de vos jets d’athlétisme."
+        },
+        {
+          "kind": "paragraph",
+          "text": "8. Planque : Si vous êtes hors de vue ou obscurci, cachez vous en faisant un jet de Discrétion contre la Perception ennemie. Au début de chaque round et chaque fois que vous entrez dans une ligne de vue, refaites un jet. Toute action hostile vous dévoile ; une action non hostile exige un nouveau jet pour rester planqué."
+        },
+        {
+          "kind": "paragraph",
+          "text": "9. Analyse: Faites un jet d’investigation (DC 10+mod agilité) d’une creature adverse pour découvrir une de ses résistances, immunités ou vulnérabilité. (Ou un détail contextuel)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "10. Provoquation: provoquez une créature, faites un jet de représentation contre sa perspicacité. La créature provoquée ne peut cibler que vous jusqu’à la fin du round."
+        },
+        {
+          "kind": "paragraph",
+          "text": "11. Canalisation : Canalisez votre catalyseur et activez son bonus de couleur pour ce round et le suivant. Les capacités de la couleur correspondante voient leur coût réduit de votre modificateur d’Esprit + le bonus du catalyseur. Si vous maniez deux catalyseurs à une main, vous pouvez les canaliser simultanément pour combiner leurs couleurs. Le catalyseur s’entoure alors d’une aura de son type de dégats. En canalisant, vous donnez avantage a vos jets d’attaques avec le catalyseur et de valeur brute de capacités."
+        },
+        {
+          "kind": "paragraph",
+          "text": "12. Flatterie : Faites un jet de Tromperie contre Perspicacité de l’allié. En cas de réussite, l’allié gagne + Mod. Social aux dégâts de sa prochaine attaque."
+        },
+        {
+          "kind": "heading",
+          "text": "Réactions",
+          "level": 3
+        }
       ]
     },
     {
@@ -207,6 +676,53 @@
         "qui le vise.",
         "Règles des Attaques et Dégâts",
         "Action et Combat\n6"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "1. Attaque d’opportunité : Si un ennemi quitte votre zone de contrôle, lance une capacité a distance ou est attaqué par un allié en mélée, vous pouvez l’attaquer (Attaquez avec vos deux armes si dual wield)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Soutien : Lorsqu’un allié dans votre zone de controle attaque, offrez lui  avantage à son jet d’attaque."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Parrade: Parrez avec votre bouclier ou vos armes, vous réduisez les dégats subits (avant reduction d’armure) selon la déflexion de votre armure +  parade du bouclier + mod force. Si vous n’avez pas de bouclier, utilisez la parade de l’arme = valeur maximale du dé de votre arme/2 (ex 3 pour 1d6) + mod agilité. Si vous annulez la totalité des degats, vous activez feintre."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. Bastion : Interceptez une attaque ciblée visant un allié (jet d’Acrobaties=3 + 2x distance en mètres)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "5. Précipitation : Utilisez votre réaction pour précipiter votre tour : faites un jet d’initiative avec avantage pendant l’action d’une autre créature. Si votre résultat dépasse son initiative, vous pouvez jouer immédiatement votre Action et/ou Bonus Action, vos deux actions étant résolues simultanément selon la décision du MJ. Si vous avez déjà joué ce round, faites un jet d’initiative avec avantage contre 10 + l’initiative de la créature actuelle ; en cas de réussite, vous pouvez jouer votre Action et/ou Bonus Action du round suivant immédiatement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "6. Harmonisation : Lorsque une créature lance une capacité utilisant l'Esprit, utilisez votre réaction pour Accentuer: +Mod Esprit à au jet de valeur brute de la capacité et au Seuil de Sauvegarde, ou Atténuer: -Mod Esprit aux dégâts directs et au Seuil de Sauvegarde."
+        },
+        {
+          "kind": "paragraph",
+          "text": "7. Altéretation : Lorsque vous utilisez une capacité, vous pouvez ajuster son effet ou sa portée  en sans augmanter sa puissance et potentiellement activer une combinaison élémentaire."
+        },
+        {
+          "kind": "paragraph",
+          "text": "8. Cibelage:  Lorsqu’un ennemi agit (attaque, mouvement, etc.), vous pouvez utiliser votre réaction pour vous focaliser sur lui, analysant ses mouvements et vous octroyant avantage pour un tir contre lui au prochain tour."
+        },
+        {
+          "kind": "paragraph",
+          "text": "9. Dissuasion : Faites un jet d’Intimidation contre la  Perspicacité de l’ennemi pour lui donner désavantage à son attaque en mêlée."
+        },
+        {
+          "kind": "paragraph",
+          "text": "10. Coordination : En réaction, choisissez un allié à 2×Mod Persuasion m. Cet allié peut immédiatement utiliser une réaction, ou refaire son jet de sauvegarde contre la capacité qui le vise."
+        },
+        {
+          "kind": "heading",
+          "text": "Règles des Attaques et Dégâts",
+          "level": 2
+        }
       ]
     },
     {
@@ -240,6 +756,70 @@
         "Dégâts critiques : Si vous obtenez la valeur maximale sur un dé (ex. : 8 sur 1d8), relancez",
         "ce dé et ajoutez le résultat (cumulable). Si l’arme est agile, ajoutez aussi votre modificateur\nd’agilité.",
         "Action et Combat\n7"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Lorsque vous attaquez avec une arme ou un catalyseur magique, la réussite de l'attaque et les dégâts infligés dépendent d'un jet de dé. La nature du dé utilisé (par exemple, un d6, d8 ou d12) est déterminée par l'arme ou le catalyseur que vous utilisez."
+        },
+        {
+          "kind": "heading",
+          "text": "Armes de corps à corps",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Dégâts : Basés en general sur la Force (ex. : 1d8 + Mod. Force)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Action bonus : Après une attaque, vous pouvez effectuer une seconde attaque sans ajouter votre modificateur aux dégâts. (si vous dual wieldez, vous pouvez ajouter le modificateur)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Dégâts critiques : Si vous obtenez la valeur maximale sur un dé (ex. : 8 sur 1d8), relancez ce dé et ajoutez le résultat (cumulable). Si l’arme est agile, ajoutez aussi votre modificateur d’agilité."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Miss critique : Si vous obtenez 1 sur un dé d’attaque, vous ratez automatiquement, pour chaque 2 points au dessous de 10 en agilité, augmantez votre seuil de miss de 1."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si vous attaquez avec avantage, lancez 3 fois le dé et prenez la valeur la plus haute. Si vous êtes avec une arme agile, ajoutez votre modificateur pour chaque avantage. Si on crit, on relance le jet normalement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Attaque d’opportunité : Si un ennemi quitte votre zone de contrôle (2 m), vous pouvez effectuer une attaque d’opportunité en utilisant votre réaction. Si vous dual wieldez, faites une attaque avec chacune de vos armes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous pouvez Parrer avec les armes mélée, utilisez votre réaction pour réduire les dégats du dé maximal de l’arme/3 + votre agilité (ou force pour les boucliers/épées droites) + votre la deflexion de votre équipement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si on rate une attaque contre vous (si vous parrez 100% des dégats, ou si c’est raté d’une maniere ou d’une autre), vous activez Feinte, qui vous donne avantage contre celui qui vous a attaqué a votre prochaine attaque contre l’attaquant."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Mécaniques corps a corps: Voir Actions, Bonus actions et Reactions pour plus de détails."
+        },
+        {
+          "kind": "heading",
+          "text": "Armes à distance",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Dégâts : Basés en general sur l’Agilite (ex. : 1d8 + Mod. agilité)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Désavantage en mêlée : Si vous êtes dans la zone de contrôle d’un ennemi, vous avez un désavantage sur vos jets d’attaque."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Dégâts critiques : Si vous obtenez la valeur maximale sur un dé (ex. : 8 sur 1d8), relancez ce dé et ajoutez le résultat (cumulable). Si l’arme est agile, ajoutez aussi votre modificateur d’agilité."
+        }
       ]
     },
     {
@@ -272,6 +852,82 @@
         "1. 🗡️ Identifier l’arme et la stat",
         "Dé d’arme (ex. d6, d8, d10, d12).",
         "Action et Combat\n8"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Miss critique : Si vous obtenez 1 sur un dé d’attaque, vous ratez automatiquement, pour chaque 2 points au dessous de 10 en agilité, augmantez votre seuil de miss de 1."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Position surélevée : Vous avez avantage aux attaques à distance si vous êtes surélevé par rapport à votre cible."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si on rate une attaque contre vous, vous activez Feinte, qui vous donne avantage contre celui qui vous a attaqué a votre prochaine attaque contre l’attaquant."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Mécaniques Distance: Voir Actions, Bonus actions et Reactions pour plus de détails."
+        },
+        {
+          "kind": "heading",
+          "text": "Catalyseurs magiques",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les catalyseurs magiques permettent de canaliser l'Esprit pour amplifier les capacités magiques. Chaque catalyseur possède une couleur parmi Carreau, Pique, Trèfle ou Cœur."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Bâton magique (2 mains) : 1d8 + Modificateur d’Esprit, confère +2 en bonus de couleur."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Focus: 1d4 + Modificateur d’Esprit, ne peut pas critiquer, confère +1 en bonus de couleur."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Canalisation : lors d’une canalisation, le catalyseur crée une aura élémentaire correspondant à sa couleur. Cette aura dure 2 rounds et applique la réduction de coût de la couleur du catalyseur calculée selon la formule (modificateur d’Esprit + bonus du catalyseur). Elle vous procure également avantage aux jets d’attaques et de capacités avec celui-ci."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Catalyseurs avancés : Certains catalyseurs plus puissants offrent un bonus de couleur plus élevé et des dégâts augmentés."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Double catalyseur : Si vous maniez deux catalyseurs à une main, vous pouvez les canaliser en même temps pour combiner les couleurs de canalisation."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Désavantage en mêlée : Si vous êtes dans la zone de contrôle d’un ennemi, vous avez un désavantage sur vos jets d’attaque."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Dégâts critiques : Si vous obtenez la valeur maximale sur un dé (ex. : 8 sur 1d8), relancez ce dé et ajoutez le résultat (cumulable)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Miss critique : Si vous obtenez 1 sur un dé d’attaque, vous ratez automatiquement. Pour chaque 2 points en dessous de 10 en Agilité, augmentez votre seuil de miss de 1."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si on rate une attaque contre vous, vous activez Feinte, qui vous donne avantage contre celui qui vous a attaqué a votre prochaine attaque contre l’attaquant."
+        },
+        {
+          "kind": "heading",
+          "text": "Faire un jet d’attaque",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. 🗡️ Identifier l’arme et la stat"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Dé d’arme (ex. d6, d8, d10, d12)."
+        }
       ]
     },
     {
@@ -304,6 +960,108 @@
         "Somme = meilleur dé initial + mod (une fois) + bonus d’arme (une fois) + bonus\ncontextuels (une fois)  + mod Agilité par avantage (si finesse) + toutes les additions",
         "de critiques (et +Agi par critique uniquement si Finesse).",
         "Action et Combat\n9"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Bonus d’arme éventuel (+X)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Caractéristique associée (Force / Agilité / Esprit)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Propriété Finesse ? (oui/non)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. 🎲 Lancer le dé de base"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Jette 1 dé de l’arme (ex. 1d8)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. ➕ Appliquer les avantages (séquentiels)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Pour chaque avantage, ajoute 2 dés au jet (car ce n’est pas un d20)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Garde 1 seul meilleur résultat (puisque l’attaque de base = 1 dé)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tu peux réserver des avantages non utilisés pour un jet de critique (voir étape 5)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si l’arme est Finesse  + mod Agilité en bonus d’arme pour chaque avantage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. 🧮 Ajouter les modificateurs (une seule fois)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "+ caractéristique (Force / Agilité / Esprit)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "+ bonus d’arme (+X)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "+ Autres bonus contextuels."
+        },
+        {
+          "kind": "paragraph",
+          "text": "5. 💥 Gérer le critique (explosif)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si le dé gardé = valeur max, déclenche un critique :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Relance le dé de l’arme."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Tu peux utiliser des avantages si tu en as gardé."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Ajoute ce nouveau résultat au total."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. Propagation des bonus :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si l’arme est Finesse → + Agilité à chaque critique."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sinon → aucun bonus ne se rajoute (ni +Force/Esprit, ni +X)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "🔁 Si cette relance fait encore max, répète l’étape 5 (tant qu’il y a des max)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "6. 🧾 Calculer le total final"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Somme = meilleur dé initial + mod (une fois) + bonus d’arme (une fois) + bonus contextuels (une fois)  + mod Agilité par avantage (si finesse) + toutes les additions de critiques (et +Agi par critique uniquement si Finesse)."
+        }
       ]
     },
     {
@@ -337,6 +1095,108 @@
         "🪓 Famille des Haches — Brutalité",
         "Propriété de famille :",
         "Action et Combat\n10"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Armes",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le tableau ci-dessous regroupe les catégories d'armes basiques, avec leurs types et dégâts moyens. Les armes que vous trouverez en jeu pourront être dotées d'enchantements ou d'effets spéciaux, mais elles suivront toujours ce squelette de base pour rester cohérentes avec le système."
+        },
+        {
+          "kind": "heading",
+          "text": "⚔️ Famille des Épées droites — Garde",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Propriété de famille :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Toutes les épées droites infligent tranchant ou perçant (au choix à chaque attaque)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous pouvez additionner votre mod Force et votre mod Agilité pour calculer votre parade."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si tu parades une attaque de mêlée, tu as avantage à ta prochaine attaque contre cet assaillant."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Armes :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Dague — 1d4, tranchant/perçant — Finesse, Légère, Lancer (10m)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Épée courte — 1d6, tranchant/perçant — Finesse"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Épée longue — 1d8, tranchant/perçant — Polyvalente (1d10)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Espadon (grande épée) — 1d12, tranchant/perçant — Deux mains"
+        },
+        {
+          "kind": "heading",
+          "text": "🗡 Famille des Épées courbes — Fluide",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Propriété de famille :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Toutes les épées courbes infligent tranchant."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Danse offensive : tu peux choisir d’attaquer avec désavantage pour donner avantage à ta prochaine attaque avec une épée courbe ce round."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Danse ininterrompue : quand tu attaques une créature, elle a désavantage à ses attaques d’opportunité contre toi jusqu’à la fin du round."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Armes :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Serpe — 1d4, tranchant — Finesse, Légère"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Épée courbe (cimeterre) — 1d6, tranchant — Finesse, Légère"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Katana (sabre long) — 1d10, tranchant — Finesse, Deux mains"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Grand sabre — 1d12, tranchant — Deux mains"
+        },
+        {
+          "kind": "heading",
+          "text": "🪓 Famille des Haches — Brutalité",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Propriété de famille :"
+        }
       ]
     },
     {
@@ -371,6 +1231,115 @@
         "Hallebarde — 1d12, tranchant — Deux mains, Allonge",
         "🏹 Famille des Arcs",
         "Action et Combat\n11"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Toutes les armes de la famille des haches infligent tranchant."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Brutalité : sur un critique, lance 2 dés de dégâts et garde la somme."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Après un premier critique, tu peux obtenir un nouveau critique si tu fais une paire sur les dés de dégâts."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Armes :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Hachette — 1d6, tranchant — Légère, Lancer (10m)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Hache d’armes — 1d8, tranchant — Polyvalente (1d10)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Grande hache — 1d12, tranchant — Deux mains"
+        },
+        {
+          "kind": "heading",
+          "text": "🔨 Famille des Massues — Impact",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Propriété de famille :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Toutes les armes à impact infligent contondant."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Impact : ignore l’armure passive et réduit la Parade de moitié."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sur critique, l’attaquant fait un jet d’Athlétisme pour repousser de 4m."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Armes :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Gourdin — 1d4, contondant — Improvisée, Brute"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Marteau de guerre — 1d8, contondant — Polyvalente (1d10)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Grand marteau — 1d12, contondant — Deux mains"
+        },
+        {
+          "kind": "heading",
+          "text": "🪶 Famille des Armes à Allonge — Allonge",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Propriété de famille :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Portée de 3m."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tu peux faire une attaque d’opportunité si une créature sort de ta zone de contrôle étendue de 3 m."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tu peux aussi en faire une si une créature entre dans ta zone restreinte de 1,5m."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Armes :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Bâton long — 1d6, contondant — Allonge"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Lance — 1d8, perçant — Polyvalente (1d10), Allonge"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Hallebarde — 1d12, tranchant — Deux mains, Allonge"
+        },
+        {
+          "kind": "heading",
+          "text": "🏹 Famille des Arcs",
+          "level": 3
+        }
       ]
     },
     {
@@ -403,6 +1372,104 @@
         "Bouclier — 1d4 contondants — Brute, Secondaire, Rempart",
         "🗡️ Armes uniques",
         "Action et Combat\n12"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Propriété commune : Surplomb (avantage lorsqu’on tire depuis une surélévation ≥ 5m)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Arc court — 1d6, perçants — Distance,Surplomb"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Arc long — 1d8, perçants — Distance, Surplomb"
+        },
+        {
+          "kind": "heading",
+          "text": "🔫 Famille des Arbalètes",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Propriété commune : Perforante (ignore armure passive, divise Parade)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "(Les arbalètes commencent toujours le combat déjà rechargées.)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Arbalète de poing — 1d4, perçants — Distance, Secondaire, Perforante, Brute, Tir léger"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Arbalète (classique/légère) — 1d8, perçants — Distance,Perforante"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Arbalète lourde — 1d12, perçants — Distance,Perforante, Recharge (bonus action pour recharger, action pour tirer)"
+        },
+        {
+          "kind": "heading",
+          "text": "🔮 Famille des Catalyseurs → Catalyseur",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Propriété de famille :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Arme à distance."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Utilise Esprit pour les jets de dégâts."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sert à la Canalisation (ajoute la caractéristique de Canalisation définie par le système)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Armes :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Focus — 1d4 — Catalyseur, Secondaire,  Brute, Tir léger"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Bâton — 1d8 — Catalyseur, Deux-mains"
+        },
+        {
+          "kind": "heading",
+          "text": "🛡️ Famille des Boucliers → Rempart",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Propriété de famille :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Offre une armure passive indépendante de la Force et une valeur de Parade personnalisée. Les bonus de l’arme s’appliquent également au bouclier. Utiliser Bastion avec un bouclier fait automatiquement parer. En cas de parade parfaite au corps à corps, l’adversaire est renversé. Vous utilisez la force au lieu de l’agilité pour parer et il vous faut au moins 10 en Force pour l’équiper."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Armes :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Bouclier — 1d4 contondants — Brute, Secondaire, Rempart"
+        },
+        {
+          "kind": "heading",
+          "text": "🗡️ Armes uniques",
+          "level": 2
+        }
       ]
     },
     {
@@ -433,6 +1500,109 @@
         "Sans-crit : les attaques avec ces armes ne peuvent pas critiquer.",
         "Comptent comme des attaques à mains nues améliorées (bénéficient de tout ce qui\nbuff les attaques à mains nues).",
         "Action et Combat\n13"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "🪓⚔️ Faux — Fluide + Allonge",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Profil : 1d10, tranchant — Deux mains, Allonge (3m)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Hérite des propriétés Fluide (épées courbes) et Allonge."
+        },
+        {
+          "kind": "paragraph",
+          "text": "→ Arme hybride qui combine mobilité/feinte et contrôle de zone."
+        },
+        {
+          "kind": "heading",
+          "text": "⚔️ Twinblade — Double Frappe",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Profil : 1d8, tranchant — Deux mains, Spéciale"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Double Frappe : tu peux utiliser ton Action + Bonus Action pour porter une attaque combinée contre une cible unique."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Lance 2d8 et ajoute 2× ton mod Force."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si les deux dés montrent la même valeur, c’est un critique automatique."
+        },
+        {
+          "kind": "heading",
+          "text": "⚔️ Rapière — Contre d’Estoc",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Profil : 1d8, perçant — Finesse"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Contre d’Estoc : quand une créature t’attaque en mêlée, tu peux choisir de tenter un contre."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si tu le fais, l’attaque de cette créature est faite avec avantage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tu appliques ensuite ta Parade normalement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Après avoir paré, tu peux immédiatement faire une attaque gratuite contre cette créature."
+        },
+        {
+          "kind": "heading",
+          "text": "🌀 Fouet — Entrave souple",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Profil : 1d6, tranchant — Finesse, Allonge (3m)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Entrave souple : tes attaques d’opportunité avec un fouet se font avec désavantage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si elles réussissent, tu fais un test d’Escamotage opposé à l’Athlétisme de la cible."
+        },
+        {
+          "kind": "paragraph",
+          "text": "En cas de réussite, la cible est mise à terre (prone)."
+        },
+        {
+          "kind": "heading",
+          "text": "✊ Fist Weapons — Sans-crit",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Profil : 1d4, contondant — comme mains nues"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sans-crit : les attaques avec ces armes ne peuvent pas critiquer."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comptent comme des attaques à mains nues améliorées (bénéficient de tout ce qui buff les attaques à mains nues)."
+        }
       ]
     },
     {
@@ -471,6 +1641,166 @@
         "Arc long\n1d8, perçant\nDistance, Deux mains, Surplomb",
         "Arbalète de poing\n1d4, perçant\nDistance, Brute ,Tir léger, Secondaire, Perforant",
         "Action et Combat\n14"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "🔗 Fléau — Déstabilisation",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Profil : 1d8, perçant — Spéciale"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Déstabilisation : si tu critiques avec un fléau, la cible a désavantage à sa prochaine attaque."
+        },
+        {
+          "kind": "heading",
+          "text": "📜 Tableau des Armes",
+          "level": 2
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Arme",
+              "Dégâts",
+              "Propriétés"
+            ],
+            [
+              "Dague",
+              "1d4, tranchant/perçant",
+              "Finesse, Légère, Lancer (10m), Garde"
+            ],
+            [
+              "Épée courte",
+              "1d6, tranchant/perçant",
+              "Finesse, Garde"
+            ],
+            [
+              "Épée longue",
+              "1d8, tranchant/perçant",
+              "Polyvalente (1d10), Garde"
+            ],
+            [
+              "Espadon",
+              "1d12, tranchant/perçant",
+              "Deux mains, Garde"
+            ],
+            [
+              "Serpe",
+              "1d4, tranchant",
+              "Légère, Fluide"
+            ],
+            [
+              "Épée courbe (cimeterre)",
+              "1d6, tranchant",
+              "Finesse, Légère, Fluide"
+            ],
+            [
+              "Katana",
+              "1d10, tranchant",
+              "Finesse, Deux mains, Fluide"
+            ],
+            [
+              "Grand sabre",
+              "1d12, tranchant",
+              "Deux mains, Fluide"
+            ],
+            [
+              "Hachette",
+              "1d6, tranchant",
+              "Légère, Lancer (10m), Brutalité"
+            ],
+            [
+              "Hache d’armes",
+              "1d8, tranchant",
+              "Polyvalente (1d10), Brutalité"
+            ],
+            [
+              "Grande hache",
+              "1d12, tranchant",
+              "Deux mains, Brutalité"
+            ],
+            [
+              "Gourdin",
+              "1d4, contondant",
+              "Improvisée, Brute, Impact"
+            ],
+            [
+              "Marteau de guerre",
+              "1d8, contondant",
+              "Polyvalente (1d10), Impact"
+            ],
+            [
+              "Grand marteau",
+              "1d12, contondant",
+              "Deux mains, Impact"
+            ],
+            [
+              "Bâton long",
+              "1d6, contondant",
+              "Allonge"
+            ],
+            [
+              "Lance",
+              "1d8, perçant",
+              "Polyvalente (1d10), Allonge"
+            ],
+            [
+              "Hallebarde",
+              "1d12, tranchant",
+              "Deux mains, Allonge"
+            ],
+            [
+              "Faux",
+              "1d10, tranchant",
+              "Deux mains, Fluide, Allonge"
+            ],
+            [
+              "Twinblade",
+              "1d8, tranchant",
+              "Deux mains, Double Frappe"
+            ],
+            [
+              "Rapière",
+              "1d8, perçant",
+              "Finesse, Contre d’Estoc"
+            ],
+            [
+              "Fouet",
+              "1d6, tranchant",
+              "Finesse, Entrave"
+            ],
+            [
+              "Fist weapons",
+              "1d4, contondant",
+              "Comme mains nues, Brute"
+            ],
+            [
+              "Fléau",
+              "1d8, perçant",
+              "Déstabilisation"
+            ],
+            [
+              "Arc court",
+              "1d6, perçant",
+              "Distance, Deux mains, Surplomb"
+            ],
+            [
+              "Arc long",
+              "1d8, perçant",
+              "Distance, Deux mains, Surplomb"
+            ],
+            [
+              "Arbalète de poing",
+              "1d4, perçant",
+              "Distance, Brute ,Tir léger, Secondaire, Perforant"
+            ]
+          ]
+        }
       ]
     },
     {
@@ -503,6 +1833,114 @@
         "cas de paire.",
         "Impact (Masses/Marteaux) : Les armes à impact infligent du contondant, elles ignorent\nl’armure passive, réduisent la Parade de moitié et sur un critique la cible doit réussir un test\nd’Athlétisme ou être repoussée de 3 m.",
         "Action et Combat\n15"
+      ],
+      "elements": [
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Arme",
+              "Dégâts",
+              "Propriétés"
+            ],
+            [
+              "Arbalète",
+              "1d8, perçant",
+              "Distance, Deux mains, Perforant"
+            ],
+            [
+              "Arbalète lourde",
+              "1d12, perçant",
+              "Distance, Deux mains, Recharge, Perforant"
+            ],
+            [
+              "Focus",
+              "1d4, magique/élémentaire",
+              "Distance, Brute, Tir léger, Secondaire, Catalyseur"
+            ],
+            [
+              "Baton",
+              "1d8, magique/élémentaire",
+              "Distance, Deux mains, Catalyseur"
+            ],
+            [
+              "Bouclier",
+              "1d4, contendant",
+              "Brute, Secondaire, Rempart"
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": "📜 Liste des Propriétés",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "⚔️ Propriétés basiques",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Finesse : utilise Force ou Agilité pour les jets d’attaque et de dégâts."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Légère : peut être utilisée pour une attaque à deux armes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Polyvalente (dX) : peut être utilisée à une main ou à deux mains (dégâts augmentés)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Deux-mains : doit être maniée avec deux mains."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Lancer (Xm) : peut être lancée à distance, portée indiquée."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Distance : arme de tir, attaque à distance, doit utiliser l’agilité."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Improvisée : arme de fortune."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Brute : l’arme ne peut pas infliger de coups critiques."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tir léger : peut tirer en bonus action ou en action mais pas les deux (armes à distance)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Recharge : nécessite une bonus action pour recharger avant de tirer (commence rechargée)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Secondaire: Peut s’équiper sur la main secondaire en plus d’une arme non légère."
+        },
+        {
+          "kind": "heading",
+          "text": "🏷️ Propriétés de familles",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Garde (Épées droites) : Les épées infligent tranchant ou perçant, leur Parade vaut dé/2 au lieu de dé/3, la Parade est versatile, elle peut utiliser la force et une Parade réussie donne avantage à la prochaine attaque contre l’assaillant."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Brutalité (Haches) : Les haches infligent du tranchant, sur un critique on lance deux dés et on garde la somme, puis après un premier critique on peut obtenir un nouveau critique en cas de paire."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Impact (Masses/Marteaux) : Les armes à impact infligent du contondant, elles ignorent l’armure passive, réduisent la Parade de moitié et sur un critique la cible doit réussir un test d’Athlétisme ou être repoussée de 3 m."
+        }
       ]
     },
     {
@@ -529,6 +1967,66 @@
         "Armure 🛡️ (Capped par le Mod. Force) : Réduit passivement les dégâts subis à chaque",
         "attaque.",
         "Action et Combat\n16"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Fluide (Épées courbes) : Les épées courbes infligent du tranchant, on peut attaquer avec désavantage pour avoir avantage à la prochaine attaque dans le round, et toute cible attaquée a désavantage à ses attaques d’opportunité contre vous jusqu’à la fin du tour."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Allonge (Bâtons longs, Lances, Hallebardes) : Ces armes frappent à 3 m, peuvent faire une attaque d’opportunité quand une créature sort de leur zone de 3 m ou quand elle entre dans leur zone de 1,5 m."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Surplomb (Arcs): si le tireur est situé à ≥ 5 m au-dessus de sa cible, il obtient avantage au jet d’attaque."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Perforant (Arbalettes) : l’attaque ignore l’armure passive et divise par deux la valeur de Parade de la cible."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Rempart (Boucliers): Confère une armure passive indépendante de la Force et une parade propre ; les bonus d’arme s’appliquent, Bastion fait parer, et une parade parfaite en mêlée renverse l’adversaire."
+        },
+        {
+          "kind": "heading",
+          "text": "🌀 Propriétés uniques",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Contre d’Estoc (Rapière) : Quand vous êtes attaqué en mêlée vous pouvez donner avantage à l’ennemi, puis parer normalement et enfin effectuer immédiatement une attaque gratuite de rapière contre lui."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Entrave (Fouet) : Les attaques d’opportunité avec un fouet se font avec désavantage mais si elles touchent vous faites un test d’Escamotage contre l’Athlétisme de la cible pour la mettre à terre."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Déstabilisation (Fléau) : Quand vous infligez un critique avec un fléau, la cible a désavantage à sa prochaine attaque."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Double Frappe (Twinblades) : En dépensant votre action et votre bonus action vous faites une attaque combinée de 2d8 + 2×FOR et si les deux dés sont identiques l’attaque est un critique automatique."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Maines nues (Fist weapons) : Ces armes se comptent comme des attaques à mains nues améliorées."
+        },
+        {
+          "kind": "heading",
+          "text": "Armures",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "L’armure offre une réduction passive des dégâts et une contribution à la parade. Elle possède deux valeurs distinctes :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Armure 🛡️ (Capped par le Mod. Force) : Réduit passivement les dégâts subis à chaque attaque."
+        }
       ]
     },
     {
@@ -565,6 +2063,106 @@
         "Vous perdez des niveaux de fatigue en vous reposant",
         "2. Se relever en inconscience :",
         "Action et Combat\n17"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Déflexion 🔄 (S’ajoute à la Parade) : Utilisée uniquement lors d’une Parade pour améliorer la défense active."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Règles générales :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ne peut pas réduire plus de 50% des dégâts d’une attaque."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Minimum de 10 en Force requis pour porter un plastron avec armure."
+        },
+        {
+          "kind": "heading",
+          "text": "Équipements d’armure",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Une armure complète se compose de quatre pièces principales."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chacune offre de la Déflexion, et certaines confèrent un attribut supplémentaire influençant le style de combat du porteur."
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Équipement",
+              "Valeurs\nprincipales",
+              "Attribut\nsecondaire",
+              "Description courte"
+            ],
+            [
+              "Plastron 🦾",
+              "Déflexion",
+              "Armure",
+              "Pièce centrale de protection. Seule source\nd’Armure passive, elle absorbe directement une\npartie des dégâts."
+            ],
+            [
+              "Casque 🪖",
+              "Déflexion",
+              "Volonté 🧠",
+              "Protège la tête et renforce la concentration. Offre\n+X à tous les jets de de sauvegarde de résilience\ncontre la perte de concentration."
+            ],
+            [
+              "Bottes 🥾",
+              "Déflexion",
+              "Vitesse 🌀",
+              "Améliorent la mobilité. Offrent +X à la vitesse de\ndéplacement."
+            ],
+            [
+              "Gantelets ✊",
+              "Déflexion",
+              "Initiative ⚡",
+              "Favorisent la réactivité. Offrent +X à l’initiative du\nporteu"
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": "Inconscience et Fatigue",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Être inconscient ne signifie pas la mort, mais vous êtes vulnérable. Subir des dégâts dans cet état vous fait accumuler des niveaux de fatigue, pouvant mener à la mort si personne n’intervient."
+        },
+        {
+          "kind": "heading",
+          "text": "Règles :",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Tomber inconscient :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "En tombant à 0 PV, gagnez 1 niveau de fatigue."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si vous subissez des dégâts en étant inconscient, gagnez 1 niveau de fatigue supplémentaire par coup."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous perdez des niveaux de fatigue en vous reposant"
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Se relever en inconscience :"
+        }
       ]
     },
     {
@@ -594,6 +2192,108 @@
         "🪓 1. Dégâts physiques",
         "Les dégâts physiques proviennent d’une attaque tangible, exercée par un projectile, une arme\nou un impact.",
         "Action et Combat\n18"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Vous devez :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Être aidé par un allié."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Être soigné par un sort ou un objet."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ou réussir un jet de sauvegarde de Force (DC 15)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Conséquence : Vous perdez votre action lors du round où vous vous relevez."
+        },
+        {
+          "kind": "heading",
+          "text": "Effets de Fatigue",
+          "level": 3
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Niveau",
+              "Effets"
+            ],
+            [
+              "0",
+              "Aucun malus."
+            ],
+            [
+              "1",
+              "Malus de -1 à tous les jets. capacités coûtent +1."
+            ],
+            [
+              "2",
+              "Malus de -2 à tous les jets. capacités coûtent +2."
+            ],
+            [
+              "3",
+              "Malus de -4 à tous les jets. capacités coûtent +4."
+            ],
+            [
+              "4",
+              "Malus de -6 à tous les jets. capacités coûtent +6."
+            ],
+            [
+              "5",
+              "Mort."
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": "⚔️ Types de Dégâts",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les armes, artefacts et capacités infligent des dégâts de nature différente selon leur origine ou leur énergie."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque type de dégât décrit la façon dont l’attaque interagit avec la matière, l’énergie ou l’esprit."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Certaines résistances, vulnérabilités ou synergies élémentaires dépendent directement de cette typologie."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les dégâts sont regroupés en trois grandes familles :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Physiques — liés à la force, à la matière et au mouvement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Magiques — issus de la manipulation de l’énergie pure ou spirituelle."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Élémentaires — expression directe des forces naturelles et alchimiques."
+        },
+        {
+          "kind": "heading",
+          "text": "🪓 1. Dégâts physiques",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les dégâts physiques proviennent d’une attaque tangible, exercée par un projectile, une arme ou un impact."
+        }
       ]
     },
     {
@@ -629,6 +2329,102 @@
         "Les dégâts élémentaires expriment la violence ou la réaction des forces naturelles : chaleur,\nfroid, poison, électricité, etc.",
         "Ils sont issus des magies alchimiques, des sorts naturels, ou des environnements instables.",
         "Action et Combat\n19"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Ils sont le résultat direct de la vitesse, de la masse ou de la précision de l’assaillant."
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Type",
+              "Description",
+              "Exemples d’armes ou effets"
+            ],
+            [
+              "Contondant",
+              "Choc massif écrasant ou projetant la cible.",
+              "Marteaux, masses, poings, explosions de\nsouffle."
+            ],
+            [
+              "Tranchant",
+              "Sectionne ou entaille par force ou vitesse.",
+              "Épées, haches, griffes, lames d’énergie."
+            ],
+            [
+              "Perçant",
+              "Pénètre ou transperce par concentration\nde force.",
+              "Lances, flèches, dards, pointes magiques."
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "➡️ Ces trois formes couvrent tous les dommages liés à la matière solide ou cinétique."
+        },
+        {
+          "kind": "heading",
+          "text": "🔮 2. Dégâts magiques",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les dégâts magiques résultent d’une manipulation directe des flux arcaniques, spirituels ou mentaux."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ils ignorent les lois physiques et traduisent la manière dont la magie interagit avec l’essence même des êtres et des choses."
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Type",
+              "Description",
+              "Effet"
+            ],
+            [
+              "Psychique",
+              "Dégâts mentaux et émotionnels affectant\ndirectement la conscience, la volonté et les\nperceptions.",
+              "Ignore t la parade."
+            ],
+            [
+              "Nécrotique",
+              "Dégâts vitaux issus de la corruption, de\nl’entropie et de la décomposition de\nl’énergie interne.",
+              "Elimine les résistances élémentaires et\nphysqiues de la cible."
+            ],
+            [
+              "Radiant",
+              "Dégâts lumineux et énergétiques amplifiant\nla résonance magique des éléments\nenvironnants.",
+              "Augmente la puissance des synergies et\ndes combinaisons élémentaires."
+            ],
+            [
+              "Force",
+              "Dégâts de pression magique pure,\ncondensation d’énergie cinétique stabilisée.",
+              "Propoages les status élémentaires a 5m\nde rayon."
+            ],
+            [
+              "Arcanique",
+              "Dégâts de magie brute, non affiliée à un\nélément ou une école, représentant la force\npure du mana.",
+              "Il n’existe pas de résistance a ce type de\ndégats."
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": "🌋 3. Dégâts élémentaires",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les dégâts élémentaires expriment la violence ou la réaction des forces naturelles : chaleur, froid, poison, électricité, etc."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ils sont issus des magies alchimiques, des sorts naturels, ou des environnements instables."
+        }
       ]
     },
     {
@@ -661,6 +2457,98 @@
         "Les effets sont symétriques : la relation est identique dans les deux sens.",
         "📊 Tableau des interactions et justifications",
         "Action et Combat\n20"
+      ],
+      "elements": [
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Type",
+              "Description",
+              "Exemples d’effets"
+            ],
+            [
+              "Feu",
+              "Consomme et brûle, détruit la matière organique\net propage la chaleur.",
+              "Flammes, explosions, projectiles\nincandescents."
+            ],
+            [
+              "Glace",
+              "Gèle et ralentit, solidifie les surfaces et\nprovoque des engelures.",
+              "Traits de givre, tempêtes de neige,\nsouffles gelés."
+            ],
+            [
+              "Eau",
+              "Écrase, emporte ou noie ; peut conduire ou\ndissiper d’autres énergies.",
+              "Jets, vagues, pluies magiques."
+            ],
+            [
+              "Foudre",
+              "Énergie pure instable, traverse les corps et les\nmétaux.",
+              "Éclairs, arcs électriques, chocs\nmagnétiques."
+            ],
+            [
+              "Toxique",
+              "Gaz, venins et acides ; empoisonne, corrode ou\ninfecte.",
+              "Brumes alchimiques, poisons,\nsuintements corrosifs."
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "➡️ Les éléments interagissent souvent entre eux : l’eau conduit la foudre, le feu s’éteint dans l’eau, le poison s’enflamme, etc."
+        },
+        {
+          "kind": "heading",
+          "text": "🌐 Interactions Élémentaires",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Lorsqu’une cible est déjà affectée par un élément (brûlure, froid, humidité, choc, toxine, etc.),"
+        },
+        {
+          "kind": "paragraph",
+          "text": "les dégâts du prochain élément appliqué peuvent être amplifiés ou réduits selon la compatibilité entre ces deux forces."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ce tableau représente les synergies et contre-réactions élémentaires fondamentales du système."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Il s’applique chaque fois qu’un effet élémentaire est infligé à une cible déjà sous l’influence d’un autre élément."
+        },
+        {
+          "kind": "heading",
+          "text": "⚙️ Règle d’application",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ces interactions n’affectent que les dégâts du deuxième élément appliqué."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Avantage : le lanceur jette ses dés de dégâts avec avantage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Désavantage : le lanceur jette ses dés de dégâts avec désavantage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Neutre : aucun effet particulier."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les effets sont symétriques : la relation est identique dans les deux sens."
+        },
+        {
+          "kind": "heading",
+          "text": "📊 Tableau des interactions et justifications",
+          "level": 3
+        }
       ]
     },
     {
@@ -722,6 +2610,97 @@
         "Le lanceur utilise sa réaction pour altérer son propre sort ou attaque élémentaire. Il \nDéclenche une réaction élémentaire correspondante qui fait sens impliquant l’élément qu’il\napplique et l’élément déja appliqué sur la cible ou l’endroit ou il est lancé.",
         "🔹 Conditions",
         "Action et Combat\n21"
+      ],
+      "elements": [
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "État subi ↓ /\nÉlément\nentrant →",
+              "🔥 Feu",
+              "❄ Glace",
+              "💧 Eau",
+              "⚡ Foudre",
+              "☠ Toxique"
+            ],
+            [
+              "🔥 Feu\n(Burning)",
+              "Neutre",
+              "Désavantage—\nle froid éteint\nles flammes.",
+              "Désavantage—\nl’eau étouffe la\ncombustion.",
+              "Avantage— la\nchaleur ionise\nl’air, amplifiant\nla foudre.",
+              "Avantage— le\ngaz enflammé\nexplose."
+            ],
+            [
+              "❄ Glace\n(Chilled)",
+              "Désavantage—\nla chaleur fait\nfondre la glace",
+              "Neutre",
+              "Avantage—\nl’eau gèle plus\nvite au contact\ndu givre.",
+              "Désavantage—\nla glace isole la\ncharge\nélectrique.",
+              "Neutre"
+            ],
+            [
+              "💧 Eau\n(Soaked)",
+              "Désavantage—\nl’eau absorbe la\nchaleur et\naffaiblit le feu.",
+              "Avantage— le\nfroid fige\ninstantanément\nl’humidité.",
+              "Neutre",
+              "Avantage—\nl’eau conduit la\nfoudre\nefficacement.",
+              "Désavantage—\nle poison se\ndilue dans\nl’eau."
+            ],
+            [
+              "⚡ Foudre\n(Shocked)",
+              "Avantage—\nl’air chauffé par\nle choc amplifie\nla combustion.",
+              "Désavantage—\nla glace\ndisperse la\ncharge.",
+              "Avantage—\nl’humidité\nconduit le\ncourant.",
+              "Neutre",
+              "Neutre"
+            ],
+            [
+              "☠ Toxique\n(Poisoned)",
+              "Avantage— les\ngaz toxiques\ns’enflamment\nviolemment.",
+              "Neutre.",
+              "Désavantage—\nl’eau purifie ou\ndisperse les\ntoxines.",
+              "Neutre",
+              "Neutre"
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": "🌩️ Combinaisons Élémentaires",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les combinaisons élémentaires représentent les réactions directes entre deux éléments opposés ou complémentaires."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Elles permettent d’altérer temporairement les énergies présentes sur le champ de bataille pour créer un effet unique : explosion, propagation, transformation de terrain, etc."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ces interactions sont contrôlées par le joueur, via la réaction Altération"
+        },
+        {
+          "kind": "heading",
+          "text": "⚙️ Activation d’une combinaison",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "🔸 Altération (Réaction)",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le lanceur utilise sa réaction pour altérer son propre sort ou attaque élémentaire. Il Déclenche une réaction élémentaire correspondante qui fait sens impliquant l’élément qu’il applique et l’élément déja appliqué sur la cible ou l’endroit ou il est lancé."
+        },
+        {
+          "kind": "heading",
+          "text": "🔹 Conditions",
+          "level": 3
+        }
       ]
     },
     {
@@ -757,6 +2736,135 @@
         "⚡ Foudre + ☠\nToxique",
         "Ionisation : les gaz se chargent électriquement, crépitement ou décharge\nneutralisante.",
         "Action et Combat\n22"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Tu peux altérer ou altérer tes propres capacités ou celles de tes alliés,"
+        },
+        {
+          "kind": "paragraph",
+          "text": "mais jamais directement celles des ennemis."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le MJ peut exiger un jet de Nature (ou un jet contextuel, selon la scène)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "pour réussir à canaliser ou contrôler la réaction."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Jet réussi → effet harmonisé, combinaison stable."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Jet raté → effet réduit ou incontrôlé, au choix du MJ."
+        },
+        {
+          "kind": "heading",
+          "text": "⚖️ Gardes-fous et limites",
+          "level": 3
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Catégorie",
+              "Limite / Règle",
+              "Détail"
+            ],
+            [
+              "Contrôle",
+              "❌ Aucun hard CC",
+              "Pas d’étourdissement, paralysie, gel complet, etc."
+            ],
+            [
+              "Dégâts",
+              "🧭Valeur brute de capacité\nbrute max",
+              "Si la combinaison inflige des dégâts, on utilise le\nmodificateur de Survie du lanceur."
+            ],
+            [
+              "Propagation",
+              "🌐 Zone max 5 m",
+              "Rayon fixe de 5 mètres autour du point d’impact."
+            ],
+            [
+              "Transformation",
+              "🎲 Jet contextuel requis",
+              "Le MJ décide de la difficulté selon la cohérence et la\nnarration."
+            ],
+            [
+              "Prolongation",
+              "⏳ 1 tick max",
+              "Si l’effet persiste, il inflige un second tick à 50 % des\ndégâts initiaux."
+            ],
+            [
+              "Perturbation",
+              "🌫 Modérée",
+              "Perturbe légèrement (fumée, vapeur, lumière) sans\ndéséquilibrer le combat."
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": "🔮 Exemples de combinaisons élémentaires",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "(Chaque duo illustre un effet narratif possible, sans entrer dans les chiffres ou bonus.)"
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Combinaison",
+              "Type d’effet narratif"
+            ],
+            [
+              "🔥 Feu + ❄ Glace",
+              "Choc thermique : formation d’une brume brûlante ou d’un nuage de vapeur\naveuglant."
+            ],
+            [
+              "🔥 Feu + 💧 Eau",
+              "Bouillonnement violent : geysers, ébullition, choc de chaleur."
+            ],
+            [
+              "🔥 Feu + ⚡ Foudre",
+              "Explosion ionisée : flamme blanche, onde d’impact et lumière intense."
+            ],
+            [
+              "🔥 Feu + ☠ Toxique",
+              "Inflammation gazeuse : nappe enflammée et résidu toxique persistant."
+            ],
+            [
+              "❄ Glace + 💧 Eau",
+              "Congélation : l’eau devient glace, terrain glissant ou bloqué."
+            ],
+            [
+              "❄ Glace + ⚡ Foudre",
+              "Résonance cryo-électrique : fissures, éclats, perturbation magnétique."
+            ],
+            [
+              "❄ Glace + ☠ Toxique",
+              "Cryotoxines : gaz figés ou cristaux venimeux tranchants."
+            ],
+            [
+              "💧 Eau + ⚡ Foudre",
+              "Électrisation : onde conductrice, propagation à toutes les cibles immergées."
+            ],
+            [
+              "💧 Eau + ☠ Toxique",
+              "Diffusion : propagation du poison dans le liquide, nuage coloré instable."
+            ],
+            [
+              "⚡ Foudre + ☠\nToxique",
+              "Ionisation : les gaz se chargent électriquement, crépitement ou décharge\nneutralisante."
+            ]
+          ]
+        }
       ]
     },
     {
@@ -789,6 +2897,89 @@
         "ÀTerre",
         "mouvement pour se relever. Les attaques contre elle ont avantage tant qu’elle est au\nsol.",
         "Action et Combat\n23"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Conditions négatives",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "🩸 Blocages Totaux",
+          "level": 2
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Nom",
+              "Description"
+            ],
+            [
+              "Downed",
+              "La créature est inapte à agir ou se déplacer. Elle tombe au sol. Elle prend 1 niveau de\nFatigue, et chaque attaque réussie contre elle lui inflige +1 niveau de Fatigue\nsupplémentaire. Un allié peut la sortir de cet état en l’aidant par une bonus action. Se\nrelever coûte aussi sa propre bonus action. Perd immédiatement toute concentration."
+            ],
+            [
+              "Paralysé",
+              "Ne peut pas bouger ni effectuer d’action physique. Peut toutefois harmoniser ou altérer\nun sort. Rate automatiquement tous les jets d’Acrobaties et d’Athlétisme. Ne perd pas\nnécessairement la concentration. Les attaques contre lui ont avantage."
+            ],
+            [
+              "Pétrifié",
+              "Le corps devient pierre : immobile, inconscient, avec résistance à tous les types de\ndégâts sauf arcaniques et radiants. Perd immédiatement toute concentration."
+            ],
+            [
+              "Gelé",
+              "Le corps est emprisonné dans la glace. Ne peut pas agir ni se déplacer. Les attaques\nphysiques contre lui infligent un critique automatique. Après chaque attaque reçue, il\npeut tenter un jet de sauvegarde d’Athlétisme (DD = DC du lanceur) pour se libérer."
+            ],
+            [
+              "Sommeil",
+              "Inconscient mais stable. Se réveille s’il subit des dégâts ou si un allié l’interpelle ou le\nsecoue. Les attaques au contact ont avantage. Perd immédiatement toute\nconcentration."
+            ],
+            [
+              "Stun",
+              "Incapable d’agir pendant 1 tour, mais reste conscient. Ne peut ni bouger, ni parler, ni\nréagir. Échec automatique aux jets de sauvegarde d’Acrobaties et d’Athlétisme\nréussite automatique a ceu de perspicacité. Les attaques contre lui ont avantage. Perd\nimmédiatement toute concentration."
+            ],
+            [
+              "Amorphe",
+              "La créature prend une forme instable (liquide, éthérée, autre) et perd toute Armure et\nParade. Elle garde les propriétés de la forme choisie, mais tous les dégâts subis sont\ntransférés à son corps réel."
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": "⚔️ Altérations Physiques",
+          "level": 2
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Nom",
+              "Description"
+            ],
+            [
+              "Immobilisé",
+              "Vitesse 0. Ne peut pas se déplacer et échoue automatiquement aux jets d’Acrobaties."
+            ],
+            [
+              "Affaibli",
+              "Subit désavantage à toutes les attaques au corps à corps."
+            ],
+            [
+              "Érosion",
+              "L’Armure et la Parade ne procurent plus aucun bonus défensif. Ne peut pas parer ni\nbénéficier de bonus d’équipement physique."
+            ],
+            [
+              "Fatigué",
+              "Perd sa Bonus Action."
+            ],
+            [
+              "ÀTerre",
+              "La créature est renversée. Doit dépenser sa Bonus Action et la moitié de son\nmouvement pour se relever. Les attaques contre elle ont avantage tant qu’elle est au\nsol."
+            ]
+          ]
+        }
       ]
     },
     {
@@ -820,6 +3011,101 @@
         "Dominé\nFait exactement ce que le lanceur lui ordonne, sans restriction.",
         "Enragé\nDoit attaquer la créature la plus proche à chaque tour. Fait un jet pour ne pas perdre\nla concentration à la fin de son tour.",
         "Action et Combat\n24"
+      ],
+      "elements": [
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Nom",
+              "Description"
+            ],
+            [
+              "Aveuglé",
+              "Ne peut pas voir. Les attaques contre elle ont avantage, et les siennes ont\ndésavantage. Échec automatique aux tests de Perception visuell"
+            ],
+            [
+              "Assourdi",
+              "Ne perçoit aucun son. Échec automatique à tous les jets de sauvegarde sauf ceux de\nRésilience."
+            ],
+            [
+              "Agrippé",
+              "Mouvement 0. Peut se libérer en bonus action par un jet d’Athlétisme. Si l’agrippeur se\ndéplace, il entraîne la cible. Avantage aux attaques contre lui, ou contre celui qui\nl’aggripe."
+            ],
+            [
+              "Désarmé",
+              "Perd l’arme/équipement principal. Ne peut pas utiliser d’attaques ou capacités qui\nl’exigent."
+            ],
+            [
+              "Exposé",
+              "Les attaques contre la cible ont avantage."
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": "💨 Mobilité et Espace",
+          "level": 2
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Nom",
+              "Description"
+            ],
+            [
+              "Repoussé",
+              "Est projeté en ligne droite de 5 m depuis la source de l’effet. Ce mouvement ne\nprovoque pas d’attaque d’opportunité."
+            ],
+            [
+              "Attiré",
+              "Est tiré en ligne droite de 5 m vers la source de l’effet. Ce mouvement provoque des\nattaques d’opportunité."
+            ],
+            [
+              "Ralenti",
+              "Vitesse divisée par deux. Subit désavantage aux jets d’Acrobaties."
+            ],
+            [
+              "Lévité",
+              "Suspendu dans les airs. Ne peut pas se déplacer librement ni utiliser de déplacement\nde mêlée. Les attaques contre lui ont avantage, et il subit désavantage aux jets\nd’Athlétisme et d’Acrobaties."
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": "🔥 Altérations Mentales",
+          "level": 2
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Nom",
+              "Description"
+            ],
+            [
+              "Affolé",
+              "Agit de manière imprévisible : attaque un allié, se déplace aléatoirement ou ne fait\nrien. Le MJ détermine son action avec un d6."
+            ],
+            [
+              "Apeuré",
+              "Ne peut pas s’approcher de la source de peur. Subit désavantage à tous les jets\nd’attaque et de capacités tant qu’il la voit. Ne peut pas attaquer la créature qui l’a\napeuré."
+            ],
+            [
+              "Charmé",
+              "Considère le lanceur comme un allié. Ne peut pas le viser ni l’inclure volontairement\ndans des effets nuisibles. Le lanceur a avantage à ses jets sociaux contre lui. En cas\nd’attaque contre le lanceur, la cible peut faire un jet de Perspicacité pour utiliser\nBastion sur le lanceur."
+            ],
+            [
+              "Dominé",
+              "Fait exactement ce que le lanceur lui ordonne, sans restriction."
+            ],
+            [
+              "Enragé",
+              "Doit attaquer la créature la plus proche à chaque tour. Fait un jet pour ne pas perdre\nla concentration à la fin de son tour."
+            ]
+          ]
+        }
       ]
     },
     {
@@ -856,6 +3142,109 @@
         "Sorts de\nprécision",
         "Petite zone circulaire,\nidéale pour des effets\nconcentrés.",
         "Action et Combat\n25"
+      ],
+      "elements": [
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Nom",
+              "Description"
+            ],
+            [
+              "Hypnotisé",
+              "Entre dans un état d’hypnose l’empêchant d’agir jusqu’à ce qu’une créature le sorte de\ncet état. Fait un jet pour ne pas perdre la concentration à la fin de chaque tour."
+            ],
+            [
+              "Provoqué",
+              "Est obligé d’attaquer ou de cibler le lanceur s’il en a la possibilité. Ne peut se\ndéplacer que vers le lanceur et n’attaque que lui."
+            ],
+            [
+              "Paniqué",
+              "Perd tout contrôle et tente de fuir la source de peur. S’éloigne de la moitié de sa\nvitesse et gagne aussi l’état Apeuré. Fait un jet pour garder la concentration à la fin\nde son tour."
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": "🌫️ Altérations Magiques / Spirituelles",
+          "level": 2
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Nom",
+              "Description"
+            ],
+            [
+              "Silence",
+              "Ne peut utiliser aucune capacité verbale ou incantatoire. Les sorts, cris ou invocations\néchouent automatiquement. Ne peut pas parler."
+            ],
+            [
+              "Malédiction",
+              "Subit désavantage à tous les jets."
+            ],
+            [
+              "Vulnérable\n(Physique)",
+              "Subit x2 dégâts provenant de sources physiques (Tranchant, Perçant, Contondant)."
+            ],
+            [
+              "Vulnérable\n(Magique)",
+              "Subit x2 dégâts provenant de sources élémentaires ou psychiques."
+            ],
+            [
+              "Désorienté",
+              "Subit désavantage à tous les jets d’attaque et de capacité, et perd automatiquement\nla concentration."
+            ],
+            [
+              "Dissipation",
+              "Annule un effet bénéfique actif sur la cible."
+            ],
+            [
+              "Hexé",
+              "Subit désavantage à tous les jets liés à un attribut corresondant (Force, Agilité, Esprit\nou Social)."
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": "Zones d'effet",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Voici les zones d'effet (AoE) et leur mode de ciblage, incluant une option ciblée pour toucher une seule créature."
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Nom",
+              "Ciblage",
+              "Description",
+              "Exemple"
+            ],
+            [
+              "Cercle autour de soi (5 m de rayon)",
+              "Centré sur le\nlanceur",
+              "Zone circulaire de 5 m de\nrayon entourant le\nlanceur.",
+              "Auras,\nexplosions"
+            ],
+            [
+              "Cercle (5 m de diamètre, n'importe\noù)",
+              "Positionnable à\ndistance",
+              "Zone circulaire avec un\ndiamètre de 5 m, affectant\nune zone précise.",
+              "Boule de feu"
+            ],
+            [
+              "Petit cercle (3 m de diamètre,\nn'importe où)",
+              "Positionnable à\ndistance",
+              "Petite zone circulaire,\nidéale pour des effets\nconcentrés.",
+              "Sorts de\nprécision"
+            ]
+          ]
+        }
       ]
     },
     {
@@ -888,6 +3277,104 @@
         "Déclenchées à la fin du tour d’une autre créature.",
         "Donnent plus de rythme et empêchent un boss d’être passif.",
         "Action et Combat\n26"
+      ],
+      "elements": [
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Cône de 5 m (partant du lanceur)",
+              "Part du lanceur",
+              "Attaque ciblée affectant\nune zone courte mais\nlarge.",
+              "Souffles courts"
+            ],
+            [
+              "Cône de 9 m (partant du lanceur)",
+              "Part du lanceur",
+              "Large attaque couvrant\nune grande distance\ndevant le lanceur.",
+              "Souffle de\ndragon"
+            ],
+            [
+              "Ligne 18 m de longueur, partant du\nlanceur)",
+              "Part du lanceur",
+              "Ligne droite de 30 m de\nlongueur et 1,5 m de\nlargeur.",
+              "Éclair"
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": "📑 Types d’actions des PNJ",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "1. Action",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque PNJ dispose d’une Action par tour."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sert à attaquer, lancer un sort, utiliser une capacité principale."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : l’orque utilise son Action pour frapper à la hache."
+        },
+        {
+          "kind": "heading",
+          "text": "2. Bonus Action",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Certains PNJ disposent d’une Bonus Action par tour."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sert à des capacités rapides, secondaires ou de soutien."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : le chef de guerre utilise sa Bonus Action pour donner un ordre à ses sbires."
+        },
+        {
+          "kind": "heading",
+          "text": "3. Réaction",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque PNJ dispose d’une Réaction par round global."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Utilisée lorsqu’un déclencheur se produit (souvent en dehors de son tour)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : le garde utilise sa Réaction pour attaquer quand un ennemi quitte sa portée."
+        },
+        {
+          "kind": "heading",
+          "text": "4. Actions légendaires",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Certains boss disposent d’1 à 3 Actions légendaires par round global."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Déclenchées à la fin du tour d’une autre créature."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Donnent plus de rythme et empêchent un boss d’être passif."
+        }
       ]
     },
     {
@@ -915,6 +3402,96 @@
         "sa Réaction + 1 Action légendaire, ou",
         "une Réaction légendaire.",
         "Action et Combat\n27"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Exemple : le dragon utilise une Action légendaire pour donner un coup de queue après le tour d’un joueur."
+        },
+        {
+          "kind": "heading",
+          "text": "5. Réactions légendaires",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Réactions spéciales disponibles uniquement pour certains boss."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Déclenchées comme une Réaction normale, mais consommant une ressource légendaire."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : le démon utilise une Réaction légendaire pour contrer un sort lancé contre lui."
+        },
+        {
+          "kind": "heading",
+          "text": "6. Lair Actions",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les boss qui combattent dans leur antre disposent d’une Lair Action par round."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Déclenchée au compte d’initiative 20 (après ajustement)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Représente le pouvoir de leur environnement ou de leur domaine."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : la liche utilise une Lair Action pour faire surgir des ombres de son sol."
+        },
+        {
+          "kind": "heading",
+          "text": "7. Actions scriptées",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Certains PNJ déclenchent automatiquement des actions lors d’un seuil de PV, d’un round précis, ou d’un événement narratif."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ne comptent pas dans leur économie d’actions normale."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : quand le golem tombe à 50 % de PV, ses plaques s’ouvrent et libèrent une explosion de flammes."
+        },
+        {
+          "kind": "heading",
+          "text": "⚔️ Rupture légendaire",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un boss dispose d’un nombre limité de Ruptures légendaires par combat."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Contrainte de 2 tours : un effet doit rester actif au moins 2 tours (peu importe lesquels) avant de pouvoir être brisé."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Rupture différée : après ce délai, le boss peut dépenser une Action, une Bonus Action, ou une Action légendaire pour se libérer."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Rupture instantanée : le boss peut briser immédiatement un effet au moment où il survient, en dépensant :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "sa Réaction + 1 Action légendaire, ou"
+        },
+        {
+          "kind": "paragraph",
+          "text": "une Réaction légendaire."
+        }
       ]
     },
     {
@@ -922,6 +3499,12 @@
       "blocks": [
         "Un boss ne disposant que d’une seule Réaction par round, il ne peut faire au maximum\nqu’une seule Rupture instantanée par round.",
         "Action et Combat\n28"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Un boss ne disposant que d’une seule Réaction par round, il ne peut faire au maximum qu’une seule Rupture instantanée par round."
+        }
       ]
     }
   ]

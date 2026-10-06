@@ -113,6 +113,65 @@ CHAPTERS = [
     ),
 ]
 
+# Reading order follows the supplied manuals; older summaries remain separate references.
+ORDER = [
+    "introduction",
+    "systeme-de-base",
+    "creation",
+    "progression",
+    "narration",
+    "combat",
+    "capacites",
+    "reference-rapide",
+    "armes",
+    "conditions",
+    "personnage",
+    "cartes",
+    "attaques",
+    "versions",
+]
+GROUPS = {
+    "introduction": "Comprendre le jeu",
+    "systeme-de-base": "Comprendre le jeu",
+    "creation": "Créer et faire évoluer",
+    "progression": "Créer et faire évoluer",
+    "narration": "Jouer une partie",
+    "combat": "Jouer une partie",
+    "capacites": "Jouer une partie",
+    "reference-rapide": "Aides de jeu",
+}
+CHAPTERS = sorted(
+    [(GROUPS.get(c[1], "Références et versions"), *c[1:]) for c in CHAPTERS],
+    key=lambda c: ORDER.index(c[1]),
+)
+RULE_TITLES = {
+    "character.stats.modifier": "Calculer un modificateur",
+    "character.health.max": "Points de vie maximum",
+    "character.stats.creation_pool": "Répartir les caractéristiques",
+    "ability.save.aoe_acrobatics": "Sauvegarde contre un effet de zone",
+    "ability.cost.stat_reduction": "Réduction du coût par la caractéristique",
+    "ability.known.maximum": "Nombre de capacités connues",
+    "combat.ranged.control_zone": "Capacité à distance en zone de contrôle",
+    "combat.ranged.elevation_advantage": "Surplomb et avantage à distance",
+    "combat.weapon.critical": "Critiques et relances",
+    "condition.blinded.attack_outgoing": "Aveuglé : attaques de la créature",
+    "condition.blinded.attack_incoming": "Aveuglé : attaques contre la créature",
+    "condition.blinded.visual_perception": "Aveuglé : perception visuelle",
+    **{
+        f"weapon.property.{key}": title
+        for key, title in {
+            "guard": "Garde",
+            "brutality": "Brutalité",
+            "impact": "Impact",
+            "fluid": "Fluide",
+            "reach": "Allonge",
+            "overhang": "Surplomb",
+            "piercing": "Perforant",
+            "bulwark": "Rempart",
+        }.items()
+    },
+}
+
 
 def slug(text: str) -> str:
     """Create readable, accent-independent section anchors."""
@@ -125,6 +184,7 @@ def inline(text: str) -> str:
     safe = escape(text)
     safe = re.sub(r"`([^`]+)`", r"<code>\1</code>", safe)
     safe = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", safe)
+    safe = re.sub(r"\[([^\]]+)\]\((/regles/[a-z0-9/#-]+)\)", r'<a href="\2">\1</a>', safe)
     return safe
 
 
@@ -143,7 +203,7 @@ def markdown(source: str) -> tuple[str, list[tuple[str, str]]]:
             continue
         heading = re.match(r"(#{2,3}) (.+)", line)
         if heading:
-            level, title = len(heading[1]), heading[2]
+            level, title = len(heading[1]), RULE_TITLES.get(heading[2], heading[2])
             anchor = f"{slug(title)}-{len(toc) + 1}"
             toc.append((anchor, title))
             result.append(f'<h{level} id="{anchor}">{inline(title)}</h{level}>')
@@ -227,29 +287,95 @@ def build_rules(root: Path, public: Path) -> None:
     for position, (group, key, title, description, source) in enumerate(CHAPTERS):
         if source == "source":
             data = json.loads((root / f"docs/rules/sources/{key}.json").read_text("utf-8"))
-            toc = [(f"page-{p['number']}", f"Page {p['number']}") for p in data["pages"]]
+            toc = []
             body = (
-                '<div class="source-notice">Transcription textuelle du PDF <strong>'
+                '<div class="document-source">Source : <strong>'
                 + escape(data["source"])
-                + "</strong>. Les images ne sont pas reproduites ; la disposition des tableaux peut différer. Les numéros de page renvoient au document original.</div>"
+                + f'</strong> · {len(data["pages"])} pages <a href="/regles/versions/">Versions et divergences</a></div>'
             )
+            topic = title
+            headings = {}
             for page in data["pages"]:
-                body += f'<section class="source-page" id="page-{page["number"]}"><h2>Page {page["number"]}</h2>'
+                number = page["number"]
+                body += f'<span class="page-anchor" id="page-{number}"></span>'
+                chunks = []
+                anchor = f"page-{number}"
+
+                def index_section(
+                    chunks,
+                    topic,
+                    anchor,
+                    title=title,
+                    key=key,
+                    source_name=data["source"],
+                    number=number,
+                ):
+                    """Index one topic rather than an arbitrary PDF page or footer."""
+                    if chunks:
+                        search.append(
+                            {
+                                "title": title,
+                                "section": topic,
+                                "url": f"/regles/{key}/#{anchor}",
+                                "text": " ".join(chunks),
+                                "source": source_name,
+                                "page": number,
+                            }
+                        )
+
+                for element in page.get("elements", []):
+                    kind = element["kind"]
+                    if kind == "heading":
+                        if number == 1 and element["text"] == " ".join(page["blocks"][0].split()):
+                            # The document title is already present in the page's h1.
+                            continue
+                        index_section(chunks, topic, anchor)
+                        chunks = []
+                        topic = element["text"]
+                        base = slug(topic)
+                        headings[base] = headings.get(base, 0) + 1
+                        anchor = base if headings[base] == 1 else f"{base}-{headings[base]}"
+                        level = element["level"]
+                        toc.append((anchor, topic))
+                        body += f'<h{level} class="rule-heading" id="{anchor}">{escape(topic)} <a class="source-cite" href="#source-page-{number}" aria-label="Source : {escape(data["source"])} page {number}">p. {number}</a></h{level}>'
+                    elif kind == "table":
+                        rows = element["rows"]
+                        body += '<div class="table-scroll" tabindex="0" aria-label="Tableau de règles"><table>'
+                        for i, row in enumerate(rows):
+                            tag = "th" if i == 0 else "td"
+                            body += (
+                                "<tr>"
+                                + "".join(
+                                    f"<{tag}>{escape(cell or '').replace(chr(10), '<br>')}</{tag}>"
+                                    for cell in row
+                                )
+                                + "</tr>"
+                            )
+                            chunks.extend(cell or "" for cell in row)
+                        body += "</table></div>"
+                    else:
+                        value = element["text"]
+                        css = (
+                            "rule-example"
+                            if value.startswith(("Exemple", "👉"))
+                            else "rule-paragraph"
+                        )
+                        body += f'<p class="{css}">{escape(value)}</p>'
+                        chunks.append(value)
+                index_section(chunks, topic, anchor)
+                body += f'<details class="original-page" id="source-page-{number}"><summary>Consulter la source · {escape(data["source"])} · page {number}</summary>'
                 body += (
                     "".join(f'<p class="source-block">{escape(b)}</p>' for b in page["blocks"])
-                    + "</section>"
-                )
-                search.append(
-                    {
-                        "title": title,
-                        "section": f"Page {page['number']}",
-                        "url": f"/regles/{key}/#page-{page['number']}",
-                        "text": " ".join(page["blocks"]),
-                    }
+                    + "</details>"
                 )
         else:
             raw = (root / "docs/rules" / source).read_text("utf-8")
-            body, toc = markdown(raw)
+            display = "\n".join(
+                line
+                for line in raw.splitlines()
+                if not line.startswith(("- Concepts:", "- Implémentation:"))
+            )
+            body, toc = markdown(display)
             body = (
                 '<div class="source-notice">Synthèse structurée du core : couverture partielle et versions parfois différentes des PDF. Un statut <code>unresolved</code> indique un point non arbitré.</div>'
                 + body

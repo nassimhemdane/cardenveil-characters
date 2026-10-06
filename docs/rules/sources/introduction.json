@@ -15,6 +15,50 @@
         "Le cœur du jeu : comment Cardenveil fonctionne et ce qu’il cherche à créer\ncomme expérience.",
         "Dés",
         "Cardenveil Fragmented\n1"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Cardenveil Fragmented",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ce système est principalement axé sur le combat, avec un faible recours à l'aléatoire par rapport à d'autres jeux de rôle. Il repose sur des mécaniques simples utilisant à la fois des dés et un jeu de cartes, offrant ainsi une grande liberté et complexité stratégique. Les règles sont peu nombreuses, mais suffisamment flexibles pour matérialiser efficacement votre vision de personnage. Les contraintes sont des contraintes \"souples\", permettant de prioriser la créativité des joueurs."
+        },
+        {
+          "kind": "paragraph",
+          "text": "La création de personnage se fait en collaboration avec le MJ, qui aura pour rôle de garantir l’équilibre de vos choix. Ce système intègre également une dimension RP inspirée de D&D, combinant simplicité et efficacité dans les interactions narratives."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Enfin, il s'agit de la première version de ce système : certaines mécaniques évolueront ou s'enrichiront au fil du temps."
+        },
+        {
+          "kind": "heading",
+          "text": "📘 Bloc 1 — Système de base",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "👉 Page :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Système de Base"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Intro & philosophie du système"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le cœur du jeu : comment Cardenveil fonctionne et ce qu’il cherche à créer comme expérience."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Dés"
+        }
       ]
     },
     {
@@ -41,6 +85,89 @@
         "Malus",
         "Malus possibles pour les caractéristiques trop basses.",
         "Cardenveil Fragmented\n2"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Comment les dés servent à représenter la chance, l’incertitude et les actions risquées."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Cartes"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un système de ressources qui représente l’énergie, l’attention ou la préparation du personnage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Des points permettant d’influencer vos actions, vos cartes ou certaines décisions."
+        },
+        {
+          "kind": "heading",
+          "text": "📙 Bloc 2 — Personnage",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "👉 Page :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Personnage"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Caractéristiques (Force / Agilité / Esprit / Social)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les quatre piliers qui définissent les forces et faiblesses de votre personnage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Compétences"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les domaines dans lesquels votre personnage est bon (ex : se battre, convaincre, comprendre la magie), et comment on les utilise."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Création de personnage"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comment répartir vos points et choisir ce qui façonne les capacités de base de votre héros."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Aspects narratifs (Background, Goals, Bonds…)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les éléments qui décrivent votre histoire, vos motivations, vos relations et votre comportement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Races Disponibles"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les races disponibles et leurs bonus spéciaux."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Malus"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Malus possibles pour les caractéristiques trop basses."
+        }
       ]
     },
     {
@@ -67,6 +194,90 @@
         "Initiative (opportuniste + précipitation)",
         "Comment déterminer l’ordre d’action et comment s’insérer avant un ennemi.",
         "Cardenveil Fragmented\n3"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "📕 Bloc 3 — Totem, Capacités & Cartes",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "👉 Page :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Totem, Capacités & Cartes"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Types de capacités"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les différentes catégories d’actions spéciales que vous pouvez utiliser (soin, dégâts, contrôle, mobilité)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Créer une capacité"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comment définir une nouvelle action spéciale unique à votre personnage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Jets de capacités"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comment mesurer l’impact ou la réussite d’une capacité une fois utilisée."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coûts, réduction, surcoût etc.."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comment payer vos capacités avec les cartes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Totem"
+        },
+        {
+          "kind": "paragraph",
+          "text": "L’élément central qui représente votre style de jeu, votre thème et vos pouvoirs principaux."
+        },
+        {
+          "kind": "heading",
+          "text": "📗 Bloc 4 — Action et Combat",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "👉 Page :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Action et Combat"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tour, ressources d’un round"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comment se déroule un tour de jeu, et ce que vous pouvez faire pendant celui-ci."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Initiative (opportuniste + précipitation)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comment déterminer l’ordre d’action et comment s’insérer avant un ennemi."
+        }
       ]
     },
     {
@@ -94,6 +305,93 @@
         "👉 Page :",
         "Système Narratif",
         "Cardenveil Fragmented\n4"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Actions principales"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les actions importantes que vous pouvez réaliser à votre tour."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Bonus Actions"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Des actions rapides que vous pouvez faire en plus de votre action principale."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Réactions"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Des actions instantanées que vous pouvez déclencher hors de votre tour."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Durées, zones, AoE"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comment fonctionnent les effets qui durent dans le temps et les zones qui affectent plusieurs cibles."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Attaques (corps à corps / distance / catalyseurs)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comment frapper un ennemi avec une arme, attaquer à distance ou utiliser un outil magique."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Armes et armures"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les équipements que vous utilisez pour attaquer, vous protéger ou améliorer votre style de combat."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Inconscience et fatigue"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ce qui arrive quand vous tombez à terre ou que vous êtes trop épuisé pour agir normalement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Table des conditions"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les états positifs ou négatifs qui peuvent affecter un personnage (ex : peur, immobilisation, aveuglement)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Gestion des PNJs"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comment les PNJs sont (alliés ou ennemis) sont jouées."
+        },
+        {
+          "kind": "heading",
+          "text": "📓 Bloc 5 — Système narratif",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "👉 Page :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Système Narratif"
+        }
       ]
     },
     {
@@ -111,6 +409,52 @@
         "⚙ CARDENVEIL — RÉFÉRENCE RAPIDE",
         "Système de progression",
         "Cardenveil Fragmented\n5"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Réexplication des aspects"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comment vos traits personnels influencent vos choix et votre manière d’agir."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Utilisation positive / négative"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comment vos aspects peuvent vous aider… ou vous compliquer la vie."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Bonds & équilibre aide/gêne"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comment vos relations vous poussent à aider ou déranger les autres personnages."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Flashbacks"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Comment raconter un événement passé pour gagner un avantage ou modifier la situation actuelle."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Partie MJ"
+        },
+        {
+          "kind": "paragraph",
+          "text": "⚙ CARDENVEIL — RÉFÉRENCE RAPIDE"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Système de progression"
+        }
       ]
     }
   ]

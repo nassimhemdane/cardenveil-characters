@@ -24,6 +24,90 @@
         "« J’ai survécu à\nl’effondrement de la mine. »",
         "Une épreuve, blessure\nou souvenir qui t’a\nmarqué.",
         "Système Narratif\n1"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Système Narratif",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "🎭 Système Narratif",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "1. Structure du personnage",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque personnage possède plusieurs aspects narratifs représentant sa personnalité et son vécu."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ces aspects ne donnent pas de bonus fixes, mais influencent les jets selon la situation."
+        },
+        {
+          "kind": "heading",
+          "text": "Aspects Géneraux",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Background : ton passé, métier ou environnement d’origine."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : ancien soldat, voleur de rue, apprenti mage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Goal : ton objectif personnel ou ta motivation principale."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : retrouver ma sœur, me racheter, devenir un maître artisan."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Bonds : tes relations avec les autres personnages, positives ou négatives."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : je protège Thalen coûte que coûte ; je me méfie de Lyra."
+        },
+        {
+          "kind": "heading",
+          "text": "Aspects liés aux caractéristiques",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque caractéristique (Force, Agilité, Esprit, Social) possède deux aspects possibles."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le joueur en choisit un par caractéristique."
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Caractéristique",
+              "Aspect",
+              "Description",
+              "Exemple"
+            ],
+            [
+              "Force",
+              "Cicatrice de\nvie",
+              "Une épreuve, blessure\nou souvenir qui t’a\nmarqué.",
+              "« J’ai survécu à\nl’effondrement de la mine. »"
+            ]
+          ]
+        }
       ]
     },
     {
@@ -58,6 +142,103 @@
         "Utilisation positive",
         "Quand ton aspect t’aide dans une action :",
         "Système Narratif\n2"
+      ],
+      "elements": [
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Caractéristique",
+              "Aspect",
+              "Description",
+              "Exemple"
+            ],
+            [
+              "",
+              "Pulsion",
+              "L’énergie ou impulsion\nqui te pousse à agir.",
+              "« Je refuse d’abandonner,\nquoi qu’il en coûte. »"
+            ],
+            [
+              "Agilité",
+              "Manies & Tics",
+              "Des réflexes ou\nhabitudes corporelles\ninstinctives.",
+              "« Je tapote toujours du pied\navant d’agir. »"
+            ],
+            [
+              "",
+              "Instinct",
+              "Réaction rapide,\nintuitive, souvent avant\nla réflexion.",
+              "« Je me jette toujours avant\nde réfléchir. »"
+            ],
+            [
+              "Esprit",
+              "Croyances",
+              "Tes principes, ta foi, ta\nmanière de voir le\nmonde.",
+              "« Je crois que tout a une\nraison cachée. »"
+            ],
+            [
+              "",
+              "Éducation",
+              "Ton savoir appris, ta\nlogique, ta culture.",
+              "« Formé dans l’académie\nd’ingénierie d’Escalune. »"
+            ],
+            [
+              "Social",
+              "Personnalité",
+              "Ton tempérament, ta\nmanière naturelle d’être.",
+              "« Toujours ironique, même\ndans la peur. »"
+            ],
+            [
+              "",
+              "Réputation",
+              "L’image que les autres\nont de toi.",
+              "« On me prend pour\nquelqu’un de plus\ncourageux que je ne suis. »"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les aspects doivent être cohérents avec les caractéristiques du personnage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un personnage faible en Social ne peut pas avoir une réputation parfaite."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ce n’est pas une règle chiffrée, mais une contrainte de cohérence."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les caractéristiques fortes donnent des aspects maîtrisés."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les faibles donnent des aspects instables ou fragiles."
+        },
+        {
+          "kind": "heading",
+          "text": "2. Aspects en jeu",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les aspects servent à influencer tes jets et les situations selon ta personnalité, ton vécu ou ton comportement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ils peuvent t’avantager ou te compliquer la vie selon la situation."
+        },
+        {
+          "kind": "heading",
+          "text": "Utilisation positive",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Quand ton aspect t’aide dans une action :"
+        }
       ]
     },
     {
@@ -86,6 +267,98 @@
         "la carte que tu joues est donnée au MJ.",
         "Le MJ les garde dans deux piles distinctes :",
         "Système Narratif\n3"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "1. Tu choisis une carte de ta main et tu la donnes au MJ."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Tu ajoutes à ton jet contextuel :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "La moitié de la valeur si la carte est rouge."
+        },
+        {
+          "kind": "paragraph",
+          "text": "La valeur entière si la carte est noire."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. L’effet est immédiat, mais la carte part dans la main du MJ pour être réutilisée plus tard."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Aspect : Éducation – “Formé à l’académie d’ingénierie d’Escalune.”"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tu veux réparer un mécanisme complexe → tu donnes un 8♦ au MJ."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tu ajoutes +4 à ton jet, et le MJ garde la carte pour l’utiliser plus tard."
+        },
+        {
+          "kind": "heading",
+          "text": "Utilisation négative",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le MJ ou toi-même pouvez invoquer un aspect contre toi."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tu pioches alors une carte cristalisée :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tu peux choisir de réduire ton jet de la valeur tirée."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ou laisser le MJ créer un problème lié à ton aspect, dont la gravité dépend de la valeur piochée."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Aspect : Drive – “Je fonce sans réfléchir.”"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tu tires un 7."
+        },
+        {
+          "kind": "paragraph",
+          "text": "→ Soit ton jet diminue de 7, soit le MJ introduit un contre-coup (tu trébuches, tu déclenches un piège…)."
+        },
+        {
+          "kind": "heading",
+          "text": "3. Cartes données au MJ",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Quand tu invoques un aspect positivement,"
+        },
+        {
+          "kind": "paragraph",
+          "text": "la carte que tu joues est donnée au MJ."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le MJ les garde dans deux piles distinctes :"
+        }
       ]
     },
     {
@@ -113,6 +386,94 @@
         "5. Les Bonds",
         "Les Bonds sont des contraintes relationnelles.",
         "Système Narratif\n4"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "🔴 Cartes rouges : il pourra les utiliser plus tard pour aider les joueurs."
+        },
+        {
+          "kind": "paragraph",
+          "text": "⚫ Cartes noires : il pourra les utiliser pour ajouter de la tension ou géner les joueurs."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le MJ peut jouer ces cartes à tout moment pour modifier un jet qu’il fait, renforcer une scène ou influencer le rythme."
+        },
+        {
+          "kind": "heading",
+          "text": "4. Goals",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le Goal représente l’objectif personnel de ton personnage — ce qu’il cherche à accomplir, réparer ou atteindre."
+        },
+        {
+          "kind": "paragraph",
+          "text": "C’est un moteur narratif individuel qui oriente ses choix et ses priorités."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Quand tu agis clairement dans la direction de ton Goal,"
+        },
+        {
+          "kind": "paragraph",
+          "text": "et que tu peux le justifier auprès du MJ,"
+        },
+        {
+          "kind": "paragraph",
+          "text": "tu pioches une carte cristallisée aléatoire."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le MJ reste juge pour valider que l’action contribue réellement à ton objectif."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le but est d’encourager les décisions cohérentes avec l’histoire du personnage, pas d’ajouter des récompenses gratuites."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemples de Goals :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Retrouver un parent disparu."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Obtenir le pardon de mon ancien maître."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Empêcher qu’une ancienne erreur se reproduise."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Fonder un nouvel ordre ou une communauté stable."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Racheter mes fautes passées."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un Goal doit être clair, concret et évolutif :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "il peut changer au fil de la campagne si le personnage progresse, échoue, ou redéfinit ce qu’il cherche vraiment."
+        },
+        {
+          "kind": "heading",
+          "text": "5. Les Bonds",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les Bonds sont des contraintes relationnelles."
+        }
       ]
     },
     {
@@ -139,6 +500,91 @@
         "Déclenchement d’un flashback",
         "1. Tu annonces le flashback que tu veux introduire : ce que ton personnage a\nfait ou préparé dans le passé.",
         "Système Narratif\n5"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Ils définissent qui tu peux aider et qui tu peux gêner."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Aider un allié → nécessite un Aspect positif."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Gêner un allié → nécessite un Aspect négatif."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le MJ veille à ce que chaque Bond soit incarné dans la fiction (protéger, douter, rivaliser, etc.)."
+        },
+        {
+          "kind": "heading",
+          "text": "⚖️ Règle d’équilibre",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "L’écart entre aides et gênes ne peut jamais dépasser 1."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Autrement dit :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Après deux aides, tu dois au moins une gêne."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Après deux gênes, tu dois au moins une aide."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemples valides :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "✅ 1 aide / 1 gêne / 2 aides + 1 gêne / 2 gênes + 1 aide."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemples invalides :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "❌ 2 aides seules / 2 gênes seules / 3 aides + 1 gêne."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les Bonds garantissent une dynamique vivante entre les PJ : entraide, rivalité, drama."
+        },
+        {
+          "kind": "heading",
+          "text": "6. Flashbacks",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les flashbacks sont des initiatives des joueurs pour modifier la réalité du scénario ou introduire une action passée qui justifie un avantage présent."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ils permettent d’expliquer qu’un événement a déjà eu lieu, qu’une préparation avait été faite ou qu’un souvenir change la situation actuelle."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les coûts des flashbacks sont élevés, car ils altèrent directement la narration."
+        },
+        {
+          "kind": "heading",
+          "text": "Déclenchement d’un flashback",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Tu annonces le flashback que tu veux introduire : ce que ton personnage a fait ou préparé dans le passé."
+        }
       ]
     },
     {
@@ -164,6 +610,87 @@
         "7. Fonctionnement global et philosophie",
         "Boucle d’utilisation complète",
         "Système Narratif\n6"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "2. Le MJ détermine un coût cible à atteindre plutot élevé (en général entre 40 et 150 selon l’ampleur du changement)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un petit détail ou une précaution oubliée coûtera peu."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Une réécriture majeure ou un retournement complet coûtera très cher."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Tu paies ce coût en cartes :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tu peux utiliser tes cartes cristallisées."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si le flashback est lié à un de tes aspects, tu peux aussi utiliser tes cartes normales (rouges ou noires)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tes alliés peuvent t’aider en ajoutant leurs cartes cristallisées au total."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. Si la somme des valeurs atteint ou dépasse le coût fixé, le flashback est validé et devient réalité dans la narration."
+        },
+        {
+          "kind": "heading",
+          "text": "Exemple",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Aspect : Éducation – “Formé à l’académie d’ingénierie d’Escalune.”"
+        },
+        {
+          "kind": "paragraph",
+          "text": "La salle du générateur est en feu, et la sortie semble condamnée."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le joueur déclare :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "“En fait, quand j’ai vu le plan du réacteur la première fois, j’avais repéré une trappe d’entretien que personne n’utilise.”"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le MJ fixe un coût de 35."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le joueur dépense 2 cartes cristallisées (valeurs 7 et 6) et 3 carte (8, 5,10, liée à son aspect Éducation)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le total est 36, le flashback réussit."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le MJ décrit : “En effet, tu te souviens de la trappe et parviens à l’ouvrir ; la fumée s’y engouffre, offrant une voie d’évacuation.”"
+        },
+        {
+          "kind": "heading",
+          "text": "7. Fonctionnement global et philosophie",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "Boucle d’utilisation complète",
+          "level": 3
+        }
       ]
     },
     {
@@ -191,6 +718,93 @@
         "5. 🧾 Calculer le total final",
         "Somme = meilleur d20 + modificateur(s) + ajustement narratif (cartes).",
         "Système Narratif\n7"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "1. Le MJ déclare une situation ou un jet à enjeux."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Les joueurs peuvent invoquer leurs Aspects positifs pour se renforcer (défausse → bonus)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Le MJ ou les joueurs peuvent invoquer des Aspects négatifs pour créer des complications (malus ou twist → carte cristallisée)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. Les Bonds déterminent qui peut intervenir dans le jet d’un autre joueur (aide ou gêne) et assurent l’équilibre entre les deux types d’interactions."
+        },
+        {
+          "kind": "paragraph",
+          "text": "5. Les joueurs peuvent utiliser leurs cartes normales ou cristalisées pour faire des flashbacks."
+        },
+        {
+          "kind": "heading",
+          "text": "Faire un jet de compétence avec aspects",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. 🎲 Lancer le dé de base"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Jette 1d20."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. ➕ Appliquer les avantages"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Pour chaque avantage, ajoute 1 dé supplémentaire (car d20)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Garde le meilleur résultat parmi tous les dés lancés."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. 🧮 Ajouter les modificateurs"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ajoute ton modificateur de caractéristique associée,"
+        },
+        {
+          "kind": "paragraph",
+          "text": "ou 2× ce modificateur si tu maîtrises la compétence."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. 🃏 Ajouter la dimension narrative (cartes)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Selon la carte jouée et la couleur utilisée :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "✅ Utilisation positive avec carte noire → ajoute la valeur complète de la carte."
+        },
+        {
+          "kind": "paragraph",
+          "text": "✅ Utilisation positive avec carte rouge → ajoute la moitié de la valeur de la carte (arrondi inférieur)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "⚠️ Utilisation négative → retranche la valeur complète de la carte."
+        },
+        {
+          "kind": "paragraph",
+          "text": "5. 🧾 Calculer le total final"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Somme = meilleur d20 + modificateur(s) + ajustement narratif (cartes)."
+        }
       ]
     },
     {
@@ -206,6 +820,45 @@
         "L’ensemble du système repose sur une boucle naturelle :",
         "les joueurs invoquent leurs forces → créent du risque → gagnent des\nressources → façonnent le récit.",
         "Système Narratif\n8"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Compare ce total au seuil de difficulté (DC)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Résultat ≥ DC → réussite, sinon échec (narrativement ou mécaniquement)."
+        },
+        {
+          "kind": "heading",
+          "text": "Philosophie du système",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les Aspects définissent comment le personnage agit, réagit et perçoit le monde, plutôt que ses performances chiffrées."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque utilisation d’un aspect doit être narrativement justifiée : le roleplay précède la mécanique."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les cartes cristallisées récompensent les moments où les failles, erreurs ou tensions font avancer l’histoire."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les Bonds maintiennent des relations vivantes et équilibrées : aucun lien n’est purement positif ou négatif."
+        },
+        {
+          "kind": "paragraph",
+          "text": "L’ensemble du système repose sur une boucle naturelle :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "les joueurs invoquent leurs forces → créent du risque → gagnent des ressources → façonnent le récit."
+        }
       ]
     }
   ]

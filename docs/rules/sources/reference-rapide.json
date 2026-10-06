@@ -23,6 +23,83 @@
         "✨ Aspects",
         "Invoquer un aspect permet d’ajouter valeur de la carte consommée au jet,\nselon la narration.",
         "⚙ CARDENVEIL — RÉFÉRENCE RAPIDE\n1"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "⚙ CARDENVEIL — RÉFÉRENCE RAPIDE",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "🧠 Système",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les d20 servent aux tests et jets de sauvegarde."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les dés d4 à d12 servent aux attaques, valeurs et bonus."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Avantage : ajoutez +2 dés puis gardez les meilleurs résultats."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Main de cartes :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous avez 3 cartes en main (vous piochez+1 carte par round)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les cartes cristallisées (rouges) ne sont pas compté la main (sauf Totem)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Début de tour :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "défaussez les cartes au-delà de votre limite,"
+        },
+        {
+          "kind": "paragraph",
+          "text": "puis piochez 1 carte."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens (récupérés lors d’un repos court) :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "💪 Force → piocher \\ enchaîner des actions"
+        },
+        {
+          "kind": "paragraph",
+          "text": "🏃 Agilité → Echanger carte avec couleur spécifique \\  multiplier une AOE ×3"
+        },
+        {
+          "kind": "paragraph",
+          "text": "🔮 Esprit →  cristalliser des cartes \\ reverbération attaque magique"
+        },
+        {
+          "kind": "paragraph",
+          "text": "🎭 Social → Echanger cartes avec alliés\\ Faire attaquer un allié"
+        },
+        {
+          "kind": "heading",
+          "text": "✨ Aspects",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Invoquer un aspect permet d’ajouter valeur de la carte consommée au jet, selon la narration."
+        }
       ]
     },
     {
@@ -53,6 +130,107 @@
         "Un 1 naturel correspond à un miss.",
         "🛡️",
         "⚙ CARDENVEIL — RÉFÉRENCE RAPIDE\n2"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Utiliser un aspect contre soi-même permet de piocher une carte cristalisée, mais provoque un contre-coup narratif géré par le MJ."
+        },
+        {
+          "kind": "heading",
+          "text": "⚔️ Combat narratif",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un round se déroule en deux temps : phase du MJ, puis phase des joueurs."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque personnage peut effectuer :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "1 Action (jet d’initative)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "1 Bonus action (jet d’initative)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "1 Réaction (pas d’initative)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les effets standards durent 1 round, sauf mention contraire."
+        },
+        {
+          "kind": "heading",
+          "text": "🎲 Jets",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Test de compétence"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Lancez d20 + modificateur."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le résultat doit être ≥ à la difficulté (DC) fixée par le MJ."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Une maîtrise double le modificateur appliqué."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Attaque"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Dé d’arme + modificateur + bonus + contexte."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Avantage"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ajoutez +2 dés, puis gardez les meilleurs résultats."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les armes Finesse utilisent Agilité."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Critique"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si un dé fait son maximum, relancez-le et ajoutez le résultat."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les critiques peuvent s’enchaîner si les relances font encore le maximum."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Échec"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un 1 naturel correspond à un miss."
+        },
+        {
+          "kind": "heading",
+          "text": "🛡️",
+          "level": 2
+        }
       ]
     },
     {
@@ -74,6 +252,70 @@
         "Rupture légendaire",
         "Les boss deviennent libres après 2 tours d’effet.",
         "⚙ CARDENVEIL — RÉFÉRENCE RAPIDE\n3"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "🛡️ Défense",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Armure : réduit les dégâts jusqu’à 50 % maximum."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Parade (Réaction)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Réduit les dégâts à plat avant l’armure."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Valeur approximative :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "(dé maximal de l’arme/2 + modificateur Force ou Agilité + deflexion de l’armure)."
+        },
+        {
+          "kind": "heading",
+          "text": "💀 Effets et conditions",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "La durée standard d’un effet est 1 round."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Jets de sauvegarde:"
+        },
+        {
+          "kind": "paragraph",
+          "text": "💪 Force (Athlétisme) → effets physiques"
+        },
+        {
+          "kind": "paragraph",
+          "text": "🏃 Agilité (Acrobaties) → effets de zone (AOE)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "🔮 Esprit (Arcanes) → effets magiques"
+        },
+        {
+          "kind": "paragraph",
+          "text": "🎭 Social (Perspicacité) → effets mentaux"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Rupture légendaire"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les boss deviennent libres après 2 tours d’effet."
+        }
       ]
     }
   ]

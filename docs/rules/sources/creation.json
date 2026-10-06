@@ -22,6 +22,81 @@
         "À partir de tes caractéristiques, calcule :",
         "Points de Vie = 60+ (5 × Force)",
         "Personnage\n1"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Personnage",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "📝 Création de Personnage",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "1. Identité",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Choisis un nom, une race, un alignement, et une courte description."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ajoute quelques traits physiques ou culturels si tu le souhaites."
+        },
+        {
+          "kind": "heading",
+          "text": "2. Caractéristiques",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tu disposes de 52 points à répartir entre :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Force (FO)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Agilité (AGI)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Esprit (ESP)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Social (SOC)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque caractéristique doit être entre 0 et 20."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le modificateur = (Score − 10) ÷ 2, arrondi à l’inférieur."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si une caractéristique ≤ 5 → elle impose un malus permanent (déterminé après la création, durant la premiere session de chaque avanture)."
+        },
+        {
+          "kind": "heading",
+          "text": "3. Statistiques dérivées",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "À partir de tes caractéristiques, calcule :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Points de Vie = 60+ (5 × Force)"
+        }
       ]
     },
     {
@@ -48,6 +123,92 @@
         "Décrire ses Liens avec les autres personnages : relations positives, tensions,\nalliances, méfiances.",
         "Choisir un Aspect libre : un trait marquant, une manière d’agir, une conviction\nou une tendance qui influence son comportement.",
         "Personnage\n2"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Mouvement = 5 m + Agilité/2"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Initiative = Agilité − 10"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Perception passive = 10 + mod de Perception"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens = 1 + mod de chaque caractéristique"
+        },
+        {
+          "kind": "heading",
+          "text": "4. Compétences",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tu commences avec  4 compétences."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Une caractéristique ne peut pas avoir plus de compétences que son modificateur."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Maîtriser une compétence = bonus doublé dans cette compétence."
+        },
+        {
+          "kind": "heading",
+          "text": "5. Totem",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque personnage possède un Totem de base."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le Totem donne un effet mineur ou utilitaire."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Son apparence et son intention sont définies avec le MJ."
+        },
+        {
+          "kind": "heading",
+          "text": "6. Capacités",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les capacités sont créées avec le MJ."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Au départ, tu peux connaître Esprit/2 capacités maximum."
+        },
+        {
+          "kind": "heading",
+          "text": "7. Aspects narratifs",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Choisir un Background : d’où vient ton personnage, ce qui l’a marqué ou formé."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Définir un Objectif : ce qu’il veut accomplir, réparer ou atteindre."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Décrire ses Liens avec les autres personnages : relations positives, tensions, alliances, méfiances."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Choisir un Aspect libre : un trait marquant, une manière d’agir, une conviction ou une tendance qui influence son comportement."
+        }
       ]
     },
     {
@@ -75,6 +236,93 @@
         "Alteration de couts de capacités d’esprit: Coût=Coût initial - (Esprit-10)",
         "4. Social :",
         "Personnage\n3"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Caractéristiques et leur rôle",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les caractéristiques sont le cœur du système, définissant les aptitudes physiques, mentales et sociales de chaque personnage. Elles déterminent votre efficacité en combat, vos compétences, ainsi que votre capacité à utiliser des capacités ou interagir avec l'environnement. Chacune des caractéristiques influence des mécaniques spécifiques,"
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Force :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "PV : 60 + 5 * Force."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Permet de porter une armure et améliore sa capacité de réduction des dégâts."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens de Force : Piocher une carte supplémentaire."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens de Force : Permettent de répéter une attaque de base."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Alteration de couts de capacités de force: Coût=Coût initial - (Force -10)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Agilité :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Mouvement : 5 + Agilité ÷ 2 (arrondi au supérieur)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Initiative : 2 x modificateur d’agilité."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens d’Agilité : Permettent de choisir le deck à piocher."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens d’Agilité : Permet de courber une attaque de base."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Alteration de couts de capacités d’agilite: Coût=Coût initial - (Agilite-10)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Esprit :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Nombre de capacités connues : Esprit ÷ 2 (arrondi au supérieur)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens d’Esprit: Permet d’étendre la taille de sa main et cristaliser des cartes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens d’Esprit: Permet de faire réverbérer une attaque de base."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Statistique clé pour les dégâts magiques/élémentaires."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Alteration de couts de capacités d’esprit: Coût=Coût initial - (Esprit-10)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. Social :"
+        }
       ]
     },
     {
@@ -98,6 +346,84 @@
         "COMPÉTENCES",
         "Les compétences représentent les aptitudes spécifiques de votre personnage et\nsont au centre des interactions roleplay. Elles permettent de résoudre des\nsituations variées, comme persuader un PNJ, décrypter des écrits anciens ou se\nfaufiler discrètement. Chaque compétence est liée à une caractéristique, reflétant\nles points forts de votre personnage dans et hors des combats",
         "Personnage\n4"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Tokens de Social : Permettent d’échanger des cartes avec les autres joueurs (voir tokens plus tard)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tokens de Social: Permet de f"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Jouent un rôle essentiel dans les interactions RP et les tests sociaux."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Alteration de couts de capacités de social: Coût=Coût initial - (Social-10)"
+        },
+        {
+          "kind": "heading",
+          "text": "Attribution des Caractéristiques",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "En creant votre personnage, vous avez 52 points à répartir entre Force, Agilité, Esprit, et Social."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque caractéristique doit être comprise entre 0 et 20."
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Valeur",
+              "Modificateur"
+            ],
+            [
+              "1-9",
+              "(Valeur - 10) ÷ 2, arrondi à l'entier inférieur (ex. : 8 → -1)."
+            ],
+            [
+              "10-20",
+              "(Valeur - 10) ÷ 2 (ex. : 14 → +2)."
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": "Règles :",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Malus :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Toute caractéristique inférieure à 6 entraîne des malus permanents (voir section Malus des Caractéristiques)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Modificateur d'une caractéristique :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le modificateur influence vos jets, comme les dégâts, les compétences, et les interactions liées à cette caractéristique."
+        },
+        {
+          "kind": "heading",
+          "text": "COMPÉTENCES",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les compétences représentent les aptitudes spécifiques de votre personnage et sont au centre des interactions roleplay. Elles permettent de résoudre des situations variées, comme persuader un PNJ, décrypter des écrits anciens ou se faufiler discrètement. Chaque compétence est liée à une caractéristique, reflétant les points forts de votre personnage dans et hors des combats"
+        }
       ]
     },
     {
@@ -125,6 +451,95 @@
         "4. Culture : Connaissance des civilisations, mythes et coutumes.",
         "➝ Combat : Pas d’effet direct, mais peut être utile selon le contexte.",
         "Personnage\n5"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Force",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Athlétisme : Courir, escalader, nager ou soulever des objets lourds."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Jet de sauvegarde contre les effets restreignants. Jet pour pousser un ennemi."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Résilience : Résister à la douleur, au poison et supporter des conditions extrêmes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Jet de sauvegarde pour maintenir la concentration. Jet pour se relever de l’inconscience."
+        },
+        {
+          "kind": "heading",
+          "text": "Agilité",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Acrobaties : Maintenir l’équilibre, esquiver avec agilité."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Jet de sauvegarde contre les capacités à effet de zone."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Discrétion : Se cacher et se déplacer sans être détecté."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Jet de compétence pour se cacher en combat."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Escamotage : Voler des objets, crocheter des serrures, manipuler des petits objets."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Impliqué dans les mécaniques de consommables."
+        },
+        {
+          "kind": "heading",
+          "text": "Esprit",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Arcanes : Comprendre la magie, les rituels et les enchantements."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Jet de sauvegarde contre les effets magiques ciblés."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Investigation : Analyser des indices et résoudre des énigmes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Jet de compétence pour analyser une créature."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Perception : Remarquer les détails et détecter les dangers."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Permet de percevoir des ennemis invisibles ou des pièges."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. Culture : Connaissance des civilisations, mythes et coutumes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Pas d’effet direct, mais peut être utile selon le contexte."
+        }
       ]
     },
     {
@@ -152,6 +567,94 @@
         "Pour chaque avantage, ajoute 1 dé supplémentaire au jet (puisque c’est\nun d20).",
         "À la fin, garde le meilleur résultat parmi tous les dés lancés.",
         "Personnage\n6"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "5. Survie : Suivre des traces, s’adapter à l’environnement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Pas d’effet direct, mais peut être utile selon le contexte."
+        },
+        {
+          "kind": "heading",
+          "text": "Social",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Persuasion : Convaincre avec des arguments logiques ou charmeurs."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Permet d’alerter un allié d’une capacité qui le cible."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Tromperie : Mentir, bluffer et manipuler les émotions."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Permet de flatter un ennemi et lui faire croire qu’il est plus fort qu’il ne l’est."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Intimidation : Faire pression par la menace ou la force de la personnalité."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Permet d’intimider en réaction à une attaque adverse pour faire hésiter l’adversaire."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. Représentation : Captiver par la musique, le théâtre ou la danse."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Permet de provoquer un ennemi."
+        },
+        {
+          "kind": "paragraph",
+          "text": "5. Perspicacité : Lire les intentions et émotions d’autrui."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Permet de résister aux effets influençant la pensée."
+        },
+        {
+          "kind": "paragraph",
+          "text": "6. Dressage : Comprendre et entraîner des animaux."
+        },
+        {
+          "kind": "paragraph",
+          "text": "➝ Combat : Nécessaire pour avoir un pet/monture."
+        },
+        {
+          "kind": "heading",
+          "text": "Faire un jet de compétence",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. 🎲 Lancer le dé de base"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Jette 1d20."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. ➕ Appliquer les avantages"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Pour chaque avantage, ajoute 1 dé supplémentaire au jet (puisque c’est un d20)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "À la fin, garde le meilleur résultat parmi tous les dés lancés."
+        }
       ]
     },
     {
@@ -176,6 +679,84 @@
         "Aspects Géneraux",
         "Background : ton passé, métier ou environnement d’origine.",
         "Personnage\n7"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "3. 🧮 Ajouter les modificateurs"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ajoute le modificateur de la caractéristique associée."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si tu maîtrises la compétence, ajoute deux fois ton modificateur de caractéristique (au lieu d’une fois)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. 🧾 Calculer le total final"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Somme = meilleur d20 + modificateur(s)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Compare ce total au seuil de difficulté (DC) fixé par le MJ ou le système."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Résultat ≥ DC → réussite ; sinon échec."
+        },
+        {
+          "kind": "heading",
+          "text": "Attribution des Compétences",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque joueur peut choisir 4 compétences au total."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le nombre de compétences correspondant a une caractéristique ne peut pas dépasser son modificateur."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : Avec un modificateur d’Esprit de +3, le joueur peut choisir jusqu’à 3 compétences liées à l’Esprit."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Maîtriser une compétence double votre bonus dans cette compétence."
+        },
+        {
+          "kind": "heading",
+          "text": "🎭 Système Narratif",
+          "level": 2
+        },
+        {
+          "kind": "heading",
+          "text": "1. Structure du personnage",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque personnage possède plusieurs aspects narratifs représentant sa personnalité et son vécu."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ces aspects ne donnent pas de bonus fixes, mais influencent les jets selon la situation."
+        },
+        {
+          "kind": "heading",
+          "text": "Aspects Géneraux",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Background : ton passé, métier ou environnement d’origine."
+        }
       ]
     },
     {
@@ -211,6 +792,100 @@
         "Réputation\nL’image que les autres\nont de toi.",
         "« On me prend pour\nquelqu’un de plus\ncourageux que je ne suis. »",
         "Personnage\n8"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Exemple : ancien soldat, voleur de rue, apprenti mage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Goal : ton objectif personnel ou ta motivation principale."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : retrouver ma sœur, me racheter, devenir un maître artisan."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Bonds : tes relations avec les autres personnages, positives ou négatives."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Exemple : je protège Thalen coûte que coûte ; je me méfie de Lyra."
+        },
+        {
+          "kind": "heading",
+          "text": "Aspects liés aux caractéristiques",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque caractéristique (Force, Agilité, Esprit, Social) possède deux aspects possibles."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Le joueur en choisit un par caractéristique."
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Caractéristique",
+              "Aspect",
+              "Description",
+              "Exemple"
+            ],
+            [
+              "Force",
+              "Cicatrice de\nvie",
+              "Une épreuve, blessure\nou souvenir qui t’a\nmarqué.",
+              "« J’ai survécu à\nl’effondrement de la mine. »"
+            ],
+            [
+              "",
+              "Pulsion",
+              "L’énergie ou impulsion\nqui te pousse à agir.",
+              "« Je refuse d’abandonner,\nquoi qu’il en coûte. »"
+            ],
+            [
+              "Agilité",
+              "Manies & Tics",
+              "Des réflexes ou\nhabitudes corporelles\ninstinctives.",
+              "« Je tapote toujours du pied\navant d’agir. »"
+            ],
+            [
+              "",
+              "Instinct",
+              "Réaction rapide,\nintuitive, souvent avant\nla réflexion.",
+              "« Je me jette toujours avant\nde réfléchir. »"
+            ],
+            [
+              "Esprit",
+              "Croyances",
+              "Tes principes, ta foi, ta\nmanière de voir le\nmonde.",
+              "« Je crois que tout a une\nraison cachée. »"
+            ],
+            [
+              "",
+              "Éducation",
+              "Ton savoir appris, ta\nlogique, ta culture.",
+              "« Formé dans l’académie\nd’ingénierie d’Escalune. »"
+            ],
+            [
+              "Social",
+              "Personnalité",
+              "Ton tempérament, ta\nmanière naturelle d’être.",
+              "« Toujours ironique, même\ndans la peur. »"
+            ],
+            [
+              "",
+              "Réputation",
+              "L’image que les autres\nont de toi.",
+              "« On me prend pour\nquelqu’un de plus\ncourageux que je ne suis. »"
+            ]
+          ]
+        }
       ]
     },
     {
@@ -227,6 +902,50 @@
         "+2 compétences\nsupplémentaires.",
         "+2 jeton Social.",
         "Personnage\n9"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Les aspects doivent être cohérents avec les caractéristiques du personnage."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Un personnage faible en Social ne peut pas avoir une réputation parfaite."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ce n’est pas une règle chiffrée, mais une contrainte de cohérence."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les caractéristiques fortes donnent des aspects maîtrisés."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les faibles donnent des aspects instables ou fragiles."
+        },
+        {
+          "kind": "heading",
+          "text": "Races Jouables",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les joueurs peuvent choisir une race parmi la liste proposée ci-dessus. Pour une race bestiale, les détails sont personnalisables en accord avec le MJ."
+        },
+        {
+          "kind": "heading",
+          "text": "1. Humain",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "+2 compétences supplémentaires."
+        },
+        {
+          "kind": "paragraph",
+          "text": "+2 jeton Social."
+        }
       ]
     },
     {
@@ -236,6 +955,21 @@
         "Vous pouvez tenir 1 carte\nsupplémentaire en main.",
         "Vous maitrisez 1 capacité\nsupplémentaire.",
         "Personnage\n10"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "2. Haut-Elfe",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous pouvez tenir 1 carte supplémentaire en main."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous maitrisez 1 capacité supplémentaire."
+        }
       ]
     },
     {
@@ -245,6 +979,21 @@
         "Quand vous utilisez votre réaction\nvous pouvez vous déplacer de 5\nmètres apres (Si utilisé en\nréaction a une capacité non\nciblée, on considereque le\ndéplacement se fait avant le\nl’utilisation de la capacité).",
         "Avantage au deuxieme jet\nd’initiative du round.",
         "Personnage\n11"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "3. Elfe des Bois",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Quand vous utilisez votre réaction vous pouvez vous déplacer de 5 mètres apres (Si utilisé en réaction a une capacité non ciblée, on considereque le déplacement se fait avant le l’utilisation de la capacité)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Avantage au deuxieme jet d’initiative du round."
+        }
       ]
     },
     {
@@ -254,6 +1003,21 @@
         "Si vous n’êtes pas dans le champ\nde vision d’un ennemi, vous\npouvez utiliser 1 réaction\nsupplémentaire par tour.",
         "Avantage aux jets de discression.",
         "Personnage\n12"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "4. Elfe Noir",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si vous n’êtes pas dans le champ de vision d’un ennemi, vous pouvez utiliser 1 réaction supplémentaire par tour."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Avantage aux jets de discression."
+        }
       ]
     },
     {
@@ -265,6 +1029,29 @@
         "Catalyseur Défensif : Vous\npouvez utiliser un catalyseur\npour parer, en utilisant sa valeur\nde canalisation à la place de la\nparade d’une arme.",
         "Érudition Mixte : +1 compétence.",
         "Personnage\n13"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "5. Demi Elfe",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Canalisation Libre : Lorsque vous utilisez une arme (attaque, parade, etc.), vous canalisez automatiquement pendant 1 round, avec une valeur égale à la parade de l’arme."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Canalisation Flexible : Vous choisissez la couleur de canalisation, indépendamment de l’arme utilisée."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Catalyseur Défensif : Vous pouvez utiliser un catalyseur pour parer, en utilisant sa valeur de canalisation à la place de la parade d’une arme."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Érudition Mixte : +1 compétence."
+        }
       ]
     },
     {
@@ -274,6 +1061,21 @@
         "Peut piocher spécifiquement du \npique 1 fois sur 2.",
         "Resistance au feu.",
         "Personnage\n14"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "6. Tieffelin",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Peut piocher spécifiquement du pique 1 fois sur 2."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Resistance au feu."
+        }
       ]
     },
     {
@@ -283,6 +1085,21 @@
         "Chaque fois que vous utilisez un \ntoken (peu importe le type),\ninvoquez en plus une carte\ncristalisée de Cœur.",
         "Résistance aux dégats radiants.",
         "Personnage\n15"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "7. Aasimar",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Chaque fois que vous utilisez un token (peu importe le type), invoquez en plus une carte cristalisée de Cœur."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Résistance aux dégats radiants."
+        }
       ]
     },
     {
@@ -292,6 +1109,21 @@
         "Vous pouvez ajouter votre\nmodificateur pour chaque\ncréature qui vous a attaqué\npendant le round a votre prochain\njet d’attaque ou a la prochaine\ncapacité appliquant des dégats.",
         "Votre armure double quand vous\navez moins de 50% de points de\nvie.",
         "Personnage\n16"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "8. Demi-Orque",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous pouvez ajouter votre modificateur pour chaque créature qui vous a attaqué pendant le round a votre prochain jet d’attaque ou a la prochaine capacité appliquant des dégats."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Votre armure double quand vous avez moins de 50% de points de vie."
+        }
       ]
     },
     {
@@ -301,6 +1133,21 @@
         "Vous gagnez  Force pvs.",
         "réduisez vos capacité de trefle de\n1, Pour chaque créature qui vous\na attaqué pendant le round.",
         "Personnage\n17"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "9. Nain",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous gagnez  Force pvs."
+        },
+        {
+          "kind": "paragraph",
+          "text": "réduisez vos capacité de trefle de 1, Pour chaque créature qui vous a attaqué pendant le round."
+        }
       ]
     },
     {
@@ -310,6 +1157,21 @@
         "Réduisez le seuil pour un critique\nde 1 (par ex 5-6 au lieu de 6 sur\n1d6).",
         "Maximum de 3 critiques cumulés\npar attaque.",
         "Personnage\n18"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "10. Gobelin",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Réduisez le seuil pour un critique de 1 (par ex 5-6 au lieu de 6 sur 1d6)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Maximum de 3 critiques cumulés par attaque."
+        }
       ]
     },
     {
@@ -319,6 +1181,21 @@
         "Les malus liés à une Force faible\ns’appliquent seulement à partir de\n4 ou moins.",
         "Si vous payez un surcoût pour\nune capacité, réduisez d’un\nmontant équivalent le coût de la \nprochaine capacité que vous\nlancez.",
         "Personnage\n19"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "11. Gnome",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les malus liés à une Force faible s’appliquent seulement à partir de 4 ou moins."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si vous payez un surcoût pour une capacité, réduisez d’un montant équivalent le coût de la prochaine capacité que vous lancez."
+        }
       ]
     },
     {
@@ -329,6 +1206,26 @@
         "Une fois par repot court, vous\npouvez relancer un dé.",
         "12. Goliath",
         "Personnage\n20"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "12. Halflin",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Quand vous piochez, piochez deux cartes, et jetez l’une des deux."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Une fois par repot court, vous pouvez relancer un dé."
+        },
+        {
+          "kind": "heading",
+          "text": "12. Goliath",
+          "level": 3
+        }
       ]
     },
     {
@@ -337,6 +1234,16 @@
         "Force Colossale : Vous pouvez\nmanier des armes à deux mains\navec une seule main. Vous\npouvez aussi utiliser des armes\npolyvalentes ou des bâtons en\ndual wield. Les épees longues\nsont considérées finesse.",
         "Endurance des Cimes : Vous\navez avantage contre l'effet \nProne, et résistance a la Glace.",
         "Personnage\n21"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Force Colossale : Vous pouvez manier des armes à deux mains avec une seule main. Vous pouvez aussi utiliser des armes polyvalentes ou des bâtons en dual wield. Les épees longues sont considérées finesse."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Endurance des Cimes : Vous avez avantage contre l'effet Prone, et résistance a la Glace."
+        }
       ]
     },
     {
@@ -348,6 +1255,29 @@
         "Souffle Draconique : Bonus\naction, cône de 4,5 m, 1d10\ndégâts élémentaires. À la place,\nvous pouvez retenir ce souffle\nqui vous fait canaliser\nautomatiquement les capacitées\nliées a cet élément (valeur = mod\nEsprit).",
         "Résonance Élémentaire : Si vous\nentrez en contact avec une \nsource de votre élément (non\ngénérée par vous), vous le \ncanalisez automatiquement.",
         "Personnage\n22"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "14. Drakéide",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Héritage Draconique : Choisissez Feu, Foudre, Glace, Acide ou Poison. Vous résistez à ce type de dégâts et pouvez générer cet élément pour interagir avec l’environnement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Écailles Draconiques : Armure naturelle de 1, cumulable avec d'autres sources."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Souffle Draconique : Bonus action, cône de 4,5 m, 1d10 dégâts élémentaires. À la place, vous pouvez retenir ce souffle qui vous fait canaliser automatiquement les capacitées liées a cet élément (valeur = mod Esprit)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Résonance Élémentaire : Si vous entrez en contact avec une source de votre élément (non générée par vous), vous le canalisez automatiquement."
+        }
       ]
     },
     {
@@ -361,6 +1291,37 @@
         "Vous regagnez un nombre de \npoints de vie égal à votre\ndéplacement.",
         "Si un ou plusieurs alliés\nrestent pendant un round\ncomplet à moins de 3 mètres\nde vous, vous pouvez \néchanger gratuitement une\ncarte avec chacun d’eux à la\nfin de leur tour.",
         "Personnage\n23"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "15. Sporelins",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous êtes Résistance au poison et Immunité aux effets de saignement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous êtes vulnérable aux dégâts de glace."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si vous ne vous déplacez pas pendant votre tour, vous activez l’état Sporaissance."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tant que Sporaissance est actif :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous regagnez un nombre de points de vie égal à votre déplacement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si un ou plusieurs alliés restent pendant un round complet à moins de 3 mètres de vous, vous pouvez échanger gratuitement une carte avec chacun d’eux à la fin de leur tour."
+        }
       ]
     },
     {
@@ -374,6 +1335,37 @@
         "Les sorts de soin infligent des\ndégâts au lieu de soigner, vous\nêtes vulnérable aux dégats\nradiants.",
         "Les individus vous sont hostiles.",
         "Personnage\n24"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "16. Mort vivant",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Insensible et aux dégâts nécrotiques."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Avantage aux jets de sauvegarde contre les effets restraignants."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous êtes insensible aux coups critiques : ils infligent des dégâts normaux."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ignorez les malus de fatigue jusqu'au niveau 5."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les sorts de soin infligent des dégâts au lieu de soigner, vous êtes vulnérable aux dégats radiants."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les individus vous sont hostiles."
+        }
       ]
     },
     {
@@ -385,6 +1377,29 @@
         "Souplesse féline : Vous subissez \nmoitié moins de dégâts liés aux\nchutes.",
         "Esquive instinctive : Vous pouvez\nutiliser l’action Esquiver en bonus\naction",
         "Personnage\n25"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "17. Khajiit",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Griffes félines : Vous possédez une attaque naturelle avec vos griffes (1d6, finesse)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si l’une de vos mains est libre ou équipée d’un catalyseur une main, vous pouvez effectuer une attaque avec vos griffes en bonus action."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Souplesse féline : Vous subissez moitié moins de dégâts liés aux chutes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Esquive instinctive : Vous pouvez utiliser l’action Esquiver en bonus action"
+        }
       ]
     },
     {
@@ -394,6 +1409,21 @@
         "Régénération Totémique :\nChaque fois que vous utilisez un \ntoken, vous regagnez 2 × votre\nmodificateur le plus élevé en \npoints de vie (une fois par token\npar round /30min).",
         "Membre des Hautes Terres :\nVous ignorez les terrains\ndifficiles.",
         "Personnage\n26"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "18. Troll",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Régénération Totémique : Chaque fois que vous utilisez un token, vous regagnez 2 × votre modificateur le plus élevé en points de vie (une fois par token par round /30min)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Membre des Hautes Terres : Vous ignorez les terrains difficiles."
+        }
       ]
     },
     {
@@ -403,6 +1433,21 @@
         "Discipline Martiale : Vos \nenchaînements sont considérées\ncomme des attaques\nd’opportunité, et vous avez \navantage pour les effectuer. Vous\npouvez également vous déplacer\nde 5 mètres pour réaliser un\nenchaînement.",
         "Commandement Tactique : Vous\npouvez donner vos tokens à vos \nalliés.",
         "Personnage\n27"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "19. Hobgoblin",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Discipline Martiale : Vos enchaînements sont considérées comme des attaques d’opportunité, et vous avez avantage pour les effectuer. Vous pouvez également vous déplacer de 5 mètres pour réaliser un enchaînement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Commandement Tactique : Vous pouvez donner vos tokens à vos alliés."
+        }
       ]
     },
     {
@@ -415,6 +1460,33 @@
         "Résonance de Mort : à 0 PV, onde\npsychique de 18 m infligeant Mod.\nEsprit × 1d6 dégâts psychiques à\ntoutes les créatures alliées\nautours de vous.",
         "Fragilité Physique: désavantage à\ntous les jets de sauvegarde\nd’Athlétisme.",
         "Personnage\n28"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "20. Illithid",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Harmonisation Cérébrale : harmonisation est passive autorus de vous, accentuant toutes les capacités ou attaques alliées comme une harmonisation classique."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si vous l’activez (réaction), vous déclenchez une Harmonisation Totale: la cible obtient avantage à ses jets d’attaque et de capacités en plus du bonus de base."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Dévoration Mentale (bonus action) : dévore le cerveau d’une créature intelligente (Esprit > 8) morte depuis moins d’1 min pour regagner 1 token d’Esprit (max = Mod. Esprit, min 1). Utilisable 1 fois/combat ou toutes les 30 min."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Résonance de Mort : à 0 PV, onde psychique de 18 m infligeant Mod. Esprit × 1d6 dégâts psychiques à toutes les créatures alliées autours de vous."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Fragilité Physique: désavantage à tous les jets de sauvegarde d’Athlétisme."
+        }
       ]
     },
     {
@@ -429,6 +1501,43 @@
         "Les malus sont permanents : Augmenter la caractéristique par des objets,\ndes niveaux ou d’autres moyens ne supprime pas ces malus.",
         "Les malus peuvent cependant être supprimés ou atténués via des\névénements ou actions RP, à la discrétion du MJ.",
         "Personnage\n29"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "21. Race Bestiale (Personnalisable)",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "À définir avec le MJ, selon l’apparence et les traits choisis."
+        },
+        {
+          "kind": "heading",
+          "text": "Malus des Caractéristiques",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si une caractéristique est inférieure ou égale à 5, vous subissez 1 malus pour chaque deux point en dessous de 6 (allant de 0 à 3 malus)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les malus sont déterminés aléatoirement en lançant un d6 lors de la fin de la création du personnage et seront choisi parmis les listes ci dessous."
+        },
+        {
+          "kind": "heading",
+          "text": "Attention :",
+          "level": 3
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les malus sont permanents : Augmenter la caractéristique par des objets, des niveaux ou d’autres moyens ne supprime pas ces malus."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les malus peuvent cependant être supprimés ou atténués via des événements ou actions RP, à la discrétion du MJ."
+        }
       ]
     },
     {
@@ -455,6 +1564,89 @@
         "Vous avez besoin d’aide pour actionner des mécanismes lourds, comme\ndes portes ou des leviers.",
         "6. Vulnérable",
         "Personnage\n30"
+      ],
+      "elements": [
+        {
+          "kind": "heading",
+          "text": "Force ≤ 5 :",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Ne tient pas debout"
+        },
+        {
+          "kind": "paragraph",
+          "text": "À chaque fois que vous subissez des dégâts, faites un jet de sauvegarde de Force (DC 10). En cas d’échec, vous tombez au sol (prone)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Se relever coûte une action complète au lieu d’une bonus action."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous tombez frequement dans la vie de tout les jours."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Léger comme une plume"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous êtes considéré comme léger."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Subir plus de 5 dégâts d’un seul coup vous projette de 3 mètres."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous pouvez être affecté par des sorts ou effets ciblant des objets légers."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous perdez l’equilibre souvent, notamment quand quelqu’un crie a coté de vous."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Ne peut rien porter"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous n’avez pas d’inventaire et ne pouvez pas transporter d’objets, y compris votre propre arme."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous devez récupérer votre arme au début du combat (coût : 1 bonus action)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. Ne peut rien équiper"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ne pouvez pas porter ou équiper une arme, une armure, un catalyseur, ou un bouclier."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ne portez que des habits tres légers."
+        },
+        {
+          "kind": "paragraph",
+          "text": "5. Dépendance physique"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Impossible de porter des objets de plus de 5 kg."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous avez besoin d’aide pour actionner des mécanismes lourds, comme des portes ou des leviers."
+        },
+        {
+          "kind": "paragraph",
+          "text": "6. Vulnérable"
+        }
       ]
     },
     {
@@ -482,6 +1674,93 @@
         "Vous ne pouvez vous déplacer que pendant les 2 premiers tours de\ncombat.",
         "Après cela, vous devez utiliser l’action Dash pour vous déplacer.",
         "Personnage\n31"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Si vous tombez inconscient, vous ne pouvez pas vous relever seul."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si vous êtes aidé pour vous relever, vous restez inerte (vous passez votre tour) et vulnérable (vous pouvez subir des dégâts supplémentaires)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous avez besoin d’une scieste une fois par jour."
+        },
+        {
+          "kind": "heading",
+          "text": "Agilité ≤ 5 :",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Désavantage physique :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Désavantage à tous les jets impliquant une action physique (incluant les attaques)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Aucune réaction ni action bonus :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ne pouvez pas utiliser de réactions ni d’actions bonus."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Totem des réactions interdit."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ne pouvez pas reagir rapidement aux evennements autours de vous."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Vulnérabilité totale :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ne pouvez effectuer aucun jet de sauvegarde contre des attaques ou effets nécessitant une esquive."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les ennemis ne peuvent pas vous rater, même sur un jet de 1 naturel."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. Risque de blessure :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Toute action physique échouée entraîne 1d4 dégâts."
+        },
+        {
+          "kind": "paragraph",
+          "text": "5. Vision des cartes bloquée :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ne pouvez pas regarder vos cartes avant de les jouer."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous avez acquerissez un objet, vous avez une chance de le casser."
+        },
+        {
+          "kind": "paragraph",
+          "text": "6. Mouvement limité :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ne pouvez vous déplacer que pendant les 2 premiers tours de combat."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Après cela, vous devez utiliser l’action Dash pour vous déplacer."
+        }
       ]
     },
     {
@@ -507,6 +1786,85 @@
         "Rituels de combat maladroits :",
         "Vous devez dégainer votre arme au début du combat.",
         "Personnage\n32"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Vous ne pouvez pas marcher longtemps et avez besoin d’aide pour escalader quoique ce soit."
+        },
+        {
+          "kind": "heading",
+          "text": "Esprit ≤ 5 :",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Incapacité magique et technique"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ne pouvez pas utiliser de capacités."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous avez besoin d’aide pour comprendre ou utiliser tout mécanisme complexe (outils, portes verrouillées, puzzles, etc.)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Stupide et imprévisible"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Totem désactivé : L’effet de votre totem est annulé."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Décisions aléatoires : Lors de décisions critiques, le MJ peut lancer un dé pour décider à votre place."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Terreur de la magie"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Effroi des sorts puissants :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "À chaque fois qu’un sort de coût supérieur à 16 est lancé à moins de 10 m, faites un jet d’Esprit (DC 10)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "En cas d’échec, vous êtes frightened pendant 1 tour."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Risques liés aux objets puissants :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Si vous interagissez avec un objet divin ou puissant, faites un jet d’Esprit (DC 10)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "En cas d’échec, vous subissez une affliction définie par le MJ (malédiction, rejet, etc.)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. Hostilité à la magie"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Pas d’armes magiques : Vous ne pouvez pas porter ou utiliser d’armes magiques ou d’artefacts."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Rituels de combat maladroits :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous devez dégainer votre arme au début du combat."
+        }
       ]
     },
     {
@@ -531,6 +1889,81 @@
         "Vous avez désavantage aux jets de discression.",
         "Vous subissez 1d4 dégâts psychiques par personne dans votre zone de\ncontrôle.",
         "Personnage\n33"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Lorsque votre arme est dégainée, vous ne pouvez pas parler, sauf pour lancer des insultes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Incapacité professionnelle : Vous ne maîtrisez aucun métier."
+        },
+        {
+          "kind": "paragraph",
+          "text": "5. Analphabète et perdu"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Analphabétisme total :"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ne savez ni lire, ni écrire, ni compter."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ne comprenez pas la notion d’argent : tous les prix sont aléatoires et souvent plus chers."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Consommation aléatoire : Vous ne pouvez pas choisir un consommable ; vous consommez toujours un objet aléatoire."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Équipement initial aléatoire : Si vous avez plusieurs armes, vous commencez le combat avec une arme sélectionnée aléatoirement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "6. Anti-magic passive"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Immunité aux buffs : Vous ne pouvez recevoir aucun effet magique positif ou buff."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Incapacité à détecter : Vous ne pouvez pas détecter les ennemis cachés ou dissimulés, même si un allié vous avertit."
+        },
+        {
+          "kind": "heading",
+          "text": "Social ≤ 5 :",
+          "level": 2
+        },
+        {
+          "kind": "paragraph",
+          "text": "1. Hostilité Universelle"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les tentatives de négociation de prix échouent automatiquement pour vous et les personnes qui vous accompagnent."
+        },
+        {
+          "kind": "paragraph",
+          "text": "quand vous vous faites attaquer effectuez un jet de sauvegarde social (DC 10), en cas d’echec rengainez votre arme."
+        },
+        {
+          "kind": "paragraph",
+          "text": "2. Répulsion Sociale et Physique"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous avez désavantage aux jets de discression."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous subissez 1d4 dégâts psychiques par personne dans votre zone de contrôle."
+        }
       ]
     },
     {
@@ -552,13 +1985,76 @@
         "Vous ne parlez pas la langue, et il y a 1 chance sur 2 que vos propos\nsoient mal interprétés.",
         "Vous ne pouvez pas cibler vos alliés avec des capacités ou être ciblé par\neux.",
         "Personnage\n34"
+      ],
+      "elements": [
+        {
+          "kind": "paragraph",
+          "text": "Les créatures non hostiles (comme les animaux) vous évitent ou réagissent de manière agressive."
+        },
+        {
+          "kind": "paragraph",
+          "text": "3. Silence en Combat"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Toute tentative de persuasion ressemble a de la tromperie, vous avez l’air de mentir tout le temps."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ne pouvez pas mentir ; toute tentative de tromperie échoue automatiquement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous parlez tellement doucement que personne ne vous entend à plus de 3 mètres."
+        },
+        {
+          "kind": "paragraph",
+          "text": "4. Présence Déstabilisante"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Désavantage à tous vos jets si plus de 3 personnes se trouvent à moins de 10 mètres de vous."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous donnez désavantage aux jets de Persuasion des personnes qui vous accompagnent."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Les personnes oublient totalement votre existence 2 heures après vous avoir rencontré."
+        },
+        {
+          "kind": "paragraph",
+          "text": "5. Syndrome de la Tourette"
+        },
+        {
+          "kind": "paragraph",
+          "text": "À chaque fois que vous parlez, il y a une chance que vous lâchiez une insulte involontairement."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ne pouvez pas coopérer pour utiliser des jetons sociaux (échange de cartes)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "6. Coupable et Maladroit"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ne parlez pas la langue, et il y a 1 chance sur 2 que vos propos soient mal interprétés."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Vous ne pouvez pas cibler vos alliés avec des capacités ou être ciblé par eux."
+        }
       ]
     },
     {
       "number": 35,
       "blocks": [
         "Personnage\n35"
-      ]
+      ],
+      "elements": []
     }
   ]
 }
