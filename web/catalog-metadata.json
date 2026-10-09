@@ -576,6 +576,15 @@
       "difficulty": 3.5,
       "creator": "",
       "class": []
+    },
+    "ivan": {
+      "loreSummary": "Ivan est un assassin et mercenaire elfe noir sarcastique qui cherche à vivre librement en vendant ses talents de sabreur tout en se méfiant de toute autorité.",
+      "gameplaySummary": "Ce combattant agile utilise ses sabres doués de parole pour prédire les actions ennemies, manipuler l'espace via des portails et dévier les attaques adverses.",
+      "difficulty": 4,
+      "creator": "",
+      "class": [
+        "Rôdeur"
+      ]
     }
   }
 }
