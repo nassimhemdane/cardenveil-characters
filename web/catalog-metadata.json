@@ -585,6 +585,24 @@
       "class": [
         "Rôdeur"
       ]
+    },
+    "nerys-vaylith": {
+      "loreSummary": "Nerys Vaylith est une alchimiste firbolg perfectionniste ayant fui sa communauté malveillante pour compléter une formule héritée et restaurer l'ordre.",
+      "gameplaySummary": "Ce personnage utilise des potions polyvalentes pour infliger des dégâts, soigner, contrôler le terrain ou altérer les caractéristiques de ses alliés et ennemis.",
+      "difficulty": 4.0,
+      "creator": "",
+      "class": [
+        "Artificier"
+      ]
+    },
+    "rene-decartes": {
+      "loreSummary": "René Décartes est un mendiant firbolg d'origine noble cherchant à souffrir le moins possible après l'éveil brutal de ses pouvoirs psychiques.",
+      "gameplaySummary": "Ce personnage utilise un système de Blackjack pour gérer ses capacités psychiques et télékinétiques, alternant entre contrôle de foule, soutien et dégâts mentaux.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": [
+        "Mage"
+      ]
     }
   }
 }
