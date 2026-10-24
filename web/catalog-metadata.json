@@ -603,6 +603,16 @@
       "class": [
         "Mage"
       ]
+    },
+    "hiyuki-didbeud": {
+      "loreSummary": "Hiyuki Didbeud est une demi-elfe utilisant un totem de sacrifice vital pour manipuler les énergies de glace et invoquer des oiseaux de papier.",
+      "gameplaySummary": "Ce personnage combine des capacités de contrôle de zone glaciales, de la mobilité et du soutien tactique via des invocations tout en gérant ses points de vie comme ressource.",
+      "difficulty": 4,
+      "creator": "",
+      "class": [
+        "Mage",
+        "Invocateur"
+      ]
     }
   }
 }
