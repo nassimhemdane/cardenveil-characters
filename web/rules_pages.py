@@ -111,6 +111,10 @@ CHAPTERS = [
         "Lire les différentes versions sans les confondre.",
         "reading-guide.md",
     ),
+    (
+        "Références", "arbitrages", "Arbitrages du MJ",
+        "Décisions explicites applicables dans ce projet.", "rulings.md",
+    ),
 ]
 
 # Reading order follows the supplied manuals; older summaries remain separate references.
@@ -129,6 +133,7 @@ ORDER = [
     "cartes",
     "attaques",
     "versions",
+    "arbitrages",
 ]
 GROUPS = {
     "introduction": "Comprendre le jeu",
@@ -179,13 +184,50 @@ def slug(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", ascii_text.lower()).strip("-") or "section"
 
 
-def inline(text: str) -> str:
+EMPHASIS = re.compile(
+    r"(?<!\w)(?:"
+    r"(?:\d+\s*)?d(?:4|6|8|10|12|20|100)\b"
+    r"|[+-]?\d+(?:[,.]\d+)?\s*(?:%|XP\b|PV\b|mètres?\b|points?\b|actions?\b|réactions?\b|tours?\b|cartes?\b|niveaux?\b|dégâts\b)"
+    r"|attaque d[’']opportunité|zone de contrôle|points de vie|valeur maximale"
+    r"|réussite critique|échec critique|avantage|désavantage|parade|esquive|armure"
+    r"|une seule fois|au maximum|au minimum|à l[’']entier inférieur|divisée? par deux"
+    r")(?!\w)",
+    re.IGNORECASE,
+)
+
+
+def emphasize(text: str) -> str:
+    """Escape prose and emphasize up to four distinct mechanical cues per block."""
+    parts, seen, start = [], set(), 0
+    for match in EMPHASIS.finditer(text):
+        key = match[0].casefold()
+        if key in seen:
+            continue
+        parts.extend((escape(text[start:match.start()]), f"<strong>{escape(match[0])}</strong>"))
+        start = match.end()
+        seen.add(key)
+        if len(seen) == 4:
+            break
+    parts.append(escape(text[start:]))
+    return "".join(parts)
+
+
+def inline(text: str, *, emphasis: bool = True) -> str:
     """Render the inline Markdown subset used by the allowlisted rule documents safely."""
-    safe = escape(text)
-    safe = re.sub(r"`([^`]+)`", r"<code>\1</code>", safe)
-    safe = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", safe)
-    safe = re.sub(r"\[([^\]]+)\]\((/regles/[a-z0-9/#-]+)\)", r'<a href="\2">\1</a>', safe)
-    return safe
+    render = emphasize if emphasis else escape
+    tokens = re.compile(r"`([^`]+)`|\*\*([^*]+)\*\*|\[([^\]]+)\]\((/regles/[a-z0-9/#-]+)\)")
+    parts, start = [], 0
+    for match in tokens.finditer(text):
+        parts.append(render(text[start:match.start()]))
+        if match[1] is not None:
+            parts.append(f"<code>{escape(match[1])}</code>")
+        elif match[2] is not None:
+            parts.append(f"<strong>{escape(match[2])}</strong>")
+        else:
+            parts.append(f'<a href="{escape(match[4])}">{escape(match[3])}</a>')
+        start = match.end()
+    parts.append(render(text[start:]))
+    return "".join(parts)
 
 
 def markdown(source: str) -> tuple[str, list[tuple[str, str]]]:
@@ -206,7 +248,7 @@ def markdown(source: str) -> tuple[str, list[tuple[str, str]]]:
             level, title = len(heading[1]), RULE_TITLES.get(heading[2], heading[2])
             anchor = f"{slug(title)}-{len(toc) + 1}"
             toc.append((anchor, title))
-            result.append(f'<h{level} id="{anchor}">{inline(title)}</h{level}>')
+            result.append(f'<h{level} id="{anchor}">{inline(title, emphasis=False)}</h{level}>')
             index += 1
         elif line.startswith("|"):
             rows = []
@@ -265,15 +307,23 @@ def shell(
 ) -> str:
     """Build a responsive reading layout with mobile navigation and per-page contents."""
     contents = "".join(f'<li><a href="#{a}">{escape(t)}</a></li>' for a, t in toc or [])
+    search_box = '''<section class="docs-search" aria-label="Recherche de règles">
+<label for="rule-search">Retrouver une règle</label><div class="search-field"><input id="rule-search" type="search" placeholder="Parade, cartes, flashback…" autocomplete="off" disabled><button id="clear-search" type="button" aria-label="Effacer la recherche" hidden>Effacer</button></div>
+<p id="search-status" role="status">Chargement de la recherche…</p><noscript>Les chapitres restent accessibles sans JavaScript.</noscript><div id="search-results"></div></section>'''
+    mobile_toc = f'<details class="mobile-toc"><summary>Dans ce chapitre · {len(toc or [])} sections</summary><nav aria-label="Sommaire du chapitre"><ol>{contents}</ol></nav></details>' if toc else ""
     return f'''<!doctype html><html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{escape(title)} — Règles Cardenveil</title><meta name="description" content="{escape(description)}">
 <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/rules.css">
+<link rel="stylesheet" href="/rules-chat.css"><script src="/rules-chat.js" defer></script><script src="/gm.js" defer></script>
 </head><body class="rules-site"><a class="skip-link" href="#reading">Aller au contenu</a>
-<header class="site-header"><a class="brand" href="/">CARDENVEIL</a><nav><a href="/">Personnages</a><a href="/regles/" aria-current="page">Règles & docs</a></nav></header>
+<header class="site-header"><a class="brand" href="/">CARDENVEIL</a><nav><a href="/">Personnages</a><a href="/regles/" aria-current="page">Règles & docs</a><a href="/gm/">Agent MJ</a></nav></header>
+<section class="rules-chat" aria-label="Guide des r?gles"><a href="/gm/">Poser une question au guide Cardenveil ?</a></section>
 <div class="docs-layout"><aside class="docs-nav"><details open><summary>Explorer les règles</summary><nav aria-label="Chapitres">{navigation(current)}</nav></details></aside>
 <main id="reading"><div class="breadcrumb"><a href="/">Cardenveil</a> / <a href="/regles/">Règles</a></div>
 <p class="eyebrow">LE LIVRE DE RÈGLES</p><h1>{escape(title)}</h1><p class="docs-lede">{escape(description)}</p>
+<div class="reading-tools" aria-label="Confort de lecture"><span>À votre rythme</span><button type="button" id="reading-size" aria-pressed="false" hidden>Texte agrandi</button><button type="button" id="reading-theme" aria-pressed="false" hidden>Lecture claire</button><a href="/gm/">Poser une question ↗</a></div>
+{search_box}{mobile_toc}
 {content}</main><aside class="docs-toc"><nav aria-label="Sur cette page"><h2>Sur cette page</h2><ol>{contents}</ol></nav></aside></div>
 <footer>Cardenveil · Sources conservées, divergences signalées · <a href="/regles/versions/">À propos des versions</a></footer>
 <script src="/rules.js" defer></script></body></html>'''
@@ -360,7 +410,7 @@ def build_rules(root: Path, public: Path) -> None:
                             if value.startswith(("Exemple", "👉"))
                             else "rule-paragraph"
                         )
-                        body += f'<p class="{css}">{escape(value)}</p>'
+                        body += f'<p class="{css}">{emphasize(value)}</p>'
                         chunks.append(value)
                 index_section(chunks, topic, anchor)
                 body += f'<details class="original-page" id="source-page-{number}"><summary>Consulter la source · {escape(data["source"])} · page {number}</summary>'
@@ -377,7 +427,7 @@ def build_rules(root: Path, public: Path) -> None:
             )
             body, toc = markdown(display)
             body = (
-                '<div class="source-notice">Synthèse structurée du core : couverture partielle et versions parfois différentes des PDF. Un statut <code>unresolved</code> indique un point non arbitré.</div>'
+                ('<div class="source-notice ruling-notice"><strong>Décisions du MJ</strong> Ces arbitrages priment sur les formulations contradictoires des anciens documents.</div>' if key == "arbitrages" else '<div class="source-notice"><strong>Fiche de référence</strong> Une synthèse partielle : consultez les sources et les <a href="/regles/arbitrages/">arbitrages du MJ</a>. Un statut <code>unresolved</code> indique un point non arbitré.</div>')
                 + body
             )
             search.append({"title": title, "section": group, "url": f"/regles/{key}/", "text": raw})
@@ -396,14 +446,14 @@ def build_rules(root: Path, public: Path) -> None:
         directory = output / key
         directory.mkdir(exist_ok=True)
         (directory / "index.html").write_text(shell(title, description, body, key, toc), "utf-8")
-    body = """<div class="docs-search"><label for="rule-search">Rechercher dans les règles</label><input id="rule-search" type="search" placeholder="Parade, totem, progression…" disabled><p id="search-status" role="status">Chargement de la recherche…</p><noscript>La recherche nécessite JavaScript ; tous les chapitres restent accessibles ci-dessous.</noscript><div id="search-results"></div></div><div class="source-notice">Une bibliothèque, plusieurs sources : les PDF et les synthèses du core restent distincts. Consultez les <a href="/regles/versions/">divergences connues</a> avant de trancher une règle.</div>"""
+    body = '''<div class="reading-start"><span class="eyebrow">VOTRE PREMIÈRE PARTIE ?</span><h2>Commencez par l’essentiel.</h2><p>Découvrez les dés et les ressources, préparez votre personnage, puis suivez le déroulement d’un combat.</p><div><a href="/regles/systeme-de-base/">01 · Les bases →</a><a href="/regles/creation/">02 · Le personnage →</a><a href="/regles/combat/">03 · Le combat →</a></div></div><div class="source-notice">Les manuels, les fiches de référence et les <a href="/regles/arbitrages/">arbitrages du MJ</a> sont distingués. Les <a href="/regles/versions/">divergences connues</a> restent consultables.</div>'''
     toc = []
     for number, group in enumerate(dict.fromkeys(c[0] for c in CHAPTERS), 1):
         toc.append((slug(group), group))
         body += f'<section id="{slug(group)}"><h2 class="group-title"><span>0{number}</span>{group}</h2><div class="docs-cards">'
         for section, key, title, description, source in CHAPTERS:
             if section == group:
-                kind = "Document source" if source == "source" else "Fiche de référence"
+                kind = "Document source" if source == "source" else ("Arbitrage MJ" if key == "arbitrages" else "Fiche de référence")
                 body += f'<a class="docs-card" href="/regles/{key}/"><span class="eyebrow">{kind}</span><h3>{escape(title)} <span aria-hidden="true">↗</span></h3><p>{escape(description)}</p></a>'
         body += "</div></section>"
     (output / "index.html").write_text(

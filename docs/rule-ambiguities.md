@@ -31,7 +31,12 @@
 
 - Source A/B: formulations différentes dans le corpus.
 - Impact: défense dérivée et résolution d'attaque.
-- Decision: **UNRESOLVED**. Non implémentée.
+- Décision MJ du 23 octobre 2026 : la base de parade de toutes les armes est le dé maximal
+  divisé par **2**. Les mentions de division par 3 sont obsolètes.
+- Décision MJ du 24 octobre 2026 : arme = dé/2 + mod Agilité + déflexion ; épée droite =
+  dé/2 + mod Force OU mod Agilité + déflexion ; bouclier = parade du bouclier + mod Force
+  + déflexion. Le cumul Force + Agilité d'une ancienne page est remplacé par ce choix.
+- Référence : [arbitrages MJ](rules/rulings.md). Le moteur de combat reste hors périmètre actuel.
 
 ## Mimyr comme golden sample
 

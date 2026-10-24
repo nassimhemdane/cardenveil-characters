@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Questions de règles — Cardenveil</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/gm.css">
+  <script src="/gm.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="/">CARDENVEIL</a>
+    <nav><a href="/">Personnages</a><a href="/regles/">Règles & docs</a><a href="/gm/" aria-current="page">Agent MJ</a></nav>
+  </header>
+  <main class="gm-layout">
+    <aside class="gm-panel">
+      <h1>Comprendre Cardenveil</h1>
+      <p>Posez vos questions sur les règles. Retrouvez les explications, des exemples et leurs sources.</p>
+      <label for="provider">Fournisseur</label><select id="provider"></select>
+      <label for="model">Modèle</label><select id="model"></select>
+      <p id="configuration"></p>
+      <label for="sessions">Conversations</label><select id="sessions"><option value="">Nouvelle conversation</option></select>
+      <form id="create-session">
+        <label for="session-name">Nom de la conversation</label><input id="session-name" maxlength="100" value="Questions sur Cardenveil" required>
+        <button id="create" disabled>Nouvelle conversation</button>
+      </form>
+      <p><a href="/regles/">Consulter les manuels</a> · <a href="/regles/arbitrages/">Arbitrages du MJ</a></p>
+    </aside>
+    <section class="gm-panel gm-chat" aria-label="Conversation">
+      <p id="status" role="status" aria-live="polite">Connexion au serveur local…</p>
+      <div id="messages" aria-live="polite"></div>
+      <div class="gm-suggestions" aria-label="Exemples de questions">
+        <button type="button" data-question="Explique-moi les bases de Cardenveil pour débuter.">Débuter</button>
+        <button type="button" data-question="Comment se déroule un round de combat ?">Le combat</button>
+        <button type="button" data-question="Comment utiliser les cartes et les tokens ?">Cartes et tokens</button>
+        <button type="button" data-question="Comment fonctionnent les aspects et les flashbacks ?">La narration</button>
+      </div>
+      <form id="chat-form">
+        <label for="message">Votre question</label>
+        <textarea id="message" rows="3" maxlength="8000" placeholder="Quelles sont les règles de parade ?" required></textarea>
+        <button id="send" disabled>Envoyer</button>
+        <button id="retry" type="button" hidden>Reprendre la demande</button>
+      </form>
+      <p class="gm-note">Les réponses s’appuient sur les documents du projet. Les divergences et les règles absentes sont signalées.</p>
+      <details><summary>Documents consultés et détails de recherche</summary><div id="events"></div></details>
+    </section>
+  </main>
+</body>
+</html>
