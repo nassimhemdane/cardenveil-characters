@@ -613,6 +613,15 @@
         "Mage",
         "Invocateur"
       ]
+    },
+    "hemdane-polytechnique": {
+      "loreSummary": "Hemdane Polytechnique est un centaure de onze ans aux yeux blancs et à la peau brune, doté d'une morphologie équine imposante.",
+      "gameplaySummary": "Ce combattant mobile utilise sa vitesse de charge et des capacités basées sur la foudre pour infliger des dégâts, contrôler le terrain et se protéger par des réactions défensives.",
+      "difficulty": 4,
+      "creator": "",
+      "class": [
+        "Guerrier"
+      ]
     }
   }
 }
