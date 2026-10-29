@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import base64
 import binascii
+import hashlib
 import json
 import shutil
 import zipfile
@@ -23,6 +24,17 @@ ASSETS = PUBLIC / "assets"
 DOWNLOADS = PUBLIC / "downloads"
 
 
+def _write_versioned_asset(member: str, content: bytes) -> str:
+    """Give every image a content-derived URL so cached portraits never go stale."""
+    path = Path(member)
+    digest = hashlib.sha256(content).hexdigest()[:16]
+    versioned = path.with_name(f"{path.stem}.{digest}{path.suffix}")
+    target = PUBLIC / versioned
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_bytes(content)
+    return "/" + versioned.as_posix()
+
+
 def _copy_asset(
     archive: zipfile.ZipFile,
     reference: str,
@@ -38,20 +50,14 @@ def _copy_asset(
             content = base64.b64decode(payload, validate=True)
         except (ValueError, binascii.Error) as error:
             raise ValueError("Image base64 invalide dans une archive") from error
-        target = PUBLIC / fallback_member
-        target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_bytes(content)
-        return "/" + fallback_member.replace("\\", "/")
+        return _write_versioned_asset(fallback_member, content)
     if not reference.startswith("/assets/"):
         return ""
     member = reference.lstrip("/")
     actual = {name.casefold(): name for name in archive.namelist()}.get(member.casefold())
     if actual is None:
         return ""
-    target = PUBLIC / member
-    target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_bytes(archive.read(actual))
-    return "/" + member.replace("\\", "/")
+    return _write_versioned_asset(member, archive.read(actual))
 
 
 def build() -> None:
