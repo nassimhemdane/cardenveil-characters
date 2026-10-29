@@ -622,6 +622,15 @@
       "class": [
         "Guerrier"
       ]
+    },
+    "baurgalmir-volmerkekya": {
+      "loreSummary": "Baurgalmir Volmerkekya est un v?t?rinaire humain qui cherche ? lever sa mal?diction d?moniaque pour retrouver sa tribu et voir grandir ses petits-enfants.",
+      "gameplaySummary": "Accompagn? de son hibou, il combine invocations animales, contr?le, r?actions d?fensives et capacit?s al?atoires ou exigeant un sacrifice de points de vie.",
+      "difficulty": null,
+      "creator": "",
+      "class": [
+        "Invocateur"
+      ]
     }
   }
 }
