@@ -13,6 +13,13 @@
   };
   const roleLabels = {soin:'Soigner', protection:'Protéger', distance:'À distance', invocation:'Invoquer', controle:'Contrôler', discretion:'Se dissimuler'};
   const includes = (value, word) => norm(value).includes(norm(word));
+  function portrait(c) {
+    const name=plain(c.identity.nom),href=`/personnages/${encodeURIComponent(c.id)}/`;
+    const content=typeof c.portrait==='string' && c.portrait.startsWith('/assets/')
+      ? `<img src="${escape(c.portrait)}" alt="Portrait de ${escape(name)}" loading="lazy" decoding="async" width="480" height="360">`
+      : '<span class="guide-portrait-empty">Portrait non renseigné</span>';
+    return `<a class="guide-portrait" href="${href}" aria-label="Ouvrir la fiche de ${escape(name)}">${content}</a>`;
+  }
   function entries(c) {
     const m = c.catalog || {};
     return [
@@ -83,7 +90,7 @@
       if(!selected.length&&!easy){$('guide-answer').innerHTML=`<p>${escape(note || 'Quel rôle vous attire : soigner, protéger, contrôler, invoquer, vous dissimuler ou jouer à distance ?')}</p>`;return;}
       const candidates=rows.map(row=>({...row, proofs:selected.map(role=>({role,source:evidence(row,role)}))})).filter(row=>(!easy || row.c.catalog?.difficulty!=null&&row.c.catalog.difficulty<=2) && row.proofs.every(p=>p.source) && excluded.every(role=>!evidence(row,role)));
       candidates.sort((a,b)=>(a.c.catalog?.difficulty??99)-(b.c.catalog?.difficulty??99));
-      $('guide-answer').innerHTML=`<p>${escape(note)} ${excluded.length?'Exclusions : '+escape(excluded.map(r=>roleLabels[r]).join(', '))+'. ':''}${candidates.length?`${candidates.length} fiches contiennent des indices pour ces critères. Voici ${Math.min(3,candidates.length)} pistes à comparer ; cela ne garantit pas leur efficacité en partie.`:'Je ne sais pas vous proposer de personnage réunissant ces critères à partir des fiches disponibles. Essayez de retirer une envie.'}</p><div class="guide-results">${candidates.slice(0,3).map(row=>`<article><h3><a href="/personnages/${encodeURIComponent(row.c.id)}/">${escape(plain(row.c.identity.nom))} ↗</a></h3><p>Complexité : ${row.c.catalog?.difficulty??'non renseignée'}${row.c.catalog?.difficulty!=null?' / 5':''}</p>${row.proofs.map(p=>`<p><strong>${roleLabels[p.role]}</strong> · ${escape(p.source.label)}</p><blockquote>${escape(p.source.value)}</blockquote>`).join('') || `<blockquote>${escape(plain(row.c.catalog?.gameplaySummary||'Style de jeu non renseigné.'))}</blockquote>`}<a class="button" href="/personnages/${encodeURIComponent(row.c.id)}/">Lire la fiche source</a></article>`).join('')}</div>`;
+      $('guide-answer').innerHTML=`<p>${escape(note)} ${excluded.length?'Exclusions : '+escape(excluded.map(r=>roleLabels[r]).join(', '))+'. ':''}${candidates.length?`${candidates.length} fiches contiennent des indices pour ces critères. Voici ${Math.min(3,candidates.length)} pistes à comparer ; cela ne garantit pas leur efficacité en partie.`:'Je ne sais pas vous proposer de personnage réunissant ces critères à partir des fiches disponibles. Essayez de retirer une envie.'}</p><div class="guide-results">${candidates.slice(0,3).map(row=>`<article>${portrait(row.c)}<h3><a href="/personnages/${encodeURIComponent(row.c.id)}/">${escape(plain(row.c.identity.nom))} ↗</a></h3><p>Complexité : ${row.c.catalog?.difficulty??'non renseignée'}${row.c.catalog?.difficulty!=null?' / 5':''}</p>${row.proofs.map(p=>`<p><strong>${roleLabels[p.role]}</strong> · ${escape(p.source.label)}</p><blockquote>${escape(p.source.value)}</blockquote>`).join('') || `<blockquote>${escape(plain(row.c.catalog?.gameplaySummary||'Style de jeu non renseigné.'))}</blockquote>`}<a class="button" href="/personnages/${encodeURIComponent(row.c.id)}/">Lire la fiche source</a></article>`).join('')}</div>`;
     }
     root.querySelectorAll('[data-role]').forEach(b=>b.onclick=()=>{selected=selected.includes(b.dataset.role)?selected.filter(x=>x!==b.dataset.role):[...selected,b.dataset.role];recommend();});
     $('guide-easy').onclick=()=>{easy=!easy;recommend();};
@@ -104,7 +111,7 @@
           const matches = (result.matches || []).slice(0,6).map(match => ({
             ...match, row: rows.find(row => row.c.id === match.character_id)
           })).filter(match => match.row);
-          $('guide-answer').innerHTML = `<p>${escape(result.explanation)}</p><div class="guide-results">${matches.map(match=>`<article><h3><a href="/personnages/${encodeURIComponent(match.character_id)}/">${escape(plain(match.row.c.identity.nom))}</a></h3><p>Complexité : ${escape(match.row.c.catalog?.difficulty ?? 'non renseignée')} / 5</p>${match.stats?`<p>FOR ${escape(match.stats.force)} · AGI ${escape(match.stats.agilite)} · ESP ${escape(match.stats.esprit)} · SOC ${escape(match.stats.social)}</p><p>Profil statistique : ${escape(match.profile)} (indicatif)</p>`:''}<p>${escape(match.comment)}</p><blockquote>${escape(match.evidence)}</blockquote><a class="button" href="/personnages/${encodeURIComponent(match.character_id)}/">Lire la fiche source</a></article>`).join('')}</div>${matches.length?'':'<p>Aucune fiche suffisamment proche de cette demande.</p>'}`;
+          $('guide-answer').innerHTML = `<p>${escape(result.explanation)}</p><div class="guide-results">${matches.map(match=>`<article>${portrait(match.row.c)}<h3><a href="/personnages/${encodeURIComponent(match.character_id)}/">${escape(plain(match.row.c.identity.nom))}</a></h3><p>Complexité : ${escape(match.row.c.catalog?.difficulty ?? 'non renseignée')} / 5</p>${match.stats?`<p>FOR ${escape(match.stats.force)} · AGI ${escape(match.stats.agilite)} · ESP ${escape(match.stats.esprit)} · SOC ${escape(match.stats.social)}</p><p>Profil statistique : ${escape(match.profile)} (indicatif)</p>`:''}<p>${escape(match.comment)}</p><blockquote>${escape(match.evidence)}</blockquote><a class="button" href="/personnages/${encodeURIComponent(match.character_id)}/">Lire la fiche source</a></article>`).join('')}</div>${matches.length?'':'<p>Aucune fiche suffisamment proche de cette demande.</p>'}`;
           return;
         }
         {
