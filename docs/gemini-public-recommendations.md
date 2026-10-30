@@ -39,7 +39,8 @@ valeur à `0`, puis redéployer. La recherche sans IA reste disponible.
   borné et citation exacte contrôlés côté serveur. La pertinence des commentaires
   reste une appréciation du modèle, pas une preuve automatique.
 - Résumés et extraits bornés des fiches, pas les images ni les fichiers PDF.
-- Un appel par demande non mise en cache ; cache d'une heure lié au catalogue et
+- Avec le RAG actif : au maximum un embedding de question et un appel d'explication
+  par demande non mise en cache ; cache d'une heure lié au catalogue et
   à la phrase. Le cache Cloudflare n'est pas une garantie d'économie globale.
 - Turnstile est obligatoire, jeton à usage unique vérifié côté serveur, hostname
   et action contrôlés. Ce n'est pas une authentification ni un plafond global de quota.
@@ -50,6 +51,10 @@ valeur à `0`, puis redéployer. La recherche sans IA reste disponible.
   ses produits : éviter les données personnelles et utiliser seulement des fiches
   dont la transmission est autorisée. Le site affiche un avertissement.
 - Ollama reste utilisable sur le serveur local ; aucune ouverture de port n'est requise.
+
+Le classement public utilise désormais les statistiques et l'index des capacités :
+voir [le fonctionnement du RAG](character-recommendation-rag.md). Le modèle sélectionne
+des identifiants de sources ; les citations affichées sont recopiées par le serveur.
 
 Références : [tarifs Google](https://ai.google.dev/gemini-api/docs/pricing),
 [secrets Pages](https://developers.cloudflare.com/pages/functions/bindings/#secrets),

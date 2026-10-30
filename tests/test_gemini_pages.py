@@ -17,8 +17,12 @@ import {onRequestGet} from '/functions/api/recommendation-config.js';
 try {
  const assert=(value,label)=>{if(!value)throw Error(label);};
  const characters=[{id:'hero',identity:{nom:'Hero'},catalog:{gameplaySummary:'Soigne les allies a distance.'}}];
+ const index={version:'test-index',model:'gemini-embedding-001',dimensions:2,embeddedDocuments:0,
+   characters:[{id:'hero',name:'Hero',stats:{force:8,agilite:14,esprit:18,social:12},difficulty:2,classes:[]}],
+   documents:[{id:'hero:capacity-1',characterId:'hero',title:'Soin',text:'Soigne les allies a distance.'}]};
  const candidates=candidatesFrom(characters);
  const result={explanation:'Un personnage de soin.',matches:[{character_id:'hero',comment:'Il soigne a distance comme demande.',evidence:'Soigne les allies'}]};
+ const apiResult={explanation:result.explanation,matches:[{character_id:'hero',comment:result.matches[0].comment,source_id:'hero:capacity-1'}]};
  assert(validateRecommendations(result,candidates).matches.length===1,'valid result');
  for(const invalid of [
   {...result,matches:[{...result.matches[0],character_id:'fake'}]},
@@ -27,10 +31,10 @@ try {
   {...result,matches:Array(7).fill(result.matches[0])}
  ]){let rejected=false;try{validateRecommendations(invalid,candidates);}catch{rejected=true;}assert(rejected,'reject invalid response');}
  const env={GEMINI_API_KEY:'FAKE_SECRET',TURNSTILE_SECRET_KEY:'FAKE_TURNSTILE',TURNSTILE_SITE_KEY:'PUBLIC',GEMINI_FREE_TIER_CONFIRMED:'1',
-  ASSETS:{fetch:async()=>Response.json(characters)}};
+  ASSETS:{fetch:async()=>Response.json(index)}};
  const config=await onRequestGet({env}).json();assert(config.enabled && !JSON.stringify(config).includes('FAKE'),'public config');
  assert(!(await onRequestGet({env:{}}).json()).enabled,'disabled by default');
- let mode='ok',googleCalls=0,turnstileCalls=0,cached=null;
+ let mode='ok',googleCalls=0,turnstileCalls=0,embeddingCalls=0,cached=null;
  caches.default={match:async()=>cached,put:async(key,value)=>{cached=value;}};
  window.fetch=async(url,options)=>{
   if(url.includes('siteverify')){turnstileCalls++;return Response.json({
@@ -39,12 +43,17 @@ try {
     action:mode==='action'?'wrong':'recommend',
     'error-codes':mode==='secret'?['invalid-input-secret']:mode==='expired'?['timeout-or-duplicate']:['invalid-input-response']
   },{status:mode==='secret'?400:200});}
+  if(url.includes(':embedContent')){embeddingCalls++;
+    const payload=JSON.parse(options.body);assert(payload.taskType==='RETRIEVAL_QUERY','retrieval query task');
+    if(mode==='embedding-failure')return new Response('{}',{status:429});
+    return Response.json({embedding:{values:[1,0]}});
+  }
   googleCalls++;const body=JSON.parse(options.body);
   assert(options.headers['x-goog-api-key']==='FAKE_SECRET','secret only in server request');
   assert(!body.tools && body.generationConfig.maxOutputTokens===2300,'bounded request');
   if(mode==='quota')return new Response('{}',{status:429});
-  if(mode==='bad')return Response.json({candidates:[{finishReason:'STOP',content:{parts:[{text:JSON.stringify({...result,matches:[{...result.matches[0],character_id:'fake'}]})}]}}]});
-  return Response.json({candidates:[{finishReason:'STOP',content:{parts:[{text:JSON.stringify(result)}]}}]});
+  if(mode==='bad')return Response.json({candidates:[{finishReason:'STOP',content:{parts:[{text:JSON.stringify({...apiResult,matches:[{...apiResult.matches[0],character_id:'fake'}]})}]}}]});
+  return Response.json({candidates:[{finishReason:'STOP',content:{parts:[{text:JSON.stringify(apiResult)}]}}]});
  };
  const request=(body={message:'Je veux soigner',token:'TOKEN'},origin=location.origin)=>({url:location.origin+'/api/recommendations',
   headers:new Headers({'Origin':origin,'Content-Type':'application/json','X-Cardenveil-Client':'catalogue'}),body:new Response(JSON.stringify(body)).body});
@@ -62,6 +71,12 @@ try {
  cached=null;mode='quota';assert((await call()).status===429 && googleCalls===2,'quota no retries');
  mode='bad';const bad=await call();assert(bad.status===503 && googleCalls===3,'reject invented character');
  assert(!(await bad.text()).includes('FAKE'),'no secret in failure');
+ cached=null;mode='ok';index.embeddedDocuments=1;index.documents[0].vector={data:'fwA=',norm:127};index.version='embedded';
+ const semantic=await call();const payload=await semantic.json();
+ assert(semantic.status===200 && payload.retrieval.mode==='stats+embeddings+bm25' && embeddingCalls===1 && googleCalls===4,'one embedding plus one explanation');
+ assert(payload.matches[0].stats.esprit===18 && payload.matches[0].sources[0].id==='hero:capacity-1','numerical evidence and provenance');
+ cached=null;mode='embedding-failure';const fallback=await call();
+ assert(fallback.status===200 && (await fallback.json()).retrieval.mode==='stats+bm25' && embeddingCalls===2 && googleCalls===5,'honest lexical fallback without retries');
  document.querySelector('#result').textContent='PASS';
 } catch(error){document.querySelector('#result').textContent='FAIL '+error.message;}
 </script>'''
@@ -92,6 +107,7 @@ def run_harness(tmp_path, harness):
             f'--user-data-dir={tmp_path / "browser"}','--virtual-time-budget=10000','--dump-dom',
             f'http://127.0.0.1:{server.server_port}/audit'],capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=60)
         assert '<pre id="result">PASS</pre>' in result.stdout, result.stdout[:2500]
+        return result.stdout
     finally:
         server.shutdown()
         server.server_close()

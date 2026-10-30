@@ -12,6 +12,7 @@ import zipfile
 from pathlib import Path
 
 from rules_pages import build_rules
+from rag_index import build_rag_index
 from static_pages import character_url, write_character, write_index
 
 from cardenveil.serialization import character_from_archive, character_to_dict
@@ -123,6 +124,10 @@ def build() -> None:
             "facts": re.sub(r"\s+", " ", " | ".join(str(v) for v in facts if v))[:1100]})
     (DATA / "recommendation-catalog.json").write_text(
         json.dumps(recommendations, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    embeddings_path = WEB / 'rag/embeddings.json'
+    embeddings = json.loads(embeddings_path.read_text(encoding='utf-8')) if embeddings_path.exists() else None
+    rag = build_rag_index(characters, embeddings)
+    (DATA / 'rag-index.json').write_text(json.dumps(rag, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
     write_index(PUBLIC, characters)
     build_rules(ROOT, PUBLIC)
     headers = WEB / "_headers"

@@ -96,14 +96,15 @@
           if(publicAI && !humanToken)throw Error('Attendez la validation anti-abus ci-dessus puis réessayez.');
           const response = await fetch(publicAI?'/api/recommendations':'/api/gm/character-recommendations', {
             method:'POST', headers:{'Content-Type':'application/json','X-Cardenveil-Client':publicAI?'catalogue':'gm'},
-            body:JSON.stringify(publicAI?{message,token:humanToken}:{message}),signal:AbortSignal.timeout(55000)
+            body:JSON.stringify(publicAI?{message,token:humanToken}:{message}),signal:AbortSignal.timeout(70000)
           });
           if(!response.ok){const error=await response.json().catch(()=>null);throw Error(error?.detail || 'Le modèle ne peut pas répondre pour le moment. Réessayez ou utilisez les filtres.');}
           const result = await response.json();
+          if(result.retrieval)$('guide-mode').textContent=`Recherche prioritaire sur les statistiques · ${result.retrieval.mode.includes('embeddings')?'capacités recherchées par embeddings':'recherche mécanique par mots-clés (embeddings indisponibles)'} · phrase transmise à Google`;
           const matches = (result.matches || []).slice(0,6).map(match => ({
             ...match, row: rows.find(row => row.c.id === match.character_id)
           })).filter(match => match.row);
-          $('guide-answer').innerHTML = `<p>${escape(result.explanation)}</p><div class="guide-results">${matches.map(match=>`<article><h3><a href="/personnages/${encodeURIComponent(match.character_id)}/">${escape(plain(match.row.c.identity.nom))}</a></h3><p>Complexité : ${escape(match.row.c.catalog?.difficulty ?? 'non renseignée')} / 5</p><p>${escape(match.comment)}</p><blockquote>${escape(match.evidence)}</blockquote><a class="button" href="/personnages/${encodeURIComponent(match.character_id)}/">Lire la fiche source</a></article>`).join('')}</div>${matches.length?'':'<p>Aucune fiche suffisamment proche de cette demande.</p>'}`;
+          $('guide-answer').innerHTML = `<p>${escape(result.explanation)}</p><div class="guide-results">${matches.map(match=>`<article><h3><a href="/personnages/${encodeURIComponent(match.character_id)}/">${escape(plain(match.row.c.identity.nom))}</a></h3><p>Complexité : ${escape(match.row.c.catalog?.difficulty ?? 'non renseignée')} / 5</p>${match.stats?`<p>FOR ${escape(match.stats.force)} · AGI ${escape(match.stats.agilite)} · ESP ${escape(match.stats.esprit)} · SOC ${escape(match.stats.social)}</p><p>Profil statistique : ${escape(match.profile)} (indicatif)</p>`:''}<p>${escape(match.comment)}</p><blockquote>${escape(match.evidence)}</blockquote><a class="button" href="/personnages/${encodeURIComponent(match.character_id)}/">Lire la fiche source</a></article>`).join('')}</div>${matches.length?'':'<p>Aucune fiche suffisamment proche de cette demande.</p>'}`;
           return;
         }
         {
