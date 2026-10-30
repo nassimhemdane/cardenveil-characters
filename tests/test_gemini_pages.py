@@ -38,7 +38,7 @@ try {
     hostname:mode==='hostname'?'other.invalid':location.hostname,
     action:mode==='action'?'wrong':'recommend',
     'error-codes':mode==='secret'?['invalid-input-secret']:mode==='expired'?['timeout-or-duplicate']:['invalid-input-response']
-  });}
+  },{status:mode==='secret'?400:200});}
   googleCalls++;const body=JSON.parse(options.body);
   assert(options.headers['x-goog-api-key']==='FAKE_SECRET','secret only in server request');
   assert(!body.tools && body.generationConfig.maxOutputTokens===2300,'bounded request');

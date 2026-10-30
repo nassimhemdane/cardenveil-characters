@@ -40,15 +40,16 @@ export async function onRequestPost({request,env,waitUntil}) {
         remoteip:request.headers.get('CF-Connecting-IP') || undefined})
     });
     const check=await verification.json();
-    if(!verification.ok)return json({detail:'Service de vérification temporairement indisponible.',code:'turnstile_unavailable'},503);
     if(!check.success){
       const codes=Array.isArray(check['error-codes'])?check['error-codes']:[];
       if(codes.includes('invalid-input-secret') || codes.includes('missing-input-secret'))
         return json({detail:'Clé secrète Turnstile refusée. Vérifiez TURNSTILE_SECRET_KEY et son association à la Site key du même widget.',code:'turnstile_secret_invalid'},503);
       if(codes.includes('timeout-or-duplicate'))
         return json({detail:'La vérification a expiré ou a déjà été utilisée. Attendez le nouveau Success puis réessayez.',code:'turnstile_token_expired'},403);
-      if(codes.includes('internal-error'))
+      if(codes.includes('internal-error') || verification.status>=500 || verification.status===429)
         return json({detail:'Turnstile est temporairement indisponible. Réessayez.',code:'turnstile_unavailable'},503);
+      if(codes.includes('bad-request'))
+        return json({detail:'Turnstile refuse la requête de validation. Vérifiez que les clés ont été copiées seules, sans nom de variable ni guillemets.',code:'turnstile_bad_request'},503);
       return json({detail:'Jeton Turnstile refusé. Rechargez la page et réessayez ; si cela persiste, vérifiez que les deux clés proviennent du même widget.',code:'turnstile_token_invalid'},403);
     }
     if(check.hostname!==new URL(request.url).hostname)
