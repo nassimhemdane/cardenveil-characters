@@ -47,7 +47,8 @@ export async function onRequestPost({request,env,waitUntil}) {
       if(codes.includes('timeout-or-duplicate'))
         return json({detail:'La vérification a expiré ou a déjà été utilisée. Attendez le nouveau Success puis réessayez.',code:'turnstile_token_expired'},403);
       if(codes.includes('internal-error') || verification.status>=500 || verification.status===429)
-        return json({detail:'Turnstile est temporairement indisponible. Réessayez.',code:'turnstile_unavailable'},503);
+        return json({detail:'Turnstile est temporairement indisponible. Réessayez.',code:'turnstile_unavailable',
+          upstreamStatus:verification.status, errors:codes.filter(c=>['internal-error','invalid-input-response','timeout-or-duplicate','bad-request'].includes(c))},503);
       if(codes.includes('bad-request'))
         return json({detail:'Turnstile refuse la requête de validation. Vérifiez que les clés ont été copiées seules, sans nom de variable ni guillemets.',code:'turnstile_bad_request'},503);
       return json({detail:'Jeton Turnstile refusé. Rechargez la page et réessayez ; si cela persiste, vérifiez que les deux clés proviennent du même widget.',code:'turnstile_token_invalid'},403);
