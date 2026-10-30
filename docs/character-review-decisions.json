@@ -1,0 +1,20 @@
+{
+  "intentionalSuitExceptions": {
+    "agaric": {
+      "scope": "all capacities",
+      "reason": "User rejected the proposed change; Bad trip remains spade and all other colours stay unchanged.",
+      "confirmedOn": "2026-10-30"
+    },
+    "afreaux-shaufeois": {
+      "scope": "all capacities",
+      "reason": "User requested no changes after review; Enochian remains spade.",
+      "confirmedOn": "2026-10-30"
+    },
+    "brah-him": {
+      "color": "spade",
+      "scope": "all capacities",
+      "reason": "User confirmed that every capacity is intentionally spade; do not reclassify by effect.",
+      "confirmedOn": "2026-10-30"
+    }
+  }
+}
