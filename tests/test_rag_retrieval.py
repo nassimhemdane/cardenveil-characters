@@ -54,6 +54,22 @@ try{
  const real=await (await fetch('/web/public/data/rag-index.json')).json();
  const dwarfs=retrieve(real,'nain').candidates.map(c=>c.id).sort();
  assert(JSON.stringify(dwarfs)===JSON.stringify(['anain-proviste','darion-blaris','foist','goldomus']),'all four real dwarf-labelled sheets');
+ assert(retrieve(real,'Goldomus').candidates.length===1 && retrieve(real,'Goldomus').candidates[0].id==='goldomus','exact declared name');
+ assert(retrieve(real,'Darion').candidates.length===1 && retrieve(real,'Darion').candidates[0].id==='darion-blaris','unique first name');
+ assert(!identityIntent(real,'Je veux un personnage mobile utilisant la foudre').required.includes('foudre'),'an element is not a race because one sheet says Drakeide foudre');
+ assert(retrieve(real,'un personnage mobile utilisant la foudre, difficulté max 4').candidates.some(c=>c.id==='hemdane-polytechnique'),'race qualifiers cannot exclude a matching centaur');
+ const fields={version:'all-fields',characters:[
+   {...make('scholar',8,10,18,12),fields:{skills:{arcanes:{trained:true}},derived:{pvMax:100}}},
+   {...make('fighter',18,10,6,10),fields:{skills:{arcanes:{trained:false}},derived:{pvMax:150}}}],documents:[
+   {id:'scholar:story',characterId:'scholar',category:'narrative',features:[],title:'Objectif',text:'Son objectif est de retrouver sa famille disparue dans un incendie.'},
+   {id:'scholar:notes',characterId:'scholar',category:'reference',features:[],title:'Notes',text:'Le moulin possède un passage secret.'},
+   {id:'fighter:weapon',characterId:'fighter',category:'equipment',features:[],title:'Arme',text:'Une hache qui brise les rochers.'}]};
+ assert(retrieve(fields,'maîtrise des arcanes').candidates.every(c=>c.id==='scholar'),'mastery reads trained flag, not mentions');
+ const trained=retrieve(fields,'maîtrise des arcanes');assert(trained.candidates.length===1,'mastery candidate available');
+ assert(retrieve(fields,'PV minimum 140').candidates[0].id==='fighter','derived numeric filter');
+ assert(retrieve(fields,'passage secret').candidates[0].id==='scholar','notes are searchable');
+ assert(retrieve(fields,'histoire de famille dans un incendie').candidates[0].id==='scholar','narrative is searchable without inventing fire mechanics');
+ assert(retrieve(fields,'utiliser le feu').candidates.length===0,'narrative fire is not a fire capability');
  document.querySelector('#result').textContent='PASS';
 }catch(error){document.querySelector('#result').textContent='FAIL '+error.message;}
 </script>'''

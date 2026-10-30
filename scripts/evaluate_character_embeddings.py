@@ -51,7 +51,7 @@ import {retrieve} from '/web/rag-retrieval.js';
 try{
  const index=await (await fetch('/web/public/data/rag-index.json')).json();
  const queries=await (await fetch('/gemini-output/rag-evaluation/query-vectors.json')).json();
- if(index.model!==queries.model || index.dimensions!==queries.dimensions || index.embeddedDocuments!==index.documents.length)throw Error('Incomplete or incompatible index');
+ if(index.model!==queries.model || index.dimensions!==queries.dimensions || index.embeddedDocuments!==(index.embeddingRequiredDocuments??index.documents.length))throw Error('Incomplete or incompatible index');
  const report=queries.queries.map(q=>{
    const started=performance.now(),result=retrieve(index,q.message,q.vector);
    return {message:q.message,mode:result.mode,milliseconds:performance.now()-started,

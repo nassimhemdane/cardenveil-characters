@@ -4,11 +4,21 @@
 
 Les ZIP de `Final` restent la source de vérité ; leur schéma n'est pas modifié.
 Le build produit `data/rag-index.json` à partir des caractéristiques Force,
-Agilité, Esprit et Social et de passages mécaniques complets : un par capacité,
-un par totem non vide. Les descriptions narratives et les résumés de lore ne
-participent pas au classement.
+Agilité, Esprit et Social et de passages typés couvrant tous les champs renseignés :
+identité, valeurs dérivées, défense, ressources, compétences, narratif, traits,
+capacités, totem, armes, inventaire, maîtrises, progression, actions, réactions,
+notes et métadonnées du catalogue. Les futurs champs inconnus sont aussi repris
+dans des passages de référence, au lieu d'être ignorés silencieusement.
 
-Le corpus actuel comporte 67 personnages, 543 capacités et 67 totems. Contrairement
+Les images et leurs données binaires/base64, identifiants techniques, dates
+techniques, versions de schéma et liens de téléchargement ne sont pas des critères
+sémantiques. Les valeurs vides sont omises ; zéro et faux restent indexés.
+Chaque passage indique sa catégorie et les chemins JSON d'origine. Le narratif et
+le catalogue sont recherchables, mais ne prouvent pas l'existence d'un pouvoir.
+Les filtres d'effets mécaniques ne sont pas satisfaits par une simple mention
+dans une histoire. Les statistiques demandées conservent leur priorité de classement.
+
+Le corpus inclut 67 personnages, 543 capacités et 67 totems, plus tous les autres champs. Contrairement
 au précédent résumé de 1 100 caractères par personnage, les capacités en fin de
 fiche sont elles aussi indexées et peuvent être retrouvées.
 
@@ -23,6 +33,11 @@ capacité contient ce mot. Une demande d'identité seule (« nain », « nains �
 six, sans embedding de question ni génération Gemini. La citation provient du champ
 de race réel, pas d'une déduction du modèle. La source Foist indique « Cochon Nain » :
 il apparaît donc avec Anain, Darion et Goldomus pour cette recherche.
+Les noms complets et prénoms uniques sont également recherchés directement.
+Les demandes explicites de maîtrise utilisent le booléen de compétence, pas une
+mention dans une capacité. Les comparaisons numériques reconnues sur PV max,
+mouvement, initiative, volonté, canalisation, armure et parade lisent leurs champs
+réels ; une valeur non renseignée ne satisfait pas une contrainte numérique.
 
 1. Reconnaissance déterministe de préférences statistiques françaises : physique,
    agile, mental/magique, social, ainsi que des préférences faibles/négatives.
@@ -70,7 +85,12 @@ reste une appréciation du modèle, pas une preuve formelle.
   quand les stats, passages, embeddings ou règles de classement changent.
 - À froid : au maximum un appel d'embedding de question puis un appel de génération
   d'explication. Aucun embedding documentaire n'est généré durant une requête utilisateur.
-- Si l'index vectoriel est incomplet ou l'embedding de question échoue, repli
+- Les champs numériques et les tableaux structurés de compétences/propriétés sont
+  recherchés directement et par index lexical, sans embedding inutile de chaque
+  nombre ou booléen. Les passages textuels sont indexés sémantiquement. La couverture
+  des embeddings est vérifiée contre `embeddingRequiredDocuments`, pas contre les
+  documents purement structurés.
+- Si l'index vectoriel textuel est incomplet ou l'embedding de question échoue, repli
   explicite sur stats + BM25, indiqué dans l'interface. Aucune fausse affirmation
   de recherche vectorielle. Pas de tentative cachée ni de bascule payante.
 - Turnstile et les contrôles de même origine restent obligatoires.
@@ -120,6 +140,19 @@ contrôlés avant de déclarer l'index vectoriel opérationnel.
   d'Hemdane et une explication citant son Agilité 18 et sa capacité de foudre.
 - Ces quatre cas sont un smoke test, pas une évaluation exhaustive ni une preuve
   que les pondérations choisies sont optimales.
+
+### Extension à tous les champs
+
+Le corpus élargi comprend 1 131 passages : 799 passages textuels couverts par les
+embeddings (788 vecteurs distincts), et 332 passages structurés numériques ou de
+compétences, recherchables directement et lexicalement. Le build vérifie qu'aucun
+chemin de champ renseigné n'a été omis, hors exclusions techniques explicites.
+Cette extension ajoute 187 vecteurs uniques sans recalculer les anciens.
+
+Les recherches narratives explicites peuvent faire remonter les histoires,
+objectifs, croyances ou notes. Sans demande narrative explicite, ces passages ont
+un poids réduit par rapport aux mécaniques et aux valeurs structurées. Les profils
+de classe suggérés restent déterminés par les statistiques, pas par le lore.
 
 `scripts/evaluate_character_embeddings.py --confirm-free-tier` génère ou réutilise
 quatre embeddings de questions, puis produit les classements et leurs sources

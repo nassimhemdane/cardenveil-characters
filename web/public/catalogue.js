@@ -100,7 +100,7 @@
           });
           if(!response.ok){const error=await response.json().catch(()=>null);throw Error(error?.detail || 'Le modèle ne peut pas répondre pour le moment. Réessayez ou utilisez les filtres.');}
           const result = await response.json();
-          if(result.retrieval)$('guide-mode').textContent=result.retrieval.mode==='structured-identity'?'Recherche exacte dans la race déclarée des fiches · aucun appel Gemini':`Recherche prioritaire sur les statistiques · ${result.retrieval.mode.includes('embeddings')?'capacités recherchées par embeddings':'recherche mécanique par mots-clés (embeddings indisponibles)'} · phrase transmise à Google`;
+          if(result.retrieval)$('guide-mode').textContent=result.retrieval.mode==='structured-identity'?'Recherche exacte dans l’identité des fiches · aucun appel Gemini':`Recherche sur tous les champs, statistiques prioritaires · ${result.retrieval.mode.includes('embeddings')?'recherche par embeddings':'recherche par mots-clés (embeddings indisponibles)'} · phrase transmise à Google`;
           const matches = (result.matches || []).slice(0,6).map(match => ({
             ...match, row: rows.find(row => row.c.id === match.character_id)
           })).filter(match => match.row);

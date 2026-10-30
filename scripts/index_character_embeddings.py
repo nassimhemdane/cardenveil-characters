@@ -37,7 +37,7 @@ def main():
         'model': EMBEDDING_MODEL, 'dimensions': DIMENSIONS, 'vectors': {}}
     if stored['model'] != EMBEDDING_MODEL or stored['dimensions'] != DIMENSIONS:
         raise SystemExit('Incompatible existing index; do not mix embedding spaces.')
-    pending = list({d['hash']: d for d in documents if d['hash'] not in stored['vectors']}.values())[:args.limit]
+    pending = list({d['hash']: d for d in documents if d.get('embeddingRequired',True) and d['hash'] not in stored['vectors']}.values())[:args.limit]
     print(f'{len(documents)} passages; {len(pending)} uncached passages to embed.', flush=True)
     for start in range(0, len(pending), args.batch_size):
         if start and args.pause_seconds:

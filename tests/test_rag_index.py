@@ -27,9 +27,10 @@ def test_every_ability_is_separately_retrievable(monkeypatch):
     """Never drop late abilities or embed lore as if it were a mechanical fact."""
     m=module(monkeypatch)
     index=m.build_rag_index([character()])
-    assert len(index['documents'])==10
+    assert len([d for d in index['documents'] if d['id'].endswith(':totem') or ':capacity-' in d['id']])==10
     assert any(d['id']=='hero:capacity-9' for d in index['documents'])
-    assert not any('invincible' in d['text'] for d in index['documents'])
+    assert any('invincible' in d['text'] for d in index['documents'])
+    assert all(d['category']=='catalogue' and d['features']==[] for d in index['documents'] if 'invincible' in d['text'])
     assert index['characters'][0]['stats']['force']==18
     assert index['characters'][0]['race']=='Nain'
 
@@ -57,3 +58,18 @@ def test_quantization_rejects_invalid_vectors(monkeypatch):
     assert len(base64.b64decode(packed['data']))==768
     for bad in ([1], [0]*768, [float('nan')]*768):
         with pytest.raises(ValueError):m.quantize(bad)
+
+
+def test_every_populated_field_is_covered(monkeypatch):
+    """Index names, skills, narrative, gear, notes and future nested fields, not image bytes."""
+    m=module(monkeypatch);c=character()
+    c.update({'derived':{'pvMax':150,'bonusAttaque':''},'skills':{'arcanes':{'trained':False,'bonus':0}},
+        'narrative':{'objectif':'Retrouver sa famille.','traitsSpeciaux':['Résiste au feu.']},
+        'notes':'Passage secret du moulin.', 'inventoryItems':[{'name':'Anneau','description':'Sert à communiquer.'}],
+        'weaponMasteries':[{'family':'Hache','level':2}], 'futureBlock':{'enabled':False,'value':0},
+        'portrait':'data:image/png;base64,NOT_SEARCHABLE'})
+    index=m.build_rag_index([c])
+    covered={path for doc in index['documents'] for path in doc['paths']}
+    assert {path for path,value in m.field_leaves(c)}<=covered
+    assert not any('NOT_SEARCHABLE' in d['text'] for d in index['documents'])
+    assert index['characters'][0]['fields']['skills']['arcanes']['trained'] is False

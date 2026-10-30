@@ -2,6 +2,6 @@
 export function onRequestGet({env}) {
   const enabled = Boolean(env.GEMINI_API_KEY && env.TURNSTILE_SECRET_KEY &&
     env.TURNSTILE_SITE_KEY && env.GEMINI_FREE_TIER_CONFIRMED === '1');
-  return Response.json({enabled, provider: 'gemini', version:'rag-stats-first-v2-identity', siteKey: enabled ? env.TURNSTILE_SITE_KEY.trim() : ''},
+  return Response.json({enabled, provider: 'gemini', version:'rag-stats-first-v3-all-fields', siteKey: enabled ? env.TURNSTILE_SITE_KEY.trim() : ''},
     {headers: {'Cache-Control':'no-store'}});
 }

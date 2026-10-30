@@ -73,7 +73,7 @@ export async function onRequestPost({request,env,waitUntil}) {
     if(cached)return json(await cached.json());
     let queryVector=null;
     const identity=identityIntent(index,message);
-    if(!identity.only && index.embeddedDocuments===index.documents.length){
+    if(!identity.only && index.embeddedDocuments===(index.embeddingRequiredDocuments??index.documents.length)){
       try{queryVector=await embedQuery(message,index,env.GEMINI_API_KEY);}catch{}
     }
     const retrieval=retrieve(index,message,queryVector);
@@ -84,8 +84,8 @@ export async function onRequestPost({request,env,waitUntil}) {
       return json(empty);
     }
     if(identity.only){
-      const result={explanation:'Personnages dont la race déclarée dans la fiche correspond à votre recherche.',
-        matches:candidates.map(c=>({character_id:c.id,comment:`${c.name} correspond à votre demande : sa race est « ${c.race} ».`,
+      const result={explanation:'Personnages dont l’identité déclarée dans la fiche correspond à votre recherche.',
+        matches:candidates.map(c=>({character_id:c.id,comment:identity.names.length?`La fiche demandée est celle de ${c.name}.`:`${c.name} correspond à votre demande : sa race est « ${c.race} ».`,
           evidence:c.passages[0].text,source_id:c.passages[0].id,stats:c.stats,profile:c.profile,race:c.race,
           sources:[{id:c.passages[0].id,title:c.passages[0].title}]})),
         retrieval:{mode:'structured-identity',version:RAG_VERSION}};
@@ -112,7 +112,8 @@ export async function onRequestPost({request,env,waitUntil}) {
       match.stats=candidate.stats;match.profile=candidate.profile;match.race=candidate.race;
       match.sources=candidate.passages.map(p=>({id:p.id,title:p.title}));
     }
-    result.retrieval={mode:retrieval.mode,version:RAG_VERSION,embedded:index.embeddedDocuments,total:index.documents.length};
+    result.retrieval={mode:retrieval.mode,version:RAG_VERSION,embedded:index.embeddedDocuments,total:index.documents.length,
+      embeddingRequired:index.embeddingRequiredDocuments??index.documents.length};
     waitUntil(caches.default.put(cacheKey,Response.json(result,{headers:{'Cache-Control':'public, max-age=3600'}})));
     return json(result);
   } catch {

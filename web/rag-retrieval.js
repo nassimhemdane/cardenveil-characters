@@ -1,5 +1,5 @@
 /** Deterministic hybrid retrieval: numerical attributes outrank descriptive prose. */
-export const RAG_VERSION = 'stats-first-v2-identity';
+export const RAG_VERSION = 'stats-first-v3-all-fields';
 const stats = ['force','agilite','esprit','social'];
 const labels = {force:'Force',agilite:'Agilité',esprit:'Esprit',social:'Social'};
 const normalize = text => String(text||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
@@ -21,12 +21,13 @@ const themes={
 };
 const features=text=>Object.entries(themes).filter(([,pattern])=>pattern.test(normalize(text))).map(([name])=>name);
 
-const raceWord=word=>({elf:'elfe',elfs:'elfe',elfes:'elfe',efle:'elfe',efles:'elfe',orques:'orc',orque:'orc',orcs:'orc',humaine:'humain',humaines:'humain',naine:'nain',naines:'nain'}[word] || word.replace(/s$/,''));
+const raceWord=word=>{const singular=word.replace(/s$/,'');return ({elf:'elfe',efle:'elfe',orque:'orc',humaine:'humain',naine:'nain',centaure:'centaur',haleflin:'halfelin',halflin:'halfelin',halfin:'halfelin',tiffeline:'tiffelin',tieffelin:'tiffelin',tieffeline:'tiffelin'}[singular] || singular);};
 const raceWords=text=>(normalize(text).match(/[a-z]+/g)||[]).map(raceWord);
-const raceQualifiers=new Set(['haut','haute','noir','noire','demi','grand','grande','petit','petite','de','du','et','des']);
+const raceQualifiers=new Set(['haut','haute','noir','noire','demi','grand','grande','petit','petite','boi','mort','vivant','de','du','et','des']);
 
 export function identityIntent(index,message){
-  const known=new Set(index.characters.flatMap(c=>raceWords(c.race)).filter(w=>w.length>=3&&!raceQualifiers.has(w)));
+  const mechanicalWords=new Set(['foudre','feu','glace','poison','soin']);
+  const known=new Set(index.characters.flatMap(c=>raceWords(c.race)).filter(w=>w.length>=3&&!raceQualifiers.has(w)&&!mechanicalWords.has(w)));
   const raw=normalize(message).match(/[a-z0-9]+/g)||[], words=raw.map(raceWord);
   const required=[],excluded=[];
   for(let i=0;i<words.length;i++){
@@ -35,14 +36,33 @@ export function identityIntent(index,message){
     const negative=/\b(sans|pas|ni|eviter)\b/.test(prefix);
     const destination=negative?excluded:required;
     if(!destination.includes(words[i]))destination.push(words[i]);
-    for(const neighbour of [words[i-1],words[i+1]]){
-      if(neighbour && raceQualifiers.has(neighbour) && !['de','du','et','des'].includes(neighbour) && !destination.includes(neighbour))destination.push(neighbour);
+    for(const neighbour of [words[i-1],words[i+1],words[i+2]]){
+      if(neighbour && raceQualifiers.has(neighbour) && !['de','du','et','des'].includes(neighbour) && !destination.includes(neighbour) &&
+          index.characters.some(c=>{const parts=raceWords(c.race);return parts.includes(words[i])&&parts.includes(neighbour);})){destination.push(neighbour);}
     }
   }
+  const undead=/\bmorts?\s+vivants?\b/.exec(normalize(message));
+  if(undead){
+    const prefix=normalize(message).slice(Math.max(0,undead.index-30),undead.index);
+    (/\b(sans|pas|ni|eviter)\b/.test(prefix)?excluded:required).push('mort','vivant');
+  }
   const recognized=new Set([...required,...excluded]);
+  const cleanName=value=>normalize(value).replace(/[^a-z0-9]+/g,' ').trim();
+  const messageName=' '+cleanName(message)+' ';
+  const firstCounts=new Map();
+  for(const c of index.characters){const first=cleanName(c.name).split(' ')[0];firstCounts.set(first,(firstCounts.get(first)||0)+1);}
+  const names=[];
+  for(const c of index.characters){
+    const full=cleanName(c.name), first=full.split(' ')[0];
+    const aliases=[full,cleanName(c.id)];
+    if(first.length>=4&&firstCounts.get(first)===1)aliases.push(first);
+    if(aliases.some(alias=>alias.length>=4&&messageName.includes(' '+alias+' '))){
+      names.push(c.id);for(const w of full.split(' '))recognized.add(raceWord(w));
+    }
+  }
   const boilerplate=new Set('je cherche recherche veux voudrai souhaite recommande moi montre propose donne tous toute le la les un une des de du d au aux personnage personnage race peuple et ou s il te plait plutot'.split(' ').map(raceWord));
-  const only=required.length>0 && words.every(w=>recognized.has(w)||boilerplate.has(w));
-  return {required,excluded,any:/\bou\b/.test(normalize(message)),only};
+  const only=(required.length>0||names.length>0) && words.every(w=>recognized.has(w)||boilerplate.has(w));
+  return {required,excluded,names,any:/\bou\b/.test(normalize(message)),only};
 }
 
 function matchesIdentity(character,intent){
@@ -50,7 +70,8 @@ function matchesIdentity(character,intent){
   const bases=intent.required.filter(w=>!raceQualifiers.has(w));
   const qualifiers=intent.required.filter(w=>raceQualifiers.has(w));
   return (!bases.length || (intent.any?bases.some(w=>present.has(w)):bases.every(w=>present.has(w)))) &&
-    qualifiers.every(w=>present.has(w)) && !intent.excluded.some(w=>present.has(w));
+    qualifiers.every(w=>present.has(w)) && !intent.excluded.some(w=>present.has(w)) &&
+    (!intent.names.length||intent.names.includes(character.id));
 }
 
 export function parseIntent(message) {
@@ -71,13 +92,27 @@ export function parseIntent(message) {
     text.match(/(?:difficulte|complexite)\s*(?:de\s*)?(\d(?:[.,]\d)?)(?:\s*\/\s*5)?\s*(?:maximum|max|au plus)/);
   const maxDifficulty=difficulty?Number(difficulty[1].replace(',','.')):
     (/\b(debutant|debutante|je debute|facile a jouer|simple a jouer)\b/.test(text)?2:null);
+  const narrativeQuery=/\b(histoire|passe|background|personnalite|croyance|croyances|enfance|orphelin|famille|reputation|objectif)\b/.test(text);
   const requiredThemes=[],excludedThemes=[];
   for(const [name,pattern] of Object.entries(themes)){
+    if(narrativeQuery)continue;
     const match=pattern.exec(text);if(!match)continue;
     const prefix=text.slice(Math.max(0,match.index-35),match.index).split(/[,;]|\b(?:mais|et)\b/).pop();
     (/\b(sans|pas|eviter|ni)\b/.test(prefix)?excludedThemes:requiredThemes).push(name);
   }
-  return {preferences,constraints,maxDifficulty,requiredThemes,excludedThemes};
+  const skillNames={athletisme:'athletisme',resilience:'resilience',acrobaties:'acrobaties',discretion:'discretion',escamotage:'escamotage',
+    arcanes:'arcanes',investigation:'investigation',perception:'perception',culture:'culture',survie:'survie',nature:'survie',persuasion:'persuasion',
+    tromperie:'tromperie',intimidation:'intimidation',representation:'representation',perspicacite:'perspicacite',dressage:'dressage'};
+  const requiredSkills=[];
+  for(const [label,key] of Object.entries(skillNames))if(new RegExp(`\\b(?:maitrise|maitrisee|competent|competente|doue|douee)\\s+(?:(?:en|de|du|des|la|le|les|l|d)\\s+)*${label}\\b`).test(text))requiredSkills.push(key);
+  const fieldConstraints=[];
+  const fields={'pv(?: max(?:imum)?)?':'derived.pvMax',mouvement:'derived.mouvement',vitesse:'derived.mouvement',initiative:'derived.initiative',
+    volonte:'derived.volonte',canalisation:'derived.canalisation',armure:'defense.armure',parade:'defense.parade'};
+  for(const [label,path] of Object.entries(fields)){
+    const rule=new RegExp(`\\b(?:${label})\\s*(>=|<=|>|<|au moins|au plus|minimum|min|max|maximum)\\s*(-?\\d+)`,'g');
+    for(const m of text.matchAll(rule))fieldConstraints.push({path,operator:m[1],value:Number(m[2])});
+  }
+  return {preferences,constraints,maxDifficulty,requiredThemes,excludedThemes,requiredSkills,fieldConstraints,narrativeQuery};
 }
 
 export function statisticalProfile(values) {
@@ -89,14 +124,18 @@ export function statisticalProfile(values) {
 
 function respects(character,intent){
   if(intent.maxDifficulty!==null && (character.difficulty==null || character.difficulty>intent.maxDifficulty))return false;
-  return intent.constraints.every(({stat,operator,value})=>{
-    const n=Number(character.stats?.[stat]);
+  if(!intent.requiredSkills.every(key=>character.fields?.skills?.[key]?.trained===true))return false;
+  const compare=(raw,operator,value)=>{
+    if(raw===''||raw===null||raw===undefined)return false;
+    const n=Number(raw);
     if(!Number.isFinite(n))return false;
     if(['>=','au moins','minimum','min'].includes(operator))return n>=value;
     if(['<=','au plus','maximum','max'].includes(operator))return n<=value;
     if(['>','superieur a'].includes(operator))return n>value;
     return n<value;
-  });
+  };
+  return intent.constraints.every(({stat,operator,value})=>compare(character.stats?.[stat],operator,value)) &&
+    intent.fieldConstraints.every(({path,operator,value})=>compare(path.split('.').reduce((v,key)=>v?.[key],character.fields),operator,value));
 }
 
 function normalizeVector(values,dimensions){
@@ -134,8 +173,10 @@ export function retrieve(index,message,queryEmbedding=null){
     }
     const semantic=query&&doc.vector?cosine(query,doc.vector):0;
     const lexicalScore=lexical/(lexical+4);
-    const docScore=query ? .75*Math.max(0,semantic)+.25*lexicalScore : lexicalScore;
-    const row={...doc,features:doc.features||features(doc.text),lexicalScore,semantic,docScore};
+    const categoryWeight=['narrative','catalogue','reference'].includes(doc.category)&&!intent.narrativeQuery ? .75 : 1;
+    const docScore=(query&&doc.vector ? .75*Math.max(0,semantic)+.25*lexicalScore : lexicalScore)*categoryWeight;
+    const mechanical=!doc.category||['mechanical','equipment'].includes(doc.category);
+    const row={...doc,features:mechanical?(doc.features||features(doc.text)):[],lexicalScore,semantic,docScore};
     if(!byCharacter.has(doc.characterId))byCharacter.set(doc.characterId,[]);
     byCharacter.get(doc.characterId).push(row);
   }
@@ -157,17 +198,17 @@ export function retrieve(index,message,queryEmbedding=null){
     attributeScore/=Math.max(1,Object.keys(intent.preferences).length);
     const relevance=passages[0].docScore*.75+(passages[1]?.docScore||0)*.15+(passages[2]?.docScore||0)*.1;
     // Do not invent a recommendation on text-only searches with no retrieved evidence.
-    if(!hasStats && relevance===0 && intent.maxDifficulty===null && !intent.constraints.length && !intent.identity.required.length)continue;
+    if(!hasStats && relevance===0 && intent.maxDifficulty===null && !intent.constraints.length && !intent.fieldConstraints.length && !intent.requiredSkills.length && !intent.identity.required.length && !intent.identity.names.length)continue;
     const score=hasStats ? .65*attributeScore+.35*relevance : relevance;
     const profile=statisticalProfile(c.stats);
     const numerical=stats.map(key=>`${labels[key]} ${c.stats[key]}`).join(', ');
-    if(intent.identity.required.length || intent.identity.excluded.length)passages.unshift({
+    if(intent.identity.required.length || intent.identity.excluded.length || intent.identity.names.length)passages.unshift({
       id:`${c.id}:identity`,title:'Identité de la fiche',text:`${c.name}. Race déclarée : ${c.race}. Statistiques : ${numerical}.`
     });
     const facts=`Statistiques : ${numerical}. Profil suggéré par les statistiques : ${profile}.\n`+
       passages.map(p=>`[${p.id}] ${p.text}`).join('\n');
     ranked.push({id:c.id,name:c.name,race:c.race,difficulty:c.difficulty,classes:c.classes,stats:c.stats,profile,
-      facts,score,attributeScore,relevance,passages:passages.map(p=>({id:p.id,title:p.title,text:p.text}))});
+      facts,score,attributeScore,relevance,passages:passages.map(p=>({id:p.id,title:p.title,text:p.text,category:p.category||'identity',paths:p.paths||[]}))});
   }
   ranked.sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id));
   return {candidates:ranked.slice(0,6),intent,mode:query?'stats+embeddings+bm25':'stats+bm25'};
