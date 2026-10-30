@@ -6,6 +6,7 @@ import base64
 import binascii
 import hashlib
 import json
+import re
 import shutil
 import zipfile
 from pathlib import Path
@@ -110,6 +111,18 @@ def build() -> None:
         json.dumps(characters, ensure_ascii=False, separators=(",", ":")),
         encoding="utf-8",
     )
+    # Small server-side recommendation context: no image data or full sheet parsing per request.
+    recommendations = []
+    for character in characters:
+        catalog = character.get("catalog", {})
+        facts = [catalog.get("gameplaySummary"), catalog.get("loreSummary"),
+                 character.get("totem", {}).get("description"),
+                 *[f"{a['name']}: {a['description']}" for a in character.get("capacities", [])]]
+        recommendations.append({"id": character["id"], "name": character["identity"]["nom"],
+            "difficulty": catalog.get("difficulty"), "classes": catalog.get("class", []),
+            "facts": re.sub(r"\s+", " ", " | ".join(str(v) for v in facts if v))[:1100]})
+    (DATA / "recommendation-catalog.json").write_text(
+        json.dumps(recommendations, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     write_index(PUBLIC, characters)
     build_rules(ROOT, PUBLIC)
     headers = WEB / "_headers"

@@ -52,8 +52,30 @@
     }
     for(const id of ['search','class-filter','difficulty-filter','sort']) $(id).addEventListener(id==='search'?'input':'change',draw);
     $('reset-search').onclick=()=>{for(const id of ['search','class-filter','difficulty-filter'])$(id).value='';$('sort').value='relevance';draw();$('search').focus();};
-    let selected=[], excluded=[], easy=false, localAI=false;
-    fetch('/api/gm/config').then(r=>r.ok?r.json():null).then(c=>{localAI=c?.providers?.[0]?.id==='ollama';if(localAI)$('guide-mode').textContent='Ollama local · vos envies sont interprétées sur cet ordinateur';}).catch(()=>{});
+    let selected=[], excluded=[], easy=false, localAI=false, publicAI=false, humanToken='', widget=null;
+    const aiReady = (async()=>{
+      try {
+        const response=await fetch('/api/recommendation-config',{signal:AbortSignal.timeout(8000)});
+        const config=response.ok && response.headers.get('content-type')?.includes('application/json') ? await response.json() : null;
+        if(config?.enabled && config.siteKey){
+          publicAI=true;
+          $('guide-mode').textContent='Gemini · jusqu’à 6 recommandations commentées. Votre phrase est envoyée à Google ; évitez les données personnelles.';
+          $('guide-answer').textContent='Décrivez votre style, votre thème ou vos envies de jeu.';
+          const container=document.createElement('div');container.id='guide-verification';$('guide-form').append(container);
+          const script=document.createElement('script');script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;
+          script.onload=()=>{widget=window.turnstile.render(container,{sitekey:config.siteKey,action:'recommend',
+            callback:token=>{humanToken=token;},'expired-callback':()=>{humanToken='';},'error-callback':()=>{humanToken='';}});};
+          script.onerror=()=>{$('guide-answer').textContent='La vérification anti-abus est bloquée. Autorisez Cloudflare Turnstile ou utilisez les filtres.';};
+          document.head.append(script);
+          return;
+        }
+      } catch {}
+      try {
+        const r=await fetch('/api/gm/config',{signal:AbortSignal.timeout(8000)}),c=r.ok?await r.json():null;
+        localAI=c?.providers?.[0]?.id==='ollama';
+        if(localAI){$('guide-mode').textContent='Qwen via Ollama local · jusqu’à 6 recommandations commentées';$('guide-answer').textContent='Décrivez votre envie : le modèle comparera les fiches et expliquera chaque proposition.';}
+      } catch {}
+    })();
     function recommend(note='') {
       excluded=excluded.filter(role=>!selected.includes(role));
       root.querySelectorAll('[data-role]').forEach(b=>{const on=selected.includes(b.dataset.role);b.classList.toggle('active',on);b.setAttribute('aria-pressed',on);});
@@ -67,19 +89,30 @@
     $('guide-easy').onclick=()=>{easy=!easy;recommend();};
     $('guide-form').onsubmit=async e=>{
       e.preventDefault(); const message=$('guide-message').value.trim(); if(!message)return;
-      const button=e.submitter;button.disabled=true;$('guide-answer').textContent='Je cherche dans les fiches…';
+      const button=e.submitter || $('guide-form').querySelector('button');button.disabled=true;$('guide-answer').textContent='Je cherche dans les fiches…';
       try {
-        if(localAI){
-          const r=await fetch('/api/gm/character-preferences',{method:'POST',headers:{'Content-Type':'application/json','X-Cardenveil-Client':'gm'},body:JSON.stringify({message,roles:selected,excluded_roles:excluded,easy})});
-          if(!r.ok)throw Error('Le modèle local est indisponible. Vous pouvez utiliser les boutons de critères.');
-          const p=await r.json();selected=p.roles;excluded=p.excluded_roles||[];easy=p.easy;recommend(p.clarification+(excluded.length?' Les fiches mentionnant les roles exclus sont retirees ; une fiche incomplete ne permet pas de garantir leur absence.':''));
-        } else {
+        await aiReady;
+        if(localAI || publicAI){
+          if(publicAI && !humanToken)throw Error('Attendez la validation anti-abus ci-dessus puis réessayez.');
+          const response = await fetch(publicAI?'/api/recommendations':'/api/gm/character-recommendations', {
+            method:'POST', headers:{'Content-Type':'application/json','X-Cardenveil-Client':publicAI?'catalogue':'gm'},
+            body:JSON.stringify(publicAI?{message,token:humanToken}:{message}),signal:AbortSignal.timeout(55000)
+          });
+          if(!response.ok){const error=await response.json().catch(()=>null);throw Error(error?.detail || 'Le modèle ne peut pas répondre pour le moment. Réessayez ou utilisez les filtres.');}
+          const result = await response.json();
+          const matches = (result.matches || []).slice(0,6).map(match => ({
+            ...match, row: rows.find(row => row.c.id === match.character_id)
+          })).filter(match => match.row);
+          $('guide-answer').innerHTML = `<p>${escape(result.explanation)}</p><div class="guide-results">${matches.map(match=>`<article><h3><a href="/personnages/${encodeURIComponent(match.character_id)}/">${escape(plain(match.row.c.identity.nom))}</a></h3><p>Complexité : ${escape(match.row.c.catalog?.difficulty ?? 'non renseignée')} / 5</p><p>${escape(match.comment)}</p><blockquote>${escape(match.evidence)}</blockquote><a class="button" href="/personnages/${encodeURIComponent(match.character_id)}/">Lire la fiche source</a></article>`).join('')}</div>${matches.length?'':'<p>Aucune fiche suffisamment proche de cette demande.</p>'}`;
+          return;
+        }
+        {
           const value=norm(message);
           if(/\b(sans|pas|sauf|eviter|ni)\b/.test(value)){ $('guide-answer').textContent='Pour respecter vos exclusions, choisissez directement les critères ci-dessus. Le guide du catalogue ne sait pas interpréter cette phrase avec assez de certitude.';return; }
           selected=Object.keys(roles).filter(k=>roles[k].some(w=>value.includes(w))||value.includes(k));easy=/debut|facile|simple/.test(value);
           recommend('Recherche guidée par mots-clés. Ajustez les critères ci-dessus pour préciser votre demande.');
         }
-      } catch(err){$('guide-answer').textContent=err.message;} finally {button.disabled=false;}
+      } catch(err){$('guide-answer').textContent=err.name==='TimeoutError'?'Le modèle met trop de temps à répondre. Réessayez plus tard.':err.message;} finally {button.disabled=false;if(publicAI && widget!==null){humanToken='';window.turnstile.reset(widget);}}
     };
     draw();
   }};
