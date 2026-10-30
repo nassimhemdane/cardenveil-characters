@@ -36,12 +36,25 @@ export async function onRequestPost({request,env,waitUntil}) {
   try {
     const verification=await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method:'POST',headers:{'Content-Type':'application/json'},signal:AbortSignal.timeout(10000),
-      body:JSON.stringify({secret:env.TURNSTILE_SECRET_KEY,response:body.token,
+      body:JSON.stringify({secret:env.TURNSTILE_SECRET_KEY.trim(),response:body.token,
         remoteip:request.headers.get('CF-Connecting-IP') || undefined})
     });
     const check=await verification.json();
-    if(!check.success || check.hostname!==new URL(request.url).hostname || check.action!=='recommend')
-      return json({detail:'Vérification anti-abus échouée. Réessayez.'},403);
+    if(!verification.ok)return json({detail:'Service de vérification temporairement indisponible.',code:'turnstile_unavailable'},503);
+    if(!check.success){
+      const codes=Array.isArray(check['error-codes'])?check['error-codes']:[];
+      if(codes.includes('invalid-input-secret') || codes.includes('missing-input-secret'))
+        return json({detail:'Clé secrète Turnstile refusée. Vérifiez TURNSTILE_SECRET_KEY et son association à la Site key du même widget.',code:'turnstile_secret_invalid'},503);
+      if(codes.includes('timeout-or-duplicate'))
+        return json({detail:'La vérification a expiré ou a déjà été utilisée. Attendez le nouveau Success puis réessayez.',code:'turnstile_token_expired'},403);
+      if(codes.includes('internal-error'))
+        return json({detail:'Turnstile est temporairement indisponible. Réessayez.',code:'turnstile_unavailable'},503);
+      return json({detail:'Jeton Turnstile refusé. Rechargez la page et réessayez ; si cela persiste, vérifiez que les deux clés proviennent du même widget.',code:'turnstile_token_invalid'},403);
+    }
+    if(check.hostname!==new URL(request.url).hostname)
+      return json({detail:'Le domaine validé par Turnstile ne correspond pas au site. Vérifiez les hostnames du widget.',code:'turnstile_hostname_mismatch'},403);
+    if(check.action!=='recommend')
+      return json({detail:'Le widget est une ancienne version. Rechargez complètement la page avant de réessayer.',code:'turnstile_action_mismatch'},403);
     const catalogueResponse=await env.ASSETS.fetch(new URL('/data/recommendation-catalog.json',origin));
     if(!catalogueResponse.ok)throw Error('catalogue');
     const candidates=candidatesFrom(await catalogueResponse.json());
@@ -54,7 +67,7 @@ export async function onRequestPost({request,env,waitUntil}) {
     if(cached)return json(await cached.json());
     // No tools, search grounding, retries or model fallback: exactly one bounded call.
     const response=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`,{
-      method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':env.GEMINI_API_KEY},
+      method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':env.GEMINI_API_KEY.trim()},
       signal:AbortSignal.timeout(45000),body:JSON.stringify({
         systemInstruction:{parts:[{text:SYSTEM}]},
         contents:[{role:'user',parts:[{text:JSON.stringify({request:message,candidates})}]}],

@@ -33,7 +33,12 @@ try {
  let mode='ok',googleCalls=0,turnstileCalls=0,cached=null;
  caches.default={match:async()=>cached,put:async(key,value)=>{cached=value;}};
  window.fetch=async(url,options)=>{
-  if(url.includes('siteverify')){turnstileCalls++;return Response.json({success:mode!=='bot',hostname:location.hostname,action:'recommend'});}
+  if(url.includes('siteverify')){turnstileCalls++;return Response.json({
+    success:!['bot','secret','expired'].includes(mode),
+    hostname:mode==='hostname'?'other.invalid':location.hostname,
+    action:mode==='action'?'wrong':'recommend',
+    'error-codes':mode==='secret'?['invalid-input-secret']:mode==='expired'?['timeout-or-duplicate']:['invalid-input-response']
+  });}
   googleCalls++;const body=JSON.parse(options.body);
   assert(options.headers['x-goog-api-key']==='FAKE_SECRET','secret only in server request');
   assert(!body.tools && body.generationConfig.maxOutputTokens===2300,'bounded request');
@@ -51,6 +56,9 @@ try {
  mode='ok';const good=await call();assert(good.status===200 && googleCalls===1,'one google call');
  assert((await good.json()).matches.length===1,'response shape');
  const hit=await call();assert(hit.status===200 && googleCalls===1 && turnstileCalls===3,'verified cache hit');
+ for(const [value,status,code] of [['secret',503,'turnstile_secret_invalid'],['expired',403,'turnstile_token_expired'],['hostname',403,'turnstile_hostname_mismatch'],['action',403,'turnstile_action_mismatch']]){
+   mode=value;const response=await call();assert(response.status===status && (await response.json()).code===code && googleCalls===1,'safe diagnostic '+value);
+ }
  cached=null;mode='quota';assert((await call()).status===429 && googleCalls===2,'quota no retries');
  mode='bad';const bad=await call();assert(bad.status===503 && googleCalls===3,'reject invented character');
  assert(!(await bad.text()).includes('FAKE'),'no secret in failure');
