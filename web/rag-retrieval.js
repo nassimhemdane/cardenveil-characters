@@ -1,5 +1,5 @@
 /** Deterministic hybrid retrieval: numerical attributes outrank descriptive prose. */
-export const RAG_VERSION = 'stats-first-v1';
+export const RAG_VERSION = 'stats-first-v2-identity';
 const stats = ['force','agilite','esprit','social'];
 const labels = {force:'Force',agilite:'Agilité',esprit:'Esprit',social:'Social'};
 const normalize = text => String(text||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
@@ -20,6 +20,38 @@ const themes={
   soin:/\b(?:soin\w*|soign\w*|gueri\w*|regener\w*|healer)\b|(?:regagn|rend|recuper)\w*[^.!?]{0,50}(?:\bpv\b|points? de vie)/
 };
 const features=text=>Object.entries(themes).filter(([,pattern])=>pattern.test(normalize(text))).map(([name])=>name);
+
+const raceWord=word=>({elf:'elfe',elfs:'elfe',elfes:'elfe',efle:'elfe',efles:'elfe',orques:'orc',orque:'orc',orcs:'orc',humaine:'humain',humaines:'humain',naine:'nain',naines:'nain'}[word] || word.replace(/s$/,''));
+const raceWords=text=>(normalize(text).match(/[a-z]+/g)||[]).map(raceWord);
+const raceQualifiers=new Set(['haut','haute','noir','noire','demi','grand','grande','petit','petite','de','du','et','des']);
+
+export function identityIntent(index,message){
+  const known=new Set(index.characters.flatMap(c=>raceWords(c.race)).filter(w=>w.length>=3&&!raceQualifiers.has(w)));
+  const raw=normalize(message).match(/[a-z0-9]+/g)||[], words=raw.map(raceWord);
+  const required=[],excluded=[];
+  for(let i=0;i<words.length;i++){
+    if(!known.has(words[i]))continue;
+    const prefix=raw.slice(Math.max(0,i-5),i).join(' ').split(/\b(?:mais|et|ou)\b/).pop();
+    const negative=/\b(sans|pas|ni|eviter)\b/.test(prefix);
+    const destination=negative?excluded:required;
+    if(!destination.includes(words[i]))destination.push(words[i]);
+    for(const neighbour of [words[i-1],words[i+1]]){
+      if(neighbour && raceQualifiers.has(neighbour) && !['de','du','et','des'].includes(neighbour) && !destination.includes(neighbour))destination.push(neighbour);
+    }
+  }
+  const recognized=new Set([...required,...excluded]);
+  const boilerplate=new Set('je cherche recherche veux voudrai souhaite recommande moi montre propose donne tous toute le la les un une des de du d au aux personnage personnage race peuple et ou s il te plait plutot'.split(' ').map(raceWord));
+  const only=required.length>0 && words.every(w=>recognized.has(w)||boilerplate.has(w));
+  return {required,excluded,any:/\bou\b/.test(normalize(message)),only};
+}
+
+function matchesIdentity(character,intent){
+  const present=new Set(raceWords(character.race));
+  const bases=intent.required.filter(w=>!raceQualifiers.has(w));
+  const qualifiers=intent.required.filter(w=>raceQualifiers.has(w));
+  return (!bases.length || (intent.any?bases.some(w=>present.has(w)):bases.every(w=>present.has(w)))) &&
+    qualifiers.every(w=>present.has(w)) && !intent.excluded.some(w=>present.has(w));
+}
 
 export function parseIntent(message) {
   const text=normalize(message), preferences={}, constraints=[];
@@ -84,6 +116,7 @@ function cosine(query,vector){
 
 export function retrieve(index,message,queryEmbedding=null){
   const intent=parseIntent(message), queryTerms=[...new Set(terms(message))];
+  intent.identity=identityIntent(index,message);
   const query=queryEmbedding?normalizeVector(queryEmbedding,index.dimensions):null;
   const precomputed=Boolean(index.lexical);
   const corpus=precomputed?index.documents:index.documents.map(doc=>({...doc,words:terms(doc.text)}));
@@ -109,7 +142,7 @@ export function retrieve(index,message,queryEmbedding=null){
   const hasStats=Object.keys(intent.preferences).length>0;
   const ranked=[];
   for(const c of index.characters){
-    if(!respects(c,intent))continue;
+    if(!respects(c,intent) || !matchesIdentity(c,intent.identity))continue;
     const allPassages=byCharacter.get(c.id)||[];
     const present=new Set(allPassages.flatMap(p=>p.features));
     if(!intent.requiredThemes.every(name=>present.has(name)) || intent.excludedThemes.some(name=>present.has(name)))continue;
@@ -124,13 +157,16 @@ export function retrieve(index,message,queryEmbedding=null){
     attributeScore/=Math.max(1,Object.keys(intent.preferences).length);
     const relevance=passages[0].docScore*.75+(passages[1]?.docScore||0)*.15+(passages[2]?.docScore||0)*.1;
     // Do not invent a recommendation on text-only searches with no retrieved evidence.
-    if(!hasStats && relevance===0 && intent.maxDifficulty===null && !intent.constraints.length)continue;
+    if(!hasStats && relevance===0 && intent.maxDifficulty===null && !intent.constraints.length && !intent.identity.required.length)continue;
     const score=hasStats ? .65*attributeScore+.35*relevance : relevance;
     const profile=statisticalProfile(c.stats);
     const numerical=stats.map(key=>`${labels[key]} ${c.stats[key]}`).join(', ');
+    if(intent.identity.required.length || intent.identity.excluded.length)passages.unshift({
+      id:`${c.id}:identity`,title:'Identité de la fiche',text:`${c.name}. Race déclarée : ${c.race}. Statistiques : ${numerical}.`
+    });
     const facts=`Statistiques : ${numerical}. Profil suggéré par les statistiques : ${profile}.\n`+
       passages.map(p=>`[${p.id}] ${p.text}`).join('\n');
-    ranked.push({id:c.id,name:c.name,difficulty:c.difficulty,classes:c.classes,stats:c.stats,profile,
+    ranked.push({id:c.id,name:c.name,race:c.race,difficulty:c.difficulty,classes:c.classes,stats:c.stats,profile,
       facts,score,attributeScore,relevance,passages:passages.map(p=>({id:p.id,title:p.title,text:p.text}))});
   }
   ranked.sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id));

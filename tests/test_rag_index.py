@@ -16,7 +16,7 @@ def module(monkeypatch):
 
 def character():
     """Keep the ninth capability distinctive to catch whole-character truncation regressions."""
-    return {'id':'hero','identity':{'nom':'Hero'},'stats':{'force':18,'agilite':12,'esprit':8,'social':6},
+    return {'id':'hero','identity':{'nom':'Hero','race':'Nain'},'stats':{'force':18,'agilite':12,'esprit':8,'social':6},
             'catalog':{'difficulty':3,'loreSummary':'Un mage invincible de feu.'},
             'totem':{'nom':'Totem','description':'Protège les alliés.'},
             'capacities':[{'name':f'Capacité {i}','description':f'Capacité mécanique numéro {i}.',
@@ -31,6 +31,7 @@ def test_every_ability_is_separately_retrievable(monkeypatch):
     assert any(d['id']=='hero:capacity-9' for d in index['documents'])
     assert not any('invincible' in d['text'] for d in index['documents'])
     assert index['characters'][0]['stats']['force']==18
+    assert index['characters'][0]['race']=='Nain'
 
 
 def test_vector_reuse_and_staleness(monkeypatch):

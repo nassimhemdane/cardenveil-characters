@@ -3,7 +3,7 @@
 from test_gemini_pages import run_harness
 
 HARNESS = '''<pre id="result">RUNNING</pre><script type="module">
-import {retrieve,parseIntent,statisticalProfile} from '/web/rag-retrieval.js';
+import {retrieve,parseIntent,statisticalProfile,identityIntent} from '/web/rag-retrieval.js';
 import {validateRecommendations,validateRagRecommendations} from '/web/recommendations-core.js';
 try{
  const assert=(value,label)=>{if(!value)throw Error(label);};
@@ -41,6 +41,19 @@ try{
  assert(grounded.matches[0].evidence===semantic.documents[0].text,'server copies evidence from actual source');
  let rejected=false;try{validateRagRecommendations({explanation:'Test',matches:[{character_id:'near',comment:'Wrong.',source_id:'far:1'}]},result.candidates);}catch{rejected=true;}
  assert(rejected,'reject a source belonging to another character');
+ const races={version:'races',characters:['anain','darion','goldomus','foist','human'].map(id=>({...make(id,12,14,10,10),
+   name:id==='human'?'Anain Fake':id,race:id==='foist'?'Cochon Nain':id==='human'?'Humain':'Nain'})),
+   documents:['anain','darion','goldomus','foist','human'].map(id=>({id:id+':1',characterId:id,title:'Mécanique',text:'Attaque une créature avec une arme.'}))};
+ for(const phrase of ['nain','nains','Je cherche un nain']){
+   const found=retrieve(races,phrase);
+   assert(found.candidates.length===4 && !found.candidates.some(c=>c.id==='human'),'race not name/capability: '+phrase);
+   assert(found.intent.identity.only && found.candidates.every(c=>c.passages[0].id.endsWith(':identity')),'identity citations');
+ }
+ assert(retrieve(races,'Je veux un nain agile').candidates.every(c=>c.race.includes('Nain')),'race hard filter combined with stats');
+ assert(retrieve(races,'nain ou humain').candidates.length===5,'race alternatives');
+ const real=await (await fetch('/web/public/data/rag-index.json')).json();
+ const dwarfs=retrieve(real,'nain').candidates.map(c=>c.id).sort();
+ assert(JSON.stringify(dwarfs)===JSON.stringify(['anain-proviste','darion-blaris','foist','goldomus']),'all four real dwarf-labelled sheets');
  document.querySelector('#result').textContent='PASS';
 }catch(error){document.querySelector('#result').textContent='FAIL '+error.message;}
 </script>'''

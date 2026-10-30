@@ -14,6 +14,16 @@ fiche sont elles aussi indexées et peuvent être retrouvées.
 
 ## Classement et justification
 
+La race déclarée est conservée comme donnée structurée, distincte des textes
+embeddés. Une demande de race agit comme un filtre strict avant le classement ;
+les variantes singulier/pluriel et certaines variantes d'orthographe sont reconnues.
+« Nain » ne correspond pas à un personnage simplement parce que son nom ou une
+capacité contient ce mot. Une demande d'identité seule (« nain », « nains »,
+« je cherche un nain ») retourne directement les fiches correspondantes, au maximum
+six, sans embedding de question ni génération Gemini. La citation provient du champ
+de race réel, pas d'une déduction du modèle. La source Foist indique « Cochon Nain » :
+il apparaît donc avec Anain, Darion et Goldomus pour cette recherche.
+
 1. Reconnaissance déterministe de préférences statistiques françaises : physique,
    agile, mental/magique, social, ainsi que des préférences faibles/négatives.
 2. Filtres numériques reconnus appliqués strictement : seuil explicite de

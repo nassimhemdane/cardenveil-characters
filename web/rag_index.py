@@ -87,7 +87,7 @@ def build_rag_index(characters, stored=None):
                 continue
             doc['vector'] = vector
             indexed += 1
-    entries = [{'id': c['id'], 'name': c['identity']['nom'], 'stats': c['stats'],
+    entries = [{'id': c['id'], 'name': c['identity']['nom'], 'race': c['identity'].get('race', ''), 'stats': c['stats'],
                 'difficulty': c.get('catalog', {}).get('difficulty'),
                 'classes': c.get('catalog', {}).get('class', [])} for c in characters]
     index = {'schemaVersion': 1, 'model': EMBEDDING_MODEL, 'dimensions': DIMENSIONS,

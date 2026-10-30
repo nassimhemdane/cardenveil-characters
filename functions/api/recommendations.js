@@ -1,6 +1,6 @@
 /** Same-origin, human-verified recommendation endpoint. Keys remain in Pages secrets. */
 import {MODEL, SYSTEM, ragSchema, validateRagRecommendations} from '../../web/recommendations-core.js';
-import {RAG_VERSION, retrieve, embedQuery} from '../../web/rag-retrieval.js';
+import {RAG_VERSION, retrieve, embedQuery, identityIntent} from '../../web/rag-retrieval.js';
 
 const json = (body, status=200) => Response.json(body, {status, headers:{'Cache-Control':'no-store'}});
 // One current public index per isolate, invalidated by the asset ETag on every request.
@@ -72,7 +72,8 @@ export async function onRequestPost({request,env,waitUntil}) {
     const cached=await caches.default.match(cacheKey);
     if(cached)return json(await cached.json());
     let queryVector=null;
-    if(index.embeddedDocuments===index.documents.length){
+    const identity=identityIntent(index,message);
+    if(!identity.only && index.embeddedDocuments===index.documents.length){
       try{queryVector=await embedQuery(message,index,env.GEMINI_API_KEY);}catch{}
     }
     const retrieval=retrieve(index,message,queryVector);
@@ -82,13 +83,22 @@ export async function onRequestPost({request,env,waitUntil}) {
       waitUntil(caches.default.put(cacheKey,Response.json(empty,{headers:{'Cache-Control':'public, max-age=3600'}})));
       return json(empty);
     }
+    if(identity.only){
+      const result={explanation:'Personnages dont la race déclarée dans la fiche correspond à votre recherche.',
+        matches:candidates.map(c=>({character_id:c.id,comment:`${c.name} correspond à votre demande : sa race est « ${c.race} ».`,
+          evidence:c.passages[0].text,source_id:c.passages[0].id,stats:c.stats,profile:c.profile,race:c.race,
+          sources:[{id:c.passages[0].id,title:c.passages[0].title}]})),
+        retrieval:{mode:'structured-identity',version:RAG_VERSION}};
+      waitUntil(caches.default.put(cacheKey,Response.json(result,{headers:{'Cache-Control':'public, max-age=3600'}})));
+      return json(result);
+    }
     // One query embedding at most, then one explanation call; never regenerate document vectors here.
     const response=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`,{
       method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':env.GEMINI_API_KEY.trim()},
       signal:AbortSignal.timeout(45000),body:JSON.stringify({
         systemInstruction:{parts:[{text:SYSTEM}]},
         contents:[{role:'user',parts:[{text:JSON.stringify({request:message,intent:retrieval.intent,
-          candidates:candidates.map(({id,name,stats,profile,difficulty,classes,passages})=>({id,name,stats,profile,difficulty,classes,sources:passages}))})}]}],
+          candidates:candidates.map(({id,name,race,stats,profile,difficulty,classes,passages})=>({id,name,race,stats,profile,difficulty,classes,sources:passages}))})}]}],
         generationConfig:{temperature:0.1,maxOutputTokens:2300,responseMimeType:'application/json',responseJsonSchema:ragSchema}
       })
     });
@@ -99,7 +109,7 @@ export async function onRequestPost({request,env,waitUntil}) {
     const result=validateRagRecommendations(JSON.parse(text),candidates);
     for(const match of result.matches){
       const candidate=candidates.find(c=>c.id===match.character_id);
-      match.stats=candidate.stats;match.profile=candidate.profile;
+      match.stats=candidate.stats;match.profile=candidate.profile;match.race=candidate.race;
       match.sources=candidate.passages.map(p=>({id:p.id,title:p.title}));
     }
     result.retrieval={mode:retrieval.mode,version:RAG_VERSION,embedded:index.embeddedDocuments,total:index.documents.length};

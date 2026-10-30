@@ -18,7 +18,7 @@ try {
  const assert=(value,label)=>{if(!value)throw Error(label);};
  const characters=[{id:'hero',identity:{nom:'Hero'},catalog:{gameplaySummary:'Soigne les allies a distance.'}}];
  const index={version:'test-index',model:'gemini-embedding-001',dimensions:2,embeddedDocuments:0,
-   characters:[{id:'hero',name:'Hero',stats:{force:8,agilite:14,esprit:18,social:12},difficulty:2,classes:[]}],
+   characters:[{id:'hero',name:'Hero',race:'Nain',stats:{force:8,agilite:14,esprit:18,social:12},difficulty:2,classes:[]}],
    documents:[{id:'hero:capacity-1',characterId:'hero',title:'Soin',text:'Soigne les allies a distance.'}]};
  const candidates=candidatesFrom(characters);
  const result={explanation:'Un personnage de soin.',matches:[{character_id:'hero',comment:'Il soigne a distance comme demande.',evidence:'Soigne les allies'}]};
@@ -77,6 +77,9 @@ try {
  assert(payload.matches[0].stats.esprit===18 && payload.matches[0].sources[0].id==='hero:capacity-1','numerical evidence and provenance');
  cached=null;mode='embedding-failure';const fallback=await call();
  assert(fallback.status===200 && (await fallback.json()).retrieval.mode==='stats+bm25' && embeddingCalls===2 && googleCalls===5,'honest lexical fallback without retries');
+ cached=null;const identity=await call(request({message:'nains',token:'TOKEN'}));const direct=await identity.json();
+ assert(identity.status===200 && direct.matches.length===1 && direct.matches[0].race==='Nain' && direct.retrieval.mode==='structured-identity','race filter preserves matching sheet');
+ assert(embeddingCalls===2 && googleCalls===5,'identity-only search spends no Google quota');
  document.querySelector('#result').textContent='PASS';
 } catch(error){document.querySelector('#result').textContent='FAIL '+error.message;}
 </script>'''
