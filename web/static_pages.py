@@ -4,10 +4,12 @@ from __future__ import annotations
 
 import json
 import re
-from html import escape
+from html import escape, unescape
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import quote
+
+SITE_URL = "https://cardenveil-characters.pages.dev"
 
 
 class SheetText(HTMLParser):
@@ -126,19 +128,49 @@ def character_url(identifier: str) -> str:
     return f"/personnages/{quote(identifier)}/"
 
 
-def document(title: str, body: str, extra: str = "") -> str:
+def document(title: str, body: str, extra: str = "", *, head: str = "", description: str | None = None) -> str:
     """Wrap semantic content in the catalogue's shared visual shell."""
     return f'''<!doctype html>
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{escape(title)} — Cardenveil</title>
-<meta name="description" content="{escape(title)} — fiche de personnage Cardenveil">
+<meta name="description" content="{escape(description if description is not None else title + ' — fiche de personnage Cardenveil')}">
+{head}
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/static-sheet.css"></head><body>
 <header class="site-header"><a class="brand" href="/">CARDENVEIL</a>
 <nav><a href="/">Catalogue</a> <a href="/statistiques/">Statistiques</a> <a href="/regles/">Règles & docs</a>
 <a href="/gm/">Agent MJ</a> <a href="/personnages/">Toutes les fiches</a></nav></header>
 <main id="app">{body}</main>{extra}</body></html>'''
+
+
+def metadata_text(value: object) -> str:
+    """Convert formatted sheet text to plain metadata, suppressing active HTML first."""
+    return " ".join(unescape(re.sub(r"<[^>]*>", " ", rich(value or ""))).split())
+
+
+def character_preview(character: dict) -> tuple[str, str]:
+    """Emit server-rendered Open Graph and Twitter cards with absolute public URLs."""
+    name = metadata_text(character["identity"]["nom"])
+    catalog = character.get("catalog", {})
+    description = (metadata_text(catalog.get("gameplaySummary"))
+                   or metadata_text(catalog.get("loreSummary"))
+                   or f"Découvrez la fiche de {name} sur Cardenveil.")
+    url = SITE_URL + character_url(character["id"])
+    title = f"{name} — Cardenveil"
+    portrait = character.get("portrait", "")
+    image = SITE_URL + portrait if isinstance(portrait, str) and portrait.startswith("/assets/") else ""
+    properties = {"og:type": "website", "og:site_name": "Cardenveil", "og:locale": "fr_FR",
+                  "og:title": title, "og:description": description, "og:url": url}
+    names = {"twitter:card": "summary_large_image" if image else "summary",
+             "twitter:title": title, "twitter:description": description}
+    if image:
+        properties.update({"og:image": image, "og:image:alt": f"Portrait de {name}"})
+        names.update({"twitter:image": image, "twitter:image:alt": f"Portrait de {name}"})
+    head = f'<link rel="canonical" href="{escape(url)}">\n'
+    head += "\n".join(f'<meta property="{key}" content="{escape(value)}">' for key, value in properties.items())
+    head += "\n" + "\n".join(f'<meta name="{key}" content="{escape(value)}">' for key, value in names.items())
+    return head, description
 
 
 def write_character(public: Path, character: dict) -> None:
@@ -163,7 +195,8 @@ def write_character(public: Path, character: dict) -> None:
     payload = json.dumps(character, ensure_ascii=False).replace("<", "\\u003c")
     extra = f'<script id="character-data" type="application/json">{payload}</script>'
     extra += '<script src="/app.js" defer></script>'
-    target.write_text(document(name, body, extra), encoding="utf-8")
+    head, description = character_preview(character)
+    target.write_text(document(metadata_text(name), body, extra, head=head, description=description), encoding="utf-8")
 
 
 def write_index(public: Path, characters: list[dict]) -> None:

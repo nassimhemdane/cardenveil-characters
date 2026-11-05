@@ -48,6 +48,25 @@ def visible(source):
     return " ".join(" ".join(parser.parts).split())
 
 
+class PreviewMetadata(HTMLParser):
+    """Read crawler-visible head tags without executing any page JavaScript."""
+
+    def __init__(self, source):
+        """Parse metadata and canonical links from a generated document."""
+        super().__init__()
+        self.tags = {}
+        self.canonical = None
+        self.feed(source.split('</head>')[0])
+
+    def handle_starttag(self, tag, attributes):
+        """Decode escaped attributes just as a social-preview crawler would."""
+        attrs = dict(attributes)
+        if tag == 'meta' and ('property' in attrs or 'name' in attrs):
+            self.tags[attrs.get('property', attrs.get('name'))] = attrs.get('content')
+        if tag == 'link' and attrs.get('rel') == 'canonical':
+            self.canonical = attrs['href']
+
+
 @pytest.fixture
 def generator(monkeypatch):
     """Import the standalone build modules in the same environment as their CLI."""
@@ -83,6 +102,34 @@ def test_all_character_pages_contain_visible_content(generator, monkeypatch, tmp
             if obj.get("image"):
                 assert f'src="{obj["image"]}"' in page
         assert c["printUrl"] in page
+        preview = PreviewMetadata(page)
+        assert preview.canonical == preview.tags['og:url'] == generator.SITE_URL + c['pageUrl']
+        assert preview.tags['og:title'] == generator.metadata_text(c['identity']['nom']) + ' — Cardenveil'
+        assert preview.tags['og:description'] == preview.tags['description']
+        if c.get('portrait'):
+            assert preview.tags['og:image'] == preview.tags['twitter:image'] == generator.SITE_URL + c['portrait']
+            assert preview.tags['twitter:card'] == 'summary_large_image'
+            assert (tmp_path / c['portrait'].lstrip('/')).is_file()
+
+
+def test_preview_safety_and_missing_data(generator):
+    """Escape names/descriptions, suppress markup and avoid bogus missing-image URLs."""
+    character = {'id': 'test', 'identity': {'nom': '<p>Élise &amp; "Compagnie"</p>'},
+                 'portrait': '/assets/test/portrait.123.png',
+                 'catalog': {'gameplaySummary': '<p>Soutien <strong>rapide</strong> &amp; précis.</p><script>evil()</script>'}}
+    head, description = generator.character_preview(character)
+    preview = PreviewMetadata(generator.document('Test', '', head=head, description=description))
+    assert preview.tags['og:title'] == 'Élise & "Compagnie" — Cardenveil'
+    assert preview.tags['og:description'] == 'Soutien rapide & précis.'
+    assert '<script' not in head and 'evil' not in head and '<p>' not in head
+    character['portrait'] = 'https://untrusted.invalid/image.png'
+    character['catalog'] = {'loreSummary': '<p>Une histoire.</p>'}
+    head, description = generator.character_preview(character)
+    preview = PreviewMetadata(head)
+    assert 'og:image' not in preview.tags and preview.tags['twitter:card'] == 'summary'
+    assert description == 'Une histoire.'
+    character['catalog'] = {}
+    assert generator.character_preview(character)[1] == 'Découvrez la fiche de Élise & "Compagnie" sur Cardenveil.'
 
 
 def test_static_text_safety_and_values(generator):
