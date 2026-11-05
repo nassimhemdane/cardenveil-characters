@@ -3,30 +3,12 @@
 const menu = document.querySelector('.docs-nav details');
 if (menu && matchMedia('(max-width:760px)').matches) menu.open = false;
 const normalize = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-for (const [id, className, key] of [
-  ['reading-size', 'reading-large', 'rules-large'],
-  ['reading-theme', 'reading-light', 'rules-light']
-]) {
-  const button = document.getElementById(id);
-  if (!button) continue;
-  let enabled = false;
-  try { enabled = localStorage.getItem(key) === 'true'; } catch (_) { /* optional preference */ }
-  const update = () => {
-    document.body.classList.toggle(className, enabled);
-    button.setAttribute('aria-pressed', String(enabled));
-  };
-  update(); button.hidden = false;
-  button.addEventListener('click', () => {
-    enabled = !enabled; update();
-    try { localStorage.setItem(key, String(enabled)); } catch (_) { /* optional preference */ }
-  });
-}
 const search = document.querySelector('#rule-search');
 if (search) {
   const status = document.querySelector('#search-status');
   const results = document.querySelector('#search-results');
   const clear = document.querySelector('#clear-search');
-  const hint = 'Tous les manuels, fiches de référence et arbitrages du MJ.';
+  const hint = 'Rechercher dans la référence rapide et les règles joueurs de Cardenveil Fragmented.';
   fetch('/regles/search.json').then(r => {
     if (!r.ok) throw Error('Index indisponible');
     return r.json();
@@ -57,8 +39,8 @@ if (search) {
       results.replaceChildren(); clear.hidden = !query;
       if (!terms.length) { status.textContent = hint; return; }
       const matches = indexed.filter(e => terms.every(w => e.hay.includes(w))).map(e => ({
-        ...e, score: terms.reduce((n,w) => n + (e.heading.includes(w) ? 4 : 1), 0) + (e.url.startsWith('/regles/arbitrages/') ? 5 : 0)
-      })).sort((a,b) => b.score - a.score);
+        ...e, score: terms.reduce((n,w) => n + (e.heading.includes(w) ? 4 : 1), 0)
+      })).sort((a,b) => b.score - a.score || Number(b.url.startsWith('/regles/reference-rapide/')) - Number(a.url.startsWith('/regles/reference-rapide/')));
       status.textContent = matches.length ? `${matches.length} résultat${matches.length > 1 ? 's' : ''} · ${Math.min(shown, matches.length)} affiché${Math.min(shown, matches.length) > 1 ? 's' : ''}` : 'Aucun résultat. Essayez un terme plus court ou consultez les chapitres.';
       for (const entry of matches.slice(0, shown)) {
         const link = document.createElement('a'); link.className = 'search-result'; link.href = entry.url;
@@ -67,9 +49,7 @@ if (search) {
         const at = Math.max(0, normalize(entry.text).indexOf(terms[0]) - 65);
         const text = (at ? '…' : '') + entry.text.slice(at, at + 230).replace(/\s+/g, ' ') + (at + 230 < entry.text.length ? '…' : '');
         highlight(excerpt, text, terms);
-        const citation = document.createElement('small');
-        citation.textContent = entry.source ? `${entry.source} · page ${entry.page}` : entry.url.startsWith('/regles/arbitrages/') ? 'Arbitrage du MJ · décision applicable' : 'Fiche de référence';
-        link.append(title, excerpt, citation); results.append(link);
+        link.append(title, excerpt); results.append(link);
       }
       if (matches.length > shown) {
         const more = document.createElement('button'); more.id = 'search-more'; more.type = 'button'; more.textContent = 'Afficher davantage de résultats';
@@ -83,24 +63,27 @@ if (search) {
     render();
   }).catch(() => { status.textContent = 'Recherche indisponible. Les chapitres restent accessibles dans le menu.'; });
 }
-function revealSource() {
-  let id; try { id = decodeURIComponent(location.hash.slice(1)); } catch (_) { return; }
-  const target = document.getElementById(id);
-  if (target?.matches('details.original-page')) target.open = true;
+const raceSearch = document.querySelector('#race-search');
+if (raceSearch) {
+  const cards = [...document.querySelectorAll('.race-card')];
+  raceSearch.addEventListener('input', () => {
+    const query = normalize(raceSearch.value.trim());
+    for (const card of cards) card.hidden = !normalize(card.dataset.race).includes(query);
+    const count = cards.filter(card => !card.hidden).length;
+    document.querySelector('#race-count').textContent = `${count} race${count > 1 ? 's' : ''} sur ${cards.length}`;
+  });
 }
-window.addEventListener('hashchange', revealSource); revealSource();
-const mobileToc = document.querySelector('.mobile-toc');
-mobileToc?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mobileToc.open = false; }));
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) {
       if (!entry.isIntersecting) continue;
-      document.querySelectorAll('.docs-toc a,.mobile-toc a').forEach(a => {
-        const active = a.getAttribute('href') === '#' + entry.target.id;
+      document.querySelectorAll('.chapter-sections a').forEach(a => {
+        const url = new URL(a.href);
+        const active = url.pathname === location.pathname && url.hash === '#' + entry.target.id;
         a.classList.toggle('active', active);
         if (active) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
       });
     }
   }, {rootMargin:'-10% 0px -70% 0px'});
-  document.querySelectorAll('#reading h2[id],#reading h3[id],#reading section[id]').forEach(h => observer.observe(h));
+  document.querySelectorAll('#reading h2[id],#reading h3[id],#reading h4[id],#reading h5[id],#reading h6[id],#reading section[id]').forEach(h => observer.observe(h));
 }

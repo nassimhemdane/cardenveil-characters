@@ -1,0 +1,167 @@
+/* Optional visual layer. Remove its import in styles.css to return to the dark theme.
+   Higher-specificity selectors keep this layer independent of legacy page styles. */
+@media screen {
+  :root:root {
+    color-scheme: light;
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface2: #f6f6f4;
+    --line: #e3e5e1;
+    --text: #222521;
+    --muted: #646961;
+    --gold: #30382f;
+    --gold2: #30382f;
+    --radius: 12px;
+    --force: #b42332;
+    --agilite: #187647;
+    --esprit: #245bc1;
+    --social: #7541a7;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  :root body { background: var(--bg); color: var(--text); }
+  :root .site-header { background: #fffffff5; border-bottom-color: var(--line); backdrop-filter: blur(12px); }
+  :root .brand { color: var(--text); font-weight: 700; font-size: 15px; letter-spacing: .07em; }
+  :root .site-header nav { font-size: 13px; }
+  :root .site-header nav a { color: var(--muted); }
+  :root .site-header nav a:hover { color: var(--text); }
+  :root main { padding-top: 52px; }
+  :root h1 { font-weight: 600; letter-spacing: -.045em; line-height: 1.1; }
+  :root h2, :root h3 { font-weight: 600; }
+  :root .eyebrow, :root .section-label { color: var(--muted); font-weight: 600; letter-spacing: .1em; }
+  :root .summary, :root .rich, :root .editorial p { color: #50564f; }
+  :root .summary strong { color: var(--muted); font-weight: 600; }
+  :root .rich strong { color: var(--text); }
+  :root .stars { color: #565f51; font-size: 12px; }
+  :root .button { background: #fff; color: var(--text); border-color: var(--line); border-radius: 8px; font-weight: 600; }
+  :root .button:hover { background: var(--surface2); border-color: #b9bfb5; }
+  :root .button.primary { color: #fff; background: var(--text); border-color: var(--text); }
+  :root .button.primary:hover { background: #40483d; }
+  :root .chip { color: #555d51; background: #f7f8f5; border-color: #e6e9e2; border-radius: 6px; }
+  :root .chip.active { color: #fff; background: #30382f; border-color: #30382f; }
+  :root .card .chip, :root .hero .chip { font-size: 11px; padding: 5px 8px; }
+  :root .toolbar input, :root .toolbar select, :root .toolbar button,
+  :root .guide-compose input, :root dialog input {
+    background: #fff; border: 1px solid var(--line); border-radius: 7px; color: var(--text);
+  }
+  :root input::placeholder, :root textarea::placeholder { color: #6c7566; opacity: 1; }
+  :root a:focus-visible, :root button:focus-visible, :root input:focus-visible,
+  :root select:focus-visible, :root summary:focus-visible { outline: 2px solid #46583c; outline-offset: 3px; }
+
+  /* Catalogue and guide: white space, quiet outlines, no decorative gradients. */
+  :root .character-guide {
+    background: #fff; border: 0; border-bottom: 1px solid var(--line); border-radius: 0;
+    padding: 12px 0 40px; margin-bottom: 40px;
+  }
+  :root .character-guide h1 { font-size: clamp(32px,4.5vw,56px); max-width: 710px; margin-top: 16px; }
+  :root .character-guide p, :root .catalog-heading p, :root .catalog-filters label { color: var(--muted); }
+  :root .character-guide > div:first-child > p { max-width: 650px; font-size: 15px; }
+  :root .guide-options { gap: 8px; margin: 26px 0; }
+  :root .guide-options .chip { font-size: 12px; font-weight: 500; padding: 9px 12px; }
+  :root #guide-form > label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 8px; }
+  :root .guide-compose { margin-top: 0; max-width: 960px; }
+  :root .guide-compose input { padding: 16px; background: #fafbf9; font-size: 14px; }
+  :root .guide-compose button { padding-inline: 24px; }
+  :root #guide-mode { margin-top: 13px; font-size: 11px; }
+  :root #guide-answer > p { font-size: 13px; }
+  :root .guide-results article { background: #fff; border-color: var(--line); border-radius: 10px; }
+  :root .guide-results h3 a { color: var(--text); }
+  :root .guide-results blockquote { color: #555d51; border-left-color: #cfd7c8; }
+  :root .guide-portrait { background: #f7f8f5; border-color: var(--line); }
+  :root .catalog-heading { margin-bottom: 24px; }
+  :root .catalog-heading h2 { font-size: 27px; }
+  :root .catalog-heading p { font-size: 12px; }
+  :root .catalog-filters { background: #fafbf9; padding: 16px; border: 1px solid var(--line); border-radius: 10px; margin-top: 0; }
+  :root .catalog-filters label { font-size: 11px; font-weight: 600; gap: 6px; }
+  :root .catalog-filters button { font-size: 12px; }
+  :root .count { color: var(--muted); font-size: 12px; font-weight: 500; margin: 20px 0; }
+  :root .card { border: 1px solid var(--line); background: #fff; box-shadow: none; border-radius: 12px; }
+  :root .card:hover { transform: none; border-color: #b6beb0; box-shadow: 0 4px 16px #26321a08; }
+  :root .character-link .card { height: 100%; display: flex; flex-direction: column; }
+  :root .card-body { flex: 1; display: flex; flex-direction: column; padding: 20px; }
+  :root .card-title h3 { font-size: 22px; letter-spacing: -.025em; }
+  :root .card-stats { margin-top: auto; padding-top: 16px; }
+  :root .portrait { background: #f1f3ee; aspect-ratio: 1.55; }
+  :root .match-reason { color: var(--muted); background: #f7f8f5; border: 1px solid var(--line); border-radius: 6px; }
+
+  /* The four stat labels remain readable without relying on color alone. */
+  :root [data-stat="force"] { --stat-color: var(--force); --stat-tint: #fdf2f3; }
+  :root [data-stat="agilite"] { --stat-color: var(--agilite); --stat-tint: #f0f8f3; }
+  :root [data-stat="esprit"] { --stat-color: var(--esprit); --stat-tint: #f1f5fd; }
+  :root [data-stat="social"] { --stat-color: var(--social); --stat-tint: #f7f2fb; }
+  :root .card-stats, :root .detail-stats { grid-template-columns: repeat(4,minmax(0,1fr)); }
+  :root .card-stats > div, :root .detail-stats > div {
+    background: var(--stat-tint); border: 1px solid transparent; border-radius: 7px; padding: 11px 4px;
+  }
+  :root .card-stats strong, :root .detail-stats strong,
+  :root .card-stats small, :root .detail-stats small { color: var(--stat-color); }
+  :root .card-stats small, :root .detail-stats small { font-weight: 650; letter-spacing: .04em; }
+  :root .card-stats span, :root .detail-stats span { color: var(--muted); font-weight: 400; margin-top: 3px; }
+  :root .detail-stats > div { padding: 16px 6px; }
+  :root .skill-group:nth-child(1) { --stat-color: var(--force); }
+  :root .skill-group:nth-child(2) { --stat-color: var(--agilite); }
+  :root .skill-group:nth-child(3) { --stat-color: var(--esprit); }
+  :root .skill-group:nth-child(4) { --stat-color: var(--social); }
+  :root .skill-group { border-top: 2px solid var(--stat-color); }
+  :root .skill-group h3, :root .skill-group .mastered-value { color: var(--stat-color); }
+  :root .mastery.trained { background: var(--stat-color); border-color: var(--stat-color); box-shadow: none; }
+
+  /* Complete sheet, including every tab and empty state. */
+  :root .hero { gap: 36px; }
+  :root .hero-top > .actions { align-items: flex-start; align-self: flex-start; }
+  :root .hero-portrait { object-fit: contain; background: #f7f8f5; border: 1px solid var(--line); }
+  :root .hero h1 { font-size: clamp(32px,4vw,48px); }
+  :root .data-card { border-color: var(--line); background: #fff; border-radius: 10px; }
+  :root .totem { background: #f8f9f6; border: 1px solid var(--line); }
+  :root .totem img, :root .ability img, :root .ability-placeholder { background: #f1f3ee; }
+  :root .ability-usage { color: #56644d; }
+  :root .cost-formula { background: #f7f8f5; }
+  :root .tabs button.active { color: var(--text); border-bottom-color: var(--text); }
+  :root .empty-state { background: #fafbf9; }
+  :root dialog { background: #fff; box-shadow: 0 20px 80px #22252118; }
+  :root dialog::backdrop { background: #22252155; }
+  :root footer { color: var(--muted); }
+  :root footer span { color: var(--text); font-weight: 650; }
+
+  /* Dashboard: neutral global metrics, semantic accents only on stat charts. */
+  :root .statistics-dashboard { --chart: #717e65; }
+  :root .stat-kpis article, :root .stat-panel { background: #fff; border-color: var(--line); border-radius: 12px; }
+  :root .stat-kpis strong { color: var(--text); font-weight: 600; }
+  :root .stat-table-scroll caption, :root .stat-panel details summary { color: var(--text); }
+  :root .bar-track { background: #edf0e9; }
+  :root .bar-track span { background: var(--stat-color,var(--chart)); }
+  :root .stat-histograms h3 { color: var(--stat-color); }
+  :root .color-averages > div { background: #f7f8f5; }
+  :root .color-heart > span { color: #a52b42; }
+  :root .color-club > span { color: #187647; }
+  :root .color-spade > span { color: #374440; }
+  :root .color-diamond > span { color: #8b6413; }
+  :root .stat-callout { background: #f3f5ef; }
+
+  /* Rules and guide inherit the same paper-like reading experience. */
+  :root .rules-site, :root .rules-site.reading-light {
+    --bg: #fff; --surface: #fff; --surface2: #f6f6f4; --paper: #fff;
+    --ink: #363d32; --text: #222521; --muted: #646961; --line: #e3e5e1;
+    --gold: #30382f; --gold2: #30382f; --note: #f6f7f3; --accent-bg: #eef2e9;
+    color-scheme: light;
+  }
+  :root .docs-layout h1 { font-family: inherit; font-weight: 600; }
+  :root .guide-emblem { background: #f5f7f1; color: #46583c; border-color: var(--line); }
+  :root .guide-workspace { background: #fff; border-color: var(--line); box-shadow: none; }
+  :root .guide-composer { background: #f8faf5; }
+  :root .guide-composer button, :root .gm-panel button { color: #fff; background: #30382f; }
+
+  @media (max-width:700px) {
+    :root main { padding-top: 32px; }
+    :root .character-guide { padding-top: 0; padding-bottom: 28px; }
+    :root .guide-options { margin-block: 22px; }
+    :root .card-body { padding: 18px; }
+    :root .detail-stats { gap: 6px; }
+    :root .detail-stats > div { padding: 13px 2px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :root *, :root *::before, :root *::after { scroll-behavior: auto; transition: none; }
+  }
+}

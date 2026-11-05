@@ -5,150 +5,23 @@
 
 from __future__ import annotations
 
-import json
 import re
+import hashlib
 import unicodedata
 from html import escape
 from pathlib import Path
 
 # Explicit publication allowlist: internal engineering documents are never auto-published.
 CHAPTERS = [
-    (
-        "Découvrir",
-        "reference-rapide",
-        "Référence rapide",
-        "L'essentiel à retrouver pendant la partie.",
-        "source",
-    ),
-    (
-        "Découvrir",
-        "introduction",
-        "Bienvenue dans Cardenveil",
-        "La philosophie et l'organisation du jeu.",
-        "source",
-    ),
-    (
-        "Découvrir",
-        "systeme-de-base",
-        "Dés, cartes & tokens",
-        "Comprendre les ressources et les tests.",
-        "source",
-    ),
-    (
-        "Jouer",
-        "creation",
-        "Créer son personnage",
-        "Identité, caractéristiques et construction du personnage.",
-        "source",
-    ),
-    (
-        "Jouer",
-        "combat",
-        "Actions & combat",
-        "Tours, déplacements, attaques et réactions.",
-        "source",
-    ),
-    (
-        "Jouer",
-        "capacites",
-        "Totems, capacités & cartes",
-        "Activer ses pouvoirs et gérer sa main.",
-        "source",
-    ),
-    (
-        "Jouer",
-        "narration",
-        "Aspects & narration",
-        "Personnalité, relations et interactions narratives.",
-        "source",
-    ),
-    (
-        "Jouer",
-        "progression",
-        "Progression & expérience",
-        "Dépenser ses XP et développer son personnage.",
-        "source",
-    ),
-    (
-        "Références",
-        "personnage",
-        "Caractéristiques & PV",
-        "Synthèse des règles structurées du core.",
-        "character.md",
-    ),
-    (
-        "Références",
-        "cartes",
-        "Coûts & sauvegardes",
-        "Synthèse : capacités, cartes et réductions.",
-        "abilities.md",
-    ),
-    (
-        "Références",
-        "attaques",
-        "Attaques & positionnement",
-        "Synthèse : portée, surplomb et critiques.",
-        "combat.md",
-    ),
-    (
-        "Références",
-        "conditions",
-        "Conditions",
-        "Effets documentés de la condition Aveuglé.",
-        "conditions.md",
-    ),
-    (
-        "Références",
-        "armes",
-        "Armes & propriétés",
-        "Les familles et le tableau des armes.",
-        "weapons.md",
-    ),
-    (
-        "Références",
-        "versions",
-        "Sources & divergences",
-        "Lire les différentes versions sans les confondre.",
-        "reading-guide.md",
-    ),
-    (
-        "Références", "arbitrages", "Arbitrages du MJ",
-        "Décisions explicites applicables dans ce projet.", "rulings.md",
-    ),
+    ("Pendant la partie", "reference-rapide", "Référence rapide", "L’essentiel à garder sous les yeux pendant la partie.", "reference-rapide.md"),
+    ("Comprendre le jeu", "systeme-de-base", "Système de base", "Dés, cartes, tokens et principes du système.", "systeme-de-base.md"),
+    ("Créer et faire évoluer", "creation", "Créer son personnage", "Identité, caractéristiques, compétences et aspects.", "creation.md"),
+    ("Créer et faire évoluer", "races", "Races jouables", "Les illustrations et les traits de chaque race.", "creation.md"),
+    ("Créer et faire évoluer", "progression", "Progression & expérience", "Dépenser ses XP et faire évoluer son personnage.", "progression.md"),
+    ("Jouer une partie", "combat", "Actions & combat", "Rounds, initiative, déplacements, attaques et défense.", "combat.md"),
+    ("Jouer une partie", "capacites", "Totems, capacités & cartes", "Activer ses pouvoirs et gérer ses cartes.", "capacites.md"),
+    ("Jouer une partie", "narration", "Aspects & narration", "Aspects, objectifs, interactions et flashbacks.", "narration.md"),
 ]
-
-# Reading order follows the supplied manuals; older summaries remain separate references.
-ORDER = [
-    "introduction",
-    "systeme-de-base",
-    "creation",
-    "progression",
-    "narration",
-    "combat",
-    "capacites",
-    "reference-rapide",
-    "armes",
-    "conditions",
-    "personnage",
-    "cartes",
-    "attaques",
-    "versions",
-    "arbitrages",
-]
-GROUPS = {
-    "introduction": "Comprendre le jeu",
-    "systeme-de-base": "Comprendre le jeu",
-    "creation": "Créer et faire évoluer",
-    "progression": "Créer et faire évoluer",
-    "narration": "Jouer une partie",
-    "combat": "Jouer une partie",
-    "capacites": "Jouer une partie",
-    "reference-rapide": "Aides de jeu",
-}
-CHAPTERS = sorted(
-    [(GROUPS.get(c[1], "Références et versions"), *c[1:]) for c in CHAPTERS],
-    key=lambda c: ORDER.index(c[1]),
-)
 RULE_TITLES = {
     "character.stats.modifier": "Calculer un modificateur",
     "character.health.max": "Points de vie maximum",
@@ -289,180 +162,66 @@ def markdown(source: str) -> tuple[str, list[tuple[str, str]]]:
     return "\n".join(result), toc
 
 
-def navigation(current: str) -> str:
+def navigation(current: str, chapter_sections: dict | None = None) -> str:
     """Render grouped, crawlable navigation with an explicit current-page marker."""
+
+    def topics_html(key: str, topics: list, depth: int = 0) -> str:
+        """Recursively preserve the heading hierarchy beneath any chapter."""
+        css = 'chapter-sections' if depth == 0 else 'chapter-subsections'
+        rows = []
+        for topic in topics:
+            row = f'<li><a href="/regles/{key}/#{escape(topic["anchor"])}">{escape(topic["label"])}</a>'
+            if topic.get('children'):
+                row += topics_html(key, topic['children'], depth + 1)
+            rows.append(row + '</li>')
+        return f'<ul class="{css}">' + ''.join(rows) + '</ul>'
+
     parts = ['<a class="library-home" href="/regles/">Bibliothèque des règles</a>']
     for group in dict.fromkeys(c[0] for c in CHAPTERS):
         parts.append(f"<h2>{group}</h2><ul>")
         for section, key, title, _, _ in CHAPTERS:
             if section == group:
                 active = ' aria-current="page"' if key == current else ""
-                parts.append(f'<li><a href="/regles/{key}/"{active}>{escape(title)}</a></li>')
+                topics = (chapter_sections or {}).get(key, [])
+                if topics:
+                    opened = ' open' if key == current else ''
+                    parts.append(f'<li><details class="chapter-navigation" data-chapter="{key}"{opened}><summary><span class="chapter-heading"><span class="chapter-caret" aria-hidden="true">›</span><a href="/regles/{key}/"{active}>{escape(title)}</a></span></summary>')
+                    parts.append(topics_html(key, topics) + '</details></li>')
+                else:
+                    parts.append(f'<li><a href="/regles/{key}/"{active}>{escape(title)}</a></li>')
         parts.append("</ul>")
     return "".join(parts)
 
 
 def shell(
-    title: str, description: str, content: str, current: str = "", toc: list | None = None
+    title: str, description: str, content: str, current: str = "",
+    *, featured: str = "", chapter_sections: dict | None = None,
 ) -> str:
-    """Build a responsive reading layout with mobile navigation and per-page contents."""
-    contents = "".join(f'<li><a href="#{a}">{escape(t)}</a></li>' for a, t in toc or [])
+    """Build a two-column reading layout with one unified desktop/mobile navigation."""
+    # New HTML must never reuse a browser-cached stylesheet with the old summary layout.
+    css_hash = hashlib.sha256((Path(__file__).parent / "public/rules.css").read_bytes()).hexdigest()[:12]
     search_box = '''<section class="docs-search" aria-label="Recherche de règles">
 <label for="rule-search">Retrouver une règle</label><div class="search-field"><input id="rule-search" type="search" placeholder="Parade, cartes, flashback…" autocomplete="off" disabled><button id="clear-search" type="button" aria-label="Effacer la recherche" hidden>Effacer</button></div>
 <p id="search-status" role="status">Chargement de la recherche…</p><noscript>Les chapitres restent accessibles sans JavaScript.</noscript><div id="search-results"></div></section>'''
-    mobile_toc = f'<details class="mobile-toc"><summary>Dans ce chapitre · {len(toc or [])} sections</summary><nav aria-label="Sommaire du chapitre"><ol>{contents}</ol></nav></details>' if toc else ""
     return f'''<!doctype html><html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{escape(title)} — Règles Cardenveil</title><meta name="description" content="{escape(description)}">
-<link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/rules.css">
+<link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/rules.css?v={css_hash}">
 <link rel="stylesheet" href="/rules-chat.css"><script src="/rules-chat.js" defer></script><script src="/gm.js" defer></script>
 </head><body class="rules-site"><a class="skip-link" href="#reading">Aller au contenu</a>
 <header class="site-header"><a class="brand" href="/">CARDENVEIL</a><nav><a href="/">Personnages</a><a href="/statistiques/">Statistiques</a><a href="/regles/" aria-current="page">Règles & docs</a><a href="/gm/">Agent MJ</a></nav></header>
-<section class="rules-chat" aria-label="Guide des r?gles"><a href="/gm/">Poser une question au guide Cardenveil ?</a></section>
-<div class="docs-layout"><aside class="docs-nav"><details open><summary>Explorer les règles</summary><nav aria-label="Chapitres">{navigation(current)}</nav></details></aside>
+<div class="docs-layout"><aside class="docs-nav"><details open><summary>Explorer les règles</summary><nav aria-label="Chapitres">{navigation(current, chapter_sections)}</nav></details></aside>
 <main id="reading"><div class="breadcrumb"><a href="/">Cardenveil</a> / <a href="/regles/">Règles</a></div>
 <p class="eyebrow">LE LIVRE DE RÈGLES</p><h1>{escape(title)}</h1><p class="docs-lede">{escape(description)}</p>
-<div class="reading-tools" aria-label="Confort de lecture"><span>À votre rythme</span><button type="button" id="reading-size" aria-pressed="false" hidden>Texte agrandi</button><button type="button" id="reading-theme" aria-pressed="false" hidden>Lecture claire</button><a href="/gm/">Poser une question ↗</a></div>
-{search_box}{mobile_toc}
-{content}</main><aside class="docs-toc"><nav aria-label="Sur cette page"><h2>Sur cette page</h2><ol>{contents}</ol></nav></aside></div>
-<footer>Cardenveil · Sources conservées, divergences signalées · <a href="/regles/versions/">À propos des versions</a></footer>
+{featured}
+{search_box}
+{content}</main></div>
+<footer>Cardenveil · Règles joueurs · <a href="/regles/reference-rapide/">Référence rapide</a></footer>
 <script src="/rules.js" defer></script></body></html>'''
 
 
 def build_rules(root: Path, public: Path) -> None:
-    """Generate all rules pages and the search index from repository-owned text sources."""
-    output = public / "regles"
-    output.mkdir(parents=True, exist_ok=True)
-    search = []
-    for position, (group, key, title, description, source) in enumerate(CHAPTERS):
-        if source == "source":
-            data = json.loads((root / f"docs/rules/sources/{key}.json").read_text("utf-8"))
-            toc = []
-            body = (
-                '<div class="document-source">Source : <strong>'
-                + escape(data["source"])
-                + f'</strong> · {len(data["pages"])} pages <a href="/regles/versions/">Versions et divergences</a></div>'
-            )
-            topic = title
-            headings = {}
-            for page in data["pages"]:
-                number = page["number"]
-                body += f'<span class="page-anchor" id="page-{number}"></span>'
-                chunks = []
-                anchor = f"page-{number}"
+    """Publish the player-only Fragmented snapshot instead of the legacy PDF edition."""
+    from fragmented_rules import build
 
-                def index_section(
-                    chunks,
-                    topic,
-                    anchor,
-                    title=title,
-                    key=key,
-                    source_name=data["source"],
-                    number=number,
-                ):
-                    """Index one topic rather than an arbitrary PDF page or footer."""
-                    if chunks:
-                        search.append(
-                            {
-                                "title": title,
-                                "section": topic,
-                                "url": f"/regles/{key}/#{anchor}",
-                                "text": " ".join(chunks),
-                                "source": source_name,
-                                "page": number,
-                            }
-                        )
-
-                for element in page.get("elements", []):
-                    kind = element["kind"]
-                    if kind == "heading":
-                        if number == 1 and element["text"] == " ".join(page["blocks"][0].split()):
-                            # The document title is already present in the page's h1.
-                            continue
-                        index_section(chunks, topic, anchor)
-                        chunks = []
-                        topic = element["text"]
-                        base = slug(topic)
-                        headings[base] = headings.get(base, 0) + 1
-                        anchor = base if headings[base] == 1 else f"{base}-{headings[base]}"
-                        level = element["level"]
-                        toc.append((anchor, topic))
-                        body += f'<h{level} class="rule-heading" id="{anchor}">{escape(topic)} <a class="source-cite" href="#source-page-{number}" aria-label="Source : {escape(data["source"])} page {number}">p. {number}</a></h{level}>'
-                    elif kind == "table":
-                        rows = element["rows"]
-                        body += '<div class="table-scroll" tabindex="0" aria-label="Tableau de règles"><table>'
-                        for i, row in enumerate(rows):
-                            tag = "th" if i == 0 else "td"
-                            body += (
-                                "<tr>"
-                                + "".join(
-                                    f"<{tag}>{escape(cell or '').replace(chr(10), '<br>')}</{tag}>"
-                                    for cell in row
-                                )
-                                + "</tr>"
-                            )
-                            chunks.extend(cell or "" for cell in row)
-                        body += "</table></div>"
-                    else:
-                        value = element["text"]
-                        css = (
-                            "rule-example"
-                            if value.startswith(("Exemple", "👉"))
-                            else "rule-paragraph"
-                        )
-                        body += f'<p class="{css}">{emphasize(value)}</p>'
-                        chunks.append(value)
-                index_section(chunks, topic, anchor)
-                body += f'<details class="original-page" id="source-page-{number}"><summary>Consulter la source · {escape(data["source"])} · page {number}</summary>'
-                body += (
-                    "".join(f'<p class="source-block">{escape(b)}</p>' for b in page["blocks"])
-                    + "</details>"
-                )
-        else:
-            raw = (root / "docs/rules" / source).read_text("utf-8")
-            display = "\n".join(
-                line
-                for line in raw.splitlines()
-                if not line.startswith(("- Concepts:", "- Implémentation:"))
-            )
-            body, toc = markdown(display)
-            body = (
-                ('<div class="source-notice ruling-notice"><strong>Décisions du MJ</strong> Ces arbitrages priment sur les formulations contradictoires des anciens documents.</div>' if key == "arbitrages" else '<div class="source-notice"><strong>Fiche de référence</strong> Une synthèse partielle : consultez les sources et les <a href="/regles/arbitrages/">arbitrages du MJ</a>. Un statut <code>unresolved</code> indique un point non arbitré.</div>')
-                + body
-            )
-            search.append({"title": title, "section": group, "url": f"/regles/{key}/", "text": raw})
-        adjacent = []
-        for offset, caption in [(-1, "Précédent"), (1, "Suivant")]:
-            if 0 <= position + offset < len(CHAPTERS):
-                c = CHAPTERS[position + offset]
-                adjacent.append(
-                    f'<a href="/regles/{c[1]}/"><small>{caption}</small>{escape(c[2])}</a>'
-                )
-        body += (
-            '<nav class="chapter-links" aria-label="Parcours de lecture">'
-            + "".join(adjacent)
-            + "</nav>"
-        )
-        directory = output / key
-        directory.mkdir(exist_ok=True)
-        (directory / "index.html").write_text(shell(title, description, body, key, toc), "utf-8")
-    body = '''<div class="reading-start"><span class="eyebrow">VOTRE PREMIÈRE PARTIE ?</span><h2>Commencez par l’essentiel.</h2><p>Découvrez les dés et les ressources, préparez votre personnage, puis suivez le déroulement d’un combat.</p><div><a href="/regles/systeme-de-base/">01 · Les bases →</a><a href="/regles/creation/">02 · Le personnage →</a><a href="/regles/combat/">03 · Le combat →</a></div></div><div class="source-notice">Les manuels, les fiches de référence et les <a href="/regles/arbitrages/">arbitrages du MJ</a> sont distingués. Les <a href="/regles/versions/">divergences connues</a> restent consultables.</div>'''
-    toc = []
-    for number, group in enumerate(dict.fromkeys(c[0] for c in CHAPTERS), 1):
-        toc.append((slug(group), group))
-        body += f'<section id="{slug(group)}"><h2 class="group-title"><span>0{number}</span>{group}</h2><div class="docs-cards">'
-        for section, key, title, description, source in CHAPTERS:
-            if section == group:
-                kind = "Document source" if source == "source" else ("Arbitrage MJ" if key == "arbitrages" else "Fiche de référence")
-                body += f'<a class="docs-card" href="/regles/{key}/"><span class="eyebrow">{kind}</span><h3>{escape(title)} <span aria-hidden="true">↗</span></h3><p>{escape(description)}</p></a>'
-        body += "</div></section>"
-    (output / "index.html").write_text(
-        shell(
-            "Règles & documentation",
-            "Comprendre le système. Créer un personnage. Retrouver une règle en pleine partie.",
-            body,
-            toc=toc,
-        ),
-        "utf-8",
-    )
-    (output / "search.json").write_text(json.dumps(search, ensure_ascii=False), "utf-8")
+    build(root, public)

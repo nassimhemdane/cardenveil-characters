@@ -1,0 +1,2 @@
+# Preserve exact Markdown snapshot bytes so their SHA-256 checks also pass on Linux.
+docs/rules/fragmented/*.md -text

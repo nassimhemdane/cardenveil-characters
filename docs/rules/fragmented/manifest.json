@@ -1,0 +1,220 @@
+{
+  "edition": "Cardenveil Fragmented",
+  "documents": {
+    "reference-rapide": {
+      "source": "⚙ CARDENVEIL — RÉFÉRENCE RAPIDE.md",
+      "file": "reference-rapide.md",
+      "sha256": "0e8e8cc588c911d4bca113b95a0005b7a1e2ea8b5da2feed0cef82ac7ab68bbc"
+    },
+    "systeme-de-base": {
+      "source": "Système de Base.md",
+      "file": "systeme-de-base.md",
+      "sha256": "41552af38c73524eeaf56831703d3f658f57620751fbaf98d52292356022da1b"
+    },
+    "creation": {
+      "source": "Personnage.md",
+      "file": "creation.md",
+      "sha256": "e008cfda0a8b8876411078d057878efc1d2037fdbf17476729bdaac6fbacd745"
+    },
+    "combat": {
+      "source": "Action et Combat.md",
+      "file": "combat.md",
+      "sha256": "8b23ddb0e222f3f7252ae3027a5eb36f7b78fc074851988336d97577650dba32"
+    },
+    "capacites": {
+      "source": "Totem, Capacités & Cartes 2b01af51d01280ceaa0fdcf7544cf212.md",
+      "file": "capacites.md",
+      "sha256": "511e0459d4332276fb2ba14f9f534d08769e6a8aa3debebb16383744c1f0efc7"
+    },
+    "narration": {
+      "source": "Système Narratif.md",
+      "file": "narration.md",
+      "sha256": "d96778127dff5310188562c776cfb83c657afde89becee77776b05de5a8976e4"
+    },
+    "progression": {
+      "source": "Système de progression.md",
+      "file": "progression.md",
+      "sha256": "6e63134e6d4ab00638f91c16334922e874c03ebb57932cbc439adb3e771d5b12"
+    }
+  },
+  "images": {
+    "Pasted image 20261014201518.png": {
+      "url": "/assets/rules/21cdcf401951c0d15731.webp",
+      "file": "assets/21cdcf401951c0d15731.webp",
+      "width": 600,
+      "height": 900,
+      "source": "Pasted image 20261014201518.png"
+    },
+    "Pasted image 20261014201537.png": {
+      "url": "/assets/rules/0806ee1321d93ab71756.webp",
+      "file": "assets/0806ee1321d93ab71756.webp",
+      "width": 600,
+      "height": 900,
+      "source": "Pasted image 20261014201537.png"
+    },
+    "Pasted image 20261014201600.png": {
+      "url": "/assets/rules/7c9332063bcd18e8cb9f.webp",
+      "file": "assets/7c9332063bcd18e8cb9f.webp",
+      "width": 600,
+      "height": 900,
+      "source": "Pasted image 20261014201600.png"
+    },
+    "Pasted image 20261014201628.png": {
+      "url": "/assets/rules/95f8f2fcf186b3093c8b.webp",
+      "file": "assets/95f8f2fcf186b3093c8b.webp",
+      "width": 600,
+      "height": 900,
+      "source": "Pasted image 20261014201628.png"
+    },
+    "Pasted image 20261014201948.png": {
+      "url": "/assets/rules/45b12f8ca83420a83bf5.webp",
+      "file": "assets/45b12f8ca83420a83bf5.webp",
+      "width": 600,
+      "height": 900,
+      "source": "Pasted image 20261014201948.png"
+    },
+    "Pasted image 20261014202018.png": {
+      "url": "/assets/rules/49819c60e76503d6d2d6.webp",
+      "file": "assets/49819c60e76503d6d2d6.webp",
+      "width": 504,
+      "height": 900,
+      "source": "Pasted image 20261014202018.png"
+    },
+    "Pasted image 20261014202036.png": {
+      "url": "/assets/rules/8778dbf560105f9746c0.webp",
+      "file": "assets/8778dbf560105f9746c0.webp",
+      "width": 675,
+      "height": 900,
+      "source": "Pasted image 20261014202036.png"
+    },
+    "Pasted image 20261014202218.png": {
+      "url": "/assets/rules/72644668b0584dde8d57.webp",
+      "file": "assets/72644668b0584dde8d57.webp",
+      "width": 600,
+      "height": 900,
+      "source": "Pasted image 20261014202218.png"
+    },
+    "Pasted image 20261014202239.png": {
+      "url": "/assets/rules/07b08fff917845f4faf2.webp",
+      "file": "assets/07b08fff917845f4faf2.webp",
+      "width": 600,
+      "height": 900,
+      "source": "Pasted image 20261014202239.png"
+    },
+    "Pasted image 20261014202426.png": {
+      "url": "/assets/rules/01d7c84ef4f65f97c25a.webp",
+      "file": "assets/01d7c84ef4f65f97c25a.webp",
+      "width": 600,
+      "height": 900,
+      "source": "Pasted image 20261014202426.png"
+    },
+    "Pasted image 20261014203320.png": {
+      "url": "/assets/rules/51c0221915d4afee12df.webp",
+      "file": "assets/51c0221915d4afee12df.webp",
+      "width": 678,
+      "height": 900,
+      "source": "Pasted image 20261014203320.png"
+    },
+    "Pasted image 20261014203339.png": {
+      "url": "/assets/rules/5f4440017180e79d0378.webp",
+      "file": "assets/5f4440017180e79d0378.webp",
+      "width": 600,
+      "height": 900,
+      "source": "Pasted image 20261014203339.png"
+    },
+    "Pasted image 20261014203646.png": {
+      "url": "/assets/rules/c02d66e4659192df84c7.webp",
+      "file": "assets/c02d66e4659192df84c7.webp",
+      "width": 600,
+      "height": 900,
+      "source": "Pasted image 20261014203646.png"
+    },
+    "Pasted image 20261014203658.png": {
+      "url": "/assets/rules/ebcdef723aac6278c877.webp",
+      "file": "assets/ebcdef723aac6278c877.webp",
+      "width": 600,
+      "height": 900,
+      "source": "Pasted image 20261014203658.png"
+    },
+    "Pasted image 20261014203712.png": {
+      "url": "/assets/rules/ee61677cfcb1f1b6c583.webp",
+      "file": "assets/ee61677cfcb1f1b6c583.webp",
+      "width": 658,
+      "height": 881,
+      "source": "Pasted image 20261014203712.png"
+    },
+    "Pasted image 20261014203723.png": {
+      "url": "/assets/rules/35a0fa6e7ed434eae899.webp",
+      "file": "assets/35a0fa6e7ed434eae899.webp",
+      "width": 678,
+      "height": 900,
+      "source": "Pasted image 20261014203723.png"
+    },
+    "Pasted image 20261014203212.png": {
+      "url": "/assets/rules/843e4834c642ceace21e.webp",
+      "file": "assets/843e4834c642ceace21e.webp",
+      "width": 505,
+      "height": 900,
+      "source": "Pasted image 20261014203212.png"
+    },
+    "Pasted image 20261014203800.png": {
+      "url": "/assets/rules/c233420acffc06062e10.webp",
+      "file": "assets/c233420acffc06062e10.webp",
+      "width": 654,
+      "height": 900,
+      "source": "Pasted image 20261014203800.png"
+    },
+    "Personnage/image.png": {
+      "url": "/assets/rules/fadf5ea3646c58a01d05.webp",
+      "file": "assets/fadf5ea3646c58a01d05.webp",
+      "width": 720,
+      "height": 900,
+      "source": "Cardenveil Fragmented/Personnage/image.png"
+    },
+    "Pasted image 20261014204002.png": {
+      "url": "/assets/rules/4277a27cc2deb811bd73.webp",
+      "file": "assets/4277a27cc2deb811bd73.webp",
+      "width": 600,
+      "height": 900,
+      "source": "Pasted image 20261014204002.png"
+    },
+    "Cardenveil Fragmented/Personnage/image 1.png": {
+      "url": "/assets/rules/96020937a8c5627015c5.webp",
+      "file": "assets/96020937a8c5627015c5.webp",
+      "width": 668,
+      "height": 900,
+      "source": "Cardenveil Fragmented/Personnage/image 1.png"
+    },
+    "image 2.png": {
+      "url": "/assets/rules/3b767ae55f930a3bc91f.webp",
+      "file": "assets/3b767ae55f930a3bc91f.webp",
+      "width": 600,
+      "height": 900,
+      "source": "Cardenveil Fragmented/Personnage/image 2.png"
+    },
+    "Pasted image 20261014204213.png": {
+      "url": "/assets/rules/d05b1ef80a9ad69ea688.webp",
+      "file": "assets/d05b1ef80a9ad69ea688.webp",
+      "width": 624,
+      "height": 900,
+      "source": "Pasted image 20261014204213.png"
+    },
+    "image 3.png": {
+      "url": "/assets/rules/f1f29607d0b96ae54d6a.webp",
+      "file": "assets/f1f29607d0b96ae54d6a.webp",
+      "width": 600,
+      "height": 900,
+      "source": "Cardenveil Fragmented/Personnage/image 3.png"
+    },
+    "nimbrisplashart.jpg": {
+      "url": "/assets/rules/3f50e545d7eab6618a0d.webp",
+      "file": "assets/3f50e545d7eab6618a0d.webp",
+      "width": 603,
+      "height": 900,
+      "source": "nimbrisplashart.jpg"
+    }
+  },
+  "missingImages": [
+    "../../Races%20Jouables/021fe7ebd674dc0af101220e7246fbed.jpg"
+  ]
+}
