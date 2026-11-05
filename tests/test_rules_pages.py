@@ -103,6 +103,17 @@ def test_rules_build_and_links(tmp_path, monkeypatch):
     assert 'href="/regles/combat/#actions-principales"' in combat
     assert 'href="/regles/combat/#actions-bonus"' in combat
     assert 'href="/regles/combat/#reactions"' in combat
+    assert 'href="/regles/combat/#engagement"' in combat
+    assert 'href="/regles/combat/#critiques-avec-avantage"' in combat
+    assert 'Gantelet de combat' in combat and 'Twinblade' not in combat
+    assert 'À chaque critique, relancer avec' in unescape(combat)
+    capacities = (tmp_path / "regles/capacites/index.html").read_text("utf-8")
+    assert "10 archétypes de Totems" in capacities
+    assert "Les 7 piliers d'un Totem" in unescape(capacities)
+    assert 'Effectue le jet' in capacities and '3 fois' in capacities
+    narrative = (tmp_path / "regles/narration/index.html").read_text("utf-8")
+    assert 'Goals et Jeu Rp' in narrative and 'Les Bonds' not in narrative
+    assert 'Cartes données au MJ' not in narrative
     for path in pages:
         page = path.read_text("utf-8")
         assert 'class="docs-toc"' not in page and 'Sur cette page' not in page

@@ -87,42 +87,35 @@ Les capacités appliquent ensuite un **multiplicateur** à l’une de ces deux v
 
 ### 🔸 **Faire un jet de capacité à Valeur Brute**
 
+
 1. 🌀 **Identifier la capacité**
-    - Vérifie le **multiplicateur (K)** indiqué.
-    - Détermine le **Modificateur contextuel** utilisé (Force, Agilité, Esprit ou Social).
-    - La **Valeur Brute** est définie comme :
-        
-        **Valeur Brute = Mod × d6**
-        
-    - Ce jet ne dépend **pas de l’arme** et **ne peut pas faire de critique**.
-2. 🎲 **Lancer la Valeur Brute**
-    - Jette un nombre de **d6 égal à ton Mod**.
-    - Ce jet représente **1 unité** d’effet de la capacité.
-3. ➕ **Utiliser les avantages (séquentiels)**
-    - Après avoir vu les résultats, tu peux dépenser **un avantage**.
-    - Chaque avantage ajoute **+2d6** au jet.
-    - À la fin, **garde uniquement un nombre de dés égal à ton Mod**.
-    - Aucun de ces dés ne peut déclencher de critique.
-4. 🧮 **Calculer la Valeur Brute finale**
-    - Additionne les **dés gardés**.
-    - Tu obtiens la **Valeur Brute finale**.
-5. ✖️ **Appliquer le multiplicateur K**
-    - Multiplie la Valeur Brute finale par **K**.
-    - Le résultat représente la **valeur finale de la capacité** (dégâts, soin, etc.).
+   - Vérifie le **multiplicateur (K)** indiqué.
+   - Détermine le **modificateur contextuel (Mod)** utilisé (Force, Agilité, Esprit ou Social).
+   - La valeur de la capacité est définie par :
+
+     **Valeur = K × Mod × d6**
+
+   - Ce jet ne dépend **pas de l'arme** et **ne peut pas faire de critique**.
+
+
+### ➕ **Avantages et désavantages**
+
+- **Avantage** : Effectue le jet **3 fois** et conserve le **résultat le plus élevé**.
+- **Désavantage** : Effectue le jet **3 fois** et conserve le **résultat le plus faible**.
+- **Cumul** : Chaque avantage ou désavantage supplémentaire ajoute **2 jets**.
+- **Annulation** : Les avantages et désavantages s'annulent un à un.
+- **Critiques** : Aucun de ces jets ne peut déclencher de critique.
+
 
 ### 🔸 **Faire un jet de capacité à Dégâts de Base**
 
 1. ⚔️ **Identifier la capacité**
     - Vérifie le **multiplicateur de dégâts de base (K)** indiqué.
 2. 🎲 **Faire un jet de dégâts de base**
-    - Effectue un **jet de dégâts de base normal** :
-        
-        dé d’arme, modificateur, bonus d’arme, avantages, critiques, etc.
-        
+    - Effectue un seul **jet de dégâts de base normal** : dé d’arme, modificateur, bonus d’arme, avantages, critiques, etc.
     - (La procédure complète est décrite dans la section *Dégâts de base*.)
 3. ✖️ **Appliquer le multiplicateur K**
     - Multiplie simplement le résultat de ton **jet de dégâts de base** par **K**.
-    - Le total obtenu représente les **dégâts finaux de la capacité**.
 
 ---
 
@@ -166,60 +159,173 @@ Les tokens sont des ressources liées aux caractéristiques, utilisées exclusiv
     
 - **Tokens de Social :**
     
-    Sur une attaque de base, applique une **marque** : pour chaque allié qui attaque la cible avant ton prochain tour, la marque réplique **tes dégâts initiaux** une fois.
+    Faites Attaquer un allié
     
 
-⚡ Les tokens peuvent être utilisés **après avoir réussi l’attaque de base**, pour transformer son effet.
+⚡ Utilisable une seule fois par round pour chaque token unique.
 
 ---
+
 
 ### **Multiplicativité des Tokens**
 
-Tous les tokens se combinent **multiplicativement**, chacun ajoutant une dimension qui s’empile avec les autres :
+Les tokens se combinent **multiplicativement**, leurs effets s'appliquant les uns aux autres :
 
-- **Force + Agilité** → deux attaques, chacune pouvant frapper jusqu’à 3 cibles (×6).
-- **Force + Esprit** → deux attaques, et chacune est réverbérée (total ×6).
-- **Force + Social** → deux attaques, donc deux marques répliquées par les alliés (total doublé puis multiplié par le nombre d’alliés).
-- **Agilité + Esprit** → une attaque courbée sur 3 cibles, chacune réverbérée (×9).
-- **Agilité + Social** → une attaque sur 3 cibles, chacune marquée (×3 puis multiplié par le nombre d’alliés).
-- **Esprit + Social** → une attaque réverbérée où la réverbération inclut aussi les répliques alliées (la réverbération rejoue tout).
+- **Force + Agilité** → Deux attaques, chacune pouvant toucher jusqu'à 3 cibles (×6).
+- **Force + Esprit** → Deux attaques, chacune réverbérée (×6).
+- **Force + Social** → Un allié effectue deux attaques.
+- **Agilité + Esprit** → Trois cibles, chacune subissant une réverbération (×9).
+- **Agilité + Social** → Un allié attaque jusqu'à 3 cibles.
+- **Esprit + Social** → L'attaque de l'allié est réverbérée (×3).
 
-👉 En résumé :
+👉 **En résumé :**
 
-- **Force** multiplie les frappes.
-- **Agilité** multiplie les cibles.
-- **Social** multiplie par le nombre d’alliés qui attaquent.
-- **Esprit** multiplie tout le total par 3 (réverbération).
+- **Force** multiplie les attaques (×2).
+- **Agilité** multiplie les cibles (jusqu'à ×3).
+- **Esprit** multiplie les dégâts (×3 avec la réverbération).
+- **Social** transfère l'attaque à un allié, qui bénéficie des effets des autres tokens.
 
-# **Totems**
+# Les Totems
 
-Les totems sont des capacités méta uniques qui influencent les règles du jeu, facilitant l’utilisation des cartes ou permettant de consommer celles dont vous n’avez pas besoin. Ils sont souvent personnalisés pour refléter la nature du personnage, jouant un rôle central dans sa "classe" et son style de jeu.
+Les **Totems** sont des capacités **META uniques** qui modifient les règles habituelles du jeu et la manière d'utiliser les cartes. Ils constituent **le cœur de l'identité mécanique du personnage** : ses capacités sont généralement conçues pour interagir avec son Totem, créant un style de jeu qui lui est propre.
 
-- **Totem unique** : Chaque joueur ne peut posséder qu’un seul totem, et il est lié à son personnage.
-- **Mécanique META** : Les totems influencent les mécaniques de jeu, modifiant les règles standard de manière significative.
-- **Totem et cartes:** la mécanique du totem doit toujours être liée a votre gestion des **cartes**. Les **cartes cristalisées** ne peuvent **pas** être utilisées pour le totem.
-- **Totem personalisé:**  Un joueur peut demander un totem personalisé mais sinon voici une lsite non exaustive des totems possibles:
+### Règles générales
 
-Voici deux **examples** de totems:
+- **Totem unique :** Chaque personnage ne peut posséder qu'un seul Totem.
+- **Mécanique META :** Un Totem modifie ou enrichit les mécaniques classiques du jeu plutôt que de simplement fournir une capacité supplémentaire.
+- **Gestion des cartes :** Tout Totem doit interagir avec les cartes, notamment en permettant de les bloquer, de les défausser ou d'exploiter leurs valeurs et leurs couleurs. Les **cartes cristallisées** ne peuvent jamais être utilisées pour activer un Totem.
+- **Totem personnalisé :** Un joueur peut proposer son propre Totem, en accord avec le MJ. À défaut, il peut s'inspirer des archétypes présentés ci-dessous.
 
-### **Totem des dégâts amplifiés**
+## Les 7 piliers d'un Totem
 
-- **Effet** : Vous pouvez augmenter le résultat de vos jets d’attaque (non magiques) en défaussant des cartes.
-- **Utilisation** : Défaussez X cartes pour ajouter X au jet. Si le total atteint la **valeur maximale du dé**, cela déclenche un critique.
-- **Exemple** : Vous lancez un d8 pour une attaque et obtenez un 5. Défaussez 3 cartes pour porter le total à 8, déclenchant un critique.
+Le Totem est **le cœur du personnage** : il définit sa mécanique principale et influence son style de jeu. Pour concevoir un Totem, on peut s'appuyer sur sept éléments :
+
+1. **Archétype :** Le type de pouvoir sur lequel repose le Totem : invocation, transformation, accumulation de charges, manipulation des règles, etc.
+2. **Activation :** La manière d'utiliser le Totem, notamment les cartes à bloquer ou à défausser, et les éventuelles actions nécessaires.
+3. **Mécanique centrale :** La règle unique qui définit le fonctionnement du Totem et distingue le personnage des autres.
+4. **Évolution :** La manière dont le Totem fonctionne dans le temps : effet immédiat, effet persistant, accumulation de ressources, progression ou déclenchement différé.
+5. **Application :** Les effets concrets du Totem : dégâts, protection, déplacement, contrôle, exploration ou interactions sociales.
+6. **Limites :** Les contraintes qui encadrent son utilisation : coût, durée, portée, nombre d'utilisations, conditions particulières ou faiblesses.
+7. **Interaction avec les capacités :** La manière dont les capacités du personnage utilisent, renforcent ou prolongent la mécanique du Totem.
+
+**Un bon Totem n'a pas besoin d'être complexe.** Il doit surtout proposer une mécanique centrale originale, suffisamment riche pour que plusieurs capacités puissent être construites autour d'elle.
+
+##  10 archétypes de Totems
+
+Les archétypes suivants sont des **moules de création non exhaustifs**. Ils peuvent être adaptés ou combinés pour créer des Totems originaux.
+
+### 1. Invocation
+
+**Exemple — Compagnon mystique**
+
+- **Activation :** Bloquer une carte pour invoquer un compagnon.
+- **Mécanique :** Le compagnon possède un comportement différent selon la couleur de la carte.
+- **Évolution :** Il peut gagner de nouvelles propriétés au fil du combat.
+- **Application :** Attaquer, protéger ou assister son invocateur.
+- **Limites :** Une seule invocation active, maintenue par la carte bloquée.
+- **Interaction :** Les capacités permettent de commander, déplacer ou améliorer le compagnon.
+
+### 2. Transformation
+
+**Exemple — Métamorphose**
+
+- **Activation :** Bloquer une carte pour adopter une forme particulière.
+- **Mécanique :** Chaque couleur correspond à une transformation différente.
+- **Évolution :** La transformation peut être renforcée ou remplacée.
+- **Application :** Modifier les caractéristiques, les attaques ou la mobilité.
+- **Limites :** Les transformations sont mutuellement exclusives et possèdent des faiblesses.
+- **Interaction :** Les capacités produisent des effets supplémentaires selon la forme active.
+
+### 3. Accumulation
+
+**Exemple — Énergie cinétique**
+
+- **Activation :** Bloquer une carte pour commencer à accumuler des charges.
+- **Mécanique :** Certaines actions réussies génèrent des charges.
+- **Évolution :** Les charges s'accumulent jusqu'à une limite.
+- **Application :** Améliorer les dégâts, la défense ou les déplacements.
+- **Limites :** Les charges peuvent être perdues ou consommées.
+- **Interaction :** Les capacités dépensent les charges pour amplifier leurs effets.
+
+### 4. Marquage
+
+**Exemple — Malédiction progressive**
+
+- **Activation :** Défausser une carte pour marquer une créature.
+- **Mécanique :** La marque applique une condition particulière.
+- **Évolution :** Les marques peuvent s'accumuler ou devenir plus puissantes avec le temps.
+- **Application :** Affaiblir, contrôler ou infliger des dégâts.
+- **Limites :** Les marques peuvent être dissipées et leur accumulation est limitée.
+- **Interaction :** Les capacités exploitent, propagent ou consomment les marques.
+
+### 5. Manipulation de l'espace
+
+**Exemple — Distorsion spatiale**
+
+- **Activation :** Défausser une carte pour modifier une portion de l'environnement.
+- **Mécanique :** Créer des passages, déplacer des surfaces ou modifier les distances.
+- **Évolution :** Plusieurs altérations peuvent interagir entre elles.
+- **Application :** Modifier les déplacements, les portées et le positionnement.
+- **Limites :** Portée, durée et nombre d'altérations limités.
+- **Interaction :** Les capacités utilisent les altérations pour produire de nouvelles trajectoires ou zones d'effet.
+
+### 6. Armes et objets
+
+**Exemple — Arsenal lié**
+
+- **Activation :** Défausser une carte pour invoquer une arme particulière.
+- **Mécanique :** Chaque couleur détermine une arme et ses propriétés.
+- **Évolution :** Les armes peuvent être améliorées, échangées ou combinées.
+- **Application :** Diversifier les attaques et les options défensives.
+- **Limites :** Nombre d'armes actives limité.
+- **Interaction :** Les capacités exploitent les propriétés de chaque arme.
+
+### 7. Tempo
+
+**Exemple — Écho temporel**
+
+- **Activation :** Bloquer une carte pour mémoriser une action.
+- **Mécanique :** Permettre de reproduire ou de différer cette action.
+- **Évolution :** L'action peut rester stockée jusqu'à son déclenchement.
+- **Application :** Modifier le rythme des actions et des réactions.
+- **Limites :** Une seule action stockée, avec une durée limitée.
+- **Interaction :** Les capacités peuvent être mémorisées puis déclenchées dans des circonstances particulières.
+
+### 8. Métarègles
+
+**Exemple — Manipulation du destin**
+
+- **Activation :** Défausser une carte pour modifier un jet.
+- **Mécanique :** La valeur ou la couleur de la carte détermine la modification autorisée.
+- **Évolution :** L'effet est généralement immédiat.
+- **Application :** Influencer les jets d'attaque, de sauvegarde ou de compétence.
+- **Limites :** Modification plafonnée et déclenchement limité.
+- **Interaction :** Les capacités peuvent exploiter les réussites ou les échecs ainsi provoqués.
+
+### 9. Influence mentale
+
+**Exemple — Aura émotionnelle**
+
+- **Activation :** Bloquer une carte pour émettre une aura.
+- **Mécanique :** La couleur détermine l'émotion transmise aux créatures proches.
+- **Évolution :** L'effet peut s'intensifier ou changer selon les interactions.
+- **Application :** Influencer les comportements, les décisions et les performances.
+- **Limites :** Portée limitée et possibilité de résistance.
+- **Interaction :** Les capacités exploitent les émotions présentes chez les cibles.
+
+### 10. Aléatoire
+
+**Exemple — Magie chaotique**
+
+- **Activation :** Défausser une carte pour déclencher un effet imprévisible.
+- **Mécanique :** Un dé détermine la nature ou la puissance de l'effet.
+- **Évolution :** Certains résultats peuvent être conservés ou combinés.
+- **Application :** Produire des effets offensifs, défensifs ou utilitaires.
+- **Limites :** Le joueur ne contrôle pas entièrement le résultat.
+- **Interaction :** Les capacités permettent d'influencer, de combiner ou d'exploiter les effets aléatoires.
 
 ---
 
-### **Totem des réactions multiples**
+**Principe de conception :** Le Totem définit la mécanique centrale du personnage ; ses capacités en représentent les différentes applications. Deux personnages peuvent partager le même archétype tout en possédant des styles de jeu radicalement différents.
 
-- **Effet** : vous pouvez défausser des cartes pour obtenir des réactions supplémentaires.
-- **Utilisation** : Chaque carte défaussée vous octroie une réaction supplémentaire ce round.
-- **Exemple** : Vous êtes ciblé par plusieurs attaques. Défaussez 2 cartes pour effectuer 2 parades supplémentaires.
 
----
-
-### **Totem d’attaque réflexive**
-
-- **Effet** : En utilisant votre **réaction**, défaussez toutes vos cartes (minimum 1) pour attaquer un ennemi à portée.
-- **Utilisation** : Cette attaque agit comme une attaque normale.
-- **Exemple** : Vous êtes un gerrier a portée de votre adversaire, defaussez toutes vos cartes pour ajouter une attaque.

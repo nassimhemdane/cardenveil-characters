@@ -237,7 +237,11 @@ def combat_navigation(outline: list[tuple[int, str, str]]) -> list[dict]:
         'duree-des-effets': ('Durée des effets', set()),
         'faire-un-jet-dinitiative': ('Jet d’initiative', set()),
         'actions-disponibles-en-combat': ('Actions en combat', {'actions-principales', 'actions-bonus', 'reactions'}),
-        'regles-des-attaques-et-degats': ('Attaques & dégâts', set()),
+        'regles-des-attaques-et-degats': ('Attaques & dégâts', {
+            'armes-de-corps-a-corps', 'armes-a-distance', 'catalyseurs-magiques',
+            'faire-un-jet-dattaque', 'avantages-et-desavantages',
+            'critiques-avec-avantage', 'engagement',
+        }),
         'armes': ('Armes & propriétés', {'armes-uniques', 'tableau-des-armes', 'liste-des-proprietes'}),
         'armures': ('Armures', set()),
         'inconscience-et-fatigue': ('Inconscience & fatigue', set()),

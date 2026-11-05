@@ -266,33 +266,59 @@ Les catalyseurs magiques permettent de canaliser l'Esprit pour amplifier les cap
 
 ## **Faire un jet d’attaque**
 
-1. 🗡️ **Identifier l’arme et la stat**
-    - **Dé d’arme** (ex. d6, d8, d10, d12).
-    - **Bonus d’arme** éventuel (+X).
-    - **Caractéristique associée** (Force / Agilité / Esprit).
-    - **Propriété Finesse ?** (oui/non).
+
+1. 🗡️ **Calculer le bonus d’attaque**
+   - **Caractéristique associée** : Force / Agilité / Esprit.
+   - **+ Bonus d’arme** (+X).
+   - **+ Bonus de perfection** de l’arme.
+   - **+ Tous les bonus externes**.
+
 2. 🎲 **Lancer le dé de base**
-    - Jette **1 dé** de l’arme (ex. 1d8).
-3. ➕ **Appliquer les avantages (séquentiels)**
-    - Pour **chaque avantage**, **ajoute 2 dés** au jet (car ce n’est pas un d20).
-    - **Garde 1 seul meilleur résultat** (puisque l’attaque de base = 1 dé).
-    - Tu peux **réserver** des avantages non utilisés pour un **jet de critique** (voir étape 5).
-    - Si l’arme est **Finesse  + mod Agilité** en bonus d’arme pour **chaque** avantage.
-4. 🧮 **Ajouter les modificateurs (une seule fois)**
-    - **+ caractéristique** (Force / Agilité / Esprit).
-    - **+ bonus d’arme** (+X).
-    - **+ Autres bonus contextuels.**
-5. 💥 **Gérer le critique (explosif)**
-    - Si le **dé gardé = valeur max**, déclenche un **critique** :
-        1. **Relance** le **dé de l’arme**.
-        2. Tu peux utiliser des **avantages** si tu en as gardé.
-        3. **Ajoute** ce **nouveau résultat** au total.
-        4. **Propagation des bonus :**
-            - **Si l’arme est Finesse** → **+ Agilité** **à chaque critique**.
-            - Sinon → **aucun bonus** ne se rajoute (ni +Force/Esprit, ni +X).
-    - 🔁 Si cette relance fait encore **max**, **répète** l’étape 5 (tant qu’il y a des max).
-6. 🧾 **Calculer le total final**
-    - Somme = **meilleur dé initial** + **mod (une fois)** + **bonus d’arme (une fois) + bonus contextuels (une fois)  + mod Agilité par avantage (si finesse)** + **toutes les additions de critiques** (et **+Agi par critique** uniquement si **Finesse**).
+   - Lance **1 dé de l’arme** (d4, d6, d8, d10, d12).
+   - Si le résultat est **inférieur ou égal au seuil d’échec** (généralement 1) → **Échec**.
+
+3. 💥 **Gérer les critiques**
+   - Si le dé atteint sa **valeur maximale** → **Critique**.
+   - Relance le dé et **ajoute le résultat** à la somme des dés.
+   - Si le nouveau dé atteint également sa valeur maximale, **répète**.
+
+4. 🧮 **Calculer les dégâts**
+   - Additionne **tous les résultats des dés**.
+   - Ajoute **une fois le bonus d’attaque** calculé à l’étape 1.
+   - **Si Finesse** : ajoute également ce bonus **pour chaque critique**.
+
+**Formule finale :**
+
+`Dégâts = Somme des dés + Bonus d'attaque × (1 + Nombre de critiques si Finesse)`
+
+
+### 🎲 **Avantages et désavantages**
+
+- **Avantage** : +2 dés par avantage (1 = 3 dés, 2 = 5 dés...). Conserver le **meilleur**.
+- **Désavantage** : +2 dés par désavantage (1 = 3 dés, 2 = 5 dés...). Conserver le **plus petit**.
+- **Annulation** : Les avantages et désavantages s'annulent un à un.
+
+### 💥 **Critiques avec avantage**
+
+- À chaque critique, relancer avec **un avantage de moins**.
+- Ajouter le résultat conservé aux dégâts.
+- À 0 avantage, continuer les critiques avec **1 dé**.
+
+**Exemple :**
+3 avantages → Crit → 2 avantages → Crit → 1 avantage → Crit → 0 avantage → Crit → 0 avantage...
+
+
+### ⚔️ **Engagement**
+
+Lors d'une attaque avec une **arme de corps à corps**, vous pouvez choisir d'**engager votre attaque**.
+
+- **Bonus** : Ajoutez une seconde fois votre modificateur de **Force ou d'Agilité** au bonus total de l'attaque.
+- **Désavantage** : L'attaque subit un désavantage.
+- **Exposition** : Vous devenez **Exposé** après l'attaque.
+- **Finesse** : Si l'arme possède la propriété **Finesse**, vous ne devenez pas Exposé.
+
+**Narrativement**, l'engagement peut représenter une attaque plus puissante, une frappe ciblée ou une manœuvre particulièrement risquée.
+
 
 # **Armes**
 
@@ -359,6 +385,7 @@ Le tableau ci-dessous regroupe les catégories d'armes basiques, avec leurs type
 **Armes :**
 
 - **Gourdin** — 1d4, contondant — Improvisée, Brute
+- **Gantelet de combat** — 1d6, contondant — Léger
 - **Marteau de guerre** — 1d8, contondant — Polyvalente (1d10)
 - **Grand marteau** — 1d12, contondant — Deux mains
 
@@ -435,17 +462,6 @@ Offre une **armure passive** indépendante de la Force et une **valeur de Parade
 - Hérite des propriétés **Fluide** (épées courbes) et **Allonge**.
 - → Arme hybride qui combine **mobilité/feinte** et **contrôle de zone**.
 
----
-
-### ⚔️ Twinblade — **Double Frappe**
-
-**Profil** : 1d8, tranchant — Deux mains, Spéciale
-
-- **Double Frappe** : tu peux utiliser ton **Action + Bonus Action** pour porter une **attaque combinée** contre une cible unique.
-    - Lance **2d8** et ajoute **2× ton mod Force**.
-    - Si les deux dés montrent la même valeur, c’est un **critique automatique**.
-
----
 
 ### ⚔️ Rapière — **Contre d’Estoc**
 
@@ -507,7 +523,6 @@ Profil : 1d4, contondant
 | Lance                   | 1d8, perçant             | Polyvalente (1d10), Amplitude,  **Allonge**               |
 | Hallebarde              | 1d12, tranchant          | Deux mains, **Allonge**                                   |
 | Faux                    | 1d10, tranchant          | Deux mains, Amplitude, **Fluide**, **Allonge**            |
-| Twinblade               | 1d8, tranchant           | Deux mains,  **Double Frappe**                            |
 | Rapière                 | 1d8, perçant             | Finesse, **Contre d’Estoc**                               |
 | Fouet                   | 1d6, tranchant           | Finesse,  **Entrave**                                     |
 | Fist weapons            | 1d4, contondant          | Impact, Hybride                                           |
@@ -520,6 +535,7 @@ Profil : 1d4, contondant
 | Focus                   | 1d4, magique/élémentaire | Distance, Brute, Tir léger, Secondaire**, Catalyseur**    |
 | Baton                   | 1d8, magique/élémentaire | Distance, Deux mains, **Catalyseur**                      |
 | Bouclier                | 1d4, contendant          | Brute, Secondaire, **Rempart**                            |
+| Gantelet de combat      | 1d6, contondant          | Léger, **Impact**                                         |
 
 ## 📜 Liste des Propriétés
 
@@ -560,7 +576,6 @@ Profil : 1d4, contondant
 - **Contre d’Estoc (Rapière)** : Quand vous êtes attaqué en mêlée vous pouvez donner avantage à l’ennemi, puis parer normalement et enfin effectuer immédiatement une attaque gratuite de rapière contre lui.
 - **Entrave (Fouet)** : Les attaques d’opportunité avec un fouet se font avec désavantage mais si elles touchent vous faites un test d’Escamotage contre l’Athlétisme de la cible pour la mettre à terre.
 - **Déstabilisation (Fléau)** : Quand vous infligez un critique avec un fléau, la cible a désavantage à sa prochaine attaque.
-- **Double Frappe (Twinblades)** : En dépensant votre action et votre bonus action vous faites une attaque combinée de 2d8 + 2×FOR et si les deux dés sont identiques l’attaque est un critique automatique.
 - **Hybride** : Ajoutez vos modificateurs de Force + Agilité aux dégâts de vos attaques. Lors d'un coup critique, retirez le modificateur de Force et conservez tous les autres bonus.
 
 # **Armures**

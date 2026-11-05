@@ -4,7 +4,7 @@
     "reference-rapide": {
       "source": "⚙ CARDENVEIL — RÉFÉRENCE RAPIDE.md",
       "file": "reference-rapide.md",
-      "sha256": "0e8e8cc588c911d4bca113b95a0005b7a1e2ea8b5da2feed0cef82ac7ab68bbc"
+      "sha256": "67307c184c6bc2864a803c468a0ec5cc8ef1ca2cb2eca087536da8a84b7534df"
     },
     "systeme-de-base": {
       "source": "Système de Base.md",
@@ -19,17 +19,17 @@
     "combat": {
       "source": "Action et Combat.md",
       "file": "combat.md",
-      "sha256": "8b23ddb0e222f3f7252ae3027a5eb36f7b78fc074851988336d97577650dba32"
+      "sha256": "cb0a7052562b75d3fb614df33c523a317e91af93fe96bede75fccdd283c15b49"
     },
     "capacites": {
       "source": "Totem, Capacités & Cartes 2b01af51d01280ceaa0fdcf7544cf212.md",
       "file": "capacites.md",
-      "sha256": "511e0459d4332276fb2ba14f9f534d08769e6a8aa3debebb16383744c1f0efc7"
+      "sha256": "c2087d82720fbda35c7ccd0870fae8547c506f93154ed5c0bc2e780cf6cadff9"
     },
     "narration": {
       "source": "Système Narratif.md",
       "file": "narration.md",
-      "sha256": "d96778127dff5310188562c776cfb83c657afde89becee77776b05de5a8976e4"
+      "sha256": "4bf0328d30f19b9eb13761285e8e324c9a40c77232215fa79461c4d73a6682df"
     },
     "progression": {
       "source": "Système de progression.md",

@@ -103,40 +103,24 @@ Exemple :
 > → Soit ton jet diminue de 7, soit le MJ introduit un contre-coup (tu trébuches, tu déclenches un piège…).
 > 
 
----
-
-## **3. Cartes données au MJ**
-
-Quand tu invoques un aspect positivement,
-
-la carte que tu joues est **donnée au MJ**.
-
-Le MJ les garde dans deux piles distinctes :
-
-- 🔴 **Cartes rouges** : il pourra les utiliser plus tard pour **aider les joueurs**.
-- ⚫ **Cartes noires** : il pourra les utiliser pour **ajouter de la tension** ou **géner les joueurs**.
-
-Le MJ peut jouer ces cartes à tout moment pour **modifier un jet qu’il fait**, renforcer une scène ou influencer le rythme.
 
 ---
 
-## **4. Goals**
+
+## **4. Goals et Jeu Rp**
+
 
 Le **Goal** représente l’objectif personnel de ton personnage — ce qu’il cherche à accomplir, réparer ou atteindre.
 
 C’est un **moteur narratif individuel** qui oriente ses choix et ses priorités.
 
-Quand tu **agis clairement dans la direction de ton Goal**,
+Le **Jeu RP** consiste à incarner ton personnage de manière cohérente avec sa personnalité, ses valeurs, ses émotions, ses défauts et son histoire, même lorsque cela ne représente pas le choix le plus avantageux.
 
-et que tu peux **le justifier auprès du MJ**,
+Lorsque tu **joues ton personnage de manière cohérente**, que ce soit en poursuivant son **Goal** ou simplement en respectant sa personnalité, le MJ peut te récompenser d’une **carte cristallisée aléatoire**.
 
-tu **pioches une carte cristallisée aléatoire**.
-
-> Le MJ reste juge pour valider que l’action contribue réellement à ton objectif.
-> 
-> 
-> Le but est d’encourager les décisions cohérentes avec l’histoire du personnage, pas d’ajouter des récompenses gratuites.
-> 
+> Le MJ reste juge pour déterminer si tes actions justifient cette récompense.
+>
+> Le but est d’encourager l’interprétation du personnage et les décisions narratives, même lorsqu’elles vont à l’encontre de son intérêt immédiat.
 
 **Exemples de Goals :**
 
@@ -146,40 +130,11 @@ tu **pioches une carte cristallisée aléatoire**.
 - *Fonder un nouvel ordre ou une communauté stable.*
 - *Racheter mes fautes passées.*
 
-Un Goal doit être **clair, concret et évolutif** :
+Un Goal doit être **clair, concret et évolutif** : il peut changer au fil de la campagne si le personnage progresse, échoue ou redéfinit ce qu’il cherche vraiment.
 
-il peut changer au fil de la campagne si le personnage progresse, échoue, ou redéfinit ce qu’il cherche vraiment.
 
-## 5. Les Bonds
 
-Les **Bonds** sont des contraintes relationnelles.
-
-Ils définissent **qui tu peux aider** et **qui tu peux gêner**.
-
-- **Aider un allié** → nécessite un **Aspect positif**.
-- **Gêner un allié** → nécessite un **Aspect négatif**.
-- Le MJ veille à ce que chaque Bond soit incarné dans la fiction (protéger, douter, rivaliser, etc.).
-
-### ⚖️ Règle d’équilibre
-
-L’**écart entre aides et gênes** ne peut **jamais dépasser 1**.
-
-Autrement dit :
-
-- Après deux aides, tu dois au moins une gêne.
-- Après deux gênes, tu dois au moins une aide.
-
-Exemples valides :
-
-✅ 1 aide / 1 gêne / 2 aides + 1 gêne / 2 gênes + 1 aide.
-
-Exemples invalides :
-
-❌ 2 aides seules / 2 gênes seules / 3 aides + 1 gêne.
-
-Les Bonds garantissent une dynamique vivante entre les PJ : entraide, rivalité, drama.
-
-## **6. Flashbacks**
+## **4. Flashbacks**
 
 Les **flashbacks** sont des initiatives des joueurs pour **modifier la réalité du scénario** ou **introduire une action passée** qui justifie un avantage présent.
 
@@ -227,7 +182,7 @@ Les coûts des flashbacks sont **élevés**, car ils altèrent directement la na
 > Le MJ décrit : “En effet, tu te souviens de la trappe et parviens à l’ouvrir ; la fumée s’y engouffre, offrant une voie d’évacuation.”
 > 
 
-## **7. Fonctionnement global et philosophie**
+## **5. Fonctionnement global et philosophie**
 
 ---
 
@@ -241,32 +196,29 @@ Les coûts des flashbacks sont **élevés**, car ils altèrent directement la na
 
 ---
 
+
 ### **Faire un jet de compétence avec aspects**
 
-1. 🎲 **Lancer le dé de base**
-    - Jette **1d20**.
-2. ➕ **Appliquer les avantages**
-    - Pour chaque **avantage**, ajoute **1 dé supplémentaire** (car d20).
-    - Garde le **meilleur résultat** parmi tous les dés lancés.
-3. 🧮 **Ajouter les modificateurs**
-    - Ajoute ton **modificateur de caractéristique associée**,
-    - ou **2× ce modificateur** si tu maîtrises la compétence.
-4. 🃏 **Ajouter la dimension narrative (cartes)**
-    - Selon la **carte jouée** et la **couleur** utilisée :
-        - ✅ **Utilisation positive avec carte noire** → ajoute la **valeur complète** de la carte.
-        - ✅ **Utilisation positive avec carte rouge** → ajoute la **moitié** de la valeur de la carte (arrondi inférieur).
-        - ⚠️ **Utilisation négative** → retranche la **valeur complète** de la carte.
-5. 🧾 **Calculer le total final**
-    - Somme = **meilleur d20 + modificateur(s) + ajustement narratif (cartes)**.
-    - Compare ce total au **seuil de difficulté (DC)**.
-    - Résultat ≥ DC → réussite, sinon échec (narrativement ou mécaniquement).
+1. 🎲 **Lancer le dé**
+   - Lance **1d20**.
+
+2. 🧮 **Ajouter les modificateurs**
+   - Ajoute le **modificateur de la caractéristique associée**.
+
+3. 🃏 **Appliquer les aspects (cartes)**
+   - **Utilisation positive** : ajoute la valeur de la carte.
+   - **Utilisation négative** : retranche la valeur de la carte.
+
+4. 🧾 **Déterminer le résultat**
+   - **Total = d20 conservé + modificateur + ajustement des cartes**.
+   - **Total ≥ DC** : réussite. Sinon : échec.
+
 
 ### **Philosophie du système**
 
 - Les **Aspects** définissent *comment le personnage agit, réagit et perçoit le monde*, plutôt que ses performances chiffrées.
 - Chaque utilisation d’un aspect doit être **narrativement justifiée** : le roleplay précède la mécanique.
 - Les **cartes cristallisées** récompensent les moments où les failles, erreurs ou tensions font avancer l’histoire.
-- Les **Bonds** maintiennent des relations vivantes et équilibrées : aucun lien n’est purement positif ou négatif.
 - L’ensemble du système repose sur une **boucle naturelle** :
     
     > les joueurs invoquent leurs forces → créent du risque → gagnent des ressources → façonnent le récit.
