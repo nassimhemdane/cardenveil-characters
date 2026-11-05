@@ -317,7 +317,7 @@ def shell(
 <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/rules.css">
 <link rel="stylesheet" href="/rules-chat.css"><script src="/rules-chat.js" defer></script><script src="/gm.js" defer></script>
 </head><body class="rules-site"><a class="skip-link" href="#reading">Aller au contenu</a>
-<header class="site-header"><a class="brand" href="/">CARDENVEIL</a><nav><a href="/">Personnages</a><a href="/regles/" aria-current="page">Règles & docs</a><a href="/gm/">Agent MJ</a></nav></header>
+<header class="site-header"><a class="brand" href="/">CARDENVEIL</a><nav><a href="/">Personnages</a><a href="/statistiques/">Statistiques</a><a href="/regles/" aria-current="page">Règles & docs</a><a href="/gm/">Agent MJ</a></nav></header>
 <section class="rules-chat" aria-label="Guide des r?gles"><a href="/gm/">Poser une question au guide Cardenveil ?</a></section>
 <div class="docs-layout"><aside class="docs-nav"><details open><summary>Explorer les règles</summary><nav aria-label="Chapitres">{navigation(current)}</nav></details></aside>
 <main id="reading"><div class="breadcrumb"><a href="/">Cardenveil</a> / <a href="/regles/">Règles</a></div>

@@ -631,6 +631,15 @@
       "class": [
         "Invocateur"
       ]
+    },
+    "garreth": {
+      "loreSummary": "Garreth est un forgeron technomage empathique et méticuleux qui parcourt le monde pour approfondir ses connaissances après la destruction de son village et de sa forge.",
+      "gameplaySummary": "Ce combattant utilise des gantelets technomagiques pour manipuler les forces cinétiques, infliger des dégâts de zone, protéger ses alliés et se déplacer sur le champ de bataille.",
+      "difficulty": 3.5,
+      "creator": "",
+      "class": [
+        "Autre"
+      ]
     }
   }
 }
