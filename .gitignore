@@ -14,6 +14,8 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .venv/
+.gm/
+.local-models/
 venv/
 .pytest_cache/
 .test-*/
@@ -62,6 +64,8 @@ web/public/pdfs/
 web/public/personnages/
 web/public/statistiques/
 web/public/regles/
+web/public/en/
+web/i18n/ui-pending.json
 web/public/_headers
 
 # Captures et validations visuelles temporaires

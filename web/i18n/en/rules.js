@@ -1,0 +1,89 @@
+﻿/* All content stays readable without JavaScript. Search never interprets source HTML. */
+'use strict';
+const menu = document.querySelector('.docs-nav details');
+if (menu && matchMedia('(max-width:760px)').matches) menu.open = false;
+const normalize = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const search = document.querySelector('#rule-search');
+if (search) {
+  const status = document.querySelector('#search-status');
+  const results = document.querySelector('#search-results');
+  const clear = document.querySelector('#clear-search');
+  const hint = 'Search the quick reference and player rules for Cardenveil Fragmented.';
+  fetch('/regles/search.json').then(r => {
+    if (!r.ok) throw Error('Index unavailable');
+    return r.json();
+  }).then(entries => {
+    const indexed = entries.map(e => ({...e, hay: normalize(e.title + ' ' + e.section + ' ' + e.text), heading: normalize(e.title + ' ' + e.section)}));
+    search.disabled = false;
+    const stop = new Set(['the','a','an','and','of','in','how','to']);
+    let timer, shown = 12;
+    function highlight(node, value, words) {
+      const normalized = normalize(value);
+      const ranges = [];
+      for (const word of words) {
+        let at = normalized.indexOf(word);
+        while (at !== -1) { ranges.push([at, at + word.length]); at = normalized.indexOf(word, at + word.length); }
+      }
+      ranges.sort((a,b) => a[0] - b[0]);
+      let end = 0;
+      for (const [start, finish] of ranges) {
+        if (start < end) continue;
+        node.append(document.createTextNode(value.slice(end, start)));
+        const mark = document.createElement('mark'); mark.textContent = value.slice(start, finish); node.append(mark); end = finish;
+      }
+      node.append(document.createTextNode(value.slice(end)));
+    }
+    function render() {
+      const query = search.value.trim();
+      const terms = (normalize(query).match(/[a-z0-9]+/g) || []).filter(w => !stop.has(w));
+      results.replaceChildren(); clear.hidden = !query;
+      if (!terms.length) { status.textContent = hint; return; }
+      const matches = indexed.filter(e => terms.every(w => e.hay.includes(w))).map(e => ({
+        ...e, score: terms.reduce((n,w) => n + (e.heading.includes(w) ? 4 : 1), 0)
+      })).sort((a,b) => b.score - a.score || Number(b.url.startsWith('/regles/reference-rapide/')) - Number(a.url.startsWith('/regles/reference-rapide/')));
+      status.textContent = matches.length ? `${matches.length} result${matches.length > 1 ? 's' : ''} · ${Math.min(shown, matches.length)} displayed` : 'No results. Try a shorter term or browse the chapters.';
+      for (const entry of matches.slice(0, shown)) {
+        const link = document.createElement('a'); link.className = 'search-result'; link.href = entry.url;
+        const title = document.createElement('strong'); highlight(title, entry.section + ' · ' + entry.title, terms);
+        const excerpt = document.createElement('p');
+        const at = Math.max(0, normalize(entry.text).indexOf(terms[0]) - 65);
+        const text = (at ? '…' : '') + entry.text.slice(at, at + 230).replace(/\s+/g, ' ') + (at + 230 < entry.text.length ? '…' : '');
+        highlight(excerpt, text, terms);
+        link.append(title, excerpt); results.append(link);
+      }
+      if (matches.length > shown) {
+        const more = document.createElement('button'); more.id = 'search-more'; more.type = 'button'; more.textContent = 'Show more results';
+        more.addEventListener('click', () => { const previous = shown; shown += 12; render(); results.querySelectorAll('.search-result')[previous]?.focus(); });
+        results.append(more);
+      }
+    }
+    search.addEventListener('input', () => { clearTimeout(timer); shown = 12; timer = setTimeout(render, 120); });
+    clear.addEventListener('click', () => { clearTimeout(timer); search.value = ''; render(); search.focus(); });
+    search.addEventListener('keydown', event => { if (event.key === 'Escape') clear.click(); });
+    render();
+  }).catch(() => { status.textContent = 'Search is unavailable. The chapters remain accessible from the menu.'; });
+}
+const raceSearch = document.querySelector('#race-search');
+if (raceSearch) {
+  const cards = [...document.querySelectorAll('.race-card')];
+  raceSearch.addEventListener('input', () => {
+    const query = normalize(raceSearch.value.trim());
+    for (const card of cards) card.hidden = !normalize(card.dataset.race).includes(query);
+    const count = cards.filter(card => !card.hidden).length;
+    document.querySelector('#race-count').textContent = `${count} race${count > 1 ? 's' : ''} of ${cards.length}`;
+  });
+}
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      document.querySelectorAll('.chapter-sections a').forEach(a => {
+        const url = new URL(a.href);
+        const active = url.pathname === location.pathname && url.hash === '#' + entry.target.id;
+        a.classList.toggle('active', active);
+        if (active) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+      });
+    }
+  }, {rootMargin:'-10% 0px -70% 0px'});
+  document.querySelectorAll('#reading h2[id],#reading h3[id],#reading h4[id],#reading h5[id],#reading h6[id],#reading section[id]').forEach(h => observer.observe(h));
+}

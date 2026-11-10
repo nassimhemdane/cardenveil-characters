@@ -37,7 +37,9 @@
   }
   window.CardenveilCatalogue = {norm, entries, evidence, mount(root, characters, card) {
     const rows = characters.map(c => ({c, fields:entries(c)}));
-    const classes = [...new Set(characters.flatMap(c => [].concat(c.catalog?.class || [])))].sort((a,b)=>a.localeCompare(b,'fr'));
+    const classMap = new Map();
+    for (const c of characters) [].concat(c.catalog?.class || []).forEach((label,i) => classMap.set(c.catalog?.classKeys?.[i] || label, label));
+    const classes = [...classMap].sort((a,b)=>a[1].localeCompare(b[1],'fr'));
     const params = new URLSearchParams(location.search);
     root.innerHTML = `<section class="character-guide" aria-labelledby="guide-title">
       <div><span class="eyebrow">Votre prochaine aventure</span><h1 id="guide-title">Quel personnage vous ressemble ?</h1><p>Décrivez votre envie. Le guide vous aide à explorer les fiches, avec ses sources.</p></div>
@@ -45,12 +47,12 @@
       <form id="guide-form"><label for="guide-message">Parlez au guide</label><div class="guide-compose"><input id="guide-message" maxlength="1000" placeholder="Je débute, je voudrais soigner mes alliés…" required><button class="button primary">Me conseiller</button></div></form>
       <p id="guide-mode" class="guide-note">Guide du catalogue · critères et extraits des fiches</p><div id="guide-answer" aria-live="polite"><p>Choisissez une envie ou décrivez votre style pour découvrir jusqu’à trois pistes.</p></div>
     </section><section aria-labelledby="catalog-title"><div class="catalog-heading"><h2 id="catalog-title">Explorez les personnages</h2><p>Nom, peuple, classe, capacité, totem ou histoire.</p></div>
-      <div class="toolbar catalog-filters"><label>Rechercher<input id="search" type="search" placeholder="Ex. feu, épée, guérison…"></label><label>Classe<select id="class-filter"><option value="">Toutes les classes</option>${classes.map(v=>`<option>${escape(v)}</option>`).join('')}</select></label><label>Complexité<select id="difficulty-filter"><option value="">Toutes</option><option value="2">Jusqu’à 2 / 5</option><option value="3">Jusqu’à 3 / 5</option><option value="4">Jusqu’à 4 / 5</option><option value="unknown">Non renseignée</option></select></label><label>Trier<select id="sort"><option value="relevance">Pertinence</option><option value="name">Nom A → Z</option><option value="easy">Complexité croissante</option><option value="difficulty">Complexité décroissante</option></select></label><button id="reset-search" type="button">Réinitialiser</button></div><p class="count" id="count" role="status"></p><div class="grid" id="grid"></div></section>`;
+      <div class="toolbar catalog-filters"><label>Rechercher<input id="search" type="search" placeholder="Ex. feu, épée, guérison…"></label><label>Classe<select id="class-filter"><option value="">Toutes les classes</option>${classes.map(([key,label])=>`<option value="${escape(key)}">${escape(label)}</option>`).join('')}</select></label><label>Complexité<select id="difficulty-filter"><option value="">Toutes</option><option value="2">Jusqu’à 2 / 5</option><option value="3">Jusqu’à 3 / 5</option><option value="4">Jusqu’à 4 / 5</option><option value="unknown">Non renseignée</option></select></label><label>Trier<select id="sort"><option value="relevance">Pertinence</option><option value="name">Nom A → Z</option><option value="easy">Complexité croissante</option><option value="difficulty">Complexité décroissante</option></select></label><button id="reset-search" type="button">Réinitialiser</button></div><p class="count" id="count" role="status"></p><div class="grid" id="grid"></div></section>`;
     const $ = id => root.querySelector('#'+id);
     for (const [id,key] of [['search','q'],['class-filter','class'],['difficulty-filter','difficulty'],['sort','sort']]) if(params.has(key)) $(id).value=params.get(key);
     function draw() {
       const words=norm($('search').value).split(/\s+/).filter(Boolean), cl=$('class-filter').value, difficulty=$('difficulty-filter').value, sort=$('sort').value;
-      const matches=rows.map(row=>({...row, score:words.reduce((n,w)=>n+row.fields.reduce((v,f)=>v+(includes(f.value,w)?f.weight:0),0),0)})).filter(row=> words.every(w=>row.fields.some(f=>includes(f.value,w))) && (!cl || [].concat(row.c.catalog?.class||[]).includes(cl)) && (!difficulty || (difficulty==='unknown'?row.c.catalog?.difficulty==null:row.c.catalog?.difficulty!=null && row.c.catalog.difficulty<=+difficulty)));
+      const matches=rows.map(row=>({...row, score:words.reduce((n,w)=>n+row.fields.reduce((v,f)=>v+(includes(f.value,w)?f.weight:0),0),0)})).filter(row=> words.every(w=>row.fields.some(f=>includes(f.value,w))) && (!cl || [].concat(row.c.catalog?.classKeys||row.c.catalog?.class||[]).includes(cl)) && (!difficulty || (difficulty==='unknown'?row.c.catalog?.difficulty==null:row.c.catalog?.difficulty!=null && row.c.catalog.difficulty<=+difficulty)));
       matches.sort((a,b)=> (sort==='relevance'? b.score-a.score : sort==='easy'?(a.c.catalog?.difficulty??99)-(b.c.catalog?.difficulty??99):sort==='difficulty'?(b.c.catalog?.difficulty??-1)-(a.c.catalog?.difficulty??-1):0) || plain(a.c.identity.nom).localeCompare(plain(b.c.identity.nom),'fr'));
       $('count').textContent=`${matches.length} personnage${matches.length>1?'s':''} sur ${characters.length}`;
       $('grid').innerHTML=matches.map(row=>`<a class="character-link" href="/personnages/${encodeURIComponent(row.c.id)}/">${card(row.c)}${words.length?`<p class="match-reason">Trouvé dans : ${escape([...new Set(row.fields.filter(f=>words.some(w=>includes(f.value,w))).map(f=>f.label))].slice(0,3).join(', '))}</p>`:''}</a>`).join('') || '<div class="empty-state">Aucun personnage ne réunit ces critères. Retirez un filtre ou essayez un mot plus général.</div>';
@@ -102,8 +104,8 @@
         if(localAI || publicAI){
           if(publicAI && !humanToken)throw Error('Attendez la validation anti-abus ci-dessus puis réessayez.');
           const response = await fetch(publicAI?'/api/recommendations':'/api/gm/character-recommendations', {
-            method:'POST', headers:{'Content-Type':'application/json','X-Cardenveil-Client':publicAI?'catalogue':'gm'},
-            body:JSON.stringify(publicAI?{message,token:humanToken}:{message}),signal:AbortSignal.timeout(70000)
+            method:'POST', headers:{'Content-Type':'application/json','Accept-Language':document.documentElement.lang,'X-Cardenveil-Client':publicAI?'catalogue':'gm'},
+            body:JSON.stringify(publicAI?{message,token:humanToken,language:document.documentElement.lang}:{message,language:document.documentElement.lang}),signal:AbortSignal.timeout(70000)
           });
           if(!response.ok){const error=await response.json().catch(()=>null);throw Error(error?.detail || 'Le modèle ne peut pas répondre pour le moment. Réessayez ou utilisez les filtres.');}
           const result = await response.json();

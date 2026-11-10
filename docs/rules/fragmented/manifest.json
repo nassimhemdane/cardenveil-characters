@@ -9,7 +9,7 @@
     "systeme-de-base": {
       "source": "Système de Base.md",
       "file": "systeme-de-base.md",
-      "sha256": "41552af38c73524eeaf56831703d3f658f57620751fbaf98d52292356022da1b"
+      "sha256": "3c71ef66b2aeddc064b06af716a04f4c81d232a2cc26bed795496825c7ee8b22"
     },
     "creation": {
       "source": "Personnage.md",
@@ -19,12 +19,12 @@
     "combat": {
       "source": "Action et Combat.md",
       "file": "combat.md",
-      "sha256": "cb0a7052562b75d3fb614df33c523a317e91af93fe96bede75fccdd283c15b49"
+      "sha256": "d0d4af4825be7ace1cccf77ba23040194ec08a3a74914766bf1717b8101c3ae6"
     },
     "capacites": {
       "source": "Totem, Capacités & Cartes 2b01af51d01280ceaa0fdcf7544cf212.md",
       "file": "capacites.md",
-      "sha256": "c2087d82720fbda35c7ccd0870fae8547c506f93154ed5c0bc2e780cf6cadff9"
+      "sha256": "7d1312acebcb55eff76acde8d6bf59963649f74c5e85ceb0738174878c14ac0f"
     },
     "narration": {
       "source": "Système Narratif.md",

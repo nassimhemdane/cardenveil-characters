@@ -102,6 +102,8 @@ def value_html(value: object) -> str:
     if isinstance(value, dict):
         pairs = []
         for key, item in value.items():
+            if key == 'classKeys':
+                continue
             if item is None or item == "" or item == [] or item == {}:
                 continue
             if key in {"image", "portrait"}:

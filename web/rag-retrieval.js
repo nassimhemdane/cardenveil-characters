@@ -7,23 +7,23 @@ const stop = new Set('je tu il elle nous vous ils elles un une des le la les du 
 const terms = text => normalize(text).match(/[a-z0-9]+/g)?.filter(w=>w.length>2&&!stop.has(w))
   .map(w=>w.length>4?w.replace(/(?:er|es|ent|ant|e)$/,''):w) || [];
 const expressions = {
-  force:/\b(force|fort|forte|physique|muscle|musclee|costaud|costaude|guerrier|guerriere|barbare|tank|robuste)\b/g,
-  agilite:/\b(agilite|agile|rapide|mobile|mobilite|furtif|furtive|archer|archere|assassin|assassine|discret|discrete)\b/g,
-  esprit:/\b(esprit|mage|magicien|magicienne|sorcier|sorciere|mental|mentale|magie|intelligent|intelligente)\b/g,
-  social:/\b(social|sociale|charisme|charismatique|diplomate|persuasif|persuasive|barde|negociateur|negociatrice)\b/g
+  force:/\b(strength|strong|warrior|barbarian|force|fort|forte|physique|muscle|musclee|costaud|costaude|guerrier|guerriere|barbare|tank|robuste)\b/g,
+  agilite:/\b(agility|fast|stealthy|agilite|agile|rapide|mobile|mobilite|furtif|furtive|archer|archere|assassin|assassine|discret|discrete)\b/g,
+  esprit:/\b(spirit|wizard|sorcerer|magic|esprit|mage|magicien|magicienne|sorcier|sorciere|mental|mentale|magie|intelligent|intelligente)\b/g,
+  social:/\b(charismatic|bard|social|sociale|charisme|charismatique|diplomate|persuasif|persuasive|barde|negociateur|negociatrice)\b/g
 };
 const themes={
-  foudre:/\b(?:foudre|electri\w*|eclair\w*|tonnerre|foudroy\w*|fulmin\w*)\b/,
-  feu:/\b(?:feu|flamme\w*|brul\w*|incendi\w*|inciner\w*|lave)\b/,
-  glace:/\b(?:glace|givre\w*|gele\w*|gelant\w*|glacial\w*|froid\w*)\b/,
+  foudre:/\b(?:lightning|thunder|foudre|electri\w*|eclair\w*|tonnerre|foudroy\w*|fulmin\w*)\b/,
+  feu:/\b(?:fire|flame|burn|feu|flamme\w*|brul\w*|incendi\w*|inciner\w*|lave)\b/,
+  glace:/\b(?:ice|frost|frozen|glace|givre\w*|gele\w*|gelant\w*|glacial\w*|froid\w*)\b/,
   poison:/\b(?:poison\w*|empoison\w*|toxiqu\w*|venin)\b/,
-  soin:/\b(?:soin\w*|soign\w*|gueri\w*|regener\w*|healer)\b|(?:regagn|rend|recuper)\w*[^.!?]{0,50}(?:\bpv\b|points? de vie)/
+  soin:/\b(?:heal\w*|soin\w*|soign\w*|gueri\w*|regener\w*|healer)\b|(?:regagn|rend|recuper)\w*[^.!?]{0,50}(?:\bpv\b|points? de vie)/
 };
 const features=text=>Object.entries(themes).filter(([,pattern])=>pattern.test(normalize(text))).map(([name])=>name);
 
-const raceWord=word=>{const singular=word.replace(/s$/,'');return ({elf:'elfe',efle:'elfe',orque:'orc',humaine:'humain',naine:'nain',centaure:'centaur',haleflin:'halfelin',halflin:'halfelin',halfin:'halfelin',tiffeline:'tiffelin',tieffelin:'tiffelin',tieffeline:'tiffelin'}[singular] || singular);};
+const raceWord=word=>{const singular=word.replace(/s$/,'');return ({human:'humain',dwarf:'nain',elves:'elfe',elf:'elfe',efle:'elfe',orque:'orc',humaine:'humain',naine:'nain',centaure:'centaur',haleflin:'halfelin',halflin:'halfelin',halfin:'halfelin',tiffeline:'tiffelin',tieffelin:'tiffelin',tieffeline:'tiffelin'}[singular] || singular);};
 const raceWords=text=>(normalize(text).match(/[a-z]+/g)||[]).map(raceWord);
-const raceQualifiers=new Set(['haut','haute','noir','noire','demi','grand','grande','petit','petite','boi','mort','vivant','de','du','et','des']);
+const raceQualifiers=new Set(['high','dark','half','wood','undead','haut','haute','noir','noire','demi','grand','grande','petit','petite','boi','mort','vivant','de','du','et','des']);
 
 export function identityIntent(index,message){
   const mechanicalWords=new Set(['foudre','feu','glace','poison','soin']);
@@ -32,8 +32,8 @@ export function identityIntent(index,message){
   const required=[],excluded=[];
   for(let i=0;i<words.length;i++){
     if(!known.has(words[i]))continue;
-    const prefix=raw.slice(Math.max(0,i-5),i).join(' ').split(/\b(?:mais|et|ou)\b/).pop();
-    const negative=/\b(sans|pas|ni|eviter)\b/.test(prefix);
+    const prefix=raw.slice(Math.max(0,i-5),i).join(' ').split(/\b(?:but|and|or|mais|et|ou)\b/).pop();
+    const negative=/\b(without|not|no|avoid|sans|pas|ni|eviter)\b/.test(prefix);
     const destination=negative?excluded:required;
     if(!destination.includes(words[i]))destination.push(words[i]);
     for(const neighbour of [words[i-1],words[i+1],words[i+2]]){
@@ -44,7 +44,7 @@ export function identityIntent(index,message){
   const undead=/\bmorts?\s+vivants?\b/.exec(normalize(message));
   if(undead){
     const prefix=normalize(message).slice(Math.max(0,undead.index-30),undead.index);
-    (/\b(sans|pas|ni|eviter)\b/.test(prefix)?excluded:required).push('mort','vivant');
+    (/\b(without|not|no|avoid|sans|pas|ni|eviter)\b/.test(prefix)?excluded:required).push('mort','vivant');
   }
   const recognized=new Set([...required,...excluded]);
   const cleanName=value=>normalize(value).replace(/[^a-z0-9]+/g,' ').trim();
@@ -60,9 +60,9 @@ export function identityIntent(index,message){
       names.push(c.id);for(const w of full.split(' '))recognized.add(raceWord(w));
     }
   }
-  const boilerplate=new Set('je cherche recherche veux voudrai souhaite recommande moi montre propose donne tous toute le la les un une des de du d au aux personnage personnage race peuple et ou s il te plait plutot'.split(' ').map(raceWord));
+  const boilerplate=new Set('i want would like find recommend show me all a an the character characters race please and or je cherche recherche veux voudrai souhaite recommande moi montre propose donne tous toute le la les un une des de du d au aux personnage personnage race peuple et ou s il te plait plutot'.split(' ').map(raceWord));
   const only=(required.length>0||names.length>0) && words.every(w=>recognized.has(w)||boilerplate.has(w));
-  return {required,excluded,names,any:/\bou\b/.test(normalize(message)),only};
+  return {required,excluded,names,any:/\b(or|ou)\b/.test(normalize(message)),only};
 }
 
 function matchesIdentity(character,intent){
@@ -75,36 +75,36 @@ function matchesIdentity(character,intent){
 }
 
 export function parseIntent(message) {
-  const text=normalize(message), preferences={}, constraints=[];
+  const text=normalize(message).replace(/\bstrength\b/g,'force').replace(/\bagility\b/g,'agilite').replace(/\bspirit\b/g,'esprit').replace(/\bat least\b/g,'au moins').replace(/\bat most\b/g,'au plus'), preferences={}, constraints=[];
   for(const stat of stats){
     const matches=[...text.matchAll(expressions[stat])];
     for(const match of matches){
       if(stat==='force' && /^forte?$/.test(match[0]) &&
           /^\s+(?:en\s+)?(?:magie|esprit|charisme|agilite|mobilite|social)/.test(text.slice(match.index+match[0].length)))continue;
-      const prefix=text.slice(Math.max(0,match.index-45),match.index).split(/[,;]|\b(?:mais|et)\b/).pop();
-      const low=/\b(sans|pas|peu|faible|eviter|ni)\b/.test(prefix);
+      const prefix=text.slice(Math.max(0,match.index-45),match.index).split(/[,;]|\b(?:but|and|mais|et)\b/).pop();
+      const low=/\b(without|not|no|low|weak|avoid|sans|pas|peu|faible|eviter|ni)\b/.test(prefix);
       preferences[stat]=low?-1:1;
     }
     const rule=new RegExp(`\\b${stat}\\s*(>=|<=|>|<|au moins|au plus|minimum|min|max|maximum|superieur a|inferieur a)\\s*(\\d{1,2})`,'g');
     for(const m of text.matchAll(rule))constraints.push({stat,operator:m[1],value:Number(m[2])});
   }
-  const difficulty=text.match(/(?:difficulte|complexite)\s*(?:de\s*)?(?:maximum|max|au plus|<=)\s*(\d(?:[.,]\d)?)/) ||
-    text.match(/(?:difficulte|complexite)\s*(?:de\s*)?(\d(?:[.,]\d)?)(?:\s*\/\s*5)?\s*(?:maximum|max|au plus)/);
+  const difficulty=text.match(/(?:difficulty|complexity|difficulte|complexite)\s*(?:de\s*)?(?:maximum|max|au plus|<=)\s*(\d(?:[.,]\d)?)/) ||
+    text.match(/(?:difficulty|complexity|difficulte|complexite)\s*(?:de\s*)?(\d(?:[.,]\d)?)(?:\s*\/\s*5)?\s*(?:maximum|max|au plus)/);
   const maxDifficulty=difficulty?Number(difficulty[1].replace(',','.')):
-    (/\b(debutant|debutante|je debute|facile a jouer|simple a jouer)\b/.test(text)?2:null);
-  const narrativeQuery=/\b(histoire|passe|background|personnalite|croyance|croyances|enfance|orphelin|famille|reputation|objectif)\b/.test(text);
+    (/\b(beginner|easy|simple|debutant|debutante|je debute|facile a jouer|simple a jouer)\b/.test(text)?2:null);
+  const narrativeQuery=/\b(story|past|personality|belief|orphan|family|goal|histoire|passe|background|personnalite|croyance|croyances|enfance|orphelin|famille|reputation|objectif)\b/.test(text);
   const requiredThemes=[],excludedThemes=[];
   for(const [name,pattern] of Object.entries(themes)){
     if(narrativeQuery)continue;
     const match=pattern.exec(text);if(!match)continue;
-    const prefix=text.slice(Math.max(0,match.index-35),match.index).split(/[,;]|\b(?:mais|et)\b/).pop();
-    (/\b(sans|pas|eviter|ni)\b/.test(prefix)?excludedThemes:requiredThemes).push(name);
+    const prefix=text.slice(Math.max(0,match.index-35),match.index).split(/[,;]|\b(?:but|and|mais|et)\b/).pop();
+    (/\b(without|not|no|avoid|sans|pas|eviter|ni)\b/.test(prefix)?excludedThemes:requiredThemes).push(name);
   }
-  const skillNames={athletisme:'athletisme',resilience:'resilience',acrobaties:'acrobaties',discretion:'discretion',escamotage:'escamotage',
+  const skillNames={athletics:'athletisme',acrobatics:'acrobaties',stealth:'discretion','sleight of hand':'escamotage',arcana:'arcanes',knowledge:'culture',survival:'survie',deception:'tromperie',performance:'representation',insight:'perspicacite','animal handling':'dressage',athletisme:'athletisme',resilience:'resilience',acrobaties:'acrobaties',discretion:'discretion',escamotage:'escamotage',
     arcanes:'arcanes',investigation:'investigation',perception:'perception',culture:'culture',survie:'survie',nature:'survie',persuasion:'persuasion',
     tromperie:'tromperie',intimidation:'intimidation',representation:'representation',perspicacite:'perspicacite',dressage:'dressage'};
   const requiredSkills=[];
-  for(const [label,key] of Object.entries(skillNames))if(new RegExp(`\\b(?:maitrise|maitrisee|competent|competente|doue|douee)\\s+(?:(?:en|de|du|des|la|le|les|l|d)\\s+)*${label}\\b`).test(text))requiredSkills.push(key);
+  for(const [label,key] of Object.entries(skillNames))if(new RegExp(`\\b(?:proficient|trained|skilled|maitrise|maitrisee|competent|competente|doue|douee)\\s+(?:(?:in|with|en|de|du|des|la|le|les|l|d)\\s+)*${label}\\b`).test(text))requiredSkills.push(key);
   const fieldConstraints=[];
   const fields={'pv(?: max(?:imum)?)?':'derived.pvMax',mouvement:'derived.mouvement',vitesse:'derived.mouvement',initiative:'derived.initiative',
     volonte:'derived.volonte',canalisation:'derived.canalisation',armure:'defense.armure',parade:'defense.parade'};
@@ -115,11 +115,11 @@ export function parseIntent(message) {
   return {preferences,constraints,maxDifficulty,requiredThemes,excludedThemes,requiredSkills,fieldConstraints,narrativeQuery};
 }
 
-export function statisticalProfile(values) {
+export function statisticalProfile(values,language='fr') {
   const ordered=stats.map(key=>({key,value:Number(values[key])||0})).sort((a,b)=>b.value-a.value);
   const dominant=ordered.filter(s=>s.value>=ordered[0].value-2).map(s=>s.key);
-  const names={force:'physique',agilite:'agile',esprit:'mental',social:'social'};
-  return dominant.length>=3?'polyvalent':dominant.map(key=>names[key]).join(' / ');
+  const names=language==='en'?{force:'physical',agilite:'agile',esprit:'mental',social:'social'}:{force:'physique',agilite:'agile',esprit:'mental',social:'social'};
+  return dominant.length>=3?(language==='en'?'versatile':'polyvalent'):dominant.map(key=>names[key]).join(' / ');
 }
 
 function respects(character,intent){
@@ -154,6 +154,8 @@ function cosine(query,vector){
 }
 
 export function retrieve(index,message,queryEmbedding=null){
+  const english=index.language==='en';
+  const statLabels=english?{force:'Strength',agilite:'Agility',esprit:'Spirit',social:'Social'}:labels;
   const intent=parseIntent(message), queryTerms=[...new Set(terms(message))];
   intent.identity=identityIntent(index,message);
   const query=queryEmbedding?normalizeVector(queryEmbedding,index.dimensions):null;
@@ -200,12 +202,12 @@ export function retrieve(index,message,queryEmbedding=null){
     // Do not invent a recommendation on text-only searches with no retrieved evidence.
     if(!hasStats && relevance===0 && intent.maxDifficulty===null && !intent.constraints.length && !intent.fieldConstraints.length && !intent.requiredSkills.length && !intent.identity.required.length && !intent.identity.names.length)continue;
     const score=hasStats ? .65*attributeScore+.35*relevance : relevance;
-    const profile=statisticalProfile(c.stats);
-    const numerical=stats.map(key=>`${labels[key]} ${c.stats[key]}`).join(', ');
+    const profile=statisticalProfile(c.stats,index.language);
+    const numerical=stats.map(key=>`${statLabels[key]} ${c.stats[key]}`).join(', ');
     if(intent.identity.required.length || intent.identity.excluded.length || intent.identity.names.length)passages.unshift({
-      id:`${c.id}:identity`,title:'Identité de la fiche',text:`${c.name}. Race déclarée : ${c.race}. Statistiques : ${numerical}.`
+      id:`${c.id}:identity`,title:english?'Character identity':'Identité de la fiche',text:english?`${c.name}. Declared race: ${c.race}. Attributes: ${numerical}.`:`${c.name}. Race déclarée : ${c.race}. Statistiques : ${numerical}.`
     });
-    const facts=`Statistiques : ${numerical}. Profil suggéré par les statistiques : ${profile}.\n`+
+    const facts=(english?`Attributes: ${numerical}. Profile suggested by attributes: ${profile}.\n`:`Statistiques : ${numerical}. Profil suggéré par les statistiques : ${profile}.\n`)+
       passages.map(p=>`[${p.id}] ${p.text}`).join('\n');
     ranked.push({id:c.id,name:c.name,race:c.race,difficulty:c.difficulty,classes:c.classes,stats:c.stats,profile,
       facts,score,attributeScore,relevance,passages:passages.map(p=>({id:p.id,title:p.title,text:p.text,category:p.category||'identity',paths:p.paths||[]}))});

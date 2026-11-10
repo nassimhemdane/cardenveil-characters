@@ -2,7 +2,7 @@
 
 # **Capacités et cartes**
 
-Pour utiliser une capacité, vous devez dépenser des cartes dont la valeur cumulée dépasse le **coût de la capacité**. Chaque carte jouée doit correspondre au **type de capacité** (Cœur, Carreau, Trèfle ou Pique). Par exemple, pour utiliser un sort de soin de coût 15, vous devez utiliser des cartes de **Cœurs** dont la valeur combinée atteint au moins 15. Ce système ajoute une dimension stratégique en vous forçant à gérer vos cartes et à planifier vos actions en fonction de vos ressources.
+Pour utiliser une capacité, vous devez dépenser des cartes dont la valeur cumulée atteint au moins le **coût de la capacité**. Chaque carte jouée doit correspondre au **type de capacité** (Cœur, Carreau, Trèfle ou Pique). Par exemple, pour utiliser un sort de soin de coût 15, vous devez utiliser des cartes de **Cœurs** dont la valeur combinée atteint au moins 15. Ce système ajoute une dimension stratégique en vous forçant à gérer vos cartes et à planifier vos actions en fonction de vos ressources.
 
 ## **Gestion des cartes et capacités**
 
@@ -36,7 +36,7 @@ Vous trouverez plus bas des indications pour créer une capacité
 
 ## **Seuil de sauvegarde**
 
-Le seuil à dépasser pour que les adversaires esquivent vos capacités:
+Le seuil à atteindre ou dépasser (résultat ≥ seuil) pour que les adversaires esquivent vos capacités :
 
 **Seuil de sauvegarde = Caractéristique d’incantation (ex Esprit) + Surcoût** 
 
@@ -72,7 +72,7 @@ Quand vous êtes la cible d’une capacité, faites un **jet de sauvegarde** de 
 
 Lorsqu’un personnage utilise une **capacité**, il s’appuie sur deux valeurs de référence :
 
-- **Valeur brute** : une **quantité de dés fixe**, égale à **Mod contextuel D6** (Force, Agilité, Esprit ou Social selon la capacité). Cette valeur ne dépend pas de l’arme.
+- **Valeur brute** : une **quantité de dés fixe**, égale à **Mod contextuel d6 (somme de Mod dés à six faces)** (Force, Agilité, Esprit ou Social selon la capacité). Cette valeur ne dépend pas de l’arme.
 - **Dégâts de base** : équivalents à un **jet de dégâts d’attaque** avec l’arme équipée (dé d’arme, mod, bonus, critiques, avantages).
 
 Les capacités appliquent ensuite un **multiplicateur** à l’une de ces deux valeurs :
@@ -93,7 +93,7 @@ Les capacités appliquent ensuite un **multiplicateur** à l’une de ces deux v
    - Détermine le **modificateur contextuel (Mod)** utilisé (Force, Agilité, Esprit ou Social).
    - La valeur de la capacité est définie par :
 
-     **Valeur = K × Mod × d6**
+     **Valeur = K × somme de Mod dés à six faces (Mod d6).**
 
    - Ce jet ne dépend **pas de l'arme** et **ne peut pas faire de critique**.
 
@@ -126,7 +126,7 @@ Les tokens sont des ressources liées aux caractéristiques, utilisées exclusiv
 ### **Règles générales :**
 
 - Chaque joueur dispose d’un certain nombre de **tokens** par caractéristique.
-- **Nombre de tokens disponibles = Modificateur de la caractéristique associée.**
+- **Nombre de tokens disponibles = max(0, 1 + modificateur de la caractéristique associée).**
 - Les tokens se **réinitialisent après un repos court ou long**.
 
 ---

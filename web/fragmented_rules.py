@@ -182,7 +182,7 @@ class Markdown:
 
 def race_section(source: str) -> tuple[str, str]:
     """Move the race chapter to its own page without dropping any mechanics or later maluses."""
-    match = re.search(r'^#\s+\*\*Races Jouables\*\*\s*$', source, re.M)
+    match = re.search(r'^#\s+\*\*(?:Races Jouables|Playable Races)\*\*\s*$', source, re.M | re.I)
     if not match:
         raise ValueError('The playable-races section was not found in Personnage.md')
     end = re.search(r'^#\s+', source[match.end():], re.M)
@@ -280,7 +280,7 @@ def chapter_navigation(outline: list[tuple[int, str, str]]) -> list[dict]:
     return roots
 
 
-def build(root: Path, public: Path) -> None:
+def build(root: Path, public: Path, *, locale: str = 'fr') -> None:
     """Publish only the player snapshot, preserve old URLs as redirects and foreground the quick reference."""
     directory = root / 'docs/rules/fragmented'
     manifest = json.loads((directory / 'manifest.json').read_text(encoding='utf-8'))
@@ -288,27 +288,44 @@ def build(root: Path, public: Path) -> None:
         raise ValueError('Only the seven player documents may be published')
     output = public / 'regles'
     output.mkdir(parents=True, exist_ok=True)
-    for image in manifest['images'].values():
+    for image in manifest['images'].values() if locale == 'fr' else []:
         target = public / image['url'].lstrip('/')
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(directory / image['file'], target)
     sources = {}
+    originals = {}
     links = {}
     for key, data in manifest['documents'].items():
         payload = (directory / data['file']).read_bytes()
         if hashlib.sha256(payload).hexdigest() != data['sha256']:
             raise ValueError(f'Snapshot hash mismatch for {key}; rerun the explicit sync')
-        sources[key] = payload.decode('utf-8-sig')
+        originals[key] = payload.decode('utf-8-sig')
+        sources[key] = ((root / 'docs/rules/en' / data['file']).read_text(encoding='utf-8')
+                        if locale == 'en' else originals[key])
         links[Path(data['source']).stem] = links[key] = f'/regles/{key}/'
     creation, races = race_section(sources['creation'])
+    original_creation, original_races = race_section(originals['creation'])
     rendered, chapter_sections = {}, {}
     # Prepare every chapter first so every page gets the same complete left navigation.
     for _, key, _, _, _ in CHAPTERS:
         renderer = Markdown(manifest['images'], links)
         raw = sources['creation' if key == 'races' else key]
         body = render_races(races, renderer) if key == 'races' else renderer.render(creation if key == 'creation' else raw)
+        if locale == 'en':
+            original = Markdown(manifest['images'], links)
+            if key == 'races':
+                render_races(original_races, original)
+            else:
+                original.render(original_creation if key == 'creation' else originals[key])
+            if len(original.outline) != len(renderer.outline):
+                raise ValueError(f'Translated heading count differs: {key}')
+            anchors = {en[1]: fr[1] for fr, en in zip(original.outline, renderer.outline, strict=True)}
+            body = re.sub(r'\bid="([^"]+)"', lambda m: 'id="' + anchors.get(m[1], m[1]) + '"', body)
+            body = re.sub(r'href="#([^"]+)"', lambda m: 'href="#' + anchors.get(m[1], m[1]) + '"', body)
+            renderer.outline = [(level, anchors[anchor], label) for level, anchor, label in renderer.outline]
+            renderer.toc = [(anchors[anchor], label) for anchor, label in renderer.toc]
         rendered[key] = (body, renderer)
-        chapter_sections[key] = combat_navigation(renderer.outline) if key == 'combat' else chapter_navigation(renderer.outline)
+        chapter_sections[key] = combat_navigation(renderer.outline) if key == 'combat' and locale == 'fr' else chapter_navigation(renderer.outline)
     searchable, quick = [], ''
     for position, (_, key, title, description, _) in enumerate(CHAPTERS):
         original_key = 'creation' if key == 'races' else key

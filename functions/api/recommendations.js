@@ -1,8 +1,8 @@
 /** Same-origin, human-verified recommendation endpoint. Keys remain in Pages secrets. */
 import {MODEL, SYSTEM, ragSchema, validateRagRecommendations} from '../../web/recommendations-core.js';
 import {RAG_VERSION, retrieve, embedQuery, identityIntent} from '../../web/rag-retrieval.js';
+import {apiMessage} from '../../web/api-messages.js';
 
-const json = (body, status=200) => Response.json(body, {status, headers:{'Cache-Control':'no-store'}});
 // One current public index per isolate, invalidated by the asset ETag on every request.
 let indexCache=null;
 
@@ -25,6 +25,9 @@ async function boundedJSON(request) {
 }
 
 export async function onRequestPost({request,env,waitUntil}) {
+  let responseLanguage=request.headers.get('accept-language')?.startsWith('en')?'en':'fr';
+  const json=(body,status=200)=>Response.json(body.detail?{...body,detail:apiMessage(body.detail,responseLanguage)}:body,
+    {status,headers:{'Cache-Control':'no-store'}});
   const origin=new URL(request.url).origin;
   if(request.headers.get('origin')!==origin || request.headers.get('X-Cardenveil-Client')!=='catalogue')
     return json({detail:'Origine refusée.'},403);
@@ -32,6 +35,9 @@ export async function onRequestPost({request,env,waitUntil}) {
       env.GEMINI_FREE_TIER_CONFIRMED!=='1')return json({detail:'Recommandations non configurées.'},503);
   let body;
   try {body=await boundedJSON(request);} catch {return json({detail:'Requête JSON invalide ou trop longue.'},400);}
+  if(body.language !== undefined && !['fr','en'].includes(body.language))return json({detail:'Unsupported language.'},400);
+  const language=body.language || 'fr', english=language==='en';
+  responseLanguage=language;
   if(typeof body.message!=='string' || !body.message.trim() || body.message.length>1000 ||
       typeof body.token!=='string' || !body.token || body.token.length>2048)
     return json({detail:'Phrase ou vérification manquante.'},400);
@@ -60,13 +66,13 @@ export async function onRequestPost({request,env,waitUntil}) {
       return json({detail:'Le domaine validé par Turnstile ne correspond pas au site. Vérifiez les hostnames du widget.',code:'turnstile_hostname_mismatch'},403);
     if(check.action!=='recommend')
       return json({detail:'Le widget est une ancienne version. Rechargez complètement la page avant de réessayer.',code:'turnstile_action_mismatch'},403);
-    const catalogueResponse=await env.ASSETS.fetch(new URL('/data/rag-index.json',origin));
+    const catalogueResponse=await env.ASSETS.fetch(new URL((english?'/en':'')+'/data/rag-index.json',origin));
     if(!catalogueResponse.ok)throw Error('catalogue');
     const etag=catalogueResponse.headers.get('etag');
-    const index=etag && indexCache?.etag===etag ? indexCache.index : await catalogueResponse.json();
-    if(etag)indexCache={etag,index};
+    const index=etag && indexCache?.etag===etag && indexCache?.language===language ? indexCache.index : await catalogueResponse.json();
+    if(etag)indexCache={etag,index,language};
     if(!index.version || !Array.isArray(index.characters) || !index.documents?.length)throw Error('catalogue');
-    const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(RAG_VERSION+MODEL+SYSTEM+index.version+message));
+    const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(language+RAG_VERSION+MODEL+SYSTEM+index.version+message));
     const hash=Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('');
     const cacheKey=new Request(origin+'/_recommendation-cache/'+hash);
     const cached=await caches.default.match(cacheKey);
@@ -79,13 +85,13 @@ export async function onRequestPost({request,env,waitUntil}) {
     const retrieval=retrieve(index,message,queryVector);
     const candidates=retrieval.candidates;
     if(!candidates.length){
-      const empty={matches:[],explanation:'Aucune fiche ne respecte ces contraintes avec les éléments disponibles.',retrieval:{mode:retrieval.mode}};
+      const empty={matches:[],explanation:english?'No available character sheet meets these constraints.':'Aucune fiche ne respecte ces contraintes avec les éléments disponibles.',retrieval:{mode:retrieval.mode}};
       waitUntil(caches.default.put(cacheKey,Response.json(empty,{headers:{'Cache-Control':'public, max-age=3600'}})));
       return json(empty);
     }
     if(identity.only){
-      const result={explanation:'Personnages dont l’identité déclarée dans la fiche correspond à votre recherche.',
-        matches:candidates.map(c=>({character_id:c.id,comment:identity.names.length?`La fiche demandée est celle de ${c.name}.`:`${c.name} correspond à votre demande : sa race est « ${c.race} ».`,
+      const result={explanation:english?'Characters whose recorded identity matches your search.':'Personnages dont l’identité déclarée dans la fiche correspond à votre recherche.',
+        matches:candidates.map(c=>({character_id:c.id,comment:english?(identity.names.length?`The requested sheet belongs to ${c.name}.`:`${c.name} matches your request: their race is ${c.race}.`):(identity.names.length?`La fiche demandée est celle de ${c.name}.`:`${c.name} correspond à votre demande : sa race est « ${c.race} ».`),
           evidence:c.passages[0].text,source_id:c.passages[0].id,stats:c.stats,profile:c.profile,race:c.race,
           sources:[{id:c.passages[0].id,title:c.passages[0].title}]})),
         retrieval:{mode:'structured-identity',version:RAG_VERSION}};
@@ -96,7 +102,7 @@ export async function onRequestPost({request,env,waitUntil}) {
     const response=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`,{
       method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':env.GEMINI_API_KEY.trim()},
       signal:AbortSignal.timeout(45000),body:JSON.stringify({
-        systemInstruction:{parts:[{text:SYSTEM}]},
+        systemInstruction:{parts:[{text:english?SYSTEM.replace('en français','en anglais')+'\nUse English for all explanations and comments. Quote the supplied English evidence verbatim.':SYSTEM}]},
         contents:[{role:'user',parts:[{text:JSON.stringify({request:message,intent:retrieval.intent,
           candidates:candidates.map(({id,name,race,stats,profile,difficulty,classes,passages})=>({id,name,race,stats,profile,difficulty,classes,sources:passages}))})}]}],
         generationConfig:{temperature:0.1,maxOutputTokens:2300,responseMimeType:'application/json',responseJsonSchema:ragSchema}

@@ -28,8 +28,8 @@ Les dés représentent la part de hasard du système. Ils servent à mesurer la 
 
 Les jets de dés sont souvent influencés par les **caractéristiques du personnage**.
 
-- Exemple : pour un test de Force, on lance **1d20 + la Force** du personnage.
-- Exemple : une attaque magique peut infliger **1d8 + l’Esprit** en dégâts.
+- Exemple : pour un test de Force, on lance **1d20 + le Mod. Force** du personnage.
+- Exemple : une attaque magique peut infliger **1d8 + le Mod. Esprit** en dégâts.
 
 ### **Réussite et échec**
 

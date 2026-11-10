@@ -1,0 +1,98 @@
+[
+  {
+    "file": "docs\\rules\\fragmented\\systeme-de-base.md",
+    "before": "**1d20 + la Force**",
+    "after": "**1d20 + le Mod. Force**",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\systeme-de-base.md",
+    "before": "**1d8 + l’Esprit**",
+    "after": "**1d8 + le Mod. Esprit**",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\capacites.md",
+    "before": "valeur cumulée dépasse le **coût de la capacité**",
+    "after": "valeur cumulée atteint au moins le **coût de la capacité**",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\capacites.md",
+    "before": "Le seuil à dépasser pour que les adversaires esquivent vos capacités:",
+    "after": "Le seuil à atteindre ou dépasser (résultat ≥ seuil) pour que les adversaires esquivent vos capacités :",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\capacites.md",
+    "before": "**Nombre de tokens disponibles = Modificateur de la caractéristique associée.**",
+    "after": "**Nombre de tokens disponibles = max(0, 1 + modificateur de la caractéristique associée).**",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\capacites.md",
+    "before": "**Valeur = K × Mod × d6**",
+    "after": "**Valeur = K × somme de Mod dés à six faces (Mod d6).**",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\capacites.md",
+    "before": "égale à **Mod contextuel D6**",
+    "after": "égale à **Mod contextuel d6 (somme de Mod dés à six faces)**",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\combat.md",
+    "before": "• 1 tour = jusqu’à la fin du prochain round global.",
+    "after": "• 1 round = jusqu’à la fin du prochain round global.",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\combat.md",
+    "before": "• 2 tours = jusqu’à la fin du round +2, etc.",
+    "after": "• 2 rounds = jusqu’à la fin du round +2, etc.",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\combat.md",
+    "before": "(durée 1 tour)",
+    "after": "(durée 1 round)",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\combat.md",
+    "before": "Ligne droite de 30 m de longueur",
+    "after": "Ligne droite de 18 m de longueur",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\combat.md",
+    "before": "**repousser de 4m**",
+    "after": "**repousser de 5 m**",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\combat.md",
+    "before": "être repoussée de 3 m",
+    "after": "être repoussée de 5 m",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\combat.md",
+    "before": "+ votre **agilité** (ou **force** pour les boucliers/épées droites)",
+    "after": "+ votre **Mod. Agilité** (ou **Mod. Force** pour les boucliers/épées droites)",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\combat.md",
+    "before": "**Caractéristique associée** : Force / Agilité / Esprit.",
+    "after": "**Modificateur de la caractéristique associée** : Mod. Force / Mod. Agilité / Mod. Esprit.",
+    "occurrences": 1
+  },
+  {
+    "file": "docs\\rules\\fragmented\\combat.md",
+    "before": "utilise Force ou Agilité pour les jets d’attaque et de dégâts.",
+    "after": "utilise le Mod. Force ou le Mod. Agilité pour les jets d’attaque et de dégâts.",
+    "occurrences": 1
+  }
+]

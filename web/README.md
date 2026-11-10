@@ -10,6 +10,9 @@ web\site.cmd preview
 
 Ouvrir ensuite `http://localhost:8000/`.
 
+Le module optionnel Agent MJ se lance avec `web\site.cmd gm` après installation de
+`.[gm-gemini]`. Il ajoute un chatbot de règles au même site ; voir [le guide](../docs/rules-chat.md).
+
 Les champs éditoriaux du catalogue vivent dans `web/catalog-metadata.json`. Initialiser les entrées,
 les valider, puis les recopier dans un `metadata.json` interne à chaque archive :
 
@@ -69,18 +72,20 @@ Le menu, les chapitres et leurs sommaires fonctionnent sans JavaScript ; la rech
 utilise un index généré au build. Le contenu public est limité explicitement dans
 `web/rules_pages.py` : les documents techniques internes de `docs/` ne sont pas publiés.
 
-Les huit PDF de `RulesCardenveil/` sont transcrits dans `docs/rules/sources/*.json`, avec leurs
-numéros de page, titres déduits de leur typographie, paragraphes et tableaux reconstruits.
-La lecture principale suit les sections ; chaque citation renvoie au texte original dans un
-volet dépliable. Les anciennes ancres `#page-N` restent utilisables. La recherche indexe les
-sujets et indique le document et la page. Pour actualiser : `py scripts/extract_rule_sources.py`
-(nécessite PyMuPDF, inclus dans l'extra `pdf-assets`). Le déploiement ne dépend pas des PDF
-locaux : il utilise les transcriptions versionnées et les Markdown existants de `docs/rules/`.
-Les images des PDF ne sont pas incluses ; les transcriptions ne résolvent aucune contradiction.
-`reading-guide.md` signale les principales divergences repérées.
+La source publique actuelle est `docs/rules/fragmented/*.md`, rendue par
+`web/fragmented_rules.py`. Sept documents produisent huit chapitres : les races sont extraites
+du document de création. Les illustrations viennent du manifeste Fragmented. Les anciennes
+transcriptions PDF dans `docs/rules/sources/` restent des références internes ; elles ne
+remplacent pas les règles actuelles sur le site.
 
 Le rendu des fiches Markdown couvre leurs titres, paragraphes, listes, code inline, gras et
 tableaux. Les sorties `web/public/regles/` sont régénérées par `web/build.py` et ignorées par Git.
+
+Chaque chapitre propose la recherche globale, avec classement par pertinence, surlignage et
+affichage progressif des résultats. Le sommaire reste accessible sur mobile. Les boutons
+« Texte agrandi » et « Lecture claire » mémorisent les préférences dans le navigateur ; sans
+JavaScript, les textes, sources et liens de navigation restent disponibles. L'accueil propose
+également un parcours de première lecture : bases, personnage, combat.
 
 ## Configuration Cloudflare Pages
 
@@ -120,3 +125,30 @@ Le navigateur assure l'impression et l'enregistrement PDF : sélectionner A4, é
 désactiver ses en-têtes/pieds de page. Les navigateurs Chromium sont utilisés pour la validation.
 Le build du site ne produit plus de fichiers PDF et ne nécessite plus les dépendances PDF.
 L'ancien exporteur Python reste disponible pour les consommateurs existants du core.
+
+## Éditions française et anglaise
+
+Le français conserve ses URL ; l'anglais utilise `/en/`. Le sélecteur conserve l'URL de la
+fiche, ses paramètres et son ancre, puis mémorise le choix dans le navigateur. Sur l'accueil
+sans paramètres, `/api/locale` utilise le pays fourni par Cloudflare ; sans cette information,
+la langue du navigateur sert de repli. Les liens directs choisissent leur propre langue.
+
+Les traductions sont versionnées dans `web/i18n/` et `docs/rules/en/`. Le build
+`py -X utf8 web/build.py` ne contacte aucun service de traduction. Il refuse les sources
+modifiées sans actualisation de leurs traductions, ainsi que les textes manquants. Les
+archives anglaises conservent les clés, valeurs numériques et images des archives françaises.
+Les index de recherche sont séparés ; le corpus anglais ne réutilise pas les anciens
+embeddings français. Les ancres des règles restent identiques entre les deux langues.
+
+Pour mettre à jour les contenus, traduire et relire les nouvelles entrées en respectant
+`docs/translation-audit-fr-en.md`. Le script facultatif `scripts/translate_site.py` utilise
+uniquement Ollama sur `127.0.0.1:11435`, avec le modèle déjà installé ; aucun service externe
+ni repli cloud n'est prévu. Les corrections éditoriales sont conservées dans
+`web/i18n/reviewed-overrides.en.json`. `scripts/review_translations.py` applique ces corrections
+et produit un rapport numérique à relire. Les scripts d'interface sont générés de façon
+déterministe par `py scripts/localize_javascript.py` depuis le dictionnaire TSV.
+
+Après actualisation, `py web/build.py --collect-translations` recense les libellés HTML
+restants dans `web/i18n/ui-pending.json`. Compléter le dictionnaire, relancer le build complet,
+puis vérifier `tests/test_localization.py`, `tests/test_translation_browser.py` et les tests
+des assistants. Le document `docs/translation-progress.md` indique l'état de validation.

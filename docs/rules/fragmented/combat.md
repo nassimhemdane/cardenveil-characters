@@ -163,11 +163,11 @@ Si plusieurs joueurs souhaitent intervenir simultanément en Phase MJ, ils déte
 > Leur durée se compte en rounds globaux :
 > 
 > 
-> • 1 tour = jusqu’à la fin du prochain round global.
+> • 1 round = jusqu’à la fin du prochain round global.
 > 
-> • 2 tours = jusqu’à la fin du round +2, etc.
+> • 2 rounds = jusqu’à la fin du round +2, etc.
 > 
-> Exemple : un mur de feu posé au round 3 reste actif jusqu’à la fin du round 4 (durée 1 tour).
+> Exemple : un mur de feu posé au round 3 reste actif jusqu’à la fin du round 4 (durée 1 round).
 > 
 
 ## ⚙️ **Faire un jet d’initiative**
@@ -232,7 +232,7 @@ Lorsque vous attaquez avec une arme ou un catalyseur magique, la réussite de l'
 - **Miss critique** : Si vous obtenez **1** sur un dé d’attaque, vous ratez automatiquement, pour chaque **2 points** au dessous de **10** en **agilité**, augmantez votre seuil de miss de **1**.
 - Si vous **attaquez** avec **avantage**, lancez **3** fois le dé et prenez la valeur la plus **haute**. Si vous êtes avec une arme **agile**, a**joutez** votre **modificateur** pour **chaque** avantage. Si on **crit**, on relance le jet **normalement**.
 - **Attaque d’opportunité** : Si un ennemi quitte votre zone de contrôle (**2 m**), vous pouvez effectuer une attaque d’opportunité en utilisant votre **réaction**. Si vous **dual wieldez**, faites une attaque avec chacune de vos armes.
-- Vous pouvez **Parrer** avec les armes mélée, utilisez votre **réaction** pour **réduire** les dégats du **dé maximal de l’arme/3** + votre **agilité** (ou **force** pour les boucliers/épées droites) + votre la **deflexion** de votre équipement.
+- Vous pouvez **Parrer** avec les armes mélée, utilisez votre **réaction** pour **réduire** les dégats du **dé maximal de l’arme/3** + votre **Mod. Agilité** (ou **Mod. Force** pour les boucliers/épées droites) + votre la **deflexion** de votre équipement.
 - Si on **rate** une attaque contre vous (si vous parrez 100% des dégats, ou si c’est raté d’une maniere ou d’une autre), vous activez **Feinte**, qui vous donne **avantage** contre celui qui vous a attaqué a votre prochaine attaque contre l’attaquant.
 - **Mécaniques corps a corps:** Voir Actions, Bonus actions et Reactions pour plus de détails.
 
@@ -268,7 +268,7 @@ Les catalyseurs magiques permettent de canaliser l'Esprit pour amplifier les cap
 
 
 1. 🗡️ **Calculer le bonus d’attaque**
-   - **Caractéristique associée** : Force / Agilité / Esprit.
+   - **Modificateur de la caractéristique associée** : Mod. Force / Mod. Agilité / Mod. Esprit.
    - **+ Bonus d’arme** (+X).
    - **+ Bonus de perfection** de l’arme.
    - **+ Tous les bonus externes**.
@@ -380,7 +380,7 @@ Le tableau ci-dessous regroupe les catégories d'armes basiques, avec leurs type
 
 - Toutes les armes à impact infligent **contondant**.
 - **Impact** : ignore l’armure passive et réduit la Parade de moitié.
-- Sur critique, l’attaquant fait un jet **d’Athlétisme** pour **repousser de 4m**.
+- Sur critique, l’attaquant fait un jet **d’Athlétisme** pour **repousser de 5 m**.
 
 **Armes :**
 
@@ -543,7 +543,7 @@ Profil : 1d4, contondant
 
 ### ⚔️ Propriétés basiques
 
-- **Finesse** : utilise Force ou Agilité pour les jets d’attaque et de dégâts.
+- **Finesse** : utilise le Mod. Force ou le Mod. Agilité pour les jets d’attaque et de dégâts.
 - **Légère** : peut être utilisée pour une attaque à deux armes.
 - **Polyvalente (dX)** : peut être utilisée à une main ou à deux mains (dégâts augmentés).
 - **Deux-mains** : doit être maniée avec deux mains.
@@ -562,7 +562,7 @@ Profil : 1d4, contondant
 
 - **Garde (Épées droites)** : Les épées infligent tranchant ou perçant, leur Parade vaut dé/2 au lieu de dé/3, la Parade est versatile, elle peut utiliser la force et une Parade réussie donne avantage à la prochaine attaque contre l’assaillant.
 - **Brutalité (Haches)** : Les haches infligent du tranchant, sur un critique on lance deux dés et on garde la somme, puis après un premier critique on peut obtenir un nouveau critique en cas de paire.
-- **Impact (Masses/Marteaux)** : Les armes à impact infligent du contondant, elles ignorent l’armure passive, réduisent la Parade de moitié et sur un critique la cible doit réussir un test d’Athlétisme ou être repoussée de 3 m.
+- **Impact (Masses/Marteaux)** : Les armes à impact infligent du contondant, elles ignorent l’armure passive, réduisent la Parade de moitié et sur un critique la cible doit réussir un test d’Athlétisme ou être repoussée de 5 m.
 - **Fluide (Épées courbes)** : Les épées courbes infligent du tranchant, si elles attaquent avvec désavantage elles ont avantage à la prochaine attaque dans le round, et toute cible attaquée a désavantage à ses attaques d’opportunité contre vous jusqu’à la fin du tour.
 - **Allonge (Bâtons longs, Lances, Hallebardes)** : Ces armes frappent à 3 m, peuvent faire une attaque d’opportunité quand une créature sort de leur zone de 3 m ou quand elle entre dans leur zone de 1,5 m.
 - **Surplomb (Arcs)**: si le tireur est situé à ≥ 5 m au-dessus de sa cible, il obtient avantage au jet d’attaque.
@@ -866,7 +866,7 @@ Voici les zones d'effet (AoE) et leur mode de **ciblage**, incluant une option *
 | **Petit cercle (3 m de diamètre, n'importe où)** | Positionnable à distance | Petite zone circulaire, idéale pour des effets concentrés. | Sorts de précision |
 | **Cône de 5 m (partant du lanceur)** | Part du lanceur | Attaque ciblée affectant une zone courte mais large. | Souffles courts |
 | **Cône de 9 m (partant du lanceur)** | Part du lanceur | Large attaque couvrant une grande distance devant le lanceur. | Souffle de dragon |
-| **Ligne 18 m de longueur, partant du lanceur)** | Part du lanceur | Ligne droite de 30 m de longueur et 1,5 m de largeur. | Éclair |
+| **Ligne 18 m de longueur, partant du lanceur)** | Part du lanceur | Ligne droite de 18 m de longueur et 1,5 m de largeur. | Éclair |
 
 # 📑 Types d’actions des PNJ
 

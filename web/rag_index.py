@@ -12,14 +12,14 @@ EMBEDDING_MODEL = 'gemini-embedding-001'
 DIMENSIONS = 768
 STOP = set('je tu il elle nous vous ils elles un une des le la les du de d a au aux et ou en pour par avec qui que quoi veux voudrais personnage personnages jouer capacite capacites plutot tres sur dans mon mes ses son tout comme'.split())
 THEMES = {
-    'foudre': r'\b(?:foudre|electri\w*|eclair\w*|tonnerre|foudroy\w*|fulmin\w*)\b',
-    'feu': r'\b(?:feu|flamme\w*|brul\w*|incendi\w*|inciner\w*|lave)\b',
-    'glace': r'\b(?:glace|givre\w*|gele\w*|gelant\w*|glacial\w*|froid\w*)\b',
+    'foudre': r'\b(?:lightning|thunder|foudre|electri\w*|eclair\w*|tonnerre|foudroy\w*|fulmin\w*)\b',
+    'feu': r'\b(?:fire|flame|burn|feu|flamme\w*|brul\w*|incendi\w*|inciner\w*|lave)\b',
+    'glace': r'\b(?:ice|frost|frozen|glace|givre\w*|gele\w*|gelant\w*|glacial\w*|froid\w*)\b',
     'poison': r'\b(?:poison\w*|empoison\w*|toxiqu\w*|venin)\b',
-    'soin': r'\b(?:soin\w*|soign\w*|gueri\w*|regener\w*|healer)\b|(?:regagn|rend|recuper)\w*[^.!?]{0,50}(?:\bpv\b|points? de vie)',
+    'soin': r'\b(?:heal\w*|soin\w*|soign\w*|gueri\w*|regener\w*|healer)\b|(?:regagn|rend|recuper)\w*[^.!?]{0,50}(?:\bpv\b|points? de vie)',
 }
 TECHNICAL = {'id', 'schemaVersion', 'templateId', 'createdAt', 'updatedAt', 'portrait', 'image',
-             'download', 'printUrl', 'pageUrl'}
+             'download', 'printUrl', 'pageUrl', 'classKeys'}
 LABELS = {'identity':'Identité', 'nom':'Nom', 'joueur':'Joueur', 'niveau':'Niveau', 'race':'Race',
     'alignement':'Alignement', 'age':'Âge', 'taille':'Taille', 'poids':'Poids', 'yeux':'Yeux',
     'peau':'Peau', 'cheveux':'Cheveux', 'stats':'Caractéristiques', 'force':'Force', 'agilite':'Agilité',
@@ -57,11 +57,11 @@ def field_leaves(value, path=''):
         yield path, value
 
 
-def field_text(path, value):
+def field_text(path, value, labeler=lambda text: text):
     """Keep readable labels alongside precise original field paths for faithful citations."""
-    label=' / '.join(LABELS.get(part, part) for part in re.split(r'\.|\[\d+\]', path) if part)
+    label=' / '.join(labeler(LABELS.get(part, part)) for part in re.split(r'\.|\[\d+\]', path) if part)
     if isinstance(value, bool):
-        value = 'oui' if value else 'non'
+        value = labeler('oui' if value else 'non')
     return f'{label} [{path}] : {value}.'
 
 
@@ -77,13 +77,13 @@ def digest(value):
     return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
 
 
-def make_documents(characters):
+def make_documents(characters, labeler=lambda text: text):
     """Retain existing ability embeddings and add typed passages for all other populated fields."""
     documents = []
     for c in characters:
         entries = [('totem', c['totem'].get('nom', ''), c['totem'].get('description', ''), '')]
         entries += [(f'capacity-{i}', a['name'], a['description'],
-                     f"Valeur : {a['value']['main']} {a['value']['bonus']}. Utilisation : {a['usage']}. Sauvegarde : {a['save']}.")
+                     f"{labeler('Valeur')} : {a['value']['main']} {a['value']['bonus']}. {labeler('Utilisation')} : {a['usage']}. {labeler('Sauvegarde')} : {a['save']}.")
                     for i, a in enumerate(c['capacities'], 1)]
         for key, title, description, details in entries:
             if not description.strip():
@@ -123,7 +123,7 @@ def make_documents(characters):
             # Bound passages without discarding later fields or cutting a value mid-sentence.
             chunks=[];chunk=[];size=0
             for path, value in leaves:
-                line=field_text(path,value)
+                line=field_text(path,value,labeler)
                 if chunk and size+len(line)>4500:
                     chunks.append(chunk);chunk=[];size=0
                 # Exceptionally long strings are split into fully searchable segments.
@@ -135,7 +135,7 @@ def make_documents(characters):
             if chunk:chunks.append(chunk)
             for i, chunk in enumerate(chunks):
                 text=' '.join(line for _,line in chunk)
-                documents.append({'id':f"{c['id']}:{key}-{i+1}",'characterId':c['id'],'title':title,
+                documents.append({'id':f"{c['id']}:{key}-{i+1}",'characterId':c['id'],'title':labeler(title),
                     'text':text,'hash':digest(text),'category':category,'paths':[p for p,_ in chunk],
                     'embeddingRequired':embed})
     return documents
@@ -153,12 +153,12 @@ def quantize(values):
     return {'data': base64.b64encode(bytes(v % 256 for v in integers)).decode(), 'norm': norm}
 
 
-def build_rag_index(characters, stored=None):
+def build_rag_index(characters, stored=None, *, labeler=lambda text: text, language='fr'):
     """Join current numerical data with hash-matched embeddings; ignore stale vectors."""
     stored = stored or {}
     compatible = stored.get('model') == EMBEDDING_MODEL and stored.get('dimensions') == DIMENSIONS
     vectors = stored.get('vectors', {}) if compatible else {}
-    documents = make_documents(characters)
+    documents = make_documents(characters, labeler)
     expected={(c['id'],path) for c in characters for path,value in field_leaves(c)}
     covered={(d['characterId'],path) for d in documents for path in d['paths']}
     if expected - covered:
@@ -186,7 +186,7 @@ def build_rag_index(characters, stored=None):
                 'fields':{k:c[k] for k in ('identity','derived','defense','resources','skills','progression','abilityControls','catalog') if k in c},
                 'difficulty': c.get('catalog', {}).get('difficulty'),
                 'classes': c.get('catalog', {}).get('class', [])} for c in characters]
-    index = {'schemaVersion': 1, 'model': EMBEDDING_MODEL, 'dimensions': DIMENSIONS,
+    index = {'schemaVersion': 1, 'language': language, 'model': EMBEDDING_MODEL, 'dimensions': DIMENSIONS,
              'characters': entries, 'documents': documents, 'embeddedDocuments': indexed,
              'embeddingRequiredDocuments':sum(d['embeddingRequired'] for d in documents),
              'indexedFieldCount':len(expected)}

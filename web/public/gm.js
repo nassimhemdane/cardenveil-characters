@@ -16,8 +16,9 @@
   }
   function status(text) { $('status').textContent = text; }
   async function api(path, body) {
-    const response = await fetch('/api/gm' + path, body === undefined ? {} : {
-      method: 'POST', headers: {'Content-Type': 'application/json', 'X-Cardenveil-Client': 'gm'},
+    const language=document.documentElement.lang==='en'?'en':'fr';
+    const response = await fetch('/api/gm' + path, body === undefined ? {headers:{'Accept-Language':language}} : {
+      method: 'POST', headers: {'Content-Type': 'application/json', 'X-Cardenveil-Client': 'gm','Accept-Language':language},
       body: JSON.stringify(body)
     });
     const data = await response.json().catch(() => ({}));
@@ -170,7 +171,7 @@
       } catch (e) { status(e.message); lock(false); return; }
       lock(false);
     }
-    pending = {session: sessionId, body: {request_id: crypto.randomUUID(), message: $('message').value,
+    pending = {session: sessionId, body: {language: document.documentElement.lang === 'en' ? 'en' : 'fr', request_id: crypto.randomUUID(), message: $('message').value,
       provider: $('provider').value, model: $('model').value}};
     savePending();
     send();

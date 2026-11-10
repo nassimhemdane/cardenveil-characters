@@ -1,0 +1,234 @@
+0 capacités ont une couleur absente ou inconnue ; 1 ont un mode absent ou non reconnu.	0 abilities have a missing or unknown suit; 1 has a missing or unrecognized mode.
+76 capacités mentionnent la concentration.	76 abilities mention concentration.
+A4 · Taille réelle / 100 % · Désactiver les en-têtes et pieds de page du navigateur.	A4 · Actual size / 100% · Disable browser headers and footers.
+Base : avant réductions. Final : coût total enregistré après réductions. Chaque capacité a le même poids ; les moyennes ne sont pas des moyennes de personnages.	Base: before reductions. Final: recorded total cost after reductions. Every ability has equal weight; these are not averages of character averages.
+Chaque capacité compte une fois, quelle que soit sa préparation. Les couleurs sont celles enregistrées, sans classification automatique.	Each ability is counted once, whether prepared or not. Suits are taken from the recorded data, without automatic classification.
+Coûts finaux : 552 valeurs exploitables, dont 0 à zéro ; 0 absentes ou invalides. Les zéros sont inclus ; coûts négatifs, expressions non numériques et valeurs infinies sont exclus.	Final costs: 552 usable values, including 0 zero values; 0 missing or invalid. Zeros are included; negative costs, non-numeric expressions and infinite values are excluded.
+Les compétences non cochées ne sont pas considérées comme manquantes : ce tableau ne permet pas de distinguer une fiche non extraite d’un personnage sans maîtrise.	Unchecked skills are not considered missing: this table cannot distinguish an unextracted sheet from a character with no skill proficiencies.
+Les réponses s’appuient sur les documents du projet. Les divergences et les règles absentes sont signalées.	Answers are based on the project documents. Conflicting and missing rules are identified.
+Nombre et part des personnages. Les races hybrides et variantes de libellé restent distinctes, sans réinterprétation.	Character counts and shares. Hybrid races and label variants remain separate, without reinterpretation.
+Races : espaces, balises, casse et accents sont normalisés pour le regroupement ; pas de fusion sémantique ou de correction des fiches.	Races: whitespace, markup, case and accents are normalized for grouping; no semantic merging or changes to the sheets.
+Répartition exclusive : chaque capacité compte une seule fois. La concentration est suivie séparément, car ce n’est pas un mode d’action.	Exclusive distribution: each ability is counted only once. Concentration is tracked separately because it is not an action mode.
+Scores bruts Force, Agilité, Esprit et Social, sans bonus ni modificateurs. Pourcentages calculés sur les scores renseignés de chaque caractéristique.	Raw Strength, Agility, Spirit and Social scores, without bonuses or modifiers. Percentages use the recorded scores for each attribute.
+Source : les archives du dossier Final, passées par Cardenveil Core au build. Aucun appel à Gemini et aucune modification des personnages.	Source: the Final folder archives, processed by Cardenveil Core at build time. No Gemini calls or character modifications.
+Une capacité multimode compte dans chacun de ses modes : les pourcentages peuvent dépasser 100 % au total. « Action bonus » ne compte pas comme « Action ».	An ability with multiple modes is counted in each mode: percentages can total more than 100%. A Bonus Action does not count as an Action.
+Écart type de population : σ = √(Σ(x − moyenne)² / N), et non une estimation d’échantillon. Une seule observation donne σ = 0 ; aucune observation donne « — ».	Population standard deviation: σ = √(Σ(x − mean)² / N), not a sample estimate. A single observation gives σ = 0; no observations give “—”.
+La référence rapide et les règles joueurs, organisées pour préparer et jouer une partie.	The quick reference and player rules, organized to help you prepare and play.
+Jets, cartes, tokens, actions et défense : retrouvez directement l’essentiel.	Rolls, cards, tokens, actions and defense: find the essentials at a glance.
+Races, profils et économie des capacités : une lecture d’ensemble des fiches existantes.	Races, profiles and ability costs: an overview of the existing sheets.
+Catalogue de personnages, généré depuis les fiches officielles du Core.	Character catalogue generated from the official Core sheets.
+Catalogue public des personnages Cardenveil	Public Cardenveil character catalogue
+Les illustrations et les traits de chaque race.	Illustrations and traits for each race.
+Aspects, objectifs, interactions et flashbacks.	Aspects, goals, interactions and flashbacks.
+Identité, caractéristiques, compétences et aspects.	Identity, attributes, skills and aspects.
+Dépenser ses XP et faire évoluer son personnage.	Spend XP and advance your character.
+Dés, cartes, tokens et principes du système.	Dice, cards, tokens and the principles of the system.
+Rounds, initiative, déplacements, attaques et défense.	Rounds, initiative, movement, attacks and defense.
+Activer ses pouvoirs et gérer ses cartes.	Activate your powers and manage your cards.
+L’essentiel à garder sous les yeux pendant la partie.	The essentials to keep in view while playing.
+Posez vos questions sur les règles. Retrouvez les explications, des exemples et leurs sources.	Ask about the rules. Find explanations, examples and their sources.
+Poser une question au guide Cardenveil ?	Ask the Cardenveil guide a question?
+Explique-moi les bases de Cardenveil pour débuter.	Explain the basics of Cardenveil to help me get started.
+Comment fonctionnent les aspects et les flashbacks ?	How do aspects and flashbacks work?
+Quelles sont les règles de parade ?	What are the parry rules?
+Toutes les fiches — version accessible sans JavaScript	All sheets — accessible without JavaScript
+Consulter les races, leurs traits et leurs illustrations	Browse the races, their traits and illustrations
+Consulter les règles actualisées	Read the updated rules
+La référence rapide, à portée de main.	The quick reference, close at hand.
+Les chapitres restent accessibles sans JavaScript.	The chapters remain accessible without JavaScript.
+Imprimer / Enregistrer en PDF	Print / Save as PDF
+Télécharger les statistiques JSON	Download statistics as JSON
+Documents consultés et détails de recherche	Documents consulted and search details
+Libellés d’utilisation à vérifier	Usage labels to review
+Méthode & qualité des données	Method & data quality
+Coût final moyen par couleur	Average final cost by suit
+Caractéristiques — scores bruts	Attributes — raw scores
+Après réductions · toutes couleurs	After reductions · all suits
+Coûts de base — avant réductions	Base costs — before reductions
+Coûts finaux — après réductions	Final costs — after reductions
+Les personnages, en chiffres.	Characters, by the numbers.
+Observatoire du catalogue	Catalogue overview
+Illustration de la race	Race illustration:
+Illustration de la fiche	Character sheet illustration
+Illustration non disponible	Illustration unavailable
+Bibliothèque des règles	Rules library
+Compétences maîtrisées	Skill proficiencies
+Conditions & zones d’effet	Conditions & areas of effect
+Comprendre Cardenveil	Understanding Cardenveil
+Comprendre le jeu	Understanding the game
+Créer et faire évoluer	Creation & advancement
+Créer son personnage	Creating your character
+Agent MJ	GM Assistant
+Aller au contenu	Skip to content
+Amulette	Amulet
+Anneau	Ring
+Arbitrages du MJ	GM rulings
+Archive ZIP	ZIP archive
+Armes & propriétés	Weapons & properties
+Actions & combat	Actions & combat
+Actions des PNJ	NPC actions
+Actions en combat	Combat actions
+Actions, bonus et réactions	Actions, bonus actions and reactions
+Aspects & narration	Aspects & narrative
+Attaques & dégâts	Attacks & damage
+Bonus pv	HP bonus
+Capacités / personnage	Abilities / character
+Capacités par personnage	Abilities per character
+Cape	Cloak
+Card max	Max cards
+Card min	Min cards
+Chapitres	Chapters
+Chargement de la recherche…	Loading search…
+Chargement des personnages…	Loading characters…
+Color reduction	Suit reduction
+Color reductions	Suit reductions
+Combinaisons de modes	Mode combinations
+Combinaisons élémentaires	Elemental combinations
+Connexion au serveur local…	Connecting to the local server…
+Consulter les manuels	Read the rulebooks
+Coût final moyen	Average final cost
+Coûts & couleurs	Costs & suits
+Coûts des capacités	Ability costs
+Deflexion	Deflection
+Difficulté / 5	Difficulty / 5
+Discretion	Stealth
+Durée des effets	Effect durations
+Débuter	Getting started
+Défense	Defense
+Effacer la recherche	Clear search
+Effacer	Clear
+Effectif	Count
+Envoyer	Send
+Exemples de questions	Example questions
+Explorer les races illustrées	Explore the illustrated races
+Explorer les règles	Explore the rules
+Feuilles A4	A4 sheets
+Fiches des personnages	Character sheets
+Fiches du catalogue	Catalogue sheets
+Fournisseur	Provider
+Garde bonus	Guard bonus
+Guide des règles	Rules guide
+Humain, elfe, nain…	Human, elf, dwarf…
+Incantation reduction	Incantation reduction
+Inconscience & fatigue	Unconsciousness & fatigue
+Indicateurs par personnage	Per-character indicators
+Informations du catalogue	Catalogue information
+Initiative & déroulement	Initiative & sequence
+Jet d’initiative	Initiative roll
+Jouer une partie	Playing the game
+LE LIVRE DE RÈGLES	THE RULEBOOK
+La narration	Narrative play
+Le combat	Combat
+Les quatre couleurs	The four suits
+Les règles de Cardenveil	The rules of Cardenveil
+Max prepared abilities	Max prepared abilities
+Maîtrisée	Proficient
+Modèle	Model
+Mouvement bonus	Movement bonus
+Moyenne du catalogue	Catalogue average
+Moyenne	Mean
+Médiane	Median
+Méthode & qualité	Method & quality
+Nom de la conversation	Conversation name
+Non renseigné / non reconnu	Not recorded / unrecognized
+Absents / invalides	Missing / invalid
+Ouvrir la référence rapide	Open the quick reference
+PV maximum	Maximum HP
+PV moyens	Average HP
+Parade, cartes, flashback…	Parry, cards, flashback…
+Parcours de lecture	Reading path
+Pendant la partie	During play
+Personnages	Characters
+Personnalite	Personality
+Perspicacite	Insight
+Phase Joueurs	Player phase
+Phase MJ	GM phase
+Principale	Main
+Progression & expérience	Advancement & experience
+Précédent	Previous
+Préparation de la fiche…	Preparing the sheet…
+Préparée	Prepared
+Pv actuels	Current HP
+Pv max	Max HP
+Pv temporaires	Temporary HP
+Questions de règles	Rules questions
+Race Bestiale (Personnalisable)	Beastfolk (Customizable)
+Races jouables	Playable races
+races jouables	playable races
+Recherche de règles	Rules search
+Representation	Performance
+Reputation	Reputation
+Resilience	Resilience
+Ressources du round	Round resources
+Ressources	Resources
+Retrouver une race	Find a race
+Retrouver une règle	Find a rule
+Règles Cardenveil	Cardenveil Rules
+Règles & docs	Rules & docs
+Règles actualisées	Updated rules
+Règles joueurs	Player rules
+Règles	Rules
+Référence rapide	Quick reference
+Répartition des caractéristiques	Attribute distribution
+Résumé narratif	Narrative summary
+Sections du dashboard	Dashboard sections
+Seuil miss	Miss Threshold
+Statistiques du catalogue	Catalogue statistics
+Statistiques	Statistics
+Suivant	Next
+Système de base	Core system
+Série	Series
+Totems exclus	Totems excluded
+Totems, capacités & cartes	Totems, abilities & cards
+Toutes couleurs	All suits
+Toutes les fiches	All sheets
+Traits speciaux	Special traits
+Types de dégâts	Damage types
+Valeurs enregistrées dans les fiches	Values recorded on the sheets
+Volonte	Willpower
+Vue générale des fiches	Sheet overview
+Xp depenses	XP spent
+Xp disponibles	Available XP
+À garder ouvert pendant la partie	Keep open during play
+À propos	About
+Écart type des coûts	Cost standard deviation
+Écart type σ	Standard deviation σ
+coûts finaux	final costs
+fiche de personnage Cardenveil	Cardenveil character sheet
+Avantages et désavantages	Advantages and disadvantages
+Éveil de capacité	Ability Awakening
+Maîtrise des couleurs	Suit Mastery
+Les cartes	Cards
+Pool de cartes	Card pool
+Interactions Élémentaires	Elemental Interactions
+Système Narratif	Narrative System
+Axes de progression	Advancement paths
+Les dés	Dice
+Système de progression	Advancement system
+Critiques avec avantage	Criticals with advantage
+Création de Personnage	Character Creation
+Maîtrise élémentaire	Elemental Mastery
+Faire un jet de capacité à Dégâts de Base	Rolling a Base Damage Ability
+Faire un jet de capacité à Valeur Brute	Rolling a Raw Power (contextual Mod d6) Ability
+Armes (familles)	Weapons (families)
+Points de Vie	Hit Points
+Les tokens	Tokens
+Centaure	Centaur
+Demi Elfe	Half-Elf
+Demi-Orque	Half-Orc
+Drakéide	Dragonborn
+Elfe Noir	Dark Elf
+Elfe des Bois	Wood Elf
+Gobelin	Goblin
+Halflin	Halfling
+Haut-Elfe	High Elf
+Homme-Poisson	Fishfolk
+Humain	Human
+Mort vivant	Undead
+Nain	Dwarf
+Tieffelin	Tiefling
+Non	No
+Oui	Yes
+Or	Gold
+Action bonus	Bonus Action
+Réaction	Reaction

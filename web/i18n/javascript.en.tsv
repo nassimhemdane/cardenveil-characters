@@ -1,0 +1,264 @@
+Le rond indique la maîtrise ; une compétence maîtrisée applique deux fois le modificateur.	The dot indicates proficiency; a proficient skill applies twice the modifier.
+Le coût réduit et sa formule complète proviennent directement de la fiche.	The reduced cost and its complete formula come directly from the sheet.
+Équipement, armes et objets présents dans la fiche.	Equipment, weapons and items recorded on the sheet.
+Les aspects et informations narratives du personnage.	Character aspects and narrative information.
+Données de progression durables de la fiche.	Permanent advancement data recorded on the sheet.
+Aucune donnée enregistrée pour cette section.	No information recorded for this section.
+Aucun personnage ne correspond à cette recherche.	No character matches this search.
+Tous les personnages	All characters
+Fiche A4 / Imprimer	A4 sheet / Print
+Télécharger une copie	Download a copy
+Consulter les fiches HTML	View the HTML sheets
+Données indisponibles	Data unavailable
+Créé par	Created by
+Portrait de	Portrait of
+Maîtrises & évolution	Masteries & advancement
+Maîtrises d’armes	Weapon Masteries
+Maîtrises élémentaires	Elemental Masteries
+Contrôle des capacités	Ability management
+Traits spéciaux	Special traits
+coût réduit	reduced cost
+Votre prochaine aventure	Your next adventure
+Quel personnage vous ressemble ?	Which character suits you?
+Décrivez votre envie. Le guide vous aide à explorer les fiches, avec ses sources.	Describe what you want to play. The guide helps you explore the sheets and cites its sources.
+Envies de jeu	Play preferences
+Facile à prendre en main	Easy to learn
+Parlez au guide	Talk to the guide
+Je débute, je voudrais soigner mes alliés…	I am a beginner and would like to heal my allies…
+Me conseiller	Find suggestions
+Guide du catalogue · critères et extraits des fiches	Catalogue guide · filters and sheet excerpts
+Choisissez une envie ou décrivez votre style pour découvrir jusqu’à trois pistes.	Choose a preference or describe your style to find up to three suggestions.
+Explorez les personnages	Explore the characters
+Nom, peuple, classe, capacité, totem ou histoire.	Name, ancestry, class, ability, totem or story.
+Ex. feu, épée, guérison…	E.g. fire, sword, healing…
+Toutes les classes	All classes
+Non renseignée	Not recorded
+non renseignée	not recorded
+Nom A → Z	Name A → Z
+Complexité croissante	Complexity: low to high
+Complexité décroissante	Complexity: high to low
+Trouvé dans :	Found in:
+Aucun personnage ne réunit ces critères. Retirez un filtre ou essayez un mot plus général.	No character meets these criteria. Remove a filter or try a broader search term.
+Gemini · jusqu’à 6 recommandations commentées. Votre phrase est envoyée à Google ; évitez les données personnelles.	Gemini · up to 6 suggestions with explanations. Your request is sent to Google; avoid personal information.
+Décrivez votre style, votre thème ou vos envies de jeu.	Describe your style, theme or play preferences.
+La vérification anti-abus est bloquée. Autorisez Cloudflare Turnstile ou utilisez les filtres.	The anti-abuse check is blocked. Allow Cloudflare Turnstile or use the filters.
+Qwen via Ollama local · jusqu’à 6 recommandations commentées	Qwen via local Ollama · up to 6 suggestions with explanations
+Décrivez votre envie : le modèle comparera les fiches et expliquera chaque proposition.	Describe what you want: the model will compare the sheets and explain each suggestion.
+Quel rôle vous attire : soigner, protéger, contrôler, invoquer, vous dissimuler ou jouer à distance ?	Which role appeals to you: healing, protecting, controlling, summoning, hiding or fighting at range?
+fiches contiennent des indices pour ces critères. Voici	 sheets contain evidence for these criteria. Here are
+pistes à comparer ; cela ne garantit pas leur efficacité en partie.	suggestions to compare; this does not guarantee their effectiveness in play.
+Je ne sais pas vous proposer de personnage réunissant ces critères à partir des fiches disponibles. Essayez de retirer une envie.	I cannot suggest a character meeting these criteria from the available sheets. Try removing a preference.
+Style de jeu non renseigné.	Play style not recorded.
+Lire la fiche source	Read the source sheet
+Je cherche dans les fiches…	Searching the sheets…
+Attendez la validation anti-abus ci-dessus puis réessayez.	Wait for the anti-abuse check above, then try again.
+Le modèle ne peut pas répondre pour le moment. Réessayez ou utilisez les filtres.	The model cannot respond right now. Try again or use the filters.
+Recherche exacte dans l’identité des fiches · aucun appel Gemini	Exact search in sheet identities · no Gemini call
+Profil statistique :	Attribute profile:
+(indicatif)	(indicative)
+Aucune fiche suffisamment proche de cette demande.	No sheet matches this request closely enough.
+Pour respecter vos exclusions, choisissez directement les critères ci-dessus. Le guide du catalogue ne sait pas interpréter cette phrase avec assez de certitude.	To respect your exclusions, select the criteria above directly. The catalogue guide cannot interpret this sentence confidently enough.
+Recherche guidée par mots-clés. Ajustez les critères ci-dessus pour préciser votre demande.	Keyword-based search. Adjust the criteria above to refine your request.
+Le modèle met trop de temps à répondre. Réessayez plus tard.	The model is taking too long to respond. Try again later.
+Portrait non renseigné	Portrait not recorded
+Ouvrir la fiche de	Open the sheet for
+Rechercher dans la référence rapide et les règles joueurs de Cardenveil Fragmented.	Search the quick reference and player rules for Cardenveil Fragmented.
+Index indisponible	Index unavailable
+Aucun résultat. Essayez un terme plus court ou consultez les chapitres.	No results. Try a shorter term or browse the chapters.
+Afficher davantage de résultats	Show more results
+Recherche indisponible. Les chapitres restent accessibles dans le menu.	Search is unavailable. The chapters remain accessible from the menu.
+Requête refusée par le serveur.	Request rejected by the server.
+Références contrôlées	References checked
+Réponse partielle	Partial answer
+Éléments insuffisants	Insufficient information
+Guide Cardenveil	Cardenveil Guide
+Sources consultées	Sources consulted
+Session créée	Session created
+Nouvelle conversation créée.	New conversation created.
+Nouvelle conversation	New conversation
+Posez votre question sur Cardenveil.	Ask your question about Cardenveil.
+Recherche dans les règles de Cardenveil…	Searching the Cardenveil rules…
+Réponse reçue · Consultez les références sous la réponse.	Answer received · See the references below the answer.
+ Utilisez « Reprendre » pour récupérer la même demande sans relancer les dés.	 Use “Resume” to retrieve the same request without rerolling the dice.
+Modèle Ollama local configuré.	Local Ollama model configured.
+Clé configurée côté serveur.	Key configured on the server.
+Renseignez GEMINI_API_KEY dans le .env du serveur pour discuter.	Set GEMINI_API_KEY in the server .env file to chat.
+Une demande est à reprendre.	A request is waiting to resume.
+Le chatbot est indisponible sur ce site. Je ne peux pas répondre pour le moment. Les règles restent consultables dans la bibliothèque.	The chatbot is unavailable on this site. I cannot answer right now. You can still browse the rules library.
+LE GUIDE DE CARDENVEIL	THE CARDENVEIL GUIDE
+Les règles, à portée de question.	The rules, one question away.
+Une règle à retrouver, une situation à démêler ? Explorez les réponses et leurs sources.	Looking for a rule or untangling a situation? Explore the answers and their sources.
+Votre conversation	Your conversation
+Questions sur Cardenveil	Questions about Cardenveil
+＋ Nouvelle	＋ New
+Historique ↗	History ↗
+Conversation avec le guide	Conversation with the guide
+Suggestions de questions	Suggested questions
+Comment fonctionne la parade ?	How does parrying work?
+La parade	Parrying
+Comment se déroule un round de combat ?	How does a combat round work?
+Un round de combat	A combat round
+Comment utiliser les cartes et les tokens ?	How do I use cards and tokens?
+Cartes & tokens	Cards & tokens
+Comment fonctionnent les flashbacks ?	How do flashbacks work?
+Les flashbacks	Flashbacks
+Votre question	Your question
+Avec 5 dégâts reçus, combien mon armure peut-elle absorber ?	If I take 5 damage, how much can my armor absorb?
+Demander	Ask
+Reprendre la demande	Resume request
+Connexion au guide…	Connecting to the guide…
+Sources citées · Calculs contrôlés · Limites explicites	Cited sources · Checked calculations · Explicit limitations
+Ce que le guide peut vérifier	What the guide can check
+Parade de base, plafond d’armure, modificateurs, coûts réduits, sauvegardes, valeur brute, durées d’effets et conversions d’actions. Les scénarios indiquent leurs hypothèses et les paramètres manquants. Les jets de dés demandés sont enregistrés ; les simulations ne modifient pas vos personnages.	Base parry, armor cap, modifiers, reduced costs, saving throws, Raw Power (contextual Mod d6), effect durations and action conversions. Scenarios state their assumptions and missing parameters. Requested dice rolls are recorded; simulations do not change your characters.
+Texte trop volumineux pour la pagination.	Text is too long to paginate.
+Bloc impossible à paginer.	This block cannot be paginated.
+Capacité trop volumineuse pour la pagination.	Ability text is too long to paginate.
+Les propriétés de cette capacité dépassent une feuille A4.	The properties of this ability exceed one A4 sheet.
+Première page trop chargée.	Too much content on the first page.
+Une feuille dépasse le format A4.	A sheet exceeds the A4 page size.
+Catalogue indisponible	Catalogue unavailable
+Personnage introuvable	Character not found
+Équipement & inventaire — suite	Equipment & inventory — continued
+Équipement & inventaire	Equipment & inventory
+Capacités — verso	Abilities — reverse
+Capacités — suite	Abilities — continued
+Fiche — suite	Sheet — continued
+ (suite)	 (continued)
+Réduction des capacités	Ability cost reductions
+Notes personnelles	Personal notes
+Fiche de personnage	Character sheet
+Ressources et maîtrises	Resources and masteries
+Cartes et capacités	Cards and abilities
+Cartes et tokens	Cards and tokens
+Tokens libres	Free tokens
+Fiche A4	A4 sheet
+feuilles A4	A4 sheets
+Préparée :	Prepared:
+Maîtrises d’armes	Weapon Masteries
+Maîtrises élémentaires	Elemental Masteries
+Réductions par couleur	Suit reductions
+Propriétés de famille	Family properties
+Couleur catalyseur	Focus suit
+Propriétés équipement	Equipment properties
+Perception passive	Passive Perception
+Seuil sauvegarde	Save DC
+Seuil de miss	Miss Threshold
+Armure (mod. Force + 1)	Armor (Strength Mod + 1)
+Bonus d’attaque	Attack bonus
+Bonus initiative	Initiative bonus
+Bonus mouvement	Movement bonus
+Bonus garde	Guard bonus
+Bonus PV	HP bonus
+PV max	Max HP
+PV actuels	Current HP
+PV temporaires	Temporary HP
+Capacités connues	Known abilities
+Préparées max	Max prepared
+Carte min	Min cards
+Carte max	Max cards
+XP dépensés	XP spent
+XP disponibles	Available XP
+Manies et tics	Habits and tics
+Rareté / Prix	Rarity / Price
+Maîtrises	Masteries
+Caractéristiques	Attributes
+Compétences	Skills
+Capacités	Abilities
+Capacité	Ability
+Inventaire	Inventory
+Équipement	Equipment
+Identité	Identity
+Narratif	Narrative
+Physique	Appearance
+Réactions	Reactions
+Sauvegarde	Saving throw
+Utilisation	Usage
+Valeur	Value
+Coût	Cost
+Visuel	Image
+Complexité	Complexity
+Rechercher	Search
+Réinitialiser	Reset
+Pertinence	Relevance
+Toutes	All
+Jusqu’à	Up to
+Trier	Sort
+Créateur	Creator
+Style de jeu	Play style
+Histoire	Story
+Peuple	Ancestry
+Soigner	Heal
+Protéger	Protect
+À distance	Ranged
+Invoquer	Summon
+Contrôler	Control
+Se dissimuler	Hide
+Volonté	Willpower
+Déflexion	Deflection
+Parade	Parry
+Armure	Armor
+Canalisation	Channeling
+Mouvement	Movement
+Objectif	Goal
+Liens	Bonds
+Personnalité	Personality
+Réputation	Reputation
+Éducation	Education
+Croyances	Beliefs
+Cicatrices	Scars
+Pulsion	Drive
+Force	Strength
+Agilité	Agility
+Esprit	Spirit
+Athlétisme	Athletics
+Résilience	Resilience
+Discrétion	Stealth
+Représentation	Performance
+Perspicacité	Insight
+Joueur	Player
+Niveau	Level
+Alignement	Alignment
+Âge	Age
+Taille	Height
+Poids	Weight
+Yeux	Eyes
+Peau	Skin
+Cheveux	Hair
+Critique	Critical
+Avantage	Advantage
+Famille	Family
+Élément	Element
+Enchantement	Enchantment
+Vitesse	Speed
+Dégâts	Damage
+Attributs	Attributes
+Armes	Weapons
+Arme	Weapon
+Objet	Item
+Dons	Feats
+Pique	Spades
+Cœur	Hearts
+Trèfle	Clubs
+Carreau	Diamonds
+Couleur	Suit
+Modificateur	Modifier
+Classe	Class
+Nom	Name
+'Or'	'Gold'
+'Mort'	'Death'
+'Oui'	'Yes'
+'Non'	'No'
+'Vous'	'You'
+'Erreur'	'Error'
+'Dé'	'Die'
+'couleur'	'suit'
+'éveil'	'awakening'
+'maîtrise'	'mastery'
+'FOR'	'STR'
+'ESP'	'SPI'
+FOR ${	STR ${
+ESP ${	SPI ${
+ personnage${	 character${
+ résultat${	 result${
+ affiché${	 displayed${
+ sur ${	 of ${

@@ -9,6 +9,7 @@ import json
 import re
 import shutil
 import zipfile
+import sys
 from pathlib import Path
 
 from rules_pages import build_rules
@@ -132,6 +133,8 @@ def build() -> None:
     write_index(PUBLIC, characters)
     write_statistics(PUBLIC, characters)
     build_rules(ROOT, PUBLIC)
+    from localization import build as build_bilingual
+    build_bilingual(PUBLIC, characters, collect_only='--collect-translations' in sys.argv)
     headers = WEB / "_headers"
     if headers.is_file():
         shutil.copy2(headers, PUBLIC / "_headers")
