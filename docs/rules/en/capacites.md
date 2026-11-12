@@ -2,19 +2,22 @@
 
 # **Abilities and Cards**
 
-To use an ability, you must spend cards whose cumulative value reaches at least the **ability cost**. Each played card must match the **ability type** (Heart, Diamond, Club, or Spade). For example, to use a healing spell with a cost of 15, you must use **Hearts** cards whose combined value reaches at least 15. This system adds a strategic dimension by forcing you to manage your cards and plan your actions based on your resources.
+To use an ability, the total value of cards spent must be **greater than or equal to its cost: card total ≥ cost**. Exact payment is valid. Each card played must match the **ability type** (Heart, Diamond, Club or Spade). For example, a total of 15 is enough to use a healing ability that costs 15.
+
+An ability always requires spending **at least 1 card**. If its final cost is 0 or less, it may be used with **any card**, regardless of its suit or value.
 
 ## **Card and Ability Management**
 
-- **Number of known abilities** = Spirit ÷ 2 (rounded down).
-- **Cards in hand** = **2 (before being able to end turn and redraw)**
+- **Number of known abilities** = (Spirit ÷ 2, rounded down) + 1.
+- **Hand limit** = **3 normal cards at any time**. At the start of your turn, you need a free slot to draw; if your hand is full, discard one card first.
 - You can use **crystallized cards** as normal cards.
 - All cards can be **considered** as **1** of **any** suit.
 - **An ability** can for example be a mage spell (dependent on **spirit**) like a complex warrior maneuver (dependent on **agility**), a very brutal blow cracking the ground under the adversary (dependent on **strength**) or even an inspiring chant from a bard (dependent on **social**).
-- **The cost** of an ability is reduced by (Associated Attribute - 10) (can go negative) so a mage with lots of spirit will have more ease casting a fireball than a barbarian).
-- A player can **deviate** an existing ability to change its function on the fly, but it will cost between **1.5 and Triple** the cost that would have been associated with it (decided by the GM).
-- At the **start** of your turn, first **discard** cards until you have your **max cards** in hand then draw **one** card.
-- When you cast an ability at **range** (targeting a creature more than **2** meters away) and you are in the zone of control of an enemy creature, you give them the possibility to make an **opportunity attack**.
+- **The cost** of an ability is first reduced by `(associated attribute − 10)`.
+- A player may **derive** an existing ability to change how it works on the fly. The GM then sets a multiplier from **×1.5 to ×3**, applied **after the associated-attribute reduction**.
+- If range is not specified, a **base-damage** ability uses the **zone of control**; an ability described as ranged has a range of **20 m**.
+- At the **start** of your turn, draw **one** card if a slot is free. If your hand is full, discard one card first to make room before drawing.
+- When you cast a **ranged** ability (targeting a creature more than **1.5 m** away) while inside an enemy creature’s zone of control, that creature may make an **opportunity attack**.
 - **Crystallized cards** cannot be used for the **totem** and do not interact with **tokens**.
 
 ---
@@ -40,17 +43,31 @@ The threshold to reach or exceed (result ≥ threshold) for adversaries to dodge
 
 **Save DC = Incantation Attribute (e.g. Spirit) + Surcharge** 
 
-**Surcharge**= what you pay extra for the ability
+**Surcharge = total value of cards paid − final ability cost.** Every excess point counts, even when unavoidable. Example: for a final cost of 10, paying 13 gives a surcharge of 3.
 
 ---
 
 ## **Ability Saves**
 
-When you are the target of an ability, make a **save roll** of the attribute associated with the ability (**Acrobatics** [Agility] for **AOE**, **Athletics** [Strength] for physical controls, **Arcana** [Spirit] for magical controls and **Insight** [Social] for psychic controls):
+When you are the target of an ability, make a **saving throw using the appropriate Skill Mod** (**Acrobatics** [Agility] for **AOE**, **Athletics** [Strength] for physical controls, **Arcana** [Spirit] for magical controls and **Insight** [Social] for psychic controls):
 
-- **d20 + associated skill.**
-- If your result ≥ the opposing **Save DC**, you avoid the effect.
-- Otherwise, you suffer the effect.
+- **d20 + the associated Skill Mod**: Acrobatics Mod for AOE, Athletics Mod for physical crowd control, Arcana Mod for magical crowd control and Insight Mod for psychic crowd control. Proficiency is already included. If only an attribute is specified, without a named skill, use that Attribute Mod.
+- A target may choose to **fail its save voluntarily**, except on an **Insight** save.
+- A **natural 20** always succeeds on the save and completely negates the ability’s effect, regardless of its description.
+- The ability must state the outcome of a successful save. If it does not, use the default rule:
+    - **Athletics:** half damage and no control effect.
+    - **Acrobatics:** half damage.
+    - **Arcana:** resist the effect and take half damage.
+    - **Insight:** resist the effect and take half damage.
+- On a failure, the target suffers the full effect.
+
+---
+
+## **Concentration**
+
+- A character has only **one concentration** and may extend only one ability with it.
+- They may use several concentration abilities during the same round. Their effects may coexist during that round, but the character chooses which one to extend with concentration; the others are not extended into the next round.
+- After taking damage, make a **Willpower check: d20 + Resilience Mod + any bonuses**. The threshold equals half the damage actually taken after all reductions, rounded down. A result greater than or equal to the threshold maintains concentration; a failure loses it.
 
 ---
 
@@ -58,13 +75,19 @@ When you are the target of an ability, make a **save roll** of the attribute ass
 
 - **Name**: *(The name of the ability, for example, "Fireball")*
 - **Description**: *(A narrative and technical description of the ability. For example: "An explosion of flames erupts, dealing damage in a zone with a 6-meter radius.")*
+- **Action Type**: *(Action, bonus action, reaction, etc. This field must always be specified.)*
 - **Value**: *(What the ability measures, for example: "Damage = 4d10", "Healing = 2d8", "Distance traveled = 10 meters", "Duration = 2 turns", etc.)*
 - **Associated Attribute**: *(The attribute used for calculation, for example: "Spirit", "Strength", "Agility")*
+- **Range**: *(If absent: zone of control for base damage; 20 m for a ranged ability.)*
+- **Duration**: *(If a non-instantaneous effect does not specify its duration, it lasts 1 round.)*
+- **Concentration**: *(If not specified, the ability does not require concentration.)*
+- **Targets**: *(If not specified, the ability targets one creature.)*
 - **Global Cost**: *(The total cost in cards to activate the ability. For example: 12.)*
+- **Save**: *(State the skill used and the outcome of a success. If it is not stated and cannot be inferred, no save applies.)*
 - **Reduced Cost**: *(The cost after reduction for the player using the ability, based on their special abilities or totem. For example: 9 if the reduction is 3.)*
 - **Ability Suit**: *(The suit of cards needed to activate the ability. For example: "Diamonds", "Spades", "Hearts", or "Clubs.")*
-- **Save Attribute**: *(The attribute used to resist the ability. For example: "Agility", "Spirit", or "Strength.")*
-- **Effect on Save**: *(What happens if the target succeeds their save roll. For example: "Half damage", "Effect completely dodged", "Reduction of 2 turns duration", etc.)*
+
+If the save is not written, infer it as follows: **Athletics** for physical control, including an AOE; otherwise **Acrobatics** for an AOE; **Insight** for a psychic effect; **Arcana** for a magical effect. Athletics takes priority for physical control in an AOE.
 
 ---
 
@@ -77,7 +100,7 @@ When a character uses an **ability**, they rely on two reference values:
 
 Abilities then apply a **multiplier** to one of these two values:
 
-- **Raw Power (contextual Mod d6) Ability**: applies a **multiplier** to Raw Power (contextual Mod d6).
+- **Raw Power (contextual Mod d6) Ability**: the multiplier increases the **number of dice rolled**.
     > Example: Explosion – deals 2× Raw Power (contextual Mod d6).
     > 
 - **Base Damage Ability**: applies a **multiplier** to the character's **base damage** (e.g. *2.5 base damage* or *3 base damage*), following the rules of a **base damage roll** (see section Attacks & Damage).
@@ -91,7 +114,9 @@ Abilities then apply a **multiplier** to one of these two values:
    - Determine the **contextual modifier (Mod)** used (Strength, Agility, Spirit or Social).
    - The ability value is defined by:
 
-     **Value = K × sum of Mod six-sided dice (Mod d6).**
+     **Value = (K × Mod)d6.** The multiplier increases the number of dice; it does not multiply their sum. Example: **3 × 2d6 = 6d6**.
+
+   - If the contextual modifier is zero or negative, Raw Power is **0d6**, therefore 0.
 
    - This roll does not depend on the **weapon** and **cannot crit**.
 
@@ -124,7 +149,7 @@ Tokens are resources linked to attributes, used exclusively to facilitate card m
 ### **General Rules:**
 
 - Each player has a certain number of **tokens** per attribute.
-- **Number of available tokens = max(0, 1 + associated attribute modifier).**
+- **Number of available tokens = max(0, 1 + associated attribute modifier).** Then add any racial bonuses.
 - Tokens **reset after a short or long rest**.
 
 ---
@@ -134,10 +159,10 @@ Tokens are resources linked to attributes, used exclusively to facilitate card m
 - **Strength Tokens:** Draw a card.
 - **Agility Tokens:** Draw a card of a specific suit instead of a random one.
 - **Social Tokens:** Exchange one of your cards with an ally's card.
-- **Spirit Tokens:** Artificially extend your hand:
-    - Instead of discarding a card due to your hand limit, store the card in your token.
-    - You can change stored cards at will.
-    - If a used token is emptied, it explodes and creates a duplicate of the card that was in **crystallized** format.
+- **Spirit Token:**
+    - Spend one Spirit Token to create a **Spirit Slot**. Each slot increases your hand limit by 1.
+    - You cannot have fewer **non-crystallized cards** than Spirit Slots, because a slot cannot be freed.
+    - You may crystallize a card by bursting, and therefore consuming, one Spirit Slot. Crystallizing a card means replacing it with its crystallized version, represented in red: it does not count towards the hand limit, cannot be exchanged, and cannot interact with tokens or the Totem. It keeps its value and suit.
 
 ---
 
@@ -145,7 +170,7 @@ Tokens are resources linked to attributes, used exclusively to facilitate card m
 
 - **Strength Tokens:**
     
-    On a basic attack, allows performing **a second complete attack** (double strike).
+    After a basic attack, or after an ability that uses base damage, allows performing **a second complete attack** (double strike).
     
 - **Agility Tokens:**
     
@@ -153,13 +178,13 @@ Tokens are resources linked to attributes, used exclusively to facilitate card m
     
 - **Spirit Tokens:**
     
-    On a magical/elemental basic attack, applies a **Reverberation**: at the start of your next turn, the target suffers **2× all damage dealt** by the attack.
+    On a magical/elemental basic attack, applies a **Reverberation**: at the start of your next turn, calculate **2× the attack’s raw damage, before any reduction**, then apply damage reductions to the Reverberation normally.
     
 - **Social Tokens:**
     
-    Make an ally Attack
+    Without making an attack yourself, have an ally within **20 m** make a **basic attack**. You may modify that attack with another of your combat tokens. The ally may also use their own tokens.
     
-⚡ Usable only once per round for each unique token.
+⚡ Using a combat token is **free**: it costs no action, bonus action or reaction. You may decide to use it **after the roll**, but its effect must involve a **basic attack**. You may spend at most **1 combat token of each attribute per round**. A single attack may receive at most **1 combat token of each attribute**, regardless of who spends it.
 
 ---
 

@@ -8,11 +8,9 @@
 
 **Hand of cards:**
 
-- You have 3 **cards in hand** (you draw **+1 card per round**).
-- **Crystallized cards (red)** do not count towards your **hand** (except **Totem**).
-- **Start of turn:**
-    - discard cards beyond your limit,
-    - then **draw 1 card**.
+- You may have at most **3 normal cards in hand at any time**.
+- **Crystallized cards** keep their value and suit. They do not count towards the hand limit, cannot be exchanged, and do not interact with tokens or the Totem.
+- **Start of turn:** draw **1 card** if a slot is free. With 3 normal cards in hand, discard one first to make room before drawing.
 
 **Tokens (recovered during a short rest):**
 
@@ -25,7 +23,7 @@
 
 ## ✨ Aspects
 
-- **Invoking an aspect** lets you add the value of the spent card to the roll, as justified by the narrative.
+- **Invoking an aspect** adds the spent card's full value to the roll. If the derivation is remote, the GM may limit the bonus to half its value, rounded down.
 - Using an aspect **against yourself** lets you draw a **Crystallized Card**, but causes a **narrative complication** handled by the GM.
 
 ---
@@ -46,7 +44,7 @@
 
 **Skill check**
 
-- Roll **d20 + modifier**.
+- Roll **d20 + Skill Mod**.
 - The result must be **≥ the difficulty (DC)** set by the GM.
 - **Proficiency** doubles the modifier applied.
 
@@ -57,29 +55,30 @@
 **Advantage**
 
 - Add **+2 dice**, then keep the best results.
-- **Finesse** weapons use **Agility**.
+- **Agile** weapons use either Strength Mod or Agility Mod and reapply their full attack bonus on every critical.
 
 **Critical**
 
 - If a die rolls its **maximum**, reroll it and **add the result**.
 - Criticals can **chain** if the rerolls also produce the maximum.
 
-**Failure**
+**Natural d20 results**
 
-- A **natural 1** is a **miss**.
+- **Natural 1:** critical failure; ignore modifiers.
+- **Natural 20:** critical success regardless of modifiers. On a save, it completely negates the ability’s effect.
 
 ---
 
 ## 🛡️ Defense
 
-- **Armor**: reduces damage by **up to a maximum of 50%**.
+- **Armor**: after Parry, reduces at most **50% of the remaining damage**. Worn Armor is capped at **Strength Mod + 1**; shield Armor and racial natural Armor ignore this cap.
 
 **Parry (Reaction)**
 
 - Reduces damage by a **flat amount before armor**.
-- Approximate value:
-
-    **(maximum weapon die value/2 + Strength or Agility Mod + armor Deflection)**.
+- Weapon: **maximum die ÷ 2 + Agility Mod + Deflection**.
+- Shield: **maximum die ÷ 2 + Strength Mod + Deflection**.
+- Two weapons: **half of each weapon die + Agility Mod + Deflection**.
 
 ---
 
@@ -96,4 +95,4 @@
 
 **Legendary Break**
 
-- **Bosses** become **free after 2 turns** of an effect.
+- A **Legendary Break** frees a boss after **2 turns belonging to any creatures or players**. It spends the Break at the end of the round if it has not yet acted, or during the next round before its turn if it had already acted. It may trigger the Break immediately with its **Reaction**.

@@ -10,7 +10,7 @@ Chaque personnage possède plusieurs **aspects narratifs** représentant sa pers
 
 Ces aspects ne donnent pas de bonus fixes, mais influencent les jets selon la situation.
 
-### **Aspects Géneraux**
+### **Aspects généraux**
 
 - **Background** : ton passé, métier ou environnement d’origine.
     
@@ -20,7 +20,7 @@ Ces aspects ne donnent pas de bonus fixes, mais influencent les jets selon la si
     
     *Exemple : retrouver ma sœur, me racheter, devenir un maître artisan.*
     
-- **Bonds** : tes relations avec les autres personnages, positives ou négatives.
+- **Bonds** : tes relations avec les autres personnages, positives ou négatives. Ils sont facultatifs ; tu peux en avoir un avec chacun des autres personnages. Hors du combat stratégique, un Bond permet d’**aider ou de gêner gratuitement** le personnage concerné lorsqu’un de ses Aspects est pertinent. Le joueur qui intervient dépense une carte ; le joueur concerné ajoute sa valeur à son jet en cas d’aide ou la retranche en cas de gêne. Si le lien avec l’action est indirect, le MJ peut limiter cette valeur de moitié.
     
     *Exemple : je protège Thalen coûte que coûte ; je me méfie de Lyra.*
     
@@ -29,9 +29,7 @@ Ces aspects ne donnent pas de bonus fixes, mais influencent les jets selon la si
 
 ### **Aspects liés aux caractéristiques**
 
-Chaque caractéristique (Force, Agilité, Esprit, Social) possède **deux aspects possibles**.
-
-Le joueur en choisit un par caractéristique.
+Le joueur choisit **4 Aspects au total**. Le tableau propose des catégories inspirées des caractéristiques, mais il n’est pas obligatoire de choisir un Aspect par caractéristique.
 
 | Caractéristique | Aspect | Description | Exemple |
 | --- | --- | --- | --- |
@@ -62,14 +60,16 @@ Les **aspects** servent à influencer tes jets et les situations selon ta person
 
 Ils peuvent t’avantager ou te compliquer la vie selon la situation.
 
+Un même jet ne peut être modifié que par **un seul Aspect**.
+
+Les cartes servant à modifier un jet sont proposées **après le lancer du d20**.
+
 ### **Utilisation positive**
 
 Quand ton aspect t’aide dans une action :
 
 1. Tu choisis une carte de ta main et tu la **donnes au MJ**.
-2. Tu ajoutes à ton jet contextuel :
-    - **La moitié de la valeur** si la carte est **rouge**.
-    - **La valeur entière** si la carte est **noire**.
+2. Tu ajoutes la **valeur entière** de la carte à ton jet, quelle que soit sa couleur. Si le lien entre l’Aspect et l’action est indirect, le MJ peut limiter ce bonus à **la moitié de sa valeur**, arrondie à l’inférieur.
 3. L’effet est immédiat, mais la carte part dans la main du MJ pour être réutilisée plus tard.
 
 Exemple :
@@ -79,16 +79,16 @@ Exemple :
 > 
 > Tu veux réparer un mécanisme complexe → tu donnes un 8♦ au MJ.
 > 
-> Tu ajoutes +4 à ton jet, et le MJ garde la carte pour l’utiliser plus tard.
+> Tu ajoutes +8 à ton jet, et le MJ garde la carte pour l’utiliser plus tard.
 > 
 
 ---
 
 ### **Utilisation négative**
 
-Le MJ ou toi-même pouvez invoquer un aspect contre toi.
+Le MJ ou toi-même pouvez invoquer un aspect contre toi lorsque cette invocation produit un **impact significatif**. Le MJ décide si cet impact est suffisant.
 
-Tu pioches alors une carte **cristalisée** :
+Tu pioches alors une carte **cristallisée** :
 
 - Tu peux choisir de **réduire ton jet** de la valeur tirée.
 - Ou laisser le MJ **créer un problème lié à ton aspect**, dont la gravité dépend de la valeur piochée.
@@ -107,7 +107,7 @@ Exemple :
 ---
 
 
-## **4. Goals et Jeu Rp**
+## **3. Goals et jeu RP**
 
 
 Le **Goal** représente l’objectif personnel de ton personnage — ce qu’il cherche à accomplir, réparer ou atteindre.
@@ -138,6 +138,8 @@ Un Goal doit être **clair, concret et évolutif** : il peut changer au fil de l
 
 Les **flashbacks** sont des initiatives des joueurs pour **modifier la réalité du scénario** ou **introduire une action passée** qui justifie un avantage présent.
 
+Les flashbacks sont **interdits pendant un combat stratégique**.
+
 Ils permettent d’expliquer qu’un événement a déjà eu lieu, qu’une préparation avait été faite ou qu’un souvenir change la situation actuelle.
 
 Les coûts des flashbacks sont **élevés**, car ils altèrent directement la narration.
@@ -147,18 +149,18 @@ Les coûts des flashbacks sont **élevés**, car ils altèrent directement la na
 ### **Déclenchement d’un flashback**
 
 1. Tu **annonces le flashback** que tu veux introduire : ce que ton personnage a fait ou préparé dans le passé.
-2. Le MJ **détermine un coût cible** à atteindre plutot élevé (en général entre 40 et 150 selon l’ampleur du changement).
+2. Le MJ détermine un **coût cible**, généralement compris entre 40 et 150 selon l’ampleur du changement.
     
     > Un petit détail ou une précaution oubliée coûtera peu.
     > 
     > 
     > Une réécriture majeure ou un retournement complet coûtera très cher.
     > 
-3. Tu **paies ce coût** en cartes :
+3. Après avoir pris connaissance du coût, tu choisis si tu peux et veux le payer. Les cartes ne sont dépensées que si leur total permet d’atteindre le coût :
     - Tu peux utiliser tes **cartes cristallisées**.
     - Si le flashback est **lié à un de tes aspects**, tu peux aussi utiliser tes **cartes normales** (rouges ou noires).
     - Tes alliés peuvent t’aider en ajoutant leurs **cartes cristallisées** au total.
-4. Si la somme des valeurs atteint ou dépasse le coût fixé, le flashback est validé et devient réalité dans la narration.
+4. Si la somme des valeurs atteint ou dépasse le coût fixé, le paiement est effectué et le flashback devient réalité dans la narration. Sinon, aucune carte n’est dépensée et le flashback n’a pas lieu.
 
 ---
 
@@ -175,7 +177,7 @@ Les coûts des flashbacks sont **élevés**, car ils altèrent directement la na
 > 
 > Le MJ fixe un **coût de 35**.
 > 
-> Le joueur dépense 2 cartes cristallisées (valeurs 7 et 6) et 3 carte (8, 5,10, liée à son aspect Éducation).
+> Le joueur dépense 2 cartes cristallisées (valeurs 7 et 6) et 3 cartes liées à son Aspect Éducation (8, 5 et 10).
 > 
 > Le total est 36, le flashback réussit.
 > 
@@ -191,8 +193,8 @@ Les coûts des flashbacks sont **élevés**, car ils altèrent directement la na
 1. Le **MJ déclare** une situation ou un jet à enjeux.
 2. Les **joueurs peuvent invoquer** leurs **Aspects positifs** pour se renforcer (défausse → bonus).
 3. Le **MJ ou les joueurs** peuvent invoquer des **Aspects négatifs** pour créer des complications (malus ou twist → carte cristallisée).
-4. Les **Bonds** déterminent qui peut intervenir dans le jet d’un autre joueur (aide ou gêne) et assurent l’équilibre entre les deux types d’interactions.
-5. Les **joueurs** peuvent utiliser leurs cartes **normales** ou **cristalisées** pour faire des **flashbacks**.
+4. Les **Bonds** permettent gratuitement d’aider ou de gêner le jet d’un autre joueur hors du combat stratégique ; l’intervenant dépense la carte et l’autre joueur reçoit le bonus ou le malus.
+5. Les **joueurs** peuvent utiliser leurs cartes **normales** ou **cristallisées** pour faire des **flashbacks**.
 
 ---
 
@@ -203,14 +205,14 @@ Les coûts des flashbacks sont **élevés**, car ils altèrent directement la na
    - Lance **1d20**.
 
 2. 🧮 **Ajouter les modificateurs**
-   - Ajoute le **modificateur de la caractéristique associée**.
+   - Ajoute le **Mod. compétence**, maîtrise incluse. Si le jet ne nomme qu’une caractéristique, utilise son **Mod. caractéristique**, sans maîtrise.
 
 3. 🃏 **Appliquer les aspects (cartes)**
-   - **Utilisation positive** : ajoute la valeur de la carte.
+   - **Utilisation positive** : ajoute la valeur entière de la carte, ou sa moitié arrondie à l’inférieur si le MJ juge le lien indirect.
    - **Utilisation négative** : retranche la valeur de la carte.
 
 4. 🧾 **Déterminer le résultat**
-   - **Total = d20 conservé + modificateur + ajustement des cartes**.
+   - **Total = d20 conservé + Mod. compétence (ou Mod. caractéristique pour un jet sans compétence) + ajustement des cartes**.
    - **Total ≥ DC** : réussite. Sinon : échec.
 
 

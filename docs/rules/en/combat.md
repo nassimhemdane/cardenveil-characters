@@ -4,9 +4,13 @@ Fights and action phases in this system take place in **rounds**, which represen
 
 Abilities are activated using a **deck of cards**, which simulates your resources and tactical decisions. Damage inflicted, on the other hand, is determined by dice rolls.
 
+**Units:** the meter is the primary unit. On a grid or VTT, **1 square = 1.5 m**. The standard zone of control extends **1.5 m** around the creature.
+
+**Standard ranges:** 1.5 m for the zone of control; 3 m for a small range around yourself; 5 m for medium circles and cones; 7 m for extended range; 10 m for a line; 20 m for a long line. A remotely placed circle is 5 m in diameter and may be centered up to 20 m away. A push always moves its target **5 m**, unless explicitly stated otherwise.
+
 ## 1. Resources and Action Types
 
-Each character has, per **global round**, the following resources:
+Each character has, per **global round**, the following resources. They all reset **at the start of each global round**:
 
 ### 🔹 Action
 
@@ -24,24 +28,24 @@ Each character has, per **global round**, the following resources:
     
 ### 🔹 Movement
 
-- Distance: **5 + (Agility ÷ 2) spaces**.
-- Can be **split into a maximum of 2 uses** within the round
+- Total budget per round: **5 + (Agility ÷ 2) m**.
+- This budget may be **split into at most 2 segments** during the round; the two segments never grant twice the speed
     (for example: a movement during an intervention in GM Phase, then another during your turn in Player Phase).
     
 ### 🔹 Hierarchy
 
 > Action ⊃ Bonus Action ⊃ Reaction
 > 
-- An **Action** can be converted into a **Bonus Action** or into a **Reaction** (if the reaction has no special condition).
-- A **Bonus Action** can be converted into a **Reaction** (if the reaction has no special condition).
-- A **Reaction** cannot be converted into anything else.
-- No resource can be converted "upwards".
+- An **Action** may be used for an Action, Bonus Action or Reaction ability.
+- A **Bonus Action** may be used for a Bonus Action or Reaction ability, unless a condition prevents it.
+- A **Reaction** may only be used for a Reaction ability when its trigger occurs. It can never pay for an Action or Bonus Action.
+- Using a Reaction ability with an Action or Bonus Action is not a new Reaction. A character may therefore use several Reaction abilities in one round with different resources while still being limited to **one actual Reaction per round**.
 
 ---
 
 ## 2. Initiative and Flow
 
-A character can use their **Movement** at most **twice per round** (Fractional Movement).
+A character may split their **total Movement budget** into **at most two segments per round**. The combined distance of both segments cannot exceed that budget.
 
 ---
 
@@ -76,16 +80,14 @@ The player can attempt to act **before** an NPC's action by making an **initiati
 The player can use their **Movement** during this intervention
 → **always within the limit of two movements per round.**
 
-A player makes an initiative roll to intervene **only once per game turn of the NPC**,
-an NPC turn comprising **all its actions (Action + Bonus Action)**.
-
-If players want to make another intervention at another moment of the NPC's turn, they must **roll initiative again**, but only **once per NPC**.
+Each player may attempt **only one intervention per NPC turn**, with that turn including all of the NPC’s actions. If the attempt fails, none of the announced resources are spent. The player must wait until at least one NPC has completed its turn before attempting another intervention during a different NPC’s turn.
 
 **Initiative Roll Comparison:**
 
 - either against the NPC's initiative (the one rolled at the start of combat),
 or against a **contextual DC set by the GM** if the event is not linked to an NPC
     (trap, collapse, environmental danger, cry, lever, etc.).
+- On a tie, the **NPC acts first**. The GM may instead give priority to the player if that distributes actions more effectively.
     
 ---
 
@@ -97,7 +99,7 @@ retreat, gain height, reposition, etc.
 - Always requires an initiative roll.
 - Movement resolves **before** the threat if the initiative is successful.
 - Movement counts as **one use of Movement**,
-    → limited to **two uses per round**, regardless of when they occur.
+    → limited to **two segments per round**, within the remaining total distance.
     
 - A player can make a Movement intervention even if they plan **no Action or Bonus Action** in the round.
 
@@ -108,10 +110,10 @@ retreat, gain height, reposition, etc.
 A special Reaction allowing action **during** an NPC's action.
 
 - Initiative roll (often with advantage according to Rush rules).
-- **Success** → the player's Action **or** Bonus Action **confronts directly** that of the NPC.
+- **Success** → the player's Action **and/or** Bonus Action **directly confront** that of the NPC.
 - Both actions are resolved **simultaneously**, according to the GM.
 - Can include **Movement**,
-    → **always within the limit of two uses per round.**
+    → **always within the two-segment limit and total Movement budget for the round.**
     
 ---
 
@@ -134,7 +136,7 @@ If multiple players wish to intervene simultaneously in GM Phase, they freely de
 
 > An effect "1 turn" on a creature expires only when:
 > 
-> • the target has completed their next effective turn
+> • the target has completed their next turn
 > 
 > **AND**
 > 
@@ -142,6 +144,8 @@ If multiple players wish to intervene simultaneously in GM Phase, they freely de
 > 
 > The effect lasts until the **later of the two events**.
 > 
+> The target’s turn still counts for this duration even if they are unconscious, controlled or unable to act.
+>
 ### 3.2 Environmental Effects / Zones
 
 > Their duration is counted in global rounds:
@@ -175,13 +179,13 @@ In this section, we will present a general idea of possible actions during a rou
 1. **Secondary Attack**: A second melee attack without a damage modifier.
 2. **Consumable**: Drinking a potion or using a scroll, for example.
 3. **Dash**: Increase your movement speed by half, allowing you a third movement during the round.
-4. **Imbue**: Imbue a **weapon** or **projectile** with a **consumable.** If an **elemental source** is within range (e.g., fire, poison, etc.), use it to imbue your weapon and add **Survival Mod** in elemental damage to your next attack.
+4. **Imbue**: Imbue a **weapon** or **projectile** with a **consumable.** If an **elemental source** is within range (e.g., fire, poison, etc.), use it to imbue your weapon and add **Nature-Survival Mod** in elemental damage to your next attack.
 5. **Equipment Swap**: Alternate between two weapons or equipment.
-6. **Stabilization**: End a condition whose exit is possible, on an ally or on yourself if the condition allows (e.g., Prone, Restrained, Unconscious, Incapacitated). Some conditions may require a contextual roll depending on the situation.
+6. **Stabilization**: As a Bonus Action, revive an unconscious ally. They return to **1 HP**, keep their Fatigue level, and have their Action and Bonus Action available.
 7. **Push**: Push back a creature by **5m**, contested by your **Athletics** rolls.
 8. **Hide**: If you are **out of sight** or **obscured**, hide yourself by making a **Stealth** roll against enemy **Perception**. At the start of **each round** and every time you **enter a line of sight**, make another roll. Any **hostile** action **reveals** you; a non-hostile action requires a **new roll** to remain hidden.
 9. **Analysis**: Make an Investigation roll (DC 10 + Agility Mod) on an opposing creature to discover one of its resistances, immunities, or vulnerabilities. (Or a contextual detail)
-10. **Taunt**: Taunt a creature, make a **Performance** roll against their **Insight**. The taunted creature can only target you until the end of the round.
+10. **Taunt**: make a **Performance** check against a creature’s **Insight**. On a success, it becomes **Provoked** until the end of the round.
 11. **Channeling**: Channel your **Focus** and activate its **Suit Bonus** for this round and the next. Abilities of the corresponding suit see their **cost reduced by your Spirit Mod + the Focus bonus**. If you wield two one-handed Foci, you can channel them simultaneously to combine their **suits**. The Focus is then surrounded by an aura of its **damage type**. By channeling, you gain **advantage** on your **attack rolls** with the Focus and **Raw Power (contextual Mod d6)** of abilities.
 12. **Flattery**: Make a **Deception** roll against **Ally's Insight**. On success, the ally gains **+ Social Mod** to damage of their next attack.
 
@@ -189,20 +193,28 @@ In this section, we will present a general idea of possible actions during a rou
 
 ### **Reactions**
 
-1. **Opportunity Attack**: If an enemy **leaves** your **Zone of Control**, casts a **ranged** ability, or is **attacked** by an **ally** in **melee**, you can **attack** them (Attack with both weapons if dual wielding).
+1. **Opportunity Attack**: If an enemy **leaves** your **Zone of Control**, casts a **ranged** ability, or is **attacked** by an **ally** in **melee**, you may **attack** them (with both weapons if dual wielding). The opportunity attack resolves **before** the movement, casting or attack that triggered it. It may itself trigger opportunity attacks from other allies, forming a chain resolved in order before the original event resumes.
 2. **Support**: When an **ally** in your **zone of control** attacks, offer them **advantage** on their attack roll.
-3. **Parry**: Parry with your shield or weapons; you reduce damage taken (before Armor reduction) according to the **Deflection** of your armor + **Shield Parry + Strength Mod**. If you have no shield, use the **Parry** of the weapon = **maximum value of your weapon's die/2 (**e.g., 3 for 1d6) + **Agility Mod**. If you negate the **totality** of damage, you activate **Feint**.
-4. **Bastion**: Intercept a targeted attack aimed at an ally (Acrobatics roll = 3 + 2x **distance in meters**).
-5. **Rush**: Use your **reaction** to **rush your turn**: make an **initiative roll with advantage** during another creature's action. If your result exceeds their initiative, you can **play your Action and/or Bonus Action immediately**, both actions being **resolved simultaneously** according to the GM's decision. If you have already played this round, make an **initiative roll with advantage against 10 + the current creature's initiative**; on success, you can **play your Action and/or Bonus Action of the next round immediately**.
-6. **Harmonization**: When **a creature** casts an ability using **Spirit**, use your reaction to **Amplify: + Spirit Mod** to the **Raw Power (contextual Mod d6) roll of the ability** and the **Save DC**, or **Dampen: - Spirit Mod** to direct damage and the **Save DC**.
-7. **Alteration**: When **you** use an ability, you can **adjust** its effect or range without increasing its power and potentially activating an **elemental combination**.
+3. **Parry**: use your Reaction to reduce damage before Armor. With one weapon: `maximum die ÷ 2 + Agility Mod + Deflection`. With a shield: `maximum shield die ÷ 2 + Strength Mod + Deflection`. With two weapons: `weapon 1 maximum die ÷ 2 + weapon 2 maximum die ÷ 2 + Agility Mod + Deflection`. Add the modifier and Deflection only once.
+4. **Bastion**: Attempt to take any attack or effect in place of an ally, or protect an object, with an Acrobatics check against `3 + 2 × distance in meters`. The Reaction is spent even on a failure. Against an AOE, you take **×1.5 damage** and the protected person takes **×0.5 damage**.
+5. **Rush**: Use your **Reaction** to make an **initiative roll with advantage** during another creature’s action. The Reaction is spent whether the roll succeeds or fails. If your result exceeds their initiative, you may immediately use your **Action and/or Bonus Action**; they resolve simultaneously with the current action as decided by the GM. If those resources have already been used, roll against **10 + the current creature’s initiative** to borrow the Action and/or Bonus Action from the next round; every borrowed resource is already spent for that future round. This borrowing may be chained during later rounds, each time spending the Reaction and using the increased threshold.
+6. **Harmonization**: When **another creature within 20 m** uses a **Spirit** ability, use your Reaction to **Amplify: +Spirit Mod** to its Raw Power roll and Save DC, or **Dampen: −Spirit Mod** to its direct damage and Save DC. You cannot target yourself.
+7. **Alteration**: When you or an ally uses an ability, you may **adjust** its effect or range without increasing its power and potentially activate an **elemental combination**.
 8. **Targeting**: When an enemy acts (attacks, moves, etc.), you can use your **reaction** to **focus on them**, analyzing their movements and granting yourself **advantage** for a shot against them on the next turn.
 9. **Dissuasion**: Make an **Intimidation** roll against the **Enemy's Insight** to give them **disadvantage** on their melee attack.
-10. **Coordination**: As a reaction, choose an ally at **2x Persuasion Mod m**. This ally can **immediately use a reaction**, or **reroll their save** against the ability targeting them.
+10. **Coordination**: As a Reaction, choose an ally within **2 × Persuasion Mod m**. You grant them an immediate Reaction: they do not need their own Reaction available and do not spend it. They may instead **reroll their save** against the ability targeting them.
 
 # **Attack and Damage Rules**
 
 When you attack with a weapon or magical Focus, the success of the attack and the damage inflicted depend on a die roll. The **nature of the die** used (e.g., d6, d8, or d12) is determined by the weapon or Focus you use.
+
+## **Hands and Two-Weapon Fighting**
+
+- A one-handed weapon occupies one hand; a two-handed weapon occupies both.
+- Dual wielding is allowed with **two Light weapons**, or with a normal one-handed weapon and a weapon with the **Secondary** property.
+- The Action attacks with the main weapon. The Bonus Action attacks with the secondary weapon.
+- When the combination follows the dual-wielding rules, the secondary attack adds its modifier to damage normally.
+- Drawing, stowing or switching weapons costs a **Bonus Action**.
 
 ---
 
@@ -210,12 +222,11 @@ When you attack with a weapon or magical Focus, the success of the attack and th
 
 - **Damage** : Based generally on **Strength** (e.g.: 1d8 + Strength Mod).
 - **Action bonus** : After an attack, you can make a **second attack without adding your modifier to the damage**. (if you dual wield, you can add the modifier)
-- **Critical damage** : If you roll the maximum value on a die (e.g.: 8 on 1d8), reroll that die and add the result (cumulative). If the weapon is **agile**, also add your **Agility** modifier.
+- **Critical damage** : If you roll the maximum value on a die (e.g.: 8 on 1d8), reroll that die and add the result (cumulative). If the weapon is **Agile**, also reapply the full attack bonus on each critical.
 - **Critical miss** : If you roll a **1** on an attack die, you automatically miss. For every **2 points** below **10** in **Agility**, increase your **Miss Threshold** by **1**.
-- If you **attack** with **advantage**, roll the die **3** times and take the highest value. If you are with an **agile** weapon, **add** your **modifier** for **each** advantage. If you **crit**, reroll the roll **normally**.
-- **Opportunity attack** : If an enemy leaves your **Zone of Control** (**2 m**), you can make an opportunity attack using your **reaction**. If you **dual wield**, make an attack with each of your weapons.
-- You can **Parry** with melee weapons, use your **reaction** to **reduce** damage by **max weapon die/3** + your **Agility Mod** (or **Strength Mod** for shields/straight swords) + your **Deflection** from your equipment.
-- If an attack against you **misses** (if you parry 100% of damage, or if it misses in some way or another), you activate **Feint**, which gives you **advantage** against the one who attacked you on your next attack against the attacker.
+- If you **attack** with **advantage**, roll the die **3** times and take the highest value. On a critical, reroll with **one less advantage**.
+- **Opportunity attack** : If an enemy leaves your **Zone of Control** (**1.5 m**), you can make an opportunity attack using your **reaction**. If you **dual wield**, make an attack with each of your weapons.
+- You may **Parry** with a melee weapon: **maximum die ÷ 2 + Agility Mod + Deflection**. A shield uses **Strength Mod**. Two weapons add both half-die values, then add Agility Mod and Deflection once.
 - **Melee mechanics:** See Actions, Bonus Actions and Reactions for more details.
 
 ---
@@ -224,10 +235,9 @@ When you attack with a weapon or magical Focus, the success of the attack and th
 
 - **Damage** : Based generally on **Agility** (e.g.: 1d8 + Agility Mod).
 - **Disadvantage in melee** : If you are in an enemy's **Zone of Control**, you have disadvantage on your attack rolls.
-- **Critical damage** : If you roll the maximum value on a die (e.g.: 8 on 1d8), reroll that die and add the result (cumulative). If the weapon is **agile**, also add your **Agility** modifier.
+- **Critical damage** : If you roll the maximum value on a die (e.g.: 8 on 1d8), reroll that die and add the result (cumulative). If the weapon is **Agile**, also reapply the full attack bonus on each critical.
 - **Critical miss** : If you roll a **1** on an attack die, you automatically miss. For every **2 points** below **10** in **Agility**, increase your **Miss Threshold** by **1**.
-- **High ground** : You have **advantage** on ranged attacks if you are elevated relative to your target.
-- If an attack against you **misses**, you activate **Feint**, which gives you **advantage** against the one who attacked you on your next attack against the attacker.
+- **High Ground (bows only)**: when using a bow, you have **advantage** on the attack if you are at least **5 m above** your target.
 - **Ranged mechanics:** See Actions, Bonus Actions and Reactions for more details.
 
 ---
@@ -244,7 +254,6 @@ Magic Foci allow channeling **Spirit** to amplify magical abilities. Each Focus 
 - **Disadvantage in melee** : If you are in an enemy's **Zone of Control**, you have disadvantage on your attack rolls.
 - **Critical damage** : If you roll the maximum value on a die (e.g.: 8 on 1d8), reroll that die and add the result (cumulative).
 - **Critical miss** : If you roll a **1** on an attack die, you automatically miss. For every **2 points** below **10** in **Agility**, increase your **Miss Threshold** by **1**.
-- If an attack against you **misses**, you activate **Feint**, which gives you **advantage** against the one who attacked you on your next attack against the attacker.
 
 ## **Making an Attack Roll**
 
@@ -258,20 +267,22 @@ Magic Foci allow channeling **Spirit** to amplify magical abilities. Each Focus 
 2. 🎲 **Roll the Base Die**
    - Roll **1 weapon die** (d4, d6, d8, d10, d12).
    - If the result is **less than or equal to the Miss Threshold** (generally 1) → **Miss**.
+   - If the result is also the die’s maximum value, the **critical takes priority** and the attack succeeds.
 
 3. 💥 **Handle Crits**
    - If the die reaches its **maximum value** → **Crit**.
    - Reroll the die and **add the result** to the sum of dice.
    - If the new die also reaches its maximum value, **repeat**.
+   - A 1 rolled on a critical reroll never cancels the attack: it simply adds 1 damage.
 
 4. 🧮 **Calculate Damage**
    - Add **all die results**.
    - Add **once the attack bonus** calculated in step 1.
-   - **If Finesse** : also add this bonus **for each crit**.
+   - **If Agile** : also add this bonus **for each crit**.
 
 **Final Formula:**
 
-`Damage = Sum of dice + Attack Bonus × (1 + Number of crits if Finesse)`
+`Damage = Sum of dice + Attack Bonus × (1 + Number of crits if Agile)`
 
 
 ### 🎲 **Advantages and Disadvantages**
@@ -297,7 +308,7 @@ During an attack with a **melee weapon**, you can choose to **engage your attack
 **Bonus**: Add your **Strength or Agility** modifier a second time to the total attack bonus.
 - **Disadvantage**: The attack suffers disadvantage.
 - **Exposure**: You become **Exposed** after the attack.
-- **Finesse**: If the weapon has the **Finesse** property, you do not become Exposed.
+- **Agile**: If the weapon has the **Agile** property, you do not become Exposed.
 
 **Narratively**, the engagement can represent a more powerful attack, a targeted strike, or a particularly risky maneuver.
 
@@ -310,13 +321,13 @@ The table below groups basic weapon categories, with their types and average dam
 **Family Property:**
 
 - All straight swords inflict **slashing or piercing** (choice at each attack).
-- You can add your **Strength Mod** and your **Agility Mod** to calculate your Parry.
+- Straight swords use the standard Parry formula with **Agility Mod**.
 - If you parry a melee attack, you have **advantage on your next attack** against that assailant.
 
 **Weapons:**
 
-- **Dagger** — 1d4, slashing/piercing — Finesse, Light, Throw (10m)
-- **Shortsword** — 1d6, slashing/piercing — Finesse
+- **Dagger** — 1d4, slashing/piercing — Agile, Light, Throw (10m)
+- **Shortsword** — 1d6, slashing/piercing — Agile, Light
 - **Longsword** — 1d8, slashing/piercing — Versatile (1d10)
 - **Rapier (greatsword)** — 1d12, slashing/piercing — Two Hands
 
@@ -332,9 +343,9 @@ The table below groups basic weapon categories, with their types and average dam
 
 **Weapons:**
 
-- **Sickle** — 1d4, slashing — Finesse, Light
-- **Curved Sword (scimitar)** — 1d6, slashing — Finesse, Light
-- **Katana (long saber)** — 1d10, slashing — Finesse, Two Hands
+- **Sickle** — 1d4, slashing — Agile, Light
+- **Curved Sword (scimitar)** — 1d6, slashing — Agile, Light
+- **Katana (long saber)** — 1d10, slashing — Agile, Two Hands
 - **Great Saber** — 1d12, slashing — Two Hands
 
 ---
@@ -344,8 +355,7 @@ The table below groups basic weapon categories, with their types and average dam
 **Family Property:**
 
 - All weapons in the axe family inflict **slashing**.
-- **Brutality**: On a critical hit, roll **2 damage dice** and keep the sum.
-- After a first critical hit, you can **achieve a new critical hit** if you roll a **pair** on the damage dice.
+- **Brutality**: On a critical hit, roll exactly **2 damage dice**, without advantage, and keep their sum. This reroll produces another critical only when both dice form a **pair**.
 
 **Weapons:**
 
@@ -361,7 +371,7 @@ The table below groups basic weapon categories, with their types and average dam
 
 - All impact weapons inflict **bludgeoning**.
 - **Impact**: Ignores passive armor and halves Parry.
-- On a critical hit, the attacker makes an **Athletics** roll to **push back 5m**.
+- On a critical hit, the attacker makes an **Athletics check against the target’s Strength**. On a success, they push the target back **5 m**.
 
 **Weapons:**
 
@@ -441,11 +451,11 @@ Offers **passive armor** independent of Strength and a **customized Parry value*
 **Profile**: 1d10, slashing — Two Hands, Reach (3m), Amplitude
 
 - Inherits **Fluid** (curved swords) and **Reach** properties.
-- → Hybrid weapon combining **mobility/deception** and **zone control**.
+- → Hybrid weapon combining **mobility** and **zone control**.
 
 ### ⚔️ Rapier — **Counter-Thrust**
 
-**Profile**: 1d8, piercing — Finesse
+**Profile**: 1d8, piercing — Agile
 
 - **Counter-Thrust**: When a creature attacks you in melee, you can choose to attempt a counter.
     - If you do, that creature's attack is made with **advantage**.
@@ -456,7 +466,7 @@ Offers **passive armor** independent of Strength and a **customized Parry value*
 
 ### 🌀 Whip — **Soft Entanglement**
 
-**Profile**: 1d6, slashing — Finesse, Reach (3m)
+**Profile**: 1d6, slashing — Agile, Reach (3m)
 
 - **Soft Entanglement**: Your **opportunity attacks** with a whip are made with **disadvantage**.
 - If they succeed, you make an **Sleight of Hand** check opposed to the target's **Athletics**.
@@ -469,7 +479,7 @@ Offers **passive armor** independent of Strength and a **customized Parry value*
 Profile: 1d4, bludgeoning
 
 - **Impact**: Benefit from the Impact property.
-- **Hybrid**: Add your Strength + Agility modifiers to your attack damage. On a critical hit, remove the Strength modifier and keep all other bonuses.
+- **Hybrid**: Add your Strength and Agility modifiers to the initial damage. On a critical, the Strength Mod remains in the initial bonus but is removed from the repeated attack bonus.
 
 ---
 
@@ -485,13 +495,13 @@ Profile: 1d4, bludgeoning
 
 | Weapon                    | Damage                   | Properties                                                |
 | ------------------------- | ------------------------ | --------------------------------------------------------- |
-| Dagger                    | 1d4, slashing/piercing   | Finesse, Light, Throw (10m), **Guard**                    |
-| Short Sword               | 1d6, slashing/piercing   | Finesse, **Guard**, Light                                  |
+| Dagger                    | 1d4, slashing/piercing   | Agile, Light, Throw (10m), **Guard**                    |
+| Short Sword               | 1d6, slashing/piercing   | Agile, **Guard**, Light                                  |
 | Long Sword                | 1d8, slashing/piercing   | Versatile (1d10), **Guard**                                |
 | Claymore                  | 1d12, slashing/piercing  | Two-handed, **Guard**                                      |
-| Sickle                    | 1d4, slashing            | Light, **Fluid**                                          |
-| Curved Sword (Scimitar)       | 1d6, slashing            | Finesse, Light, **Fluid**                                  |
-| Katana                    | 1d10, slashing           | Finesse, Two-handed, **Fluid**                             |
+| Sickle                    | 1d4, slashing            | Agile, Light, **Fluid**                                   |
+| Curved Sword (Scimitar)       | 1d6, slashing            | Agile, Light, **Fluid**                                  |
+| Katana                    | 1d10, slashing           | Agile, Two-handed, **Fluid**                             |
 | Greatsword                | 1d12, slashing           | Two-handed, **Fluid**                                      |
 | Hatchet                   | 1d6, slashing            | Light, Throw (10m), **Brutality**                          |
 | War Axe                   | 1d8, slashing            | Versatile (1d10), **Brutality**                            |
@@ -503,8 +513,8 @@ Profile: 1d4, bludgeoning
 | Spear                     | 1d8, piercing            | Versatile (1d10), Amplitude,  **Reach**                    |
 | Halberd                   | 1d12, slashing           | Two-handed, **Reach**                                      |
 | Scythe                    | 1d10, slashing           | Two-handed, Amplitude, **Fluid**, **Reach**                |
-| Rapier                    | 1d8, piercing            | Finesse, **Counter-Thrust**                                |
-| Whip                      | 1d6, slashing            | Finesse,  **Entangle**                                     |
+| Rapier                    | 1d8, piercing            | Agile, **Counter-Thrust**                                |
+| Whip                      | 1d6, slashing            | Agile, **Reach**, **Entangle**                          |
 | Fist weapons              | 1d4, bludgeoning         | Impact, Hybrid                                             |
 | Flail                     | 1d8, piercing            | **Destabilization**                                        |
 | Shortbow                  | 1d6, piercing            | Range, Two-handed, **High Ground**                         |
@@ -523,7 +533,7 @@ Profile: 1d4, bludgeoning
 
 ### ⚔️ Basic Properties
 
-- **Finesse** : uses Strength Mod or Agility Mod for attack and damage rolls.
+- **Agile** : uses either Strength Mod or Agility Mod for attack and damage rolls. On every critical, reapply the full attack bonus.
 - **Light** : can be used for a two-weapon attack.
 - **Versatile (dX)** : can be used one-handed or two-handed (increased damage).
 - **Two-handed** : must be wielded with two hands.
@@ -534,7 +544,7 @@ Profile: 1d4, bludgeoning
 - **Light Shot** : can shoot as a bonus action or action but not both (ranged weapons).
 - **Reload** : requires a bonus action to reload before shooting (starts reloaded).
 - **Secondary**: Can be equipped on the secondary hand in addition to a non-light weapon.
-- **Amplitude** : When you attack a creature at your maximum range (3 m), your weapon benefits from the Finesse property.
+- **Amplitude** : When you attack a creature at your maximum range (3 m), your weapon gains the Agile property.
 
 ---
 
@@ -542,10 +552,10 @@ Profile: 1d4, bludgeoning
 
 ---
 
-- **Guard (Straight Swords)** : Swords inflict slashing or piercing damage; their Parry is worth d/2 instead of d/3, Parry is versatile, it can use Strength, and a successful Parry grants advantage on the next attack against the attacker.
-- **Brutality (Axes)** : Axes inflict slashing damage; on a critical hit, roll two dice and keep the sum, then after a first critical hit, you can obtain a new critical hit on a pair.
-- **Impact (Maces/Hammers)** : Impact weapons inflict bludgeoning damage; they ignore passive Armor, halve Parry, and on a critical hit the target must succeed on an Athletics save or be pushed back 5 m.
-- **Fluid (Curved Swords)** : Curved swords inflict slashing damage; if they attack with disadvantage, they have advantage on the next attack in the round, and any target attacked has disadvantage on their opportunity attacks against you until the end of the turn.
+- **Guard (Straight Swords)** : Swords deal slashing or piercing damage, and a successful Parry grants advantage on the next attack against the attacker.
+- **Brutality (Axes)** : Axes deal slashing damage. On a critical, roll exactly two dice without advantage and keep their sum; only a pair produces another critical.
+- **Impact (Maces/Hammers)** : Impact weapons deal bludgeoning damage, ignore passive Armor and halve Parry. On a critical hit, the attacker makes an Athletics check against the target’s Strength; on a success, the target is pushed back 5 m.
+- **Fluid (Curved Swords)** : Curved swords deal slashing damage; if they attack with disadvantage, they have advantage on the next attack in the round, and any target attacked has disadvantage on opportunity attacks against you until the end of the round.
 - **Reach (Staves, Spears, Halberds)** : These weapons strike at 3 m, can make an opportunity attack when a creature leaves their 3 m zone or when it enters their 1.5 m zone.
 - **High Ground (Bows)**: If the shooter is located at ≥ 5 m above their target, they gain advantage on the attack roll.
 - **Piercing (Crossbows)** : The attack ignores passive Armor and halves the target's Parry value.
@@ -558,18 +568,26 @@ Profile: 1d4, bludgeoning
 - **Counter-Thrust (Rapier)** : When you are attacked in melee, you can grant advantage to the enemy, then parry normally, and finally immediately perform a free rapier attack against them.
 - **Entanglement (Whip)** : Opportunity attacks with a whip are made with disadvantage, but if they hit, you make an Sleight of Hand save against the target's Athletics to knock them down.
 - **Destabilization (Flail)** : When you inflict a critical hit with a flail, the target has disadvantage on their next attack.
-- **Hybrid** : Add your Strength + Agility modifiers to your attack damage. On a critical hit, remove the Strength modifier and keep all other bonuses.
+- **Hybrid** : Add Strength Mod and Agility Mod to the initial bonus. On a critical, remove Strength Mod only from the repeated attack bonus.
 
 # **Armors**
 
 Armor offers passive damage reduction and a contribution to Parry. It has two distinct values:
 
-- **Armor** 🛡️ (*Capped by Strength Mod*) : Passively reduces damage taken on each attack.
+- **Armor** 🛡️ (*capped by Strength Mod + 1*) : passively reduces damage remaining after Parry.
 - **Deflection** 🔄 (*Adds to Parry*) : Used only during a **Parry** to improve active defense.
 
 **General Rules:**
 
-- **Cannot reduce more than 50% of an attack's damage.**
+1. Apply **immunities, resistances and vulnerabilities** first.
+2. Apply **Parry** next.
+3. Apply **Armor** to the remaining damage last.
+4. Worn Armor is capped at **Strength Mod + 1**.
+5. Armor granted by a **shield** or a **racial natural-armor bonus** is added and ignores the Strength Mod + 1 cap.
+6. Total Armor reduction can never exceed **50% of the damage remaining after Parry**, rounded down.
+
+Example: an attack deals 10 damage and Parry removes 6. Four damage remains, so Armor can reduce at most 2.
+
 - **Minimum of 10 in Strength required to wear a breastplate with armor.**
 
 ### **Armor Equipment**
@@ -594,26 +612,28 @@ Being unconscious does not mean death, but you are vulnerable. Taking damage in 
 ### **Rules:**
 
 1. **Falling Unconscious:**
-    - When dropping to **0 HP**, gain **1 fatigue level**.
-    - If you take damage while unconscious, gain **1 additional fatigue level** per hit.
+    - HP can never fall below **0**. When dropping to 0 HP, gain **1 Fatigue level**.
+    - For every attack or damage tick suffered at 0 HP, make a **Resilience** check against half the damage taken, rounded down. On a failure, gain **1 Fatigue level**.
+    - At **3 Fatigue levels**, the character dies immediately.
     - You lose fatigue levels by resting.
-2. **Rising from Unconsciousness:**
-    - You must:
-        - Be **aided** by an ally.
-        - Be **healed** by a spell or item.
-        - Or succeed on a **Strength Save (DC 15)**.
-    - **Consequence:** You lose your **action** during the **round** where you rise.
+2. **Stabilization by an ally:**
+    - An ally uses their **Bonus Action**. You return to **1 HP**, keep your Fatigue, and have your Action and Bonus Action available.
+3. **Healing:**
+    - Receiving healing restores consciousness and the stated amount of HP.
+4. **Self-recovery:**
+    - Use your **Action** to make a Resilience check against `5 + 5 × your Fatigue level`.
+    - On a success, you return to **1 HP**. This recovery adds no Fatigue level.
 
 ### **Fatigue Effects**
+
+Each Fatigue level reduces the value of all your cards by 1, including crystallized cards. A card is always worth at least **1**, because any card may be used as a 1 of any suit.
 
 | **Level** | **Effects** |
 | --- | --- |
 | **0** | No penalty. |
-| **1** | **-1** penalty to all saves. Abilities cost **+1**.
-| **2** | **-2** penalty to all saves. Abilities cost **+2**.
-| **3** | **-4** penalty to all saves. Abilities cost **+4**.
-| **4** | **-6** penalty to all saves. Abilities cost **+6**.
-| **5** | Death. |
+| **1** | Every card you use is worth **1 less**. |
+| **2** | Every card you use is worth **2 less**. |
+| **3** | Death. |
 
 ---
 
@@ -624,6 +644,15 @@ Being unconscious does not mean death, but you are vulnerable. Taking damage in 
 Each damage type describes the **way the attack interacts with matter, energy, or spirit**.
 
 Certain resistances, vulnerabilities, or elemental synergies depend directly on this typology.
+
+## **Resistances and Vulnerabilities**
+
+- **Minor Resistance**: attacks using this damage type have **disadvantage**.
+- **Major Resistance**: damage of this type is **divided by 2**.
+- **Minor Vulnerability**: attacks using this damage type gain **advantage**.
+- **Major Vulnerability**: damage of this type is **multiplied by 2**.
+- **Immunity**: damage of this type is reduced to **0**.
+- Apply these effects **before Parry and Armor**. A resistance and vulnerability of the same level cancel each other.
 
 Damage is grouped into three main families:
 
@@ -657,10 +686,10 @@ They ignore physical laws and translate how magic interacts with the very essenc
 
 | Type | **Description** | **Effect** |
 | --- | --- | --- |
-| **Psychic** | Mental and emotional damage affecting consciousness, will, and perception directly. | Ignores Parry. |
-| **Necrotic** | Vital damage stemming from corruption, entropy, and the decomposition of internal energy. | Removes elemental and physical resistances of the target. |
-| **Radiant** | Luminescent and energetic damage amplifying the magical resonance of surrounding elements. | Increases the power of elemental synergies and combinations. |
-| **Strength** | Pure magical pressure damage, condensed stabilized kinetic energy. | Propagates elemental statuses within a 5m radius. |
+| **Psychic** | Mental and emotional damage affecting consciousness, will, and perception directly. | Ignores all types of defenses. |
+| **Necrotic** | Vital damage stemming from corruption, entropy, and the decomposition of internal energy. | Negates the target's resistances for 1 round. |
+| **Radiant** | Luminescent and energetic damage amplifying the magical resonance of surrounding elements. | Grants advantage on Nature-Survival checks and elemental-combination damage rolls. |
+| **Force** | Pure magical pressure damage, condensed stabilized kinetic energy. | Propagates elemental conditions within a 5 m radius without a save. |
 | **Arcane** | Raw magic damage, unaffiliated with an element or school, representing pure mana force. | There is no resistance to this type of damage. |
 
 ---
@@ -683,9 +712,9 @@ They stem from alchemical magics, natural spells, or unstable environments.
 
 ## 🌐 **Elemental Interactions**
 
-When a target is already **affected by an element** (burn, cold, humidity, shock, toxin, etc.),
+All elemental damage automatically applies its corresponding condition (**Burning**, **Chilled**, **Soaked**, **Shocked**, or **Poisoned**) until the end of the round. Reapplying the same element only renews this duration.
 
-the **damage of the next element applied** can be **amplified or reduced** based on the compatibility between these two forces.
+When a different element is applied to an already affected target, the new element’s damage is amplified or reduced according to the compatibility between both forces. After resolution, the new condition replaces the previous one unless a combination is activated.
 
 This table represents the **fundamental elemental synergies and counter-reactions** of the system.
 
@@ -729,13 +758,14 @@ These interactions are **controlled by the player**, via the **Alteration** reac
 
 The caster **uses their reaction** to alter **their own spell or elemental attack**. They trigger a **corresponding elemental reaction** that makes sense involving the element they apply and the element already applied on the target or the place where it is cast.
 
+Activating the combination **consumes both elemental conditions involved**.
+
 ### 🔹 Conditions
 
 - You can alter or alter **your own abilities** or those of your **allies**,
     but **never directly those of enemies.**
     
-- The GM may require a **Nature roll** (or a **contextual roll**, depending on the scene)
-    to successfully channel or control the reaction.
+- A **contextual check** is required to determine how the elemental combination can be used in the situation.
     
     - Successful roll → harmonized effect, stable combination.
     - Failed roll → reduced or uncontrolled effect, at the GM's choice.
@@ -747,10 +777,10 @@ The caster **uses their reaction** to alter **their own spell or elemental attac
 | Category | Limit / Rule | Detail |
 | --- | --- | --- |
 | **Control** | ❌ No hard CC | No daze, paralysis, complete freeze, etc. |
-| **Damage** | 🧭Max Raw Power (contextual Mod d6) of ability | If the combination inflicts damage, use the caster's Survival modifier. |
+| **Damage** | 🧭Spirit Mod d6 or Raw Power | Combination damage is always equal to the caster's **Spirit Mod d6** or the ability's **Raw Power**. It is added to the initial damage. |
 | **Propagation** | 🌐Max 5m Zone | Fixed radius of 5 meters around the impact point. |
 | **Transformation** | 🎲Contextual roll required | The GM decides the difficulty based on coherence and narration. |
-| **Prolongation** | ⏳Max 1 tick | If the effect persists, it inflicts a second tick at 50% of initial damage. |
+| **Prolongation** | ⏳2 rounds | If the effect persists, it deals **50% of the initial damage** each round for **2 rounds**. |
 | **Disturbance** | 🌫Moderate | Slightly disturbs (smoke, steam, light) without unbalancing combat. |
 
 ### 🔮 **Examples of Elemental Combinations**
@@ -770,18 +800,32 @@ The caster **uses their reaction** to alter **their own spell or elemental attac
 | **💧 Water + ☠ Toxic** | Diffusion: propagation of poison in the liquid, unstable colored cloud. |
 | **⚡ Lightning + ☠ Toxic** | Ionization: gases charge electrically, crackling or neutralizing discharge. |
 
+## **Invisibility**
+
+- Invisibility has no fixed duration: it lasts until a rule ends it.
+- If you become Invisible outside every enemy's field of vision, no Perception check is made when it activates.
+- When you use an ability that affects no enemy, each enemy may make a **Perception check against your Stealth**, with disadvantage because you are Invisible. An enemy that succeeds detects you.
+- An ability that affects an enemy automatically ends your Invisibility.
+- If you move within **5 m** of an enemy, that enemy may make a **Perception check against your Stealth** with disadvantage. On a success, they detect you.
+
 # **Negative Conditions**
+
+Unless its description gives another duration or an exit procedure, a condition lasts **1 round**, then ends automatically.
+
+- Reapplying the same condition **refreshes its duration** without stacking its effects.
+- When effects conflict, a **prohibition overrides a permission**.
+- Opposing automatic success and automatic failure **cancel each other**: make the roll normally.
 
 ## 🩸 **Total Blockages**
 
 | **Name** | **Description** |
 | --- | --- |
-| **Downed** | The creature is unable to act or move. It falls to the ground. It takes **1 level of Fatigue**, and each successful attack against it inflicts **+1 level of Fatigue** additional. An ally can remove it from this state by aiding it with a **bonus action**. Standing up also costs **its own bonus action**. **Loses immediately all concentration.** |
+| **Downed** | The creature is unconscious at 0 HP: it cannot act or move and immediately loses concentration. Use the **Unconsciousness and Fatigue** procedure to stabilize, heal or attempt self-recovery. |
 | **Paralyzed** | Cannot move or perform a physical action. Can however **harmonize or alter a spell**. Automatically misses all rolls of **Acrobatics** and **Athletics**. Does not necessarily lose concentration. Attacks against it have **advantage**. |
 | **Petrified** | The body becomes stone: **immobile**, **unconscious**, with **resistance to all types of damage except arcane and radiant**. **Loses immediately all concentration.** |
 | **Frozen** | The body is imprisoned in ice. **Cannot act or move.** Physical attacks against it inflict an **automatic critical**. After each attack received, it can attempt an **Athletics saving throw (DD = DC of the caster)** to free itself. |
 | **Sleep** | Unconscious but stable. Wakes if it takes damage or if an ally addresses or shakes it. Contact attacks have **advantage**. **Loses immediately all concentration.** |
-| **Stun** | Unable to act for **1 turn**, but remains conscious. Cannot move, speak, or react. Automatic failure on **Acrobatics saving throws** and **automatic success on Athletics saves with Insight**. Attacks against it have **advantage**. **Loses immediately all concentration.** |
+| **Stun** | Unable to act for **1 turn**, but remains conscious. Cannot move, speak or react. Automatically fails **Acrobatics** and **Athletics** saves; automatically succeeds on **Insight** saves. Attacks against it have **advantage**. **Immediately loses concentration.** |
 | **Amorphous** | The creature takes an **unstable form** (liquid, ethereal, other) and **loses all Armor and Parry**. It **keeps the properties** of the chosen form, but **all damage taken is transferred to its real body**. |
 
 ## ⚔️ **Physical Alterations**
@@ -795,7 +839,7 @@ The caster **uses their reaction** to alter **their own spell or elemental attac
 | **Prone** | The creature is knocked down. Must spend **its Bonus Action and half its movement** to stand up. Attacks against it have **advantage** as long as it is on the ground. |
 | **Blinded** | Cannot see. Attacks against it have **advantage**, and its own have **disadvantage**. Automatic failure on **Visual Perception tests** |
 | **Deafened** | Perceives no sound. **Automatic failure on all saving throws except those of Resilience.** |
-| **Grappled** | **Movement 0.** Can free itself with a bonus action via an **Athletics** roll. If the grappler moves, it **drags** the target. **Advantage** on attacks against it, or against the one grappling it. |
+| **Grappled** | **Movement 0.** The condition ends if the grappler releases the target, or if the target uses a Bonus Action and succeeds on an **Athletics check against the grappler’s Strength**. If the grappler moves, it **drags** the target. Attacks against either the target or the grappler have **advantage**. |
 | **Disarmed** | Loses the **main weapon/equipment**. Cannot use attacks or abilities that require it. |
 | **Exposed** | **Attacks against the target have advantage**. |
 
@@ -816,10 +860,10 @@ The caster **uses their reaction** to alter **their own spell or elemental attac
 | **Terrified** | Cannot approach the source of fear. Suffers **disadvantage on all attack and ability rolls** as long as it sees it. **Cannot attack the creature that terrified it.** |
 | **Charm** | Considers the caster as an **ally**. Cannot target them or voluntarily include them in harmful effects. The caster has **advantage on their social rolls** against it. In case of an attack against the caster, the target can make an **Insight roll** to use **Bastion** on the caster. |
 | **Enslaved** | Does **exactly what the caster orders it**, without restriction. |
-| **Furious** | Must **attack the nearest creature** each turn. Makes a **roll to not lose concentration** at the end of its turn. |
-| **Hypnotized** | Enters a **hypnotic state** preventing it from acting until a creature removes it from this state. Makes a **roll to not lose concentration** at the end of each turn. |
-| **Provoked** | Is **obliged to attack or target the caster** if it can. Can **only move toward the caster** and **only attacks them**. |
-| **Panicked** | Loses all control and attempts to **flee the source of fear**. Moves away at half its speed and also gains the **Terrified** state. Makes a **roll to maintain concentration** at the end of its turn. |
+| **Furious** | Must **attack the nearest creature** each turn. |
+| **Hypnotized** | Enters a **hypnotic state** that prevents it from acting. |
+| **Provoked** | Cannot target any creature other than the one that provoked it. It may act without a target and may target itself, including to heal itself. |
+| **Panicked** | Loses all control and attempts to **flee the source of fear**. Moves away at half its speed and also gains the **Terrified** state. |
 
 ## 🌫️ **Magical / Spiritual Alterations**
 
@@ -841,12 +885,12 @@ Here are the effect zones (AoE) and their **targeting** mode, including a **targ
 
 | **Name** | **Targeting** | **Description** | **Example** |
 | --- | --- | --- | --- |
-| **Circle around self (5 m radius)** | Centered on the caster | Circular zone of 5 m radius surrounding the caster. | Auras, explosions |
-| **Circle (5 m diameter, anywhere)** | Positionable at a distance | Circular zone with a 5 m diameter, affecting a precise area. | Fireball |
-| **Small circle (3 m diameter, anywhere)** | Positionable at a distance | Small circular zone, ideal for concentrated effects. | Precision spells |
+| **Circle around self (3 m radius)** | Centered on the caster | Small circular zone with a 3 m radius around the caster. | Auras, explosions |
+| **Circle (5 m diameter, up to 20 m away)** | Center positionable up to 20 m away | Circular zone with a 5 m diameter. | Fireball |
 | **5 m Cone (from caster)** | From the caster | Targeted attack affecting a short but wide area. | Short breaths |
-| **9 m Cone (from caster)** | From the caster | Wide attack covering a large distance in front of the caster. | Dragon breath |
-| **18 m Line (from caster)** | From the caster | Straight line of 18 m length and 1.5 m width. | Lightning |
+| **7 m Cone (from caster)** | From the caster | Cone with extended range. | Long breath |
+| **10 m Line (from caster)** | From the caster | Straight line 10 m long and 1.5 m wide. | Short lightning |
+| **20 m Line (from caster)** | From the caster | Straight line 20 m long and 1.5 m wide. | Long lightning |
 
 # 📑 **NPC Action Types**
 
@@ -911,9 +955,7 @@ Here are the effect zones (AoE) and their **targeting** mode, including a **targ
 # ⚔️ **Legendary Break**
 
 - A boss has a **limited number of Legendary Breaks per combat**.
-- **2-Turn Constraint**: an effect must remain active for at least **2 turns (regardless of which ones)** before it can be broken.
-- **Delayed Break**: after this delay, the boss can spend an **Action**, a **Bonus Action**, or a **Legendary Action** to free itself.
-- **Instant Break**: the boss can immediately break an effect at the moment it occurs, by spending:
-    - its **Reaction + 1 Legendary Action**, or
-    - a **Legendary Reaction**.
-- A boss having only **one Reaction per round** can make at most **one Instant Break per round**.
+- **2-Turn Constraint**: an effect must normally remain active for at least **2 turns belonging to any creatures or players** before it can be broken.
+- If the creature has not yet taken its turn when the effect is applied, it spends its Legendary Break **at the end of the round**, regardless of how many turns have passed.
+- If it has already taken its turn during that round, it may spend its Legendary Break **during the next round, before taking its turn**.
+- The creature may use its **Reaction** to spend a Legendary Break immediately and break the effect.

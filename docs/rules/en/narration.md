@@ -20,7 +20,7 @@ These aspects do not provide fixed bonuses; they influence rolls according to th
     
     *Example: find my sister, redeem myself, become a master craftsperson.*
     
-- **Bonds**: your relationships with other characters, positive or negative.
+- **Bonds**: your relationships with other characters, positive or negative. They are optional; you may have one with each other character. Outside strategic combat, a Bond lets you **help or hinder that character for free** when one of their Aspects is relevant. The intervening player spends a card; the affected player adds its value to their roll when helped or subtracts it when hindered. If the connection to the action is indirect, the GM may halve this value.
     
     *Example: I protect Thalen at all costs; I distrust Lyra.*
 
@@ -28,9 +28,7 @@ These aspects do not provide fixed bonuses; they influence rolls according to th
 
 ### **Attribute Aspects**
 
-Each attribute (Strength, Agility, Spirit, Social) has **two possible aspects**.
-
-The player chooses one per attribute.
+Choose **4 Aspects in total**. The table suggests categories inspired by the attributes, but you do not have to choose one Aspect per attribute.
 
 | Attribute | Aspect | Description | Example |
 | --- | --- | --- | --- |
@@ -59,14 +57,16 @@ This is not a numerical rule, but a **consistency requirement**.
 
 They can help you or make life harder, depending on the situation.
 
+A single roll can be modified by only **one Aspect**.
+
+Cards used to modify a roll are proposed **after the d20 is rolled**.
+
 ### **Positive Use**
 
 When your aspect helps you perform an action:
 
 1. Choose a card from your hand and **give it to the GM**.
-2. Add to your contextual roll:
-    - **Half its value** if the card is **red**.
-    - **Its full value** if the card is **black**.
+2. Add the card's **full value** to your roll, regardless of its color. If the connection between the Aspect and the action is indirect, the GM may limit this bonus to **half its value**, rounded down.
 3. The effect is immediate, but the card goes into the GM's hand to be used again later.
 
 Example:
@@ -75,13 +75,13 @@ Example:
 >
 > You want to repair a complex mechanism → you give the GM an 8♦.
 >
-> Add +4 to your roll; the GM keeps the card to use later.
+> Add +8 to your roll; the GM keeps the card to use later.
 
 ---
 
 ### **Negative Use**
 
-Either you or the GM can invoke an aspect against you.
+Either you or the GM can invoke an Aspect against you when doing so creates a **significant impact**. The GM decides whether that impact is sufficient.
 
 You then draw a **crystallized** card:
 
@@ -98,7 +98,7 @@ Example:
 
 ---
 
-## **4. Goals and Roleplaying**
+## **3. Goals and Roleplaying**
 
 The **Goal** represents your character's personal objective: what they seek to accomplish, repair or attain.
 
@@ -126,6 +126,8 @@ A Goal must be **clear, concrete and able to evolve**: it can change throughout 
 
 **Flashbacks** are player initiatives that **change the scenario's reality** or **introduce a past action** that explains a present advantage.
 
+Flashbacks are **not allowed during strategic combat**.
+
 They establish that an event has already happened, preparations were made, or a memory changes the current situation.
 
 Flashback costs are **high**, because they directly alter the narrative.
@@ -141,11 +143,11 @@ Flashback costs are **high**, because they directly alter the narrative.
     >
     > A major rewrite or a complete reversal costs a great deal.
     
-3. **Pay this cost** with cards:
+3. After learning the cost, choose whether you can and want to pay it. Cards are spent only if their total can meet the cost:
     - You can use your **crystallized cards**.
     - If the flashback is **related to one of your aspects**, you can also use your **normal cards** (red or black).
     - Your allies can help by adding their **crystallized cards** to the total.
-4. If the sum of the values meets or exceeds the set cost, the flashback is accepted and becomes part of the narrative's reality.
+4. If the sum of the values meets or exceeds the set cost, payment is made and the flashback becomes part of the narrative's reality. Otherwise, no cards are spent and the flashback does not occur.
 
 ---
 
@@ -176,7 +178,7 @@ Flashback costs are **high**, because they directly alter the narrative.
 1. The **GM describes** a situation or a roll with something at stake.
 2. **Players can invoke** their **positive Aspects** to strengthen themselves (discard → bonus).
 3. The **GM or players** can invoke **negative Aspects** to create complications (penalty or twist → crystallized card).
-4. **Bonds** determine who can intervene in another player's roll (to help or hinder) and maintain a balance between these two kinds of interaction.
+4. **Bonds** freely allow helping or hindering another player's roll outside strategic combat; the intervening player spends the card and the other player receives the bonus or penalty.
 5. **Players** can use their **normal** or **crystallized** cards for **flashbacks**.
 
 ---
@@ -187,14 +189,14 @@ Flashback costs are **high**, because they directly alter the narrative.
    - Roll **1d20**.
 
 2. 🧮 **Add Modifiers**
-   - Add the **associated attribute modifier**.
+   - Add the **Skill Mod**, including proficiency. If the check names only an attribute, use that **Attribute Mod**, without skill proficiency.
 
 3. 🃏 **Apply Aspects (Cards)**
-   - **Positive use**: add the card's value.
+   - **Positive use**: add the card's full value, or half its value rounded down if the GM considers the connection indirect.
    - **Negative use**: subtract the card's value.
 
 4. 🧾 **Determine the Result**
-   - **Total = kept d20 + modifier + card adjustment**.
+   - **Total = kept d20 + Skill Mod (or Attribute Mod for a check without a named skill) + card adjustment**.
    - **Total ≥ DC**: success. Otherwise: failure.
 
 ### **System Philosophy**

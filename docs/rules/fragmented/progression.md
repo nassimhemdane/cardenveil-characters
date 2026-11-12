@@ -1,18 +1,22 @@
 # Système de progression
 
+> Ces règles de progression s’appliquent uniquement au **mode Campagne**. Le **mode Aventure simple** utilise un système distinct, sans cette progression persistante.
+
 ## 🎲 **Système de progression**
 
 Les personnages progressent en gagnant des **points d’XP**, attribués par le MJ en récompense d’actions marquantes, de combats ou d’avancées narratives.
 
-Les XP sont dépensés pour améliorer le personnage.
+Les XP sont dépensés pour améliorer le personnage, mais le niveau dépend du **total cumulé des XP acquis** : dépenser des XP ne réduit jamais le niveau.
 
-- **1 niveau = 5 XP dépensés**
-- Tous les **5 niveaux → +1 caractéristique** (Force, Agilité, Esprit ou Social)
+- Le personnage commence au **niveau 1**.
+- **Niveau = 1 + ⌊XP acquis ÷ 5⌋**.
+- Chaque niveau gagné accorde **1 point de caractéristique** à placer en Force, Agilité, Esprit ou Social.
+- En mode Campagne, une caractéristique ne peut pas dépasser **20**.
+- Toute augmentation de caractéristique entraîne le **recalcul de toutes les statistiques dérivées**.
 
 Le **niveau** détermine aussi les limites du système :
 
-- Il fixe le **plafond de progression** (cap = ⌈lvl / 2⌉)
-- Il agit comme un **seuil de multiplicativité** des effets
+- Il fixe le **plafond de progression** : **⌊niveau ÷ 2⌋**.
 
 ## 🎯 **Axes de progression**
 
@@ -28,7 +32,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 - **Aspect** → 3 XP : ajoute un aspect narratif
 - **PV** → 2 XP : augmente les points de vie
 - **Feat** → 5 XP : donne un passif unique
-- **Évolution du pool** → 3 XP (collectif) : augmente le pool de cartes
+- **Évolution du pool** → coût collectif de **3 XP × nombre de joueurs** : augmente le pool de cartes
 
 ## 🗡️ **Armes (familles)**
 
@@ -51,7 +55,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 **Cap :**
 
-- niveau / 2
+- ⌊niveau ÷ 2⌋
 
 ---
 
@@ -72,7 +76,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 **Cap :**
 
-- niveau / 2
+- ⌊niveau ÷ 2⌋
 
 ---
 
@@ -97,7 +101,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 **Cap :**
 
-- niveau / 2
+- ⌊niveau ÷ 2⌋
 
 ---
 
@@ -117,11 +121,11 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 **Contrainte :**
 
-- 5 utilisations critiques
+- 5 **utilisations critiques**, c’est-à-dire cinq utilisations dans des moments où la capacité est réellement pertinente. Le MJ décide quelles utilisations comptent afin d’empêcher leur répétition artificielle uniquement destinée à débloquer l’Éveil.
 
 **Cap :**
 
-- niveau / 2
+- ⌊niveau ÷ 2⌋
 
 ---
 
@@ -145,7 +149,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 **Cap :**
 
-- niveau / 2
+- ⌊niveau ÷ 2⌋
 
 ---
 
@@ -189,7 +193,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 **Coût :**
 
-- 2 XP
+- 3 XP
 
 **Contrainte :**
 
@@ -239,7 +243,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 **Coût :**
 
-- 3 XP (par personne)
+- **3 XP × nombre de joueurs**, payés collectivement. La contribution peut être répartie librement : un joueur peut payer davantage qu’un autre. Chaque XP compte comme dépensé par le personnage qui le paie.
 
 **Contrainte :**
 

@@ -28,12 +28,26 @@ Dice represent the element of chance in the system. They measure the success, fa
 
 Dice rolls are often influenced by the **character's attributes**.
 
+**Rounding convention:** unless a rule explicitly says otherwise, all calculations and fractional results are always rounded down.
+
 - Example: for a Strength check, roll **1d20 + the character's Strength Mod**.
 - Example: a magical attack might deal **1d8 + Spirit Mod** damage.
+
+**Notation: Attribute Score, Attribute Mod and Skill Mod**
+
+- **Attribute Score**: the Strength, Agility, Spirit or Social value. Formulas that explicitly use the score, such as HP, still use that score.
+- **Attribute Mod**: `(score − 10) ÷ 2`, rounded down. Example: Strength 16 gives **Strength Mod = +3**.
+- **Skill Mod**: the skill bonus, including proficiency. It equals the associated attribute modifier, or **twice that modifier if you are proficient in the skill**. Do not add the Attribute Mod again to the roll.
+- Example: with Strength 16, **Athletics Mod = +3**, or **+6** if you are proficient in Athletics. Resisting physical crowd control that calls for Athletics uses **d20 + Athletics Mod**.
+- When a check names only an attribute, without naming a skill, use **d20 + that Attribute Mod**: a “Spirit check” means **d20 + Spirit Mod**, and a “Strength check” means **d20 + Strength Mod**. No skill proficiency applies to that check.
 
 ### **Success and failure**
 
 A die roll can be interpreted as a **direct result** (e.g. damage) or as an **attempt** whose success depends on a **difficulty threshold** set by the GM or the situation.
+
+- On a d20, a **natural 1** is always a **critical failure**: modifiers are ignored.
+- On a d20, a **natural 20** is always a **critical success**, regardless of modifiers.
+- On a saving throw, a **natural 20 completely negates the ability’s effect**, even if that ability would normally have a partial effect on a successful save.
 
 - Example of success: a character jumps across a chasm and rolls **18 on 1d20**; the GM decides this is enough to succeed.
 - Example of failure: a character tries to open a locked door and rolls **7 on 1d20**; they fail and may make a noise or trigger a trap.
@@ -56,18 +70,9 @@ Each additional advantage adds the corresponding dice to the roll (+1 on a d20, 
 
 Disadvantages cancel advantages and also stack.
 
-### **Criticals and sequential use**
+### **Criticals with advantage**
 
-When a **critical** occurs (the maximum value on a kept die), advantages **can be used sequentially**.
-
-This means a player with several advantages can:
-
-- use one for the initial roll,
-- then save the others to apply **to the critical reroll**, if they wish.
-
-Each advantage used adds its dice at the time of the **critical roll**, before keeping the best results.
-
-Advantages used this way are considered **spent**.
+When a critical occurs, make its reroll with **one less advantage** than the previous roll. Each new critical removes another advantage. At 0 advantage, criticals continue with 1 die.
 
 ### **Narrative consistency**
 
@@ -85,14 +90,17 @@ They are used to perform most important actions in the game.
 
 ### **Hand of cards**
 
-- Each player has a **hand of 2 cards +1 card drawn**.
-- In combat, **draw one card** at the start of each turn.
+- The draw pile is **shared by all players** and treated as **theoretically infinite**. For physical play, use as many standard **52-card decks** as possible, preferably **3 decks shuffled together**, with no jokers.
+- Face-card values: **Jack = 11, Queen = 12, King = 13, Ace = 14**.
+- When the physical draw pile is empty, shuffle the discard pile to form a new shared draw pile.
+- Each player may have at most **3 normal cards in hand at any time**.
+- In combat, at the start of each turn, you may **draw 1 card** only if a hand slot is free. If you already have 3 normal cards, discard one first to make room before drawing.
 - Outside combat, cards are drawn at regular intervals or at a pace set by the GM.
 
 ### **Types of cards**
 
 - **Normal Cards**: basic cards, drawn and discarded throughout the game.
-- **Crystallized Cards**: special cards that do not count towards the maximum hand limit and do not interact with tokens or totems (see below). They can be played like normal cards.
+- **Crystallized Cards**: the card is replaced by its crystallized version, represented in red, while keeping its value and suit. It does not count towards the maximum hand limit, cannot be exchanged, does not interact with tokens or the Totem, and can be played like a normal card.
 
 ### **General uses**
 
@@ -125,3 +133,9 @@ They modify, strengthen or bypass the usual mechanics.
 ### **Management**
 
 - Tokens are a **consumable resource**: they are spent during play and **reset after a rest**.
+
+## **Rest**
+
+- **Cards, for both types of rest:** you may discard as many normal cards from your hand as you wish, then draw back up to your hand limit. You do not have to discard them all. All your Spirit Slots are consumed and their cards become crystallized. You keep all cards that were already crystallized.
+- **Short rest:** 1 hour of uninterrupted rest in a quiet place, consuming rations. It restores all tokens, restores half of maximum HP without exceeding the maximum, and removes 1 Fatigue level.
+- **Long rest:** 7 hours of uninterrupted sleep in a quiet place, consuming rations. It restores all tokens and all HP, and removes 2 Fatigue levels.

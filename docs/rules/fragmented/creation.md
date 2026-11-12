@@ -18,7 +18,7 @@
     - Agilité (AGI)
     - Esprit (ESP)
     - Social (SOC)
-- Chaque caractéristique doit être **entre 0 et 20**.
+- Chaque caractéristique doit être **paire et comprise entre 0 et 18 à la création**. Pour éviter un malus permanent, elle doit être au minimum de **6**.
 - Le modificateur = *(Score − 10) ÷ 2*, arrondi à l’inférieur.
 - Si une caractéristique ≤ 5 → elle impose un **malus permanent** (déterminé après la création, durant la premiere session de chaque avanture).
 
@@ -32,7 +32,7 @@
 - **Mouvement** = 5 m + Agilité/2
 - **Initiative** = Agilité − 10
 - **Perception passive** = 10 + mod de Perception
-- **Tokens** = 1 + mod de chaque caractéristique
+- **Tokens par caractéristique** = max(0, 1 + modificateur de la caractéristique), puis ajoutez les éventuels bonus raciaux.
 
 ---
 
@@ -40,22 +40,21 @@
 
 - Tu commences avec  **4 compétences**.
 - Une caractéristique **ne peut pas avoir plus de compétences** que son modificateur.
-- Maîtriser une compétence = bonus doublé dans cette compétence.
+- **Mod. compétence** = Mod. de la caractéristique associée, doublé si la compétence est maîtrisée.
 
 ---
 
 ### **5. Totem**
 
-- Chaque personnage possède un **Totem de base**.
-- Le Totem donne un **effet mineur ou utilitaire**.
-- Son apparence et son intention sont définies **avec le MJ**.
+- Chaque personnage possède un **Totem complet**, défini **avec le MJ pendant la création du personnage**.
+- Son apparence, son intention et ses effets suivent les règles du chapitre **Totems, capacités et cartes**.
 
 ---
 
 ### **6. Capacités**
 
 - Les capacités sont créées **avec le MJ**.
-- Au départ, tu peux connaître **Esprit/2 capacités maximum**.
+- Au départ, tu peux connaître **(Esprit ÷ 2, arrondi à l’inférieur) + 1 capacités maximum**.
 
 ---
 
@@ -63,8 +62,8 @@
 
 - Choisir un **Background** : d’où vient ton personnage, ce qui l’a marqué ou formé.
 - Définir un **Objectif** : ce qu’il veut accomplir, réparer ou atteindre.
-- Décrire ses **Liens avec les autres personnages** : relations positives, tensions, alliances, méfiances.
-- Choisir un **Aspect libre** : un trait marquant, une manière d’agir, une conviction ou une tendance qui influence son comportement.
+- Choisir **4 Aspects** au total.
+- Les **Bonds** sont facultatifs : tu peux en définir un avec chacun des autres personnages. Un Bond peut servir à aider ce personnage lorsqu’un de ses Aspects est pertinent.
 
 # **Caractéristiques et leur rôle**
 
@@ -77,14 +76,14 @@ Les caractéristiques sont le cœur du système, définissant les aptitudes phys
     - **Tokens de Force :** Permettent de répéter une attaque de base.
     - Alteration de couts de capacités de force: Coût=Coût initial - (Force -10)
 2. **Agilité** :
-    - **Mouvement** : 5 + Agilité ÷ 2 (arrondi au supérieur).
-    - **Initiative** : 2 x modificateur d’agilité.
+    - **Mouvement** : 5 + Agilité ÷ 2, arrondi à l’inférieur.
+    - **Initiative** : Agilité − 10.
     - **Tokens d’Agilité** : Permettent de choisir le deck à piocher.
     - **Tokens d’Agilité** : Permet de courber une attaque de base.
     - Alteration de couts de capacités d’agilite: Coût=Coût initial - (Agilite-10)
 3. **Esprit** :
-    - **Nombre de capacités connues** : Esprit ÷ 2 (arrondi au supérieur).
-    - **Tokens d’Esprit:** Permet d’étendre la taille de sa main et cristaliser des cartes.
+    - **Nombre de capacités connues** : (Esprit ÷ 2, arrondi à l’inférieur) + 1.
+    - **Tokens d’Esprit :** Permettent d’étendre la taille de sa main et de cristalliser des cartes.
     - **Tokens d’Esprit:** Permet de faire réverbérer une attaque de base.
     - Statistique clé pour les dégâts magiques/élémentaires.
     - Alteration de couts de capacités d’esprit: Coût=Coût initial - (Esprit-10)
@@ -97,12 +96,12 @@ Les caractéristiques sont le cœur du système, définissant les aptitudes phys
 ## **Attribution des Caractéristiques**
 
 - En creant votre personnage, vous avez **52 points** à répartir entre **Force**, **Agilité**, **Esprit**, et **Social**.
-- Chaque caractéristique doit être comprise entre **0** et **20**.
+- Chaque caractéristique doit être **paire** et comprise entre **0** et **18 à la création**. Une valeur inférieure à **6** entraîne un malus permanent.
 
 | **Valeur** | **Modificateur** |
 | --- | --- |
 | **1-9** | (Valeur - 10) ÷ 2, arrondi à l'entier inférieur (ex. : 8 → -1). |
-| **10-20** | (Valeur - 10) ÷ 2 (ex. : 14 → +2). |
+| **10-18** | (Valeur - 10) ÷ 2 (ex. : 14 → +2). |
 
 ### **Règles :**
 
@@ -163,7 +162,7 @@ Les compétences représentent les aptitudes spécifiques de votre personnage et
     
     ➝ **Combat** : Pas d’effet direct, mais peut être utile selon le contexte.
     
-5. **Survie** : Suivre des traces, s’adapter à l’environnement.
+5. **Nature-Survie** : Suivre des traces, s’adapter à l’environnement.
     
     ➝ **Combat** : Pas d’effet direct, mais peut être utile selon le contexte.
     
@@ -207,10 +206,10 @@ Les compétences représentent les aptitudes spécifiques de votre personnage et
     - Pour chaque **avantage**, ajoute **1 dé supplémentaire** au jet (puisque c’est un d20).
     - À la fin, **garde le meilleur résultat** parmi tous les dés lancés.
 3. 🧮 **Ajouter les modificateurs**
-    - Ajoute le **modificateur de la caractéristique associée**.
-    - Si tu **maîtrises la compétence**, ajoute **deux fois** ton modificateur de caractéristique (au lieu d’une fois).
+    - Ajoute le **Mod. de la compétence utilisée**.
+    - Le **Mod. compétence** inclut déjà la maîtrise : **deux fois** le modificateur de caractéristique si la compétence est maîtrisée, sinon une fois. Ne rajoute pas le Mod. caractéristique.
 4. 🧾 **Calculer le total final**
-    - Somme = **meilleur d20 + modificateur(s)**.
+    - Somme = **meilleur d20 + Mod. compétence**.
     - Compare ce total au **seuil de difficulté (DC)** fixé par le MJ ou le système.
     - Résultat ≥ DC → réussite ; sinon échec.
 
@@ -219,7 +218,7 @@ Les compétences représentent les aptitudes spécifiques de votre personnage et
 - Chaque joueur peut choisir **4 compétences au total**.
 - Le nombre de compétences correspondant a une caractéristique ne peut pas dépasser son **modificateur**.
 - **Exemple :** Avec un modificateur d’Esprit de +3, le joueur peut choisir jusqu’à **3 compétences liées à l’Esprit**.
-- Maîtriser une compétence **double** votre bonus dans cette compétence.
+- Maîtriser une compétence **double le modificateur de caractéristique qui entre dans son Mod. compétence** ; la maîtrise est déjà incluse dans ce dernier.
 
 ---
 
@@ -243,7 +242,7 @@ Ces aspects ne donnent pas de bonus fixes, mais influencent les jets selon la si
     
     *Exemple : retrouver ma sœur, me racheter, devenir un maître artisan.*
     
-- **Bonds** : tes relations avec les autres personnages, positives ou négatives.
+- **Bonds** : tes relations avec les autres personnages, positives ou négatives. Ils sont facultatifs ; tu peux en avoir un avec chacun des autres personnages. Un Bond peut servir à aider le personnage concerné lorsqu’un de ses Aspects est pertinent.
     
     *Exemple : je protège Thalen coûte que coûte ; je me méfie de Lyra.*
     
@@ -252,9 +251,7 @@ Ces aspects ne donnent pas de bonus fixes, mais influencent les jets selon la si
 
 ### **Aspects liés aux caractéristiques**
 
-Chaque caractéristique (Force, Agilité, Esprit, Social) possède **deux aspects possibles**.
-
-Le joueur en choisit un par caractéristique.
+Le joueur choisit **4 Aspects au total**. Le tableau propose des catégories inspirées des caractéristiques, mais il n’est pas obligatoire de choisir un Aspect par caractéristique.
 
 | Caractéristique | Aspect | Description | Exemple |
 | --- | --- | --- | --- |
@@ -281,159 +278,162 @@ Ce n’est pas une règle chiffrée, mais une **contrainte de cohérence**.
 
 # **Races Jouables**
 
-Les joueurs peuvent choisir une race parmi la liste proposée ci-dessus. Pour une **race bestiale**, les détails sont personnalisables en accord avec le MJ.
+Les joueurs peuvent choisir une race parmi la liste ci-dessous. Un **Add** désigne une créature secondaire identifiée comme telle par le MJ.
 
 ### **1. Humain**
 
-- +2 compétences supplémentaires.
-- +2 jeton Social.
+- +2 compétences supplémentaires. Elles peuvent dépasser le quota de compétences normalement autorisé par caractéristique.
+- Sa réserve maximale de tokens de Social vaut **max(0, Mod Social + 1) + 2**.
 
 ![[Pasted image 20261014201518.png|449]]
 
 ### **2. Haut-Elfe**
 
-- Vous pouvez tenir 1 carte supplémentaire en main.
-- Vous maitrisez 1 capacité supplémentaire.
+- Votre limite de main normale passe de **3 à 4 cartes**.
+- Vous maîtrisez **1 capacité supplémentaire**, même si cela dépasse votre nombre maximal normal de capacités connues.
 
 ![[Pasted image 20261014201537.png|441]]
 
 ### **3. Elfe des Bois**
 
-- Quand vous utilisez votre réaction vous pouvez  ****vous déplacer de 5 mètres **apres** (Si utilisé en réaction a une capacité non ciblée, on considereque le déplacement se fait **avant** le l’utilisation de la capacité).
-- Avantage au deuxieme jet d’initiative du round.
+- Quand vous utilisez votre Réaction, vous pouvez vous déplacer de **5 m après sa résolution**. Si vous réagissez à une capacité non ciblée, ce déplacement a lieu avant la capacité. Ces 5 m sont déduits de votre mouvement disponible et déclenchent normalement les attaques d’opportunité.
+- Vous avez **avantage à tous vos jets d’initiative**.
 
 ![[Pasted image 20261014201600.png|445]]
 
 ### **4. Elfe Noir**
 
-- Si vous n’êtes pas dans le champ de vision d’un ennemi, vous pouvez utiliser 1 réaction supplémentaire par tour.
-- Avantage aux jets de discression.
+- Si vous êtes hors du champ de vision de **tous les ennemis au moment de son utilisation**, vous pouvez utiliser **1 Réaction supplémentaire par round**.
+- Avantage aux jets de **Discrétion**.
 ![[Pasted image 20261014201628.png|486]]
 
 
-### **5. Demi Elfe**
+### **5. Demi-Elfe**
 
-- **Canalisation Libre** : Lorsque vous utilisez **une arme** (attaque, parade, etc.), vous **canalisez automatiquement** pendant **1 round**, avec une **valeur égale à votre esprit.**
+- **Canalisation Libre** : Lorsque vous utilisez **une arme** (attaque, parade, etc.), vous **canalisez automatiquement** pendant **1 round**, avec une valeur égale à votre **score d’Esprit**.
 - **Canalisation Flexible** : Vous choisissez **la couleur** de canalisation, indépendamment de l’arme utilisée.
-- **Catalyseur Défensif** : Vous pouvez utiliser un **catalyseur** pour **parer**, en utilisant sa **valeur de canalisation** à la place de la parade d’une arme.
+- **Catalyseur Défensif** : Vous pouvez utiliser un **catalyseur** pour **parer**, en utilisant sa **valeur de canalisation** à la place de la parade d’une arme. Parer avec un catalyseur ne déclenche pas **Canalisation Libre** et ne crée aucune nouvelle canalisation.
 - **Érudition Mixte** : +1 compétence.
 
 ![[Pasted image 20261014201948.png|331]]
 
 ### **6. Tieffelin**
 
-- Peut **piocher** spécifiquement du **pique** 1 fois sur 2.
-- Resistance au **feu**.
+- Un tour sur deux, lorsque vous piochez, vous pouvez choisir de piocher spécifiquement du **Pique**. Après avoir utilisé cette option, elle est indisponible durant votre tour suivant, puis redevient disponible. Si vous ne l’utilisez pas, elle reste disponible jusqu’à ce que vous choisissiez une pioche Pique.
+- **Résistance majeure** aux dégâts de feu.
 
 ![[Pasted image 20261014202018.png|362]]
 
 ### **7. Aasimar**
 
-- Chaque fois que vous utilisez un **token** (peu importe le type), invoquez en plus une carte de **Cœur**.
-- Résistance aux dégats **radiants**.
+- Chaque fois que vous utilisez un **token**, piochez aléatoirement une carte de **Cœur** dans votre main normale ; elle reste soumise à la limite de main. Pour un token d’Esprit, cet effet se déclenche à l’ouverture de l’**Emplacement d’Esprit**, pas lors de sa consommation.
+- **Résistance majeure** aux dégâts **radiants**.
 
 ![[Pasted image 20261014202036.png|403]]
 
 ### **8. Demi-Orque**
 
-- Vous pouvez ajouter votre modificateur pour **chaque créature** qui vous a attaqué pendant le round a votre prochain jet d’attaque ou a la prochaine capacité appliquant des dégats.
-- Votre armure double quand vous avez moins de **50%** de points de vie.
+- Pour chaque créature distincte qui vous a attaqué pendant le round, votre prochaine attaque ajoute une fois le **modificateur lié à son jet d’attaque de dégâts de base**. Ce bonus est ajouté après le calcul de la valeur brute et n’entre pas dans ce calcul. Un **Add** ne fournit que la moitié de ce modificateur, arrondie à l’inférieur. Tous les ajouts sont consommés par cette prochaine attaque.
+- Votre Armure double quand vous avez moins de **50 %** de vos PV. Ce doublement ignore le plafond d’Armure lié à la Force, mais la réduction finale reste limitée à **50 % des dégâts restants**.
 
 ![[Pasted image 20261014202218.png|405]]
 
 ### **9. Nain**
 
-- Vous gagnez  Force pvs.
-- réduisez vos capacité de **trefle** de 1, Pour **chaque créature** qui vous a attaqué pendant le round.
+- Vous gagnez un nombre de PV égal à **2 × votre score de Force**.
+- Chaque créature distincte qui vous a attaqué compte une seule fois par round pour réduire de 1 le coût de vos capacités de **Trèfle**. Un **Add** compte comme une demi-créature ; additionnez-les puis arrondissez le total à l’inférieur. La réduction acquise est cumulative et reste active pendant **tout le combat**.
 
 ![[Pasted image 20261014202239.png|401]]
 
 ### **10. Gobelin**
 
-- Réduisez le seuil pour un critique de 1 (par ex 5-6 au lieu de 6 sur 1d6).
-- Maximum de 3 critiques cumulés par attaque.
+- Réduisez le seuil de critique de 1 (par exemple, 5 ou 6 au lieu de 6 sur un d6). Atteindre ce seuil déclenche un critique complet et toutes ses règles normales, même si le dé n’affiche pas sa valeur maximale.
+- Une attaque entière ne peut cumuler que **3 critiques**, quel que soit son nombre de cibles.
+- Avec **Brutalité**, une paire ou deux dés présentant un **écart de 1** déclenchent un critique.
 
 ![[Pasted image 20261014202426.png|404]]
 
 ### **11. Gnome**
 
 - Les malus liés à une Force faible s’appliquent seulement à partir de 4 ou moins.
-- Si vous **payez un surcoût** pour une capacité, **réduisez d’un montant équivalent** le coût de la **prochaine capacité** que vous lancez.
+- Lorsque vous lancez une capacité, son **surcoût** est égal à la valeur totale des cartes payées moins le coût final réellement dû, après toutes les réductions. Vous stockez ce surcoût comme réduction pour une capacité ultérieure.
+- La réduction stockée est conservée jusqu’au prochain **repos court** et ne peut pas dépasser **max(0, 2 × Mod Esprit)**.
+- Lorsqu’elle sert à compléter une carte pour payer une capacité, la nouvelle réserve vaut : **ancienne réserve + (coût final de la capacité − valeur de la carte)**, dans la limite de son plafond. Exemple : avec une réserve de 5 et une capacité coûtant 3 payée par une carte de valeur X, la nouvelle réserve vaut **5 + (3 − X)**.
 
 ![[Pasted image 20261014203320.png|430]]
 
 ### **12. Halflin**
 
-- Quand vous piochez, piochez **deux** cartes, et jetez l’une des deux.
-- Une fois par **repot court**, vous pouvez relancer un dé.
+- Lors d’une **pioche normale** ou d’une pioche accordée par un **token de Force**, piochez **deux cartes révélées**, choisissez-en une et défaussez l’autre. Ce trait ne s’applique à aucun autre type de pioche.
+- Une fois par **repos court**, après avoir vu le résultat d’un dé, vous pouvez le relancer.
 
 ![[Pasted image 20261014203339.png|449]]
 
-### **12. Goliath**
+### **13. Goliath**
 
-- **Force Colossale** : Vous pouvez manier des armes à deux mains avec **une seule main**. Vous pouvez aussi utiliser des armes polyvalentes ou des bâtons en dual wield. Les épees longues sont considérées **finesse**.
-- **Endurance des Cimes** : Vous avez avantage aux jets d’athlétisme et résistance a la **Glace**.
+- **Force Colossale** : Vous pouvez utiliser deux armes **polyvalentes** en dual wield ; chacune utilise alors son profil **d10**, et toutes les règles normales du dual wield s’appliquent. Vous pouvez également manier une arme à deux mains avec une seule main, mais vous ne pouvez pas en dual wield deux : l’autre main doit porter une arme **Secondaire** ou **Légère**. Les épées longues gagnent la propriété **Agile** sans perdre leurs autres propriétés.
+- **Endurance des Cimes** : Vous avez avantage aux jets d’Athlétisme et une **Résistance majeure** à la Glace.
 
 ![[Pasted image 20261014203646.png|465]]
 
 ### **14. Drakéide**
 
-- **Héritage Draconique** : Choisissez **Feu, Foudre, Glace, Acide ou Poison**. Vous **résistez** à ce type de dégâts et pouvez **générer cet élément** pour interagir avec l’environnement.
+- **Héritage Draconique** : Choisissez **Feu, Foudre, Glace, Acide ou Poison**. Vous obtenez une **Résistance majeure** à ce type de dégâts et pouvez **générer cet élément** pour interagir avec l’environnement.
 - **Écailles Draconiques** : Armure naturelle de **1**, cumulable avec d'autres sources.
-- **Souffle Draconique** : **Bonus action**, cône de **4,5 m**, **1d10 dégâts élémentaires**. À la place, vous pouvez **retenir ce souffle** qui vous fait **canaliser automatiquement** les capacitées liées a cet élément (valeur = **mod Esprit**).
-- **Résonance Élémentaire** : Si vous entrez en contact avec une **source** de votre élément (non générée par vous), vous le **canalisez automatiquement**.
+- **Souffle Draconique** : À volonté, par une **Bonus Action**, vous produisez un cône de **5 m** infligeant un nombre de **d6 de dégâts élémentaires égal à votre modificateur de caractéristique le plus élevé**. Une sauvegarde d’**Acrobaties** réussie réduit les dégâts de moitié. À la place, vous pouvez **retenir ce souffle** pour canaliser automatiquement les capacités liées à cet élément avec une valeur égale à votre **Mod Esprit** ; cela ne demande aucune concentration.
+- **Résonance Élémentaire** : Si vous entrez en contact avec une **source** de votre élément non générée par vous, vous le canalisez automatiquement jusqu’à la **fin du round**.
 
 ![[Pasted image 20261014203658.png|465]]
 
 ### **15. Sporelins**
 
-- Vous êtes **Résistance au poison** et **Immunité** aux **effets de saignement**.
-- Vous êtes **vulnérable aux dégâts de glace**.
+- Vous avez une **Résistance majeure** au poison et une **Immunité** aux effets de saignement.
+- Vous avez une **Vulnérabilité majeure** aux dégâts de glace.
 - Si vous **ne vous déplacez pas** pendant votre tour, vous activez l’état **Sporaissance**.
     
     Tant que **Sporaissance** est actif :
     
-    - Vous regagnez un nombre de **points de vie égal à votre déplacement**.
+    - À la **fin de chaque round**, vous regagnez un nombre de PV égal au **mouvement qu’il vous reste**.
+    - Tout déplacement volontaire ou forcé met immédiatement fin à Sporaissance.
     - Si **un ou plusieurs alliés** restent pendant **un round complet** à **moins de 3 mètres** de vous, vous pouvez **échanger gratuitement une carte avec chacun** d’eux **à la fin de leur tour**.
 
 ![[Pasted image 20261014203712.png|459]]
 
 ### **16. Mort vivant**
 
-- Insensible et aux dégâts nécrotiques.
+- **Résistance majeure** aux dégâts nécrotiques.
 - Avantage aux jets de sauvegarde contre les effets restraignants.
-- Vous êtes insensible aux coups critiques : ils infligent des dégâts normaux.
-- Vous ignorez les malus de fatigue jusqu'au niveau 5.
-- Les sorts de soin infligent des dégâts au lieu de soigner, vous êtes vulnérable aux dégats radiants.
-- Les individus vous sont hostiles.
+- Vous êtes insensible aux coups critiques : ils infligent des dégâts normaux.
+- Vous ignorez uniquement la réduction de valeur des cartes causée par la Fatigue et vous ne mourez qu’à **5 niveaux de Fatigue**.
+- Les sorts de soin vous infligent des dégâts au lieu de vous soigner, mais les **potions** et vos effets d’**auto-soin** fonctionnent normalement. Vous avez une **Vulnérabilité majeure** aux dégâts radiants.
 
 ![[Pasted image 20261014203723.png|463]]
 
 ### **17. Khajiit**
 
-- **Griffes félines** : Vous possédez une attaque naturelle avec vos griffes (**1d6**, finesse).
+- **Griffes félines** : Vous possédez une attaque naturelle avec vos griffes (**1d6**, Agile).
     
-    Si **l’une de vos mains est libre** ou équipée d’un **catalyseur une main**, vous pouvez effectuer **une attaque avec vos griffes en bonus action**.
+    Les griffes sont une arme **Légère maîtrisée**. Si l’une de vos mains est libre ou équipée d’un **catalyseur à une main**, vous pouvez effectuer une attaque avec vos griffes en **Bonus Action**, sans devoir effectuer une attaque principale auparavant.
     
-- **Souplesse féline** : Vous subissez **moitié moins de dégâts** liés aux chutes.
-- **Esquive instinctive** : Vous pouvez utiliser l’action **Esquiver** en **bonus action**
+- **Souplesse féline** : Vous subissez **la moitié des dégâts** liés aux chutes.
+- **Esquive instinctive** : Vous pouvez utiliser **Esquiver** en **Bonus Action**, avec exactement les mêmes effets et la même durée que l’action Esquiver normale.
 
 ![[Pasted image 20261014203212.png|422]]
 
 ### **18. Troll**
 
-- **Régénération Totémique** : Chaque fois que vous utilisez un **token**, vous regagnez 4 **× votre modificateur le plus élevé** en **points de vie** (une fois par token par round /30min).
+- **Régénération Totémique** : Chaque fois que vous dépensez un **token**, y compris pour ouvrir un Spirit Slot, vous regagnez un nombre de PV égal à **4 × votre modificateur le plus élevé**. Cet effet ne fonctionne pas à **0 PV**. Un même type de token ne peut déclencher ce soin qu’une fois par round en combat, ou une fois toutes les **30 minutes** hors combat.
 - **Membre des Hautes Terres** : Vous **ignorez les terrains difficiles**.
 ![[Pasted image 20261014203800.png|447]]
 
 ### 19. Homme-Poisson
 
-- **Sens Vibratoire** : En **Action Bonus**, vous pouvez maintenir votre **Concentration**. Tant qu’elle est maintenue, toute créature qui se déplace d’au moins **3 m** bénéficie automatiquement de l’effet de votre **Ciblage**.
+- **Sens Vibratoire** : Par une **Bonus Action**, vous activez ce sens à **20 m**. Il reste actif sans autre coût tant que vous maintenez votre **Concentration**. Lorsqu’une créature à portée se déplace d’au moins **3 m**, vous obtenez automatiquement l’effet de **Ciblage** contre elle.
 - **Physiologie Aquatique** : Votre **vitesse de nage est égale à votre déplacement** et vous avez **avantage à tous vos jets dans l’eau**.
-- **Peau Glissante** : Si vous êtes dans un liquide couvrant entièrement votre **zone de contrôle (3 m de rayon)**, les **attaques et capacités contre vous ont désavantage**. Si le liquide n’est pas de l’eau, effectuez un **jet de Survie contextuel** pour bénéficier de cet effet.
-- **Résistance au Froid** : Vous êtes **résistant aux dégâts de froid**.
-- **Dépendance Hydrique** : Pour effectuer un **repos court ou long**, vous devez disposer de suffisamment d’eau pour maintenir votre peau **immergée ou humide pendant toute la durée du repos**. Effectuez un **jet de Survie contextuel selon l’environnement dans lequel vous vous trouvez** pour trouver ou exploiter une source d’eau adaptée.
-- **Vulnérabilité au Feu** : Vous êtes **vulnérable aux dégâts de feu**.
+- **Peau Glissante** : Si un liquide couvre entièrement toute votre **zone de contrôle (1,5 m de rayon)**, les **attaques et capacités contre vous ont désavantage**. Si le liquide n’est pas de l’eau, effectuez un **jet de Nature-Survie contextuel** pour bénéficier de cet effet.
+- **Résistance au Froid** : Vous avez une **Résistance majeure** aux dégâts de froid.
+- **Dépendance Hydrique** : Pour effectuer un **repos court ou long**, vous devez disposer de suffisamment d’eau pour maintenir votre peau **immergée ou humide pendant toute la durée du repos**. Effectuez un **jet de Nature-Survie contextuel selon l’environnement dans lequel vous vous trouvez** pour trouver ou exploiter une source d’eau adaptée.
+- **Vulnérabilité au Feu** : Vous avez une **Vulnérabilité majeure** aux dégâts de feu.
 
 
 
@@ -441,30 +441,31 @@ Les joueurs peuvent choisir une race parmi la liste proposée ci-dessus. Pour un
 
 ### **20. Hobgoblin**
 
-- **Discipline Martiale** : Vous bénéficiez des bonus d’armes au corps à corpsd pour les armes a distance (attaques d’opportunité, parade, deuxième attaque etc…) Vous avez avantage a vos attaques d’opportunité et pouvez vous déplacer après une attaque d’opportunité.
-- **Commandement Tactique** : Vous pouvez **donner vos tokens** à vos **alliés**.
+- **Discipline Martiale** : Toute arme que vous maniez gagne les mécaniques suivantes : **seconde attaque**, **attaque d’opportunité**, **Parade**, **Ciblage** et **Canalisation**. Elles s’ajoutent aux propriétés normales de l’arme sans les remplacer. Avec une arme non catalyseur, vous choisissez librement la couleur de Canalisation et son bonus est égal à votre **Mod Esprit**. Les propriétés propres à une arme, comme **Surplomb**, **Tir léger** ou **Recharge**, ne sont pas transmises. Vous avez avantage à vos attaques d’opportunité et pouvez vous déplacer après leur résolution.
+- **Commandement Tactique** : Vous pouvez donner vos tokens disponibles à vos alliés. Le token conserve son **type** et peut faire dépasser au receveur sa réserve maximale.
 ![[Pasted image 20261014204002.png|429]]
 
 ### 21. Centaure
 
 - **Vitesse Équine** : Votre **vitesse de déplacement est multipliée par 1,5**.
-- **Morphologie Quadrupède** : Vous avez **avantage aux jets d’Athlétisme pour pousser** et **désavantage aux jets d’Acrobaties**.
+- **Morphologie Quadrupède** : Vous avez **avantage aux jets d’Athlétisme pour pousser**, et **désavantage aux jets d’Acrobaties et de Discrétion**.
 - **Angle Mort** : Les attaques réalisées contre vous **par derrière** sont effectuées avec **avantage**.
-- **Charge** : Si vous parcourez **au moins 10 m en ligne droite** durant votre tour, votre **prochaine attaque ou capacité** bénéficie d’un **avantage**.
+- **Charge** : Si vous parcourez volontairement **au moins 10 m en ligne droite, dans un seul axe et un seul segment**, votre prochaine attaque ou capacité bénéficie d’un **avantage**. Ce bonus est consommé par cette attaque même si elle échoue.
+- **Cavalier allié** : Un allié peut vous monter par une **Bonus Action** et descendre gratuitement. Tant qu’il vous monte, les attaques qui le ciblent ont **désavantage** et il peut attaquer normalement depuis votre dos. Lorsque vous effectuez une Charge, sa prochaine attaque bénéficie également du bonus de Charge.
 ![[Cardenveil Fragmented/Personnage/image 1.png|530]]
 ### 22. Mecha
 
-- **Corps Résistant** : Résistance aux **dégâts physiques**.
-- **Résistance au Poison** : Résistance aux **dégâts de poison**.
+- **Corps Résistant** : **Résistance majeure** aux dégâts physiques.
+- **Résistance au Poison** : **Résistance majeure** aux dégâts de poison.
 - **Corps Artificiel** : Vous n’avez **pas besoin de respirer** et pouvez rester sous l’eau indéfiniment.
-- **Immortel** : La **Fatigue ne peut pas vous tuer**.
+- **Immortel** : La **Fatigue ne peut pas vous tuer** et votre nombre de niveaux de Fatigue n’a aucun maximum.
 - **Corps Modulaire** : Vous pouvez intégrer à l’un de vos bras une **arme à une main, un bouclier ou un catalyseur**. Vous perdez l’intégration si vous tombez inconscient.
 - **Auto-soin** : Les capacités permettant de vous soigner vous-même fonctionnent à **50 % de leur valeur**.
-- **Fatigue Mécanique** : Vous gagnez vos niveaux de Fatigue **par paliers de 1** et ne récupérez qu’**1 niveau de Fatigue par repos court**.
+- **Fatigue Mécanique** : Chaque niveau de Fatigue réduit la valeur de vos cartes de **1**, niveau par niveau, sans pouvoir les faire descendre sous 1. Vous ne récupérez qu’**1 niveau de Fatigue par repos court**.
 - **Réparation** : Les soins classiques et les consommables de soin ne fonctionnent pas sur vous. Vous disposez d’un **kit de réparation utilisable une fois par jour** lors d’un repos long. Faites un jet d’**Investigation ou d’Escamotage** : vous récupérez **résultat du jet × 5 % de vos PV maximum**.
-- **Relevage** : Lorsque vous êtes inconscient, un allié doit réussir un jet d’**Investigation ou d’Escamotage** de **DC 8 + 2 × votre niveau de Fatigue** pour vous relever.
+- **Relevage** : Lorsque vous êtes inconscient, un allié doit réussir un jet d’**Investigation ou d’Escamotage** de **DC 8 + 2 × votre niveau de Fatigue** pour vous relever à **1 PV**.
 - **Repos Mécanique** : Vous n’avez pas besoin de ration lors d’un repos court, mais devez **vous éteindre pendant 1 heure**.
-- **Vulnérabilité Électrique** : Vulnérabilité aux **dégâts de foudre**.
+- **Vulnérabilité Électrique** : **Vulnérabilité majeure** aux dégâts de foudre.
 
 ![[image 2.png|446]]
 
@@ -474,43 +475,51 @@ Les joueurs peuvent choisir une race parmi la liste proposée ci-dessus. Pour un
 
 ### **23. Illithid**
 
-- **Harmonisation Cérébrale** : harmonisation est **passive** autorus de vous, accentuant toutes les capacités ou attaques alliées comme une harmonisation classique.
+- **Harmonisation Cérébrale** : Dans un rayon de **20 m**, tous vos alliés bénéficient passivement de votre Harmonisation comme d’une Harmonisation classique. Les auras de plusieurs Illithids se cumulent.
     
-    Si vous l’**activez** (réaction), vous déclenchez une **Harmonisation Totale**: la cible obtient **avantage à ses jets d’attaque et de capacités en** plus du bonus de base.
+    Si vous l’activez avec votre **Réaction**, vous déclenchez une **Harmonisation Totale** : la cible obtient avantage à ses jets d’attaque et de capacité en plus du bonus de base.
     
-- **Dévoration Mentale (bonus action)** : dévore le cerveau d’une créature intelligente (**Esprit > 8**) morte depuis moins d’1 min pour regagner **1 token d’Esprit** (max = Mod. Esprit, min 1). Utilisable **1 fois/combat** ou toutes les **30 min**.
-- **Résonance de Mort** : à 0 PV, onde psychique de 18 m infligeant **Mod. Esprit × 1d6** dégâts psychiques à toutes les créatures alliées autours de vous.
-- **Fragilité Physique**: désavantage à tous les **jets de sauvegarde d’Athlétisme.**
+- **Dévoration Mentale (Bonus Action)** : Dévorez le cerveau d’une créature intelligente (**Esprit > 8**) morte depuis moins d’1 min pour regagner **1 token d’Esprit**, sans dépasser votre maximum normal de **max(0, 1 + Mod Esprit)**. Utilisable **1 fois par combat** ou toutes les **30 min**.
+- **Résonance de Mort** : À chaque fois que vous tombez à 0 PV, une onde psychique de 18 m inflige **Mod Esprit d6** dégâts psychiques à toutes les créatures alliées autour de vous, sans sauvegarde.
+- **Fragilité Physique** : Désavantage à tous les jets de sauvegarde d’**Athlétisme**.
 
 ![[Pasted image 20261014204213.png|511]]
 ### 24. Firbolg
 
 - **Force de Géant** : Vous avez **avantage aux jets de sauvegarde d’Athlétisme**.
 - **Imprégnation Naturelle** : Lorsque vous utilisez **Imprégner**, vous pouvez imprégner **votre équipement ou celui d’un allié**. L’**Imprégnation dure 2 rounds**.
-- **Combinaison Élémentaire** : Vous pouvez **altérer un Choc Élémentaire créé par une autre créature** afin de créer une **Combinaison Élémentaire**, et étendre cette combinaison jusqu’à **2 rounds**.
+- **Combinaison Élémentaire** : Vous pouvez **altérer un Choc Élémentaire créé par n’importe quelle autre créature, y compris un ennemi**, afin de créer une **Combinaison Élémentaire**, et étendre cette combinaison jusqu’à **2 rounds**.
 - **Langage de la Nature** : Vous pouvez **communiquer avec les plantes** et avez **avantage aux jets de Dressage**.
-- **Disparition Naturelle** : Si vous passez **l’intégralité de votre tour sans vous déplacer** et que vous terminez votre tour **hors du champ de vision de tout ennemi**, vous devenez automatiquement **Invisible**. Vous pouvez également utiliser votre **Action pour devenir Invisible une fois par repot court.**
+- **Disparition Naturelle** : Si vous n’avez effectué aucun déplacement depuis le début du round et que vous terminez votre tour hors du champ de vision de tout ennemi, vous devenez automatiquement **Invisible**. Vous pouvez également utiliser votre **Action pour devenir Invisible une fois par repos court**. Cette invisibilité suit les règles générales d’Invisibilité.
 - **Lente Mise en Action** : Vous avez **désavantage aux jets d’Initiative**.
 ![[image 3.png|488]]
 
 
 ### 25. Nimbri
 
-- **Nez Encombrant :** Vous avez désavantage aux jets de Perception à cause de votre gros nez.
-- **Compréhension Abstraite de la Magie :** Vous pouvez diviser une carte en deux parts égales, une fois par round ou une fois toutes les 30 minutes.
-- **Mobilité Particulière :** Une fois par round, si vous réussissez un jet d’Acrobaties, vous obtenez un Dash gratuit
+- **Nez Encombrant** : Vous avez désavantage aux jets de Perception à cause de votre gros nez.
+- **Compréhension Abstraite de la Magie** : Une fois par round en combat, ou une fois toutes les 30 minutes hors combat, vous pouvez diviser une carte en deux cartes normales indépendantes, de même enseigne et valant chacune la moitié de sa valeur, arrondie à l’inférieur, avec un minimum de 1. Elles restent soumises à la limite de main et peuvent être utilisées, échangées, cristallisées ou divisées à nouveau comme n’importe quelles cartes normales.
+- **Mobilité Particulière** : Une fois par round, lorsque vous réussissez un jet d’Acrobaties imposé en réaction à un événement, vous obtenez un **Dash gratuit**. Ce Dash ne consomme pas votre mouvement disponible.
 
 ![[nimbrisplashart.jpg|571]]
-### **25. Race Bestiale (Personnalisable)**
+### **26. Race Bestiale (Personnalisable)**
 
-- À définir avec le MJ, selon l’apparence et les traits choisis.
+- La Race bestiale est créée **librement avec le MJ**, selon l’apparence et les traits souhaités.
 
 ![021fe7ebd674dc0af101220e7246fbed.jpg](../../Races%20Jouables/021fe7ebd674dc0af101220e7246fbed.jpg)
 
 # **Malus des Caractéristiques**
 
-- Si une caractéristique est inférieure ou égale à **5**, vous subissez **1 malus pour chaque deux point en dessous de 6** (allant de 0 à 3 malus).
-- Les malus sont déterminés **aléatoirement** en lançant un **d6** lors de la **fin de la création du personnage** et seront choisi parmis les listes ci dessous.
+- Pour chaque caractéristique, vous obtenez **1 malus par tranche de 2 points sous 6**.
+
+| Score | Nombre de malus |
+| --- | --- |
+| **6 ou plus** | **0** |
+| **4** | **1** |
+| **2** | **2** |
+| **0** | **3** |
+
+- À la **fin de la création du personnage**, lancez **un d6 pour chaque malus** dans la liste de la caractéristique concernée. Si un résultat désigne un malus déjà obtenu pour cette caractéristique, relancez jusqu’à obtenir un malus différent.
 
 ### **Attention :**
 
@@ -549,7 +558,7 @@ Les joueurs peuvent choisir une race parmi la liste proposée ci-dessus. Pour un
 2. **Aucune réaction ni action bonus :**
     - Vous ne pouvez pas utiliser de **réactions** ni d’**actions bonus**.
     - **Totem des réactions** interdit.
-    - Vous ne pouvez pas reagir rapidement aux evennements autours de vous.
+    - Vous ne pouvez pas réagir rapidement aux événements autour de vous.
 3. **Vulnérabilité totale :**
     - Vous ne pouvez effectuer **aucun jet de sauvegarde** contre des attaques ou effets nécessitant une esquive.
     - Les ennemis **ne peuvent pas vous rater**, même sur un jet de **1 naturel**.
@@ -600,7 +609,7 @@ Les joueurs peuvent choisir une race parmi la liste proposée ci-dessus. Pour un
     - Les **tentatives de négociation de prix** échouent automatiquement pour vous et les personnes qui vous accompagnent.
     - quand vous vous faites attaquer effectuez un **jet de sauvegarde social** (DC 10), en cas d’echec rengainez votre arme.
 2. **Répulsion Sociale et Physique**
-    - Vous avez désavantage aux jets de **discression**.
+    - Vous avez désavantage aux jets de **Discrétion**.
     - Vous subissez **1d4 dégâts psychiques** par personne dans votre zone de contrôle.
     - Les créatures non hostiles (comme les animaux) vous évitent ou réagissent de manière agressive.
 3. **Silence en Combat**

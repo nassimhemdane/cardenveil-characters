@@ -2,20 +2,23 @@
 
 # **Capacités et cartes**
 
-Pour utiliser une capacité, vous devez dépenser des cartes dont la valeur cumulée atteint au moins le **coût de la capacité**. Chaque carte jouée doit correspondre au **type de capacité** (Cœur, Carreau, Trèfle ou Pique). Par exemple, pour utiliser un sort de soin de coût 15, vous devez utiliser des cartes de **Cœurs** dont la valeur combinée atteint au moins 15. Ce système ajoute une dimension stratégique en vous forçant à gérer vos cartes et à planifier vos actions en fonction de vos ressources.
+Pour utiliser une capacité, le total des cartes dépensées doit être **supérieur ou égal à son coût : total des cartes ≥ coût**. La capacité devient utilisable dès que leur valeur cumulée atteint au moins le **coût de la capacité**. Un paiement exact est valide. Chaque carte jouée doit correspondre au **type de capacité** (Cœur, Carreau, Trèfle ou Pique). Par exemple, un total de 15 suffit pour utiliser un soin de coût 15.
+
+Une capacité exige toujours de consommer **au moins 1 carte**. Si son coût final est égal ou inférieur à 0, elle peut être utilisée avec **n’importe quelle carte**, quelle que soit son enseigne ou sa valeur.
 
 ## **Gestion des cartes et capacités**
 
-- **Nombre de capacités connues** = Esprit ÷ 2 (arrondi a l’inferieur).
-- **Cartes en main** = **2 (avant de pouvoir passer le tour et repiocher)**
-- Vous pouvez utiliser des **cartes cristalisées** comme des cartes normales.
+- **Nombre de capacités connues** = (Esprit ÷ 2, arrondi à l’inférieur) + 1.
+- **Limite de main** = **3 cartes normales à tout moment**. Au début du tour, il faut avoir un emplacement libre pour piocher ; si la main est pleine, défaussez d’abord une carte.
+- Vous pouvez utiliser des **cartes cristallisées** comme des cartes normales.
 - Toutes les cartes peuvent être **considérées** comme des **1** de **n’importe** quelle couleur.
 - **Une capacité** peut être par example un sort de magicien (dependant de l’**esprit**) comme une manoeuvre complexe de guerrier (dependant de l’**agilite**), un coup tres brutal fissurant le sol sous l’adversaire (dependant de la **froce**) ou encore un chant inspirant d’un barde (dependant du **social**).
-- **Le cout** d’une capacité est réduit par (Caracteristique associée - 10) (peut aller vers le négatif) ainsi un magicien ayant beaucoup d’esprit aura plus de facilité a lancer une boule de feu qu’un barbare)
-- Un joueur peut **dériver** une capacité déja existante pour changer son fonctionnement sur le tas, mais elle coutera le ente **1.5 et le Triple** du cout qui lui aurait été associé (décidé par le MJ).
-- Au **début** de votre tour, d’abord **défaussez** des cartes jusqu’a avoir votre **max cartes** en main puis piochez **une** carte.
-- Quand vous lancez une capacité a **distance** (ciblez une creature a plus de **2** metres) et que vous êtes dans la zone de controle d’une créature ennemie, vous lui donnez la possibilité de faire une **attaque d’opportunité**.
-- Le cartes **cristalisées** ne peuvent pas être utilisées pour le **totem** et n’interagissent pas avec les **tokens**.
+- **Le coût** d’une capacité est d’abord réduit de `(caractéristique associée − 10)`.
+- Un joueur peut **dériver** une capacité déjà existante pour changer son fonctionnement sur le moment. Le MJ fixe alors un multiplicateur de **×1,5 à ×3**, appliqué **après la réduction liée à la caractéristique**.
+- Si la portée n’est pas indiquée, une capacité à **dégâts de base** utilise la **zone de contrôle** ; une capacité décrite comme étant à distance a une portée de **20 m**.
+- Au **début** de votre tour, piochez **une** carte si un emplacement est libre. Si votre main est pleine, défaussez d’abord une carte pour pouvoir piocher.
+- Quand vous lancez une capacité à **distance** (ciblez une créature à plus de **1,5 m**) et que vous êtes dans la zone de contrôle d’une créature ennemie, vous lui donnez la possibilité de faire une **attaque d’opportunité**.
+- Les cartes **cristallisées** ne peuvent pas être utilisées pour le **Totem** et n’interagissent pas avec les **tokens**.
 
 ---
 
@@ -40,17 +43,31 @@ Le seuil à atteindre ou dépasser (résultat ≥ seuil) pour que les adversaire
 
 **Seuil de sauvegarde = Caractéristique d’incantation (ex Esprit) + Surcoût** 
 
-**Surcout**= ce que vous payez en plus pour la capcité
+**Surcoût = valeur totale des cartes payées − coût final de la capacité.** Tout dépassement compte, même s’il est involontaire. Exemple : pour un coût final de 10, payer 13 donne un surcoût de 3.
 
 ---
 
 ## **Sauvegarde des capacités**
 
-Quand vous êtes la cible d’une capacité, faites un **jet de sauvegarde** de la caractéristique associée a la capacité (**Acrobacies** [Agilité] pour les **AOE**, **Athletisme** [Force] pour les controls **physiques**, **Arcanes** [Esprit] pour les controles **magiques** et **Perspicacité** [Social] pour les controles **psychiques**):
+Quand vous êtes la cible d’une capacité, faites un **jet de sauvegarde avec le Mod. de la compétence appropriée** (**Acrobaties** [Agilité] pour les **AOE**, **Athlétisme** [Force] pour les controls **physiques**, **Arcanes** [Esprit] pour les controles **magiques** et **Perspicacité** [Social] pour les controles **psychiques**):
 
-- **d20 + compétence associée.**
-- Si le résultat ≥ **Spell Save DC** adverse, vous esquivez.
-- Sinon, vous subissez l’effet.
+- **d20 + Mod. de la compétence associée** : Mod. Acrobaties pour les AOE, Mod. Athlétisme pour les contrôles physiques, Mod. Arcanes pour les contrôles magiques et Mod. Perspicacité pour les contrôles psychiques. La maîtrise est déjà incluse. Si seule une caractéristique est indiquée, sans compétence nommée, utilisez son Mod. caractéristique.
+- Une cible peut choisir de **rater volontairement** sa sauvegarde, sauf s’il s’agit d’une sauvegarde de **Perspicacité**.
+- Un **20 naturel** réussit toujours la sauvegarde et annule totalement l’effet de la capacité, quelle que soit sa description.
+- La capacité doit préciser le résultat d’une sauvegarde réussie. Si elle ne le précise pas, appliquez la règle par défaut :
+    - **Athlétisme :** moitié des dégâts et aucun contrôle.
+    - **Acrobaties :** moitié des dégâts.
+    - **Arcanes :** résiste à l’effet et subit la moitié des dégâts.
+    - **Perspicacité :** résiste à l’effet et subit la moitié des dégâts.
+- Sur un échec, la cible subit l’effet complet.
+
+---
+
+## **Concentration**
+
+- Un personnage ne possède qu’**une seule concentration** et ne peut prolonger qu’une seule capacité avec elle.
+- Il peut utiliser plusieurs capacités demandant de la concentration pendant le même round. Leurs effets peuvent coexister durant ce round, mais il choisit laquelle il prolonge avec sa concentration ; les autres ne sont pas prolongées au round suivant.
+- Après avoir subi des dégâts, faites un **jet de Volonté : d20 + Mod. Résilience + bonus éventuels**. Le seuil est égal à la moitié des dégâts effectivement subis après toutes les réductions, arrondie à l’inférieur. Un résultat supérieur ou égal au seuil maintient la concentration ; un échec la fait perdre.
 
 ---
 
@@ -58,13 +75,19 @@ Quand vous êtes la cible d’une capacité, faites un **jet de sauvegarde** de 
 
 - **Nom** :  *(Le nom de la capacité, par exemple, "Boule de feu")*
 - **Description** : *(Une description narrative et technique de la capacité. Par exemple : "Une explosion de flammes jaillit, infligeant des dégâts dans une zone de 6 mètres de rayon.")*
+- **Type d’action** : *(Action, action bonus, réaction, etc. Ce champ doit toujours être précisé.)*
 - **Valeur** : *(Ce que mesure la capacité, par exemple : "Dégâts = 4d10", "Soin = 2d8", "Distance parcourue = 10 mètres", "Durée = 2 tours", etc.)*
 - **Caractéristique associée** : *(La caractéristique utilisée pour le calcul, par exemple : "Esprit", "Force", "Agilité")*
+- **Portée** : *(Si absente : zone de contrôle pour des dégâts de base ; 20 m pour une capacité à distance.)*
+- **Durée** : *(Si un effet non instantané ne précise pas sa durée, il dure 1 round.)*
+- **Concentration** : *(Si elle n’est pas indiquée, la capacité ne demande pas de concentration.)*
+- **Cibles** : *(Si elles ne sont pas indiquées, la capacité cible une créature.)*
 - **Coût global** :*(Le coût total en cartes pour activer la capacité. Par exemple : 12.)*
+- **Sauvegarde** : *(Indiquez la compétence utilisée et le résultat d’une réussite. Si elle n’est pas indiquée et ne peut pas être déduite, aucune sauvegarde ne s’applique.)*
 - **Coût réduit** : *(Le coût après réduction pour le joueur qui utilise la capacité, en fonction de ses capacités spéciales ou de son totem. Par exemple : 9 si la réduction est de 3.)*
 - **Couleur de la capacité**: *(La couleur des cartes nécessaires pour activer la capacité. Par exemple : "Carreaux", "Piques", "Cœurs", ou "Trèfles.")*
-- **Caractéristique de sauvegarde** : *(La caractéristique utilisée pour résister au capacité. Par exemple : "Agilité", "Esprit", ou "Force.")*
-- **Effet en cas de sauvegarde** : *(Ce qui se passe si la cible réussit son jet de sauvegarde. Par exemple : "Moitié des dégâts", "Effet esquivé complètement", "Réduction de 2 tours de durée", etc.)*
+
+Si la sauvegarde n’est pas écrite, déduisez-la ainsi : **Athlétisme** pour un contrôle physique, y compris en AOE ; sinon **Acrobaties** pour une AOE ; **Perspicacité** pour un effet psychique ; **Arcanes** pour un effet magique. Athlétisme est prioritaire pour un contrôle physique en AOE.
 
 ---
 
@@ -77,7 +100,7 @@ Lorsqu’un personnage utilise une **capacité**, il s’appuie sur deux valeurs
 
 Les capacités appliquent ensuite un **multiplicateur** à l’une de ces deux valeurs :
 
-- **Capacité à valeur brute** : applique un **multiplicateur** à la Valeur brute.
+- **Capacité à valeur brute** : le multiplicateur augmente le **nombre de dés lancés**.
     
     > Exemple : Explosion – inflige 2× Valeur brute.
     > 
@@ -93,7 +116,9 @@ Les capacités appliquent ensuite un **multiplicateur** à l’une de ces deux v
    - Détermine le **modificateur contextuel (Mod)** utilisé (Force, Agilité, Esprit ou Social).
    - La valeur de la capacité est définie par :
 
-     **Valeur = K × somme de Mod dés à six faces (Mod d6).**
+     **Valeur = (K × Mod)d6.** Le multiplicateur augmente le nombre de dés ; il ne multiplie pas leur somme. Exemple : **3 × 2d6 = 6d6**.
+
+   - Si le modificateur contextuel est nul ou négatif, la Valeur brute est de **0d6**, donc 0.
 
    - Ce jet ne dépend **pas de l'arme** et **ne peut pas faire de critique**.
 
@@ -126,7 +151,7 @@ Les tokens sont des ressources liées aux caractéristiques, utilisées exclusiv
 ### **Règles générales :**
 
 - Chaque joueur dispose d’un certain nombre de **tokens** par caractéristique.
-- **Nombre de tokens disponibles = max(0, 1 + modificateur de la caractéristique associée).**
+- **Nombre de tokens disponibles = max(0, 1 + modificateur de la caractéristique associée).** Ajoutez ensuite les éventuels bonus raciaux.
 - Les tokens se **réinitialisent après un repos court ou long**.
 
 ---
@@ -136,10 +161,10 @@ Les tokens sont des ressources liées aux caractéristiques, utilisées exclusiv
 - **Tokens de Force:** Piocher une carte.
 - **Tokens d’Agilité:** Piocher une carte d’une couleur spécifique au lieu d’une couleur aléatoire.
 - **Tokens de Social:** Echangez une de vos cartes avec celle d’un allié.
-- **Tokens d’Esprit:**  Etendez artificiellement votre main:
-    - Au lieu défausser une carte due a votre contrainte de cartes en main, stockez la carte dans votre token.
-    - Vous pouvez changer les cartes stockée a volenté.
-    - Si un token utilisé est vidé, il explose et crée un duplicat de la carte qui était en format **cristallisé**.
+- **Token d’Esprit :**
+    - Dépensez un token d’Esprit pour créer un **Emplacement d’Esprit**. Chaque emplacement augmente de 1 votre limite de main.
+    - Vous ne pouvez pas avoir moins de **cartes non cristallisées** que d’Emplacements d’Esprit, car un emplacement ne peut pas être libéré.
+    - Vous pouvez cristalliser une carte en faisant éclater, donc en consommant, un Emplacement d’Esprit. Cristalliser une carte consiste à la remplacer par sa version cristallisée, représentée en rouge : elle ne compte pas dans la limite de main, ne peut pas être échangée et ne peut interagir ni avec les tokens ni avec le Totem. Elle conserve sa valeur et son enseigne.
 
 ---
 
@@ -147,7 +172,7 @@ Les tokens sont des ressources liées aux caractéristiques, utilisées exclusiv
 
 - **Tokens de Force :**
     
-    Sur une attaque de base, permet de réaliser **une deuxième attaque complète** (double frappe).
+    Après une attaque de base, ou après une capacité utilisant les dégâts de base, permet de réaliser **une deuxième attaque complète** (double frappe).
     
 - **Tokens d’Agilité :**
     
@@ -155,14 +180,14 @@ Les tokens sont des ressources liées aux caractéristiques, utilisées exclusiv
     
 - **Tokens d’Esprit :**
     
-    Sur une attaque de base magique/émémentaires, applique une **Réverbération** : au début de ton prochain tour, la cible subit **2× tous les dégâts infligés** par l’attaque.
+    Sur une attaque de base magique ou élémentaire, appliquez une **Réverbération** : au début de votre prochain tour, calculez **2 × les dégâts bruts de l’attaque avant toute réduction**, puis appliquez normalement les réductions aux dégâts de la Réverbération.
     
 - **Tokens de Social :**
     
-    Faites Attaquer un allié
+    Sans effectuer vous-même d’attaque, faites effectuer une **attaque de base** à un allié situé à **20 m ou moins**. Vous pouvez modifier cette attaque avec un autre de vos tokens de combat. L’allié peut aussi utiliser ses propres tokens.
     
 
-⚡ Utilisable une seule fois par round pour chaque token unique.
+⚡ Utiliser un token de combat est **gratuit** : cela ne coûte ni action, ni action bonus, ni réaction. Vous pouvez décider de l’utiliser **après le jet**, mais son effet doit impliquer une **attaque de base**. Vous pouvez dépenser au maximum **1 token de combat de chaque caractéristique par round**. Une même attaque ne peut recevoir qu’**1 token de combat de chaque caractéristique**, quel que soit le personnage qui le dépense.
 
 ---
 

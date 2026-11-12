@@ -32,7 +32,7 @@
   {
     "file": "docs\\rules\\fragmented\\capacites.md",
     "before": "**Valeur = K × Mod × d6**",
-    "after": "**Valeur = K × somme de Mod dés à six faces (Mod d6).**",
+    "after": "**Valeur = (K × Mod)d6.**",
     "occurrences": 1
   },
   {
@@ -62,25 +62,25 @@
   {
     "file": "docs\\rules\\fragmented\\combat.md",
     "before": "Ligne droite de 30 m de longueur",
-    "after": "Ligne droite de 18 m de longueur",
+    "after": "Ligne droite de 20 m de longueur",
     "occurrences": 1
   },
   {
     "file": "docs\\rules\\fragmented\\combat.md",
     "before": "**repousser de 4m**",
-    "after": "**repousser de 5 m**",
+    "after": "repousse de **5 m**",
     "occurrences": 1
   },
   {
     "file": "docs\\rules\\fragmented\\combat.md",
     "before": "être repoussée de 3 m",
-    "after": "être repoussée de 5 m",
+    "after": "elle est repoussée de 5 m",
     "occurrences": 1
   },
   {
     "file": "docs\\rules\\fragmented\\combat.md",
     "before": "+ votre **agilité** (ou **force** pour les boucliers/épées droites)",
-    "after": "+ votre **Mod. Agilité** (ou **Mod. Force** pour les boucliers/épées droites)",
+    "after": "dé maximal ÷ 2 + Mod. Agilité + déflexion",
     "occurrences": 1
   },
   {
@@ -92,7 +92,7 @@
   {
     "file": "docs\\rules\\fragmented\\combat.md",
     "before": "utilise Force ou Agilité pour les jets d’attaque et de dégâts.",
-    "after": "utilise le Mod. Force ou le Mod. Agilité pour les jets d’attaque et de dégâts.",
+    "after": "utilise au choix le Mod. Force ou le Mod. Agilité pour les jets d’attaque et de dégâts.",
     "occurrences": 1
   }
 ]

@@ -18,7 +18,7 @@
     - Agility (AGI)
     - Spirit (SPI)
     - Social (SOC)
-- Each attribute must be **between 0 and 20**.
+- Each attribute must be **an even number between 0 and 18 at character creation**. To avoid a permanent penalty, it must be at least **6**.
 - The modifier = *(Score − 10) ÷ 2*, rounded down.
 - If an attribute ≤ 5 → it imposes a **permanent penalty** (determined after creation, during the first session of each adventure).
 
@@ -32,7 +32,7 @@ Calculate the following from your attributes:
 - **Movement** = 5 m + Agility/2
 - **Initiative** = Agility − 10
 - **Passive Perception** = 10 + Perception modifier
-- **Tokens** = 1 + each attribute's modifier
+- **Tokens per attribute** = max(0, 1 + that attribute's modifier), then add any racial bonuses.
 
 ---
 
@@ -40,22 +40,21 @@ Calculate the following from your attributes:
 
 - You start with **4 skills**.
 - An attribute **cannot have more skills** than its modifier.
-- Proficiency in a skill = double the bonus for that skill.
+- **Skill Mod** = the associated Attribute Mod, doubled if you are proficient in the skill.
 
 ---
 
 ### **5. Totem**
 
-- Each character has a **basic Totem**.
-- The Totem provides a **minor or utility effect**.
-- Its appearance and purpose are defined **with the GM**.
+- Each character has a **complete Totem**, defined **with the GM during character creation**.
+- Its appearance, purpose and effects follow the rules in **Totems, Abilities and Cards**.
 
 ---
 
 ### **6. Abilities**
 
 - Abilities are created **with the GM**.
-- Initially, you can know **a maximum of Spirit/2 abilities**.
+- Initially, you can know **a maximum of (Spirit ÷ 2, rounded down) + 1 abilities**.
 
 ---
 
@@ -63,8 +62,8 @@ Calculate the following from your attributes:
 
 - Choose a **Background**: where your character comes from and what shaped them.
 - Define a **Goal**: what they want to accomplish, repair or attain.
-- Describe their **Bonds with other characters**: positive relationships, tensions, alliances and distrust.
-- Choose a **Free Aspect**: a distinctive trait, way of acting, belief or tendency that influences their behavior.
+- Choose **4 Aspects** in total.
+- **Bonds** are optional: you may define one with each other character. A Bond can help that character when one of their Aspects is relevant.
 
 # **Attributes and Their Roles**
 
@@ -77,13 +76,13 @@ Attributes are the core of the system, defining each character's physical, menta
     - **Strength Tokens:** Repeat a basic attack.
     - Strength ability cost adjustment: Cost = Initial cost − (Strength − 10).
 2. **Agility**:
-    - **Movement**: 5 + Agility ÷ 2 (rounded up).
-    - **Initiative**: 2 × Agility modifier.
+    - **Movement**: 5 + Agility ÷ 2, rounded down.
+    - **Initiative**: Agility − 10.
     - **Agility Tokens**: Choose the deck to draw from.
     - **Agility Tokens**: Curve a basic attack.
     - Agility ability cost adjustment: Cost = Initial cost − (Agility − 10).
 3. **Spirit**:
-    - **Number of known abilities**: Spirit ÷ 2 (rounded up).
+    - **Number of known abilities**: (Spirit ÷ 2, rounded down) + 1.
     - **Spirit Tokens:** Extend your hand size and crystallize cards.
     - **Spirit Tokens:** Make a basic attack reverberate.
     - Key statistic for magical/elemental damage.
@@ -97,12 +96,12 @@ Attributes are the core of the system, defining each character's physical, menta
 ## **Assigning Attributes**
 
 - When creating your character, you have **52 points** to distribute among **Strength**, **Agility**, **Spirit** and **Social**.
-- Each attribute must be between **0** and **20**.
+- Each attribute must be **even** and between **0** and **18 at character creation**. A value below **6** causes a permanent penalty.
 
 | **Value** | **Modifier** |
 | --- | --- |
 | **1-9** | (Value − 10) ÷ 2, rounded down to the nearest integer (e.g. 8 → −1). |
-| **10-20** | (Value − 10) ÷ 2 (e.g. 14 → +2). |
+| **10-18** | (Value − 10) ÷ 2 (e.g. 14 → +2). |
 
 ### **Rules:**
 
@@ -161,7 +160,7 @@ Skills represent your character's specific capabilities and are central to rolep
     
     ➝ **Combat**: No direct effect, but may be useful in context.
     
-5. **Survival**: Follow tracks and adapt to the environment.
+5. **Nature-Survival**: Follow tracks and adapt to the environment.
     
     ➝ **Combat**: No direct effect, but may be useful in context.
 
@@ -203,10 +202,10 @@ Skills represent your character's specific capabilities and are central to rolep
     - For each **advantage**, add **1 extra die** to the roll (because it is a d20).
     - At the end, **keep the best result** among all the dice rolled.
 3. 🧮 **Add Modifiers**
-    - Add the **associated attribute modifier**.
-    - If you are **proficient in the skill**, add **twice** your attribute modifier (instead of once).
+    - Add the **Mod of the skill used**.
+    - The **Skill Mod** already includes proficiency: **twice** the Attribute Mod if proficient, otherwise once. Do not add the Attribute Mod again.
 4. 🧾 **Calculate the Final Total**
-    - Total = **best d20 + modifier(s)**.
+    - Total = **best d20 + Skill Mod**.
     - Compare this total with the **difficulty threshold (DC)** set by the GM or system.
     - Result ≥ DC → success; otherwise, failure.
 
@@ -215,7 +214,7 @@ Skills represent your character's specific capabilities and are central to rolep
 - Each player can choose **4 skills in total**.
 - The number of skills associated with an attribute cannot exceed its **modifier**.
 - **Example:** With a Spirit modifier of +3, the player can choose up to **3 Spirit skills**.
-- Proficiency in a skill **doubles** your bonus in that skill.
+- Proficiency in a skill **doubles the Attribute Mod used to calculate its Skill Mod**; proficiency is already included in that Skill Mod.
 
 ---
 
@@ -239,7 +238,7 @@ These aspects do not provide fixed bonuses; they influence rolls according to th
     
     *Example: find my sister, redeem myself, become a master craftsperson.*
     
-- **Bonds**: your relationships with other characters, positive or negative.
+- **Bonds**: your relationships with other characters, positive or negative. They are optional; you may have one with each other character. A Bond can help that character when one of their Aspects is relevant.
     
     *Example: I protect Thalen at all costs; I distrust Lyra.*
 
@@ -247,9 +246,7 @@ These aspects do not provide fixed bonuses; they influence rolls according to th
 
 ### **Attribute Aspects**
 
-Each attribute (Strength, Agility, Spirit, Social) has **two possible aspects**.
-
-The player chooses one per attribute.
+Choose **4 Aspects in total**. The table suggests categories inspired by the attributes, but you do not have to choose one Aspect per attribute.
 
 | Attribute | Aspect | Description | Example |
 | --- | --- | --- | --- |
@@ -274,199 +271,203 @@ This is not a numerical rule, but a **consistency requirement**.
 
 # **Playable Races**
 
-Players can choose a race from the list provided. For a **beastfolk race**, details can be customized with the GM's agreement.
+Players can choose a race from the list below. An **Add** is a secondary creature identified as such by the GM.
 
 ### **1. Human**
 
-- +2 additional skills.
-- +2 Social tokens.
+- +2 additional skills. They may exceed the normal skill quota for an attribute.
+- The maximum Social-token reserve is **max(0, Social Mod + 1) + 2**.
 
 ![[Pasted image 20261014201518.png|449]]
 
 ### **2. High Elf**
 
-- You can hold 1 additional card in your hand.
-- You know 1 additional ability.
+- Your normal hand limit increases from **3 to 4 cards**.
+- You know **1 additional ability**, even if this exceeds your normal maximum number of known abilities.
 
 ![[Pasted image 20261014201537.png|441]]
 
 ### **3. Wood Elf**
 
-- When you use your reaction, you can move 5 meters **afterwards**. (If you react to a non-targeted ability, the movement is considered to happen **before** the ability is used.)
-- Advantage on the second initiative roll of the round.
+- When you use your Reaction, you may move **5 m after it resolves**. If you react to a non-targeted ability, this movement occurs before the ability. These 5 m are deducted from your available movement and trigger opportunity attacks normally.
+- You have **advantage on all initiative rolls**.
 
 ![[Pasted image 20261014201600.png|445]]
 
 ### **4. Dark Elf**
 
-- If you are outside an enemy's field of vision, you can use 1 additional reaction per turn.
+- If you are outside **every enemy's field of vision when you use it**, you may use **1 additional Reaction per round**.
 - Advantage on Stealth checks.
 ![[Pasted image 20261014201628.png|486]]
 
 ### **5. Half-Elf**
 
-- **Free Channeling**: When you use **a weapon** (attack, parry, etc.), you **automatically channel** for **1 round**, with a **value equal to your Spirit**.
+- **Free Channeling**: When you use **a weapon** (attack, parry, etc.), you **automatically channel** for **1 round**, with a value equal to your **Spirit score**.
 - **Flexible Channeling**: Choose the **suit** you channel, regardless of the weapon used.
-- **Defensive Focus**: You can use a **Focus** to **parry**, using its **channeling value** instead of a weapon's parry.
+- **Defensive Focus**: You can use a **Focus** to **parry**, using its **channeling value** instead of a weapon's parry. Parrying with a Focus does not trigger **Free Channeling** or create any new channeling.
 - **Mixed Education**: +1 skill.
 
 ![[Pasted image 20261014201948.png|331]]
 
 ### **6. Tiefling**
 
-- You can specifically **draw Spades** on 1 draw out of 2.
-- **Fire** resistance.
+- Every other turn, when you draw, you may choose to draw a **Spade** specifically. After using this option, it is unavailable during your next turn, then becomes available again. If you do not use it, it remains available until you choose a Spade draw.
+- **Major Resistance** to fire damage.
 
 ![[Pasted image 20261014202018.png|362]]
 
 ### **7. Aasimar**
 
-- Whenever you use a **token** (of any type), also summon a **Hearts** card.
-- Resistance to **radiant** damage.
+- Whenever you use a **token**, randomly draw a **Heart** into your normal hand; it remains subject to the hand limit. For a Spirit token, this triggers when the **Spirit Slot opens**, not when it is consumed.
+- **Major Resistance** to **radiant** damage.
 
 ![[Pasted image 20261014202036.png|403]]
 
 ### **8. Half-Orc**
 
-- You can add your modifier **for each creature** that attacked you during the round to your next attack roll or your next ability that deals damage.
-- Your armor doubles when you have less than **50%** of your hit points.
+- For each distinct creature that attacked you during the round, your next attack adds its **base-damage attack-roll modifier** once. This bonus is added after Raw Power is calculated and is not part of that calculation. An **Add** provides only half that modifier, rounded down. All additions are consumed by that next attack.
+- Your Armor doubles while you have less than **50%** of your HP. This doubling ignores the Strength-based Armor cap, but the final reduction remains limited to **50% of the remaining damage**.
 
 ![[Pasted image 20261014202218.png|405]]
 
 ### **9. Dwarf**
 
-- You gain HP equal to your Strength.
-- Reduce the cost of your **Clubs** abilities by 1 **for each creature** that attacked you during the round.
+- You gain HP equal to **2 × your Strength score**.
+- Each distinct creature that attacked you counts only once per round to reduce the cost of your **Club** abilities by 1. An **Add** counts as half a creature; add them together, then round the total down. The accumulated reduction remains active for the **entire combat**.
 
 ![[Pasted image 20261014202239.png|401]]
 
 ### **10. Goblin**
 
-- Reduce your critical threshold by 1 (e.g. 5-6 instead of 6 on 1d6).
-- Maximum of 3 cumulative critical hits per attack.
+- Reduce your critical threshold by 1 (for example, 5 or 6 instead of 6 on a d6). Reaching this threshold triggers a full critical and all its normal rules, even when the die does not show its maximum value.
+- An entire attack can accumulate no more than **3 criticals**, regardless of its number of targets.
+- With **Brutality**, either a pair or two dice with a **difference of 1** triggers a critical.
 
 ![[Pasted image 20261014202426.png|404]]
 
 ### **11. Gnome**
 
 - Penalties for low Strength apply only at 4 or below.
-- If you **pay a surcharge** for an ability, **reduce the cost of the next ability** you use **by the same amount**.
+- When you use an ability, its **surcharge** equals the total value of the cards paid minus the final cost actually owed after all reductions. You store that surcharge as a reduction for a later ability.
+- The stored reduction lasts until the next **short rest** and cannot exceed **max(0, 2 × Spirit Mod)**.
+- When it is used to supplement a card to pay for an ability, the new reserve equals **old reserve + (ability's final cost − card value)**, up to its cap. Example: with a reserve of 5 and a cost-3 ability paid with a card of value X, the new reserve is **5 + (3 − X)**.
 
 ![[Pasted image 20261014203320.png|430]]
 
 ### **12. Halfling**
 
-- When you draw, draw **two** cards and discard one of them.
-- Once per **short rest**, you can reroll a die.
+- On a **normal draw** or a draw granted by a **Strength token**, draw **two revealed cards**, choose one and discard the other. This trait applies to no other type of draw.
+- Once per **short rest**, after seeing a die result, you may reroll it.
 
 ![[Pasted image 20261014203339.png|449]]
 
-### **12. Goliath**
+### **13. Goliath**
 
-- **Colossal Strength**: You can wield two-handed weapons with **one hand**. You can also dual wield versatile weapons or staves. Longswords count as **finesse** weapons.
-- **Mountain Endurance**: You have advantage on Athletics checks and resistance to **Ice**.
+- **Colossal Strength**: You may dual wield two **versatile** weapons; each then uses its **d10** profile, and all normal dual-wielding rules apply. You may also wield a two-handed weapon in one hand, but cannot dual wield two of them: the other hand must hold a **Secondary** or **Light** weapon. Longswords gain the **Agile** property without losing any of their other properties.
+- **Mountain Endurance**: You have advantage on Athletics checks and **Major Resistance** to Ice.
 
 ![[Pasted image 20261014203646.png|465]]
 
 ### **14. Dragonborn**
 
-- **Draconic Heritage**: Choose **Fire, Lightning, Ice, Acid or Poison**. You **resist** that damage type and can **generate that element** to interact with the environment.
+- **Draconic Heritage**: Choose **Fire, Lightning, Ice, Acid or Poison**. You gain **Major Resistance** to that damage type and can **generate that element** to interact with the environment.
 - **Draconic Scales**: Natural armor of **1**, stacking with other sources.
-- **Draconic Breath**: **Bonus action**, **4.5 m** cone, **1d10 elemental damage**. Instead, you can **hold this breath**, making you **automatically channel** abilities associated with that element (value = **Spirit Mod**).
-- **Elemental Resonance**: If you touch a **source** of your element (not generated by you), you **automatically channel** it.
+- **Draconic Breath**: At will, as a **Bonus Action**, create a **5 m** cone that deals a number of **d6 elemental damage equal to your highest attribute modifier**. A successful **Acrobatics** save halves the damage. Instead, you may **hold the breath** to automatically channel abilities tied to that element with a value equal to your **Spirit Mod**; this requires no concentration.
+- **Elemental Resonance**: If you touch a **source** of your element that you did not generate, you automatically channel it until the **end of the round**.
 
 ![[Pasted image 20261014203658.png|465]]
 
 ### **15. Sporelings**
 
-- You have **poison resistance** and **immunity** to **bleeding effects**.
-- You are **vulnerable to ice damage**.
+- You have **Major Resistance** to poison and **Immunity** to bleeding effects.
+- You have **Major Vulnerability** to ice damage.
 - If you **do not move** during your turn, you activate **Sporegrowth**.
     
     While **Sporegrowth** is active:
     
-    - You regain **hit points equal to your movement**.
+    - At the **end of each round**, regain HP equal to your **remaining movement**.
+    - Any voluntary or forced movement immediately ends Sporegrowth.
     - If **one or more allies** remain **within 3 meters** of you for **one full round**, you can **freely exchange a card with each of them** **at the end of their turn**.
 
 ![[Pasted image 20261014203712.png|459]]
 
 ### **16. Undead**
 
-- Immune to necrotic damage.
+- **Major Resistance** to necrotic damage.
 - Advantage on saving throws against restraining effects.
 - You are immune to critical hits: they deal normal damage.
-- You ignore fatigue penalties up to level 5.
-- Healing spells deal damage instead of healing you; you are vulnerable to radiant damage.
-- People are hostile towards you.
+- You ignore only the card-value reduction caused by Fatigue and die only at **5 Fatigue levels**.
+- Healing spells damage you instead of healing you, but **potions** and your own **self-healing** effects work normally. You have **Major Vulnerability** to radiant damage.
 
 ![[Pasted image 20261014203723.png|463]]
 
 ### **17. Khajiit**
 
-- **Feline Claws**: You have a natural claw attack (**1d6**, finesse).
+- **Feline Claws**: You have a natural claw attack (**1d6**, Agile).
     
-    If **one of your hands is free** or equipped with a **one-handed Focus**, you can make **a claw attack as a bonus action**.
+    The claws are a **mastered Light weapon**. If one of your hands is free or equipped with a **one-handed Focus**, you may make a claw attack as a **Bonus Action** without first making a main attack.
     
-- **Feline Flexibility**: You take **half damage** from falls.
-- **Instinctive Dodge**: You can take the **Dodge** action as a **bonus action**.
+- **Feline Flexibility**: You take **half damage** from falling.
+- **Instinctive Dodge**: You may **Dodge** as a **Bonus Action**, with exactly the same effects and duration as the normal Dodge action.
 
 ![[Pasted image 20261014203212.png|422]]
 
 ### **18. Troll**
 
-- **Totemic Regeneration**: Whenever you use a **token**, regain **hit points** equal to 4 **× your highest modifier** (once per token per round / 30 min).
+- **Totemic Regeneration**: Whenever you spend a **token**, including to open a Spirit Slot, regain HP equal to **4 × your highest modifier**. This effect does not work at **0 HP**. The same token type can trigger this healing only once per round in combat, or once every **30 minutes** outside combat.
 - **Highlander**: You **ignore difficult terrain**.
 ![[Pasted image 20261014203800.png|447]]
 
 ### 19. Fishfolk
 
-- **Vibration Sense**: As a **Bonus Action**, you can maintain **Concentration**. While you maintain it, any creature that moves at least **3 m** automatically receives the effect of your **Targeting**.
+- **Vibration Sense**: As a **Bonus Action**, activate this sense with a **20 m** range. It remains active at no further cost while you maintain **Concentration**. Whenever a creature within range moves at least **3 m**, you automatically gain the effect of **Targeting** against it.
 - **Aquatic Physiology**: Your **swimming speed equals your movement**, and you have **advantage on all rolls in water**.
-- **Slippery Skin**: If you are in a liquid that fully covers your **zone of control (3 m radius)**, **attacks and abilities against you have disadvantage**. If the liquid is not water, make a **contextual Survival check** to gain this effect.
-- **Cold Resistance**: You are **resistant to cold damage**.
-- **Water Dependence**: To take a **short or long rest**, you must have enough water to keep your skin **submerged or wet for the entire rest**. Make a **contextual Survival check based on your environment** to find or use a suitable water source.
-- **Fire Vulnerability**: You are **vulnerable to fire damage**.
+- **Slippery Skin**: If a liquid fully covers your entire **zone of control (1.5 m radius)**, **attacks and abilities against you have disadvantage**. If the liquid is not water, make a **contextual Nature-Survival check** to gain this effect.
+- **Cold Resistance**: You have **Major Resistance** to cold damage.
+- **Water Dependence**: To take a **short or long rest**, you must have enough water to keep your skin **submerged or wet for the entire rest**. Make a **contextual Nature-Survival check based on your environment** to find or use a suitable water source.
+- **Fire Vulnerability**: You have **Major Vulnerability** to fire damage.
 
 ![image.png|414](Personnage/image.png)
 
 ### **20. Hobgoblin**
 
-- **Martial Discipline**: You gain melee weapon benefits with ranged weapons (opportunity attacks, parry, second attack, etc.). You have advantage on opportunity attacks and can move after an opportunity attack.
-- **Tactical Command**: You can **give your tokens** to your **allies**.
+- **Martial Discipline**: Every weapon you wield gains the following mechanics: **second attack**, **opportunity attack**, **Parry**, **Targeting**, and **Channeling**. They are added to the weapon's normal properties without replacing them. When channeling with a non-Focus weapon, freely choose its suit; its Channeling bonus equals your **Spirit Mod**. Properties belonging to a specific weapon, such as **High Ground**, **Light Shot**, or **Reload**, are not shared. You have advantage on opportunity attacks and may move after they resolve.
+- **Tactical Command**: You may give your available tokens to allies. A token retains its **type** and may raise the recipient above their maximum reserve.
 ![[Pasted image 20261014204002.png|429]]
 
 ### 21. Centaur
 
 - **Equine Speed**: Your **movement speed is multiplied by 1.5**.
-- **Quadrupedal Build**: You have **advantage on Athletics checks to push** and **disadvantage on Acrobatics checks**.
+- **Quadrupedal Build**: You have **advantage on Athletics checks to push**, and **disadvantage on Acrobatics and Stealth checks**.
 - **Blind Spot**: Attacks made against you **from behind** have **advantage**.
-- **Charge**: If you travel **at least 10 m in a straight line** during your turn, your **next attack or ability** gains **advantage**.
+- **Charge**: If you voluntarily travel **at least 10 m in a straight line, along one axis and in one segment**, your next attack or ability gains **advantage**. This bonus is consumed by that attack even if it misses.
+- **Allied Rider**: An ally may mount you as a **Bonus Action** and dismount for free. While mounted, attacks targeting that ally have **disadvantage**, and the ally may attack normally from your back. When you Charge, their next attack also gains the Charge bonus.
 ![[Cardenveil Fragmented/Personnage/image 1.png|530]]
 
 ### 22. Mecha
 
-- **Resilient Body**: Resistance to **physical damage**.
-- **Poison Resistance**: Resistance to **poison damage**.
+- **Resilient Body**: **Major Resistance** to physical damage.
+- **Poison Resistance**: **Major Resistance** to poison damage.
 - **Artificial Body**: You **do not need to breathe** and can remain underwater indefinitely.
-- **Immortal**: **Fatigue cannot kill you**.
+- **Immortal**: **Fatigue cannot kill you**, and your number of Fatigue levels has no maximum.
 - **Modular Body**: You can integrate a **one-handed weapon, shield or Focus** into one of your arms. You lose the integration if you fall unconscious.
 - **Self-Healing**: Abilities that heal you when you use them on yourself work at **50% of their value**.
-- **Mechanical Fatigue**: You gain Fatigue levels **in increments of 1** and recover only **1 Fatigue level per short rest**.
+- **Mechanical Fatigue**: Each Fatigue level reduces your card values by **1**, one level at a time, without lowering them below 1. You recover only **1 Fatigue level per short rest**.
 - **Repair**: Ordinary healing and healing consumables do not work on you. You have a **repair kit usable once per day** during a long rest. Make an **Investigation or Sleight of Hand** check: regain **the check result × 5% of your maximum HP**.
-- **Recovery**: When you are unconscious, an ally must succeed on an **Investigation or Sleight of Hand** check with **DC 8 + 2 × your Fatigue level** to revive you.
+- **Recovery**: When you are unconscious, an ally must succeed on an **Investigation or Sleight of Hand** check with **DC 8 + 2 × your Fatigue level** to revive you at **1 HP**.
 - **Mechanical Rest**: You do not need a ration during a short rest, but must **shut down for 1 hour**.
-- **Electrical Vulnerability**: Vulnerability to **lightning damage**.
+- **Electrical Vulnerability**: **Major Vulnerability** to lightning damage.
 
 ![[image 2.png|446]]
 
 ### **23. Illithid**
 
-- **Cerebral Harmonization**: Harmonization is **passive** around you, amplifying all allied abilities or attacks as ordinary harmonization would.
+- **Cerebral Harmonization**: Within **20 m**, all allies passively benefit from your Harmonization as though it were ordinary Harmonization. Auras from multiple Illithids stack.
     
-    If you **activate it** (reaction), you trigger **Total Harmonization**: the target gains **advantage on attack and ability rolls** in addition to the basic bonus.
+    If you activate it with your **Reaction**, you trigger **Total Harmonization**: the target gains advantage on attack and ability rolls in addition to the basic bonus.
     
-- **Mind Devouring (bonus action)**: Devour the brain of an intelligent creature (**Spirit > 8**) dead for less than 1 min to regain **1 Spirit token** (max = Spirit Mod, min 1). Usable **1 time/combat** or every **30 min**.
-- **Death Resonance**: At 0 HP, an 18 m psychic wave deals **Raw Spirit Power (Spirit Mod d6)** psychic damage to all allied creatures around you.
+- **Mind Devouring (Bonus Action)**: Devour the brain of an intelligent creature (**Spirit > 8**) dead for less than 1 minute to regain **1 Spirit token**, without exceeding your normal maximum of **max(0, 1 + Spirit Mod)**. Usable **once per combat** or every **30 minutes**.
+- **Death Resonance**: Each time you fall to 0 HP, an 18 m psychic wave deals **Spirit Mod d6** psychic damage to every allied creature around you, with no save.
 - **Physical Frailty**: Disadvantage on all **Athletics saving throws**.
 
 ![[Pasted image 20261014204213.png|511]]
@@ -475,30 +476,38 @@ Players can choose a race from the list provided. For a **beastfolk race**, deta
 
 - **Giant Strength**: You have **advantage on Athletics saving throws**.
 - **Natural Imbuement**: When you use **Imbue**, you can imbue **your equipment or an ally's**. The **imbuement lasts 2 rounds**.
-- **Elemental Combination**: You can **alter an Elemental Shock created by another creature** to create an **Elemental Combination**, and extend that combination to **2 rounds**.
+- **Elemental Combination**: You can **alter an Elemental Shock created by any other creature, including an enemy**, to create an **Elemental Combination**, and extend that combination to **2 rounds**.
 - **Language of Nature**: You can **communicate with plants** and have **advantage on Animal Handling checks**.
-- **Natural Disappearance**: If you spend **your entire turn without moving** and end your turn **outside every enemy's field of vision**, you automatically become **Invisible**. You can also use your **Action to become Invisible once per short rest**.
+- **Natural Disappearance**: If you have not moved since the start of the round and end your turn outside every enemy's field of vision, you automatically become **Invisible**. You may also use your **Action to become Invisible once per short rest**. This invisibility follows the general Invisibility rules.
 - **Slow to Act**: You have **disadvantage on Initiative rolls**.
 ![[image 3.png|488]]
 
 ### 25. Nimbri
 
-- **Unwieldy Nose:** You have disadvantage on Perception checks because of your large nose.
-- **Abstract Understanding of Magic:** You can split a card into two equal parts, once per round or once every 30 minutes.
-- **Unusual Mobility:** Once per round, if you succeed on an Acrobatics check, you gain a free Dash.
+- **Unwieldy Nose**: You have disadvantage on Perception checks because of your large nose.
+- **Abstract Understanding of Magic**: Once per round in combat, or once every 30 minutes outside combat, you may split one card into two independent normal cards of the same suit, each worth half its value rounded down, to a minimum of 1. They remain subject to the hand limit and may be used, exchanged, crystallized, or split again like any normal cards.
+- **Unusual Mobility**: Once per round, when you succeed on an Acrobatics check imposed in reaction to an event, you gain a **free Dash**. This Dash does not consume your available movement.
 
 ![[nimbrisplashart.jpg|571]]
 
-### **25. Beastfolk Race (Customizable)**
+### **26. Beastfolk Race (Customizable)**
 
-- Define with the GM, according to your chosen appearance and traits.
+- A Beastfolk race is created **freely with the GM** according to the desired appearance and traits.
 
 ![021fe7ebd674dc0af101220e7246fbed.jpg](../../Races%20Jouables/021fe7ebd674dc0af101220e7246fbed.jpg)
 
 # **Attribute Penalties**
 
-- If an attribute is **5** or less, you suffer **1 penalty for every two points below 6** (from 0 to 3 penalties).
-- Penalties are determined **randomly** by rolling a **d6** at the **end of character creation**, using the lists below.
+- For each attribute, you gain **1 penalty for every 2 points below 6**.
+
+| Score | Number of penalties |
+| --- | --- |
+| **6 or more** | **0** |
+| **4** | **1** |
+| **2** | **2** |
+| **0** | **3** |
+
+- At the **end of character creation**, roll **one d6 for each penalty** on the list for the relevant attribute. If a result gives a penalty already obtained for that attribute, reroll until you get a different penalty.
 
 ### **Important:**
 

@@ -1,18 +1,22 @@
 # Advancement System
 
+> These advancement rules apply only to **Campaign mode**. **Simple Adventure mode** uses a separate system without this persistent advancement.
+
 ## 🎲 **Advancement system**
 
 Characters advance by earning **XP**, awarded by the GM for memorable actions, combat or narrative developments.
 
-XP is spent to improve the character.
+XP is spent to improve the character, but level depends on the **cumulative total XP acquired**: spending XP never lowers level.
 
-- **1 level = 5 XP spent**
-- Every **5 levels → +1 attribute** (Strength, Agility, Spirit or Social)
+- A character starts at **level 1**.
+- **Level = 1 + ⌊XP acquired ÷ 5⌋**.
+- Each level gained grants **1 attribute point** to assign to Strength, Agility, Spirit or Social.
+- In Campaign mode, an attribute cannot exceed **20**.
+- Increasing an attribute causes **all derived statistics to be recalculated**.
 
 **Level** also determines the limits of the system:
 
-- It sets the **advancement cap** (cap = ⌈lvl / 2⌉)
-- It acts as a **threshold for multiplying effects**
+- It sets the **advancement cap**: **⌊level ÷ 2⌋**.
 
 ## 🎯 **Advancement paths**
 
@@ -28,7 +32,7 @@ The character advances by spending XP on different improvements, each correspond
 - **Aspect** → 3 XP: adds a narrative aspect
 - **HP** → 2 XP: increases hit points
 - **Feat** → 5 XP: grants a unique passive
-- **Pool advancement** → 3 XP (collective): improves the card pool
+- **Pool advancement** → collective cost of **3 XP × number of players**: improves the card pool
 
 ## 🗡️ **Weapons (families)**
 
@@ -51,7 +55,7 @@ The character advances by spending XP on different improvements, each correspond
 
 **Cap:**
 
-- level / 2
+- ⌊level ÷ 2⌋
 
 ---
 
@@ -72,7 +76,7 @@ The character advances by spending XP on different improvements, each correspond
 
 **Cap:**
 
-- level / 2
+- ⌊level ÷ 2⌋
 
 ---
 
@@ -97,7 +101,7 @@ The character advances by spending XP on different improvements, each correspond
 
 **Cap:**
 
-- level / 2
+- ⌊level ÷ 2⌋
 
 ---
 
@@ -117,11 +121,11 @@ The character advances by spending XP on different improvements, each correspond
 
 **Requirement:**
 
-- 5 critical uses
+- 5 **critical uses**, meaning five uses in moments when the ability is genuinely relevant. The GM decides which uses count, preventing artificial repetition performed solely to unlock the Awakening.
 
 **Cap:**
 
-- level / 2
+- ⌊level ÷ 2⌋
 
 ---
 
@@ -145,7 +149,7 @@ The character advances by spending XP on different improvements, each correspond
 
 **Cap:**
 
-- level / 2
+- ⌊level ÷ 2⌋
 
 ---
 
@@ -189,7 +193,7 @@ The character advances by spending XP on different improvements, each correspond
 
 **Cost:**
 
-- 2 XP
+- 3 XP
 
 **Requirement:**
 
@@ -239,7 +243,7 @@ The character advances by spending XP on different improvements, each correspond
 
 **Cost:**
 
-- 3 XP (per person)
+- **3 XP × number of players**, paid collectively. Contributions may be divided freely: one player may pay more than another. Each XP counts as spent by the character who pays it.
 
 **Requirement:**
 

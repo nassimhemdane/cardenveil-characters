@@ -28,12 +28,26 @@ Les dés représentent la part de hasard du système. Ils servent à mesurer la 
 
 Les jets de dés sont souvent influencés par les **caractéristiques du personnage**.
 
+**Convention d’arrondi :** sauf indication contraire explicite, tous les calculs et résultats fractionnaires sont toujours arrondis à l’inférieur.
+
 - Exemple : pour un test de Force, on lance **1d20 + le Mod. Force** du personnage.
 - Exemple : une attaque magique peut infliger **1d8 + le Mod. Esprit** en dégâts.
+
+**Notations : score, Mod. caractéristique et Mod. compétence**
+
+- **Score de caractéristique** : la valeur de Force, Agilité, Esprit ou Social. Les formules qui demandent le score, comme les PV, continuent à utiliser ce score.
+- **Mod. caractéristique** : `(score − 10) ÷ 2`, arrondi à l’inférieur. Exemple : Force 16 donne **Mod. Force = +3**.
+- **Mod. compétence** : le bonus de la compétence, maîtrise incluse. Il vaut le modificateur de sa caractéristique associée, ou **deux fois ce modificateur si la compétence est maîtrisée**. On n’ajoute pas à nouveau le Mod. caractéristique au jet.
+- Exemple : avec Force 16, **Mod. Athlétisme = +3**, ou **+6** si Athlétisme est maîtrisé. Résister à un contrôle physique demandant Athlétisme se résout par **d20 + Mod. Athlétisme**.
+- Quand un jet indique seulement une caractéristique, sans compétence nommée, utilisez **d20 + Mod. de cette caractéristique** : « jet d’Esprit » signifie **d20 + Mod. Esprit**, « jet de Force » signifie **d20 + Mod. Force**. Aucune maîtrise de compétence ne s’ajoute à ce jet.
 
 ### **Réussite et échec**
 
 Un jet de dé peut être interprété comme un **résultat direct** (ex. dégâts) ou comme une **tentative** dont la réussite dépend d’un **seuil de difficulté** fixé par le MJ ou par la situation.
+
+- Sur un d20, un **1 naturel** est toujours un **échec critique** : les modificateurs ne sont pas pris en compte.
+- Sur un d20, un **20 naturel** est toujours une **réussite critique**, quels que soient les modificateurs.
+- Sur un jet de sauvegarde, un **20 naturel annule totalement l’effet de la capacité**, même si cette capacité prévoit normalement un effet partiel en cas de sauvegarde réussie.
 
 - Exemple de réussite : un personnage saute au-dessus d’un gouffre et fait **18 sur 1d20**, le MJ estime que c’est suffisant pour réussir.
 - Exemple d’échec : un personnage tente d’ouvrir une porte verrouillée et obtient **7 sur 1d20**, il échoue et déclenche peut-être un bruit ou un piège.
@@ -56,18 +70,9 @@ Chaque avantage supplémentaire ajoute les dés correspondants au jet (+1 sur un
 
 Les désavantages s’annulent avec les avantages et se cummulent aussi.
 
-### **Critiques et séquentialité**
+### **Critiques avec avantage**
 
-Lorsqu’un **critique** se produit (valeur maximale d’un dé gardé), les avantages **peuvent être utilisés de manière séquentielle**.
-
-Cela signifie qu’un joueur ayant plusieurs avantages peut :
-
-- en utiliser un pour le jet initial,
-- puis conserver les autres pour les appliquer **sur la relance du critique**, s’il le souhaite.
-
-Chaque avantage utilisé ajoute alors ses dés au moment du **jet critique**, avant d’en garder les meilleurs résultats.
-
-Les avantages ainsi utilisés sont considérés comme **consommés**.
+Lorsqu’un critique se produit, effectuez sa relance avec **un avantage de moins** que le jet précédent. Chaque nouveau critique retire encore un avantage. À 0 avantage, les critiques continuent avec 1 dé.
 
 ### **Cohérence narrative**
 
@@ -85,14 +90,17 @@ Elles servent à accomplir la plupart des actions importantes du jeu.
 
 ### **Main de cartes**
 
-- Chaque joueur possède une **main de 2 cartes +1 carte qu’on pioche**.
-- En combat, on **pioche une carte** au début de chaque tour.
+- La pioche est **commune à tous les joueurs** et considérée comme **infinie en théorie**. En jeu physique, utilisez autant de paquets standards de **52 cartes** que possible, de préférence **3 paquets mélangés ensemble**, sans joker.
+- Valeur des figures : **Valet = 11, Dame = 12, Roi = 13, As = 14**.
+- Lorsque la pioche physique est vide, mélangez la défausse pour former une nouvelle pioche commune.
+- Chaque joueur peut avoir au maximum **3 cartes normales en main à tout moment**.
+- En combat, au début de chaque tour, vous pouvez **piocher 1 carte** seulement si un emplacement est libre. Si vous avez déjà 3 cartes normales, vous devez d’abord en défausser une pour pouvoir piocher.
 - Hors combat, les pioches se font à intervalles réguliers ou selon le rythme fixé par le MJ.
 
 ### **Types de cartes**
 
 - **Cartes normales** : cartes de base, piochées et défaussées tout au long du jeu.
-- **Cartes cristallisées** : cartes spéciales qui ne comptent pas dans la limite maximale de main et qui n’intergissent aps avec les tokens et totem (voir plus bas) et peuvent être jouées comme des cartes normales.
+- **Cartes cristallisées** : la carte est remplacée par sa version cristallisée, représentée en rouge, tout en conservant sa valeur et son enseigne. Elle ne compte pas dans la limite maximale de main, ne peut pas être échangée, n’interagit pas avec les tokens ni le Totem et peut être jouée comme une carte normale.
 
 ### **Utilisation générale**
 
@@ -125,3 +133,9 @@ Ils servent à modifier, renforcer ou contourner les mécaniques habituelles.
 ### **Gestion**
 
 - Les tokens sont une **ressource consommable** : ils se dépensent au fil du jeu et se **réinitialisent après un repos**.
+
+## **Repos**
+
+- **Cartes, pour les deux types de repos :** vous pouvez défausser autant de cartes normales de votre main que vous le souhaitez, puis repiocher jusqu’à votre limite de main. Vous n’êtes pas obligé de tout défausser. Tous vos Emplacements d’Esprit sont consommés et leurs cartes sont cristallisées. Vous conservez toutes vos cartes déjà cristallisées.
+- **Repos court :** 1 heure de repos ininterrompu dans un endroit calme, avec consommation de rations. Il rend tous les tokens, restaure la moitié des PV maximum sans dépasser le maximum et retire 1 niveau de Fatigue.
+- **Repos long :** 7 heures de sommeil ininterrompu dans un endroit calme, avec consommation de rations. Il rend tous les tokens, restaure tous les PV et retire 2 niveaux de Fatigue.
