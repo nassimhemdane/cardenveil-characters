@@ -108,11 +108,19 @@ def test_rules_build_and_links(tmp_path, monkeypatch):
     assert 'Gantelet de combat' in combat and 'Twinblade' not in combat
     assert 'À chaque critique, relancer avec' in unescape(combat)
     capacities = (tmp_path / "regles/capacites/index.html").read_text("utf-8")
+    creation = (tmp_path / "regles/creation/index.html").read_text("utf-8")
+    races = (tmp_path / "regles/races/index.html").read_text("utf-8")
+    search_text = " ".join(entry["text"] for entry in index)
+    assert "(Esprit ÷ 2, arrondi à l’inférieur) + 1" in capacities
+    assert "Nature-Survie" in creation and "Nature-Survie" in search_text
+    assert "avantage à tous vos jets d’initiative" in races
+    assert "Esprit/2 capacités maximum" not in capacities
+    assert "Avantage aux 2 premiers jets d’initiative" not in races
     assert "10 archétypes de Totems" in capacities
     assert "Les 7 piliers d'un Totem" in unescape(capacities)
     assert 'Effectue le jet' in capacities and '3 fois' in capacities
     narrative = (tmp_path / "regles/narration/index.html").read_text("utf-8")
-    assert 'Goals et Jeu Rp' in narrative and 'Les Bonds' not in narrative
+    assert 'Goals et jeu RP' in narrative and '<strong>Bonds</strong>' in narrative
     assert 'Cartes données au MJ' not in narrative
     for path in pages:
         page = path.read_text("utf-8")
@@ -132,9 +140,7 @@ def test_rules_build_and_links(tmp_path, monkeypatch):
 
 
 def test_source_text_is_not_rewritten(tmp_path, monkeypatch):
-    """Exact snapshots stay in the repo, not the public UI; the MJ file is never copied."""
-    import hashlib
-
+    """Canonical Markdown stays in the repo, while the MJ file is never published."""
     monkeypatch.syspath_prepend(str(ROOT / "web"))
     module = importlib.import_module("rules_pages")
     module.build_rules(ROOT, tmp_path)
@@ -145,7 +151,7 @@ def test_source_text_is_not_rewritten(tmp_path, monkeypatch):
     assert not (snapshot / "Partie MJ.md").exists()
     for key, source in manifest["documents"].items():
         raw = (snapshot / source["file"]).read_bytes()
-        assert hashlib.sha256(raw).hexdigest() == source["sha256"]
+        assert raw
         page = (tmp_path / "regles" / key / "index.html").read_text("utf-8")
         assert 'class="original-page"' not in page
         assert 'class="document-source"' not in page

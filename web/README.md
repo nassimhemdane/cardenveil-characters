@@ -72,11 +72,12 @@ Le menu, les chapitres et leurs sommaires fonctionnent sans JavaScript ; la rech
 utilise un index généré au build. Le contenu public est limité explicitement dans
 `web/rules_pages.py` : les documents techniques internes de `docs/` ne sont pas publiés.
 
-La source publique actuelle est `docs/rules/fragmented/*.md`, rendue par
+La source publique unique est `docs/rules/fragmented/*.md`, lue directement à chaque build par
 `web/fragmented_rules.py`. Sept documents produisent huit chapitres : les races sont extraites
-du document de création. Les illustrations viennent du manifeste Fragmented. Les anciennes
-transcriptions PDF dans `docs/rules/sources/` restent des références internes ; elles ne
-remplacent pas les règles actuelles sur le site.
+du document de création. Le manifeste sert uniquement à associer les chapitres et leurs
+illustrations ; ses empreintes historiques ne peuvent pas bloquer une correction Markdown.
+Les anciennes transcriptions PDF dans `docs/rules/sources/` restent des références internes ;
+elles ne remplacent jamais les règles actuelles sur le site.
 
 Le rendu des fiches Markdown couvre leurs titres, paragraphes, listes, code inline, gras et
 tableaux. Les sorties `web/public/regles/` sont régénérées par `web/build.py` et ignorées par Git.
