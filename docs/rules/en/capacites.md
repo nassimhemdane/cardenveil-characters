@@ -2,7 +2,7 @@
 
 # **Abilities and Cards**
 
-To use an ability, the total value of cards spent must be **greater than or equal to its cost: card total ≥ cost**. Exact payment is valid. Each card played must match the **ability type** (Heart, Diamond, Club or Spade). For example, a total of 15 is enough to use a healing ability that costs 15.
+To use an ability, the total value of cards spent must be **greater than or equal to its cost: card total ≥ cost**. The ability becomes usable as soon as their combined value reaches at least the **ability's cost**. Exact payment is valid. Each card played must match the **ability type** (Heart, Diamond, Club or Spade). For example, a total of 15 is enough to use a healing ability that costs 15.
 
 An ability always requires spending **at least 1 card**. If its final cost is 0 or less, it may be used with **any card**, regardless of its suit or value.
 
