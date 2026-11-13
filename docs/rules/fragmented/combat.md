@@ -1,8 +1,6 @@
+## Action et Combat
 
-
-# **Action et Combat**
-
-Les combats et phases d’actions dans ce système se déroule en **rounds**, qui représentent une unité de temps où chaque joueur et ennemi agit une fois. Pendant un round, chaque joueur dispose d’un **tour** pour effectuer ses actions : attaquer, utiliser une capacité, se déplacer, ou utiliser une technique. Une fois que tous les éléments participants ont joué, le round suivant commence.
+Les combats et phases d’actions dans ce système se déroule en **rounds**, qui représentent une unité de temps où chaque joueur et ennemi agit une fois. Pendant un round, chaque joueur dispose d’un **tour** pour effectuer ses actions : attaquer, utiliser une capacité, se déplacer, ou utiliser une technique. Une fois que tous les éléments participants ont joué, le round suivant commence.
 
 Les capacités sont activées en utilisant un **jeu de cartes**, qui simule vos ressources et décisions tactiques. Les dégâts infligés, quant à eux, sont déterminés par des jets de dés.
 
@@ -25,23 +23,17 @@ Chaque personnage dispose, par **round global**, des ressources suivantes. Elles
 ### 🔹 Réaction
 
 - **1 seule fois par round global.**
-- Peut être jouée **en réaction à un événement**, **même hors de ton tour**
-    
-    (attaque ennemie, déplacement, capacité, ouverture de brèche, etc.).
-    
+- Peut être jouée **en réaction à un événement**, **même hors de ton tour** (attaque ennemie, déplacement, capacité, ouverture de brèche, etc.).
 
 ### 🔹 Mouvement
 
 - Budget total par round : **5 + (Agilité ÷ 2) m**.
-- Ce budget peut être **partagé en 2 segments au maximum** dans le round ; les deux segments ne donnent jamais deux fois la vitesse
-    
-    (par exemple : un déplacement pendant une intervention en Phase MJ, puis un autre pendant ton tour en Phase Joueurs).
-    
+- Ce budget peut être **partagé en 2 segments au maximum** dans le round, sauf avec l’**Action Bonus Ruée**, qui autorise un troisième segment ; fractionner le mouvement ne multiplie pas le budget de déplacement (par exemple : un déplacement pendant une intervention en Phase MJ, puis un autre pendant ton tour en Phase Joueurs).
 
 ### 🔹 Hiérarchie
 
 > Action ⊃ Bonus Action ⊃ Réaction
-> 
+
 - Une **Action** peut servir à utiliser une capacité d’Action, d’Action Bonus ou de Réaction.
 - Une **Action Bonus** peut servir à utiliser une capacité d’Action Bonus ou de Réaction, sauf si une condition l’interdit.
 - Une **Réaction** sert uniquement à utiliser une capacité de Réaction lorsque son déclencheur survient. Elle ne peut jamais payer une Action ou une Action Bonus.
@@ -51,11 +43,9 @@ Chaque personnage dispose, par **round global**, des ressources suivantes. Elles
 
 ## 2. Initiative et Déroulement
 
-Un personnage peut fractionner son **budget total de Mouvement** en **deux segments au maximum par round**. La distance parcourue par les deux segments cumulés ne peut pas dépasser ce budget.
+Un personnage peut fractionner son **budget total de Mouvement** en **deux segments au maximum par round**, sauf avec l’**Action Bonus Ruée**, qui autorise un troisième segment. La distance cumulée des segments ne peut pas dépasser le budget du round, augmenté par Ruée le cas échéant.
 
----
-
-### **2.1 Phase MJ**
+### 2.1 Phase MJ
 
 Le MJ décrit :
 
@@ -66,71 +56,48 @@ Le MJ décrit :
 
 Pendant cette phase, les joueurs peuvent **intervenir**, selon quatre modes différents, avec ou sans **jet d’initiative**.
 
----
-
-### 🔹 **Réaction (Sans Initiative)**
+### 🔹 Réaction (Sans Initiative)
 
 - Utilisable **hors de son tour**, dès que le déclencheur apparaît.
 - **Aucune** initiative n’est nécessaire.
 - Ne permet **pas** de Mouvement, sauf capacité spécifique.
 
----
-
-### 🔹 **Action ou Bonus Action (Avec Initiative)**
+### 🔹 Action ou Bonus Action (Avec Initiative)
 
 Le joueur peut tenter d’agir **avant** l’action d’un PNJ en faisant un **jet d’initiative**.
 
 - **Réussite** → son Action ou Bonus Action se résout **avant** le PNJ.
 - **Échec** → l’action du PNJ se résout normalement.
 
-Le joueur peut utiliser son **Mouvement** pendant cette intervention
-
-→ **toujours dans la limite de deux mouvements par round.**
+Le joueur peut utiliser son **Mouvement** pendant cette intervention → **dans la limite de deux segments par round, ou trois avec l’Action Bonus Ruée.**
 
 Chaque joueur peut tenter **une seule intervention par tour de PNJ**, un tour comprenant toutes les actions de ce PNJ. Si la tentative échoue, aucune ressource annoncée n’est dépensée. Le joueur doit attendre qu’au moins un PNJ ait terminé son tour avant de pouvoir tenter une nouvelle intervention, lors du tour d’un autre PNJ.
 
 **Comparaison du jet d’initiative :**
 
 - soit à l’initiative du PNJ (celle tirée en début de combat),
-- soit à une **DC contextuelle fixée par le MJ** si l’événement n’est pas lié à un PNJ
-    
-    (piège, effondrement, danger environnemental, cri, levier, etc.).
+- soit à une **DC contextuelle fixée par le MJ** si l’événement n’est pas lié à un PNJ (piège, effondrement, danger environnemental, cri, levier, etc.).
 - En cas d’égalité, le **PNJ agit en premier**. Le MJ peut toutefois donner la priorité au joueur si cela permet de mieux répartir les actions.
-    
 
----
+### 🔹 Mouvement (Avec Initiative)
 
-### 🔹 **Mouvement (Avec Initiative)**
-
-Le joueur peut intervenir pour uniquement se **déplacer** :
-
-retrait, prise de hauteur, repositionnement, etc.
+Le joueur peut intervenir pour uniquement se **déplacer** : retrait, prise de hauteur, repositionnement, etc.
 
 - Nécessite **toujours** un jet d’initiative.
 - Le Mouvement se résout **avant** la menace si l’initiative est réussie.
-- Le Mouvement compte comme **une utilisation de Mouvement**,
-    
-    → limité à **deux segments par round**, dans la limite de la distance totale restante.
-    
+- Le Mouvement compte comme **une utilisation de Mouvement**, → limité à **deux segments par round, ou trois avec l’Action Bonus Ruée**, dans la limite de la distance totale restante.
 - Un joueur peut faire une intervention de Mouvement même s’il ne prévoit **aucune Action ni Bonus Action** dans le round.
 
----
-
-### 🔹 **Précipitation (Réaction)**
+### 🔹 Précipitation (Réaction)
 
 Une Réaction spéciale permettant d’agir **pendant** l’action d’un PNJ.
 
 - Jet d’initiative (souvent avec avantage selon les règles de Précipitation).
 - **Réussite** → l’Action **et/ou** la Bonus Action du joueur se **confrontent directement** à celle du PNJ.
 - Les deux actions sont résolues **simultanément**, selon le MJ.
-- Peut inclure du **Mouvement**,
-    
-    → **toujours dans la limite de deux segments et du budget total de Mouvement du round.**
-    
+- Peut inclure du **Mouvement**, → **dans la limite de deux segments, ou trois avec l’Action Bonus Ruée, et du budget total de Mouvement du round.**
 
----
-
-### **2.2 Phase Joueurs**
+### 2.2 Phase Joueurs
 
 Ensuite, les joueurs jouent ce qu’il **leur reste** dans le round :
 
@@ -148,57 +115,51 @@ Si plusieurs joueurs souhaitent intervenir simultanément en Phase MJ, ils déte
 ### 3.1 Effets sur une créature
 
 > Un effet “1 tour” sur une créature expire uniquement quand :
-> 
-> 
-> • la cible a terminé son prochain tour
-> 
-> **ET**
-> 
-> • le lanceur a commencé son prochain tour.
-> 
-> L’effet dure donc jusqu’au **plus tardif des deux événements**.
-> 
-> Le tour de la cible compte normalement pour cette durée même si elle est inconsciente, contrôlée ou incapable d’agir.
 >
+> • la cible a terminé son prochain tour
+>
+> **ET**
+>
+> • le lanceur a commencé son prochain tour.
+>
+> L’effet dure donc jusqu’au **plus tardif des deux événements**.
+>
+> Le tour de la cible compte normalement pour cette durée même si elle est inconsciente, contrôlée ou incapable d’agir.
 
 ### 3.2 Effets environnementaux / zones
 
 > Leur durée se compte en rounds globaux :
-> 
-> 
+>
 > • 1 round = jusqu’à la fin du prochain round global.
-> 
+>
 > • 2 rounds = jusqu’à la fin du round +2, etc.
-> 
+>
 > Exemple : un mur de feu posé au round 3 reste actif jusqu’à la fin du round 4 (durée 1 round).
-> 
 
-## ⚙️ **Faire un jet d’initiative**
+## ⚙️ Faire un jet d’initiative
 
 1. 🎲 **Lancer 1d20.**
 2. ➕ **Ajouter ton bonus d’initiative.**
 3. 🎯 **Avantage ?** Ajoute **+1 dé par avantage** (garde le meilleur).
 4. 🧾 **Résultat final = meilleur d20 + bonus d’initiative.**
 
-# **Actions disponibles en Combat**
+## Actions disponibles en Combat
 
 Dans cette section, nous allons présenter une idée générale des actions possibles pendant un round.
 
-### **Actions principales**
+### Actions principales
 
 1. **Attaquer** : Effectuer une attaque avec votre arme.
 2. **Esquiver** : Confère **désavantage** aux attaques ennemies contre vous et **avantage** aux jets de sauvegarde jusqu’à votre prochain round et vous **protege** des attaques d’opportunité.
 
----
-
-### **Actions bonus**
+### Actions bonus
 
 1. **Attaque secondaire** : Une seconde attaque en mélée sans modificateur aux dégâts.
 2. **Consommable** : Boire une potion ou utiliser un parchemin par exemple.
 3. **Ruée:** Augmantez votre vitesse de déplacement de moitié, vous permet un troisième mouvement durant le round.
 4. **Imprégnation** : Imprégnez une **arme** ou un **projectile** avec un **consommable**. Si une **source élémentaire** est à portée, utilisez-la pour imprégner votre arme et ajoutez votre **Mod Nature-Survie** en dégâts élémentaires à votre prochaine attaque.
 5. **Échange d’Equipement** : Alterner entre deux armes ou équipements.
-6. **Stabilisation :** En Action Bonus, relevez un allié inconscient. Il revient à **1 PV**, conserve son niveau de Fatigue et dispose de son Action et de son Action Bonus.
+6. **Stabilisation :** En Action Bonus, relevez un allié inconscient. Il revient à **1 PV**, conserve son niveau de Fatigue et uniquement les ressources qu’il n’avait pas déjà dépensées ce round. La Stabilisation ne renouvelle aucune ressource.
 7. **Poussée**: Repoussez une créature de **5m,** contestation de vos jets d’**athlétisme**.
 8. **Planque :** Si vous êtes **hors de vue** ou **obscurci, cachez vous** en faisant un jet de **Discrétion** contre la **Perception** ennemie. Au début de **chaque round** et chaque fois que vous e**ntrez dans une ligne de vue**, refaites un jet. Toute action **hostile** vous **dévoile** ; une action non hostile exige un **nouveau jet** pour rester planqué.
 9. **Analyse:** Faites un jet d’investigation (DC 10+mod agilité) d’une creature adverse pour découvrir une de ses résistances, immunités ou vulnérabilité. (Ou un détail contextuel)
@@ -206,26 +167,24 @@ Dans cette section, nous allons présenter une idée générale des actions poss
 11. **Canalisation** : Canalisez votre **catalyseur** et activez son **bonus de couleur** pour ce round et le suivant. Le coût des capacités de la couleur correspondante est réduit de votre **Mod Esprit + le bonus du catalyseur**. Si vous maniez deux catalyseurs à une main, vous pouvez les canaliser simultanément pour combiner leurs couleurs. Le catalyseur s’entoure d’une aura de son type de dégâts. La Canalisation donne avantage aux jets d’attaque avec ce catalyseur et aux jets de valeur brute des capacités concernées.
 12. **Flatterie** : Faites un jet de **Tromperie** contre **Perspicacité de l’allié**. En cas de réussite, l’allié gagne **+ Mod. Social** aux dégâts de sa prochaine attaque.
 
----
-
-### **Réactions**
+### Réactions
 
 1. **Attaque d’opportunité** : Si un ennemi **quitte** votre **zone de contrôle**, lance une capacité à **distance** ou est **attaqué** par un **allié** en **mêlée**, vous pouvez l’**attaquer** (avec vos deux armes en dual wield). L’attaque d’opportunité se résout **avant** le déplacement, le lancement ou l’attaque qui la déclenche. Elle peut elle-même déclencher les attaques d’opportunité d’autres alliés, formant une chaîne résolue dans cet ordre avant la reprise de l’événement initial.
-2. **Soutien** : Lorsqu’un **allié** dans votre **zone de controle** attaque, offrez lui  **avantage** à son jet d’attaque. 
+2. **Soutien** : Lorsqu’un **allié** dans votre **zone de controle** attaque, offrez lui **avantage** à son jet d’attaque.
 3. **Parade :** utilisez votre Réaction pour réduire les dégâts avant l’armure. Avec une arme : `dé maximal ÷ 2 + Mod. Agilité + déflexion`. Avec un bouclier : `dé maximal du bouclier ÷ 2 + Mod. Force + déflexion`. Avec deux armes : `dé maximal arme 1 ÷ 2 + dé maximal arme 2 ÷ 2 + Mod. Agilité + déflexion`. Le modificateur et la déflexion ne sont ajoutés qu’une fois.
-4. **Bastion** : Tentez de prendre à la place d’un allié n’importe quelle attaque ou effet, ou protégez un objet, avec un jet d’Acrobaties contre `3 + 2 × distance en mètres`. La Réaction est consommée même en cas d’échec. Contre une AOE, vous subissez **×1,5 dégâts** et la personne protégée subit **×0,5 dégâts**.
-5. **Précipitation** : Utilisez votre **Réaction** pour faire un **jet d’initiative avec avantage** pendant l’action d’une autre créature. La Réaction est consommée, que le jet réussisse ou non. Si votre résultat dépasse son initiative, vous pouvez jouer immédiatement votre **Action et/ou Action Bonus** ; elles sont résolues simultanément avec l’action en cours selon le MJ. Si ces ressources ont déjà été utilisées, faites le jet contre **10 + l’initiative de la créature actuelle** pour emprunter l’Action et/ou l’Action Bonus du round suivant ; toute ressource empruntée est déjà dépensée pour ce round futur. Cet emprunt peut être enchaîné lors des rounds suivants, en consommant chaque fois la Réaction et en utilisant ce seuil accru.
+4. **Bastion** : Tentez de prendre à la place d’un allié n’importe quelle attaque ou effet, ou protégez un objet, avec un jet d’Acrobaties contre `3 + 2 × distance en mètres`. La Réaction est consommée même en cas d’échec. Résolvez d’abord le jet de Bastion : en cas d’échec, il n’y a ni interception ni Parade automatique. En cas de réussite contre une attaque à cible unique, vous la subissez à la place de l’allié et appliquez vos propres défenses. Avec un bouclier, vous parez automatiquement, sans dépense de ressource supplémentaire. Contre une attaque en zone (AOE), appliquez d’abord les coefficients de Bastion : vous subissez **×1,5 dégâts** et la personne protégée subit **×0,5 dégâts**. Chacun applique ensuite ses propres immunités, résistances et vulnérabilités, sa Parade éventuelle, puis son Armure. La Parade automatique du bouclier ne protège que vous.
+5. **Précipitation** : Utilisez votre **Réaction** pour faire un **jet d’initiative avec avantage** pendant l’action d’une autre créature. La Réaction est consommée, que le jet réussisse ou non. Si votre résultat dépasse son initiative, vous pouvez jouer immédiatement votre **Action et/ou Action Bonus** ; elles sont résolues simultanément avec l’action en cours selon le MJ. Si ces ressources ont déjà été utilisées, faites le jet contre **10 + l’initiative de la créature actuelle** pour emprunter l’Action et/ou l’Action Bonus du round suivant ; toute ressource empruntée est déjà dépensée pour ce round futur. Cet emprunt peut être enchaîné lors des rounds suivants, en consommant chaque fois la Réaction et en utilisant ce seuil accru. Action et Action Bonus sont suivies séparément : une ressource disponible est utilisée normalement ; seule une ressource déjà dépensée doit être empruntée. Si une même Précipitation utilise une ressource disponible et une ressource empruntée, le jet utilise le seuil accru. Vous ne pouvez emprunter que les ressources du round immédiatement suivant, jamais celles d’un round plus lointain, même si un effet vous accorde une Réaction supplémentaire. Une ressource déjà empruntée ne peut pas être empruntée une seconde fois. Au début du round suivant, les ressources empruntées restent dépensées, mais votre Réaction se renouvelle normalement et peut servir à emprunter au round d’après. Le seuil reste **10 + l’initiative de la créature actuelle** : le +10 ne s’accumule pas.
 6. **Harmonisation** : Lorsqu’une **autre créature à 20 m ou moins** lance une capacité utilisant l’**Esprit**, utilisez votre Réaction pour **Accentuer : +Mod. Esprit** au jet de valeur brute et au Seuil de Sauvegarde, ou **Atténuer : −Mod. Esprit** aux dégâts directs et au Seuil de Sauvegarde. Vous ne pouvez pas vous cibler vous-même.
 7. **Altération** : Lorsqu’une capacité est utilisée par vous ou un allié, vous pouvez **ajuster** son effet ou sa portée sans augmenter sa puissance et potentiellement activer une **combinaison élémentaire**.
-8. **Cibelage**:  Lorsqu’un ennemi agit (attaque, mouvement, etc.), vous pouvez utiliser votre **réaction** pour **vous focaliser sur lui**, analysant ses mouvements et vous octroyant **avantage** pour un tir contre lui au prochain tour.
-9. **Dissuasion** : Faites un **jet d’Intimidation** contre la  **Perspicacité de l’ennemi** pour lui donner **désavantage** à son attaque en mêlée. 
-10. **Coordination :** En Réaction, choisissez un allié à **2 × Mod. Persuasion m**. Vous lui donnez une Réaction immédiate : il n’a pas besoin d’avoir sa propre Réaction disponible et ne la consomme pas. Il peut à la place **refaire son jet de sauvegarde** contre la capacité qui le vise.
+8. **Cibelage**: Lorsqu’un ennemi agit (attaque, mouvement, etc.), vous pouvez utiliser votre **réaction** pour **vous focaliser sur lui**, analysant ses mouvements et vous octroyant **avantage** pour un tir contre lui au prochain tour.
+9. **Dissuasion** : Faites un **jet d’Intimidation** contre la **Perspicacité de l’ennemi** pour lui donner **désavantage** à son attaque en mêlée.
+10. **Coordination :** En Réaction, choisissez un allié à **2 × Mod. Persuasion m**. Coordination est inutilisable si votre **Mod. Persuasion est nul ou négatif**. Vous lui donnez une Réaction immédiate : il n’a pas besoin d’avoir sa propre Réaction disponible et ne la consomme pas. Il peut à la place **refaire son jet de sauvegarde** contre la capacité qui le vise.
 
-# **Règles des Attaques et Dégâts**
+## Règles des Attaques et Dégâts
 
-Lorsque vous attaquez avec une arme ou un catalyseur magique, la réussite de l'attaque et les dégâts infligés dépendent d'un jet de dé. La **nature du dé** utilisé (par exemple, un d6, d8 ou d12) est déterminée par l'arme ou le catalyseur que vous utilisez. 
+Lorsque vous attaquez avec une arme ou un catalyseur magique, la réussite de l'attaque et les dégâts infligés dépendent d'un jet de dé. La **nature du dé** utilisé (par exemple, un d6, d8 ou d12) est déterminée par l'arme ou le catalyseur que vous utilisez.
 
-## **Mains et combat à deux armes**
+### Mains et combat à deux armes
 
 - Une arme à une main occupe une main ; une arme à deux mains occupe les deux.
 - Le dual wield est autorisé avec **deux armes Légères**, ou avec une arme à une main normale et une arme possédant la propriété **Secondaire**.
@@ -233,11 +192,9 @@ Lorsque vous attaquez avec une arme ou un catalyseur magique, la réussite de l'
 - Lorsque cette combinaison respecte les règles du dual wield, l’attaque secondaire ajoute normalement son modificateur aux dégâts.
 - Dégainer, rengainer ou changer d’arme coûte une **Action Bonus**.
 
----
+### Armes de corps à corps
 
-## **Armes de corps à corps**
-
-- **Dégâts** : Basés en general sur la **Force** (ex. : 1d8 + Mod. Force).
+- **Dégâts** : Basés en general sur la **Force** (ex. : 1d8 + Mod. Force).
 - **Action bonus** : Après une attaque, vous pouvez effectuer une **seconde attaque sans ajouter votre modificateur aux dégâts**. (si vous dual wieldez, vous pouvez ajouter le modificateur)
 - **Dégâts critiques** : Si vous obtenez la valeur maximale sur un dé (ex. : 8 sur 1d8), relancez ce dé et ajoutez le résultat (cumulable). Si l’arme est **Agile**, réappliquez aussi tout le bonus d’attaque à chaque critique.
 - **Miss critique** : Si vous obtenez **1** sur un dé d’attaque, vous ratez automatiquement, pour chaque **2 points** au dessous de **10** en **agilité**, augmantez votre seuil de miss de **1**.
@@ -246,20 +203,16 @@ Lorsque vous attaquez avec une arme ou un catalyseur magique, la réussite de l'
 - Vous pouvez **parer** avec une arme de mêlée : **dé maximal ÷ 2 + Mod. Agilité + déflexion**. Un bouclier utilise le **Mod. Force**. Deux armes additionnent leurs deux demi-dés, puis ajoutent une seule fois le Mod. Agilité et la déflexion.
 - **Mécaniques corps a corps:** Voir Actions, Bonus actions et Reactions pour plus de détails.
 
----
+### Armes à distance
 
-## Armes à distance
-
-- **Dégâts** : Basés en general sur l’**Agilite** (ex. : 1d8 + Mod. agilité).
+- **Dégâts** : Basés en general sur l’**Agilite** (ex. : 1d8 + Mod. agilité).
 - **Désavantage en mêlée** : Si vous êtes dans la zone de contrôle d’un ennemi, vous avez un désavantage sur vos jets d’attaque.
 - **Dégâts critiques** : Si vous obtenez la valeur maximale sur un dé (ex. : 8 sur 1d8), relancez ce dé et ajoutez le résultat (cumulable). Si l’arme est **Agile**, réappliquez aussi tout le bonus d’attaque à chaque critique.
 - **Miss critique** : Si vous obtenez **1** sur un dé d’attaque, vous ratez automatiquement, pour chaque **2 points** au dessous de **10** en **agilité**, augmantez votre seuil de miss de **1**.
 - **Surplomb (arcs uniquement)** : avec un arc, vous avez **avantage** à l’attaque si vous êtes situé au moins **5 m au-dessus** de votre cible.
 - **Mécaniques Distance:** Voir Actions, Bonus actions et Reactions pour plus de détails.
 
----
-
-## **Catalyseurs magiques**
+### Catalyseurs magiques
 
 Les catalyseurs magiques permettent de canaliser l'Esprit pour amplifier les capacités magiques. Chaque catalyseur possède une **couleur** parmi **Carreau, Pique, Trèfle ou Cœur.**
 
@@ -272,26 +225,22 @@ Les catalyseurs magiques permettent de canaliser l'Esprit pour amplifier les cap
 - **Dégâts critiques** : Si vous obtenez la valeur maximale sur un dé (ex. : 8 sur 1d8), relancez ce dé et ajoutez le résultat (cumulable).
 - **Miss critique** : Si vous obtenez **1** sur un dé d’attaque, vous ratez automatiquement. Pour chaque **2 points** en dessous de **10** en **Agilité**, augmentez votre seuil de miss de **1.**
 
-## **Faire un jet d’attaque**
-
+### Faire un jet d’attaque
 
 1. 🗡️ **Calculer le bonus d’attaque**
    - **Modificateur de la caractéristique associée** : Mod. Force / Mod. Agilité / Mod. Esprit.
    - **+ Bonus d’arme** (+X).
    - **+ Bonus de perfection** de l’arme.
    - **+ Tous les bonus externes**.
-
 2. 🎲 **Lancer le dé de base**
    - Lance **1 dé de l’arme** (d4, d6, d8, d10, d12).
    - Si le résultat est **inférieur ou égal au seuil d’échec** (généralement 1) → **Échec**.
    - Si le résultat est aussi la valeur maximale du dé, le **critique est prioritaire** et l’attaque réussit.
-
 3. 💥 **Gérer les critiques**
    - Si le dé atteint sa **valeur maximale** → **Critique**.
    - Relance le dé et **ajoute le résultat** à la somme des dés.
    - Si le nouveau dé atteint également sa valeur maximale, **répète**.
    - Un 1 obtenu sur une relance critique n’annule jamais l’attaque : il ajoute simplement 1 aux dégâts.
-
 4. 🧮 **Calculer les dégâts**
    - Additionne **tous les résultats des dés**.
    - Ajoute **une fois le bonus d’attaque** calculé à l’étape 1.
@@ -301,24 +250,21 @@ Les catalyseurs magiques permettent de canaliser l'Esprit pour amplifier les cap
 
 `Dégâts = Somme des dés + Bonus d'attaque × (1 + Nombre de critiques si Agile)`
 
-
-### 🎲 **Avantages et désavantages**
+### 🎲 Avantages et désavantages
 
 - **Avantage** : +2 dés par avantage (1 = 3 dés, 2 = 5 dés...). Conserver le **meilleur**.
 - **Désavantage** : +2 dés par désavantage (1 = 3 dés, 2 = 5 dés...). Conserver le **plus petit**.
 - **Annulation** : Les avantages et désavantages s'annulent un à un.
 
-### 💥 **Critiques avec avantage**
+### 💥 Critiques avec avantage
 
 - À chaque critique, relancer avec **un avantage de moins**.
 - Ajouter le résultat conservé aux dégâts.
 - À 0 avantage, continuer les critiques avec **1 dé**.
 
-**Exemple :**
-3 avantages → Crit → 2 avantages → Crit → 1 avantage → Crit → 0 avantage → Crit → 0 avantage...
+**Exemple :** 3 avantages → Crit → 2 avantages → Crit → 1 avantage → Crit → 0 avantage → Crit → 0 avantage...
 
-
-### ⚔️ **Engagement**
+### ⚔️ Engagement
 
 Lors d'une attaque avec une **arme de corps à corps**, vous pouvez choisir d'**engager votre attaque**.
 
@@ -329,18 +275,42 @@ Lors d'une attaque avec une **arme de corps à corps**, vous pouvez choisir d'**
 
 **Narrativement**, l'engagement peut représenter une attaque plus puissante, une frappe ciblée ou une manœuvre particulièrement risquée.
 
+## Tokens de combat
 
-# **Armes**
+Rappel des règles de [[fragmented/systeme-de-base|Système de base]], pour consultation pendant le combat.
+
+- **Réserve par caractéristique :** `max(0, 1 + Mod. caractéristique)`, puis bonus raciaux éventuels. Les tokens se réinitialisent après un repos court ou long, pas au début du round.
+- **Force :** après une attaque de base, ou après une capacité utilisant les dégâts de base, permet de réaliser **une deuxième attaque complète** (double frappe).
+- **Agilité :** sur une attaque de base, permet de **courber** l’attaque pour toucher jusqu’à **3 cibles différentes** avec les mêmes dégâts (possible pendant un déplacement non interrompu).
+- **Esprit :** sur une attaque de base magique ou élémentaire, appliquez une **Réverbération** : au début de votre prochain tour, calculez **2 × les dégâts bruts de l’attaque avant toute réduction**, puis appliquez normalement les réductions aux dégâts de la Réverbération.
+- **Social :** sans effectuer vous-même d’attaque, faites effectuer une **attaque de base** à un allié situé à **20 m ou moins**. Vous pouvez modifier cette attaque avec un autre de vos tokens de combat. L’allié peut aussi utiliser ses propres tokens.
+
+Utiliser un token de combat est **gratuit** : cela ne coûte ni action, ni action bonus, ni réaction. Vous pouvez décider de l’utiliser **après le jet**, mais son effet doit impliquer une **attaque de base**. Vous pouvez dépenser au maximum **1 token de combat de chaque caractéristique par round**. Une même attaque ne peut recevoir qu’**1 token de combat de chaque caractéristique**, quel que soit le personnage qui le dépense.
+
+### Combinaison des tokens de combat
+
+Les tokens se combinent **multiplicativement**, leurs effets s’appliquant les uns aux autres :
+
+- **Force + Agilité** → Deux attaques, chacune pouvant toucher jusqu’à 3 cibles (×6).
+- **Force + Esprit** → Deux attaques, chacune réverbérée (×6).
+- **Force + Social** → Un allié effectue deux attaques.
+- **Agilité + Esprit** → Trois cibles, chacune subissant une réverbération (×9).
+- **Agilité + Social** → Un allié attaque jusqu’à 3 cibles.
+- **Esprit + Social** → L’attaque de l’allié est réverbérée (×3).
+
+En résumé : **Force** multiplie les attaques (×2), **Agilité** multiplie les cibles (jusqu’à ×3), **Esprit** multiplie les dégâts (×3 avec la réverbération) et **Social** transfère l’attaque à un allié, qui bénéficie des effets des autres tokens.
+
+## Armes
 
 Le tableau ci-dessous regroupe les catégories d'armes basiques, avec leurs types et dégâts moyens. Les armes que vous trouverez en jeu pourront être dotées d'enchantements ou d'effets spéciaux, mais elles suivront toujours ce squelette de base pour rester cohérentes avec le système.
 
-### ⚔️ Famille des Épées droites — **Garde**
+### ⚔️ Famille des Épées droites — Garde
 
 **Propriété de famille :**
 
 - Toutes les épées droites infligent **tranchant ou perçant** (au choix à chaque attaque).
 - Les épées droites utilisent la formule standard de Parade avec le **Mod. Agilité**.
-- Si tu parades une attaque de mêlée, tu as **avantage à ta prochaine attaque** contre cet assaillant.
+- Si ta Parade réduit au moins une partie des dégâts d’une attaque de mêlée, tu as **avantage à ta prochaine attaque** contre cet assaillant. Une parade parfaite accorde aussi cet avantage ; il se cumule avec le bénéfice de parade parfaite du bouclier si les conditions de celui-ci sont remplies.
 
 **Armes :**
 
@@ -349,14 +319,12 @@ Le tableau ci-dessous regroupe les catégories d'armes basiques, avec leurs type
 - **Épée longue** — 1d8, tranchant/perçant — Polyvalente (1d10)
 - **Espadon (grande épée)** — 1d12, tranchant/perçant — Deux mains
 
----
-
-### 🗡 Famille des Épées courbes — **Fluide**
+### 🗡 Famille des Épées courbes — Fluide
 
 **Propriété de famille :**
 
 - Toutes les épées courbes infligent **tranchant**.
-- **Danse offensive** : Si tu attaques avec **désavantage** tu as **avantage** a ta prochaine attaque, tu peux choisir d'attaquer avec **désavantage**. 
+- **Danse offensive** : Si tu attaques avec **désavantage** tu as **avantage** a ta prochaine attaque, tu peux choisir d'attaquer avec **désavantage**.
 - **Danse ininterrompue** : quand tu attaques une créature, elle a **désavantage** à ses attaques d’opportunité contre toi jusqu’à la fin du round.
 
 **Armes :**
@@ -366,14 +334,12 @@ Le tableau ci-dessous regroupe les catégories d'armes basiques, avec leurs type
 - **Katana (sabre long)** — 1d10, tranchant — Agile, Deux mains
 - **Grand sabre** — 1d12, tranchant — Deux mains
 
----
-
-### 🪓 Famille des Haches — **Brutalité**
+### 🪓 Famille des Haches — Brutalité
 
 **Propriété de famille :**
 
 - Toutes les armes de la famille des haches infligent **tranchant**.
-- **Brutalité** : sur un critique, lance exactement **2 dés de dégâts**, sans avantage, et garde leur somme. Cette relance produit un nouveau critique uniquement si les deux dés forment une **paire**.
+- **Brutalité** : sur un critique, lance exactement **2 dés de dégâts**, sans avantage, et garde leur somme. Cette relance produit un nouveau critique uniquement si les deux dés forment une **paire** : relance alors deux dés sans avantage et ajoute leur somme aux dégâts. Répète tant qu’une paire est obtenue.
 
 **Armes :**
 
@@ -381,9 +347,7 @@ Le tableau ci-dessous regroupe les catégories d'armes basiques, avec leurs type
 - **Hache d’armes** — 1d8, tranchant — Polyvalente (1d10)
 - **Grande hache** — 1d12, tranchant — Deux mains
 
----
-
-### 🔨 Famille des Massues — **Impact**
+### 🔨 Famille des Massues — Impact
 
 **Propriété de famille :**
 
@@ -398,9 +362,7 @@ Le tableau ci-dessous regroupe les catégories d'armes basiques, avec leurs type
 - **Marteau de guerre** — 1d8, contondant — Polyvalente (1d10)
 - **Grand marteau** — 1d12, contondant — Deux mains
 
----
-
-### 🪶 Famille des Armes à Allonge — **Allonge**
+### 🪶 Famille des Armes à Allonge — Allonge
 
 **Propriété de famille :**
 
@@ -421,8 +383,6 @@ Le tableau ci-dessous regroupe les catégories d'armes basiques, avec leurs type
 - **Arc court** — 1d6, perçants — Distance**,**Surplomb
 - **Arc long** — 1d8, perçants — Distance**,** Surplomb
 
----
-
 ### 🔫 Famille des Arbalètes
 
 **Propriété commune : Perforante (ignore armure passive, divise Parade).**
@@ -433,9 +393,7 @@ Le tableau ci-dessous regroupe les catégories d'armes basiques, avec leurs type
 - **Arbalète** (classique/légère) — 1d8, perçants — Distance**,**Perforante
 - **Arbalète lourde** — 1d12, perçants — Distance**,**Perforante, **Recharge** (bonus action pour recharger, action pour tirer)
 
----
-
-### 🔮 Famille des Catalyseurs → **Catalyseur**
+### 🔮 Famille des Catalyseurs → Catalyseur
 
 **Propriété de famille :**
 
@@ -445,45 +403,38 @@ Le tableau ci-dessous regroupe les catégories d'armes basiques, avec leurs type
 
 **Armes :**
 
-- **Focus** — 1d4 — Catalyseur, Secondaire**,**  Brute, Tir léger
+- **Focus** — 1d4 — Catalyseur, Secondaire**,** Brute, Tir léger
 - **Bâton** — 1d8 — Catalyseur, Deux-mains
 
----
-
-### 🛡️ Famille des Boucliers → **Rempart**
+### 🛡️ Famille des Boucliers → Rempart
 
 **Propriété de famille :**
 
-Offre une **armure passive** indépendante de la Force et une **valeur de Parade personnalisée**. Les **bonus de l’arme** s’appliquent également au bouclier. Utiliser **Bastion** avec un bouclier fait automatiquement **parer**. En cas de **parade parfaite** au corps à corps, l’adversaire est **renversé**. Vous utilisez la **force** au lieu de **l’agilité** pour parer et il vous faut au moins **10 en Force** pour l’équiper.
+Offre une **armure passive** indépendante de la Force et une **valeur de Parade personnalisée**. Les **bonus de l’arme** s’appliquent également au bouclier. Utiliser **Bastion** avec un bouclier fait automatiquement **parer**. Une **parade parfaite** consiste à parer tous les dégâts. Avec un bouclier, une parade parfaite au corps à corps permet de faire un jet d’**Athlétisme contre la Force de l’adversaire** ; en cas de réussite, celui-ci est mis **À terre**. Vous utilisez la **force** au lieu de **l’agilité** pour parer et il vous faut au moins **10 en Force** pour l’équiper.
 
 **Armes :**
 
 - **Bouclier** — 1d4 contondants — Brute, Secondaire, Rempart
 
----
+### 🗡️ Armes uniques
 
-## 🗡️ Armes uniques
-
-### 🪓⚔️ Faux — **Fluide + Allonge**
+#### 🪓⚔️ Faux — Fluide + Allonge
 
 **Profil** : 1d10, tranchant — Deux mains, Allonge (3m), Amplitude
 
 - Hérite des propriétés **Fluide** (épées courbes) et **Allonge**.
 - → Arme hybride qui combine **mobilité** et **contrôle de zone**.
 
-
-### ⚔️ Rapière — **Contre d’Estoc**
+#### ⚔️ Rapière — Contre d’Estoc
 
 **Profil** : 1d8, perçant — Agile
 
 - **Contre d’Estoc** : quand une créature t’attaque en mêlée, tu peux choisir de tenter un contre.
     - Si tu le fais, l’attaque de cette créature est faite avec **avantage**.
     - Tu appliques ensuite ta **Parade** normalement.
-    - Après avoir paré, tu peux immédiatement faire **une attaque gratuite** contre cette créature.
+    - Après avoir paré, tu peux immédiatement faire **une attaque gratuite** contre cette créature, même si la Parade n’annule qu’une partie des dégâts et que tu subis les dégâts restants.
 
----
-
-### 🌀 Fouet — **Entrave souple**
+#### 🌀 Fouet — Entrave souple
 
 **Profil** : 1d6, tranchant — Agile, Allonge (3m)
 
@@ -491,66 +442,58 @@ Offre une **armure passive** indépendante de la Force et une **valeur de Parade
 - Si elles réussissent, tu fais un **test d’Escamotage** opposé à l’**Athlétisme** de la cible.
 - En cas de réussite, la cible est mise **à terre (prone)**.
 
----
-
-### ✊ Fist Weapons — Hybride
+#### ✊ Fist Weapons — Hybride
 
 Profil : 1d4, contondant
 
 - **Impact** : Bénéficient de la propriété Impact.
-- **Hybride** : Ajoutez vos modificateurs de Force + Agilité aux dégâts initiaux. Lors d’un critique, le Mod. Force reste dans le bonus initial mais est retiré du bonus d’attaque répété.
+- **Hybride** : Ajoutez vos modificateurs de Force + Agilité au bonus d’attaque initial, avec les autres bonus d’attaque. Par exception à la règle générale, à chaque critique, relancez le dé et réappliquez le bonus d’attaque en excluant uniquement le Mod. Force. Ces armes ne sont **pas Agile** : un **Engagement** les rend donc **Exposé**.
 
----
-
-### 🔗 Fléau — **Déstabilisation**
+#### 🔗 Fléau — Déstabilisation
 
 **Profil** : 1d8, perçant — Spéciale
 
 - **Déstabilisation** : si tu **critiques** avec un fléau, la cible a **désavantage à sa prochaine attaque**.
 
----
+### 📜 Tableau des Armes
 
-## 📜 Tableau des Armes
+| Arme | Dégâts | Propriétés |
+| --- | --- | --- |
+| Dague | 1d4, tranchant/perçant | Agile, Légère, Lancer (10m), **Garde** |
+| Épée courte | 1d6, tranchant/perçant | Agile, **Garde**, Légère |
+| Épée longue | 1d8, tranchant/perçant | Polyvalente (1d10), **Garde** |
+| Espadon | 1d12, tranchant/perçant | Deux mains, **Garde** |
+| Serpe | 1d4, tranchant | Agile, Légère, **Fluide** |
+| Épée courbe (cimeterre) | 1d6, tranchant | Agile, Légère, **Fluide** |
+| Katana | 1d10, tranchant | Agile, Deux mains, **Fluide** |
+| Grand sabre | 1d12, tranchant | Deux mains, **Fluide** |
+| Hachette | 1d6, tranchant | Légère, Lancer (10m), **Brutalité** |
+| Hache d’armes | 1d8, tranchant | Polyvalente (1d10), **Brutalité** |
+| Grande hache | 1d12, tranchant | Deux mains, **Brutalité** |
+| Gourdin | 1d4, contondant | Improvisée, Brute, **Impact** |
+| Marteau de guerre | 1d8, contondant | Polyvalente (1d10), **Impact** |
+| Grand marteau | 1d12, contondant | Deux mains, **Impact** |
+| Bâton long | 1d6, contondant | **Allonge**, Amplitude |
+| Lance | 1d8, perçant | Polyvalente (1d10), Amplitude, **Allonge** |
+| Hallebarde | 1d12, tranchant | Deux mains, **Allonge** |
+| Faux | 1d10, tranchant | Deux mains, Amplitude, **Fluide**, **Allonge** |
+| Rapière | 1d8, perçant | Agile, **Contre d’Estoc** |
+| Fouet | 1d6, tranchant | Agile, **Allonge**, **Entrave** |
+| Fist weapons | 1d4, contondant | Impact, Hybride |
+| Fléau | 1d8, perçant | **Déstabilisation** |
+| Arc court | 1d6, perçant | Distance, Deux mains, **Surplomb** |
+| Arc long | 1d8, perçant | Distance, Deux mains, **Surplomb** |
+| Arbalète de poing | 1d4, perçant | Distance, Brute ,Tir léger**,** Secondaire**, Perforant** |
+| Arbalète | 1d8, perçant | Distance, Deux mains, **Perforant** |
+| Arbalète lourde | 1d12, perçant | Distance, Deux mains, Recharge, **Perforant** |
+| Focus | 1d4, magique/élémentaire | Distance, Brute, Tir léger, Secondaire**, Catalyseur** |
+| Baton | 1d8, magique/élémentaire | Distance, Deux mains, **Catalyseur** |
+| Bouclier | 1d4, contendant | Brute, Secondaire, **Rempart** |
+| Gantelet de combat | 1d6, contondant | Léger, **Impact** |
 
-| Arme                    | Dégâts                   | Propriétés                                                |
-| ----------------------- | ------------------------ | --------------------------------------------------------- |
-| Dague                   | 1d4, tranchant/perçant   | Agile, Légère, Lancer (10m), **Garde**                  |
-| Épée courte             | 1d6, tranchant/perçant   | Agile, **Garde**, Légère                                |
-| Épée longue             | 1d8, tranchant/perçant   | Polyvalente (1d10), **Garde**                             |
-| Espadon                 | 1d12, tranchant/perçant  | Deux mains, **Garde**                                     |
-| Serpe                   | 1d4, tranchant           | Agile, Légère, **Fluide**                                 |
-| Épée courbe (cimeterre) | 1d6, tranchant           | Agile, Légère, **Fluide**                               |
-| Katana                  | 1d10, tranchant          | Agile, Deux mains, **Fluide**                           |
-| Grand sabre             | 1d12, tranchant          | Deux mains, **Fluide**                                    |
-| Hachette                | 1d6, tranchant           | Légère, Lancer (10m), **Brutalité**                       |
-| Hache d’armes           | 1d8, tranchant           | Polyvalente (1d10), **Brutalité**                         |
-| Grande hache            | 1d12, tranchant          | Deux mains, **Brutalité**                                 |
-| Gourdin                 | 1d4, contondant          | Improvisée, Brute, **Impact**                             |
-| Marteau de guerre       | 1d8, contondant          | Polyvalente (1d10), **Impact**                            |
-| Grand marteau           | 1d12, contondant         | Deux mains, **Impact**                                    |
-| Bâton long              | 1d6, contondant          | **Allonge**, Amplitude                                    |
-| Lance                   | 1d8, perçant             | Polyvalente (1d10), Amplitude,  **Allonge**               |
-| Hallebarde              | 1d12, tranchant          | Deux mains, **Allonge**                                   |
-| Faux                    | 1d10, tranchant          | Deux mains, Amplitude, **Fluide**, **Allonge**            |
-| Rapière                 | 1d8, perçant             | Agile, **Contre d’Estoc**                               |
-| Fouet                   | 1d6, tranchant           | Agile, **Allonge**, **Entrave**                        |
-| Fist weapons            | 1d4, contondant          | Impact, Hybride                                           |
-| Fléau                   | 1d8, perçant             | **Déstabilisation**                                       |
-| Arc court               | 1d6, perçant             | Distance, Deux mains, **Surplomb**                        |
-| Arc long                | 1d8, perçant             | Distance, Deux mains, **Surplomb**                        |
-| Arbalète de poing       | 1d4, perçant             | Distance, Brute ,Tir léger**,** Secondaire**, Perforant** |
-| Arbalète                | 1d8, perçant             | Distance, Deux mains, **Perforant**                       |
-| Arbalète lourde         | 1d12, perçant            | Distance, Deux mains, Recharge, **Perforant**             |
-| Focus                   | 1d4, magique/élémentaire | Distance, Brute, Tir léger, Secondaire**, Catalyseur**    |
-| Baton                   | 1d8, magique/élémentaire | Distance, Deux mains, **Catalyseur**                      |
-| Bouclier                | 1d4, contendant          | Brute, Secondaire, **Rempart**                            |
-| Gantelet de combat      | 1d6, contondant          | Léger, **Impact**                                         |
+### 📜 Liste des Propriétés
 
-## 📜 Liste des Propriétés
-
----
-
-### ⚔️ Propriétés basiques
+#### ⚔️ Propriétés basiques
 
 - **Agile** : utilise au choix le Mod. Force ou le Mod. Agilité pour les jets d’attaque et de dégâts. À chaque critique, réapplique tout le bonus d’attaque.
 - **Légère** : peut être utilisée pour une attaque à deux armes.
@@ -565,29 +508,25 @@ Profil : 1d4, contondant
 - **Secondaire**: Peut s’équiper sur la main secondaire en plus d’une arme non légère.
 - **Amplitude** : Lorsque vous attaquez une créature à votre portée maximale (3 m), votre arme bénéficie de la propriété Agile.
 
----
+#### 🏷️ Propriétés de familles
 
-### 🏷️ Propriétés de familles
-
-- **Garde (Épées droites)** : Les épées infligent tranchant ou perçant et une Parade réussie donne avantage à la prochaine attaque contre l’assaillant.
-- **Brutalité (Haches)** : Les haches infligent du tranchant. Sur un critique, lancez exactement deux dés sans avantage et gardez leur somme ; seul une paire produit un nouveau critique.
+- **Garde (Épées droites)** : Les épées infligent tranchant ou perçant. Une Parade réduisant au moins une partie des dégâts d’une attaque de mêlée donne avantage à la prochaine attaque contre l’assaillant. Une parade parfaite accorde aussi cet avantage, cumulable avec le bénéfice de parade parfaite du bouclier si ses conditions sont remplies.
+- **Brutalité (Haches)** : Les haches infligent du tranchant. Sur un critique, lancez exactement deux dés sans avantage et gardez leur somme ; seule une paire produit un nouveau critique. À chaque paire, relancez deux dés sans avantage et ajoutez leur somme aux dégâts ; répétez tant qu’une paire est obtenue.
 - **Impact (Masses/Marteaux)** : Les armes à impact infligent du contondant, ignorent l’armure passive et réduisent la Parade de moitié. Sur un critique, l’attaquant fait un jet d’Athlétisme contre la Force de la cible ; en cas de réussite, elle est repoussée de 5 m.
 - **Fluide (Épées courbes)** : Les épées courbes infligent du tranchant ; si elles attaquent avec désavantage, elles ont avantage à la prochaine attaque dans le round, et toute cible attaquée a désavantage à ses attaques d’opportunité contre vous jusqu’à la fin du round.
 - **Allonge (Bâtons longs, Lances, Hallebardes)** : Ces armes frappent à 3 m, peuvent faire une attaque d’opportunité quand une créature sort de leur zone de 3 m ou quand elle entre dans leur zone de 1,5 m.
 - **Surplomb (Arcs)**: si le tireur est situé à ≥ 5 m au-dessus de sa cible, il obtient avantage au jet d’attaque.
 - **Perforant (Arbalettes)** : l’attaque ignore l’armure passive et divise par deux la valeur de Parade de la cible.
-- **Rempart (Boucliers)**: Confère une armure passive indépendante de la Force et une parade propre ; les bonus d’arme s’appliquent, **Bastion** fait parer, et une **parade parfaite** en mêlée renverse l’adversaire.
+- **Rempart (Boucliers)**: Confère une armure passive indépendante de la Force et une parade propre ; les bonus d’arme s’appliquent, **Bastion** fait parer, et une **parade parfaite** (tous les dégâts parés) en mêlée permet un jet d’**Athlétisme contre la Force de l’adversaire** pour le mettre **À terre** en cas de réussite.
 
----
+#### 🌀 Propriétés uniques
 
-### 🌀 Propriétés uniques
-
-- **Contre d’Estoc (Rapière)** : Quand vous êtes attaqué en mêlée vous pouvez donner avantage à l’ennemi, puis parer normalement et enfin effectuer immédiatement une attaque gratuite de rapière contre lui.
+- **Contre d’Estoc (Rapière)** : Quand vous êtes attaqué en mêlée vous pouvez donner avantage à l’ennemi, puis parer normalement et enfin effectuer immédiatement une attaque gratuite de rapière contre lui, même si la Parade est partielle et que vous subissez les dégâts restants.
 - **Entrave (Fouet)** : Les attaques d’opportunité avec un fouet se font avec désavantage mais si elles touchent vous faites un test d’Escamotage contre l’Athlétisme de la cible pour la mettre à terre.
 - **Déstabilisation (Fléau)** : Quand vous infligez un critique avec un fléau, la cible a désavantage à sa prochaine attaque.
-- **Hybride** : Ajoutez les Mod. Force et Agilité au bonus initial. Lors d’un critique, retirez le Mod. Force uniquement du bonus d’attaque répété.
+- **Hybride** : Ajoutez les Mod. Force et Agilité au bonus d’attaque initial, avec les autres bonus d’attaque. Par exception à la règle générale, chaque critique relance le dé et réapplique ce bonus en excluant uniquement le Mod. Force. Cette propriété ne confère pas **Agile** : un **Engagement** vous rend donc **Exposé**.
 
-# **Armures**
+## Armures
 
 L’armure offre une réduction passive des dégâts et une contribution à la parade. Elle possède deux valeurs distinctes :
 
@@ -607,7 +546,7 @@ Exemple : une attaque inflige 10 dégâts et la Parade en retire 6. Il reste 4 d
 
 - **Minimum de 10 en Force requis pour porter un plastron avec armure.**
 
-### **Équipements d’armure**
+### Équipements d’armure
 
 Une armure complète se compose de quatre pièces principales.
 
@@ -615,18 +554,16 @@ Chacune offre de la **Déflexion**, et certaines confèrent un attribut supplém
 
 | Équipement | Valeurs principales | Attribut secondaire | Description courte |
 | --- | --- | --- | --- |
-| **Plastron** 🦾 |  Déflexion | **Armure**  | Pièce centrale de protection. Seule source d’**Armure passive**, elle absorbe directement une partie des dégâts. |
+| **Plastron** 🦾 | Déflexion | **Armure** | Pièce centrale de protection. Seule source d’**Armure passive**, elle absorbe directement une partie des dégâts. |
 | **Casque** 🪖 | Déflexion | **Volonté** 🧠 | Protège la tête et renforce la **concentration**. Offre +X à tous les jets de de sauvegarde de résilience contre la perte de concentration. |
 | **Bottes** 🥾 | Déflexion | **Vitesse** 🌀 | Améliorent la mobilité. Offrent +X à la **vitesse de déplacement**. |
 | **Gantelets** ✊ | Déflexion | **Initiative** ⚡ | Favorisent la réactivité. Offrent +X à l’**initiative** du porteu |
 
----
-
-# **Inconscience et Fatigue**
+## Inconscience et Fatigue
 
 Être inconscient ne signifie pas la mort, mais vous êtes vulnérable. Subir des dégâts dans cet état vous fait accumuler des niveaux de fatigue, pouvant mener à la mort si personne n’intervient.
 
-### **Règles :**
+### Règles
 
 1. **Tomber inconscient :**
     - Les PV ne peuvent jamais descendre sous **0**. En tombant à 0 PV, gagnez **1 niveau de Fatigue**.
@@ -634,14 +571,14 @@ Chacune offre de la **Déflexion**, et certaines confèrent un attribut supplém
     - À **3 niveaux de Fatigue**, le personnage meurt immédiatement.
     - Vous perdez des niveaux de fatigue en vous reposant
 2. **Stabilisation par un allié :**
-    - Un allié utilise son **Action Bonus**. Vous revenez à **1 PV**, conservez votre Fatigue et disposez de votre Action et de votre Action Bonus.
+    - Un allié utilise son **Action Bonus**. Vous revenez à **1 PV**, conservez votre Fatigue et uniquement les ressources que vous n’aviez pas déjà dépensées ce round. La Stabilisation ne renouvelle aucune ressource.
 3. **Soin :**
     - Recevoir un soin vous rend conscient et vous rend le nombre de PV indiqué par le soin.
 4. **Relevage autonome :**
-    - Utilisez votre **Action** pour faire un jet de Résilience contre `5 + 5 × votre niveau de Fatigue`.
+    - **Exception explicite à Downed et à l’interdiction d’agir :** à 0 PV, vous pouvez dépenser votre **Action disponible** uniquement pour tenter un relevage autonome, avec un jet de Résilience contre `5 + 5 × votre niveau de Fatigue`. Cette tentative n’accorde aucune Action supplémentaire : si votre Action est déjà dépensée, vous devez attendre sa prochaine disponibilité. L’Action est consommée même en cas d’échec.
     - En cas de réussite, vous revenez à **1 PV**. Ce relevage n’ajoute aucun niveau de Fatigue.
 
-### **Effets de Fatigue**
+### Effets de Fatigue
 
 Chaque niveau de Fatigue réduit de 1 la valeur de toutes vos cartes, y compris les cartes cristallisées. Une carte vaut toujours au minimum **1**, car toute carte peut être utilisée comme un 1 de n’importe quelle enseigne.
 
@@ -652,9 +589,7 @@ Chaque niveau de Fatigue réduit de 1 la valeur de toutes vos cartes, y compris 
 | **2** | Chaque carte que vous utilisez vaut **2 de moins**. |
 | **3** | Mort. |
 
----
-
-# ⚔️ **Types de Dégâts**
+## ⚔️ Types de Dégâts
 
 Les **armes**, **artefacts** et **capacités** infligent des **dégâts** de nature différente selon leur origine ou leur énergie.
 
@@ -662,14 +597,16 @@ Chaque type de dégât décrit la **façon dont l’attaque interagit avec la ma
 
 Certaines résistances, vulnérabilités ou synergies élémentaires dépendent directement de cette typologie.
 
-## **Résistances et vulnérabilités**
+### Résistances et vulnérabilités
 
 - **Résistance mineure** : les attaques utilisant ce type de dégâts subissent un **désavantage**.
 - **Résistance majeure** : les dégâts de ce type sont **divisés par 2**.
+- **Résistance sans niveau précisé** : une résistance est **majeure** par défaut ; une résistance mineure doit être explicitement indiquée comme telle.
 - **Vulnérabilité mineure** : les attaques utilisant ce type de dégâts gagnent un **avantage**.
 - **Vulnérabilité majeure** : les dégâts de ce type sont **multipliés par 2**.
 - **Immunité** : les dégâts de ce type sont réduits à **0**.
-- Ces effets s’appliquent **avant la Parade et l’Armure**. Une résistance et une vulnérabilité de même niveau s’annulent.
+- **Cumul pour un même type de dégâts** : deux résistances mineures se combinent en une résistance majeure. Plusieurs résistances majeures ne se cumulent pas : les dégâts ne sont divisés par 2 qu’une seule fois. Une résistance majeure et une résistance mineure au même type de dégâts coexistent : l’attaque subit un désavantage, puis les dégâts sont divisés par 2. La même logique s’applique aux vulnérabilités : deux mineures deviennent une majeure, plusieurs majeures ne multiplient les dégâts par 2 qu’une seule fois, et une majeure accompagnée d’une mineure donne avantage à l’attaque, puis double les dégâts.
+- Ces effets s’appliquent **avant la Parade et l’Armure**. Une résistance et une vulnérabilité de même niveau s’annulent. Si elles sont de niveaux différents, elles s’appliquent indépendamment : une résistance majeure et une vulnérabilité mineure donnent avantage à l’attaque, puis divisent les dégâts par 2 ; une résistance mineure et une vulnérabilité majeure donnent désavantage à l’attaque, puis multiplient les dégâts par 2.
 
 Les dégâts sont regroupés en trois grandes familles :
 
@@ -677,9 +614,7 @@ Les dégâts sont regroupés en trois grandes familles :
 2. **Magiques** — issus de la manipulation de l’énergie pure ou spirituelle.
 3. **Élémentaires** — expression directe des forces naturelles et alchimiques.
 
----
-
-### 🪓 **1. Dégâts physiques**
+### 🪓 1. Dégâts physiques
 
 Les dégâts physiques proviennent d’une **attaque tangible**, exercée par un projectile, une arme ou un impact.
 
@@ -693,9 +628,7 @@ Ils sont le résultat direct de la **vitesse, de la masse** ou de la **précisio
 
 ➡️ Ces trois formes couvrent tous les dommages liés à la **matière solide ou cinétique**.
 
----
-
-### 🔮 **2. Dégâts magiques**
+### 🔮 2. Dégâts magiques
 
 Les dégâts magiques résultent d’une **manipulation directe des flux arcaniques, spirituels ou mentaux**.
 
@@ -703,17 +636,15 @@ Ils ignorent les lois physiques et traduisent la manière dont la magie interagi
 
 | Type | **Description** | **Effet** |
 | --- | --- | --- |
-| **Psychique** | Dégâts mentaux et émotionnels affectant directement la conscience, la volonté et les perceptions. | Ignore tous les types de défenses. |
-| **Nécrotique** | Dégâts vitaux issus de la corruption, de l’entropie et de la décomposition de l’énergie interne. | Annule les résistances de la cible pendant 1 round. |
+| **Psychique** | Dégâts mentaux et émotionnels affectant directement la conscience, la volonté et les perceptions. | Ignore uniquement la Parade et l’Armure. Les immunités, résistances et vulnérabilités s’appliquent normalement. |
+| **Nécrotique** | Dégâts vitaux issus de la corruption, de l’entropie et de la décomposition de l’énergie interne. | Annule les résistances mineures et majeures de la cible pendant 1 round, à l’exception de ses résistances au nécrotique. Les immunités restent intactes. Une cible possédant une résistance mineure ou majeure au nécrotique ne subit aucune annulation de ses résistances. |
 | **Radiant** | Dégâts lumineux et énergétiques amplifiant la résonance magique des éléments environnants. | Donne avantage aux jets de Nature-Survie et aux jets de dégâts des combinaisons élémentaires. |
 | **Force** | Dégâts de pression magique pure, condensation d’énergie cinétique stabilisée. | Propage sans sauvegarde les états élémentaires dans un rayon de 5 m. |
 | **Arcanique** | Dégâts de magie brute, non affiliée à un élément ou une école, représentant la force pure du mana. | Il n’existe pas de résistance à ce type de dégâts. |
 
----
+### 🌋 3. Dégâts élémentaires
 
-### 🌋 **3. Dégâts élémentaires**
-
-Les dégâts élémentaires expriment la **violence ou la réaction des forces naturelles** : chaleur, froid, poison, électricité, etc.
+Les dégâts élémentaires expriment la **violence ou la réaction des forces naturelles**. Leurs types sont **Feu, Glace, Eau, Foudre et Toxique**. Les effets d’acide et de poison relèvent tous du type **Toxique** ; les effets de froid relèvent du type **Glace**. Ce ne sont pas des types de dégâts distincts.
 
 Ils sont issus des magies alchimiques, des sorts naturels, ou des environnements instables.
 
@@ -727,9 +658,9 @@ Ils sont issus des magies alchimiques, des sorts naturels, ou des environnements
 
 ➡️ Les éléments interagissent souvent entre eux : l’eau conduit la foudre, le feu s’éteint dans l’eau, le poison s’enflamme, etc.
 
-## 🌐 **Interactions Élémentaires**
+### 🌐 Interactions Élémentaires
 
-Tout dégât élémentaire applique automatiquement l’état correspondant (**Burning**, **Chilled**, **Soaked**, **Shocked** ou **Poisoned**) jusqu’à la fin du round. Réappliquer le même élément renouvelle seulement cette durée.
+Tout dégât élémentaire applique automatiquement l’état correspondant (**Burning**, **Chilled**, **Soaked**, **Shocked** ou **Poisoned**) jusqu’à la fin du round. Réappliquer le même élément renouvelle seulement cette durée. Ces états servent aux interactions et combinaisons élémentaires ; ils n’infligent aucun dégât périodique, ralentissement ou autre effet supplémentaire qui ne soit explicitement indiqué par une règle ou une capacité.
 
 Lorsqu’un élément différent est appliqué à une cible déjà affectée, les dégâts du nouvel élément sont amplifiés ou réduits selon la compatibilité entre les deux forces. Après la résolution, le nouvel état remplace le précédent si aucune combinaison n’est activée.
 
@@ -737,19 +668,15 @@ Ce tableau représente les **synergies et contre-réactions élémentaires fonda
 
 Il s’applique chaque fois qu’un effet élémentaire est infligé **à une cible déjà sous l’influence d’un autre élément**.
 
----
+#### ⚙️ Règle d’application
 
-### ⚙️ **Règle d’application**
-
-- Ces interactions n’affectent que les **dégâts** du **deuxième élément appliqué**.
+- Ces interactions n’affectent que les **dégâts** du **deuxième élément appliqué**. L’avantage ou le désavantage du tableau reste applicable aux dégâts de l’attaque initiale même lorsqu’une combinaison élémentaire est déclenchée par Altération.
 - **Avantage :** le lanceur jette ses dés de dégâts avec avantage.
 - **Désavantage :** le lanceur jette ses dés de dégâts avec désavantage.
 - **Neutre :** aucun effet particulier.
 - Les effets sont **symétriques** : la relation est identique dans les deux sens.
 
----
-
-### 📊 **Tableau des interactions et justifications**
+#### 📊 Tableau des interactions et justifications
 
 | **État subi ↓ / Élément entrant →** | 🔥 **Feu** | ❄ **Glace** | 💧 **Eau** | ⚡ **Foudre** | ☠ **Toxique** |
 | --- | --- | --- | --- | --- | --- |
@@ -759,7 +686,7 @@ Il s’applique chaque fois qu’un effet élémentaire est infligé **à une ci
 | **⚡ Foudre (Shocked)** | **Avantage**— l’air chauffé par le choc amplifie la combustion. | **Désavantage**— la glace disperse la charge. | **Avantage**— l’humidité conduit le courant. | **Neutre** | **Neutre** |
 | **☠ Toxique (Poisoned)** | **Avantage**— les gaz toxiques s’enflamment violemment. | **Neutre**. | **Désavantage**— l’eau purifie ou disperse les toxines. | **Neutre** | **Neutre** |
 
-# 🌩️ **Combinaisons Élémentaires**
+## 🌩️ Combinaisons Élémentaires
 
 Les **combinaisons élémentaires** représentent les réactions directes entre deux éléments opposés ou complémentaires.
 
@@ -767,41 +694,33 @@ Elles permettent d’**altérer t**emporairement les énergies présentes sur le
 
 Ces interactions sont **contrôlées par le joueur**, via la réaction **Altération**
 
----
+### ⚙️ Activation d’une combinaison
 
-## ⚙️ **Activation d’une combinaison**
-
-### 🔸 **Altération (Réaction)**
+#### 🔸 Altération (Réaction)
 
 Le lanceur utilise sa **Réaction** pour altérer son propre sort ou l’attaque élémentaire d’un allié. Il déclenche une réaction cohérente entre l’élément appliqué et celui qui affecte déjà la cible ou la zone.
 
-L’activation de la combinaison **consomme les deux états élémentaires concernés**.
+L’activation de la combinaison **consomme les deux états élémentaires concernés, même si le jet contextuel échoue**.
 
-### 🔹 Conditions
+#### 🔹 Conditions
 
-- Tu peux altérer ou altérer **tes propres capacités** ou celles de tes **alliés**,
-    
-    mais **jamais directement celles des ennemis.**
-    
-- Un **jet contextuel** est requis pour déterminer comment la combinaison élémentaire peut être utilisée dans la situation.
-    
+- Tu peux altérer ou altérer **tes propres capacités** ou celles de tes **alliés**, mais **jamais directement celles des ennemis.**
+- Un **jet contextuel** est requis pour déterminer comment la combinaison élémentaire peut être utilisée dans la situation. Il est effectué **avant la résolution des dégâts de l’attaque initiale**.
     - Jet réussi → effet harmonisé, combinaison stable.
     - Jet raté → effet réduit ou incontrôlé, au choix du MJ.
 
----
-
-### ⚖️ **Gardes-fous et limites**
+### ⚖️ Gardes-fous et limites
 
 | Catégorie | Limite / Règle | Détail |
 | --- | --- | --- |
 | **Contrôle** | ❌ Aucun hard CC | Pas d’étourdissement, paralysie, gel complet, etc. |
-| **Dégâts** | 🧭Mod Esprit d6 ou valeur brute | Les dégâts de la combinaison sont toujours égaux au **Mod Esprit d6** du lanceur ou à la **valeur brute** de la capacité. Ils s’ajoutent aux dégâts initiaux. |
+| **Dégâts** | 🧭 Valeur brute (Mod. Esprit d6) | Les dégâts de la combinaison sont égaux à la **valeur brute**, soit **Mod. Esprit d6** du lanceur. Ils s’ajoutent aux dégâts initiaux. |
 | **Propagation** | 🌐 Zone max 5 m | Rayon fixe de 5 mètres autour du point d’impact. |
 | **Transformation** | 🎲 Jet contextuel requis | Le MJ décide de la difficulté selon la cohérence et la narration. |
 | **Prolongation** | ⏳ 2 rounds | Si l’effet persiste, il inflige chaque round **50 % des dégâts initiaux** pendant **2 rounds**. |
 | **Perturbation** | 🌫 Modérée | Perturbe légèrement (fumée, vapeur, lumière) sans déséquilibrer le combat. |
 
-### 🔮 **Exemples de combinaisons élémentaires**
+### 🔮 Exemples de combinaisons élémentaires
 
 *(Chaque duo illustre un effet narratif possible, sans entrer dans les chiffres ou bonus.)*
 
@@ -818,15 +737,16 @@ L’activation de la combinaison **consomme les deux états élémentaires conce
 | **💧 Eau + ☠ Toxique** | Diffusion : propagation du poison dans le liquide, nuage coloré instable. |
 | **⚡ Foudre + ☠ Toxique** | Ionisation : les gaz se chargent électriquement, crépitement ou décharge neutralisante. |
 
-## **Invisibilité**
+## Invisibilité
 
 - L’Invisibilité n’a pas de durée fixe : elle persiste jusqu’à ce qu’une règle y mette fin.
+- Un ennemi qui vous repère vous détecte directement et peut vous attaquer normalement, sans désavantage lié à votre Invisibilité. Cette détection ne met pas fin à l’Invisibilité à l’égard des autres ennemis.
 - Si vous devenez Invisible hors du champ de vision de tous les ennemis, aucun jet de Perception n’est effectué au déclenchement.
 - Lorsque vous utilisez une capacité qui n’affecte aucun ennemi, chaque ennemi peut faire un jet de **Perception contre votre Discrétion**, avec désavantage parce que vous êtes Invisible. Un ennemi qui réussit vous repère.
 - Une capacité qui affecte un ennemi met automatiquement fin à votre Invisibilité.
 - Si vous vous déplacez à moins de **5 m** d’un ennemi, celui-ci peut faire un jet de **Perception contre votre Discrétion** avec désavantage. S’il réussit, il vous repère.
 
-# **Conditions négatives**
+## Conditions négatives
 
 Sauf si sa description indique une autre durée ou une procédure de sortie, une condition dure **1 round**, puis prend fin automatiquement.
 
@@ -834,19 +754,19 @@ Sauf si sa description indique une autre durée ou une procédure de sortie, une
 - En cas de conflit, une **interdiction prime sur une autorisation**.
 - Une réussite automatique et un échec automatique opposés **s’annulent** : le jet est effectué normalement.
 
-## 🩸 **Blocages Totaux**
+### 🩸 Blocages Totaux
 
 | **Nom** | **Description** |
 | --- | --- |
 | **Downed** | La créature est inconsciente à 0 PV : elle ne peut ni agir ni se déplacer et perd immédiatement toute concentration. Utilisez la procédure **Inconscience et Fatigue** pour la stabiliser, la soigner ou tenter un relevage autonome. |
 | **Paralysé** | Ne peut pas bouger ni effectuer d’action physique. Peut toutefois **harmoniser ou altérer un sort**. Rate automatiquement tous les jets d’**Acrobaties** et d’**Athlétisme**. Ne perd pas nécessairement la concentration. Les attaques contre lui ont **avantage**. |
-| **Pétrifié** | Le corps devient pierre : **immobile**, **inconscient**, avec **résistance à tous les types de dégâts sauf arcaniques et radiants**. **Perd immédiatement toute concentration.** |
+| **Pétrifié** | Le corps devient pierre : **immobile**, **inconscient**, avec **résistance majeure à tous les types de dégâts sauf arcaniques et radiants**. **Perd immédiatement toute concentration.** |
 | **Gelé** | Le corps est emprisonné dans la glace. **Ne peut pas agir ni se déplacer.** Les attaques physiques contre lui infligent un **critique automatique**. Après chaque attaque reçue, il peut tenter un **jet de sauvegarde d’Athlétisme (DD = DC du lanceur)** pour se libérer. |
 | **Sommeil** | Inconscient mais stable. Se réveille s’il subit des dégâts ou si un allié l’interpelle ou le secoue. Les attaques au contact ont **avantage**. **Perd immédiatement toute concentration.** |
 | **Stun** | Incapable d’agir pendant **1 tour**, mais reste conscient. Ne peut ni bouger, ni parler, ni réagir. Échec automatique aux sauvegardes d’**Acrobaties** et d’**Athlétisme** ; réussite automatique aux sauvegardes de **Perspicacité**. Les attaques contre lui ont **avantage**. **Perd immédiatement toute concentration.** |
-| **Amorphe** | La créature prend une **forme instable** (liquide, éthérée, autre) et **perd toute Armure et Parade**. Elle **garde les propriétés** de la forme choisie, mais **tous les dégâts subis sont transférés à son corps réel**.  |
+| **Amorphe** | La créature prend une **forme instable** (liquide, éthérée, autre) et **perd toute Armure et Parade**. Elle **garde les propriétés** de la forme choisie, mais **tous les dégâts subis sont transférés à son corps réel**. |
 
-## ⚔️ **Altérations Physiques**
+### ⚔️ Altérations Physiques
 
 | **Nom** | **Description** |
 | --- | --- |
@@ -861,7 +781,7 @@ Sauf si sa description indique une autre durée ou une procédure de sortie, une
 | **Désarmé** | Perd l’**arme/équipement principal**. Ne peut pas utiliser d’attaques ou capacités qui l’exigent. |
 | **Exposé** | Les **attaques contre la cible ont avantage**. |
 
-## 💨 **Mobilité et Espace**
+### 💨 Mobilité et Espace
 
 | **Nom** | **Description** |
 | --- | --- |
@@ -870,7 +790,7 @@ Sauf si sa description indique une autre durée ou une procédure de sortie, une
 | **Ralenti** | Vitesse **divisée par deux**. Subit **désavantage aux jets d’Acrobaties**. |
 | **Lévité** | Suspendu dans les airs. Ne peut pas se déplacer librement ni utiliser de déplacement de mêlée. Les attaques contre lui ont **avantage**, et il subit **désavantage aux jets d’Athlétisme et d’Acrobaties**. |
 
-## 🔥 **Altérations Mentales**
+### 🔥 Altérations Mentales
 
 | **Nom** | **Description** |
 | --- | --- |
@@ -883,23 +803,21 @@ Sauf si sa description indique une autre durée ou une procédure de sortie, une
 | **Provoqué** | Ne peut pas cibler une autre créature que celle qui l’a provoqué. Peut agir sans cible et peut se cibler lui-même, notamment pour se soigner. |
 | **Paniqué** | Perd tout contrôle et tente de **fuir la source de peur**. S’éloigne de la moitié de sa vitesse et gagne aussi l’état **Apeuré**. |
 
-## 🌫️ **Altérations Magiques / Spirituelles**
+### 🌫️ Altérations Magiques / Spirituelles
 
 | **Nom** | **Description** |
 | --- | --- |
 | **Silence** | Ne peut utiliser **aucune capacité verbale ou incantatoire**. Les sorts, cris ou invocations échouent automatiquement. **Ne peut pas parler.** |
-| **Malédiction** | Subit **désavantage à tous les jets**.  |
+| **Malédiction** | Subit **désavantage à tous les jets**. |
 | **Vulnérable (Physique)** | Subit **x2 dégâts** provenant de sources **physiques** (Tranchant, Perçant, Contondant). |
 | **Vulnérable (Magique)** | Subit **x2 dégâts** provenant de sources **élémentaires ou psychiques**. |
 | **Désorienté** | Subit **désavantage à tous les jets d’attaque et de capacité**, et **perd automatiquement la concentration**. |
 | **Dissipation** | **Annule un effet bénéfique actif** sur la cible. |
-| **Hexé** | Subit **désavantage à tous les jets liés à un attribut corresondant** (Force, Agilité, Esprit ou Social).  |
+| **Hexé** | Subit **désavantage à tous les jets liés à un attribut corresondant** (Force, Agilité, Esprit ou Social). |
 
-## **Zones d'effet**
+## Zones d'effet
 
 Voici les zones d'effet (AoE) et leur mode de **ciblage**, incluant une option **ciblée** pour toucher une seule créature.
-
----
 
 | **Nom** | **Ciblage** | **Description** | **Exemple** |
 | --- | --- | --- | --- |
@@ -910,67 +828,53 @@ Voici les zones d'effet (AoE) et leur mode de **ciblage**, incluant une option *
 | **Ligne de 10 m (partant du lanceur)** | Part du lanceur | Ligne droite de 10 m de longueur et 1,5 m de largeur. | Éclair court |
 | **Ligne de 20 m (partant du lanceur)** | Part du lanceur | Ligne droite de 20 m de longueur et 1,5 m de largeur. | Éclair long |
 
-# 📑 Types d’actions des PNJ
+## 📑 Types d’actions des PNJ
 
-## 1. **Action**
+### 1. Action
 
 - Chaque PNJ dispose d’**une Action par tour**.
 - Sert à attaquer, lancer un sort, utiliser une capacité principale.
 - *Exemple : l’orque utilise son Action pour frapper à la hache.*
 
----
-
-## 2. **Bonus Action**
+### 2. Bonus Action
 
 - Certains PNJ disposent d’**une Bonus Action par tour**.
 - Sert à des capacités rapides, secondaires ou de soutien.
 - *Exemple : le chef de guerre utilise sa Bonus Action pour donner un ordre à ses sbires.*
 
----
-
-## 3. **Réaction**
+### 3. Réaction
 
 - Chaque PNJ dispose d’**une Réaction par round global**.
 - Utilisée lorsqu’un déclencheur se produit (souvent en dehors de son tour).
 - *Exemple : le garde utilise sa Réaction pour attaquer quand un ennemi quitte sa portée.*
 
----
-
-## 4. **Actions légendaires**
+### 4. Actions légendaires
 
 - Certains boss disposent d’**1 à 3 Actions légendaires par round global**.
 - Déclenchées à la fin du tour d’une autre créature.
 - Donnent plus de rythme et empêchent un boss d’être passif.
 - *Exemple : le dragon utilise une Action légendaire pour donner un coup de queue après le tour d’un joueur.*
 
----
-
-## 5. **Réactions légendaires**
+### 5. Réactions légendaires
 
 - Réactions spéciales disponibles uniquement pour certains boss.
 - Déclenchées comme une Réaction normale, mais consommant une ressource légendaire.
 - *Exemple : le démon utilise une Réaction légendaire pour contrer un sort lancé contre lui.*
 
----
-
-## 6. **Lair Actions**
+### 6. Lair Actions
 
 - Les boss qui combattent dans leur antre disposent d’**une Lair Action par round**.
 - Déclenchée au compte d’initiative 20 (après ajustement).
 - Représente le pouvoir de leur environnement ou de leur domaine.
 - *Exemple : la liche utilise une Lair Action pour faire surgir des ombres de son sol.*
 
----
-
-## 7. **Actions scriptées**
+### 7. Actions scriptées
 
 - Certains PNJ déclenchent automatiquement des actions lors d’un **seuil de PV**, d’un **round précis**, ou d’un **événement narratif**.
 - Ne comptent pas dans leur économie d’actions normale.
 - *Exemple : quand le golem tombe à 50 % de PV, ses plaques s’ouvrent et libèrent une explosion de flammes.*
 
----
-
-# ⚔️ Rupture légendaire
+## ⚔️ Rupture légendaire
 
 - Un boss dispose d’un **nombre limité de Ruptures légendaires par combat**.
 - **Contrainte de 2 tours** : un effet doit normalement rester actif pendant au moins **2 tours de n’importe quelles créatures ou joueurs** avant de pouvoir être brisé.

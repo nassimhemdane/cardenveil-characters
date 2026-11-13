@@ -33,7 +33,7 @@
     },
     "progression": {
       "source": "Système de progression.md",
-      "file": "progression.md",
+      "file": "campagne/progression.md",
       "sha256": "92808c289dbe581acd55246abbf0733e96420e6ba7c4bbc06937ed1094cbb8e4"
     }
   },

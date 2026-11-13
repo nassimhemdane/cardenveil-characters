@@ -1,8 +1,10 @@
-# Advancement System
+> **Campaign variant — work in progress.** These optional rules are a special case, separate from the core game. They apply only when the GM chooses Campaign mode; their purchases, caps and mastery restrictions do not apply by default in Simple Adventure mode.
 
-> These advancement rules apply only to **Campaign mode**. **Simple Adventure mode** uses a separate system without this persistent advancement.
+## Starting campaign pool
 
-## 🎲 **Advancement system**
+In Campaign mode, the starting pool contains only cards from **2 through 8 inclusive**, in all four suits. Remove cards from **9 through Ace** from the decks at the start. The pool then evolves according to the advancement rules below.
+
+## 🎲 Advancement system
 
 Characters advance by earning **XP**, awarded by the GM for memorable actions, combat or narrative developments.
 
@@ -18,7 +20,7 @@ XP is spent to improve the character, but level depends on the **cumulative tota
 
 - It sets the **advancement cap**: **⌊level ÷ 2⌋**.
 
-## 🎯 **Advancement paths**
+## 🎯 Advancement paths
 
 The character advances by spending XP on different improvements, each corresponding to an aspect of play (combat, magic, narrative, resources).
 
@@ -34,7 +36,7 @@ The character advances by spending XP on different improvements, each correspond
 - **Feat** → 5 XP: grants a unique passive
 - **Pool advancement** → collective cost of **3 XP × number of players**: improves the card pool
 
-## 🗡️ **Weapons (families)**
+## 🗡️ Weapons (families)
 
 **Families:** straight swords, curved swords, axes, clubs, reach weapons, bows, crossbows, foci, shields
 
@@ -59,7 +61,7 @@ The character advances by spending XP on different improvements, each correspond
 
 ---
 
-## 🗡️ **Unique weapons**
+## 🗡️ Unique weapons
 
 **Levels:**
 
@@ -80,7 +82,7 @@ The character advances by spending XP on different improvements, each correspond
 
 ---
 
-## 🃏 **Suit Mastery**
+## 🃏 Suit Mastery
 
 **Effect:**
 
@@ -105,7 +107,7 @@ The character advances by spending XP on different improvements, each correspond
 
 ---
 
-## ✨ **Ability Awakening**
+## ✨ Ability Awakening
 
 **Effect:**
 
@@ -129,7 +131,7 @@ The character advances by spending XP on different improvements, each correspond
 
 ---
 
-## 🔥 **Elemental Mastery**
+## 🔥 Elemental Mastery
 
 **Effect:**
 
@@ -153,7 +155,7 @@ The character advances by spending XP on different improvements, each correspond
 
 ---
 
-## 📘 **Abilities**
+## 📘 Abilities
 
 **Effect:**
 
@@ -169,7 +171,7 @@ The character advances by spending XP on different improvements, each correspond
 
 ---
 
-## 📚 **Skills**
+## 📚 Skills
 
 **Effect:**
 
@@ -185,7 +187,7 @@ The character advances by spending XP on different improvements, each correspond
 
 ---
 
-## 🎭 **Aspects**
+## 🎭 Aspects
 
 **Effect:**
 
@@ -201,7 +203,7 @@ The character advances by spending XP on different improvements, each correspond
 
 ---
 
-## 🛡️ **Hit Points**
+## 🛡️ Hit Points
 
 **Effect:**
 
@@ -217,7 +219,7 @@ The character advances by spending XP on different improvements, each correspond
 
 ---
 
-## 🧩 **Feats**
+## 🧩 Feats
 
 **Effect:**
 
@@ -233,7 +235,7 @@ The character advances by spending XP on different improvements, each correspond
 
 ---
 
-## 🃏 **Card pool**
+## 🃏 Card pool
 
 **Effect:**
 

@@ -118,7 +118,7 @@ def test_rules_build_and_links(tmp_path, monkeypatch):
     assert "Avantage aux 2 premiers jets d’initiative" not in races
     assert "10 archétypes de Totems" in capacities
     assert "Les 7 piliers d'un Totem" in unescape(capacities)
-    assert 'Effectue le jet' in capacities and '3 fois' in capacities
+    assert 'trois jets au total' in capacities
     narrative = (tmp_path / "regles/narration/index.html").read_text("utf-8")
     assert 'Goals et jeu RP' in narrative and '<strong>Bonds</strong>' in narrative
     assert 'Cartes données au MJ' not in narrative
@@ -147,7 +147,7 @@ def test_source_text_is_not_rewritten(tmp_path, monkeypatch):
     snapshot = ROOT / "docs/rules/fragmented"
     manifest = json.loads((snapshot / "manifest.json").read_text("utf-8"))
     assert len(manifest["documents"]) == 7
-    assert len(list(snapshot.glob("*.md"))) == 7
+    assert len(list(snapshot.rglob("*.md"))) == 7
     assert not (snapshot / "Partie MJ.md").exists()
     for key, source in manifest["documents"].items():
         raw = (snapshot / source["file"]).read_bytes()

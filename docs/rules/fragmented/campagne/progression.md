@@ -1,8 +1,10 @@
-# Système de progression
+> **Variante Campagne — en cours de conception.** Ces règles sont un cas particulier optionnel, séparé du socle de jeu. Elles ne s’appliquent que si le MJ choisit le mode Campagne ; leurs achats, plafonds et restrictions de maîtrise ne s’appliquent pas par défaut en Aventure simple.
 
-> Ces règles de progression s’appliquent uniquement au **mode Campagne**. Le **mode Aventure simple** utilise un système distinct, sans cette progression persistante.
+## Pool initial de campagne
 
-## 🎲 **Système de progression**
+En mode Campagne, le pool de départ contient uniquement les cartes de **2 à 8 inclus**, dans les quatre enseignes. Les cartes de **9 à l’As** sont retirées des paquets au départ. Le pool évolue ensuite selon les règles de progression ci-dessous.
+
+## 🎲 Système de progression
 
 Les personnages progressent en gagnant des **points d’XP**, attribués par le MJ en récompense d’actions marquantes, de combats ou d’avancées narratives.
 
@@ -18,7 +20,7 @@ Le **niveau** détermine aussi les limites du système :
 
 - Il fixe le **plafond de progression** : **⌊niveau ÷ 2⌋**.
 
-## 🎯 **Axes de progression**
+## 🎯 Axes de progression
 
 Le personnage évolue en dépensant ses XP dans différents axes d’amélioration, chacun correspondant à un aspect du gameplay (combat, magie, narration, ressources).
 
@@ -34,7 +36,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 - **Feat** → 5 XP : donne un passif unique
 - **Évolution du pool** → coût collectif de **3 XP × nombre de joueurs** : augmente le pool de cartes
 
-## 🗡️ **Armes (familles)**
+## 🗡️ Armes (familles)
 
 **Familles :** épées droites, épées courbes, haches, massues, allonge, arcs, arbalètes, catalyseurs, boucliers
 
@@ -59,7 +61,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 ---
 
-## 🗡️ **Armes uniques**
+## 🗡️ Armes uniques
 
 **Niveaux :**
 
@@ -80,7 +82,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 ---
 
-## 🃏 **Maîtrise des couleurs**
+## 🃏 Maîtrise des couleurs
 
 **Effet :**
 
@@ -105,7 +107,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 ---
 
-## ✨ **Éveil de capacité**
+## ✨ Éveil de capacité
 
 **Effet :**
 
@@ -129,7 +131,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 ---
 
-## 🔥 **Maîtrise élémentaire**
+## 🔥 Maîtrise élémentaire
 
 **Effet :**
 
@@ -153,7 +155,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 ---
 
-## 📘 **Capacités**
+## 📘 Capacités
 
 **Effet :**
 
@@ -169,7 +171,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 ---
 
-## 📚 **Compétences**
+## 📚 Compétences
 
 **Effet :**
 
@@ -185,7 +187,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 ---
 
-## 🎭 **Aspects**
+## 🎭 Aspects
 
 **Effet :**
 
@@ -201,7 +203,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 ---
 
-## 🛡️ **Points de Vie**
+## 🛡️ Points de Vie
 
 **Effet :**
 
@@ -217,7 +219,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 ---
 
-## 🧩 **Feats**
+## 🧩 Feats
 
 **Effet :**
 
@@ -233,7 +235,7 @@ Le personnage évolue en dépensant ses XP dans différents axes d’améliorati
 
 ---
 
-## 🃏 **Pool de cartes**
+## 🃏 Pool de cartes
 
 **Effet :**
 

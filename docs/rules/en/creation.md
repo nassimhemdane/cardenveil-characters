@@ -1,17 +1,15 @@
-# Character
-
-# 📝 **Character Creation**
+## 📝 Character Creation
 
 ---
 
-### **1. Identity**
+### 1. Identity
 
 - Choose a **name**, a **race**, an **alignment** and a **short description**.
 - Add a few **physical or cultural traits** if you wish.
 
 ---
 
-### **2. Attributes**
+### 2. Attributes
 
 - You have **52 points** to distribute among:
     - Strength (STR)
@@ -24,7 +22,7 @@
 
 ---
 
-### **3. Derived Statistics**
+### 3. Derived Statistics
 
 Calculate the following from your attributes:
 
@@ -36,7 +34,7 @@ Calculate the following from your attributes:
 
 ---
 
-### **4. Skills**
+### 4. Skills
 
 - You start with **4 skills**.
 - An attribute **cannot have more skills** than its modifier.
@@ -44,28 +42,28 @@ Calculate the following from your attributes:
 
 ---
 
-### **5. Totem**
+### 5. Totem
 
 - Each character has a **complete Totem**, defined **with the GM during character creation**.
-- Its appearance, purpose and effects follow the rules in **Totems, Abilities and Cards**.
+- Its appearance, purpose and effects follow the rules in [[en/capacites|Abilities and Totems]]. Cards and tokens are explained in [[en/systeme-de-base|Core System]].
 
 ---
 
-### **6. Abilities**
+### 6. Abilities
 
 - Abilities are created **with the GM**.
 - Initially, you can know **a maximum of (Spirit ÷ 2, rounded down) + 1 abilities**.
 
 ---
 
-### **7. Narrative Aspects**
+### 7. Narrative Aspects
 
 - Choose a **Background**: where your character comes from and what shaped them.
 - Define a **Goal**: what they want to accomplish, repair or attain.
 - Choose **4 Aspects** in total.
 - **Bonds** are optional: you may define one with each other character. A Bond can help that character when one of their Aspects is relevant.
 
-# **Attributes and Their Roles**
+## Attributes and Their Roles
 
 Attributes are the core of the system, defining each character's physical, mental and social abilities. They determine your effectiveness in combat, your skills, and your ability to use abilities or interact with the environment. Each attribute influences specific mechanics.
 
@@ -88,12 +86,12 @@ Attributes are the core of the system, defining each character's physical, menta
     - Key statistic for magical/elemental damage.
     - Spirit ability cost adjustment: Cost = Initial cost − (Spirit − 10).
 4. **Social**:
-    - **Social Tokens:** Exchange cards with other players (see tokens later).
+    - **Social Tokens:** Exchange cards with other players (see [[en/systeme-de-base|Core System]]).
     - **Social Tokens:** Allows you to… [sentence incomplete in the source].
     - Play a central role in roleplaying interactions and social checks.
     - Social ability cost adjustment: Cost = Initial cost − (Social − 10).
 
-## **Assigning Attributes**
+### Assigning Attributes
 
 - When creating your character, you have **52 points** to distribute among **Strength**, **Agility**, **Spirit** and **Social**.
 - Each attribute must be **even** and between **0** and **18 at character creation**. A value below **6** causes a permanent penalty.
@@ -103,98 +101,62 @@ Attributes are the core of the system, defining each character's physical, menta
 | **1-9** | (Value − 10) ÷ 2, rounded down to the nearest integer (e.g. 8 → −1). |
 | **10-18** | (Value − 10) ÷ 2 (e.g. 14 → +2). |
 
-### **Rules:**
+### Rules
 
 1. **Penalties:**
     - Any attribute below **6** causes **permanent penalties** (see **Attribute Penalties**).
 2. **Attribute modifier:**
     - The modifier affects your rolls, including damage, skills and interactions associated with that attribute.
 
-# **SKILLS**
+## SKILLS
 
 Skills represent your character's specific capabilities and are central to roleplaying interactions. They resolve situations such as persuading an NPC, deciphering ancient writings or sneaking around. Each skill is linked to an attribute, reflecting your character's strengths both in and out of combat.
 
-## **Strength**
+### Strength
 
 1. **Athletics**: Run, climb, swim or lift heavy objects.
-    
     ➝ **Combat**: Saving throw against restraining effects. Check to push an enemy.
-    
 2. **Resilience**: Resist pain and poison, and endure extreme conditions.
-    
     ➝ **Combat**: Saving throw to maintain concentration. Check to regain consciousness.
 
----
-
-## **Agility**
+### Agility
 
 1. **Acrobatics**: Maintain balance and dodge nimbly.
-    
     ➝ **Combat**: Saving throw against area-of-effect abilities.
-    
 2. **Stealth**: Hide and move undetected.
-    
     ➝ **Combat**: Skill check to hide in combat.
-    
 3. **Sleight of Hand**: Steal objects, pick locks and manipulate small objects.
-    
     ➝ **Combat**: Used in consumable mechanics.
 
----
-
-## **Spirit**
+### Spirit
 
 1. **Arcana**: Understand magic, rituals and enchantments.
-    
     ➝ **Combat**: Saving throw against targeted magical effects.
-    
 2. **Investigation**: Analyze clues and solve puzzles.
-    
     ➝ **Combat**: Skill check to analyze a creature.
-    
 3. **Perception**: Notice details and detect dangers.
-    
     ➝ **Combat**: Notice invisible enemies or traps.
-    
 4. **Knowledge**: Knowledge of civilizations, myths and customs.
-    
     ➝ **Combat**: No direct effect, but may be useful in context.
-    
 5. **Nature-Survival**: Follow tracks and adapt to the environment.
-    
     ➝ **Combat**: No direct effect, but may be useful in context.
 
----
-
-## **Social**
+### Social
 
 1. **Persuasion**: Convince others through logical or charming arguments.
-    
     ➝ **Combat**: Warn an ally about an ability targeting them.
-    
 2. **Deception**: Lie, bluff and manipulate emotions.
-    
     ➝ **Combat**: Flatter an enemy into believing they are stronger than they really are.
-    
 3. **Intimidation**: Apply pressure through threats or force of personality.
-    
     ➝ **Combat**: Intimidate in reaction to an enemy attack to make the opponent hesitate.
-    
 4. **Performance**: Captivate through music, theater or dance.
-    
     ➝ **Combat**: Taunt an enemy.
-    
 5. **Insight**: Read others' intentions and emotions.
-    
     ➝ **Combat**: Resist effects that influence thought.
-    
 6. **Animal Handling**: Understand and train animals.
-    
     ➝ **Combat**: Required to have a pet or mount.
 
----
-
-## **Making a Skill Check**
+### Making a Skill Check
 
 1. 🎲 **Roll the Base Die**
     - Roll **1d20**.
@@ -209,55 +171,44 @@ Skills represent your character's specific capabilities and are central to rolep
     - Compare this total with the **difficulty threshold (DC)** set by the GM or system.
     - Result ≥ DC → success; otherwise, failure.
 
-## **Assigning Skills**
+### Assigning Skills
 
 - Each player can choose **4 skills in total**.
 - The number of skills associated with an attribute cannot exceed its **modifier**.
 - **Example:** With a Spirit modifier of +3, the player can choose up to **3 Spirit skills**.
 - Proficiency in a skill **doubles the Attribute Mod used to calculate its Skill Mod**; proficiency is already included in that Skill Mod.
 
----
+## 🎭 Narrative System
 
-# 🎭 **Narrative System**
-
----
-
-## **1. Character Structure**
+### 1. Character Structure
 
 Each character has several **narrative aspects** representing their personality and experiences.
 
 These aspects do not provide fixed bonuses; they influence rolls according to the situation.
 
-### **General Aspects**
+### General Aspects
 
 - **Background**: your past, profession or upbringing.
-    
     *Example: former soldier, street thief, apprentice mage.*
-    
 - **Goal**: your personal objective or main motivation.
-    
     *Example: find my sister, redeem myself, become a master craftsperson.*
-    
 - **Bonds**: your relationships with other characters, positive or negative. They are optional; you may have one with each other character. A Bond can help that character when one of their Aspects is relevant.
-    
     *Example: I protect Thalen at all costs; I distrust Lyra.*
 
----
-
-### **Attribute Aspects**
+### Attribute Aspects
 
 Choose **4 Aspects in total**. The table suggests categories inspired by the attributes, but you do not have to choose one Aspect per attribute.
 
 | Attribute | Aspect | Description | Example |
 | --- | --- | --- | --- |
 | **Strength** | **Life Scar** | An ordeal, wound or memory that left its mark on you. | “I survived the mine collapse.” |
-|  | **Drive** | The energy or impulse that pushes you to act. | “I refuse to give up, whatever the cost.” |
+| | **Drive** | The energy or impulse that pushes you to act. | “I refuse to give up, whatever the cost.” |
 | **Agility** | **Habits & Tics** | Instinctive physical habits or reflexes. | “I always tap my foot before acting.” |
-|  | **Instinct** | A quick, intuitive response, often before thought. | “I always leap before I think.” |
+| | **Instinct** | A quick, intuitive response, often before thought. | “I always leap before I think.” |
 | **Spirit** | **Beliefs** | Your principles, faith and view of the world. | “I believe everything has a hidden reason.” |
-|  | **Education** | Your learned knowledge, reasoning and cultural background. | “Trained at Escalune's engineering academy.” |
+| | **Education** | Your learned knowledge, reasoning and cultural background. | “Trained at Escalune's engineering academy.” |
 | **Social** | **Personality** | Your temperament and natural way of being. | “Always sarcastic, even when afraid.” |
-|  | **Reputation** | How others see you. | “People think I am braver than I really am.” |
+| | **Reputation** | How others see you. | “People think I am braver than I really am.” |
 
 Aspects must be consistent with the character's attributes.
 
@@ -269,38 +220,38 @@ This is not a numerical rule, but a **consistency requirement**.
 >
 > Weak attributes produce unstable or fragile aspects.
 
-# **Playable Races**
+## Playable Races
 
 Players can choose a race from the list below. An **Add** is a secondary creature identified as such by the GM.
 
-### **1. Human**
+### 1. Human
 
 - +2 additional skills. They may exceed the normal skill quota for an attribute.
 - The maximum Social-token reserve is **max(0, Social Mod + 1) + 2**.
 
 ![[Pasted image 20261014201518.png|449]]
 
-### **2. High Elf**
+### 2. High Elf
 
 - Your normal hand limit increases from **3 to 4 cards**.
 - You know **1 additional ability**, even if this exceeds your normal maximum number of known abilities.
 
 ![[Pasted image 20261014201537.png|441]]
 
-### **3. Wood Elf**
+### 3. Wood Elf
 
 - When you use your Reaction, you may move **5 m after it resolves**. If you react to a non-targeted ability, this movement occurs before the ability. These 5 m are deducted from your available movement and trigger opportunity attacks normally.
 - You have **advantage on all initiative rolls**.
 
 ![[Pasted image 20261014201600.png|445]]
 
-### **4. Dark Elf**
+### 4. Dark Elf
 
 - If you are outside **every enemy's field of vision when you use it**, you may use **1 additional Reaction per round**.
 - Advantage on Stealth checks.
 ![[Pasted image 20261014201628.png|486]]
 
-### **5. Half-Elf**
+### 5. Half-Elf
 
 - **Free Channeling**: When you use **a weapon** (attack, parry, etc.), you **automatically channel** for **1 round**, with a value equal to your **Spirit score**.
 - **Flexible Channeling**: Choose the **suit** you channel, regardless of the weapon used.
@@ -309,35 +260,35 @@ Players can choose a race from the list below. An **Add** is a secondary creatur
 
 ![[Pasted image 20261014201948.png|331]]
 
-### **6. Tiefling**
+### 6. Tiefling
 
 - Every other turn, when you draw, you may choose to draw a **Spade** specifically. After using this option, it is unavailable during your next turn, then becomes available again. If you do not use it, it remains available until you choose a Spade draw.
 - **Major Resistance** to fire damage.
 
 ![[Pasted image 20261014202018.png|362]]
 
-### **7. Aasimar**
+### 7. Aasimar
 
 - Whenever you use a **token**, randomly draw a **Heart** into your normal hand; it remains subject to the hand limit. For a Spirit token, this triggers when the **Spirit Slot opens**, not when it is consumed.
 - **Major Resistance** to **radiant** damage.
 
 ![[Pasted image 20261014202036.png|403]]
 
-### **8. Half-Orc**
+### 8. Half-Orc
 
 - For each distinct creature that attacked you during the round, your next attack adds its **base-damage attack-roll modifier** once. This bonus is added after Raw Power is calculated and is not part of that calculation. An **Add** provides only half that modifier, rounded down. All additions are consumed by that next attack.
 - Your Armor doubles while you have less than **50%** of your HP. This doubling ignores the Strength-based Armor cap, but the final reduction remains limited to **50% of the remaining damage**.
 
 ![[Pasted image 20261014202218.png|405]]
 
-### **9. Dwarf**
+### 9. Dwarf
 
 - You gain HP equal to **2 × your Strength score**.
 - Each distinct creature that attacked you counts only once per round to reduce the cost of your **Club** abilities by 1. An **Add** counts as half a creature; add them together, then round the total down. The accumulated reduction remains active for the **entire combat**.
 
 ![[Pasted image 20261014202239.png|401]]
 
-### **10. Goblin**
+### 10. Goblin
 
 - Reduce your critical threshold by 1 (for example, 5 or 6 instead of 6 on a d6). Reaching this threshold triggers a full critical and all its normal rules, even when the die does not show its maximum value.
 - An entire attack can accumulate no more than **3 criticals**, regardless of its number of targets.
@@ -345,7 +296,7 @@ Players can choose a race from the list below. An **Add** is a secondary creatur
 
 ![[Pasted image 20261014202426.png|404]]
 
-### **11. Gnome**
+### 11. Gnome
 
 - Penalties for low Strength apply only at 4 or below.
 - When you use an ability, its **surcharge** equals the total value of the cards paid minus the final cost actually owed after all reductions. You store that surcharge as a reduction for a later ability.
@@ -354,44 +305,43 @@ Players can choose a race from the list below. An **Add** is a secondary creatur
 
 ![[Pasted image 20261014203320.png|430]]
 
-### **12. Halfling**
+### 12. Halfling
 
 - On a **normal draw** or a draw granted by a **Strength token**, draw **two revealed cards**, choose one and discard the other. This trait applies to no other type of draw.
 - Once per **short rest**, after seeing a die result, you may reroll it.
 
 ![[Pasted image 20261014203339.png|449]]
 
-### **13. Goliath**
+### 13. Goliath
 
 - **Colossal Strength**: You may dual wield two **versatile** weapons; each then uses its **d10** profile, and all normal dual-wielding rules apply. You may also wield a two-handed weapon in one hand, but cannot dual wield two of them: the other hand must hold a **Secondary** or **Light** weapon. Longswords gain the **Agile** property without losing any of their other properties.
 - **Mountain Endurance**: You have advantage on Athletics checks and **Major Resistance** to Ice.
 
 ![[Pasted image 20261014203646.png|465]]
 
-### **14. Dragonborn**
+### 14. Dragonborn
 
-- **Draconic Heritage**: Choose **Fire, Lightning, Ice, Acid or Poison**. You gain **Major Resistance** to that damage type and can **generate that element** to interact with the environment.
+- **Draconic Heritage**: Choose **Fire, Lightning, Ice or Toxic**. You gain **Major Resistance** to that damage type and can **generate that element** to interact with the environment.
 - **Draconic Scales**: Natural armor of **1**, stacking with other sources.
 - **Draconic Breath**: At will, as a **Bonus Action**, create a **5 m** cone that deals a number of **d6 elemental damage equal to your highest attribute modifier**. A successful **Acrobatics** save halves the damage. Instead, you may **hold the breath** to automatically channel abilities tied to that element with a value equal to your **Spirit Mod**; this requires no concentration.
 - **Elemental Resonance**: If you touch a **source** of your element that you did not generate, you automatically channel it until the **end of the round**.
 
 ![[Pasted image 20261014203658.png|465]]
 
-### **15. Sporelings**
+### 15. Sporelings
 
-- You have **Major Resistance** to poison and **Immunity** to bleeding effects.
+- You have **Major Resistance** to toxic damage and **Immunity** to bleeding effects.
 - You have **Major Vulnerability** to ice damage.
 - If you **do not move** during your turn, you activate **Sporegrowth**.
-    
+
     While **Sporegrowth** is active:
-    
     - At the **end of each round**, regain HP equal to your **remaining movement**.
     - Any voluntary or forced movement immediately ends Sporegrowth.
     - If **one or more allies** remain **within 3 meters** of you for **one full round**, you can **freely exchange a card with each of them** **at the end of their turn**.
 
 ![[Pasted image 20261014203712.png|459]]
 
-### **16. Undead**
+### 16. Undead
 
 - **Major Resistance** to necrotic damage.
 - Advantage on saving throws against restraining effects.
@@ -401,18 +351,17 @@ Players can choose a race from the list below. An **Add** is a secondary creatur
 
 ![[Pasted image 20261014203723.png|463]]
 
-### **17. Khajiit**
+### 17. Khajiit
 
 - **Feline Claws**: You have a natural claw attack (**1d6**, Agile).
-    
+
     The claws are a **mastered Light weapon**. If one of your hands is free or equipped with a **one-handed Focus**, you may make a claw attack as a **Bonus Action** without first making a main attack.
-    
 - **Feline Flexibility**: You take **half damage** from falling.
 - **Instinctive Dodge**: You may **Dodge** as a **Bonus Action**, with exactly the same effects and duration as the normal Dodge action.
 
 ![[Pasted image 20261014203212.png|422]]
 
-### **18. Troll**
+### 18. Troll
 
 - **Totemic Regeneration**: Whenever you spend a **token**, including to open a Spirit Slot, regain HP equal to **4 × your highest modifier**. This effect does not work at **0 HP**. The same token type can trigger this healing only once per round in combat, or once every **30 minutes** outside combat.
 - **Highlander**: You **ignore difficult terrain**.
@@ -423,13 +372,13 @@ Players can choose a race from the list below. An **Add** is a secondary creatur
 - **Vibration Sense**: As a **Bonus Action**, activate this sense with a **20 m** range. It remains active at no further cost while you maintain **Concentration**. Whenever a creature within range moves at least **3 m**, you automatically gain the effect of **Targeting** against it.
 - **Aquatic Physiology**: Your **swimming speed equals your movement**, and you have **advantage on all rolls in water**.
 - **Slippery Skin**: If a liquid fully covers your entire **zone of control (1.5 m radius)**, **attacks and abilities against you have disadvantage**. If the liquid is not water, make a **contextual Nature-Survival check** to gain this effect.
-- **Cold Resistance**: You have **Major Resistance** to cold damage.
+- **Ice Resistance**: You have **Major Resistance** to ice damage.
 - **Water Dependence**: To take a **short or long rest**, you must have enough water to keep your skin **submerged or wet for the entire rest**. Make a **contextual Nature-Survival check based on your environment** to find or use a suitable water source.
 - **Fire Vulnerability**: You have **Major Vulnerability** to fire damage.
 
 ![image.png|414](Personnage/image.png)
 
-### **20. Hobgoblin**
+### 20. Hobgoblin
 
 - **Martial Discipline**: Every weapon you wield gains the following mechanics: **second attack**, **opportunity attack**, **Parry**, **Targeting**, and **Channeling**. They are added to the weapon's normal properties without replacing them. When channeling with a non-Focus weapon, freely choose its suit; its Channeling bonus equals your **Spirit Mod**. Properties belonging to a specific weapon, such as **High Ground**, **Light Shot**, or **Reload**, are not shared. You have advantage on opportunity attacks and may move after they resolve.
 - **Tactical Command**: You may give your available tokens to allies. A token retains its **type** and may raise the recipient above their maximum reserve.
@@ -447,7 +396,7 @@ Players can choose a race from the list below. An **Add** is a secondary creatur
 ### 22. Mecha
 
 - **Resilient Body**: **Major Resistance** to physical damage.
-- **Poison Resistance**: **Major Resistance** to poison damage.
+- **Toxic Resistance**: **Major Resistance** to toxic damage.
 - **Artificial Body**: You **do not need to breathe** and can remain underwater indefinitely.
 - **Immortal**: **Fatigue cannot kill you**, and your number of Fatigue levels has no maximum.
 - **Modular Body**: You can integrate a **one-handed weapon, shield or Focus** into one of your arms. You lose the integration if you fall unconscious.
@@ -460,12 +409,11 @@ Players can choose a race from the list below. An **Add** is a secondary creatur
 
 ![[image 2.png|446]]
 
-### **23. Illithid**
+### 23. Illithid
 
 - **Cerebral Harmonization**: Within **20 m**, all allies passively benefit from your Harmonization as though it were ordinary Harmonization. Auras from multiple Illithids stack.
-    
+
     If you activate it with your **Reaction**, you trigger **Total Harmonization**: the target gains advantage on attack and ability rolls in addition to the basic bonus.
-    
 - **Mind Devouring (Bonus Action)**: Devour the brain of an intelligent creature (**Spirit > 8**) dead for less than 1 minute to regain **1 Spirit token**, without exceeding your normal maximum of **max(0, 1 + Spirit Mod)**. Usable **once per combat** or every **30 minutes**.
 - **Death Resonance**: Each time you fall to 0 HP, an 18 m psychic wave deals **Spirit Mod d6** psychic damage to every allied creature around you, with no save.
 - **Physical Frailty**: Disadvantage on all **Athletics saving throws**.
@@ -490,13 +438,13 @@ Players can choose a race from the list below. An **Add** is a secondary creatur
 
 ![[nimbrisplashart.jpg|571]]
 
-### **26. Beastfolk Race (Customizable)**
+### 26. Beastfolk Race (Customizable)
 
 - A Beastfolk race is created **freely with the GM** according to the desired appearance and traits.
 
 ![021fe7ebd674dc0af101220e7246fbed.jpg](../../Races%20Jouables/021fe7ebd674dc0af101220e7246fbed.jpg)
 
-# **Attribute Penalties**
+## Attribute Penalties
 
 - For each attribute, you gain **1 penalty for every 2 points below 6**.
 
@@ -509,12 +457,12 @@ Players can choose a race from the list below. An **Add** is a secondary creatur
 
 - At the **end of character creation**, roll **one d6 for each penalty** on the list for the relevant attribute. If a result gives a penalty already obtained for that attribute, reroll until you get a different penalty.
 
-### **Important:**
+### Important
 
 - **Penalties are permanent**: increasing the attribute through items, levels or other means **does not remove these penalties**.
 - However, penalties can be **removed or reduced through roleplaying events or actions**, at the GM's discretion.
 
-## **Strength ≤ 5:**
+### Strength ≤ 5
 
 1. **Cannot Stay Upright**
     - Whenever you take damage, make a **Strength saving throw (DC 10)**. On a failure, you fall **Prone**.
@@ -539,7 +487,7 @@ Players can choose a race from the list below. An **Add** is a secondary creatur
     - If someone helps you recover, you remain **inert** (you skip your turn) and **vulnerable** (you can take additional damage).
     - You need a nap once a day.
 
-## **Agility ≤ 5:**
+### Agility ≤ 5
 
 1. **Physical Disadvantage:**
     - Disadvantage on all rolls involving a physical action (including attacks).
@@ -560,7 +508,7 @@ Players can choose a race from the list below. An **Add** is a secondary creatur
     - After that, you must use the **Dash** action to move.
     - You cannot walk for long and need help to climb anything.
 
-## **Spirit ≤ 5:**
+### Spirit ≤ 5
 
 1. **Magical and Technical Inability**
     - You cannot use abilities.
@@ -591,7 +539,7 @@ Players can choose a race from the list below. An **Add** is a secondary creatur
     - **Immunity to Buffs:** You cannot receive any positive magical effect or buff.
     - **Inability to Detect:** You cannot detect **hidden or concealed** enemies, even if an ally warns you.
 
-## **Social ≤ 5:**
+### Social ≤ 5
 
 1. **Universal Hostility**
     - **Attempts to negotiate prices** automatically fail for you and your companions.
@@ -615,7 +563,4 @@ Players can choose a race from the list below. An **Add** is a secondary creatur
     - You do not speak the language, and there is a **1 in 2 chance** that your words will be misinterpreted.
     - You **cannot target your allies with abilities** or be targeted by them.
 
-#
-
 ---
-

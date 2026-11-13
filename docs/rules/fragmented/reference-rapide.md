@@ -1,5 +1,3 @@
-
-
 ---
 
 ## 🧠 Système
@@ -17,8 +15,8 @@
 **Tokens (récupérés lors d’un repos court) :**
 
 - 💪 **Force** → **piocher** \ enchaîner des actions
-- 🏃 **Agilité** → **Echanger** carte avec couleur spécifique \  multiplier une AOE ×3
-- 🔮 **Esprit** →  **cristalliser** des cartes \ reverbération attaque magique
+- 🏃 **Agilité** → **Echanger** carte avec couleur spécifique \ multiplier une AOE ×3
+- 🔮 **Esprit** → **cristalliser** des cartes \ reverbération attaque magique
 - 🎭 **Social** → **Echanger** cartes avec **alliés**\ Faire attaquer un allié
 
 ---
@@ -81,7 +79,6 @@ Les **effets standards** durent **1 round**, sauf mention contraire.
 - Arme : **dé maximal ÷ 2 + Mod. Agilité + déflexion**.
 - Bouclier : **dé maximal ÷ 2 + Mod. Force + déflexion**.
 - Deux armes : **demi-dé de chaque arme + Mod. Agilité + déflexion**.
-    
 
 ---
 

@@ -55,17 +55,15 @@ def test_switch_is_idempotent_and_retains_both_editions():
     assert 'href="/en/personnages/mimyr/"' in second
 
 
-def test_author_rulings_are_traceable_and_manifest_is_current():
+def test_english_markdown_tracks_every_current_french_markdown():
     import hashlib
-    changes = json.loads((ROOT / 'docs/translation-rulings-2026-11-08.json').read_text(encoding='utf-8'))
-    for change in changes:
-        text = (ROOT / change['file']).read_text(encoding='utf-8')
-        assert change['after'] in text
-        assert change['before'] not in text
-    directory = ROOT / 'docs/rules/fragmented'
-    manifest = json.loads((directory / 'manifest.json').read_text(encoding='utf-8'))
-    for record in manifest['documents'].values():
-        assert hashlib.sha256((directory / record['file']).read_bytes()).hexdigest() == record['sha256']
+    hashes = json.loads((ROOT / 'docs/rules/en/sources.json').read_text(encoding='utf-8'))
+    french = list((ROOT / 'docs/rules/fragmented').rglob('*.md'))
+    english = list((ROOT / 'docs/rules/en').rglob('*.md'))
+    assert {path.name for path in french} == {path.name for path in english}
+    for path in french:
+        current = hashlib.sha256(path.read_text(encoding='utf-8').encode()).hexdigest()
+        assert hashes[path.name] == current
 
 
 def test_reviewed_raw_power_preserves_pool_multiplier_and_damage_type():

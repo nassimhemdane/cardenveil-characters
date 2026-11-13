@@ -1,46 +1,38 @@
-# Système Narratif
-
-# 🎭 **Système Narratif**
+## 🎭 Système Narratif
 
 ---
 
-## **1. Structure du personnage**
+## 1. Structure du personnage
 
 Chaque personnage possède plusieurs **aspects narratifs** représentant sa personnalité et son vécu.
 
 Ces aspects ne donnent pas de bonus fixes, mais influencent les jets selon la situation.
 
-### **Aspects généraux**
+### Aspects généraux
 
 - **Background** : ton passé, métier ou environnement d’origine.
-    
     *Exemple : ancien soldat, voleur de rue, apprenti mage.*
-    
 - **Goal** : ton objectif personnel ou ta motivation principale.
-    
     *Exemple : retrouver ma sœur, me racheter, devenir un maître artisan.*
-    
 - **Bonds** : tes relations avec les autres personnages, positives ou négatives. Ils sont facultatifs ; tu peux en avoir un avec chacun des autres personnages. Hors du combat stratégique, un Bond permet d’**aider ou de gêner gratuitement** le personnage concerné lorsqu’un de ses Aspects est pertinent. Le joueur qui intervient dépense une carte ; le joueur concerné ajoute sa valeur à son jet en cas d’aide ou la retranche en cas de gêne. Si le lien avec l’action est indirect, le MJ peut limiter cette valeur de moitié.
-    
     *Exemple : je protège Thalen coûte que coûte ; je me méfie de Lyra.*
-    
 
 ---
 
-### **Aspects liés aux caractéristiques**
+### Aspects liés aux caractéristiques
 
 Le joueur choisit **4 Aspects au total**. Le tableau propose des catégories inspirées des caractéristiques, mais il n’est pas obligatoire de choisir un Aspect par caractéristique.
 
 | Caractéristique | Aspect | Description | Exemple |
 | --- | --- | --- | --- |
 | **Force** | **Cicatrice de vie** | Une épreuve, blessure ou souvenir qui t’a marqué. | « J’ai survécu à l’effondrement de la mine. » |
-|  | **Pulsion** | L’énergie ou impulsion qui te pousse à agir. | « Je refuse d’abandonner, quoi qu’il en coûte. » |
+| | **Pulsion** | L’énergie ou impulsion qui te pousse à agir. | « Je refuse d’abandonner, quoi qu’il en coûte. » |
 | **Agilité** | **Manies & Tics** | Des réflexes ou habitudes corporelles instinctives. | « Je tapote toujours du pied avant d’agir. » |
-|  | **Instinct** | Réaction rapide, intuitive, souvent avant la réflexion. | « Je me jette toujours avant de réfléchir. » |
+| | **Instinct** | Réaction rapide, intuitive, souvent avant la réflexion. | « Je me jette toujours avant de réfléchir. » |
 | **Esprit** | **Croyances** | Tes principes, ta foi, ta manière de voir le monde. | « Je crois que tout a une raison cachée. » |
-|  | **Éducation** | Ton savoir appris, ta logique, ta culture. | « Formé dans l’académie d’ingénierie d’Escalune. » |
+| | **Éducation** | Ton savoir appris, ta logique, ta culture. | « Formé dans l’académie d’ingénierie d’Escalune. » |
 | **Social** | **Personnalité** | Ton tempérament, ta manière naturelle d’être. | « Toujours ironique, même dans la peur. » |
-|  | **Réputation** | L’image que les autres ont de toi. | « On me prend pour quelqu’un de plus courageux que je ne suis. » |
+| | **Réputation** | L’image que les autres ont de toi. | « On me prend pour quelqu’un de plus courageux que je ne suis. » |
 
 Les aspects doivent être cohérents avec les caractéristiques du personnage.
 
@@ -49,12 +41,10 @@ Un personnage faible en Social ne peut pas avoir une réputation parfaite.
 Ce n’est pas une règle chiffrée, mais une **contrainte de cohérence**.
 
 > Les caractéristiques fortes donnent des aspects maîtrisés.
-> 
-> 
+>
 > Les faibles donnent des aspects instables ou fragiles.
-> 
 
-## **2. Aspects en jeu**
+## 2. Aspects en jeu
 
 Les **aspects** servent à influencer tes jets et les situations selon ta personnalité, ton vécu ou ton comportement.
 
@@ -64,7 +54,7 @@ Un même jet ne peut être modifié que par **un seul Aspect**.
 
 Les cartes servant à modifier un jet sont proposées **après le lancer du d20**.
 
-### **Utilisation positive**
+### Utilisation positive
 
 Quand ton aspect t’aide dans une action :
 
@@ -75,16 +65,14 @@ Quand ton aspect t’aide dans une action :
 Exemple :
 
 > Aspect : Éducation – “Formé à l’académie d’ingénierie d’Escalune.”
-> 
-> 
+>
 > Tu veux réparer un mécanisme complexe → tu donnes un 8♦ au MJ.
-> 
+>
 > Tu ajoutes +8 à ton jet, et le MJ garde la carte pour l’utiliser plus tard.
-> 
 
 ---
 
-### **Utilisation négative**
+### Utilisation négative
 
 Le MJ ou toi-même pouvez invoquer un aspect contre toi lorsque cette invocation produit un **impact significatif**. Le MJ décide si cet impact est suffisant.
 
@@ -96,19 +84,14 @@ Tu pioches alors une carte **cristallisée** :
 Exemple :
 
 > Aspect : Drive – “Je fonce sans réfléchir.”
-> 
-> 
+>
 > Tu tires un 7.
-> 
+>
 > → Soit ton jet diminue de 7, soit le MJ introduit un contre-coup (tu trébuches, tu déclenches un piège…).
-> 
-
 
 ---
 
-
-## **3. Goals et jeu RP**
-
+## 3. Goals et jeu RP
 
 Le **Goal** représente l’objectif personnel de ton personnage — ce qu’il cherche à accomplir, réparer ou atteindre.
 
@@ -132,9 +115,7 @@ Lorsque tu **joues ton personnage de manière cohérente**, que ce soit en pours
 
 Un Goal doit être **clair, concret et évolutif** : il peut changer au fil de la campagne si le personnage progresse, échoue ou redéfinit ce qu’il cherche vraiment.
 
-
-
-## **4. Flashbacks**
+## 4. Flashbacks
 
 Les **flashbacks** sont des initiatives des joueurs pour **modifier la réalité du scénario** ou **introduire une action passée** qui justifie un avantage présent.
 
@@ -146,16 +127,13 @@ Les coûts des flashbacks sont **élevés**, car ils altèrent directement la na
 
 ---
 
-### **Déclenchement d’un flashback**
+### Déclenchement d’un flashback
 
 1. Tu **annonces le flashback** que tu veux introduire : ce que ton personnage a fait ou préparé dans le passé.
 2. Le MJ détermine un **coût cible**, généralement compris entre 40 et 150 selon l’ampleur du changement.
-    
     > Un petit détail ou une précaution oubliée coûtera peu.
-    > 
-    > 
+    >
     > Une réécriture majeure ou un retournement complet coûtera très cher.
-    > 
 3. Après avoir pris connaissance du coût, tu choisis si tu peux et veux le payer. Les cartes ne sont dépensées que si leur total permet d’atteindre le coût :
     - Tu peux utiliser tes **cartes cristallisées**.
     - Si le flashback est **lié à un de tes aspects**, tu peux aussi utiliser tes **cartes normales** (rouges ou noires).
@@ -164,31 +142,27 @@ Les coûts des flashbacks sont **élevés**, car ils altèrent directement la na
 
 ---
 
-### **Exemple**
+### Exemple
 
 > Aspect : Éducation – “Formé à l’académie d’ingénierie d’Escalune.”
-> 
-> 
+>
 > La salle du générateur est en feu, et la sortie semble condamnée.
-> 
+>
 > Le joueur déclare :
-> 
+>
 > “En fait, quand j’ai vu le plan du réacteur la première fois, j’avais repéré une trappe d’entretien que personne n’utilise.”
-> 
+>
 > Le MJ fixe un **coût de 35**.
-> 
+>
 > Le joueur dépense 2 cartes cristallisées (valeurs 7 et 6) et 3 cartes liées à son Aspect Éducation (8, 5 et 10).
-> 
+>
 > Le total est 36, le flashback réussit.
-> 
+>
 > Le MJ décrit : “En effet, tu te souviens de la trappe et parviens à l’ouvrir ; la fumée s’y engouffre, offrant une voie d’évacuation.”
-> 
 
-## **5. Fonctionnement global et philosophie**
+## 5. Fonctionnement global et philosophie
 
----
-
-### **Boucle d’utilisation complète**
+### Boucle d’utilisation complète
 
 1. Le **MJ déclare** une situation ou un jet à enjeux.
 2. Les **joueurs peuvent invoquer** leurs **Aspects positifs** pour se renforcer (défausse → bonus).
@@ -196,32 +170,23 @@ Les coûts des flashbacks sont **élevés**, car ils altèrent directement la na
 4. Les **Bonds** permettent gratuitement d’aider ou de gêner le jet d’un autre joueur hors du combat stratégique ; l’intervenant dépense la carte et l’autre joueur reçoit le bonus ou le malus.
 5. Les **joueurs** peuvent utiliser leurs cartes **normales** ou **cristallisées** pour faire des **flashbacks**.
 
----
-
-
-### **Faire un jet de compétence avec aspects**
+### Faire un jet de compétence avec aspects
 
 1. 🎲 **Lancer le dé**
    - Lance **1d20**.
-
 2. 🧮 **Ajouter les modificateurs**
    - Ajoute le **Mod. compétence**, maîtrise incluse. Si le jet ne nomme qu’une caractéristique, utilise son **Mod. caractéristique**, sans maîtrise.
-
 3. 🃏 **Appliquer les aspects (cartes)**
    - **Utilisation positive** : ajoute la valeur entière de la carte, ou sa moitié arrondie à l’inférieur si le MJ juge le lien indirect.
    - **Utilisation négative** : retranche la valeur de la carte.
-
 4. 🧾 **Déterminer le résultat**
    - **Total = d20 conservé + Mod. compétence (ou Mod. caractéristique pour un jet sans compétence) + ajustement des cartes**.
    - **Total ≥ DC** : réussite. Sinon : échec.
 
-
-### **Philosophie du système**
+### Philosophie du système
 
 - Les **Aspects** définissent *comment le personnage agit, réagit et perçoit le monde*, plutôt que ses performances chiffrées.
 - Chaque utilisation d’un aspect doit être **narrativement justifiée** : le roleplay précède la mécanique.
 - Les **cartes cristallisées** récompensent les moments où les failles, erreurs ou tensions font avancer l’histoire.
 - L’ensemble du système repose sur une **boucle naturelle** :
-    
     > les joueurs invoquent leurs forces → créent du risque → gagnent des ressources → façonnent le récit.
-    >

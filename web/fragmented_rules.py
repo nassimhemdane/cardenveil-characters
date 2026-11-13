@@ -181,10 +181,16 @@ class Markdown:
 
 def race_section(source: str) -> tuple[str, str]:
     """Move the race chapter to its own page without dropping any mechanics or later maluses."""
-    match = re.search(r'^#\s+\*\*(?:Races Jouables|Playable Races)\*\*\s*$', source, re.M | re.I)
+    match = re.search(
+        r'^(#{1,2})\s+\*\*(?:Races Jouables|Playable Races)\*\*\s*$'
+        r'|^(#{1,2})\s+(?:Races Jouables|Playable Races)\s*$',
+        source,
+        re.M | re.I,
+    )
     if not match:
         raise ValueError('The playable-races section was not found in Personnage.md')
-    end = re.search(r'^#\s+', source[match.end():], re.M)
+    level = len(match[1] or match[2])
+    end = re.search(rf'^#{{1,{level}}}\s+', source[match.end():], re.M)
     stop = match.end() + end.start() if end else len(source)
     races = source[match.start():stop]
     creation = source[:match.start()] + '# Races jouables\n\n[Consulter les races, leurs traits et leurs illustrations](/regles/races/).\n\n' + source[stop:]
@@ -299,8 +305,16 @@ def build(root: Path, public: Path, *, locale: str = 'fr') -> None:
         # stale bookkeeping must never keep corrected rules off the site.
         payload = (directory / data['file']).read_bytes()
         originals[key] = payload.decode('utf-8-sig')
-        sources[key] = ((root / 'docs/rules/en' / data['file']).read_text(encoding='utf-8')
-                        if locale == 'en' else originals[key])
+        if locale == 'en':
+            translated = root / 'docs/rules/en' / data['file']
+            if not translated.is_file():
+                matches = list((root / 'docs/rules/en').rglob(Path(data['file']).name))
+                if len(matches) != 1:
+                    raise ValueError(f'Expected one English Markdown file for {key}, found {len(matches)}')
+                translated = matches[0]
+            sources[key] = translated.read_text(encoding='utf-8')
+        else:
+            sources[key] = originals[key]
         links[Path(data['source']).stem] = links[key] = f'/regles/{key}/'
     creation, races = race_section(sources['creation'])
     original_creation, original_races = race_section(originals['creation'])

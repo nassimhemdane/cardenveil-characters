@@ -1,53 +1,53 @@
-# Totem, Abilities & Cards
+## Abilities and Totems
 
-# **Abilities and Cards**
+General rules for hands, drawing, crystallization and tokens are grouped in [[en/systeme-de-base|Core System]]. This chapter retains the reminders needed to use abilities and Totems.
+
+## Paying for abilities
 
 To use an ability, the total value of cards spent must be **greater than or equal to its cost: card total ≥ cost**. The ability becomes usable as soon as their combined value reaches at least the **ability's cost**. Exact payment is valid. Each card played must match the **ability type** (Heart, Diamond, Club or Spade). For example, a total of 15 is enough to use a healing ability that costs 15.
 
 An ability always requires spending **at least 1 card**. If its final cost is 0 or less, it may be used with **any card**, regardless of its suit or value.
 
-## **Card and Ability Management**
+## Card and Ability Management
 
 - **Number of known abilities** = (Spirit ÷ 2, rounded down) + 1.
-- **Hand limit** = **3 normal cards at any time**. At the start of your turn, you need a free slot to draw; if your hand is full, discard one card first.
-- You can use **crystallized cards** as normal cards.
-- All cards can be **considered** as **1** of **any** suit.
+- **Normal hand limit** = **3 cards**, unless explicitly modified. At the start of your turn, you need a free slot to draw; if your hand is full, discard one card first.
+- You can use **crystallized cards** as normal cards to pay for abilities. They retain their value and suit and do not count towards the hand limit.
+- All cards can be **treated as a 1 of any suit**.
 - **An ability** can for example be a mage spell (dependent on **spirit**) like a complex warrior maneuver (dependent on **agility**), a very brutal blow cracking the ground under the adversary (dependent on **strength**) or even an inspiring chant from a bard (dependent on **social**).
 - **The cost** of an ability is first reduced by `(associated attribute − 10)`.
 - A player may **derive** an existing ability to change how it works on the fly. The GM then sets a multiplier from **×1.5 to ×3**, applied **after the associated-attribute reduction**.
 - If range is not specified, a **base-damage** ability uses the **zone of control**; an ability described as ranged has a range of **20 m**.
 - At the **start** of your turn, draw **one** card if a slot is free. If your hand is full, discard one card first to make room before drawing.
 - When you cast a **ranged** ability (targeting a creature more than **1.5 m** away) while inside an enemy creature’s zone of control, that creature may make an **opportunity attack**.
-- **Crystallized cards** cannot be used for the **totem** and do not interact with **tokens**.
+- **Crystallized cards** cannot be exchanged, cannot be used for the **Totem**, and do not interact with **tokens**.
 
----
-
-## **Card Types and Associated Abilities**
+## Card Types and Associated Abilities
 
 1. **Hearts**: Healing, buffs, and protection.
     - Example: **Magic Shield** (damage reduction).
 2. **Diamonds**: Raw damage and destruction.
-    - Example: **Fireball** (2d6 + Spirit Mod).
+    - Example: **Fireball** (Raw Power: Spirit Mod d6).
 3. **Clubs**: Control and manipulation.
     - Example: **Vegetal Entanglement** (immobilization).
 4. **Spades**: Special magic, subtlety, and mobility.
     - Example: Teleportation, curses etc.
 
-You will find below indications to create an ability
+You will find below indications to create an ability.
 
 ---
 
-## **Save DC**
+## Save DC
 
 The threshold to reach or exceed (result ≥ threshold) for adversaries to dodge your abilities:
 
-**Save DC = Incantation Attribute (e.g. Spirit) + Surcharge** 
+**Save DC = Incantation Attribute (e.g. Spirit) + Surcharge**
 
 **Surcharge = total value of cards paid − final ability cost.** Every excess point counts, even when unavoidable. Example: for a final cost of 10, paying 13 gives a surcharge of 3.
 
 ---
 
-## **Ability Saves**
+## Ability Saves
 
 When you are the target of an ability, make a **saving throw using the appropriate Skill Mod** (**Acrobatics** [Agility] for **AOE**, **Athletics** [Strength] for physical controls, **Arcana** [Spirit] for magical controls and **Insight** [Social] for psychic controls):
 
@@ -63,7 +63,7 @@ When you are the target of an ability, make a **saving throw using the appropria
 
 ---
 
-## **Concentration**
+## Concentration
 
 - A character has only **one concentration** and may extend only one ability with it.
 - They may use several concentration abilities during the same round. Their effects may coexist during that round, but the character chooses which one to extend with concentration; the others are not extended into the next round.
@@ -71,12 +71,12 @@ When you are the target of an ability, make a **saving throw using the appropria
 
 ---
 
-## **Creating an Ability**
+## Creating an Ability
 
 - **Name**: *(The name of the ability, for example, "Fireball")*
 - **Description**: *(A narrative and technical description of the ability. For example: "An explosion of flames erupts, dealing damage in a zone with a 6-meter radius.")*
 - **Action Type**: *(Action, bonus action, reaction, etc. This field must always be specified.)*
-- **Value**: *(What the ability measures, for example: "Damage = 4d10", "Healing = 2d8", "Distance traveled = 10 meters", "Duration = 2 turns", etc.)*
+- **Value**: *(What the ability measures, for example: "Damage = 2 × Raw Power", "Healing = Raw Power", "Distance traveled = 10 meters", "Duration = 2 turns", etc.)*
 - **Associated Attribute**: *(The attribute used for calculation, for example: "Spirit", "Strength", "Agility")*
 - **Range**: *(If absent: zone of control for base damage; 20 m for a ranged ability.)*
 - **Duration**: *(If a non-instantaneous effect does not specify its duration, it lasts 1 round.)*
@@ -85,13 +85,13 @@ When you are the target of an ability, make a **saving throw using the appropria
 - **Global Cost**: *(The total cost in cards to activate the ability. For example: 12.)*
 - **Save**: *(State the skill used and the outcome of a success. If it is not stated and cannot be inferred, no save applies.)*
 - **Reduced Cost**: *(The cost after reduction for the player using the ability, based on their special abilities or totem. For example: 9 if the reduction is 3.)*
-- **Ability Suit**: *(The suit of cards needed to activate the ability. For example: "Diamonds", "Spades", "Hearts", or "Clubs.")*
+- **Ability Suit**: *(The suit of cards needed to activate the ability. For example: "Diamonds", "Spades", "Hearts", or "Clubs".)*
 
 If the save is not written, infer it as follows: **Athletics** for physical control, including an AOE; otherwise **Acrobatics** for an AOE; **Insight** for a psychic effect; **Arcana** for a magical effect. Athletics takes priority for physical control in an AOE.
 
 ---
 
-## **Making an Ability Roll**
+## Making an Ability Roll
 
 When a character uses an **ability**, they rely on two reference values:
 
@@ -102,12 +102,9 @@ Abilities then apply a **multiplier** to one of these two values:
 
 - **Raw Power (contextual Mod d6) Ability**: the multiplier increases the **number of dice rolled**.
     > Example: Explosion – deals 2× Raw Power (contextual Mod d6).
-    > 
-- **Base Damage Ability**: applies a **multiplier** to the character's **base damage** (e.g. *2.5 base damage* or *3 base damage*), following the rules of a **base damage roll** (see section Attacks & Damage).
+- **Base Damage Ability**: applies a **multiplier** to the character's **base damage** (e.g. *2.5 base damage* or *3 base damage*), following the rules of a **base damage roll** (see [[en/combat|Combat]], Attacks & Damage).
 
----
-
-### 🔸 **Making a Raw Power (contextual Mod d6) Ability Roll**
+### 🔸 Making a Raw Power (contextual Mod d6) Ability Roll
 
 1. 🌀 **Identify the ability**
    - Check the **multiplier (K)** indicated.
@@ -117,96 +114,33 @@ Abilities then apply a **multiplier** to one of these two values:
      **Value = (K × Mod)d6.** The multiplier increases the number of dice; it does not multiply their sum. Example: **3 × 2d6 = 6d6**.
 
    - If the contextual modifier is zero or negative, Raw Power is **0d6**, therefore 0.
-
    - This roll does not depend on the **weapon** and **cannot crit**.
 
----
+### ➕ Advantages and Disadvantages
 
-### ➕ **Advantages and Disadvantages**
-
-- **Advantage**: Repeat the entire dice-pool roll **3 times** and keep the **highest total**.
-- **Disadvantage**: Repeat the entire dice-pool roll **3 times** and keep the **lowest total**.
+- **Advantage**: Add **two rerolls of the entire Raw Power dice pool** to the initial roll, for **three rolls in total**, and keep the **highest total**.
+- **Disadvantage**: Add **two rerolls of the entire Raw Power dice pool** to the initial roll, for **three rolls in total**, and keep the **lowest total**.
 - **Cumulative**: Each additional advantage or disadvantage adds **2 rolls**.
 - **Cancellation**: Advantages and disadvantages cancel each other out one by one.
 - **Critical Hits**: None of these rolls can trigger a critical hit.
 
-### 🔸 **Make an Ability Roll for Base Damage**
+### 🔸 Make an Ability Roll for Base Damage
 
 1. ⚔️ **Identify the ability**
     - Check the **Base Damage Multiplier (K)** indicated.
 2. 🎲 **Make a Base Damage Roll**
     - Make a single **normal base damage roll**: weapon die, modifier, weapon bonus, advantages, critical hits, etc.
-    - (The full procedure is described in the *Base Damage* section.)
+    - The full procedure is described in [[en/combat|Combat]].
 3. ✖️ **Apply Multiplier K**
     - Simply multiply the result of your **base damage roll** by **K**.
 
----
+### Reminder: tokens and abilities
 
-# **Tokens**
+- Tokens used to draw, choose a suit, exchange or crystallize cards follow the rules in [[en/systeme-de-base|Core System]].
+- After an ability that uses **base damage**, a **Strength** token allows **a second complete attack**. Other combat tokens retain their own conditions: they do not automatically apply to every ability.
+- A combat token is free and may be used after the roll, limited to **1 per attribute per round** and **1 per attribute on a single attack**, regardless of who spends it. Full effects and combinations are repeated in [[en/combat|Combat]].
 
-Tokens are resources linked to attributes, used exclusively to facilitate card management, such as drawing extra cards, choosing their suit, or optimizing their use during your actions.
-
-### **General Rules:**
-
-- Each player has a certain number of **tokens** per attribute.
-- **Number of available tokens = max(0, 1 + associated attribute modifier).** Then add any racial bonuses.
-- Tokens **reset after a short or long rest**.
-
----
-
-### **Types of Tokens and Their Effects**
-
-- **Strength Tokens:** Draw a card.
-- **Agility Tokens:** Draw a card of a specific suit instead of a random one.
-- **Social Tokens:** Exchange one of your cards with an ally's card.
-- **Spirit Token:**
-    - Spend one Spirit Token to create a **Spirit Slot**. Each slot increases your hand limit by 1.
-    - You cannot have fewer **non-crystallized cards** than Spirit Slots, because a slot cannot be freed.
-    - You may crystallize a card by bursting, and therefore consuming, one Spirit Slot. Crystallizing a card means replacing it with its crystallized version, represented in red: it does not count towards the hand limit, cannot be exchanged, and cannot interact with tokens or the Totem. It keeps its value and suit.
-
----
-
-### **Tokens to Improve Basic Attacks**
-
-- **Strength Tokens:**
-    
-    After a basic attack, or after an ability that uses base damage, allows performing **a second complete attack** (double strike).
-    
-- **Agility Tokens:**
-    
-    On a basic attack, allows **curving** the attack to hit up to **3 different targets** with the same damage (possible during an uninterrupted movement).
-    
-- **Spirit Tokens:**
-    
-    On a magical/elemental basic attack, applies a **Reverberation**: at the start of your next turn, calculate **2× the attack’s raw damage, before any reduction**, then apply damage reductions to the Reverberation normally.
-    
-- **Social Tokens:**
-    
-    Without making an attack yourself, have an ally within **20 m** make a **basic attack**. You may modify that attack with another of your combat tokens. The ally may also use their own tokens.
-    
-⚡ Using a combat token is **free**: it costs no action, bonus action or reaction. You may decide to use it **after the roll**, but its effect must involve a **basic attack**. You may spend at most **1 combat token of each attribute per round**. A single attack may receive at most **1 combat token of each attribute**, regardless of who spends it.
-
----
-
-### **Token Multiplicativity**
-
-Tokens combine **multiplicatively**, their effects applying to each other:
-
-- **Strength + Agility** → Two attacks, each able to hit up to 3 targets (×6).
-- **Strength + Spirit** → Two attacks, each reverberating (×6).
-- **Strength + Social** → An ally performs two attacks.
-- **Agility + Spirit** → Three targets, each suffering a reverberation (×9).
-- **Agility + Social** → An ally attacks up to 3 targets.
-- **Spirit + Social** → The ally's attack is reverberated (×3).
-
-👉 **In summary:**
-
-- **Strength** multiplies attacks (×2).
-- **Agility** multiplies targets (up to ×3).
-- **Spirit** multiplies damage (×3 with reverberation).
-- **Social** transfers the attack to an ally, who benefits from the effects of other tokens.
-
-# Totems
+## Totems
 
 **Totems** are unique **META abilities** that modify the usual game rules and the way cards are used. They constitute **the core of the character's mechanical identity**: their abilities are generally designed to interact with their Totem, creating a playstyle unique to them.
 
@@ -217,7 +151,7 @@ Tokens combine **multiplicatively**, their effects applying to each other:
 - **Card Management:** Every Totem must interact with cards, notably by allowing them to be blocked, discarded, or exploiting their values and suits. **Crystallized Cards** can never be used to activate a Totem.
 - **Custom Totem:** A player may propose their own Totem, in agreement with the GM. Otherwise, they can draw inspiration from the archetypes presented below.
 
-## The 7 Pillars of a Totem
+### The 7 Pillars of a Totem
 
 The Totem is **the heart of the character**: it defines its main mechanic and influences its playstyle. To design a Totem, one can rely on seven elements:
 
@@ -231,11 +165,11 @@ The Totem is **the heart of the character**: it defines its main mechanic and in
 
 **A good Totem does not need to be complex.** It should primarily offer an original central mechanic, rich enough for several abilities to be built around it.
 
-## 10 Totem Archetypes
+### 10 Totem Archetypes
 
 The following archetypes are **non-exhaustive creation molds**. They can be adapted or combined to create original Totems.
 
-### 1. Invocation
+#### 1. Invocation
 
 **Example — Mystical Companion**
 
@@ -246,18 +180,18 @@ The following archetypes are **non-exhaustive creation molds**. They can be adap
 - **Limits:** Only one active summoning, maintained by the locked card.
 - **Interaction:** Abilities allow commanding, moving, or improving the companion.
 
-### 2. Transformation
+#### 2. Transformation
 
 **Example — Metamorphosis**
 
 - **Activation:** Lock a card to adopt a particular form.
 - **Mechanic:** Each suit corresponds to a different transformation.
 - **Evolution:** The transformation can be reinforced or replaced.
-- **Application:** Modify characteristics, attacks, or mobility.
+- **Application:** Modify attributes, attacks, or mobility.
 - **Limits:** Transformations are mutually exclusive and possess weaknesses.
 - **Interaction:** Abilities produce additional effects depending on the active form.
 
-### 3. Accumulation
+#### 3. Accumulation
 
 **Example — Kinetic Energy**
 
@@ -268,7 +202,7 @@ The following archetypes are **non-exhaustive creation molds**. They can be adap
 - **Limits:** Charges can be lost or consumed.
 - **Interaction:** Abilities spend charges to amplify their effects.
 
-### 4. Marking
+#### 4. Marking
 
 **Example — Progressive Curse**
 
@@ -279,7 +213,7 @@ The following archetypes are **non-exhaustive creation molds**. They can be adap
 - **Limits:** Marks can be dissipated and their accumulation is limited.
 - **Interaction:** Abilities exploit, propagate, or consume marks.
 
-### 5. Space Manipulation
+#### 5. Space Manipulation
 
 **Example — Spatial Distortion**
 
@@ -290,7 +224,7 @@ The following archetypes are **non-exhaustive creation molds**. They can be adap
 - **Limits:** Range, duration, and number of alterations are limited.
 - **Interaction:** Abilities use alterations to produce new trajectories or effect zones.
 
-### 6. Weapons and Objects
+#### 6. Weapons and Objects
 
 **Example — Linked Arsenal**
 
@@ -301,7 +235,7 @@ The following archetypes are **non-exhaustive creation molds**. They can be adap
 - **Limits:** Number of active weapons is limited.
 - **Interaction:** Abilities exploit the properties of each weapon.
 
-### 7. Tempo
+#### 7. Tempo
 
 **Example — Temporal Echo**
 
@@ -312,7 +246,7 @@ The following archetypes are **non-exhaustive creation molds**. They can be adap
 - **Limits:** Only one stored action, with limited duration.
 - **Interaction:** Abilities can be memorized then triggered under particular circumstances.
 
-### 8. Metarules
+#### 8. Metarules
 
 **Example — Fate Manipulation**
 
@@ -323,7 +257,7 @@ The following archetypes are **non-exhaustive creation molds**. They can be adap
 - **Limits:** Modification capped and triggering limited.
 - **Interaction:** Abilities can exploit the successes or failures thus caused.
 
-### 9. Mental Influence
+#### 9. Mental Influence
 
 **Example — Emotional Aura**
 
@@ -334,7 +268,7 @@ The following archetypes are **non-exhaustive creation molds**. They can be adap
 - **Limits:** Limited range and possibility of resistance.
 - **Interaction:** Abilities exploit emotions present in targets.
 
-### 10. Randomness
+#### 10. Randomness
 
 **Example — Chaotic Magic**
 
