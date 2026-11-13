@@ -17,10 +17,10 @@ CHAPTERS = [
     ("Comprendre le jeu", "systeme-de-base", "Système de base", "Dés, cartes, tokens et principes du système.", "systeme-de-base.md"),
     ("Créer et faire évoluer", "creation", "Créer son personnage", "Identité, caractéristiques, compétences et aspects.", "creation.md"),
     ("Créer et faire évoluer", "races", "Races jouables", "Les illustrations et les traits de chaque race.", "creation.md"),
-    ("Créer et faire évoluer", "progression", "Progression & expérience", "Dépenser ses XP et faire évoluer son personnage.", "progression.md"),
     ("Jouer une partie", "combat", "Actions & combat", "Rounds, initiative, déplacements, attaques et défense.", "combat.md"),
     ("Jouer une partie", "capacites", "Totems, capacités & cartes", "Activer ses pouvoirs et gérer ses cartes.", "capacites.md"),
     ("Jouer une partie", "narration", "Aspects & narration", "Aspects, objectifs, interactions et flashbacks.", "narration.md"),
+    ("Mode Campagne — optionnel", "progression", "Progression de campagne", "Règles optionnelles de progression, d’XP et d’évolution du pool.", "campagne/progression.md"),
 ]
 RULE_TITLES = {
     "character.stats.modifier": "Calculer un modificateur",
