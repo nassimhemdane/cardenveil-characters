@@ -1,3 +1,5 @@
+# Core system
+
 > **Game framework:** the general rules describe Simple Adventure play. Campaign mode is an optional variant still under development, kept separately in [[en/campaign/progression|Campaign advancement]]. Its starting pool is limited to cards from 2 through 8; this restriction does not apply to standard play.
 
 ## Game System: Dice, Cards and Tokens

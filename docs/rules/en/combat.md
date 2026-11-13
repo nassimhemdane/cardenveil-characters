@@ -1,3 +1,5 @@
+# Actions & combat
+
 ## Action and Combat
 
 Fights and action phases in this system take place in **rounds**, which represent a unit of time where each player and enemy acts once. During a round, each player has a **turn** to perform their actions: attack, use an ability, move, or use a technique. Once all participating elements have acted, the next round begins.

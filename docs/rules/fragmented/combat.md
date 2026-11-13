@@ -1,3 +1,5 @@
+# Actions & combat
+
 ## Action et Combat
 
 Les combats et phases d’actions dans ce système se déroule en **rounds**, qui représentent une unité de temps où chaque joueur et ennemi agit une fois. Pendant un round, chaque joueur dispose d’un **tour** pour effectuer ses actions : attaquer, utiliser une capacité, se déplacer, ou utiliser une technique. Une fois que tous les éléments participants ont joué, le round suivant commence.

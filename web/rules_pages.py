@@ -7,21 +7,45 @@ from __future__ import annotations
 
 import re
 import hashlib
+import json
 import unicodedata
 from html import escape
 from pathlib import Path
 
-# Explicit publication allowlist: internal engineering documents are never auto-published.
-CHAPTERS = [
-    ("Pendant la partie", "reference-rapide", "Référence rapide", "L’essentiel à garder sous les yeux pendant la partie.", "reference-rapide.md"),
-    ("Comprendre le jeu", "systeme-de-base", "Système de base", "Dés, cartes, tokens et principes du système.", "systeme-de-base.md"),
-    ("Créer et faire évoluer", "creation", "Créer son personnage", "Identité, caractéristiques, compétences et aspects.", "creation.md"),
-    ("Créer et faire évoluer", "races", "Races jouables", "Les illustrations et les traits de chaque race.", "creation.md"),
-    ("Jouer une partie", "combat", "Actions & combat", "Rounds, initiative, déplacements, attaques et défense.", "combat.md"),
-    ("Jouer une partie", "capacites", "Totems, capacités & cartes", "Activer ses pouvoirs et gérer ses cartes.", "capacites.md"),
-    ("Jouer une partie", "narration", "Aspects & narration", "Aspects, objectifs, interactions et flashbacks.", "narration.md"),
-    ("Mode Campagne — optionnel", "progression", "Progression de campagne", "Règles optionnelles de progression, d’XP et d’évolution du pool.", "campagne/progression.md"),
-]
+RULES_ROOT = Path(__file__).resolve().parents[1] / "docs/rules/fragmented"
+DESCRIPTIONS = {
+    "reference-rapide": "L’essentiel à garder sous les yeux pendant la partie.",
+    "systeme-de-base": "Dés, cartes, tokens et principes du système.",
+    "creation": "Identité, caractéristiques, compétences et aspects.",
+    "races": "Les illustrations et les traits de chaque race.",
+    "combat": "Rounds, initiative, déplacements, attaques et défense.",
+    "capacites": "Activer ses pouvoirs et gérer ses cartes.",
+    "narration": "Aspects, objectifs, interactions et flashbacks.",
+    "progression": "Règles optionnelles de progression, d’XP et d’évolution du pool.",
+}
+
+
+def markdown_chapters(directory: Path = RULES_ROOT) -> list[tuple[str, str, str, str, str]]:
+    """Build the public hierarchy from manifest order, Markdown paths and H1 titles."""
+    manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
+    chapters = []
+    for key, record in manifest["documents"].items():
+        relative = Path(record["file"])
+        source = (directory / relative).read_text(encoding="utf-8-sig")
+        heading = re.search(r"^#\s+(.+?)\s*$", source, re.M)
+        if not heading:
+            raise ValueError(f"Missing H1 title in {relative.as_posix()}")
+        title = re.sub(r"\*\*", "", heading.group(1)).strip()
+        group = "Règles générales" if len(relative.parts) == 1 else relative.parts[0].replace("-", " ").title()
+        if relative.parts[0].casefold() == "campagne":
+            group = "Campagne — optionnel"
+        chapters.append((group, key, title, DESCRIPTIONS.get(key, f"Consulter {title}."), relative.as_posix()))
+        if key == "creation":
+            chapters.append((group, "races", "Races jouables", DESCRIPTIONS["races"], relative.as_posix()))
+    return chapters
+
+
+CHAPTERS = markdown_chapters()
 RULE_TITLES = {
     "character.stats.modifier": "Calculer un modificateur",
     "character.health.max": "Points de vie maximum",

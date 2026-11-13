@@ -49,6 +49,10 @@ def test_rules_build_and_links(tmp_path, monkeypatch):
     module.build_rules(ROOT, tmp_path)
     assert len(module.CHAPTERS) == 8
     assert module.CHAPTERS[0][1] == "reference-rapide"
+    assert {chapter[0] for chapter in module.CHAPTERS} == {"Règles générales", "Campagne — optionnel"}
+    progression = next(chapter for chapter in module.CHAPTERS if chapter[1] == "progression")
+    assert progression[2] == "Progression de campagne"
+    assert progression[4] == "campagne/progression.md"
     active = {chapter[1] for chapter in module.CHAPTERS}
     assert active == {"reference-rapide", "systeme-de-base", "creation", "races",
                       "progression", "combat", "capacites", "narration"}

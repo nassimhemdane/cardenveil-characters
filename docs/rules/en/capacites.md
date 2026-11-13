@@ -1,3 +1,5 @@
+# Totems, abilities & cards
+
 ## Abilities and Totems
 
 General rules for hands, drawing, crystallization and tokens are grouped in [[en/systeme-de-base|Core System]]. This chapter retains the reminders needed to use abilities and Totems.

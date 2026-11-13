@@ -1,3 +1,5 @@
+# Totems, capacités & cartes
+
 ## Capacités et Totems
 
 Les règles générales de main, de pioche, de cristallisation et de tokens sont regroupées dans [[fragmented/systeme-de-base|Système de base]]. Ce chapitre conserve les rappels nécessaires à l’utilisation des capacités et des Totems.

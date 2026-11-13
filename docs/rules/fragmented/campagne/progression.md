@@ -1,3 +1,5 @@
+# Progression de campagne
+
 > **Variante Campagne — en cours de conception.** Ces règles sont un cas particulier optionnel, séparé du socle de jeu. Elles ne s’appliquent que si le MJ choisit le mode Campagne ; leurs achats, plafonds et restrictions de maîtrise ne s’appliquent pas par défaut en Aventure simple.
 
 ## Pool initial de campagne

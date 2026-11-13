@@ -1,3 +1,5 @@
+# Système de base
+
 > **Cadre de jeu :** les règles générales décrivent l’Aventure simple. Le mode Campagne est une variante optionnelle encore en cours de conception, isolée dans [[fragmented/campagne/progression|Progression de campagne]]. Son pool de départ est limité aux cartes de 2 à 8 ; cette restriction ne s’applique pas au jeu standard.
 
 ## Système de Jeu : Dés, Cartes et Tokens

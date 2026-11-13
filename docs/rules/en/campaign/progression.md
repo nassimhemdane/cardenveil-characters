@@ -1,3 +1,5 @@
+# Campaign advancement
+
 > **Campaign variant — work in progress.** These optional rules are a special case, separate from the core game. They apply only when the GM chooses Campaign mode; their purchases, caps and mastery restrictions do not apply by default in Simple Adventure mode.
 
 ## Starting campaign pool

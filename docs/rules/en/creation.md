@@ -1,7 +1,8 @@
+# Creating your character
+
 ## 📝 Character Creation
 
 ---
-
 ### 1. Identity
 
 - Choose a **name**, a **race**, an **alignment** and a **short description**.
