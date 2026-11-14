@@ -3,9 +3,9 @@
 La page `/atelier/` est un espace local avec fiche éditable, import JSON/ZIP,
 jets simples et commandes MJ. Elle conserve les données dans IndexedDB sans compte
 ni serveur. Le lien Atelier est ajouté après les règles dans la navigation ; les fiches
-proposent de l’ouvrir directement. Les sources et les tests vivent dans `web/test-app`.
+proposent de l’ouvrir directement. Les sources vivent dans `web/atelier-app`.
 Node.js 22.12+ est requis pour compiler cette page ; `site.cmd build` et le build
-Cloudflare exécutent aussi sa compilation. Voir `web/test-app/README.md`.
+Cloudflare exécutent aussi sa compilation. Voir `web/atelier-app/README.md`.
 
 Le site est statique. Ses données sont générées depuis les archives canoniques de `Final/` avec
 le parseur officiel de `cardenveil-core`.

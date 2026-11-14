@@ -28,8 +28,8 @@
   $effect(()=>{const node=dockNode;if(!node){dockHeight=0;return;}const update=()=>dockHeight=node.getBoundingClientRect().height;update();const observer=new ResizeObserver(update);observer.observe(node);return()=>observer.disconnect();});
   const tokenNames = {force:'Force',agilite:'Agilité',esprit:'Esprit',social:'Social'};
   const combatNames = {force:'Double frappe',agilite:'Courber',esprit:'Réverbération',social:'Attaque alliée'};
-  function panelDrop(target){if(!draggedPanel||draggedPanel===target)return;const next=panelOrder.filter(id=>id!==draggedPanel),index=next.indexOf(target);next.splice(index,0,draggedPanel);panelOrder=next;localStorage.setItem('cardenveil-test-panel-order',JSON.stringify(next));draggedPanel='';}
-  function panelMove(id,direction){const index=panelOrder.indexOf(id),target=index+direction;if(index<0||target<0||target>=panelOrder.length)return;const next=[...panelOrder];[next[index],next[target]]=[next[target],next[index]];panelOrder=next;localStorage.setItem('cardenveil-test-panel-order',JSON.stringify(next));}
+  function panelDrop(target){if(!draggedPanel||draggedPanel===target)return;const next=panelOrder.filter(id=>id!==draggedPanel),index=next.indexOf(target);next.splice(index,0,draggedPanel);panelOrder=next;localStorage.setItem('cardenveil-atelier-panel-order',JSON.stringify(next));draggedPanel='';}
+  function panelMove(id,direction){const index=panelOrder.indexOf(id),target=index+direction;if(index<0||target<0||target>=panelOrder.length)return;const next=[...panelOrder];[next[index],next[target]]=[next[target],next[index]];panelOrder=next;localStorage.setItem('cardenveil-atelier-panel-order',JSON.stringify(next));}
   function persist(next) {
     game = next; saved = 'Enregistrement…';
     const snapshot = JSON.parse(JSON.stringify(next));
@@ -58,7 +58,7 @@
   }
   onMount(() => {
     let disposed = false;
-    try { const stored=JSON.parse(localStorage.getItem('cardenveil-test-panel-order')); if(Array.isArray(stored)&&stored.length===4)panelOrder=stored; } catch {}
+    try { const stored=JSON.parse(localStorage.getItem('cardenveil-atelier-panel-order')); if(Array.isArray(stored)&&stored.length===4)panelOrder=stored; } catch {}
     const onOffline = () => offline = true, onOnline = () => offline = false;
     window.addEventListener('offline',onOffline); window.addEventListener('online',onOnline);
     const off = listen('sheet', row => { const old = sheet; applySheet(row, old); });

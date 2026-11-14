@@ -4,7 +4,7 @@
   let {enabled,onAction}=$props();
   let x=$state(0),y=$state(88),height=$state(540),panel=$state(null),drag=null;
   let schedule=()=>{};
-  const positionKey='cardenveil-test-compact-position-v2';
+  const positionKey='cardenveil-atelier-compact-position-v2';
   function limits(){const viewport=window.visualViewport,nav=document.querySelector('.sandbox-header')?.getBoundingClientRect();let top=Math.max((viewport?.offsetTop??0)+8,nav&&nav.bottom>0?nav.bottom+6:0);let bottom=Math.min(innerHeight,(viewport?.offsetTop??0)+(viewport?.height??innerHeight))-12;const dock=document.querySelector('.hand-dock');if(dock){const r=dock.getBoundingClientRect();if(r.height>0)bottom=Math.min(bottom,r.top-12);}if(bottom-top<40)top=Math.max((viewport?.offsetTop??0)+8,bottom-40);return {top,bottom};}
   function clamp(){const viewportWidth=document.documentElement.clientWidth,width=Math.min(460,viewportWidth-72),{top,bottom}=limits();x=Math.max(12,Math.min(x,viewportWidth-width-60));y=Math.max(top,Math.min(y,Math.max(top,bottom-80)));}
   function start(e){if(!e.target.closest('.compact-grip')||e.target.closest('button')||e.button!==0)return;drag={px:e.clientX,py:e.clientY,x,y};e.currentTarget.setPointerCapture(e.pointerId);}

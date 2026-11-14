@@ -1,4 +1,4 @@
-const DB_NAME = 'cardenveil-test-v1';
+const DB_NAME = 'cardenveil-atelier-v1';
 export const events = new EventTarget();
 let database;
 function db() {

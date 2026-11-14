@@ -48,16 +48,16 @@ function Initialize-NodeRuntime {
     throw 'Node.js et npm sont introuvables. Installez Node.js 22.12 ou plus recent, puis relancez web\site.cmd.'
 }
 
-function Build-TestPage {
+function Build-AtelierPage {
     Initialize-NodeRuntime
-    Push-Location (Join-Path $PSScriptRoot 'test-app')
+    Push-Location (Join-Path $PSScriptRoot 'atelier-app')
     try {
         if (-not (Test-Path -LiteralPath 'node_modules')) {
             & $script:SiteNpm ci
-            if ($LASTEXITCODE -ne 0) { throw 'Installation des dependances Test impossible.' }
+            if ($LASTEXITCODE -ne 0) { throw 'Installation des dependances Atelier impossible.' }
         }
         & $script:SiteNpm run build
-        if ($LASTEXITCODE -ne 0) { throw 'Build de la page Test impossible.' }
+        if ($LASTEXITCODE -ne 0) { throw 'Build de la page Atelier impossible.' }
     } finally {
         Pop-Location
     }
@@ -68,7 +68,7 @@ if ($Command -eq "gm") {
     if (-not (Test-Path -LiteralPath $GmPython)) { $GmPython = "py" }
     & $GmPython -X utf8 web\build.py
     if ($LASTEXITCODE -ne 0) { throw "Échec du build du site." }
-    Build-TestPage
+    Build-AtelierPage
     Write-Host "Agent MJ local : http://127.0.0.1:$Port/gm/" -ForegroundColor Cyan
     & $GmPython -m uvicorn cardenveil.server.app:create_app --factory --app-dir src --host 127.0.0.1 --port $Port
     exit $LASTEXITCODE
@@ -81,7 +81,7 @@ function Build-Site {
     if ($LASTEXITCODE -ne 0) { throw "Métadonnées invalides." }
     py -X utf8 web\build.py
     if ($LASTEXITCODE -ne 0) { throw "Échec de la génération du site." }
-    Build-TestPage
+    Build-AtelierPage
 }
 
 Build-Site
