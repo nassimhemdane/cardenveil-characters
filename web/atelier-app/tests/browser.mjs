@@ -125,7 +125,7 @@ try{
   await evaluate(`document.querySelector('.outliner-toggle-right').click()`);await delay(80);
   if(!await evaluate(`[...document.querySelectorAll('.outliner-row')].some(row=>row.textContent.includes('Portée cone'))`))throw Error('Range template was not persisted as a note object');
   await evaluate(`document.querySelector('.outliner-toggle-right').click()`);await delay(260);
-  await evaluate(`(()=>{const stage=document.querySelector('.vtt-stage');stage.focus();stage.dispatchEvent(new KeyboardEvent('keydown',{code:'Space',key:' ',bubbles:true}))})()`);await delay(320);
+  await evaluate(`(()=>{const stage=document.querySelector('.vtt-stage');stage.focus();stage.dispatchEvent(new KeyboardEvent('keydown',{code:'Space',key:' ',bubbles:true}));stage.dispatchEvent(new KeyboardEvent('keyup',{code:'Space',key:' ',bubbles:true}))})()`);await delay(320);
   const centeredRange=await evaluate(`(()=>{const r=document.querySelector('.vtt-token-overlay').getBoundingClientRect(),s=document.querySelector('.vtt-stage').getBoundingClientRect();return Math.hypot(r.x+r.width/2-(s.x+s.width/2),r.y+r.height/2-(s.y+s.height/2))})()`);
   if(centeredRange>12)throw Error('Space did not center the range selection: '+centeredRange);
   // Capture a second real throw while the white 3D tray is visible.
