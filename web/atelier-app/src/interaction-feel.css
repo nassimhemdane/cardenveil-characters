@@ -4,6 +4,7 @@
 .vtt-shell.has-hover .vtt-stage canvas{cursor:grab}
 .vtt-stage:active canvas{cursor:grabbing}
 .vtt-token-overlay,.vtt-selection-menu{animation:vtt-menu-in .12s ease-out both}
+.vtt-token-overlay{border-color:#e3b505!important;background:#f4ca2412!important}
 .vtt-selection-menu{transform:translateX(calc(-50% + var(--menu-shift,0px)))!important}
 .grid-settings{left:48px!important;top:0!important;max-height:min(560px,80vh);overflow:auto}
 .range-template-menu{display:grid;gap:8px;width:230px!important}
@@ -12,8 +13,13 @@
 .range-template-menu select,.range-template-menu input{margin:0!important;max-width:110px}
 .range-template-menu input[type=color]{width:34px;height:28px;padding:2px}
 .range-template-menu small{padding:5px 7px;color:#667260;line-height:1.35}
-.range-shapes{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.range-shapes{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
 .vtt-tools .range-shapes button{width:auto!important;height:32px!important;padding:0 5px!important;font-size:10px!important}
+.range-presets{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.vtt-tools .range-presets button{width:auto!important;height:28px!important;padding:0 3px!important;font-size:9px!important}
+.range-custom{width:100%!important}
+.range-radius{display:flex!important;justify-content:center!important;grid-template-columns:auto auto!important}
+.range-colors{grid-template-columns:repeat(5,1fr)!important;padding-top:7px!important}
 .vtt-shell.settling .vtt-token-overlay{animation:vtt-land .11s ease-out both}
 @keyframes vtt-menu-in{from{opacity:0;translate:0 4px}to{opacity:1;translate:0 0}}
 @keyframes vtt-land{0%{scale:1.035}100%{scale:1}}

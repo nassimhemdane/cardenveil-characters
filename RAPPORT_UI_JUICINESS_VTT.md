@@ -37,9 +37,10 @@ Date de validation locale : 14 novembre 2026
 - La main de cartes est masquée au premier chargement et reste accessible par son bouton flottant.
 - Le panneau Grille s’ouvre latéralement à côté de la barre d’outils, comme le panneau Dessin.
 - Un texte vide est abandonné sans créer d’objet dans la scène.
-- Outil **Gabarit de portée** : cercle, cône ou ligne, tailles Cardenveil `1,5 / 5 / 8 / 14 / 20`, couleur et transparence configurables.
+- Outil ponctuel **Gabarit de portée** : cercle, cône, ligne ou pinceau, distances `1,5 / 3 / 5 / 7 / 10 / 20` et valeur personnalisée, palette complète, couleur libre et transparence configurable.
+- Pour le cercle, la distance représente le diamètre par défaut et peut être basculée en rayon.
 - Prévisualisation transparente sous le curseur avec taille inscrite en blanc, puis placement persistant comme objet Note.
-- Un cône ou une ligne placé depuis un personnage, une monture ou un accessoire s’ancre sur cet objet et s’oriente avec la souris.
+- Un clic sur le vide dépose immédiatement la portée puis restaure l’outil Sélection. Un clic sur un personnage, une monture ou un accessoire ancre la portée sans la déposer ; la souris l’oriente et un second clic la valide avant de restaurer Sélection.
 - Sans objet d’ancrage, `Ctrl/Cmd + molette` oriente les gabarits directionnels par pas de 5°.
 - `prefers-reduced-motion` désactive pratiquement toutes les animations et transitions.
 - La sauvegarde reste différée ; aucun accès IndexedDB ou dossier local n’est exécuté directement dans `pointermove`.
@@ -55,6 +56,7 @@ Date de validation locale : 14 novembre 2026
 - Mesure, portées, déplacement mesuré, dessins, texte, gomme et import d’images.
 - Historique, persistance IndexedDB, dossier local et export/import de scène.
 - Interface blanche/noire, overlays, main de cartes, fiche compacte et dés 3D.
+- La sélection utilise un unique cadre jaune, sans second contour canvas.
 
 ## Paramètres disponibles
 
