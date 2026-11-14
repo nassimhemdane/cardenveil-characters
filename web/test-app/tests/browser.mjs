@@ -32,7 +32,7 @@ try{
   function send(method,params={}){return new Promise((resolve,reject)=>{const current=++id;waiting.set(current,{resolve,reject});ws.send(JSON.stringify({id:current,method,params}));});}
   await send('Runtime.enable');await send('Page.enable');
   await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1100,deviceScaleFactor:1,mobile:false});
-  await send('Page.navigate',{url:origin+'/test/'});
+  await send('Page.navigate',{url:origin+'/atelier/'});
   await delay(500);
   async function evaluate(expression){const result=await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(result.exceptionDetails)throw Error((result.exceptionDetails.exception?.description||result.exceptionDetails.text)+'\nBrowser errors: '+errors.join('\n'));return result.result.value;}
   const report=await evaluate(`(async()=>{

@@ -505,7 +505,7 @@ async function startSim(spec, seed, modifier) {
     needTypes.map(
       (t) =>
         new Promise((resolve) => {
-          loader.load(`/test/dice/${t}.glb`, (gltf) => resolve([t, gltf.scene]), undefined, () => resolve([t, null]));
+          loader.load(`/atelier/dice/${t}.glb`, (gltf) => resolve([t, gltf.scene]), undefined, () => resolve([t, null]));
         })
     )
   );

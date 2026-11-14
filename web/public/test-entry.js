@@ -8,7 +8,7 @@
     if (!actions || actions.querySelector('[data-test-character]')) return;
     const link = document.createElement('a');
     link.className = 'button'; link.dataset.testCharacter = '';
-    link.href = '/test/?character=' + encodeURIComponent(decodeURIComponent(id));
+    link.href = '/atelier/?character=' + encodeURIComponent(decodeURIComponent(id));
     link.textContent = 'Ouvrir dans l’Atelier'; actions.append(link);
   }
   addTestLink();

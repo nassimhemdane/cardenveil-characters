@@ -12,6 +12,7 @@ secrets*.json
 # Python
 node_modules/
 web/public/test/
+web/public/atelier/
 __pycache__/
 *.py[cod]
 *.egg-info/

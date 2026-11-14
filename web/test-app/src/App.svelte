@@ -42,7 +42,7 @@
     error = ''; persist(next);
   }
   function pick(card) { selected = selected === card.id ? null : card.id; }
-  const cardImage = (card, c = false) => `/test/cards/${({'♠':'S','♣':'C','♥':'H','♦':'D'})[card.suit]}-${card.value}${c ? '-c' : ''}.png`;
+  const cardImage = (card, c = false) => `/atelier/cards/${({'♠':'S','♣':'C','♥':'H','♦':'D'})[card.suit]}-${card.value}${c ? '-c' : ''}.png`;
   function applySheet(row, previous) {
     sheet = row?.data ?? null;
     if (!game || !sheet) return;
@@ -136,7 +136,7 @@
   }
 </script>
 
-<header bind:this={headerNode} class="sandbox-header"><a class="brand" href="/">CARDENVEIL</a><nav aria-label="Navigation principale"><a href="/">Personnages</a><a href="/statistiques/">Statistiques</a><a href="/regles/">Règles & docs</a><a href="/test/" aria-current="page">Atelier</a><a href="/gm/">Agent MJ</a></nav></header>
+<header bind:this={headerNode} class="sandbox-header"><a class="brand" href="/">CARDENVEIL</a><nav aria-label="Navigation principale"><a href="/">Personnages</a><a href="/statistiques/">Statistiques</a><a href="/regles/">Règles & docs</a><a href="/atelier/" aria-current="page">Atelier</a><a href="/gm/">Agent MJ</a></nav></header>
 <main class="sandbox">
   {#if error}<div class="notice error" role="alert">{error}<button onclick={() => error = ''} aria-label="Fermer le message">×</button></div>{/if}
   {#if offline}<div class="notice" role="status">Vous êtes hors connexion. La dernière main est conservée ; les commandes reprendront au retour du réseau.</div>{/if}

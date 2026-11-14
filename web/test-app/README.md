@@ -1,6 +1,6 @@
 # Atelier local
 
-Application Svelte autonome construite dans `web/public/test/`. Aucun backend,
+Application Svelte autonome construite dans `web/public/atelier/`. Aucun backend,
 compte ou accès Supabase. IndexedDB conserve fiche, images importées, cartes et
 journal. La suppression des données du navigateur efface aussi cette sauvegarde.
 
