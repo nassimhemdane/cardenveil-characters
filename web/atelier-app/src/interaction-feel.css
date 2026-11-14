@@ -1,0 +1,20 @@
+:is(button,[role="button"]){transition:background-color .1s ease-out,color .1s ease-out,border-color .1s ease-out,box-shadow .12s ease-out,transform .09s ease-out}
+:is(button,[role="button"]):active:not(:disabled){transform:scale(.98)}
+.vtt-stage canvas{cursor:default}
+.vtt-shell.has-hover .vtt-stage canvas{cursor:grab}
+.vtt-stage:active canvas{cursor:grabbing}
+.vtt-token-overlay,.vtt-selection-menu{animation:vtt-menu-in .12s ease-out both}
+.vtt-selection-menu{transform:translateX(calc(-50% + var(--menu-shift,0px)))!important}
+.grid-settings{left:48px!important;top:0!important;max-height:min(560px,80vh);overflow:auto}
+.range-template-menu{display:grid;gap:8px;width:230px!important}
+.range-template-menu strong{padding:4px 7px;font-size:12px}
+.range-template-menu label{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px;padding:0 7px;font-size:10px!important}
+.range-template-menu select,.range-template-menu input{margin:0!important;max-width:110px}
+.range-template-menu input[type=color]{width:34px;height:28px;padding:2px}
+.range-template-menu small{padding:5px 7px;color:#667260;line-height:1.35}
+.range-shapes{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.vtt-tools .range-shapes button{width:auto!important;height:32px!important;padding:0 5px!important;font-size:10px!important}
+.vtt-shell.settling .vtt-token-overlay{animation:vtt-land .11s ease-out both}
+@keyframes vtt-menu-in{from{opacity:0;translate:0 4px}to{opacity:1;translate:0 0}}
+@keyframes vtt-land{0%{scale:1.035}100%{scale:1}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}

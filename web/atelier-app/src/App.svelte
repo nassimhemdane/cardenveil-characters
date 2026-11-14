@@ -20,7 +20,7 @@
   let selectedCard = $derived(player ? [...player.hand, ...player.crystallized].find(c => c.id === selected) : null);
   let pendingExchange = $derived(game?.pendingExchanges?.[0]);
   let sequence = Promise.resolve();
-  let handVisible=$state(true),compactEnabled=$state(false);
+  let handVisible=$state(false),compactEnabled=$state(false);
   let panelOrder=$state(['sheet','map','mj','history']), draggedPanel=$state('');
   let dockNode=$state(null),dockHeight=$state(0);
   let headerNode=$state(null),navBottom=$state(72);

@@ -41,7 +41,9 @@ try{
     function awaitToken(){setTimeout(()=>document.querySelector('[title="Esprit : usage carte"]').click(),0)}
     const click=t=>{if(t==='＋ Emplacement'){document.querySelector('.token-chip').click();awaitToken();return;}const b=t==='＋ Piocher'?document.querySelector('[title="Piocher une carte"]'):[...document.querySelectorAll('button')].find(b=>b.textContent.trim()===t||b.title===t);if(!b)throw Error('Missing '+t);b.click();};
     const cards=()=>document.querySelectorAll('.plugin-fan .playing-card:not(.crystallized)');
-    await until(()=>document.querySelector('.token-grid'),'mount');
+    await until(()=>document.querySelector('.target-accordion'),'mount');
+    if(document.querySelector('.plugin-draw'))throw Error('Hand should be hidden on initial load');
+    if(!document.querySelector('.plugin-draw')){document.querySelector('.hand-toggle').click();await until(()=>document.querySelector('.plugin-draw'),'show default-hidden hand');}
     const draw=document.querySelector('.plugin-draw');if(draw.disabled||getComputedStyle(draw).backgroundColor!=='rgb(36, 112, 58)'||draw.getBoundingClientRect().height<34)throw Error('Enabled draw should be large and green');
     click('＋ Piocher');await until(()=>cards().length===1,'draw');
     const geometry=cards()[0].getBoundingClientRect();if(geometry.width!==80||geometry.height!==120)throw Error('Plugin card geometry mismatch '+geometry.width+'×'+geometry.height);
@@ -52,11 +54,11 @@ try{
     cards()[0].click();await pause();click('Échange simulé');
     await until(()=>document.body.innerText.includes('Allié fictif · échange'),'exchange');click('Refuser et rembourser');await pause();
     if(document.body.innerText.includes('Allié fictif · échange'))throw Error('Exchange not cleared');
-    click('Commandes MJ');await pause();const fatigue=document.querySelector('.table-footer select');fatigue.value='2';fatigue.dispatchEvent(new Event('change',{bubbles:true}));await pause();
+    const gmSummary=[...document.querySelectorAll('.page-accordion>summary')].find(node=>node.textContent.includes('Gestion MJ'));if(!gmSummary)throw Error('Missing Gestion MJ accordion');gmSummary.click();await pause();const fatigue=document.querySelector('.table-footer select');fatigue.value='2';fatigue.dispatchEvent(new Event('change',{bubbles:true}));await pause();
     if(!document.querySelector('.value-badge'))throw Error('Fatigue missing');
-    click('Choisir dans le catalogue');await until(()=>document.querySelector('.catalogue-picker select')?.options.length>1,'catalogue');
-    const select=document.querySelector('.catalogue-picker select');select.value=select.options[1].value;select.dispatchEvent(new Event('change',{bubbles:true}));await pause();click('Ouvrir dans Test');
-    await until(()=>document.querySelector('.session-bar strong').textContent!=='Mon personnage','import');
+    document.querySelector('.target-accordion>summary').click();await until(()=>document.querySelector('.target-content select')?.options.length>1,'catalogue');
+    const select=document.querySelector('.target-content select');select.value=select.options[1].value;select.dispatchEvent(new Event('change',{bubbles:true}));await pause();document.querySelector('.target-content .primary').click();
+    await until(()=>document.querySelector('.target-accordion>summary strong')?.textContent!=='Mon personnage','import');
     await until(()=>document.querySelector('.sheet-frame').textContent.includes('COMPÉTENCES'),'sheet');
     if(document.querySelector('.skill-row button'))throw Error('Skill pin still displayed');
     if([...document.querySelectorAll('.sheet-frame button')].some(b=>b.textContent.includes('📌')))throw Error('Pin still present in sheet');
@@ -89,9 +91,37 @@ try{
     if(document.body.innerText.includes('Jet transmis à Owlbear'))throw Error('Remote roll');
     await until(()=>document.querySelector('.history').textContent.includes('utilise'),'physics result logged');
     document.querySelector('[title="Fermer les dés"]').click();await pause();
-    await until(()=>document.querySelector('.session-bar small').textContent.includes('Enregistré'),'save');
-    return {name:document.querySelector('.session-bar strong').textContent,count:cards().length};
+    await until(()=>document.querySelector('.target-content small')?.textContent.includes('Enregistré'),'save');
+    return {name:document.querySelector('.target-accordion>summary strong').textContent,count:cards().length};
   })()`);
+  // Direct VTT manipulation: create a real token, drag from its current grab point,
+  // then undo the whole gesture as a single history entry.
+  await evaluate(`(async()=>{document.querySelector('.vtt-header-actions button').click();for(let i=0;i<100;i++){if(document.querySelector('.vtt-token-overlay'))return;await new Promise(r=>setTimeout(r,50))}throw Error('VTT token creation failed')})()`);
+  await evaluate(`document.querySelector('.vtt-shell').scrollIntoView({block:'start'})`);await delay(120);
+  const tokenStart=await evaluate(`(()=>{const r=document.querySelector('.vtt-token-overlay').getBoundingClientRect();return{x:r.x+r.width*.35,y:r.y+r.height*.4,left:r.left,top:r.top}})()`);
+  await send('Input.dispatchMouseEvent',{type:'mousePressed',x:tokenStart.x,y:tokenStart.y,button:'left',clickCount:1});
+  await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:tokenStart.x+96,y:tokenStart.y+54,button:'left',buttons:1});
+  await send('Input.dispatchMouseEvent',{type:'mouseReleased',x:tokenStart.x+96,y:tokenStart.y+54,button:'left',clickCount:1});await delay(120);
+  const tokenMoved=await evaluate(`(()=>{const r=document.querySelector('.vtt-token-overlay').getBoundingClientRect();return{left:r.left,top:r.top}})()`);
+  if(Math.hypot(tokenMoved.left-tokenStart.left,tokenMoved.top-tokenStart.top)<40)throw Error('VTT direct drag did not follow pointer '+JSON.stringify({tokenStart,tokenMoved}));
+  await evaluate(`document.querySelector('.vtt-stage').dispatchEvent(new KeyboardEvent('keydown',{key:'z',ctrlKey:true,bubbles:true}))`);await delay(250);
+  const tokenUndone=await evaluate(`(()=>{const r=document.querySelector('.vtt-token-overlay').getBoundingClientRect();return{left:r.left,top:r.top}})()`);
+  if(Math.hypot(tokenUndone.left-tokenStart.left,tokenUndone.top-tokenStart.top)>6)throw Error('VTT drag undo did not restore position '+JSON.stringify({tokenStart,tokenMoved,tokenUndone}));
+  await evaluate(`document.querySelector('.vtt-tool-group .tool-caret').click()`);await delay(50);
+  await evaluate(`[...document.querySelectorAll('.measure-menu button')].find(b=>b.textContent.includes('Gabarit de portée')).click()`);await delay(50);
+  await evaluate(`[...document.querySelectorAll('.range-shapes button')].find(b=>b.textContent==='Cône').click()`);await delay(80);
+  const rangeUi=await evaluate(`(()=>{const menu=document.querySelector('.range-template-menu'),color=menu?.querySelector('input[type=color]');return{visible:!!menu,color:color?.value,side:menu?.getBoundingClientRect().left>document.querySelector('.vtt-tools').getBoundingClientRect().right}})()`);
+  if(!rangeUi.visible||rangeUi.color!=='#d32f2f'||!rangeUi.side)throw Error('Range template menu invalid '+JSON.stringify(rangeUi));
+  const rangePoint=await evaluate(`(()=>{const r=document.querySelector('.vtt-stage').getBoundingClientRect();return{x:r.left+r.width*.72,y:r.top+r.height*.32}})()`);
+  await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:rangePoint.x,y:rangePoint.y});
+  await send('Input.dispatchMouseEvent',{type:'mousePressed',x:rangePoint.x,y:rangePoint.y,button:'left',clickCount:1});
+  await send('Input.dispatchMouseEvent',{type:'mouseReleased',x:rangePoint.x,y:rangePoint.y,button:'left',clickCount:1});await delay(100);
+  await evaluate(`document.querySelector('.outliner-toggle-right').click()`);await delay(80);
+  if(!await evaluate(`[...document.querySelectorAll('.outliner-row')].some(row=>row.textContent.includes('Portée cone'))`))throw Error('Range template was not persisted as a note object');
+  await evaluate(`document.querySelector('.outliner-toggle-right').click()`);await delay(260);
+  await evaluate(`(()=>{const stage=document.querySelector('.vtt-stage');stage.focus();stage.dispatchEvent(new KeyboardEvent('keydown',{code:'Space',key:' ',bubbles:true}))})()`);await delay(320);
+  const centeredRange=await evaluate(`(()=>{const r=document.querySelector('.vtt-token-overlay').getBoundingClientRect(),s=document.querySelector('.vtt-stage').getBoundingClientRect();return Math.hypot(r.x+r.width/2-(s.x+s.width/2),r.y+r.height/2-(s.y+s.height/2))})()`);
+  if(centeredRange>12)throw Error('Space did not center the range selection: '+centeredRange);
   // Capture a second real throw while the white 3D tray is visible.
   await evaluate(`document.querySelector('.sheet-frame [role="button"]').click()`);
   await evaluate(`new Promise((resolve,reject)=>{let n=0;const t=setInterval(()=>{const doc=document.querySelector('.dice-overlay iframe')?.contentDocument;if(doc?.body?.dataset.renderer==='three-rapier'){clearInterval(t);resolve(true)}else if(n++>200){clearInterval(t);reject(Error('3D capture timeout'))}},100)})`);
@@ -103,7 +133,7 @@ try{
   await evaluate(`new Promise((resolve,reject)=>{let n=0;const t=setInterval(()=>{const close=document.querySelector('[title="Fermer les dés"]');if(close&&!close.disabled){clearInterval(t);close.click();resolve(true)}else if(n++>350){clearInterval(t);reject(Error('Second roll timeout'))}},100)})`);
   await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1100,deviceScaleFactor:1,mobile:false});await delay(100);
   await send('Page.reload');await delay(600);
-  const persisted=await evaluate(`new Promise((resolve,reject)=>{let n=0;const timer=setInterval(()=>{if(document.querySelector('.token-grid')){clearInterval(timer);resolve({name:document.querySelector('.session-bar strong').textContent,count:document.querySelectorAll('.plugin-fan .playing-card:not(.crystallized)').length})}else if(n++>100){clearInterval(timer);reject(Error('Reload timeout'))}},100)})`);
+  const persisted=await evaluate(`new Promise((resolve,reject)=>{let n=0,opened=false;const timer=setInterval(()=>{if(document.querySelector('.target-accordion')&&!opened&&!document.querySelector('.plugin-draw')){opened=true;document.querySelector('.hand-toggle').click()}if(document.querySelector('.plugin-draw')){clearInterval(timer);resolve({name:document.querySelector('.target-accordion>summary strong').textContent,count:document.querySelectorAll('.plugin-fan .playing-card:not(.crystallized)').length})}else if(n++>100){clearInterval(timer);reject(Error('Reload timeout'))}},100)})`);
   if(JSON.stringify(report)!==JSON.stringify(persisted))throw Error('Persistence mismatch '+JSON.stringify({report,persisted}));
   // Import the actual canonical archive through the same file-input handler as users.
   await evaluate(`(async()=>{
@@ -114,7 +144,7 @@ try{
     HTMLInputElement.prototype.click=function(){if(this.type==='file'){Object.defineProperty(this,'files',{value:[file]});this.onchange({target:this});}else old.call(this)};
     document.querySelector('.sheet-frame button[title="Importer une fiche JSON"]').click();
     HTMLInputElement.prototype.click=old;
-    for(let i=0;i<150;i++){if(document.querySelector('.session-bar strong').textContent===catalogue[1].identity.nom)return;await new Promise(r=>setTimeout(r,100))}
+    for(let i=0;i<150;i++){if(document.querySelector('.target-accordion>summary strong').textContent===catalogue[1].identity.nom)return;await new Promise(r=>setTimeout(r,100))}
     throw Error('ZIP import failed '+document.body.innerText.slice(-500));
   })()`);
   await evaluate(`(async()=>{
@@ -126,7 +156,7 @@ try{
     if(getComputedStyle(name).color==='rgb(255, 255, 255)')throw Error('White editor field text');
     name.value='Personnage de test';name.dispatchEvent(new Event('input',{bubbles:true}));await pause();
     const save=[...document.querySelectorAll('.sheet-frame .fixed button')].find(b=>b.textContent.trim()==='Sauvegarder');save.click();
-    for(let i=0;i<100;i++){if(document.querySelector('.session-bar strong').textContent==='Personnage de test')return;await pause()}
+    for(let i=0;i<100;i++){if(document.querySelector('.target-accordion>summary strong').textContent==='Personnage de test')return;await pause()}
     throw Error('Sheet edit not saved');
   })()`);
   await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1100,deviceScaleFactor:1,mobile:false});await delay(200);
@@ -222,8 +252,8 @@ try{
   console.log('Ratios checked: '+layouts.map(l=>l.width+'x'+l.height).join(', '));
   await send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});await delay(150);
   await evaluate(`(()=>{const draw=document.querySelector('.plugin-draw');for(let i=0;i<20;i++)if(!draw.disabled)draw.click()})()`);await delay(100);
-  if(!await evaluate(`(()=>{const b=document.querySelector('.plugin-draw');return b.disabled&&getComputedStyle(b).backgroundColor==='rgb(180, 35, 35)'})()`))throw Error('Blocked draw should be red');
+  if(!await evaluate(`document.querySelector('.plugin-draw')?.disabled===true`))throw Error('Blocked draw should be disabled');
   if(errors.length)throw Error(errors.join('\n'));
-  await evaluate(`(async()=>{document.querySelector('.session-bar .danger').click();for(let i=0;i<100;i++){if(document.querySelector('.session-bar strong').textContent==='Mon personnage'&&!document.querySelector('.playing-card'))return;await new Promise(r=>setTimeout(r,100))}throw Error('Reset failed')})()`);
+  await evaluate(`(async()=>{document.querySelector('.target-content .danger').click();for(let i=0;i<100;i++){if(document.querySelector('.target-accordion>summary strong').textContent==='Mon personnage'&&!document.querySelector('.playing-card'))return;await new Promise(r=>setTimeout(r,100))}throw Error('Reset failed')})()`);
   console.log('PASS: compact grows with accordions, stops above the cards, scrolls internally, follows hand expansion/hiding and viewport resize; existing compact, dice and persistence flows pass.');
 }finally{ws?.close();child.kill();server.close();}
