@@ -1,13 +1,13 @@
 <script>
   import { onMount } from 'svelte';
-  import { read, write } from './storage.js';
+  import { read, write, writeHandle } from './storage.js';
   import VttIcon from './VttIcon.svelte';
   import { IMAGE_TYPES, IMPORT_TYPES, freshTable, normalizeTable, moveItem, reorderItem } from './vttState.js';
   let { sheet = null } = $props();
   let table = $state(freshTable()), ready = $state(false), selected = $state(''), selectedIds = $state([]), tool = $state('select');
   let measure = $state(null), measureTool = $state('measure'), draftDraw = $state(null), textDraft = $state(null), drawMode = $state('brush'), drawColor = $state('#202620'), drawOpacity = $state(1), drawMenu = $state(false), ringsOpen = $state(false), pendingImport = $state(null), layerMenu = $state(false), mapFocused = $state(false), measureMenu = $state(false), editingName = $state(''), editingOutliner = $state('');
   let canvas, viewport, fileInput, sceneInput, importType = $state('CHARACTER'), assetTray = $state(''), tokenCrop = $state(true), full = $state(false), outliner = $state(false), settings = $state(false), status = $state('');
-  let drag = null, lastMeasure = null, clickCycle = null, history = $state([]), future = $state([]), saveTimer, images = new Map(), raf = 0;
+  let drag = null, lastMeasure = null, clickCycle = null, history = $state([]), future = $state([]), saveTimer, images = new Map(), raf = 0, directoryHandle = null, folderName = $state('');
   const layerRank = Object.fromEntries(IMAGE_TYPES.map(([key], index) => [key, index]));
   const uid = () => crypto.randomUUID?.() || `${Date.now()}-${Math.random()}`;
   const clone = value => JSON.parse(JSON.stringify(value));
@@ -15,6 +15,7 @@
   onMount(() => {
     let disposed = false;
     read('vtt').then(value => { if (disposed) return; table = normalizeTable(value); ready = true; hydrate(); draw(); });
+    read('vtt-directory').then(handle => { if(handle){directoryHandle=handle;folderName=handle.name||'Dossier local';} }).catch(()=>{});
     const resize = new ResizeObserver(resizeCanvas); resize.observe(viewport);
     const paste = event => { if (!viewport.matches(':hover') && document.activeElement !== viewport) return; const files = [...event.clipboardData.files].filter(file => file.type.startsWith('image/')); if (files.length) { event.preventDefault(); offerImport(files, viewport.clientWidth/2, viewport.clientHeight/2, true); } };
     const focusMode = event => { if (event.target.closest('.compact-bubble,.hand-dock,.edge-tools,.dice-overlay')) return; mapFocused = !!event.target.closest('.vtt-shell'); };
@@ -24,7 +25,9 @@
   });
   $effect(() => { table; if (ready) { scheduleSave(); draw(); } });
 
-  function scheduleSave() { clearTimeout(saveTimer); saveTimer = setTimeout(async () => { await write('vtt', clone(table)); status = 'Table enregistrée'; }, 180); }
+  async function backupToFolder(){if(!directoryHandle)return;try{if(await directoryHandle.queryPermission({mode:'readwrite'})!=='granted')return;const file=await directoryHandle.getFileHandle('cardenveil-scene.json',{create:true}),stream=await file.createWritable();await stream.write(JSON.stringify(table,null,2));await stream.close();status=`Table enregistrée · ${folderName}`;}catch(error){status=`Sauvegarde dossier indisponible : ${error.message}`;}}
+  function scheduleSave() { clearTimeout(saveTimer); saveTimer = setTimeout(async () => { await write('vtt', clone(table)); status = 'Table enregistrée'; await backupToFolder(); }, 180); }
+  async function chooseStorageFolder(){if(!window.showDirectoryPicker){status='La sélection de dossier nécessite Chrome ou Edge.';return;}try{const handle=await window.showDirectoryPicker({mode:'readwrite'});directoryHandle=handle;folderName=handle.name;await writeHandle('vtt-directory',handle);await backupToFolder();}catch(error){if(error.name!=='AbortError')status=`Dossier inaccessible : ${error.message}`;}}
   function commit(mutator) { history.push(clone(table)); if (history.length > 50) history.shift(); future = []; mutator(); table.updatedAt = Date.now(); table = { ...table }; }
   function undo() { if (!history.length) return; future.push(clone(table)); table = history.pop(); hydrate(); }
   function redo() { if (!future.length) return; history.push(clone(table)); table = future.pop(); hydrate(); }
@@ -117,7 +120,7 @@
 </script>
 
 <section class:full class:map-focused={mapFocused} class="vtt-shell surface" aria-label="Table virtuelle Cardenveil">
-  <header class="vtt-header"><div class="vtt-header-actions"><button onclick={createCharacter}>Créer le personnage</button><button onclick={exportScene}>Exporter</button><button onclick={()=>sceneInput.click()}>Importer</button><input bind:this={sceneInput} hidden type="file" accept="application/json,.json" onchange={e=>e.currentTarget.files[0]&&importScene(e.currentTarget.files[0])}><button class:full-exit={full} onclick={()=>full=!full} aria-label={full?'Quitter le plein écran':'Passer en plein écran'} title={full?'Quitter le plein écran':'Plein écran'}><VttIcon name={full?'minimize':'maximize'} size={17}/></button></div></header>
+  <header class="vtt-header"><div class="vtt-header-actions"><button onclick={createCharacter}>Créer le personnage</button><button onclick={chooseStorageFolder} title="Choisir le dossier de sauvegarde">{folderName?`Dossier : ${folderName}`:'Dossier local'}</button><button onclick={exportScene}>Exporter</button><button onclick={()=>sceneInput.click()}>Importer</button><input bind:this={sceneInput} hidden type="file" accept="application/json,.json" onchange={e=>e.currentTarget.files[0]&&importScene(e.currentTarget.files[0])}><button class:full-exit={full} onclick={()=>full=!full} aria-label={full?'Quitter le plein écran':'Passer en plein écran'} title={full?'Quitter le plein écran':'Plein écran'}><VttIcon name={full?'minimize':'maximize'} size={17}/></button></div></header>
   <div class="vtt-workspace">
     <aside class="vtt-tools" aria-label="Outils">
       <button class:active={tool==='select'} onclick={()=>{tool='select';measure=null}} title="Sélectionner"><VttIcon name="cursor"/></button>

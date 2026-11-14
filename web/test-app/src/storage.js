@@ -23,6 +23,12 @@ export async function write(key, value) {
   events.dispatchEvent(new CustomEvent(key, { detail: snapshot }));
   return snapshot;
 }
+export async function writeHandle(key, value) {
+  const tx = (await db()).transaction('session', 'readwrite');
+  tx.objectStore('session').put(value, key);
+  await new Promise((resolve, reject) => { tx.oncomplete = resolve; tx.onerror = () => reject(tx.error); tx.onabort = () => reject(tx.error); });
+  return value;
+}
 export function listen(key, handler) {
   const fn = e => handler(e.detail); events.addEventListener(key, fn); return () => events.removeEventListener(key, fn);
 }
