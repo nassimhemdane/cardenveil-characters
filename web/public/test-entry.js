@@ -1,4 +1,4 @@
-// The catalogue swaps its detail DOM on tab changes; keep the Test action present.
+// The catalogue swaps its detail DOM on tab changes; keep the Atelier action present.
 (() => {
   function addTestLink() {
     const match = location.pathname.match(/\/(?:personnages)\/([^/]+)\//);
@@ -9,7 +9,7 @@
     const link = document.createElement('a');
     link.className = 'button'; link.dataset.testCharacter = '';
     link.href = '/test/?character=' + encodeURIComponent(decodeURIComponent(id));
-    link.textContent = 'Essayer dans Test'; actions.append(link);
+    link.textContent = 'Ouvrir dans l’Atelier'; actions.append(link);
   }
   addTestLink();
   new MutationObserver(addTestLink).observe(document.querySelector('main') || document.body, {childList:true,subtree:true});

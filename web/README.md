@@ -1,9 +1,9 @@
 # Site Cardenveil
 
-La page `/test/` est un atelier local de cartes avec fiche éditable, import JSON/ZIP,
+La page `/test/`, affichée comme « Atelier », est un espace local avec fiche éditable, import JSON/ZIP,
 jets simples et commandes MJ. Elle conserve les données dans IndexedDB sans compte
-ni serveur. Le lien Test est ajouté après les règles dans la navigation ; les fiches
-proposent « Essayer dans Test ». Les sources et les tests vivent dans `web/test-app`.
+ni serveur. Le lien Atelier est ajouté après les règles dans la navigation ; les fiches
+proposent de l’ouvrir directement. Les sources et les tests vivent dans `web/test-app`.
 Node.js 22.12+ est requis pour compiler cette page ; `site.cmd build` et le build
 Cloudflare exécutent aussi sa compilation. Voir `web/test-app/README.md`.
 

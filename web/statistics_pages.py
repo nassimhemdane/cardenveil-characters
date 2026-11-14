@@ -153,7 +153,7 @@ def write_statistics(public: Path, characters: list[dict]) -> dict:
              ("Coût final moyen", data["costs"]["all"]["total"]["mean"], "Après réductions · toutes couleurs"),
              ("Écart type des coûts", data["costs"]["all"]["total"]["stddev"], "σ · coûts finaux"),
              ("PV moyens", data["hp"]["mean"], "Valeurs enregistrées dans les fiches")]
-    body = '<section class="stats-hero"><p class="eyebrow">Observatoire du catalogue</p><h1>Les personnages, en chiffres.</h1><p class="lede">Races, profils et économie des capacités : une lecture d’ensemble des fiches existantes.</p><a class="button" href="/statistiques/donnees.json" download>Télécharger les statistiques JSON</a></section>'
+    body = '<section class="stats-hero"><h1>Statistiques</h1><a class="button" href="/statistiques/donnees.json" download>Télécharger les statistiques JSON</a></section>'
     body += '<nav class="stats-jump" aria-label="Sections du dashboard">' + ''.join(f'<a href="#{k}">{v}</a>' for k, v in [("races", "Races"), ("couts", "Coûts & couleurs"), ("caracteristiques", "Caractéristiques"), ("actions", "Actions"), ("methode", "Méthode & qualité")]) + '</nav>'
     body += '<div class="stat-kpis">' + ''.join(f'<article><p>{label}</p><strong>{fmt(value)}</strong><small>{note}</small></article>' for label, value, note in cards) + '</div>'
     body += '<div class="stats-grid"><section class="stat-panel" id="races"><h2>Races</h2><p>Nombre et part des personnages. Les races hybrides et variantes de libellé restent distinctes, sans réinterprétation.</p><div class="stat-chart-scroll">' + bars(data["races"], data["characters"]) + '</div></section>'

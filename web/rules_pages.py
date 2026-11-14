@@ -236,7 +236,7 @@ def shell(
 <header class="site-header"><a class="brand" href="/">CARDENVEIL</a><nav><a href="/">Personnages</a><a href="/statistiques/">Statistiques</a><a href="/regles/" aria-current="page">Règles & docs</a><a href="/gm/">Agent MJ</a></nav></header>
 <div class="docs-layout"><aside class="docs-nav"><details open><summary>Explorer les règles</summary><nav aria-label="Chapitres">{navigation(current, chapter_sections)}</nav></details></aside>
 <main id="reading"><div class="breadcrumb"><a href="/">Cardenveil</a> / <a href="/regles/">Règles</a></div>
-<p class="eyebrow">LE LIVRE DE RÈGLES</p><h1>{escape(title)}</h1><p class="docs-lede">{escape(description)}</p>
+<h1>{escape(title)}</h1>
 {featured}
 {search_box}
 {content}</main></div>

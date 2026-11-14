@@ -1,4 +1,4 @@
-# Page Test locale
+# Atelier local
 
 Application Svelte autonome construite dans `web/public/test/`. Aucun backend,
 compte ou accès Supabase. IndexedDB conserve fiche, images importées, cartes et

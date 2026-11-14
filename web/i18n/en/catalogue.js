@@ -42,7 +42,7 @@
     const classes = [...classMap].sort((a,b)=>a[1].localeCompare(b[1],'en'));
     const params = new URLSearchParams(location.search);
     root.innerHTML = `<section class="character-guide" aria-labelledby="guide-title">
-      <div><span class="eyebrow">Your next adventure</span><h1 id="guide-title">Which character suits you?</h1><p>Describe what you want to play. The guide helps you explore the sheets and cites its sources.</p></div>
+      <div><h1 id="guide-title">Choose a character</h1></div>
       <div class="guide-options" aria-label="Play preferences">${Object.entries(roleLabels).map(([k,v])=>`<button type="button" class="chip" data-role="${k}" aria-pressed="false">${v}</button>`).join('')}<button type="button" class="chip" id="guide-easy" aria-pressed="false">Easy to learn</button></div>
       <form id="guide-form"><label for="guide-message">Talk to the guide</label><div class="guide-compose"><input id="guide-message" maxlength="1000" placeholder="I am a beginner and would like to heal my allies…" required><button class="button primary">Find suggestions</button></div></form>
       <p id="guide-mode" class="guide-note">Catalogue guide · filters and sheet excerpts</p><div id="guide-answer" aria-live="polite"><p>Choose a preference or describe your style to find up to three suggestions.</p></div>

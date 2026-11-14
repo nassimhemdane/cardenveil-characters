@@ -12,7 +12,7 @@ def integrate_test_page(public: Path) -> None:
             header = match.group(0)
             if 'href="/test/"' not in header:
                 header = re.sub(r'(<a\b[^>]*href="/(?:en/)?regles/"[^>]*>.*?</a>)',
-                                r'\1<a href="/test/">Test</a>', header, count=1)
+                                r'\1<a href="/test/">Atelier</a>', header, count=1)
             return header
         updated = re.sub(r'<header\b.*?</header>', update_header, html, flags=re.S)
         if '/test-entry.js' not in updated:

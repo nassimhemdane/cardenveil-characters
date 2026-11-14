@@ -358,7 +358,7 @@ def build(root: Path, public: Path, *, locale: str = 'fr') -> None:
         target.mkdir(exist_ok=True)
         (target / 'index.html').write_text(shell(title, description, body, key,
                                               chapter_sections=chapter_sections), encoding='utf-8')
-    featured = '<section class="quick-reference-feature"><span class="eyebrow">À garder ouvert pendant la partie</span><h2>La référence rapide, à portée de main.</h2><p>Jets, cartes, tokens, actions et défense : retrouvez directement l’essentiel.</p><a class="button primary" href="/regles/reference-rapide/">Ouvrir la référence rapide →</a><a class="button" href="/regles/races/">Explorer les races illustrées</a></section>'
+    featured = '<section class="quick-reference-feature"><h2>Référence rapide</h2><a class="button primary" href="/regles/reference-rapide/">Ouvrir →</a><a class="button" href="/regles/races/">Races illustrées</a></section>'
     quick = re.sub(r'<a class="source-cite".*?</a>', '', quick)
     cards = re.split(r'(?=<h2\b)', quick)
     body = '<section class="quick-reference-home" aria-label="Référence rapide">' + ''.join('<article>' + card + '</article>' for card in cards if '<h2' in card) + '</section>'
@@ -366,7 +366,7 @@ def build(root: Path, public: Path, *, locale: str = 'fr') -> None:
         body += f'<section id="{slug(group)}"><h2 class="group-title">{escape(group)}</h2><div class="docs-cards">'
         for section, key, title, description, _ in CHAPTERS:
             if section == group:
-                body += f'<a class="docs-card" href="/regles/{key}/"><span class="eyebrow">Règles joueurs</span><h3>{escape(title)} ↗</h3><p>{escape(description)}</p></a>'
+                body += f'<a class="docs-card" href="/regles/{key}/"><h3>{escape(title)} ↗</h3></a>'
         body += '</div></section>'
     (output / 'index.html').write_text(shell('Les règles de Cardenveil', 'La référence rapide et les règles joueurs, organisées pour préparer et jouer une partie.', body, featured=featured, chapter_sections=chapter_sections), encoding='utf-8')
     (output / 'search.json').write_text(json.dumps(searchable, ensure_ascii=False), encoding='utf-8')
