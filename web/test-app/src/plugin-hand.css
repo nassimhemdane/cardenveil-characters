@@ -1,0 +1,40 @@
+/* Geometry copied from HandPopover: 80×120 faces, 64px spread, one bottom bar. */
+.hand-dock .plugin-hand{position:relative;width:min(100%,max(460px,var(--fan-width)));margin:0 auto;isolation:isolate}
+.plugin-fan-scroll{overflow-x:auto;padding:10px 0 6px;scrollbar-width:thin}
+.plugin-fan.hand-row{position:relative;display:block;min-height:0;padding:0;overflow:visible;margin:0 auto;gap:0}
+.plugin-card-wrap{position:absolute;bottom:0;width:80px;height:120px;margin-left:-40px;filter:drop-shadow(0 2px 4px #0006)}
+.plugin-card-wrap.is-active{filter:drop-shadow(0 0 8px #6366f1e6)}
+.hand-dock .plugin-hand .plugin-card{position:relative;display:flex;flex-direction:column;width:80px!important;min-width:80px!important;height:120px;padding:4px;border-radius:8px;box-shadow:none;font:700 12px/1 ui-sans-serif,system-ui,sans-serif;transform:none;outline:none;transition:none;user-select:none}
+.plugin-corner{display:flex;flex-direction:column;align-items:start}
+.plugin-corner>span+span{font-size:14px}
+.plugin-suit{flex:1;display:flex;align-items:center;justify-content:center;font-size:28px}
+.plugin-corner-bottom{align-items:end;transform:rotate(180deg)}
+.plugin-card .blocked-veil{position:absolute;inset:0;border-radius:8px;background:#0009}
+.plugin-card .value-badge{position:absolute;left:auto;bottom:auto;right:2px;top:2px;width:20px;height:20px;border-radius:50%;background:#b45309;border:1px solid #fbbf24;color:white;font-size:9px;display:grid;place-items:center;padding:0}
+.plugin-card-overlay{position:absolute;inset:0;z-index:30;border-radius:8px;background:#000c;pointer-events:none;display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:4px}
+.plugin-card-wrap:hover .plugin-card-overlay,.plugin-card-overlay.open{display:flex}
+.hand-dock .plugin-card-overlay button{pointer-events:auto;width:50%;flex:1;min-height:0;padding:0;border:0;border-radius:6px;color:white;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.hand-dock .plugin-card-overlay .discard-action{background:#b91c1c}
+.hand-dock .plugin-card-overlay .crystal-action{background:#1d4ed8}
+.hand-dock .plugin-card-overlay .gray-action{background:#4b5563}
+.plugin-empty{margin:0;text-align:center;color:#66715d;font-size:10px;line-height:26px}
+.plugin-bar{position:relative;z-index:100;display:grid;grid-template-columns:minmax(min-content,1fr) auto minmax(min-content,1fr);align-items:center;gap:4px;padding:4px 6px;border:1px solid #374151;border-radius:8px;background:#111827f2;min-height:34px;overflow-x:auto}
+.plugin-bar-left,.plugin-bar-center,.plugin-bar-right{display:flex;align-items:center;gap:4px}
+.plugin-bar-center{justify-content:center}.plugin-bar-right{justify-content:end}
+.hand-dock .plugin-bar button{flex-shrink:0;border:1px solid #6b7280;background:#213547;color:#e5e7eb;border-radius:999px;padding:2px 8px;font-size:11px;font-weight:700;line-height:18px;white-space:nowrap}
+.hand-dock .plugin-bar .plugin-draw{background:#4f46e5;border:0;border-radius:8px;font-weight:600}
+.plugin-draw span{color:#93c5fd}
+.hand-dock .plugin-bar .scheme-toggle{padding:0;width:24px;height:24px;font-size:12px}
+.hand-dock .plugin-bar .token-chip{display:flex;gap:4px;margin:0;padding:2px 6px;border-radius:6px;font-size:10px;border-color:#4b5563}
+.token-chip span{line-height:1}.plugin-bar .token-chip span:nth-child(2){color:#f87171!important}.plugin-bar .token-chip span:nth-child(3){color:#4ade80!important}.plugin-bar .token-chip span:nth-child(4){color:#60a5fa!important}.plugin-bar .token-chip span:nth-child(5){color:#a78bfa!important}
+.plugin-hand:has(.plugin-token-backdrop){min-height:230px;display:flex;flex-direction:column;justify-content:end}
+.plugin-token-backdrop{position:absolute;inset:0 0 34px;z-index:90;background:#11182755;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:8px}
+.plugin-token-modal{background:white;color:#263129;border:1px solid #d6dfcd;border-top:2px solid #6366f1;border-radius:9px;padding:12px;width:360px;max-width:100%;box-shadow:0 8px 24px #0002}
+.plugin-modal-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;font-size:12px}
+.hand-dock .plugin-modal-title button{padding:0;width:24px;height:24px;font-size:12px}
+.plugin-token-line{display:flex;gap:6px;align-items:center;margin-top:6px;font-size:11px;font-weight:700}
+.plugin-token-line>strong{width:56px;flex-shrink:0}.plugin-token-line>span{width:36px;text-align:center;flex-shrink:0}
+.hand-dock .plugin-token-line button{flex:1;padding:4px 0;border-radius:6px;font-size:11px;font-weight:700;line-height:16px}
+.plugin-extra-actions{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;flex-wrap:wrap}.plugin-extra-actions span{font-size:10px;color:#66715d}
+.hand-dock .plugin-extra-actions button{padding:5px 8px;font-size:10px}
+@media(max-width:550px){.hand-dock{padding:12px}.plugin-bar{gap:3px;padding:4px}.hand-dock .plugin-bar button{font-size:10px;padding-inline:5px}.plugin-bar .scheme-toggle{display:none}.plugin-fan-scroll{max-width:100%}.plugin-extra-actions span{flex-basis:100%;text-align:center}}

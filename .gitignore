@@ -10,6 +10,8 @@ credentials*.json
 secrets*.json
 
 # Python
+node_modules/
+web/public/test/
 __pycache__/
 *.py[cod]
 *.egg-info/

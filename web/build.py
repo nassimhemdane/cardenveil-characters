@@ -138,6 +138,8 @@ def build() -> None:
     headers = WEB / "_headers"
     if headers.is_file():
         shutil.copy2(headers, PUBLIC / "_headers")
+    from test_page import integrate_test_page
+    integrate_test_page(PUBLIC)
     print(f"Generated {len(characters)} characters in {PUBLIC}")
 
 

@@ -1,0 +1,38 @@
+/* Preserve the desktop dock footprint: trade vertical padding for a taller bar. */
+.hand-dock{right:8px;width:min(640px,calc(100% - 16px));padding:4px 12px;max-height:calc(100dvh - 160px);overflow-y:auto;overflow-x:hidden;scrollbar-width:thin}
+.hand-dock.is-folded{right:8px;width:min(520px,calc(100% - 16px))}
+.hand-dock .plugin-hand{width:100%}
+.hand-dock .plugin-bar{min-height:50px;padding:7px 8px;gap:6px;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);overflow:visible}
+.hand-dock .plugin-bar button{font-size:12px;line-height:18px;min-height:32px;padding:6px 9px}
+.hand-dock .plugin-bar .plugin-draw{min-width:140px;min-height:34px;font-size:14px;font-weight:750;padding:8px 14px;background:#24703a;color:#fff;border:0}
+.hand-dock .plugin-bar .plugin-draw:disabled{background:#b42323;color:#fff;opacity:1;cursor:not-allowed}
+.hand-dock .plugin-bar .plugin-draw span{color:inherit}
+.hand-dock .plugin-bar .token-chip{min-height:32px;font-size:12px;padding:5px 8px;gap:5px}
+.hand-dock .plugin-bar .scheme-toggle{width:30px;height:30px;min-height:30px;font-size:14px}
+.plugin-token-backdrop{bottom:50px}
+.plugin-bar-left,.plugin-bar-right{min-width:0}
+.plugin-hand:has(.plugin-token-backdrop){min-height:270px}
+.plugin-bar-right{justify-content:end}.plugin-bar-left{flex-wrap:wrap}
+.hand-dock .plugin-extra-actions span{display:none}
+.native-compact-window :is(input,select,button){max-width:100%}
+@media(max-width:520px){
+ .hand-dock,.hand-dock.is-folded{right:8px;width:calc(100% - 16px);padding:4px 7px}
+ .hand-dock .plugin-bar{grid-template-columns:minmax(0,1fr) minmax(0,1fr);row-gap:6px;padding:6px}
+ .plugin-bar-center{grid-row:1;grid-column:1/-1}.plugin-bar-left{grid-row:2;grid-column:1}.plugin-bar-right{grid-row:2;grid-column:2}
+ .hand-dock .plugin-bar .plugin-draw{min-width:160px}.plugin-token-backdrop{bottom:88px}
+ .hand-dock .plugin-bar .scheme-toggle{display:flex;align-items:center;justify-content:center}
+ .plugin-hand:has(.plugin-token-backdrop){min-height:300px}
+ .native-compact-window .compact-grip{padding-inline:8px}
+}
+@media(max-height:440px){
+ .hand-dock{max-height:max(72px,calc(100dvh - 220px))}
+ .hand-dock .plugin-bar{position:sticky;bottom:-4px}
+ .hand-dock .plugin-hand:has(.plugin-token-backdrop){min-height:230px}
+}
+.compact-bubble.native-compact-window{width:min(460px,calc(100% - 72px))}
+.dice-overlay{width:min(360px,calc(100% - 24px))}
+/* Keep catalogue/rules navigation visible without using the old 72px header. */
+.sandbox-header{position:sticky;top:0;z-index:130;min-height:52px;padding-block:12px;gap:16px;background:#fff;box-shadow:0 1px 6px #00000006}
+.sandbox-header .brand{font-size:14px}.sandbox-header nav{font-size:12px;gap:20px}
+html{scroll-padding-top:64px}
+@media(max-width:850px){.sandbox-header{padding:10px 14px;gap:8px 12px}.sandbox-header nav{font-size:11px;gap:8px 12px}}

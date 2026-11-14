@@ -1,0 +1,19 @@
+body{background:#fff;color:#263129;color-scheme:light}
+.card{padding:12px 16px 20px}
+.portrait{border-color:#d8dfd2;background:#eef2e8;color:#344c31}
+.label,.total{color:#344c31}
+.formula,.breakdown{color:#5b6654}
+.tag,.die{background:#f3f5ee;border-color:#d6dfcd;color:#263129}
+.breakdown-final,.total.crit{color:#946000}
+.die.crit{background:#fff0bf;border-color:#bd8500;color:#785200}
+.die.fail{background:#ffebe7;border-color:#c9493d;color:#a92e24}
+.total.fail,.error{color:#b42323}
+.fallback-notice{font-size:11px;line-height:1.5;color:#765b26;background:#fff7e5;border-radius:6px;padding:8px}
+canvas{display:block;border-radius:8px}
+.dice-close[hidden]{display:none!important}
+body{height:100dvh;min-height:0;align-items:stretch;overflow:hidden}
+.card{height:100%;min-height:0;display:flex;flex-direction:column;gap:4px;padding:8px 12px}
+.roll-title{min-height:26px;flex-shrink:0}.formula{margin:0;flex-shrink:0;font-size:12px}
+.tags:empty{display:none}.dice-row{flex-shrink:0;min-height:26px;max-height:56px;margin:0;gap:4px}.total{font-size:32px;flex-shrink:0}.die{width:24px;height:24px}
+.dice-host{flex:1;min-height:64px;overflow:hidden}.dice-host canvas{flex:none}
+.breakdown{max-height:110px;overflow:auto;flex-shrink:1}
