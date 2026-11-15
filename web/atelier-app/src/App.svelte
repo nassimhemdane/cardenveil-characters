@@ -21,14 +21,15 @@
   let pendingExchange = $derived(game?.pendingExchanges?.[0]);
   let sequence = Promise.resolve();
   let handVisible=$state(false),compactEnabled=$state(false);
-  let panelOrder=$state(['sheet','map','mj','history']), draggedPanel=$state('');
+  let panelOrder=$state(['sheet','map','mj','history']), draggedPanel=$state(''), panelDropTarget=$state(null);
   let dockNode=$state(null),dockHeight=$state(0);
   let headerNode=$state(null),navBottom=$state(72);
   $effect(()=>{const node=headerNode;if(!node)return;const update=()=>navBottom=Math.max(0,node.getBoundingClientRect().bottom);update();const observer=new ResizeObserver(update);observer.observe(node);window.addEventListener('scroll',update,{passive:true});return()=>{observer.disconnect();window.removeEventListener('scroll',update);};});
   $effect(()=>{const node=dockNode;if(!node){dockHeight=0;return;}const update=()=>dockHeight=node.getBoundingClientRect().height;update();const observer=new ResizeObserver(update);observer.observe(node);return()=>observer.disconnect();});
   const tokenNames = {force:'Force',agilite:'Agilité',esprit:'Esprit',social:'Social'};
   const combatNames = {force:'Double frappe',agilite:'Courber',esprit:'Réverbération',social:'Attaque alliée'};
-  function panelDrop(target){if(!draggedPanel||draggedPanel===target)return;const next=panelOrder.filter(id=>id!==draggedPanel),index=next.indexOf(target);next.splice(index,0,draggedPanel);panelOrder=next;localStorage.setItem('cardenveil-atelier-panel-order',JSON.stringify(next));draggedPanel='';}
+  function panelDragOver(event,target){event.preventDefault();const rect=event.currentTarget.getBoundingClientRect();panelDropTarget={id:target,after:event.clientY>rect.top+Math.min(rect.height/2,48)};}
+  function panelDrop(target){if(!draggedPanel||draggedPanel===target){draggedPanel='';panelDropTarget=null;return;}const next=panelOrder.filter(id=>id!==draggedPanel),index=next.indexOf(target);next.splice(index+(panelDropTarget?.after?1:0),0,draggedPanel);panelOrder=next;localStorage.setItem('cardenveil-atelier-panel-order',JSON.stringify(next));draggedPanel='';panelDropTarget=null;}
   function panelMove(id,direction){const index=panelOrder.indexOf(id),target=index+direction;if(index<0||target<0||target>=panelOrder.length)return;const next=[...panelOrder];[next[index],next[target]]=[next[target],next[index]];panelOrder=next;localStorage.setItem('cardenveil-atelier-panel-order',JSON.stringify(next));}
   function persist(next) {
     game = next; saved = 'Enregistrement…';
@@ -60,7 +61,10 @@
     let disposed = false;
     try { const stored=JSON.parse(localStorage.getItem('cardenveil-atelier-panel-order')); if(Array.isArray(stored)&&stored.length===4)panelOrder=stored; } catch {}
     const onOffline = () => offline = true, onOnline = () => offline = false;
+    const onPanelDrag = event => {if(!draggedPanel)return;const panel=event.target.closest?.('.page-accordion');if(!panel)return;event.preventDefault();const rect=panel.getBoundingClientRect(),after=event.clientY>rect.top+Math.min(rect.height/2,48),title=panel.querySelector(':scope>summary strong')?.textContent,id=title==='Map de jeu'?'map':title==='Fiche de personnage'?'sheet':title==='Gestion MJ'?'mj':'history';document.querySelectorAll('.page-accordion.drop-before,.page-accordion.drop-after').forEach(node=>node.classList.remove('drop-before','drop-after'));panel.classList.add(after?'drop-after':'drop-before');panelDropTarget={id,after};};
+    const clearPanelDrag = () => document.querySelectorAll('.page-accordion.drop-before,.page-accordion.drop-after').forEach(node=>node.classList.remove('drop-before','drop-after'));
     window.addEventListener('offline',onOffline); window.addEventListener('online',onOnline);
+    document.addEventListener('dragover',onPanelDrag);document.addEventListener('dragend',clearPanelDrag);document.addEventListener('drop',clearPanelDrag);
     const off = listen('sheet', row => { const old = sheet; applySheet(row, old); });
     (async () => {
       try {
@@ -74,7 +78,7 @@
         if (requested) { await loadCatalogue(); catalogueId = requested; await openCatalogueCharacter(); }
       } catch(e) { error = `Impossible d'ouvrir la sauvegarde locale : ${e.message}`; }
     })();
-    return () => { disposed = true; off(); window.removeEventListener('offline',onOffline); window.removeEventListener('online',onOnline); };
+    return () => { disposed = true; off(); window.removeEventListener('offline',onOffline); window.removeEventListener('online',onOnline);document.removeEventListener('dragover',onPanelDrag);document.removeEventListener('dragend',clearPanelDrag);document.removeEventListener('drop',clearPanelDrag); };
   });
   async function loadCatalogue() {
     if (catalogue.length) return;
@@ -143,8 +147,8 @@
   {#if !ready}<p role="status">{error ? 'Le stockage du navigateur doit être autorisé pour ouvrir l’Atelier.' : 'Ouverture de l’Atelier…'}</p>{:else}
   <details class="target-accordion" ontoggle={e=>e.currentTarget.open&&loadCatalogue()}><summary><strong>{player.name}</strong><span>Changer de personnage</span></summary><div class="target-content"><label>Personnage<select bind:value={catalogueId}><option value="">{loading ? 'Chargement…' : 'Choisir un personnage'}</option>{#each catalogue as c}<option value={c.id}>{c.identity.nom} — {c.identity.race}</option>{/each}</select></label><button class="primary" disabled={!catalogueId} onclick={openCatalogueCharacter}>Ouvrir</button><button class="danger" onclick={reset}>Réinitialiser</button><small>{saved || 'Sauvegarde locale'}</small></div></details>
   <div class="accordion-stack">
-  <details class="page-accordion" style={`order:${panelOrder.indexOf('map')}`} open ondragover={e=>e.preventDefault()} ondrop={()=>panelDrop('map')}><summary draggable="true" ondragstart={()=>draggedPanel='map'}><span class="drag-handle">⠿</span><strong>Map de jeu</strong></summary><VirtualTable {sheet} /></details>
-  <details class="page-accordion" style={`order:${panelOrder.indexOf('sheet')}`} open ondragover={e=>e.preventDefault()} ondrop={()=>panelDrop('sheet')}><summary draggable="true" ondragstart={()=>draggedPanel='sheet'}><span class="drag-handle">⠿</span><strong>Fiche de personnage</strong></summary><div class="accordion-content">
+  <details class="page-accordion" class:drop-before={panelDropTarget?.id==='map'&&!panelDropTarget.after} class:drop-after={panelDropTarget?.id==='map'&&panelDropTarget.after} style={`order:${panelOrder.indexOf('map')}`} open ondragover={e=>panelDragOver(e,'map')} ondrop={()=>panelDrop('map')}><summary draggable="true" ondragstart={()=>draggedPanel='map'} ondragend={()=>{draggedPanel='';panelDropTarget=null}}><span class="drag-handle">⠿</span><strong>Map de jeu</strong></summary><VirtualTable {sheet} /></details>
+  <details class="page-accordion" class:drop-before={panelDropTarget?.id==='sheet'&&!panelDropTarget.after} class:drop-after={panelDropTarget?.id==='sheet'&&panelDropTarget.after} style={`order:${panelOrder.indexOf('sheet')}`} open ondragover={e=>panelDragOver(e,'sheet')} ondrop={()=>panelDrop('sheet')}><summary draggable="true" ondragstart={()=>draggedPanel='sheet'} ondragend={()=>{draggedPanel='';panelDropTarget=null}}><span class="drag-handle">⠿</span><strong>Fiche de personnage</strong></summary><div class="accordion-content">
   <section class="surface table-section" aria-label="Main et jetons">
     {#if agility && selectedCard}<div class="inline-panel">Dépenser 1 Agilité et remplacer la carte sélectionnée : {#each SUITS_INFO as s}<button onclick={() => { dispatch({type:'USE_AGILITE',cardId:selected,suit:s.symbol});agility=false;selected=null; }}>{s.symbol} {s.label}</button>{/each}</div>{/if}
     {#if player.pendingHalfling}<div class="inline-panel"><strong>Halfling : conservez une carte</strong>{#each player.pendingHalfling as card}<button onclick={() => dispatch({type:'HALFLING_CHOOSE',cardId:card.id})}>{card.value}{card.suit}</button>{/each}</div>{/if}
