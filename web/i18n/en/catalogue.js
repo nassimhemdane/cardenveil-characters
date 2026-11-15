@@ -41,14 +41,15 @@
     for (const c of characters) [].concat(c.catalog?.class || []).forEach((label,i) => classMap.set(c.catalog?.classKeys?.[i] || label, label));
     const classes = [...classMap].sort((a,b)=>a[1].localeCompare(b[1],'en'));
     const params = new URLSearchParams(location.search);
-    root.innerHTML = `<section class="character-guide" aria-labelledby="guide-title">
-      <div><h1 id="guide-title">Choose a character</h1></div>
+    root.innerHTML = `<button type="button" class="guide-launcher" aria-haspopup="dialog" aria-controls="catalog-guide-dialog" aria-expanded="false">✦ Need some advice?</button><dialog id="catalog-guide-dialog" class="guide-dialog" aria-labelledby="guide-title"><button type="button" class="guide-close" aria-label="Close the guide">×</button><section class="character-guide" aria-labelledby="guide-title">
+      <div><h1 id="guide-title">Choisir un personnage</h1></div>
       <div class="guide-options" aria-label="Play preferences">${Object.entries(roleLabels).map(([k,v])=>`<button type="button" class="chip" data-role="${k}" aria-pressed="false">${v}</button>`).join('')}<button type="button" class="chip" id="guide-easy" aria-pressed="false">Easy to learn</button></div>
       <form id="guide-form"><label for="guide-message">Talk to the guide</label><div class="guide-compose"><input id="guide-message" maxlength="1000" placeholder="I am a beginner and would like to heal my allies…" required><button class="button primary">Find suggestions</button></div></form>
       <p id="guide-mode" class="guide-note">Catalogue guide · filters and sheet excerpts</p><div id="guide-answer" aria-live="polite"><p>Choose a preference or describe your style to find up to three suggestions.</p></div>
-    </section><section aria-labelledby="catalog-title"><div class="catalog-heading"><h2 id="catalog-title">Explore the characters</h2><p>Name, ancestry, class, ability, totem or story.</p></div>
+    </section></dialog><section aria-labelledby="catalog-title"><div class="catalog-heading"><h2 id="catalog-title">Explore the characters</h2><p>Name, ancestry, class, ability, totem or story.</p></div>
       <div class="toolbar catalog-filters"><label>Search<input id="search" type="search" placeholder="E.g. fire, sword, healing…"></label><label>Class<select id="class-filter"><option value="">All classes</option>${classes.map(([key,label])=>`<option value="${escape(key)}">${escape(label)}</option>`).join('')}</select></label><label>Complexity<select id="difficulty-filter"><option value="">All</option><option value="2">Up to 2 / 5</option><option value="3">Up to 3 / 5</option><option value="4">Up to 4 / 5</option><option value="unknown">Not recorded</option></select></label><label>Sort<select id="sort"><option value="relevance">Relevance</option><option value="name">Name A → Z</option><option value="easy">Complexity: low to high</option><option value="difficulty">Complexity: high to low</option></select></label><button id="reset-search" type="button">Reset</button></div><p class="count" id="count" role="status"></p><div class="grid" id="grid"></div></section>`;
     const $ = id => root.querySelector('#'+id);
+    window.CardenveilGuideOverlay.mount(root);
     for (const [id,key] of [['search','q'],['class-filter','class'],['difficulty-filter','difficulty'],['sort','sort']]) if(params.has(key)) $(id).value=params.get(key);
     function draw() {
       const words=norm($('search').value).split(/\s+/).filter(Boolean), cl=$('class-filter').value, difficulty=$('difficulty-filter').value, sort=$('sort').value;

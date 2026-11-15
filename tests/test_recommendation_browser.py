@@ -10,6 +10,8 @@ def test_local_recommendation_cards(tmp_path, provider):
     harness = b'''<pre id="result">RUNNING</pre><div id="catalogue"></div><script>
 (async()=>{try{
 const source=await (await fetch('/web/public/catalogue.js')).text();
+const overlay=await (await fetch('/web/public/guide-overlay.js')).text();
+(0,eval)(overlay);
 const characters=Array.from({length:7},(_,i)=>({id:'hero-'+i,portrait:i===1?'':i===2?'javascript:alert(1)':'/assets/test-portrait.png',identity:{nom:'Hero '+i},catalog:{difficulty:2,gameplaySummary:'Soigne les allies'},capacities:[]}));
 let fail=false;
 window.fetch=async(url,options)=>{

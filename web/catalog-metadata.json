@@ -640,6 +640,13 @@
       "class": [
         "Autre"
       ]
+    },
+    "camille": {
+      "loreSummary": "Camille est une demi-elfe de 37 ans capable de se transformer en une nuée de corbeaux grâce à son totem A Murder of Crows.",
+      "gameplaySummary": "Ce personnage agile utilise des capacités de mobilité, de téléportation et de contrôle des foules basées sur l'aveuglement et la lévitation pour dominer le champ de bataille.",
+      "difficulty": 4.5,
+      "creator": "",
+      "class": []
     }
   }
 }

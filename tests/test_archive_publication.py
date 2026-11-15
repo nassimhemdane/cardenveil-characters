@@ -22,10 +22,14 @@ def publisher(monkeypatch):
     return importlib.import_module("publish_character_archive")
 
 
-def test_single_publication_preserves_source_and_syncs_metadata(publisher, monkeypatch, tmp_path):
+@pytest.mark.parametrize('difficulty', [3.5, None])
+def test_single_publication_preserves_source_and_syncs_metadata(publisher, monkeypatch, tmp_path, difficulty):
     """Validate compression, explicit difficulty, metadata copy and duplicate protection."""
     source = tmp_path / "incoming.zip"
     _source_archive(source)
+    if difficulty is None:
+        publisher.rewrite(source, tmp_path / 'original-backup',
+                          lambda sheet: sheet['identity'].update(nom='<p>Éléonore du Val</p>'))
     original_bytes = source.read_bytes()
     (tmp_path / "Final").mkdir()
     (tmp_path / "web").mkdir()
@@ -42,10 +46,11 @@ def test_single_publication_preserves_source_and_syncs_metadata(publisher, monke
         return ExtractedCatalogMetadata(loreSummary="Résumé.\n", gameplaySummary="Style de jeu.", difficulty=1, classes=["Mage"])
 
     monkeypatch.setattr(publisher.GeminiCharacterDocumentExtractor, "extract_catalog_metadata_from_json", extract)
-    metadata = publisher.publish(source, 3.5, root=tmp_path)
+    metadata = publisher.publish(source, difficulty, root=tmp_path)
     archive_path = tmp_path / "Final/eleonore-du-val.zip"
     character = character_from_archive(archive_path)
-    assert metadata["difficulty"] == 3.5 and metadata["loreSummary"] == "Résumé."
+    assert metadata["difficulty"] == (3.5 if difficulty is not None else 1)
+    assert metadata["loreSummary"] == "Résumé."
     assert character.derived.pvMax == 60 + 5 * character.stats.force
     assert source.read_bytes() == original_bytes
     assert archive_path.stat().st_size < source.stat().st_size

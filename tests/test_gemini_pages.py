@@ -85,7 +85,7 @@ try {
 </script>'''
 
 
-def run_harness(tmp_path, harness):
+def run_harness(tmp_path, harness, *, window_size=None):
     """Run a repository-hosted browser harness without creating any public test assets."""
     browser = next((str(p) for p in [Path('C:/Program Files/Google/Chrome/Application/chrome.exe')]
                     if p.is_file()), shutil.which('chromium'))
@@ -106,7 +106,8 @@ def run_harness(tmp_path, harness):
     server=ThreadingHTTPServer(('127.0.0.1',0),functools.partial(Handler,directory=str(ROOT)))
     threading.Thread(target=server.serve_forever,daemon=True).start()
     try:
-        result=subprocess.run([browser,'--headless','--disable-gpu','--no-first-run',
+        viewport = [f'--window-size={window_size}'] if window_size else []
+        result=subprocess.run([browser,'--headless','--disable-gpu','--no-first-run',*viewport,
             f'--user-data-dir={tmp_path / "browser"}','--virtual-time-budget=10000','--dump-dom',
             f'http://127.0.0.1:{server.server_port}/audit'],capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=60)
         assert '<pre id="result">PASS</pre>' in result.stdout, result.stdout[:2500]

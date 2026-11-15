@@ -19,7 +19,7 @@ from recalculate_confirmed_values import apply_values
 
 from cardenveil.importers.archive import normalize_character_archive
 from cardenveil.importers.pdf import GeminiCharacterDocumentExtractor, GeminiConfig
-from cardenveil.importers.sheet_cleanup import normalize_and_empty_gear
+from cardenveil.importers.sheet_cleanup import normalize_and_empty_gear, plain_sheet_text
 from cardenveil.naming import slugify_character_id
 from cardenveil.serialization import character_from_archive, character_to_json
 
@@ -38,12 +38,12 @@ def prepare_sheet(sheet: dict) -> None:
         sheet["derived"]["pvActuels"] = new_maximum
 
 
-def publish(source: Path, difficulty: float, *, root: Path = ROOT) -> dict:
+def publish(source: Path, difficulty: float | None = None, *, root: Path = ROOT) -> dict:
     """Stage and validate a new archive, call Gemini once, then install archive and metadata."""
-    if not 0.5 <= difficulty <= 5 or difficulty * 2 != int(difficulty * 2):
+    if difficulty is not None and (not 0.5 <= difficulty <= 5 or difficulty * 2 != int(difficulty * 2)):
         raise ValueError("Difficulty must be between 0.5 and 5 in half-point increments")
     original = character_from_archive(source)
-    identifier = slugify_character_id(original.identity.nom)
+    identifier = slugify_character_id(plain_sheet_text(original.identity.nom))
     final = root / "Final"
     destination = final / f"{identifier}.zip"
     metadata_path = root / "web/catalog-metadata.json"
@@ -57,13 +57,17 @@ def publish(source: Path, difficulty: float, *, root: Path = ROOT) -> dict:
     final.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=".publish-", dir=final) as work:
         staging = Path(work)
-        result = normalize_character_archive(source, staging)
+        cleaned_source = staging / 'source.zip'
+        shutil.copy2(source, cleaned_source)
+        rewrite(cleaned_source, staging / 'source-backup', prepare_sheet)
+        result = normalize_character_archive(cleaned_source, staging / 'normalized')
         rewrite(result.destination, staging / "backup", prepare_sheet)
         character = character_from_archive(result.destination)
         config = replace(GeminiConfig.from_env(root / ".env"), max_attempts=1, request_timeout_seconds=90)
         extractor = GeminiCharacterDocumentExtractor(config)
         metadata = extractor.extract_catalog_metadata_from_json(character_to_json(character, indent=None)).model_dump(mode="json", by_alias=True)
-        metadata["difficulty"] = difficulty
+        if difficulty is not None:
+            metadata["difficulty"] = difficulty
         for key in ("loreSummary", "gameplaySummary", "creator"):
             metadata[key] = " ".join(metadata[key].split())
         if any(value not in document["classVocabulary"] for value in metadata["class"]):
@@ -89,7 +93,7 @@ def main() -> None:
     """Read the targeted source and explicit difficulty; never process unrelated archives."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source", type=Path)
-    parser.add_argument("--difficulty", type=float, required=True)
+    parser.add_argument("--difficulty", type=float, help="Override Gemini’s difficulty assessment")
     args = parser.parse_args()
     publish(args.source, args.difficulty)
 
