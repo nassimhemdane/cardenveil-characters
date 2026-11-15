@@ -1,5 +1,6 @@
 import {createServer} from 'node:http';
-import {readFileSync,existsSync,mkdtempSync,createReadStream,mkdirSync,writeFileSync} from 'node:fs';
+import {readFileSync,existsSync,mkdtempSync,createReadStream,mkdirSync,writeFileSync,readdirSync} from 'node:fs';
+import {strFromU8,unzipSync} from 'fflate';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
 import {spawn} from 'node:child_process';
@@ -30,7 +31,7 @@ try{
   let id=0;const waiting=new Map(),errors=[];
   ws.onmessage=({data})=>{const m=JSON.parse(data);if(m.id){const p=waiting.get(m.id);waiting.delete(m.id);m.error?p.reject(Error(m.error.message)):p.resolve(m.result);}else if(m.method==='Runtime.consoleAPICalled'&&m.params.type==='error')errors.push(m.params.args.map(a=>a.description||a.value).join(' '));else if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.exception?.description||m.params.exceptionDetails.text);else if(m.method==='Page.javascriptDialogOpening')send('Page.handleJavaScriptDialog',{accept:true});};
   function send(method,params={}){return new Promise((resolve,reject)=>{const current=++id;waiting.set(current,{resolve,reject});ws.send(JSON.stringify({id:current,method,params}));});}
-  await send('Runtime.enable');await send('Page.enable');
+  await send('Runtime.enable');await send('Page.enable');await send('DOM.enable');
   await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1100,deviceScaleFactor:1,mobile:false});
   await send('Page.navigate',{url:origin+'/atelier/'});
   await delay(500);
@@ -96,7 +97,7 @@ try{
   })()`);
   // Direct VTT manipulation: create a real token, drag from its current grab point,
   // then undo the whole gesture as a single history entry.
-  await evaluate(`(async()=>{document.querySelector('.vtt-header-actions button').click();for(let i=0;i<100;i++){if(document.querySelector('.vtt-token-overlay'))return;await new Promise(r=>setTimeout(r,50))}throw Error('VTT token creation failed')})()`);
+  await evaluate(`(async()=>{[...document.querySelectorAll('.vtt-header-actions button')].find(button=>button.textContent.trim()==='Créer le personnage').click();for(let i=0;i<100;i++){if(document.querySelector('.vtt-token-overlay'))return;await new Promise(r=>setTimeout(r,50))}throw Error('VTT token creation failed')})()`);
   await evaluate(`document.querySelector('.vtt-shell').scrollIntoView({block:'start'})`);await delay(120);
   const tokenStart=await evaluate(`(()=>{const r=document.querySelector('.vtt-token-overlay').getBoundingClientRect();return{x:r.x+r.width*.35,y:r.y+r.height*.4,left:r.left,top:r.top}})()`);
   await send('Input.dispatchMouseEvent',{type:'mousePressed',x:tokenStart.x,y:tokenStart.y,button:'left',clickCount:1});
@@ -259,7 +260,13 @@ try{
   await send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});await delay(150);
   await evaluate(`(()=>{const draw=document.querySelector('.plugin-draw');for(let i=0;i<20;i++)if(!draw.disabled)draw.click()})()`);await delay(100);
   if(!await evaluate(`document.querySelector('.plugin-draw')?.disabled===true`))throw Error('Blocked draw should be disabled');
+  const sceneFlow=await evaluate(`(async()=>{const wait=async fn=>{for(let i=0;i<100;i++){if(fn())return;await new Promise(r=>setTimeout(r,50))}throw Error('Scene flow timeout')};document.querySelector('.vtt-asset-tabs button[title="Scènes"]').click();await wait(()=>document.querySelector('.scene-card'));const original=document.querySelector('.active-scene-name').textContent,count=document.querySelectorAll('.scene-card').length;window.prompt=()=> 'Scène navigateur';document.querySelector('.scene-actions button[title="Créer une scène"]').click();await wait(()=>document.querySelector('.active-scene-name').textContent==='Scène navigateur');const created=document.querySelectorAll('.scene-card').length;if(created!==count+1)throw Error('Scene was not created');const originalCard=[...document.querySelectorAll('.scene-card')].find(node=>node.textContent.trim()===original);originalCard.dispatchEvent(new MouseEvent('dblclick',{bubbles:true}));await wait(()=>document.querySelector('.active-scene-name').textContent===original);return{original,created};})()`);
+  if(!sceneFlow.original||sceneFlow.created<2)throw Error('Scene library flow invalid '+JSON.stringify(sceneFlow));
+  const managerCheck=await evaluate(`(async()=>{document.querySelector('.asset-quick-tools button[title="Ouvrir la bibliothèque"]').click();for(let i=0;i<100;i++){if(document.querySelector('.asset-manager'))return{categories:document.querySelectorAll('.asset-categories button').length,folders:!!document.querySelector('.asset-sidebar')};await new Promise(r=>setTimeout(r,30))}throw Error('Asset manager did not open')})()`);if(managerCheck.categories<7||!managerCheck.folders)throw Error('Asset manager incomplete');await evaluate(`document.querySelector('.asset-manager .asset-main>header button[aria-label="Fermer"]').click()`);
+  const downloadDir=mkdtempSync(path.join(tmpdir(),'cardenveil-scene-export-'));await send('Browser.setDownloadBehavior',{behavior:'allow',downloadPath:downloadDir});await evaluate(`[...document.querySelectorAll('.vtt-header-actions button')].find(button=>button.textContent.trim()==='Exporter ZIP').click()`);
+  let zipPath;for(let i=0;i<100;i++){zipPath=readdirSync(downloadDir).map(name=>path.join(downloadDir,name)).find(name=>name.endsWith('.zip'));if(zipPath)break;await delay(50);}if(!zipPath)throw Error('Scene ZIP was not downloaded');const archive=unzipSync(new Uint8Array(readFileSync(zipPath)));if(!archive['scene.json'])throw Error('Scene ZIP missing scene.json');const manifest=JSON.parse(strFromU8(archive['scene.json']));if(manifest.format!==1||!manifest.table||!Array.isArray(manifest.table.items))throw Error('Invalid exported scene manifest');for(const assetPath of Object.values(manifest.assets||{}))if(!archive[assetPath])throw Error('Scene ZIP missing '+assetPath);
+  const beforeImport=await evaluate(`document.querySelectorAll('.scene-card').length`),documentNode=await send('DOM.getDocument',{depth:0}),inputNode=await send('DOM.querySelector',{nodeId:documentNode.root.nodeId,selector:'.vtt-header input[type=file]'});await send('DOM.setFileInputFiles',{files:[zipPath],nodeId:inputNode.nodeId});await evaluate(`document.querySelector('.vtt-header input[type=file]').dispatchEvent(new Event('change',{bubbles:true}))`);for(let i=0;i<100;i++){if(await evaluate(`document.querySelectorAll('.scene-card').length`)===beforeImport+1)break;await delay(50);}if(await evaluate(`document.querySelectorAll('.scene-card').length`)!==beforeImport+1)throw Error('Scene ZIP was not imported');
   if(errors.length)throw Error(errors.join('\n'));
   await evaluate(`(async()=>{document.querySelector('.target-content .danger').click();for(let i=0;i<100;i++){if(document.querySelector('.target-accordion>summary strong').textContent==='Mon personnage'&&!document.querySelector('.playing-card'))return;await new Promise(r=>setTimeout(r,100))}throw Error('Reset failed')})()`);
-  console.log('PASS: compact grows with accordions, stops above the cards, scrolls internally, follows hand expansion/hiding and viewport resize; existing compact, dice and persistence flows pass.');
+  console.log('PASS: scene creation/switching, compact growth, cards, dice, persistence and responsive layouts pass.');
 }finally{ws?.close();child.kill();server.close();}
