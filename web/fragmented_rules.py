@@ -285,10 +285,32 @@ def chapter_navigation(outline: list[tuple[int, str, str]]) -> list[dict]:
     return roots
 
 
+def indexed_rule_files(root: Path, *, locale: str = 'fr') -> tuple[dict, dict[str, Path]]:
+    """Return only Markdown documents explicitly selected by the publication manifest."""
+    directory = root / 'docs/rules/fragmented'
+    manifest = json.loads((directory / 'manifest.json').read_text(encoding='utf-8'))
+    selected = {}
+    for key, data in manifest['documents'].items():
+        source = directory / data['file']
+        if locale == 'en':
+            translated = root / 'docs/rules/en' / data['file']
+            if not translated.is_file():
+                matches = list((root / 'docs/rules/en').rglob(Path(data['file']).name))
+                if len(matches) != 1:
+                    raise ValueError(f'Expected one English Markdown file for {key}, found {len(matches)}')
+                translated = matches[0]
+            source = translated
+        if not source.is_file():
+            raise ValueError(f'Indexed rule file is missing: {data["file"]}')
+        selected[key] = source
+    return manifest, selected
+
+
 def build(root: Path, public: Path, *, locale: str = 'fr') -> None:
     """Publish only the player snapshot, preserve old URLs as redirects and foreground the quick reference."""
     directory = root / 'docs/rules/fragmented'
-    manifest = json.loads((directory / 'manifest.json').read_text(encoding='utf-8'))
+    manifest, localized_files = indexed_rule_files(root, locale=locale)
+    _, french_files = indexed_rule_files(root)
     if len(manifest['documents']) != 7 or any('MJ' in d['source'] for d in manifest['documents'].values()):
         raise ValueError('Only the seven player documents may be published')
     output = public / 'regles'
@@ -303,16 +325,10 @@ def build(root: Path, public: Path, *, locale: str = 'fr') -> None:
     for key, data in manifest['documents'].items():
         # Markdown is the canonical rules source. The manifest only maps chapters and art;
         # stale bookkeeping must never keep corrected rules off the site.
-        payload = (directory / data['file']).read_bytes()
+        payload = french_files[key].read_bytes()
         originals[key] = payload.decode('utf-8-sig')
         if locale == 'en':
-            translated = root / 'docs/rules/en' / data['file']
-            if not translated.is_file():
-                matches = list((root / 'docs/rules/en').rglob(Path(data['file']).name))
-                if len(matches) != 1:
-                    raise ValueError(f'Expected one English Markdown file for {key}, found {len(matches)}')
-                translated = matches[0]
-            sources[key] = translated.read_text(encoding='utf-8')
+            sources[key] = localized_files[key].read_text(encoding='utf-8')
         else:
             sources[key] = originals[key]
         links[Path(data['source']).stem] = links[key] = f'/regles/{key}/'

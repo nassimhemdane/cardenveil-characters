@@ -156,7 +156,7 @@ def localized_script(source):
 
 def build(public, characters, *, collect_only=False):
     from static_pages import write_character, write_index, label
-    from fragmented_rules import build as build_rules
+    from fragmented_rules import build as build_rules, indexed_rule_files
     from rag_index import build_rag_index
     translations = load('characters.en.json')
     character_hashes = load('characters.sources.json')
@@ -165,7 +165,8 @@ def build(public, characters, *, collect_only=False):
         if character_hashes.get(character['id']) != current:
             raise ValueError(f'English character translation is missing or outdated: {character["id"]}')
     source_hashes = json.loads((ROOT / 'docs/rules/en/sources.json').read_text(encoding='utf-8'))
-    for path in (ROOT / 'docs/rules/fragmented').rglob('*.md'):
+    _, french_rule_files = indexed_rule_files(ROOT)
+    for path in french_rule_files.values():
         current = hashlib.sha256(path.read_text(encoding='utf-8').encode()).hexdigest()
         if source_hashes.get(path.name) != current:
             raise ValueError(f'English rule translation is missing or outdated: {path.name}')
@@ -208,8 +209,8 @@ def build(public, characters, *, collect_only=False):
         fragment = LocalizedHTML({}, collect=known_english)
         fragment.feed(value)
     from fragmented_rules import Markdown
-    manifest = json.loads((ROOT / 'docs/rules/fragmented/manifest.json').read_text(encoding='utf-8'))
-    for path in (ROOT / 'docs/rules/en').rglob('*.md'):
+    manifest, english_rule_files = indexed_rule_files(ROOT, locale='en')
+    for path in english_rule_files.values():
         fragment = LocalizedHTML({}, collect=known_english)
         fragment.feed(Markdown(manifest['images'], {}).render(path.read_text(encoding='utf-8'), skip_title=False))
     for path in english.rglob('*.html'):

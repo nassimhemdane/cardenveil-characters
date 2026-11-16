@@ -55,13 +55,17 @@ def test_switch_is_idempotent_and_retains_both_editions():
     assert 'href="/en/personnages/mimyr/"' in second
 
 
-def test_english_markdown_tracks_every_current_french_markdown():
+def test_english_markdown_tracks_only_manifest_selected_french_markdown(monkeypatch):
     import hashlib
+    monkeypatch.syspath_prepend(str(ROOT / 'web'))
+    from fragmented_rules import indexed_rule_files
+
     hashes = json.loads((ROOT / 'docs/rules/en/sources.json').read_text(encoding='utf-8'))
-    french = list((ROOT / 'docs/rules/fragmented').rglob('*.md'))
-    english = list((ROOT / 'docs/rules/en').rglob('*.md'))
-    assert {path.name for path in french} == {path.name for path in english}
-    for path in french:
+    manifest, french = indexed_rule_files(ROOT)
+    _, english = indexed_rule_files(ROOT, locale='en')
+    assert set(french) == set(english) == set(manifest['documents'])
+    assert 'Encounter-creation.md' not in {path.name for path in french.values()}
+    for path in french.values():
         current = hashlib.sha256(path.read_text(encoding='utf-8').encode()).hexdigest()
         assert hashes[path.name] == current
 
